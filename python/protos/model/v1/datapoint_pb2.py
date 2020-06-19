@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.model',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
-  serialized_pb=b'\n\x1fprotos/model/v1/datapoint.proto\x12\x08v1.model\x1a\x1aprotos/model/v1/file.proto\x1a\x1cprotos/model/v1/health.proto\x1a\x1aprotos/model/v1/math.proto\x1a protos/model/v1/navigation.proto\x1a\x1aprotos/model/v1/text.proto\x1a\x1bprotos/model/v1/media.proto\"\x90\x05\n\tDatapoint\x12\x16\n\x06stream\x18\x01 \x01(\tR\x06stream\x12\x1c\n\ttimestamp\x18\x02 \x01(\x03R\ttimestamp\x12\x31\n\x04tags\x18\x03 \x03(\x0b\x32\x1d.v1.model.Datapoint.TagsEntryR\x04tags\x12$\n\x04text\x18\x04 \x01(\x0b\x32\x0e.v1.model.TextH\x00R\x04text\x12-\n\x07numeric\x18\x05 \x01(\x0b\x32\x11.v1.model.NumericH\x00R\x07numeric\x12\x34\n\nmetric_set\x18\x06 \x01(\x0b\x32\x13.v1.model.MetricSetH\x00R\tmetricSet\x12*\n\x06\x62itset\x18\x07 \x01(\x0b\x32\x10.v1.model.BitsetH\x00R\x06\x62itset\x12$\n\x04\x66ile\x18\x08 \x01(\x0b\x32\x0e.v1.model.FileH\x00R\x04\x66ile\x12\'\n\x05image\x18\t \x01(\x0b\x32\x0f.v1.model.ImageH\x00R\x05image\x12\x37\n\x0bpoint_cloud\x18\n \x01(\x0b\x32\x14.v1.model.PointCloudH\x00R\npointCloud\x12\x30\n\x08location\x18\x0b \x01(\x0b\x32\x12.v1.model.LocationH\x00R\x08location\x12<\n\x0clocalization\x18\x0c \x01(\x0b\x32\x16.v1.model.LocalizationH\x00R\x0clocalization\x12*\n\x06health\x18\r \x01(\x0b\x32\x10.v1.model.HealthH\x00R\x06health\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x06\n\x04\x64\x61taB+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x1fprotos/model/v1/datapoint.proto\x12\x08v1.model\x1a\x1aprotos/model/v1/file.proto\x1a\x1cprotos/model/v1/health.proto\x1a\x1aprotos/model/v1/math.proto\x1a protos/model/v1/navigation.proto\x1a\x1aprotos/model/v1/text.proto\x1a\x1bprotos/model/v1/media.proto\"\xb6\x05\n\tDatapoint\x12\x16\n\x06stream\x18\x01 \x01(\tR\x06stream\x12\x1c\n\ttimestamp\x18\x02 \x01(\x03R\ttimestamp\x12\x31\n\x04tags\x18\x03 \x03(\x0b\x32\x1d.v1.model.Datapoint.TagsEntryR\x04tags\x12$\n\x04text\x18\x04 \x01(\x0b\x32\x0e.v1.model.TextH\x00R\x04text\x12-\n\x07numeric\x18\x05 \x01(\x0b\x32\x11.v1.model.NumericH\x00R\x07numeric\x12\x34\n\nmetric_set\x18\x06 \x01(\x0b\x32\x13.v1.model.MetricSetH\x00R\tmetricSet\x12*\n\x06\x62itset\x18\x07 \x01(\x0b\x32\x10.v1.model.BitsetH\x00R\x06\x62itset\x12$\n\x04\x66ile\x18\x08 \x01(\x0b\x32\x0e.v1.model.FileH\x00R\x04\x66ile\x12\'\n\x05image\x18\t \x01(\x0b\x32\x0f.v1.model.ImageH\x00R\x05image\x12\x37\n\x0bpoint_cloud\x18\n \x01(\x0b\x32\x14.v1.model.PointCloudH\x00R\npointCloud\x12\x30\n\x08location\x18\x0b \x01(\x0b\x32\x12.v1.model.LocationH\x00R\x08location\x12<\n\x0clocalization\x18\x0c \x01(\x0b\x32\x16.v1.model.LocalizationH\x00R\x0clocalization\x12*\n\x06health\x18\r \x01(\x0b\x32\x10.v1.model.HealthH\x00R\x06health\x12$\n\x04json\x18\x0e \x01(\x0b\x32\x0e.v1.model.JsonH\x00R\x04json\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x06\n\x04\x64\x61taB+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
   ,
   dependencies=[protos_dot_model_dot_v1_dot_file__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_health__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_math__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_navigation__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_text__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_media__pb2.DESCRIPTOR,])
 
@@ -64,8 +64,8 @@ _DATAPOINT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=816,
-  serialized_end=871,
+  serialized_start=854,
+  serialized_end=909,
 )
 
 _DATAPOINT = _descriptor.Descriptor(
@@ -166,6 +166,13 @@ _DATAPOINT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='health', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='json', full_name='v1.model.Datapoint.json', index=13,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='json', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -182,7 +189,7 @@ _DATAPOINT = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=223,
-  serialized_end=879,
+  serialized_end=917,
 )
 
 _DATAPOINT_TAGSENTRY.containing_type = _DATAPOINT
@@ -197,6 +204,7 @@ _DATAPOINT.fields_by_name['point_cloud'].message_type = protos_dot_model_dot_v1_
 _DATAPOINT.fields_by_name['location'].message_type = protos_dot_model_dot_v1_dot_navigation__pb2._LOCATION
 _DATAPOINT.fields_by_name['localization'].message_type = protos_dot_model_dot_v1_dot_navigation__pb2._LOCALIZATION
 _DATAPOINT.fields_by_name['health'].message_type = protos_dot_model_dot_v1_dot_health__pb2._HEALTH
+_DATAPOINT.fields_by_name['json'].message_type = protos_dot_model_dot_v1_dot_text__pb2._JSON
 _DATAPOINT.oneofs_by_name['data'].fields.append(
   _DATAPOINT.fields_by_name['text'])
 _DATAPOINT.fields_by_name['text'].containing_oneof = _DATAPOINT.oneofs_by_name['data']
@@ -227,6 +235,9 @@ _DATAPOINT.fields_by_name['localization'].containing_oneof = _DATAPOINT.oneofs_b
 _DATAPOINT.oneofs_by_name['data'].fields.append(
   _DATAPOINT.fields_by_name['health'])
 _DATAPOINT.fields_by_name['health'].containing_oneof = _DATAPOINT.oneofs_by_name['data']
+_DATAPOINT.oneofs_by_name['data'].fields.append(
+  _DATAPOINT.fields_by_name['json'])
+_DATAPOINT.fields_by_name['json'].containing_oneof = _DATAPOINT.oneofs_by_name['data']
 DESCRIPTOR.message_types_by_name['Datapoint'] = _DATAPOINT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

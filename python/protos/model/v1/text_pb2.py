@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.model',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
-  serialized_pb=b'\n\x1aprotos/model/v1/text.proto\x12\x08v1.model\"\x1c\n\x04Text\x12\x14\n\x05value\x18\x01 \x01(\tR\x05valueB+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x1aprotos/model/v1/text.proto\x12\x08v1.model\"\x1c\n\x04Text\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\"\x1c\n\x04Json\x12\x14\n\x05value\x18\x01 \x01(\tR\x05valueB+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
 )
 
 
@@ -54,7 +54,39 @@ _TEXT = _descriptor.Descriptor(
   serialized_end=68,
 )
 
+
+_JSON = _descriptor.Descriptor(
+  name='Json',
+  full_name='v1.model.Json',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='v1.model.Json.value', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='value', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=70,
+  serialized_end=98,
+)
+
 DESCRIPTOR.message_types_by_name['Text'] = _TEXT
+DESCRIPTOR.message_types_by_name['Json'] = _JSON
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Text = _reflection.GeneratedProtocolMessageType('Text', (_message.Message,), {
@@ -63,6 +95,13 @@ Text = _reflection.GeneratedProtocolMessageType('Text', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:v1.model.Text)
   })
 _sym_db.RegisterMessage(Text)
+
+Json = _reflection.GeneratedProtocolMessageType('Json', (_message.Message,), {
+  'DESCRIPTOR' : _JSON,
+  '__module__' : 'protos.model.v1.text_pb2'
+  # @@protoc_insertion_point(class_scope:v1.model.Json)
+  })
+_sym_db.RegisterMessage(Json)
 
 
 DESCRIPTOR._options = None

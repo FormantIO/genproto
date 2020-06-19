@@ -32,6 +32,11 @@ class AgentStub(object):
         request_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.PostDataMultiRequest.SerializeToString,
         response_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.PostDataMultiResponse.FromString,
         )
+    self.CreateEvent = channel.unary_unary(
+        '/v1.agent.Agent/CreateEvent',
+        request_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.CreateEventRequest.SerializeToString,
+        response_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.CreateEventResponse.FromString,
+        )
     self.CreateInterventionRequest = channel.unary_unary(
         '/v1.agent.Agent/CreateInterventionRequest',
         request_serializer=protos_dot_model_dot_v1_dot_intervention__pb2.InterventionRequest.SerializeToString,
@@ -113,6 +118,13 @@ class AgentServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def PostDataMulti(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateEvent(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -220,6 +232,11 @@ def add_AgentServicer_to_server(servicer, server):
           servicer.PostDataMulti,
           request_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.PostDataMultiRequest.FromString,
           response_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.PostDataMultiResponse.SerializeToString,
+      ),
+      'CreateEvent': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateEvent,
+          request_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.CreateEventRequest.FromString,
+          response_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.CreateEventResponse.SerializeToString,
       ),
       'CreateInterventionRequest': grpc.unary_unary_rpc_method_handler(
           servicer.CreateInterventionRequest,
