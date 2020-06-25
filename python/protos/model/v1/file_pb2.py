@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.model',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
-  serialized_pb=b'\n\x1aprotos/model/v1/file.proto\x12\x08v1.model\"f\n\x04\x46ile\x12\x12\n\x03url\x18\x01 \x01(\tH\x00R\x03url\x12\x12\n\x03raw\x18\x02 \x01(\x0cH\x00R\x03raw\x12\x1a\n\x08\x66ilename\x18\x03 \x01(\tR\x08\x66ilename\x12\x12\n\x04size\x18\x04 \x01(\x03R\x04sizeB\x06\n\x04\x64\x61taB+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x1aprotos/model/v1/file.proto\x12\x08v1.model\"X\n\x04\x46ile\x12\x12\n\x03url\x18\x01 \x01(\tH\x00R\x03url\x12\x12\n\x03raw\x18\x02 \x01(\x0cH\x00R\x03raw\x12\x1a\n\x08\x66ilename\x18\x03 \x01(\tR\x08\x66ilenameB\x06\n\x04\x64\x61taJ\x04\x08\x04\x10\x05\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
 )
 
 
@@ -52,13 +52,6 @@ _FILE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='filename', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='size', full_name='v1.model.File.size', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='size', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -75,7 +68,7 @@ _FILE = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=40,
-  serialized_end=142,
+  serialized_end=128,
 )
 
 _FILE.oneofs_by_name['data'].fields.append(
