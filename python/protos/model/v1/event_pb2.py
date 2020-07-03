@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.model',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
-  serialized_pb=b'\n\x1bprotos/model/v1/event.proto\x12\x08v1.model\"\x99\x02\n\x05\x45vent\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\x12\x1e\n\nstreamName\x18\x03 \x01(\tR\nstreamName\x12\x1e\n\nstreamType\x18\x04 \x01(\tR\nstreamType\x12\x30\n\x13notificationEnabled\x18\x05 \x01(\x08R\x13notificationEnabled\x12-\n\x04tags\x18\x06 \x03(\x0b\x32\x19.v1.model.Event.TagsEntryR\x04tags\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x1bprotos/model/v1/event.proto\x12\x08v1.model\"\x9c\x02\n\x05\x45vent\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\x12\x1f\n\x0bstream_name\x18\x03 \x01(\tR\nstreamName\x12\x1f\n\x0bstream_type\x18\x04 \x01(\tR\nstreamType\x12\x31\n\x14notification_enabled\x18\x05 \x01(\x08R\x13notificationEnabled\x12-\n\x04tags\x18\x06 \x03(\x0b\x32\x19.v1.model.Event.TagsEntryR\x04tags\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
 )
 
 
@@ -57,8 +57,8 @@ _EVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=268,
-  serialized_end=323,
+  serialized_start=271,
+  serialized_end=326,
 )
 
 _EVENT = _descriptor.Descriptor(
@@ -83,21 +83,21 @@ _EVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='message', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='streamName', full_name='v1.model.Event.streamName', index=2,
+      name='stream_name', full_name='v1.model.Event.stream_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='streamName', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='streamType', full_name='v1.model.Event.streamType', index=3,
+      name='stream_type', full_name='v1.model.Event.stream_type', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='streamType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='notificationEnabled', full_name='v1.model.Event.notificationEnabled', index=4,
+      name='notification_enabled', full_name='v1.model.Event.notification_enabled', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -123,7 +123,7 @@ _EVENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=42,
-  serialized_end=323,
+  serialized_end=326,
 )
 
 _EVENT_TAGSENTRY.containing_type = _EVENT
