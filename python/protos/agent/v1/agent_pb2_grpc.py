@@ -97,6 +97,11 @@ class AgentStub(object):
         request_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.SetBaseFrameIDRequest.SerializeToString,
         response_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.SetBaseFrameIDResponse.FromString,
         )
+    self.ClearTransformTree = channel.unary_unary(
+        '/v1.agent.Agent/ClearTransformTree',
+        request_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.ClearTransformTreeRequest.SerializeToString,
+        response_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.ClearTransformTreeResponse.FromString,
+        )
 
 
 class AgentServicer(object):
@@ -215,6 +220,13 @@ class AgentServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ClearTransformTree(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AgentServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -297,6 +309,11 @@ def add_AgentServicer_to_server(servicer, server):
           servicer.SetBaseFrameID,
           request_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.SetBaseFrameIDRequest.FromString,
           response_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.SetBaseFrameIDResponse.SerializeToString,
+      ),
+      'ClearTransformTree': grpc.unary_unary_rpc_method_handler(
+          servicer.ClearTransformTree,
+          request_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.ClearTransformTreeRequest.FromString,
+          response_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.ClearTransformTreeResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
