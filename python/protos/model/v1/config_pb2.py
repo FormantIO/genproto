@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.model',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
-  serialized_pb=b'\n\x1cprotos/model/v1/config.proto\x12\x08v1.model\x1a\x19protos/model/v1/ros.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x82\x01\n\x17\x41gentConfigurationStore\x12#\n\ragent_version\x18\x01 \x01(\tR\x0c\x61gentVersion\x12\x42\n\rconfiguration\x18\x02 \x01(\x0b\x32\x1c.v1.model.AgentConfigurationR\rconfiguration\"z\n\x12\x41gentConfiguration\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12@\n\x08\x64ocument\x18\x03 \x01(\x0b\x32$.v1.model.AgentConfigurationDocumentR\x08\x64ocument\"\x80\x04\n\x1a\x41gentConfigurationDocument\x12\x18\n\x07version\x18\x01 \x01(\x03R\x07version\x12\x42\n\x04tags\x18\x02 \x03(\x0b\x32..v1.model.AgentConfigurationDocument.TagsEntryR\x04tags\x12>\n\ttelemetry\x18\x03 \x01(\x0b\x32 .v1.model.TelemetryConfigurationR\ttelemetry\x12>\n\tresources\x18\x04 \x01(\x0b\x32 .v1.model.ResourcesConfigurationR\tresources\x12\x44\n\x0b\x61pplication\x18\x05 \x01(\x0b\x32\".v1.model.ApplicationConfigurationR\x0b\x61pplication\x12\x35\n\x06teleop\x18\x06 \x01(\x0b\x32\x1d.v1.model.TeleopConfigurationR\x06teleop\x12N\n\x0fport_forwarding\x18\x07 \x01(\x0b\x32%.v1.model.PortForwardingConfigurationR\x0eportForwarding\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"^\n\x13TeleopConfiguration\x12G\n\x0bros_streams\x18\x01 \x03(\x0b\x32&.v1.model.TeleopRosStreamConfigurationR\nrosStreams\"S\n\x1bPortForwardingConfiguration\x12\x34\n\x07\x65nabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x07\x65nabled\"\xb4\x01\n\x1cTeleopRosStreamConfiguration\x12\x1d\n\ntopic_name\x18\x01 \x01(\tR\ttopicName\x12\x35\n\ntopic_type\x18\x02 \x01(\x0e\x32\x16.v1.model.ROSTopicTypeR\ttopicType\x12>\n\x04mode\x18\x03 \x01(\x0e\x32*.v1.model.TeleopRosStreamConfigurationModeR\x04mode\"\x7f\n\x16TelemetryConfiguration\x12\x37\n\x07streams\x18\x01 \x03(\x0b\x32\x1d.v1.model.StreamConfigurationR\x07streams\x12,\n\x03ros\x18\x02 \x01(\x0b\x32\x1a.v1.model.ROSConfigurationR\x03ros\"\xc6\x01\n\x18\x41pplicationConfiguration\x12\x65\n\x11\x63onfiguration_map\x18\x01 \x03(\x0b\x32\x38.v1.model.ApplicationConfiguration.ConfigurationMapEntryR\x10\x63onfigurationMap\x1a\x43\n\x15\x43onfigurationMapEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x95\x01\n\x16ResourcesConfiguration\x12/\n\x04\x64isk\x18\x01 \x01(\x0b\x32\x1b.v1.model.DiskConfigurationR\x04\x64isk\x12J\n\x12stream_throttle_hz\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueR\x10streamThrottleHz\"4\n\x11\x44iskConfiguration\x12\x1f\n\x0b\x62uffer_size\x18\x01 \x01(\x03R\nbufferSize\"K\n\x10ROSConfiguration\x12\x37\n\x18world_reference_frame_id\x18\x01 \x01(\tR\x15worldReferenceFrameId\"\x92\x05\n\x13StreamConfiguration\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12;\n\x04tags\x18\x02 \x03(\x0b\x32\'.v1.model.StreamConfiguration.TagsEntryR\x04tags\x12\x31\n\tros_topic\x18\x03 \x01(\x0b\x32\x12.v1.model.ROSTopicH\x00R\x08rosTopic\x12\x46\n\x10ros_localization\x18\x04 \x01(\x0b\x32\x19.v1.model.ROSLocalizationH\x00R\x0frosLocalization\x12\x43\n\x0f\x64irectory_watch\x18\x05 \x01(\x0b\x32\x18.v1.model.DirectoryWatchH\x00R\x0e\x64irectoryWatch\x12\x31\n\tfile_tail\x18\x06 \x01(\x0b\x32\x12.v1.model.FileTailH\x00R\x08\x66ileTail\x12J\n\x12ros_transform_tree\x18\x07 \x01(\x0b\x32\x1a.v1.model.ROSTransformTreeH\x00R\x10rosTransformTree\x12*\n\x06\x63ustom\x18\t \x01(\x0b\x32\x10.v1.model.CustomH\x00R\x06\x63ustom\x12=\n\x0bthrottle_hz\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueR\nthrottleHz\x12\x36\n\x08\x64isabled\x18\x13 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x08\x64isabled\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x0f\n\rconfiguration\"\x08\n\x06\x43ustom\"\xa0\x01\n\x0e\x44irectoryWatch\x12\x1c\n\tdirectory\x18\x01 \x01(\tR\tdirectory\x12\x1c\n\textension\x18\x02 \x01(\tR\textension\x12/\n\tfile_type\x18\x03 \x01(\x0e\x32\x12.v1.model.FileTypeR\x08\x66ileType\x12!\n\x0cremote_agent\x18\x04 \x01(\x08R\x0bremoteAgent\"\xaf\x01\n\x08\x46ileTail\x12\x1a\n\x08\x66ilename\x18\x01 \x01(\tR\x08\x66ilename\x12\x35\n\x0b\x66ile_format\x18\x02 \x01(\x0e\x32\x14.v1.model.FileFormatR\nfileFormat\x12\x19\n\x08time_key\x18\x03 \x01(\tR\x07timeKey\x12\x1f\n\x0btime_format\x18\x04 \x01(\tR\ntimeFormat\x12\x14\n\x05regex\x18\x05 \x01(\tR\x05regex*<\n TeleopRosStreamConfigurationMode\x12\x0b\n\x07\x43OMMAND\x10\x00\x12\x0b\n\x07OBSERVE\x10\x01*&\n\nFileFormat\x12\x0e\n\nPLAIN_TEXT\x10\x00\x12\x08\n\x04JSON\x10\x01*0\n\x08\x46ileType\x12\x08\n\x04\x46ILE\x10\x00\x12\t\n\x05IMAGE\x10\x01\x12\x0f\n\x0bPOINT_CLOUD\x10\x04\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x1cprotos/model/v1/config.proto\x12\x08v1.model\x1a\x19protos/model/v1/ros.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x82\x01\n\x17\x41gentConfigurationStore\x12#\n\ragent_version\x18\x01 \x01(\tR\x0c\x61gentVersion\x12\x42\n\rconfiguration\x18\x02 \x01(\x0b\x32\x1c.v1.model.AgentConfigurationR\rconfiguration\"z\n\x12\x41gentConfiguration\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12@\n\x08\x64ocument\x18\x03 \x01(\x0b\x32$.v1.model.AgentConfigurationDocumentR\x08\x64ocument\"\x80\x04\n\x1a\x41gentConfigurationDocument\x12\x18\n\x07version\x18\x01 \x01(\x03R\x07version\x12\x42\n\x04tags\x18\x02 \x03(\x0b\x32..v1.model.AgentConfigurationDocument.TagsEntryR\x04tags\x12>\n\ttelemetry\x18\x03 \x01(\x0b\x32 .v1.model.TelemetryConfigurationR\ttelemetry\x12>\n\tresources\x18\x04 \x01(\x0b\x32 .v1.model.ResourcesConfigurationR\tresources\x12\x44\n\x0b\x61pplication\x18\x05 \x01(\x0b\x32\".v1.model.ApplicationConfigurationR\x0b\x61pplication\x12\x35\n\x06teleop\x18\x06 \x01(\x0b\x32\x1d.v1.model.TeleopConfigurationR\x06teleop\x12N\n\x0fport_forwarding\x18\x07 \x01(\x0b\x32%.v1.model.PortForwardingConfigurationR\x0eportForwarding\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"^\n\x13TeleopConfiguration\x12G\n\x0bros_streams\x18\x01 \x03(\x0b\x32&.v1.model.TeleopRosStreamConfigurationR\nrosStreams\"S\n\x1bPortForwardingConfiguration\x12\x34\n\x07\x65nabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x07\x65nabled\"\xb4\x01\n\x1cTeleopRosStreamConfiguration\x12\x1d\n\ntopic_name\x18\x01 \x01(\tR\ttopicName\x12\x35\n\ntopic_type\x18\x02 \x01(\x0e\x32\x16.v1.model.ROSTopicTypeR\ttopicType\x12>\n\x04mode\x18\x03 \x01(\x0e\x32*.v1.model.TeleopRosStreamConfigurationModeR\x04mode\"\x7f\n\x16TelemetryConfiguration\x12\x37\n\x07streams\x18\x01 \x03(\x0b\x32\x1d.v1.model.StreamConfigurationR\x07streams\x12,\n\x03ros\x18\x02 \x01(\x0b\x32\x1a.v1.model.ROSConfigurationR\x03ros\"\xc6\x01\n\x18\x41pplicationConfiguration\x12\x65\n\x11\x63onfiguration_map\x18\x01 \x03(\x0b\x32\x38.v1.model.ApplicationConfiguration.ConfigurationMapEntryR\x10\x63onfigurationMap\x1a\x43\n\x15\x43onfigurationMapEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x95\x01\n\x16ResourcesConfiguration\x12/\n\x04\x64isk\x18\x01 \x01(\x0b\x32\x1b.v1.model.DiskConfigurationR\x04\x64isk\x12J\n\x12stream_throttle_hz\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueR\x10streamThrottleHz\"g\n\x11\x44iskConfiguration\x12\x1f\n\x0b\x62uffer_size\x18\x01 \x01(\x03R\nbufferSize\x12\x31\n\x15on_demand_buffer_size\x18\x02 \x01(\x03R\x12onDemandBufferSize\"K\n\x10ROSConfiguration\x12\x37\n\x18world_reference_frame_id\x18\x01 \x01(\tR\x15worldReferenceFrameId\"\xcb\x05\n\x13StreamConfiguration\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12;\n\x04tags\x18\x02 \x03(\x0b\x32\'.v1.model.StreamConfiguration.TagsEntryR\x04tags\x12\x31\n\tros_topic\x18\x03 \x01(\x0b\x32\x12.v1.model.ROSTopicH\x00R\x08rosTopic\x12\x46\n\x10ros_localization\x18\x04 \x01(\x0b\x32\x19.v1.model.ROSLocalizationH\x00R\x0frosLocalization\x12\x43\n\x0f\x64irectory_watch\x18\x05 \x01(\x0b\x32\x18.v1.model.DirectoryWatchH\x00R\x0e\x64irectoryWatch\x12\x31\n\tfile_tail\x18\x06 \x01(\x0b\x32\x12.v1.model.FileTailH\x00R\x08\x66ileTail\x12J\n\x12ros_transform_tree\x18\x07 \x01(\x0b\x32\x1a.v1.model.ROSTransformTreeH\x00R\x10rosTransformTree\x12*\n\x06\x63ustom\x18\t \x01(\x0b\x32\x10.v1.model.CustomH\x00R\x06\x63ustom\x12=\n\x0bthrottle_hz\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueR\nthrottleHz\x12\x36\n\x08\x64isabled\x18\x13 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x08\x64isabled\x12\x37\n\ton_demand\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x08onDemand\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x0f\n\rconfiguration\"\x08\n\x06\x43ustom\"\xa0\x01\n\x0e\x44irectoryWatch\x12\x1c\n\tdirectory\x18\x01 \x01(\tR\tdirectory\x12\x1c\n\textension\x18\x02 \x01(\tR\textension\x12/\n\tfile_type\x18\x03 \x01(\x0e\x32\x12.v1.model.FileTypeR\x08\x66ileType\x12!\n\x0cremote_agent\x18\x04 \x01(\x08R\x0bremoteAgent\"\xaf\x01\n\x08\x46ileTail\x12\x1a\n\x08\x66ilename\x18\x01 \x01(\tR\x08\x66ilename\x12\x35\n\x0b\x66ile_format\x18\x02 \x01(\x0e\x32\x14.v1.model.FileFormatR\nfileFormat\x12\x19\n\x08time_key\x18\x03 \x01(\tR\x07timeKey\x12\x1f\n\x0btime_format\x18\x04 \x01(\tR\ntimeFormat\x12\x14\n\x05regex\x18\x05 \x01(\tR\x05regex*<\n TeleopRosStreamConfigurationMode\x12\x0b\n\x07\x43OMMAND\x10\x00\x12\x0b\n\x07OBSERVE\x10\x01*&\n\nFileFormat\x12\x0e\n\nPLAIN_TEXT\x10\x00\x12\x08\n\x04JSON\x10\x01*0\n\x08\x46ileType\x12\x08\n\x04\x46ILE\x10\x00\x12\t\n\x05IMAGE\x10\x01\x12\x0f\n\x0bPOINT_CLOUD\x10\x04\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
   ,
   dependencies=[protos_dot_model_dot_v1_dot_ros__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
@@ -42,8 +42,8 @@ _TELEOPROSSTREAMCONFIGURATIONMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2862,
-  serialized_end=2922,
+  serialized_start=2970,
+  serialized_end=3030,
 )
 _sym_db.RegisterEnumDescriptor(_TELEOPROSSTREAMCONFIGURATIONMODE)
 
@@ -65,8 +65,8 @@ _FILEFORMAT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2924,
-  serialized_end=2962,
+  serialized_start=3032,
+  serialized_end=3070,
 )
 _sym_db.RegisterEnumDescriptor(_FILEFORMAT)
 
@@ -92,8 +92,8 @@ _FILETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2964,
-  serialized_end=3012,
+  serialized_start=3072,
+  serialized_end=3120,
 )
 _sym_db.RegisterEnumDescriptor(_FILETYPE)
 
@@ -566,6 +566,13 @@ _DISKCONFIGURATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='bufferSize', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='on_demand_buffer_size', full_name='v1.model.DiskConfiguration.on_demand_buffer_size', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='onDemandBufferSize', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -579,7 +586,7 @@ _DISKCONFIGURATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1719,
-  serialized_end=1771,
+  serialized_end=1822,
 )
 
 
@@ -609,8 +616,8 @@ _ROSCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1773,
-  serialized_end=1848,
+  serialized_start=1824,
+  serialized_end=1899,
 )
 
 
@@ -728,6 +735,13 @@ _STREAMCONFIGURATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='disabled', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='on_demand', full_name='v1.model.StreamConfiguration.on_demand', index=10,
+      number=20, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='onDemand', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -743,8 +757,8 @@ _STREAMCONFIGURATION = _descriptor.Descriptor(
       name='configuration', full_name='v1.model.StreamConfiguration.configuration',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1851,
-  serialized_end=2509,
+  serialized_start=1902,
+  serialized_end=2617,
 )
 
 
@@ -767,8 +781,8 @@ _CUSTOM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2511,
-  serialized_end=2519,
+  serialized_start=2619,
+  serialized_end=2627,
 )
 
 
@@ -819,8 +833,8 @@ _DIRECTORYWATCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2522,
-  serialized_end=2682,
+  serialized_start=2630,
+  serialized_end=2790,
 )
 
 
@@ -878,8 +892,8 @@ _FILETAIL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2685,
-  serialized_end=2860,
+  serialized_start=2793,
+  serialized_end=2968,
 )
 
 _AGENTCONFIGURATIONSTORE.fields_by_name['configuration'].message_type = _AGENTCONFIGURATION
@@ -911,6 +925,7 @@ _STREAMCONFIGURATION.fields_by_name['ros_transform_tree'].message_type = protos_
 _STREAMCONFIGURATION.fields_by_name['custom'].message_type = _CUSTOM
 _STREAMCONFIGURATION.fields_by_name['throttle_hz'].message_type = google_dot_protobuf_dot_wrappers__pb2._DOUBLEVALUE
 _STREAMCONFIGURATION.fields_by_name['disabled'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_STREAMCONFIGURATION.fields_by_name['on_demand'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _STREAMCONFIGURATION.oneofs_by_name['configuration'].fields.append(
   _STREAMCONFIGURATION.fields_by_name['ros_topic'])
 _STREAMCONFIGURATION.fields_by_name['ros_topic'].containing_oneof = _STREAMCONFIGURATION.oneofs_by_name['configuration']

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.model',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
-  serialized_pb=b'\n\x1cprotos/model/v1/health.proto\x12\x08v1.model\"8\n\x06Health\x12.\n\x06status\x18\x01 \x01(\x0e\x32\x16.v1.model.HealthStatusR\x06status*`\n\x0cHealthStatus\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\x16\n\x12HEALTH_OPERATIONAL\x10\x01\x12\x12\n\x0eHEALTH_OFFLINE\x10\x02\x12\x10\n\x0cHEALTH_ERROR\x10\x03\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x1cprotos/model/v1/health.proto\x12\x08v1.model\"8\n\x06Health\x12.\n\x06status\x18\x01 \x01(\x0e\x32\x16.v1.model.HealthStatusR\x06status\"u\n\x07\x42\x61ttery\x12\x1e\n\npercentage\x18\x01 \x01(\x01R\npercentage\x12\x18\n\x07voltage\x18\x02 \x01(\x01R\x07voltage\x12\x18\n\x07\x63urrent\x18\x03 \x01(\x01R\x07\x63urrent\x12\x16\n\x06\x63harge\x18\x04 \x01(\x01R\x06\x63harge*`\n\x0cHealthStatus\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\x16\n\x12HEALTH_OPERATIONAL\x10\x01\x12\x12\n\x0eHEALTH_OFFLINE\x10\x02\x12\x10\n\x0cHEALTH_ERROR\x10\x03\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
 )
 
 _HEALTHSTATUS = _descriptor.EnumDescriptor(
@@ -47,8 +47,8 @@ _HEALTHSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=100,
-  serialized_end=196,
+  serialized_start=219,
+  serialized_end=315,
 )
 _sym_db.RegisterEnumDescriptor(_HEALTHSTATUS)
 
@@ -90,8 +90,61 @@ _HEALTH = _descriptor.Descriptor(
   serialized_end=98,
 )
 
+
+_BATTERY = _descriptor.Descriptor(
+  name='Battery',
+  full_name='v1.model.Battery',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='percentage', full_name='v1.model.Battery.percentage', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='percentage', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='voltage', full_name='v1.model.Battery.voltage', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='voltage', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='current', full_name='v1.model.Battery.current', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='current', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='charge', full_name='v1.model.Battery.charge', index=3,
+      number=4, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='charge', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=100,
+  serialized_end=217,
+)
+
 _HEALTH.fields_by_name['status'].enum_type = _HEALTHSTATUS
 DESCRIPTOR.message_types_by_name['Health'] = _HEALTH
+DESCRIPTOR.message_types_by_name['Battery'] = _BATTERY
 DESCRIPTOR.enum_types_by_name['HealthStatus'] = _HEALTHSTATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -101,6 +154,13 @@ Health = _reflection.GeneratedProtocolMessageType('Health', (_message.Message,),
   # @@protoc_insertion_point(class_scope:v1.model.Health)
   })
 _sym_db.RegisterMessage(Health)
+
+Battery = _reflection.GeneratedProtocolMessageType('Battery', (_message.Message,), {
+  'DESCRIPTOR' : _BATTERY,
+  '__module__' : 'protos.model.v1.health_pb2'
+  # @@protoc_insertion_point(class_scope:v1.model.Battery)
+  })
+_sym_db.RegisterMessage(Battery)
 
 
 DESCRIPTOR._options = None
