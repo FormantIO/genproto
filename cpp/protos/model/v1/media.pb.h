@@ -48,7 +48,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fmedia_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -66,12 +66,16 @@ extern ImageDefaultTypeInternal _Image_default_instance_;
 class PointCloud;
 class PointCloudDefaultTypeInternal;
 extern PointCloudDefaultTypeInternal _PointCloud_default_instance_;
+class Video;
+class VideoDefaultTypeInternal;
+extern VideoDefaultTypeInternal _Video_default_instance_;
 }  // namespace model
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
 template<> ::v1::model::H264VideoFrame* Arena::CreateMaybeMessage<::v1::model::H264VideoFrame>(Arena*);
 template<> ::v1::model::Image* Arena::CreateMaybeMessage<::v1::model::Image>(Arena*);
 template<> ::v1::model::PointCloud* Arena::CreateMaybeMessage<::v1::model::PointCloud>(Arena*);
+template<> ::v1::model::Video* Arena::CreateMaybeMessage<::v1::model::Video>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace v1 {
 namespace model {
@@ -620,6 +624,212 @@ class H264VideoFrame :
   ::PROTOBUF_NAMESPACE_ID::int32 index_;
   ::PROTOBUF_NAMESPACE_ID::int32 flags_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fmedia_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Video :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.Video) */ {
+ public:
+  Video();
+  virtual ~Video();
+
+  Video(const Video& from);
+  Video(Video&& from) noexcept
+    : Video() {
+    *this = ::std::move(from);
+  }
+
+  inline Video& operator=(const Video& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Video& operator=(Video&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Video& default_instance();
+
+  enum DataCase {
+    kUrl = 3,
+    kRaw = 4,
+    DATA_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Video* internal_default_instance() {
+    return reinterpret_cast<const Video*>(
+               &_Video_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(Video& a, Video& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Video* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Video* New() const final {
+    return CreateMaybeMessage<Video>(nullptr);
+  }
+
+  Video* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Video>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Video& from);
+  void MergeFrom(const Video& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Video* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.Video";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMimeTypeFieldNumber = 1,
+    kDurationFieldNumber = 2,
+    kUrlFieldNumber = 3,
+    kRawFieldNumber = 4,
+  };
+  // string mime_type = 1[json_name = "mimeType"];
+  void clear_mime_type();
+  const std::string& mime_type() const;
+  void set_mime_type(const std::string& value);
+  void set_mime_type(std::string&& value);
+  void set_mime_type(const char* value);
+  void set_mime_type(const char* value, size_t size);
+  std::string* mutable_mime_type();
+  std::string* release_mime_type();
+  void set_allocated_mime_type(std::string* mime_type);
+  private:
+  const std::string& _internal_mime_type() const;
+  void _internal_set_mime_type(const std::string& value);
+  std::string* _internal_mutable_mime_type();
+  public:
+
+  // int64 duration = 2[json_name = "duration"];
+  void clear_duration();
+  ::PROTOBUF_NAMESPACE_ID::int64 duration() const;
+  void set_duration(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_duration() const;
+  void _internal_set_duration(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // string url = 3[json_name = "url"];
+  private:
+  bool _internal_has_url() const;
+  public:
+  void clear_url();
+  const std::string& url() const;
+  void set_url(const std::string& value);
+  void set_url(std::string&& value);
+  void set_url(const char* value);
+  void set_url(const char* value, size_t size);
+  std::string* mutable_url();
+  std::string* release_url();
+  void set_allocated_url(std::string* url);
+  private:
+  const std::string& _internal_url() const;
+  void _internal_set_url(const std::string& value);
+  std::string* _internal_mutable_url();
+  public:
+
+  // bytes raw = 4[json_name = "raw"];
+  private:
+  bool _internal_has_raw() const;
+  public:
+  void clear_raw();
+  const std::string& raw() const;
+  void set_raw(const std::string& value);
+  void set_raw(std::string&& value);
+  void set_raw(const char* value);
+  void set_raw(const void* value, size_t size);
+  std::string* mutable_raw();
+  std::string* release_raw();
+  void set_allocated_raw(std::string* raw);
+  private:
+  const std::string& _internal_raw() const;
+  void _internal_set_raw(const std::string& value);
+  std::string* _internal_mutable_raw();
+  public:
+
+  void clear_data();
+  DataCase data_case() const;
+  // @@protoc_insertion_point(class_scope:v1.model.Video)
+ private:
+  class _Internal;
+  void set_has_url();
+  void set_has_raw();
+
+  inline bool has_data() const;
+  inline void clear_has_data();
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mime_type_;
+  ::PROTOBUF_NAMESPACE_ID::int64 duration_;
+  union DataUnion {
+    DataUnion() {}
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr url_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr raw_;
+  } data_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fmedia_2eproto;
 };
 // ===================================================================
@@ -1265,9 +1475,300 @@ inline void H264VideoFrame::set_allocated_frame_data(std::string* frame_data) {
   // @@protoc_insertion_point(field_set_allocated:v1.model.H264VideoFrame.frame_data)
 }
 
+// -------------------------------------------------------------------
+
+// Video
+
+// string mime_type = 1[json_name = "mimeType"];
+inline void Video::clear_mime_type() {
+  mime_type_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Video::mime_type() const {
+  // @@protoc_insertion_point(field_get:v1.model.Video.mime_type)
+  return _internal_mime_type();
+}
+inline void Video::set_mime_type(const std::string& value) {
+  _internal_set_mime_type(value);
+  // @@protoc_insertion_point(field_set:v1.model.Video.mime_type)
+}
+inline std::string* Video::mutable_mime_type() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Video.mime_type)
+  return _internal_mutable_mime_type();
+}
+inline const std::string& Video::_internal_mime_type() const {
+  return mime_type_.GetNoArena();
+}
+inline void Video::_internal_set_mime_type(const std::string& value) {
+  
+  mime_type_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Video::set_mime_type(std::string&& value) {
+  
+  mime_type_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.Video.mime_type)
+}
+inline void Video::set_mime_type(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  mime_type_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:v1.model.Video.mime_type)
+}
+inline void Video::set_mime_type(const char* value, size_t size) {
+  
+  mime_type_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:v1.model.Video.mime_type)
+}
+inline std::string* Video::_internal_mutable_mime_type() {
+  
+  return mime_type_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Video::release_mime_type() {
+  // @@protoc_insertion_point(field_release:v1.model.Video.mime_type)
+  
+  return mime_type_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Video::set_allocated_mime_type(std::string* mime_type) {
+  if (mime_type != nullptr) {
+    
+  } else {
+    
+  }
+  mime_type_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mime_type);
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Video.mime_type)
+}
+
+// int64 duration = 2[json_name = "duration"];
+inline void Video::clear_duration() {
+  duration_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 Video::_internal_duration() const {
+  return duration_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 Video::duration() const {
+  // @@protoc_insertion_point(field_get:v1.model.Video.duration)
+  return _internal_duration();
+}
+inline void Video::_internal_set_duration(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  duration_ = value;
+}
+inline void Video::set_duration(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_duration(value);
+  // @@protoc_insertion_point(field_set:v1.model.Video.duration)
+}
+
+// string url = 3[json_name = "url"];
+inline bool Video::_internal_has_url() const {
+  return data_case() == kUrl;
+}
+inline void Video::set_has_url() {
+  _oneof_case_[0] = kUrl;
+}
+inline void Video::clear_url() {
+  if (_internal_has_url()) {
+    data_.url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+    clear_has_data();
+  }
+}
+inline const std::string& Video::url() const {
+  // @@protoc_insertion_point(field_get:v1.model.Video.url)
+  return _internal_url();
+}
+inline void Video::set_url(const std::string& value) {
+  _internal_set_url(value);
+  // @@protoc_insertion_point(field_set:v1.model.Video.url)
+}
+inline std::string* Video::mutable_url() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Video.url)
+  return _internal_mutable_url();
+}
+inline const std::string& Video::_internal_url() const {
+  if (_internal_has_url()) {
+    return data_.url_.GetNoArena();
+  }
+  return *&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void Video::_internal_set_url(const std::string& value) {
+  if (!_internal_has_url()) {
+    clear_data();
+    set_has_url();
+    data_.url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.url_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Video::set_url(std::string&& value) {
+  // @@protoc_insertion_point(field_set:v1.model.Video.url)
+  if (!_internal_has_url()) {
+    clear_data();
+    set_has_url();
+    data_.url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.url_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.Video.url)
+}
+inline void Video::set_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!_internal_has_url()) {
+    clear_data();
+    set_has_url();
+    data_.url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.url_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:v1.model.Video.url)
+}
+inline void Video::set_url(const char* value, size_t size) {
+  if (!_internal_has_url()) {
+    clear_data();
+    set_has_url();
+    data_.url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.url_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:v1.model.Video.url)
+}
+inline std::string* Video::_internal_mutable_url() {
+  if (!_internal_has_url()) {
+    clear_data();
+    set_has_url();
+    data_.url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return data_.url_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Video::release_url() {
+  // @@protoc_insertion_point(field_release:v1.model.Video.url)
+  if (_internal_has_url()) {
+    clear_has_data();
+    return data_.url_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void Video::set_allocated_url(std::string* url) {
+  if (has_data()) {
+    clear_data();
+  }
+  if (url != nullptr) {
+    set_has_url();
+    data_.url_.UnsafeSetDefault(url);
+  }
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Video.url)
+}
+
+// bytes raw = 4[json_name = "raw"];
+inline bool Video::_internal_has_raw() const {
+  return data_case() == kRaw;
+}
+inline void Video::set_has_raw() {
+  _oneof_case_[0] = kRaw;
+}
+inline void Video::clear_raw() {
+  if (_internal_has_raw()) {
+    data_.raw_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+    clear_has_data();
+  }
+}
+inline const std::string& Video::raw() const {
+  // @@protoc_insertion_point(field_get:v1.model.Video.raw)
+  return _internal_raw();
+}
+inline void Video::set_raw(const std::string& value) {
+  _internal_set_raw(value);
+  // @@protoc_insertion_point(field_set:v1.model.Video.raw)
+}
+inline std::string* Video::mutable_raw() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Video.raw)
+  return _internal_mutable_raw();
+}
+inline const std::string& Video::_internal_raw() const {
+  if (_internal_has_raw()) {
+    return data_.raw_.GetNoArena();
+  }
+  return *&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void Video::_internal_set_raw(const std::string& value) {
+  if (!_internal_has_raw()) {
+    clear_data();
+    set_has_raw();
+    data_.raw_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Video::set_raw(std::string&& value) {
+  // @@protoc_insertion_point(field_set:v1.model.Video.raw)
+  if (!_internal_has_raw()) {
+    clear_data();
+    set_has_raw();
+    data_.raw_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.Video.raw)
+}
+inline void Video::set_raw(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!_internal_has_raw()) {
+    clear_data();
+    set_has_raw();
+    data_.raw_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:v1.model.Video.raw)
+}
+inline void Video::set_raw(const void* value, size_t size) {
+  if (!_internal_has_raw()) {
+    clear_data();
+    set_has_raw();
+    data_.raw_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:v1.model.Video.raw)
+}
+inline std::string* Video::_internal_mutable_raw() {
+  if (!_internal_has_raw()) {
+    clear_data();
+    set_has_raw();
+    data_.raw_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return data_.raw_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Video::release_raw() {
+  // @@protoc_insertion_point(field_release:v1.model.Video.raw)
+  if (_internal_has_raw()) {
+    clear_has_data();
+    return data_.raw_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void Video::set_allocated_raw(std::string* raw) {
+  if (has_data()) {
+    clear_data();
+  }
+  if (raw != nullptr) {
+    set_has_raw();
+    data_.raw_.UnsafeSetDefault(raw);
+  }
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Video.raw)
+}
+
+inline bool Video::has_data() const {
+  return data_case() != DATA_NOT_SET;
+}
+inline void Video::clear_has_data() {
+  _oneof_case_[0] = DATA_NOT_SET;
+}
+inline Video::DataCase Video::data_case() const {
+  return Video::DataCase(_oneof_case_[0]);
+}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

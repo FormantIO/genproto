@@ -27,6 +27,7 @@ extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NA
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmedia_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PointCloud_protos_2fmodel_2fv1_2fmedia_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2ftext_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Text_protos_2fmodel_2fv1_2ftext_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmedia_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto;
 namespace v1 {
 namespace model {
 class Datapoint_TagsEntry_DoNotUseDefaultTypeInternal {
@@ -48,6 +49,7 @@ class DatapointDefaultTypeInternal {
   const ::v1::model::Health* health_;
   const ::v1::model::Json* json_;
   const ::v1::model::Battery* battery_;
+  const ::v1::model::Video* video_;
 } _Datapoint_default_instance_;
 }  // namespace model
 }  // namespace v1
@@ -62,8 +64,8 @@ static void InitDefaultsscc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2epro
   ::v1::model::Datapoint::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<13> scc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 13, 0, InitDefaultsscc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<14> scc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 14, 0, InitDefaultsscc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto}, {
       &scc_info_Datapoint_TagsEntry_DoNotUse_protos_2fmodel_2fv1_2fdatapoint_2eproto.base,
       &scc_info_Text_protos_2fmodel_2fv1_2ftext_2eproto.base,
       &scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto.base,
@@ -76,7 +78,8 @@ static void InitDefaultsscc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2epro
       &scc_info_Localization_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
       &scc_info_Health_protos_2fmodel_2fv1_2fhealth_2eproto.base,
       &scc_info_Json_protos_2fmodel_2fv1_2ftext_2eproto.base,
-      &scc_info_Battery_protos_2fmodel_2fv1_2fhealth_2eproto.base,}};
+      &scc_info_Battery_protos_2fmodel_2fv1_2fhealth_2eproto.base,
+      &scc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto.base,}};
 
 static void InitDefaultsscc_info_Datapoint_TagsEntry_DoNotUse_protos_2fmodel_2fv1_2fdatapoint_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -125,6 +128,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
   offsetof(::v1::model::DatapointDefaultTypeInternal, health_),
   offsetof(::v1::model::DatapointDefaultTypeInternal, json_),
   offsetof(::v1::model::DatapointDefaultTypeInternal, battery_),
+  offsetof(::v1::model::DatapointDefaultTypeInternal, video_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Datapoint, data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -143,7 +147,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "model/v1/health.proto\032\032protos/model/v1/m"
   "ath.proto\032 protos/model/v1/navigation.pr"
   "oto\032\032protos/model/v1/text.proto\032\033protos/"
-  "model/v1/media.proto\"\345\005\n\tDatapoint\022\026\n\006st"
+  "model/v1/media.proto\"\216\006\n\tDatapoint\022\026\n\006st"
   "ream\030\001 \001(\tR\006stream\022\034\n\ttimestamp\030\002 \001(\003R\tt"
   "imestamp\0221\n\004tags\030\003 \003(\0132\035.v1.model.Datapo"
   "int.TagsEntryR\004tags\022$\n\004text\030\004 \001(\0132\016.v1.m"
@@ -160,10 +164,11 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "calization\022*\n\006health\030\r \001(\0132\020.v1.model.He"
   "althH\000R\006health\022$\n\004json\030\016 \001(\0132\016.v1.model."
   "JsonH\000R\004json\022-\n\007battery\030\017 \001(\0132\021.v1.model"
-  ".BatteryH\000R\007battery\0327\n\tTagsEntry\022\020\n\003key\030"
-  "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\006\n\004"
-  "dataB+Z)github.com/FormantIO/genproto/go"
-  "/v1/modelb\006proto3"
+  ".BatteryH\000R\007battery\022\'\n\005video\030\020 \001(\0132\017.v1."
+  "model.VideoH\000R\005video\0327\n\tTagsEntry\022\020\n\003key"
+  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\006\n"
+  "\004dataB+Z)github.com/FormantIO/genproto/g"
+  "o/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps[6] = {
   &::descriptor_table_protos_2fmodel_2fv1_2ffile_2eproto,
@@ -180,7 +185,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once;
 static bool descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto = {
-  &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 1017,
+  &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 1058,
   &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps, 2, 6,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto, 2, file_level_enum_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto,
@@ -235,6 +240,8 @@ void Datapoint::InitAsDefaultInstance() {
       ::v1::model::Json::internal_default_instance());
   ::v1::model::_Datapoint_default_instance_.battery_ = const_cast< ::v1::model::Battery*>(
       ::v1::model::Battery::internal_default_instance());
+  ::v1::model::_Datapoint_default_instance_.video_ = const_cast< ::v1::model::Video*>(
+      ::v1::model::Video::internal_default_instance());
 }
 class Datapoint::_Internal {
  public:
@@ -250,6 +257,7 @@ class Datapoint::_Internal {
   static const ::v1::model::Health& health(const Datapoint* msg);
   static const ::v1::model::Json& json(const Datapoint* msg);
   static const ::v1::model::Battery& battery(const Datapoint* msg);
+  static const ::v1::model::Video& video(const Datapoint* msg);
 };
 
 const ::v1::model::Text&
@@ -299,6 +307,10 @@ Datapoint::_Internal::json(const Datapoint* msg) {
 const ::v1::model::Battery&
 Datapoint::_Internal::battery(const Datapoint* msg) {
   return *msg->data_.battery_;
+}
+const ::v1::model::Video&
+Datapoint::_Internal::video(const Datapoint* msg) {
+  return *msg->data_.video_;
 }
 void Datapoint::set_allocated_text(::v1::model::Text* text) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
@@ -540,6 +552,26 @@ void Datapoint::clear_battery() {
     clear_has_data();
   }
 }
+void Datapoint::set_allocated_video(::v1::model::Video* video) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_data();
+  if (video) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      video = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, video, submessage_arena);
+    }
+    set_has_video();
+    data_.video_ = video;
+  }
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Datapoint.video)
+}
+void Datapoint::clear_video() {
+  if (_internal_has_video()) {
+    delete data_.video_;
+    clear_has_data();
+  }
+}
 Datapoint::Datapoint()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -603,6 +635,10 @@ Datapoint::Datapoint(const Datapoint& from)
     }
     case kBattery: {
       _internal_mutable_battery()->::v1::model::Battery::MergeFrom(from._internal_battery());
+      break;
+    }
+    case kVideo: {
+      _internal_mutable_video()->::v1::model::Video::MergeFrom(from._internal_video());
       break;
     }
     case DATA_NOT_SET: {
@@ -689,6 +725,10 @@ void Datapoint::clear_data() {
     }
     case kBattery: {
       delete data_.battery_;
+      break;
+    }
+    case kVideo: {
+      delete data_.video_;
       break;
     }
     case DATA_NOT_SET: {
@@ -828,6 +868,13 @@ const char* Datapoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
           ptr = ctx->ParseMessage(_internal_mutable_battery(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.Video video = 16[json_name = "video"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+          ptr = ctx->ParseMessage(_internal_mutable_video(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1014,6 +1061,14 @@ failure:
         15, _Internal::battery(this), target, stream);
   }
 
+  // .v1.model.Video video = 16[json_name = "video"];
+  if (_internal_has_video()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        16, _Internal::video(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -1138,6 +1193,13 @@ size_t Datapoint::ByteSizeLong() const {
           *data_.battery_);
       break;
     }
+    // .v1.model.Video video = 16[json_name = "video"];
+    case kVideo: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *data_.video_);
+      break;
+    }
     case DATA_NOT_SET: {
       break;
     }
@@ -1228,6 +1290,10 @@ void Datapoint::MergeFrom(const Datapoint& from) {
     }
     case kBattery: {
       _internal_mutable_battery()->::v1::model::Battery::MergeFrom(from._internal_battery());
+      break;
+    }
+    case kVideo: {
+      _internal_mutable_video()->::v1::model::Video::MergeFrom(from._internal_video());
       break;
     }
     case DATA_NOT_SET: {

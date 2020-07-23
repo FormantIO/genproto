@@ -165,6 +165,7 @@ class Datapoint :
     kHealth = 13,
     kJson = 14,
     kBattery = 15,
+    kVideo = 16,
     DATA_NOT_SET = 0,
   };
 
@@ -254,6 +255,7 @@ class Datapoint :
     kHealthFieldNumber = 13,
     kJsonFieldNumber = 14,
     kBatteryFieldNumber = 15,
+    kVideoFieldNumber = 16,
   };
   // map<string, string> tags = 3[json_name = "tags"];
   int tags_size() const;
@@ -477,6 +479,21 @@ class Datapoint :
   ::v1::model::Battery* _internal_mutable_battery();
   public:
 
+  // .v1.model.Video video = 16[json_name = "video"];
+  bool has_video() const;
+  private:
+  bool _internal_has_video() const;
+  public:
+  void clear_video();
+  const ::v1::model::Video& video() const;
+  ::v1::model::Video* release_video();
+  ::v1::model::Video* mutable_video();
+  void set_allocated_video(::v1::model::Video* video);
+  private:
+  const ::v1::model::Video& _internal_video() const;
+  ::v1::model::Video* _internal_mutable_video();
+  public:
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.Datapoint)
@@ -494,6 +511,7 @@ class Datapoint :
   void set_has_health();
   void set_has_json();
   void set_has_battery();
+  void set_has_video();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -521,6 +539,7 @@ class Datapoint :
     ::v1::model::Health* health_;
     ::v1::model::Json* json_;
     ::v1::model::Battery* battery_;
+    ::v1::model::Video* video_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1175,6 +1194,50 @@ inline ::v1::model::Battery* Datapoint::_internal_mutable_battery() {
 inline ::v1::model::Battery* Datapoint::mutable_battery() {
   // @@protoc_insertion_point(field_mutable:v1.model.Datapoint.battery)
   return _internal_mutable_battery();
+}
+
+// .v1.model.Video video = 16[json_name = "video"];
+inline bool Datapoint::_internal_has_video() const {
+  return data_case() == kVideo;
+}
+inline bool Datapoint::has_video() const {
+  return _internal_has_video();
+}
+inline void Datapoint::set_has_video() {
+  _oneof_case_[0] = kVideo;
+}
+inline ::v1::model::Video* Datapoint::release_video() {
+  // @@protoc_insertion_point(field_release:v1.model.Datapoint.video)
+  if (_internal_has_video()) {
+    clear_has_data();
+      ::v1::model::Video* temp = data_.video_;
+    data_.video_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Video& Datapoint::_internal_video() const {
+  return _internal_has_video()
+      ? *data_.video_
+      : *reinterpret_cast< ::v1::model::Video*>(&::v1::model::_Video_default_instance_);
+}
+inline const ::v1::model::Video& Datapoint::video() const {
+  // @@protoc_insertion_point(field_get:v1.model.Datapoint.video)
+  return _internal_video();
+}
+inline ::v1::model::Video* Datapoint::_internal_mutable_video() {
+  if (!_internal_has_video()) {
+    clear_data();
+    set_has_video();
+    data_.video_ = CreateMaybeMessage< ::v1::model::Video >(
+        GetArenaNoVirtual());
+  }
+  return data_.video_;
+}
+inline ::v1::model::Video* Datapoint::mutable_video() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Datapoint.video)
+  return _internal_mutable_video();
 }
 
 inline bool Datapoint::has_data() const {

@@ -664,10 +664,10 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto[] PROT
   "e_format\030\004 \001(\tR\ntimeFormat\022\024\n\005regex\030\005 \001("
   "\tR\005regex*<\n TeleopRosStreamConfiguration"
   "Mode\022\013\n\007COMMAND\020\000\022\013\n\007OBSERVE\020\001*&\n\nFileFo"
-  "rmat\022\016\n\nPLAIN_TEXT\020\000\022\010\n\004JSON\020\001*0\n\010FileTy"
+  "rmat\022\016\n\nPLAIN_TEXT\020\000\022\010\n\004JSON\020\001*;\n\010FileTy"
   "pe\022\010\n\004FILE\020\000\022\t\n\005IMAGE\020\001\022\017\n\013POINT_CLOUD\020\004"
-  "B+Z)github.com/FormantIO/genproto/go/v1/"
-  "modelb\006proto3"
+  "\022\t\n\005VIDEO\020\005B+Z)github.com/FormantIO/genp"
+  "roto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fwrappers_2eproto,
@@ -696,7 +696,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once;
 static bool descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto = {
-  &descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 3173,
+  &descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 3184,
   &descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps, 18, 2,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fconfig_2eproto, 18, file_level_enum_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto,
@@ -743,6 +743,7 @@ bool FileType_IsValid(int value) {
     case 0:
     case 1:
     case 4:
+    case 5:
       return true;
     default:
       return false;

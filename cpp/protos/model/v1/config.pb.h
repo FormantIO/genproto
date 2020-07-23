@@ -195,12 +195,13 @@ enum FileType : int {
   FILE = 0,
   IMAGE = 1,
   POINT_CLOUD = 4,
+  VIDEO = 5,
   FileType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   FileType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool FileType_IsValid(int value);
 constexpr FileType FileType_MIN = FILE;
-constexpr FileType FileType_MAX = POINT_CLOUD;
+constexpr FileType FileType_MAX = VIDEO;
 constexpr int FileType_ARRAYSIZE = FileType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* FileType_descriptor();

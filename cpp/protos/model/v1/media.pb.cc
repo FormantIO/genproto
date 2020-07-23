@@ -33,6 +33,12 @@ class H264VideoFrameDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<H264VideoFrame> _instance;
 } _H264VideoFrame_default_instance_;
+class VideoDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Video> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr raw_;
+} _Video_default_instance_;
 }  // namespace model
 }  // namespace v1
 static void InitDefaultsscc_info_H264VideoFrame_protos_2fmodel_2fv1_2fmedia_2eproto() {
@@ -78,7 +84,21 @@ static void InitDefaultsscc_info_PointCloud_protos_2fmodel_2fv1_2fmedia_2eproto(
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PointCloud_protos_2fmodel_2fv1_2fmedia_2eproto}, {
       &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[3];
+static void InitDefaultsscc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::v1::model::_Video_default_instance_;
+    new (ptr) ::v1::model::Video();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::v1::model::Video::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto}, {}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto = nullptr;
 
@@ -109,17 +129,29 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fmedia_2e
   PROTOBUF_FIELD_OFFSET(::v1::model::H264VideoFrame, index_),
   PROTOBUF_FIELD_OFFSET(::v1::model::H264VideoFrame, flags_),
   PROTOBUF_FIELD_OFFSET(::v1::model::H264VideoFrame, frame_data_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::model::Video, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::v1::model::Video, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::v1::model::Video, mime_type_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Video, duration_),
+  offsetof(::v1::model::VideoDefaultTypeInternal, url_),
+  offsetof(::v1::model::VideoDefaultTypeInternal, raw_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Video, data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::v1::model::Image)},
   { 9, -1, sizeof(::v1::model::PointCloud)},
   { 18, -1, sizeof(::v1::model::H264VideoFrame)},
+  { 26, -1, sizeof(::v1::model::Video)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Image_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_PointCloud_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_H264VideoFrame_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Video_default_instance_),
 };
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -132,24 +164,28 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto[] PROTO
   "v1.model.TransformR\014worldToLocalB\006\n\004data"
   "\"[\n\016H264VideoFrame\022\024\n\005index\030\001 \001(\005R\005index"
   "\022\024\n\005flags\030\002 \001(\005R\005flags\022\035\n\nframe_data\030\003 \001"
-  "(\014R\tframeDataB+Z)github.com/FormantIO/ge"
-  "nproto/go/v1/modelb\006proto3"
+  "(\014R\tframeData\"p\n\005Video\022\033\n\tmime_type\030\001 \001("
+  "\tR\010mimeType\022\032\n\010duration\030\002 \001(\003R\010duration\022"
+  "\022\n\003url\030\003 \001(\tH\000R\003url\022\022\n\003raw\030\004 \001(\014H\000R\003rawB"
+  "\006\n\004dataB+Z)github.com/FormantIO/genproto"
+  "/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps[1] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_sccs[3] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_sccs[4] = {
   &scc_info_H264VideoFrame_protos_2fmodel_2fv1_2fmedia_2eproto.base,
   &scc_info_Image_protos_2fmodel_2fv1_2fmedia_2eproto.base,
   &scc_info_PointCloud_protos_2fmodel_2fv1_2fmedia_2eproto.base,
+  &scc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once;
 static bool descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto = {
-  &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto, "protos/model/v1/media.proto", 426,
-  &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps, 3, 1,
+  &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto, "protos/model/v1/media.proto", 540,
+  &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps, 4, 1,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fmedia_2eproto::offsets,
-  file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto, 3, file_level_enum_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto,
+  file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto, 4, file_level_enum_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1035,6 +1071,341 @@ void H264VideoFrame::InternalSwap(H264VideoFrame* other) {
 }
 
 
+// ===================================================================
+
+void Video::InitAsDefaultInstance() {
+  ::v1::model::_Video_default_instance_.url_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::v1::model::_Video_default_instance_.raw_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+class Video::_Internal {
+ public:
+};
+
+Video::Video()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:v1.model.Video)
+}
+Video::Video(const Video& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  mime_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_mime_type().empty()) {
+    mime_type_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mime_type_);
+  }
+  duration_ = from.duration_;
+  clear_has_data();
+  switch (from.data_case()) {
+    case kUrl: {
+      _internal_set_url(from._internal_url());
+      break;
+    }
+    case kRaw: {
+      _internal_set_raw(from._internal_raw());
+      break;
+    }
+    case DATA_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:v1.model.Video)
+}
+
+void Video::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto.base);
+  mime_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  duration_ = PROTOBUF_LONGLONG(0);
+  clear_has_data();
+}
+
+Video::~Video() {
+  // @@protoc_insertion_point(destructor:v1.model.Video)
+  SharedDtor();
+}
+
+void Video::SharedDtor() {
+  mime_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (has_data()) {
+    clear_data();
+  }
+}
+
+void Video::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Video& Video::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Video::clear_data() {
+// @@protoc_insertion_point(one_of_clear_start:v1.model.Video)
+  switch (data_case()) {
+    case kUrl: {
+      data_.url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+      break;
+    }
+    case kRaw: {
+      data_.raw_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+      break;
+    }
+    case DATA_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = DATA_NOT_SET;
+}
+
+
+void Video::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.model.Video)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  mime_type_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  duration_ = PROTOBUF_LONGLONG(0);
+  clear_data();
+  _internal_metadata_.Clear();
+}
+
+const char* Video::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string mime_type = 1[json_name = "mimeType"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_mime_type();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Video.mime_type"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 duration = 2[json_name = "duration"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          duration_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string url = 3[json_name = "url"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_url();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Video.url"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes raw = 4[json_name = "raw"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_raw();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Video::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.model.Video)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string mime_type = 1[json_name = "mimeType"];
+  if (this->mime_type().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_mime_type().data(), static_cast<int>(this->_internal_mime_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.Video.mime_type");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_mime_type(), target);
+  }
+
+  // int64 duration = 2[json_name = "duration"];
+  if (this->duration() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_duration(), target);
+  }
+
+  // string url = 3[json_name = "url"];
+  if (_internal_has_url()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_url().data(), static_cast<int>(this->_internal_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.Video.url");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_url(), target);
+  }
+
+  // bytes raw = 4[json_name = "raw"];
+  if (_internal_has_raw()) {
+    target = stream->WriteBytesMaybeAliased(
+        4, this->_internal_raw(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.model.Video)
+  return target;
+}
+
+size_t Video::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.model.Video)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string mime_type = 1[json_name = "mimeType"];
+  if (this->mime_type().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_mime_type());
+  }
+
+  // int64 duration = 2[json_name = "duration"];
+  if (this->duration() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_duration());
+  }
+
+  switch (data_case()) {
+    // string url = 3[json_name = "url"];
+    case kUrl: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_url());
+      break;
+    }
+    // bytes raw = 4[json_name = "raw"];
+    case kRaw: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+          this->_internal_raw());
+      break;
+    }
+    case DATA_NOT_SET: {
+      break;
+    }
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Video::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Video)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Video* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Video>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Video)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Video)
+    MergeFrom(*source);
+  }
+}
+
+void Video::MergeFrom(const Video& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Video)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.mime_type().size() > 0) {
+
+    mime_type_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mime_type_);
+  }
+  if (from.duration() != 0) {
+    _internal_set_duration(from._internal_duration());
+  }
+  switch (from.data_case()) {
+    case kUrl: {
+      _internal_set_url(from._internal_url());
+      break;
+    }
+    case kRaw: {
+      _internal_set_raw(from._internal_raw());
+      break;
+    }
+    case DATA_NOT_SET: {
+      break;
+    }
+  }
+}
+
+void Video::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Video)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Video::CopyFrom(const Video& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.Video)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Video::IsInitialized() const {
+  return true;
+}
+
+void Video::InternalSwap(Video* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  mime_type_.Swap(&other->mime_type_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(duration_, other->duration_);
+  swap(data_, other->data_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Video::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace model
 }  // namespace v1
@@ -1047,6 +1418,9 @@ template<> PROTOBUF_NOINLINE ::v1::model::PointCloud* Arena::CreateMaybeMessage<
 }
 template<> PROTOBUF_NOINLINE ::v1::model::H264VideoFrame* Arena::CreateMaybeMessage< ::v1::model::H264VideoFrame >(Arena* arena) {
   return Arena::CreateInternal< ::v1::model::H264VideoFrame >(arena);
+}
+template<> PROTOBUF_NOINLINE ::v1::model::Video* Arena::CreateMaybeMessage< ::v1::model::Video >(Arena* arena) {
+  return Arena::CreateInternal< ::v1::model::Video >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
