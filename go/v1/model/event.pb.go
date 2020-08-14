@@ -20,6 +20,68 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+type ThresholdOperator int32
+
+const (
+	ThresholdOperator_LT  ThresholdOperator = 0
+	ThresholdOperator_LTE ThresholdOperator = 1
+	ThresholdOperator_GT  ThresholdOperator = 2
+	ThresholdOperator_GTE ThresholdOperator = 3
+	ThresholdOperator_EQ  ThresholdOperator = 4
+	ThresholdOperator_NEQ ThresholdOperator = 5
+)
+
+var ThresholdOperator_name = map[int32]string{
+	0: "LT",
+	1: "LTE",
+	2: "GT",
+	3: "GTE",
+	4: "EQ",
+	5: "NEQ",
+}
+
+var ThresholdOperator_value = map[string]int32{
+	"LT":  0,
+	"LTE": 1,
+	"GT":  2,
+	"GTE": 3,
+	"EQ":  4,
+	"NEQ": 5,
+}
+
+func (x ThresholdOperator) String() string {
+	return proto.EnumName(ThresholdOperator_name, int32(x))
+}
+
+func (ThresholdOperator) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_f1f400acba3d6e90, []int{0}
+}
+
+type BitsetOperator int32
+
+const (
+	BitsetOperator_ANY BitsetOperator = 0
+	BitsetOperator_ALL BitsetOperator = 1
+)
+
+var BitsetOperator_name = map[int32]string{
+	0: "ANY",
+	1: "ALL",
+}
+
+var BitsetOperator_value = map[string]int32{
+	"ANY": 0,
+	"ALL": 1,
+}
+
+func (x BitsetOperator) String() string {
+	return proto.EnumName(BitsetOperator_name, int32(x))
+}
+
+func (BitsetOperator) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_f1f400acba3d6e90, []int{1}
+}
+
 type Event struct {
 	Timestamp            int64             `protobuf:"varint,1,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	Message              string            `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
@@ -99,31 +161,465 @@ func (m *Event) GetTags() map[string]string {
 	return nil
 }
 
+type AgentEventConfiguration struct {
+	EventTriggers        []*AgentEventTrigger `protobuf:"bytes,1,rep,name=event_triggers,json=eventTriggers,proto3" json:"event_triggers,omitempty"`
+	LastUpdated          int64                `protobuf:"varint,2,opt,name=last_updated,json=lastUpdated,proto3" json:"last_updated,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+
+func (m *AgentEventConfiguration) Reset()         { *m = AgentEventConfiguration{} }
+func (m *AgentEventConfiguration) String() string { return proto.CompactTextString(m) }
+func (*AgentEventConfiguration) ProtoMessage()    {}
+func (*AgentEventConfiguration) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f1f400acba3d6e90, []int{1}
+}
+
+func (m *AgentEventConfiguration) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AgentEventConfiguration.Unmarshal(m, b)
+}
+func (m *AgentEventConfiguration) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AgentEventConfiguration.Marshal(b, m, deterministic)
+}
+func (m *AgentEventConfiguration) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AgentEventConfiguration.Merge(m, src)
+}
+func (m *AgentEventConfiguration) XXX_Size() int {
+	return xxx_messageInfo_AgentEventConfiguration.Size(m)
+}
+func (m *AgentEventConfiguration) XXX_DiscardUnknown() {
+	xxx_messageInfo_AgentEventConfiguration.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AgentEventConfiguration proto.InternalMessageInfo
+
+func (m *AgentEventConfiguration) GetEventTriggers() []*AgentEventTrigger {
+	if m != nil {
+		return m.EventTriggers
+	}
+	return nil
+}
+
+func (m *AgentEventConfiguration) GetLastUpdated() int64 {
+	if m != nil {
+		return m.LastUpdated
+	}
+	return 0
+}
+
+type AgentEventTrigger struct {
+	Id       string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Stream   string `protobuf:"bytes,2,opt,name=stream,proto3" json:"stream,omitempty"`
+	Interval int64  `protobuf:"varint,3,opt,name=interval,proto3" json:"interval,omitempty"`
+	// Types that are valid to be assigned to Condition:
+	//	*AgentEventTrigger_Presence
+	//	*AgentEventTrigger_Threshold
+	//	*AgentEventTrigger_Regex
+	//	*AgentEventTrigger_Bitset
+	Condition            isAgentEventTrigger_Condition `protobuf_oneof:"condition"`
+	XXX_NoUnkeyedLiteral struct{}                      `json:"-"`
+	XXX_unrecognized     []byte                        `json:"-"`
+	XXX_sizecache        int32                         `json:"-"`
+}
+
+func (m *AgentEventTrigger) Reset()         { *m = AgentEventTrigger{} }
+func (m *AgentEventTrigger) String() string { return proto.CompactTextString(m) }
+func (*AgentEventTrigger) ProtoMessage()    {}
+func (*AgentEventTrigger) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f1f400acba3d6e90, []int{2}
+}
+
+func (m *AgentEventTrigger) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AgentEventTrigger.Unmarshal(m, b)
+}
+func (m *AgentEventTrigger) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AgentEventTrigger.Marshal(b, m, deterministic)
+}
+func (m *AgentEventTrigger) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AgentEventTrigger.Merge(m, src)
+}
+func (m *AgentEventTrigger) XXX_Size() int {
+	return xxx_messageInfo_AgentEventTrigger.Size(m)
+}
+func (m *AgentEventTrigger) XXX_DiscardUnknown() {
+	xxx_messageInfo_AgentEventTrigger.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AgentEventTrigger proto.InternalMessageInfo
+
+func (m *AgentEventTrigger) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *AgentEventTrigger) GetStream() string {
+	if m != nil {
+		return m.Stream
+	}
+	return ""
+}
+
+func (m *AgentEventTrigger) GetInterval() int64 {
+	if m != nil {
+		return m.Interval
+	}
+	return 0
+}
+
+type isAgentEventTrigger_Condition interface {
+	isAgentEventTrigger_Condition()
+}
+
+type AgentEventTrigger_Presence struct {
+	Presence *PresenceEventTriggerCondition `protobuf:"bytes,4,opt,name=presence,proto3,oneof"`
+}
+
+type AgentEventTrigger_Threshold struct {
+	Threshold *ThresholdEventTriggerCondition `protobuf:"bytes,5,opt,name=threshold,proto3,oneof"`
+}
+
+type AgentEventTrigger_Regex struct {
+	Regex *RegexEventTriggerCondition `protobuf:"bytes,6,opt,name=regex,proto3,oneof"`
+}
+
+type AgentEventTrigger_Bitset struct {
+	Bitset *BitsetEventTriggerCondition `protobuf:"bytes,7,opt,name=bitset,proto3,oneof"`
+}
+
+func (*AgentEventTrigger_Presence) isAgentEventTrigger_Condition() {}
+
+func (*AgentEventTrigger_Threshold) isAgentEventTrigger_Condition() {}
+
+func (*AgentEventTrigger_Regex) isAgentEventTrigger_Condition() {}
+
+func (*AgentEventTrigger_Bitset) isAgentEventTrigger_Condition() {}
+
+func (m *AgentEventTrigger) GetCondition() isAgentEventTrigger_Condition {
+	if m != nil {
+		return m.Condition
+	}
+	return nil
+}
+
+func (m *AgentEventTrigger) GetPresence() *PresenceEventTriggerCondition {
+	if x, ok := m.GetCondition().(*AgentEventTrigger_Presence); ok {
+		return x.Presence
+	}
+	return nil
+}
+
+func (m *AgentEventTrigger) GetThreshold() *ThresholdEventTriggerCondition {
+	if x, ok := m.GetCondition().(*AgentEventTrigger_Threshold); ok {
+		return x.Threshold
+	}
+	return nil
+}
+
+func (m *AgentEventTrigger) GetRegex() *RegexEventTriggerCondition {
+	if x, ok := m.GetCondition().(*AgentEventTrigger_Regex); ok {
+		return x.Regex
+	}
+	return nil
+}
+
+func (m *AgentEventTrigger) GetBitset() *BitsetEventTriggerCondition {
+	if x, ok := m.GetCondition().(*AgentEventTrigger_Bitset); ok {
+		return x.Bitset
+	}
+	return nil
+}
+
+// XXX_OneofWrappers is for the internal use of the proto package.
+func (*AgentEventTrigger) XXX_OneofWrappers() []interface{} {
+	return []interface{}{
+		(*AgentEventTrigger_Presence)(nil),
+		(*AgentEventTrigger_Threshold)(nil),
+		(*AgentEventTrigger_Regex)(nil),
+		(*AgentEventTrigger_Bitset)(nil),
+	}
+}
+
+type PresenceEventTriggerCondition struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PresenceEventTriggerCondition) Reset()         { *m = PresenceEventTriggerCondition{} }
+func (m *PresenceEventTriggerCondition) String() string { return proto.CompactTextString(m) }
+func (*PresenceEventTriggerCondition) ProtoMessage()    {}
+func (*PresenceEventTriggerCondition) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f1f400acba3d6e90, []int{3}
+}
+
+func (m *PresenceEventTriggerCondition) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PresenceEventTriggerCondition.Unmarshal(m, b)
+}
+func (m *PresenceEventTriggerCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PresenceEventTriggerCondition.Marshal(b, m, deterministic)
+}
+func (m *PresenceEventTriggerCondition) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PresenceEventTriggerCondition.Merge(m, src)
+}
+func (m *PresenceEventTriggerCondition) XXX_Size() int {
+	return xxx_messageInfo_PresenceEventTriggerCondition.Size(m)
+}
+func (m *PresenceEventTriggerCondition) XXX_DiscardUnknown() {
+	xxx_messageInfo_PresenceEventTriggerCondition.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PresenceEventTriggerCondition proto.InternalMessageInfo
+
+type ThresholdEventTriggerCondition struct {
+	Value                float64           `protobuf:"fixed64,1,opt,name=value,proto3" json:"value,omitempty"`
+	Operator             ThresholdOperator `protobuf:"varint,2,opt,name=operator,proto3,enum=v1.model.ThresholdOperator" json:"operator,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+
+func (m *ThresholdEventTriggerCondition) Reset()         { *m = ThresholdEventTriggerCondition{} }
+func (m *ThresholdEventTriggerCondition) String() string { return proto.CompactTextString(m) }
+func (*ThresholdEventTriggerCondition) ProtoMessage()    {}
+func (*ThresholdEventTriggerCondition) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f1f400acba3d6e90, []int{4}
+}
+
+func (m *ThresholdEventTriggerCondition) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ThresholdEventTriggerCondition.Unmarshal(m, b)
+}
+func (m *ThresholdEventTriggerCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ThresholdEventTriggerCondition.Marshal(b, m, deterministic)
+}
+func (m *ThresholdEventTriggerCondition) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ThresholdEventTriggerCondition.Merge(m, src)
+}
+func (m *ThresholdEventTriggerCondition) XXX_Size() int {
+	return xxx_messageInfo_ThresholdEventTriggerCondition.Size(m)
+}
+func (m *ThresholdEventTriggerCondition) XXX_DiscardUnknown() {
+	xxx_messageInfo_ThresholdEventTriggerCondition.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ThresholdEventTriggerCondition proto.InternalMessageInfo
+
+func (m *ThresholdEventTriggerCondition) GetValue() float64 {
+	if m != nil {
+		return m.Value
+	}
+	return 0
+}
+
+func (m *ThresholdEventTriggerCondition) GetOperator() ThresholdOperator {
+	if m != nil {
+		return m.Operator
+	}
+	return ThresholdOperator_LT
+}
+
+type RegexEventTriggerCondition struct {
+	Value                string   `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RegexEventTriggerCondition) Reset()         { *m = RegexEventTriggerCondition{} }
+func (m *RegexEventTriggerCondition) String() string { return proto.CompactTextString(m) }
+func (*RegexEventTriggerCondition) ProtoMessage()    {}
+func (*RegexEventTriggerCondition) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f1f400acba3d6e90, []int{5}
+}
+
+func (m *RegexEventTriggerCondition) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RegexEventTriggerCondition.Unmarshal(m, b)
+}
+func (m *RegexEventTriggerCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RegexEventTriggerCondition.Marshal(b, m, deterministic)
+}
+func (m *RegexEventTriggerCondition) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RegexEventTriggerCondition.Merge(m, src)
+}
+func (m *RegexEventTriggerCondition) XXX_Size() int {
+	return xxx_messageInfo_RegexEventTriggerCondition.Size(m)
+}
+func (m *RegexEventTriggerCondition) XXX_DiscardUnknown() {
+	xxx_messageInfo_RegexEventTriggerCondition.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RegexEventTriggerCondition proto.InternalMessageInfo
+
+func (m *RegexEventTriggerCondition) GetValue() string {
+	if m != nil {
+		return m.Value
+	}
+	return ""
+}
+
+type BitsetEventTriggerCondition struct {
+	BitConditions        []*BitsetCondition `protobuf:"bytes,1,rep,name=bit_conditions,json=bitConditions,proto3" json:"bit_conditions,omitempty"`
+	Operator             BitsetOperator     `protobuf:"varint,2,opt,name=operator,proto3,enum=v1.model.BitsetOperator" json:"operator,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
+	XXX_unrecognized     []byte             `json:"-"`
+	XXX_sizecache        int32              `json:"-"`
+}
+
+func (m *BitsetEventTriggerCondition) Reset()         { *m = BitsetEventTriggerCondition{} }
+func (m *BitsetEventTriggerCondition) String() string { return proto.CompactTextString(m) }
+func (*BitsetEventTriggerCondition) ProtoMessage()    {}
+func (*BitsetEventTriggerCondition) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f1f400acba3d6e90, []int{6}
+}
+
+func (m *BitsetEventTriggerCondition) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_BitsetEventTriggerCondition.Unmarshal(m, b)
+}
+func (m *BitsetEventTriggerCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_BitsetEventTriggerCondition.Marshal(b, m, deterministic)
+}
+func (m *BitsetEventTriggerCondition) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BitsetEventTriggerCondition.Merge(m, src)
+}
+func (m *BitsetEventTriggerCondition) XXX_Size() int {
+	return xxx_messageInfo_BitsetEventTriggerCondition.Size(m)
+}
+func (m *BitsetEventTriggerCondition) XXX_DiscardUnknown() {
+	xxx_messageInfo_BitsetEventTriggerCondition.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_BitsetEventTriggerCondition proto.InternalMessageInfo
+
+func (m *BitsetEventTriggerCondition) GetBitConditions() []*BitsetCondition {
+	if m != nil {
+		return m.BitConditions
+	}
+	return nil
+}
+
+func (m *BitsetEventTriggerCondition) GetOperator() BitsetOperator {
+	if m != nil {
+		return m.Operator
+	}
+	return BitsetOperator_ANY
+}
+
+type BitsetCondition struct {
+	Key                  string   `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	True                 bool     `protobuf:"varint,2,opt,name=true,proto3" json:"true,omitempty"`
+	False                bool     `protobuf:"varint,3,opt,name=false,proto3" json:"false,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *BitsetCondition) Reset()         { *m = BitsetCondition{} }
+func (m *BitsetCondition) String() string { return proto.CompactTextString(m) }
+func (*BitsetCondition) ProtoMessage()    {}
+func (*BitsetCondition) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f1f400acba3d6e90, []int{7}
+}
+
+func (m *BitsetCondition) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_BitsetCondition.Unmarshal(m, b)
+}
+func (m *BitsetCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_BitsetCondition.Marshal(b, m, deterministic)
+}
+func (m *BitsetCondition) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BitsetCondition.Merge(m, src)
+}
+func (m *BitsetCondition) XXX_Size() int {
+	return xxx_messageInfo_BitsetCondition.Size(m)
+}
+func (m *BitsetCondition) XXX_DiscardUnknown() {
+	xxx_messageInfo_BitsetCondition.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_BitsetCondition proto.InternalMessageInfo
+
+func (m *BitsetCondition) GetKey() string {
+	if m != nil {
+		return m.Key
+	}
+	return ""
+}
+
+func (m *BitsetCondition) GetTrue() bool {
+	if m != nil {
+		return m.True
+	}
+	return false
+}
+
+func (m *BitsetCondition) GetFalse() bool {
+	if m != nil {
+		return m.False
+	}
+	return false
+}
+
 func init() {
+	proto.RegisterEnum("v1.model.ThresholdOperator", ThresholdOperator_name, ThresholdOperator_value)
+	proto.RegisterEnum("v1.model.BitsetOperator", BitsetOperator_name, BitsetOperator_value)
 	proto.RegisterType((*Event)(nil), "v1.model.Event")
 	proto.RegisterMapType((map[string]string)(nil), "v1.model.Event.TagsEntry")
+	proto.RegisterType((*AgentEventConfiguration)(nil), "v1.model.AgentEventConfiguration")
+	proto.RegisterType((*AgentEventTrigger)(nil), "v1.model.AgentEventTrigger")
+	proto.RegisterType((*PresenceEventTriggerCondition)(nil), "v1.model.PresenceEventTriggerCondition")
+	proto.RegisterType((*ThresholdEventTriggerCondition)(nil), "v1.model.ThresholdEventTriggerCondition")
+	proto.RegisterType((*RegexEventTriggerCondition)(nil), "v1.model.RegexEventTriggerCondition")
+	proto.RegisterType((*BitsetEventTriggerCondition)(nil), "v1.model.BitsetEventTriggerCondition")
+	proto.RegisterType((*BitsetCondition)(nil), "v1.model.BitsetCondition")
 }
 
 func init() { proto.RegisterFile("protos/model/v1/event.proto", fileDescriptor_f1f400acba3d6e90) }
 
 var fileDescriptor_f1f400acba3d6e90 = []byte{
-	// 279 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x4c, 0x90, 0x4f, 0x4b, 0xc3, 0x30,
-	0x18, 0xc6, 0xe9, 0xba, 0xcd, 0x35, 0xbb, 0x48, 0xdc, 0x21, 0xfe, 0x01, 0x8b, 0xa7, 0x8a, 0x98,
-	0x30, 0x3d, 0x28, 0x1e, 0x85, 0x0a, 0x5e, 0x14, 0xca, 0x4e, 0x5e, 0x46, 0xba, 0xbd, 0xc6, 0x62,
-	0x93, 0x94, 0xe6, 0x5d, 0xa1, 0xdf, 0xc5, 0x0f, 0x2b, 0x4d, 0xa9, 0xf6, 0x96, 0xf7, 0xf7, 0x7b,
-	0x20, 0x3c, 0x0f, 0x39, 0xaf, 0x6a, 0x8b, 0xd6, 0x09, 0x6d, 0xf7, 0x50, 0x8a, 0x66, 0x2d, 0xa0,
-	0x01, 0x83, 0xdc, 0x53, 0xba, 0x68, 0xd6, 0xdc, 0x8b, 0xab, 0x9f, 0x09, 0x99, 0xa5, 0x9d, 0xa1,
-	0x17, 0x24, 0xc2, 0x42, 0x83, 0x43, 0xa9, 0x2b, 0x16, 0xc4, 0x41, 0x12, 0x66, 0xff, 0x80, 0x32,
-	0x72, 0xa4, 0xc1, 0x39, 0xa9, 0x80, 0x4d, 0xe2, 0x20, 0x89, 0xb2, 0xe1, 0xa4, 0x97, 0x64, 0xe9,
-	0xb0, 0x06, 0xa9, 0xb7, 0x46, 0x6a, 0x60, 0xa1, 0xb7, 0xa4, 0x47, 0x6f, 0x52, 0x8f, 0x03, 0xd8,
-	0x56, 0xc0, 0xa6, 0xe3, 0xc0, 0xa6, 0xad, 0x80, 0xae, 0xc9, 0xca, 0x58, 0x2c, 0x3e, 0x8b, 0x9d,
-	0xc4, 0xc2, 0x9a, 0x2d, 0x18, 0x99, 0x97, 0xb0, 0x67, 0xb3, 0x38, 0x48, 0x16, 0xd9, 0xc9, 0xd8,
-	0xa5, 0xbd, 0xa2, 0xb7, 0x64, 0x8a, 0x52, 0x39, 0x36, 0x8f, 0xc3, 0x64, 0x79, 0x77, 0xca, 0x87,
-	0x3e, 0xdc, 0x77, 0xe1, 0x1b, 0xa9, 0x5c, 0x6a, 0xb0, 0x6e, 0x33, 0x1f, 0x3b, 0x7b, 0x20, 0xd1,
-	0x1f, 0xa2, 0xc7, 0x24, 0xfc, 0x86, 0xd6, 0x57, 0x8c, 0xb2, 0xee, 0x49, 0x57, 0x64, 0xd6, 0xc8,
-	0xf2, 0x30, 0x54, 0xeb, 0x8f, 0xa7, 0xc9, 0x63, 0xf0, 0x7c, 0xf3, 0x71, 0xad, 0x0a, 0xfc, 0x3a,
-	0xe4, 0x7c, 0x67, 0xb5, 0x78, 0xb1, 0xb5, 0x96, 0x06, 0x5f, 0xdf, 0x85, 0x02, 0xe3, 0x97, 0x14,
-	0xca, 0x76, 0xdb, 0xfa, 0xbf, 0xf3, 0xb9, 0x47, 0xf7, 0xbf, 0x01, 0x00, 0x00, 0xff, 0xff, 0xd1,
-	0xac, 0x14, 0xaa, 0x7b, 0x01, 0x00, 0x00,
+	// 677 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x54, 0xdd, 0x6e, 0xd3, 0x4c,
+	0x10, 0xad, 0xed, 0x24, 0x4d, 0x26, 0x5f, 0xf3, 0xb9, 0x4b, 0x05, 0x6e, 0x0b, 0x34, 0x58, 0x20,
+	0x42, 0x11, 0x89, 0x1a, 0x90, 0x8a, 0x10, 0x12, 0x34, 0x95, 0xdb, 0x22, 0x85, 0x96, 0xae, 0xcc,
+	0x05, 0xdc, 0x44, 0x9b, 0x64, 0xeb, 0xae, 0x88, 0xbd, 0xd1, 0xee, 0x26, 0x22, 0x77, 0xbc, 0x04,
+	0x77, 0x3c, 0x26, 0x0f, 0x80, 0xbc, 0x76, 0xec, 0xf4, 0x27, 0xbd, 0xf3, 0x9c, 0x99, 0x73, 0x3c,
+	0x67, 0x66, 0x6c, 0xd8, 0x1e, 0x0b, 0xae, 0xb8, 0x6c, 0x85, 0x7c, 0x48, 0x47, 0xad, 0xe9, 0x5e,
+	0x8b, 0x4e, 0x69, 0xa4, 0x9a, 0x1a, 0x45, 0xe5, 0xe9, 0x5e, 0x53, 0x27, 0xdc, 0x3f, 0x26, 0x14,
+	0xbd, 0x38, 0x83, 0x1e, 0x42, 0x45, 0xb1, 0x90, 0x4a, 0x45, 0xc2, 0xb1, 0x63, 0xd4, 0x8d, 0x86,
+	0x85, 0x73, 0x00, 0x39, 0xb0, 0x1a, 0x52, 0x29, 0x49, 0x40, 0x1d, 0xb3, 0x6e, 0x34, 0x2a, 0x78,
+	0x1e, 0xa2, 0x1d, 0xa8, 0x4a, 0x25, 0x28, 0x09, 0x7b, 0x11, 0x09, 0xa9, 0x63, 0xe9, 0x2c, 0x24,
+	0xd0, 0x29, 0x09, 0x17, 0x0b, 0xd4, 0x6c, 0x4c, 0x9d, 0xc2, 0x62, 0x81, 0x3f, 0x1b, 0x53, 0xb4,
+	0x07, 0x1b, 0x11, 0x57, 0xec, 0x82, 0x0d, 0x88, 0x62, 0x3c, 0xea, 0xd1, 0x88, 0xf4, 0x47, 0x74,
+	0xe8, 0x14, 0xeb, 0x46, 0xa3, 0x8c, 0xef, 0x2d, 0xe6, 0xbc, 0x24, 0x85, 0x5e, 0x41, 0x41, 0x91,
+	0x40, 0x3a, 0xa5, 0xba, 0xd5, 0xa8, 0xb6, 0x37, 0x9b, 0x73, 0x3f, 0x4d, 0xed, 0xa5, 0xe9, 0x93,
+	0x40, 0x7a, 0x91, 0x12, 0x33, 0xac, 0xcb, 0xb6, 0xf6, 0xa1, 0x92, 0x41, 0xc8, 0x06, 0xeb, 0x07,
+	0x9d, 0x69, 0x8b, 0x15, 0x1c, 0x3f, 0xa2, 0x0d, 0x28, 0x4e, 0xc9, 0x68, 0x32, 0xb7, 0x96, 0x04,
+	0xef, 0xcc, 0xb7, 0x86, 0xfb, 0xcb, 0x80, 0x07, 0x07, 0x01, 0x8d, 0x94, 0xd6, 0x3d, 0xe4, 0xd1,
+	0x05, 0x0b, 0x26, 0x42, 0xb7, 0x82, 0x3a, 0x50, 0xd3, 0x33, 0xed, 0x29, 0xc1, 0x82, 0x80, 0x0a,
+	0xe9, 0x18, 0xba, 0x9b, 0xed, 0xbc, 0x9b, 0x9c, 0xea, 0x27, 0x35, 0x78, 0x8d, 0x2e, 0x44, 0x12,
+	0x3d, 0x81, 0xff, 0x46, 0x44, 0xaa, 0xde, 0x64, 0x3c, 0x24, 0x8a, 0x0e, 0x75, 0x03, 0x16, 0xae,
+	0xc6, 0xd8, 0xd7, 0x04, 0x72, 0xff, 0x9a, 0xb0, 0x7e, 0x43, 0x07, 0xd5, 0xc0, 0x64, 0xc3, 0xd4,
+	0x83, 0xc9, 0x86, 0xe8, 0x3e, 0x94, 0x92, 0x89, 0xa6, 0x1e, 0xd2, 0x08, 0x6d, 0x41, 0x99, 0x45,
+	0x8a, 0x8a, 0x29, 0x19, 0xe9, 0xd5, 0x58, 0x38, 0x8b, 0x91, 0x07, 0xe5, 0xb1, 0xa0, 0x92, 0x46,
+	0x83, 0x64, 0x2b, 0xd5, 0xf6, 0xf3, 0xbc, 0xf5, 0x2f, 0x69, 0x66, 0xf1, 0xad, 0x87, 0x3c, 0x1a,
+	0xb2, 0xd8, 0xfb, 0xc9, 0x0a, 0xce, 0xa8, 0xe8, 0x04, 0x2a, 0xea, 0x52, 0x50, 0x79, 0xc9, 0x47,
+	0xc9, 0xce, 0xaa, 0xed, 0x46, 0xae, 0xe3, 0xcf, 0x53, 0xcb, 0x84, 0x72, 0x32, 0x7a, 0x0f, 0x45,
+	0x41, 0x03, 0xfa, 0xd3, 0x29, 0x69, 0x95, 0xa7, 0xb9, 0x0a, 0x8e, 0xe1, 0x65, 0x0a, 0x09, 0x09,
+	0x7d, 0x80, 0x52, 0x9f, 0x29, 0x49, 0x95, 0xb3, 0xaa, 0xe9, 0xcf, 0x72, 0x7a, 0x47, 0xe3, 0xcb,
+	0xf8, 0x29, 0xad, 0x53, 0x85, 0xca, 0x60, 0x0e, 0xbb, 0x3b, 0xf0, 0xe8, 0xce, 0x11, 0xb8, 0x1c,
+	0x1e, 0xdf, 0xed, 0x2d, 0x3f, 0xab, 0x78, 0x4d, 0x46, 0x7a, 0x56, 0x68, 0x1f, 0xca, 0x7c, 0x4c,
+	0x05, 0x51, 0x5c, 0xe8, 0x5d, 0xd5, 0x16, 0x0f, 0x26, 0x53, 0x3c, 0x4b, 0x4b, 0x70, 0x56, 0xec,
+	0xb6, 0x61, 0x6b, 0xf9, 0x18, 0xae, 0xbe, 0x6c, 0x7e, 0xc3, 0xee, 0x6f, 0x03, 0xb6, 0xef, 0x30,
+	0x8f, 0x3e, 0x42, 0xad, 0xcf, 0x54, 0x2f, 0xb3, 0x3d, 0xbf, 0xe1, 0xcd, 0xeb, 0xb3, 0xcb, 0x28,
+	0x78, 0xad, 0xcf, 0xf2, 0x48, 0xa2, 0x37, 0x37, 0xec, 0x38, 0xd7, 0xb9, 0xb7, 0x78, 0xf9, 0x0c,
+	0xff, 0x5f, 0xd3, 0xbd, 0xe5, 0xb3, 0x44, 0x50, 0x50, 0x22, 0xfd, 0x2a, 0xcb, 0x58, 0x3f, 0xc7,
+	0x36, 0x2f, 0xc8, 0x48, 0x26, 0xff, 0x99, 0x32, 0x4e, 0x82, 0xdd, 0x23, 0x58, 0xbf, 0x31, 0x39,
+	0x54, 0x02, 0xb3, 0xeb, 0xdb, 0x2b, 0x68, 0x15, 0xac, 0xae, 0xef, 0xd9, 0x46, 0x0c, 0x1c, 0xfb,
+	0xb6, 0x19, 0x03, 0xc7, 0xbe, 0x67, 0x5b, 0x31, 0xe0, 0x9d, 0xdb, 0x85, 0x18, 0x38, 0xf5, 0xce,
+	0xed, 0xe2, 0xae, 0x0b, 0xb5, 0xab, 0x2d, 0xc7, 0xa9, 0x83, 0xd3, 0x6f, 0x89, 0xca, 0x41, 0xb7,
+	0x6b, 0x1b, 0x9d, 0x97, 0xdf, 0x5f, 0x04, 0x4c, 0x5d, 0x4e, 0xfa, 0xcd, 0x01, 0x0f, 0x5b, 0x47,
+	0x5c, 0x84, 0x24, 0x52, 0x9f, 0xce, 0x5a, 0x01, 0x8d, 0xf4, 0xcf, 0xb5, 0x15, 0xf0, 0xf8, 0x77,
+	0xab, 0x07, 0xd0, 0x2f, 0x69, 0xe8, 0xf5, 0xbf, 0x00, 0x00, 0x00, 0xff, 0xff, 0x1c, 0x8a, 0x4b,
+	0x9e, 0x8e, 0x05, 0x00, 0x00,
 }
