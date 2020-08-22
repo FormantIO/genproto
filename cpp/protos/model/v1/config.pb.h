@@ -1194,6 +1194,7 @@ class TeleopRosStreamConfiguration :
     kTopicNameFieldNumber = 1,
     kTopicTypeFieldNumber = 2,
     kModeFieldNumber = 3,
+    kEncodeVideoFieldNumber = 4,
   };
   // string topic_name = 1[json_name = "topicName"];
   void clear_topic_name();
@@ -1229,6 +1230,15 @@ class TeleopRosStreamConfiguration :
   void _internal_set_mode(::v1::model::TeleopRosStreamConfigurationMode value);
   public:
 
+  // bool encode_video = 4[json_name = "encodeVideo"];
+  void clear_encode_video();
+  bool encode_video() const;
+  void set_encode_video(bool value);
+  private:
+  bool _internal_encode_video() const;
+  void _internal_set_encode_video(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.TeleopRosStreamConfiguration)
  private:
   class _Internal;
@@ -1237,6 +1247,7 @@ class TeleopRosStreamConfiguration :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
   int topic_type_;
   int mode_;
+  bool encode_video_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -3732,6 +3743,26 @@ inline void TeleopRosStreamConfiguration::_internal_set_mode(::v1::model::Teleop
 inline void TeleopRosStreamConfiguration::set_mode(::v1::model::TeleopRosStreamConfigurationMode value) {
   _internal_set_mode(value);
   // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.mode)
+}
+
+// bool encode_video = 4[json_name = "encodeVideo"];
+inline void TeleopRosStreamConfiguration::clear_encode_video() {
+  encode_video_ = false;
+}
+inline bool TeleopRosStreamConfiguration::_internal_encode_video() const {
+  return encode_video_;
+}
+inline bool TeleopRosStreamConfiguration::encode_video() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopRosStreamConfiguration.encode_video)
+  return _internal_encode_video();
+}
+inline void TeleopRosStreamConfiguration::_internal_set_encode_video(bool value) {
+  
+  encode_video_ = value;
+}
+inline void TeleopRosStreamConfiguration::set_encode_video(bool value) {
+  _internal_set_encode_video(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.encode_video)
 }
 
 // -------------------------------------------------------------------

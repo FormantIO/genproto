@@ -114,6 +114,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fros_2epr
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, name_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, path_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, encode_video_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSLocalization, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -149,9 +150,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fros_2epr
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::v1::model::ROSTopic)},
-  { 7, -1, sizeof(::v1::model::ROSLocalization)},
-  { 18, -1, sizeof(::v1::model::ROSTransformTree)},
-  { 24, -1, sizeof(::v1::model::ROSMessageToPublish)},
+  { 8, -1, sizeof(::v1::model::ROSLocalization)},
+  { 19, -1, sizeof(::v1::model::ROSTransformTree)},
+  { 25, -1, sizeof(::v1::model::ROSMessageToPublish)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -164,31 +165,31 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\031protos/model/v1/ros.proto\022\010v1.model\032\032p"
   "rotos/model/v1/math.proto\032 protos/model/"
-  "v1/navigation.proto\"2\n\010ROSTopic\022\022\n\004name\030"
-  "\001 \001(\tR\004name\022\022\n\004path\030\002 \001(\tR\004path\"\353\001\n\017ROSL"
-  "ocalization\022\033\n\tmap_topic\030\001 \001(\tR\010mapTopic"
-  "\022\035\n\nodom_topic\030\002 \001(\tR\todomTopic\022,\n\022point"
-  "_cloud_topics\030\003 \003(\tR\020pointCloudTopics\022\035\n"
-  "\npath_topic\030\004 \001(\tR\tpathTopic\022\035\n\ngoal_top"
-  "ic\030\005 \001(\tR\tgoalTopic\0220\n\024base_reference_fr"
-  "ame\030\006 \001(\tR\022baseReferenceFrame\"D\n\020ROSTran"
-  "sformTree\0220\n\024base_reference_frame\030\001 \001(\tR"
-  "\022baseReferenceFrame\"\307\002\n\023ROSMessageToPubl"
-  "ish\022\026\n\006stream\030\001 \001(\tR\006stream\022\031\n\010frame_id\030"
-  "\007 \001(\tR\007frameId\022\034\n\ttimestamp\030\010 \001(\004R\ttimes"
-  "tamp\022\'\n\005twist\030\002 \001(\0132\017.v1.model.TwistH\000R\005"
-  "twist\022\024\n\004bool\030\003 \001(\010H\000R\004bool\022+\n\020compresse"
-  "d_image\030\004 \001(\014H\000R\017compressedImage\022\024\n\004text"
-  "\030\005 \001(\tH\000R\004text\022)\n\004pose\030\006 \001(\0132\023.v1.model."
-  "TransformH\000R\004pose\022*\n\006goalID\030\t \001(\0132\020.v1.m"
-  "odel.GoalIDH\000R\006goalIDB\006\n\004data*\307\001\n\014ROSTop"
-  "icType\022\013\n\007UNKNOWN\020\000\022\021\n\rSTD_MSGS_BOOL\020\001\022 "
-  "\n\034SENSOR_MSGS_COMPRESSED_IMAGE\020\002\022\023\n\017STD_"
-  "MSGS_STRING\020\003\022\026\n\022GEOMETRY_MSGS_POSE\020\004\022\031\n"
-  "\025ACTIONLIB_MSGS_GOALID\020\005\022\027\n\023GEOMETRY_MSG"
-  "S_TWIST\020\006\022\024\n\020H264_VIDEO_FRAME\020\007B+Z)githu"
-  "b.com/FormantIO/genproto/go/v1/modelb\006pr"
-  "oto3"
+  "v1/navigation.proto\"U\n\010ROSTopic\022\022\n\004name\030"
+  "\001 \001(\tR\004name\022\022\n\004path\030\002 \001(\tR\004path\022!\n\014encod"
+  "e_video\030\003 \001(\010R\013encodeVideo\"\353\001\n\017ROSLocali"
+  "zation\022\033\n\tmap_topic\030\001 \001(\tR\010mapTopic\022\035\n\no"
+  "dom_topic\030\002 \001(\tR\todomTopic\022,\n\022point_clou"
+  "d_topics\030\003 \003(\tR\020pointCloudTopics\022\035\n\npath"
+  "_topic\030\004 \001(\tR\tpathTopic\022\035\n\ngoal_topic\030\005 "
+  "\001(\tR\tgoalTopic\0220\n\024base_reference_frame\030\006"
+  " \001(\tR\022baseReferenceFrame\"D\n\020ROSTransform"
+  "Tree\0220\n\024base_reference_frame\030\001 \001(\tR\022base"
+  "ReferenceFrame\"\307\002\n\023ROSMessageToPublish\022\026"
+  "\n\006stream\030\001 \001(\tR\006stream\022\031\n\010frame_id\030\007 \001(\t"
+  "R\007frameId\022\034\n\ttimestamp\030\010 \001(\004R\ttimestamp\022"
+  "\'\n\005twist\030\002 \001(\0132\017.v1.model.TwistH\000R\005twist"
+  "\022\024\n\004bool\030\003 \001(\010H\000R\004bool\022+\n\020compressed_ima"
+  "ge\030\004 \001(\014H\000R\017compressedImage\022\024\n\004text\030\005 \001("
+  "\tH\000R\004text\022)\n\004pose\030\006 \001(\0132\023.v1.model.Trans"
+  "formH\000R\004pose\022*\n\006goalID\030\t \001(\0132\020.v1.model."
+  "GoalIDH\000R\006goalIDB\006\n\004data*\307\001\n\014ROSTopicTyp"
+  "e\022\013\n\007UNKNOWN\020\000\022\021\n\rSTD_MSGS_BOOL\020\001\022 \n\034SEN"
+  "SOR_MSGS_COMPRESSED_IMAGE\020\002\022\023\n\017STD_MSGS_"
+  "STRING\020\003\022\026\n\022GEOMETRY_MSGS_POSE\020\004\022\031\n\025ACTI"
+  "ONLIB_MSGS_GOALID\020\005\022\027\n\023GEOMETRY_MSGS_TWI"
+  "ST\020\006\022\024\n\020H264_VIDEO_FRAME\020\007B+Z)github.com"
+  "/FormantIO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
@@ -203,7 +204,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once;
 static bool descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fros_2eproto = {
-  &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 1044,
+  &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 1079,
   &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps, 4, 2,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fros_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto, 4, file_level_enum_descriptors_protos_2fmodel_2fv1_2fros_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fros_2eproto,
@@ -259,6 +260,7 @@ ROSTopic::ROSTopic(const ROSTopic& from)
   if (!from._internal_path().empty()) {
     path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.path_);
   }
+  encode_video_ = from.encode_video_;
   // @@protoc_insertion_point(copy_constructor:v1.model.ROSTopic)
 }
 
@@ -266,6 +268,7 @@ void ROSTopic::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ROSTopic_protos_2fmodel_2fv1_2fros_2eproto.base);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  encode_video_ = false;
 }
 
 ROSTopic::~ROSTopic() {
@@ -295,6 +298,7 @@ void ROSTopic::Clear() {
 
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  encode_video_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -320,6 +324,13 @@ const char* ROSTopic::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           auto str = _internal_mutable_path();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSTopic.path"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool encode_video = 3[json_name = "encodeVideo"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          encode_video_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -369,6 +380,12 @@ failure:
         2, this->_internal_path(), target);
   }
 
+  // bool encode_video = 3[json_name = "encodeVideo"];
+  if (this->encode_video() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_encode_video(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -397,6 +414,11 @@ size_t ROSTopic::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_path());
+  }
+
+  // bool encode_video = 3[json_name = "encodeVideo"];
+  if (this->encode_video() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -438,6 +460,9 @@ void ROSTopic::MergeFrom(const ROSTopic& from) {
 
     path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.path_);
   }
+  if (from.encode_video() != 0) {
+    _internal_set_encode_video(from._internal_encode_video());
+  }
 }
 
 void ROSTopic::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -465,6 +490,7 @@ void ROSTopic::InternalSwap(ROSTopic* other) {
     GetArenaNoVirtual());
   path_.Swap(&other->path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(encode_video_, other->encode_video_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ROSTopic::GetMetadata() const {

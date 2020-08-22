@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.model',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
-  serialized_pb=b'\n\x19protos/model/v1/ros.proto\x12\x08v1.model\x1a\x1aprotos/model/v1/math.proto\x1a protos/model/v1/navigation.proto\"2\n\x08ROSTopic\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04path\x18\x02 \x01(\tR\x04path\"\xeb\x01\n\x0fROSLocalization\x12\x1b\n\tmap_topic\x18\x01 \x01(\tR\x08mapTopic\x12\x1d\n\nodom_topic\x18\x02 \x01(\tR\todomTopic\x12,\n\x12point_cloud_topics\x18\x03 \x03(\tR\x10pointCloudTopics\x12\x1d\n\npath_topic\x18\x04 \x01(\tR\tpathTopic\x12\x1d\n\ngoal_topic\x18\x05 \x01(\tR\tgoalTopic\x12\x30\n\x14\x62\x61se_reference_frame\x18\x06 \x01(\tR\x12\x62\x61seReferenceFrame\"D\n\x10ROSTransformTree\x12\x30\n\x14\x62\x61se_reference_frame\x18\x01 \x01(\tR\x12\x62\x61seReferenceFrame\"\xc7\x02\n\x13ROSMessageToPublish\x12\x16\n\x06stream\x18\x01 \x01(\tR\x06stream\x12\x19\n\x08\x66rame_id\x18\x07 \x01(\tR\x07\x66rameId\x12\x1c\n\ttimestamp\x18\x08 \x01(\x04R\ttimestamp\x12\'\n\x05twist\x18\x02 \x01(\x0b\x32\x0f.v1.model.TwistH\x00R\x05twist\x12\x14\n\x04\x62ool\x18\x03 \x01(\x08H\x00R\x04\x62ool\x12+\n\x10\x63ompressed_image\x18\x04 \x01(\x0cH\x00R\x0f\x63ompressedImage\x12\x14\n\x04text\x18\x05 \x01(\tH\x00R\x04text\x12)\n\x04pose\x18\x06 \x01(\x0b\x32\x13.v1.model.TransformH\x00R\x04pose\x12*\n\x06goalID\x18\t \x01(\x0b\x32\x10.v1.model.GoalIDH\x00R\x06goalIDB\x06\n\x04\x64\x61ta*\xc7\x01\n\x0cROSTopicType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x11\n\rSTD_MSGS_BOOL\x10\x01\x12 \n\x1cSENSOR_MSGS_COMPRESSED_IMAGE\x10\x02\x12\x13\n\x0fSTD_MSGS_STRING\x10\x03\x12\x16\n\x12GEOMETRY_MSGS_POSE\x10\x04\x12\x19\n\x15\x41\x43TIONLIB_MSGS_GOALID\x10\x05\x12\x17\n\x13GEOMETRY_MSGS_TWIST\x10\x06\x12\x14\n\x10H264_VIDEO_FRAME\x10\x07\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x19protos/model/v1/ros.proto\x12\x08v1.model\x1a\x1aprotos/model/v1/math.proto\x1a protos/model/v1/navigation.proto\"U\n\x08ROSTopic\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04path\x18\x02 \x01(\tR\x04path\x12!\n\x0c\x65ncode_video\x18\x03 \x01(\x08R\x0b\x65ncodeVideo\"\xeb\x01\n\x0fROSLocalization\x12\x1b\n\tmap_topic\x18\x01 \x01(\tR\x08mapTopic\x12\x1d\n\nodom_topic\x18\x02 \x01(\tR\todomTopic\x12,\n\x12point_cloud_topics\x18\x03 \x03(\tR\x10pointCloudTopics\x12\x1d\n\npath_topic\x18\x04 \x01(\tR\tpathTopic\x12\x1d\n\ngoal_topic\x18\x05 \x01(\tR\tgoalTopic\x12\x30\n\x14\x62\x61se_reference_frame\x18\x06 \x01(\tR\x12\x62\x61seReferenceFrame\"D\n\x10ROSTransformTree\x12\x30\n\x14\x62\x61se_reference_frame\x18\x01 \x01(\tR\x12\x62\x61seReferenceFrame\"\xc7\x02\n\x13ROSMessageToPublish\x12\x16\n\x06stream\x18\x01 \x01(\tR\x06stream\x12\x19\n\x08\x66rame_id\x18\x07 \x01(\tR\x07\x66rameId\x12\x1c\n\ttimestamp\x18\x08 \x01(\x04R\ttimestamp\x12\'\n\x05twist\x18\x02 \x01(\x0b\x32\x0f.v1.model.TwistH\x00R\x05twist\x12\x14\n\x04\x62ool\x18\x03 \x01(\x08H\x00R\x04\x62ool\x12+\n\x10\x63ompressed_image\x18\x04 \x01(\x0cH\x00R\x0f\x63ompressedImage\x12\x14\n\x04text\x18\x05 \x01(\tH\x00R\x04text\x12)\n\x04pose\x18\x06 \x01(\x0b\x32\x13.v1.model.TransformH\x00R\x04pose\x12*\n\x06goalID\x18\t \x01(\x0b\x32\x10.v1.model.GoalIDH\x00R\x06goalIDB\x06\n\x04\x64\x61ta*\xc7\x01\n\x0cROSTopicType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x11\n\rSTD_MSGS_BOOL\x10\x01\x12 \n\x1cSENSOR_MSGS_COMPRESSED_IMAGE\x10\x02\x12\x13\n\x0fSTD_MSGS_STRING\x10\x03\x12\x16\n\x12GEOMETRY_MSGS_POSE\x10\x04\x12\x19\n\x15\x41\x43TIONLIB_MSGS_GOALID\x10\x05\x12\x17\n\x13GEOMETRY_MSGS_TWIST\x10\x06\x12\x14\n\x10H264_VIDEO_FRAME\x10\x07\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
   ,
   dependencies=[protos_dot_model_dot_v1_dot_math__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_navigation__pb2.DESCRIPTOR,])
 
@@ -66,8 +66,8 @@ _ROSTOPICTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=792,
-  serialized_end=991,
+  serialized_start=827,
+  serialized_end=1026,
 )
 _sym_db.RegisterEnumDescriptor(_ROSTOPICTYPE)
 
@@ -104,6 +104,13 @@ _ROSTOPIC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='path', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='encode_video', full_name='v1.model.ROSTopic.encode_video', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='encodeVideo', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -117,7 +124,7 @@ _ROSTOPIC = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=101,
-  serialized_end=151,
+  serialized_end=186,
 )
 
 
@@ -182,8 +189,8 @@ _ROSLOCALIZATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=154,
-  serialized_end=389,
+  serialized_start=189,
+  serialized_end=424,
 )
 
 
@@ -213,8 +220,8 @@ _ROSTRANSFORMTREE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=391,
-  serialized_end=459,
+  serialized_start=426,
+  serialized_end=494,
 )
 
 
@@ -303,8 +310,8 @@ _ROSMESSAGETOPUBLISH = _descriptor.Descriptor(
       name='data', full_name='v1.model.ROSMessageToPublish.data',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=462,
-  serialized_end=789,
+  serialized_start=497,
+  serialized_end=824,
 )
 
 _ROSMESSAGETOPUBLISH.fields_by_name['twist'].message_type = protos_dot_model_dot_v1_dot_math__pb2._TWIST

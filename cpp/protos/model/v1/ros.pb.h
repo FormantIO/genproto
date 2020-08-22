@@ -223,6 +223,7 @@ class ROSTopic :
   enum : int {
     kNameFieldNumber = 1,
     kPathFieldNumber = 2,
+    kEncodeVideoFieldNumber = 3,
   };
   // string name = 1[json_name = "name"];
   void clear_name();
@@ -256,6 +257,15 @@ class ROSTopic :
   std::string* _internal_mutable_path();
   public:
 
+  // bool encode_video = 3[json_name = "encodeVideo"];
+  void clear_encode_video();
+  bool encode_video() const;
+  void set_encode_video(bool value);
+  private:
+  bool _internal_encode_video() const;
+  void _internal_set_encode_video(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.ROSTopic)
  private:
   class _Internal;
@@ -263,6 +273,7 @@ class ROSTopic :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr path_;
+  bool encode_video_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fros_2eproto;
 };
@@ -1060,6 +1071,26 @@ inline void ROSTopic::set_allocated_path(std::string* path) {
   }
   path_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), path);
   // @@protoc_insertion_point(field_set_allocated:v1.model.ROSTopic.path)
+}
+
+// bool encode_video = 3[json_name = "encodeVideo"];
+inline void ROSTopic::clear_encode_video() {
+  encode_video_ = false;
+}
+inline bool ROSTopic::_internal_encode_video() const {
+  return encode_video_;
+}
+inline bool ROSTopic::encode_video() const {
+  // @@protoc_insertion_point(field_get:v1.model.ROSTopic.encode_video)
+  return _internal_encode_video();
+}
+inline void ROSTopic::_internal_set_encode_video(bool value) {
+  
+  encode_video_ = value;
+}
+inline void ROSTopic::set_encode_video(bool value) {
+  _internal_set_encode_video(value);
+  // @@protoc_insertion_point(field_set:v1.model.ROSTopic.encode_video)
 }
 
 // -------------------------------------------------------------------
