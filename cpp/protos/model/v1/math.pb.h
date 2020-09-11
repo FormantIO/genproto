@@ -62,15 +62,15 @@ extern BitDefaultTypeInternal _Bit_default_instance_;
 class Bitset;
 class BitsetDefaultTypeInternal;
 extern BitsetDefaultTypeInternal _Bitset_default_instance_;
-class Metric;
-class MetricDefaultTypeInternal;
-extern MetricDefaultTypeInternal _Metric_default_instance_;
-class MetricSet;
-class MetricSetDefaultTypeInternal;
-extern MetricSetDefaultTypeInternal _MetricSet_default_instance_;
 class Numeric;
 class NumericDefaultTypeInternal;
 extern NumericDefaultTypeInternal _Numeric_default_instance_;
+class NumericSet;
+class NumericSetDefaultTypeInternal;
+extern NumericSetDefaultTypeInternal _NumericSet_default_instance_;
+class NumericSetEntry;
+class NumericSetEntryDefaultTypeInternal;
+extern NumericSetEntryDefaultTypeInternal _NumericSetEntry_default_instance_;
 class Quaternion;
 class QuaternionDefaultTypeInternal;
 extern QuaternionDefaultTypeInternal _Quaternion_default_instance_;
@@ -91,9 +91,9 @@ extern Vector3DefaultTypeInternal _Vector3_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::v1::model::Bit* Arena::CreateMaybeMessage<::v1::model::Bit>(Arena*);
 template<> ::v1::model::Bitset* Arena::CreateMaybeMessage<::v1::model::Bitset>(Arena*);
-template<> ::v1::model::Metric* Arena::CreateMaybeMessage<::v1::model::Metric>(Arena*);
-template<> ::v1::model::MetricSet* Arena::CreateMaybeMessage<::v1::model::MetricSet>(Arena*);
 template<> ::v1::model::Numeric* Arena::CreateMaybeMessage<::v1::model::Numeric>(Arena*);
+template<> ::v1::model::NumericSet* Arena::CreateMaybeMessage<::v1::model::NumericSet>(Arena*);
+template<> ::v1::model::NumericSetEntry* Arena::CreateMaybeMessage<::v1::model::NumericSetEntry>(Arena*);
 template<> ::v1::model::Quaternion* Arena::CreateMaybeMessage<::v1::model::Quaternion>(Arena*);
 template<> ::v1::model::Transform* Arena::CreateMaybeMessage<::v1::model::Transform>(Arena*);
 template<> ::v1::model::TransformFrame* Arena::CreateMaybeMessage<::v1::model::TransformFrame>(Arena*);
@@ -233,23 +233,23 @@ class Numeric :
 };
 // -------------------------------------------------------------------
 
-class MetricSet :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.MetricSet) */ {
+class NumericSetEntry :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.NumericSetEntry) */ {
  public:
-  MetricSet();
-  virtual ~MetricSet();
+  NumericSetEntry();
+  virtual ~NumericSetEntry();
 
-  MetricSet(const MetricSet& from);
-  MetricSet(MetricSet&& from) noexcept
-    : MetricSet() {
+  NumericSetEntry(const NumericSetEntry& from);
+  NumericSetEntry(NumericSetEntry&& from) noexcept
+    : NumericSetEntry() {
     *this = ::std::move(from);
   }
 
-  inline MetricSet& operator=(const MetricSet& from) {
+  inline NumericSetEntry& operator=(const NumericSetEntry& from) {
     CopyFrom(from);
     return *this;
   }
-  inline MetricSet& operator=(MetricSet&& from) noexcept {
+  inline NumericSetEntry& operator=(NumericSetEntry&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -267,37 +267,37 @@ class MetricSet :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const MetricSet& default_instance();
+  static const NumericSetEntry& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const MetricSet* internal_default_instance() {
-    return reinterpret_cast<const MetricSet*>(
-               &_MetricSet_default_instance_);
+  static inline const NumericSetEntry* internal_default_instance() {
+    return reinterpret_cast<const NumericSetEntry*>(
+               &_NumericSetEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(MetricSet& a, MetricSet& b) {
+  friend void swap(NumericSetEntry& a, NumericSetEntry& b) {
     a.Swap(&b);
   }
-  inline void Swap(MetricSet* other) {
+  inline void Swap(NumericSetEntry* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline MetricSet* New() const final {
-    return CreateMaybeMessage<MetricSet>(nullptr);
+  inline NumericSetEntry* New() const final {
+    return CreateMaybeMessage<NumericSetEntry>(nullptr);
   }
 
-  MetricSet* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<MetricSet>(arena);
+  NumericSetEntry* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<NumericSetEntry>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const MetricSet& from);
-  void MergeFrom(const MetricSet& from);
+  void CopyFrom(const NumericSetEntry& from);
+  void MergeFrom(const NumericSetEntry& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -311,10 +311,10 @@ class MetricSet :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(MetricSet* other);
+  void InternalSwap(NumericSetEntry* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "v1.model.MetricSet";
+    return "v1.model.NumericSetEntry";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -339,147 +339,27 @@ class MetricSet :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMetricsFieldNumber = 1,
-  };
-  // repeated .v1.model.Metric metrics = 1[json_name = "metrics"];
-  int metrics_size() const;
-  private:
-  int _internal_metrics_size() const;
-  public:
-  void clear_metrics();
-  ::v1::model::Metric* mutable_metrics(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Metric >*
-      mutable_metrics();
-  private:
-  const ::v1::model::Metric& _internal_metrics(int index) const;
-  ::v1::model::Metric* _internal_add_metrics();
-  public:
-  const ::v1::model::Metric& metrics(int index) const;
-  ::v1::model::Metric* add_metrics();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Metric >&
-      metrics() const;
-
-  // @@protoc_insertion_point(class_scope:v1.model.MetricSet)
- private:
-  class _Internal;
-
-  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Metric > metrics_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_protos_2fmodel_2fv1_2fmath_2eproto;
-};
-// -------------------------------------------------------------------
-
-class Metric :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.Metric) */ {
- public:
-  Metric();
-  virtual ~Metric();
-
-  Metric(const Metric& from);
-  Metric(Metric&& from) noexcept
-    : Metric() {
-    *this = ::std::move(from);
-  }
-
-  inline Metric& operator=(const Metric& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Metric& operator=(Metric&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const Metric& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Metric* internal_default_instance() {
-    return reinterpret_cast<const Metric*>(
-               &_Metric_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  friend void swap(Metric& a, Metric& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Metric* other) {
-    if (other == this) return;
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Metric* New() const final {
-    return CreateMaybeMessage<Metric>(nullptr);
-  }
-
-  Metric* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Metric>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const Metric& from);
-  void MergeFrom(const Metric& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Metric* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "v1.model.Metric";
-  }
-  private:
-  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto);
-    return ::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kUnitFieldNumber = 2,
+    kLabelFieldNumber = 2,
+    kUnitFieldNumber = 3,
     kValueFieldNumber = 1,
   };
-  // string unit = 2[json_name = "unit"];
+  // string label = 2[json_name = "label"];
+  void clear_label();
+  const std::string& label() const;
+  void set_label(const std::string& value);
+  void set_label(std::string&& value);
+  void set_label(const char* value);
+  void set_label(const char* value, size_t size);
+  std::string* mutable_label();
+  std::string* release_label();
+  void set_allocated_label(std::string* label);
+  private:
+  const std::string& _internal_label() const;
+  void _internal_set_label(const std::string& value);
+  std::string* _internal_mutable_label();
+  public:
+
+  // string unit = 3[json_name = "unit"];
   void clear_unit();
   const std::string& unit() const;
   void set_unit(const std::string& value);
@@ -504,13 +384,151 @@ class Metric :
   void _internal_set_value(double value);
   public:
 
-  // @@protoc_insertion_point(class_scope:v1.model.Metric)
+  // @@protoc_insertion_point(class_scope:v1.model.NumericSetEntry)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr label_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr unit_;
   double value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fmath_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NumericSet :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.NumericSet) */ {
+ public:
+  NumericSet();
+  virtual ~NumericSet();
+
+  NumericSet(const NumericSet& from);
+  NumericSet(NumericSet&& from) noexcept
+    : NumericSet() {
+    *this = ::std::move(from);
+  }
+
+  inline NumericSet& operator=(const NumericSet& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline NumericSet& operator=(NumericSet&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const NumericSet& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NumericSet* internal_default_instance() {
+    return reinterpret_cast<const NumericSet*>(
+               &_NumericSet_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(NumericSet& a, NumericSet& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(NumericSet* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NumericSet* New() const final {
+    return CreateMaybeMessage<NumericSet>(nullptr);
+  }
+
+  NumericSet* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<NumericSet>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const NumericSet& from);
+  void MergeFrom(const NumericSet& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NumericSet* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.NumericSet";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNumericsFieldNumber = 1,
+  };
+  // repeated .v1.model.NumericSetEntry numerics = 1[json_name = "numerics"];
+  int numerics_size() const;
+  private:
+  int _internal_numerics_size() const;
+  public:
+  void clear_numerics();
+  ::v1::model::NumericSetEntry* mutable_numerics(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::NumericSetEntry >*
+      mutable_numerics();
+  private:
+  const ::v1::model::NumericSetEntry& _internal_numerics(int index) const;
+  ::v1::model::NumericSetEntry* _internal_add_numerics();
+  public:
+  const ::v1::model::NumericSetEntry& numerics(int index) const;
+  ::v1::model::NumericSetEntry* add_numerics();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::NumericSetEntry >&
+      numerics() const;
+
+  // @@protoc_insertion_point(class_scope:v1.model.NumericSet)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::NumericSetEntry > numerics_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fmath_2eproto;
 };
@@ -1613,129 +1631,189 @@ inline void Numeric::set_value(double value) {
 
 // -------------------------------------------------------------------
 
-// MetricSet
-
-// repeated .v1.model.Metric metrics = 1[json_name = "metrics"];
-inline int MetricSet::_internal_metrics_size() const {
-  return metrics_.size();
-}
-inline int MetricSet::metrics_size() const {
-  return _internal_metrics_size();
-}
-inline void MetricSet::clear_metrics() {
-  metrics_.Clear();
-}
-inline ::v1::model::Metric* MetricSet::mutable_metrics(int index) {
-  // @@protoc_insertion_point(field_mutable:v1.model.MetricSet.metrics)
-  return metrics_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Metric >*
-MetricSet::mutable_metrics() {
-  // @@protoc_insertion_point(field_mutable_list:v1.model.MetricSet.metrics)
-  return &metrics_;
-}
-inline const ::v1::model::Metric& MetricSet::_internal_metrics(int index) const {
-  return metrics_.Get(index);
-}
-inline const ::v1::model::Metric& MetricSet::metrics(int index) const {
-  // @@protoc_insertion_point(field_get:v1.model.MetricSet.metrics)
-  return _internal_metrics(index);
-}
-inline ::v1::model::Metric* MetricSet::_internal_add_metrics() {
-  return metrics_.Add();
-}
-inline ::v1::model::Metric* MetricSet::add_metrics() {
-  // @@protoc_insertion_point(field_add:v1.model.MetricSet.metrics)
-  return _internal_add_metrics();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Metric >&
-MetricSet::metrics() const {
-  // @@protoc_insertion_point(field_list:v1.model.MetricSet.metrics)
-  return metrics_;
-}
-
-// -------------------------------------------------------------------
-
-// Metric
+// NumericSetEntry
 
 // double value = 1[json_name = "value"];
-inline void Metric::clear_value() {
+inline void NumericSetEntry::clear_value() {
   value_ = 0;
 }
-inline double Metric::_internal_value() const {
+inline double NumericSetEntry::_internal_value() const {
   return value_;
 }
-inline double Metric::value() const {
-  // @@protoc_insertion_point(field_get:v1.model.Metric.value)
+inline double NumericSetEntry::value() const {
+  // @@protoc_insertion_point(field_get:v1.model.NumericSetEntry.value)
   return _internal_value();
 }
-inline void Metric::_internal_set_value(double value) {
+inline void NumericSetEntry::_internal_set_value(double value) {
   
   value_ = value;
 }
-inline void Metric::set_value(double value) {
+inline void NumericSetEntry::set_value(double value) {
   _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:v1.model.Metric.value)
+  // @@protoc_insertion_point(field_set:v1.model.NumericSetEntry.value)
 }
 
-// string unit = 2[json_name = "unit"];
-inline void Metric::clear_unit() {
+// string label = 2[json_name = "label"];
+inline void NumericSetEntry::clear_label() {
+  label_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& NumericSetEntry::label() const {
+  // @@protoc_insertion_point(field_get:v1.model.NumericSetEntry.label)
+  return _internal_label();
+}
+inline void NumericSetEntry::set_label(const std::string& value) {
+  _internal_set_label(value);
+  // @@protoc_insertion_point(field_set:v1.model.NumericSetEntry.label)
+}
+inline std::string* NumericSetEntry::mutable_label() {
+  // @@protoc_insertion_point(field_mutable:v1.model.NumericSetEntry.label)
+  return _internal_mutable_label();
+}
+inline const std::string& NumericSetEntry::_internal_label() const {
+  return label_.GetNoArena();
+}
+inline void NumericSetEntry::_internal_set_label(const std::string& value) {
+  
+  label_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void NumericSetEntry::set_label(std::string&& value) {
+  
+  label_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.NumericSetEntry.label)
+}
+inline void NumericSetEntry::set_label(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  label_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:v1.model.NumericSetEntry.label)
+}
+inline void NumericSetEntry::set_label(const char* value, size_t size) {
+  
+  label_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:v1.model.NumericSetEntry.label)
+}
+inline std::string* NumericSetEntry::_internal_mutable_label() {
+  
+  return label_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* NumericSetEntry::release_label() {
+  // @@protoc_insertion_point(field_release:v1.model.NumericSetEntry.label)
+  
+  return label_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void NumericSetEntry::set_allocated_label(std::string* label) {
+  if (label != nullptr) {
+    
+  } else {
+    
+  }
+  label_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), label);
+  // @@protoc_insertion_point(field_set_allocated:v1.model.NumericSetEntry.label)
+}
+
+// string unit = 3[json_name = "unit"];
+inline void NumericSetEntry::clear_unit() {
   unit_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& Metric::unit() const {
-  // @@protoc_insertion_point(field_get:v1.model.Metric.unit)
+inline const std::string& NumericSetEntry::unit() const {
+  // @@protoc_insertion_point(field_get:v1.model.NumericSetEntry.unit)
   return _internal_unit();
 }
-inline void Metric::set_unit(const std::string& value) {
+inline void NumericSetEntry::set_unit(const std::string& value) {
   _internal_set_unit(value);
-  // @@protoc_insertion_point(field_set:v1.model.Metric.unit)
+  // @@protoc_insertion_point(field_set:v1.model.NumericSetEntry.unit)
 }
-inline std::string* Metric::mutable_unit() {
-  // @@protoc_insertion_point(field_mutable:v1.model.Metric.unit)
+inline std::string* NumericSetEntry::mutable_unit() {
+  // @@protoc_insertion_point(field_mutable:v1.model.NumericSetEntry.unit)
   return _internal_mutable_unit();
 }
-inline const std::string& Metric::_internal_unit() const {
+inline const std::string& NumericSetEntry::_internal_unit() const {
   return unit_.GetNoArena();
 }
-inline void Metric::_internal_set_unit(const std::string& value) {
+inline void NumericSetEntry::_internal_set_unit(const std::string& value) {
   
   unit_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void Metric::set_unit(std::string&& value) {
+inline void NumericSetEntry::set_unit(std::string&& value) {
   
   unit_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:v1.model.Metric.unit)
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.NumericSetEntry.unit)
 }
-inline void Metric::set_unit(const char* value) {
+inline void NumericSetEntry::set_unit(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   unit_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:v1.model.Metric.unit)
+  // @@protoc_insertion_point(field_set_char:v1.model.NumericSetEntry.unit)
 }
-inline void Metric::set_unit(const char* value, size_t size) {
+inline void NumericSetEntry::set_unit(const char* value, size_t size) {
   
   unit_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:v1.model.Metric.unit)
+  // @@protoc_insertion_point(field_set_pointer:v1.model.NumericSetEntry.unit)
 }
-inline std::string* Metric::_internal_mutable_unit() {
+inline std::string* NumericSetEntry::_internal_mutable_unit() {
   
   return unit_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* Metric::release_unit() {
-  // @@protoc_insertion_point(field_release:v1.model.Metric.unit)
+inline std::string* NumericSetEntry::release_unit() {
+  // @@protoc_insertion_point(field_release:v1.model.NumericSetEntry.unit)
   
   return unit_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void Metric::set_allocated_unit(std::string* unit) {
+inline void NumericSetEntry::set_allocated_unit(std::string* unit) {
   if (unit != nullptr) {
     
   } else {
     
   }
   unit_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), unit);
-  // @@protoc_insertion_point(field_set_allocated:v1.model.Metric.unit)
+  // @@protoc_insertion_point(field_set_allocated:v1.model.NumericSetEntry.unit)
+}
+
+// -------------------------------------------------------------------
+
+// NumericSet
+
+// repeated .v1.model.NumericSetEntry numerics = 1[json_name = "numerics"];
+inline int NumericSet::_internal_numerics_size() const {
+  return numerics_.size();
+}
+inline int NumericSet::numerics_size() const {
+  return _internal_numerics_size();
+}
+inline void NumericSet::clear_numerics() {
+  numerics_.Clear();
+}
+inline ::v1::model::NumericSetEntry* NumericSet::mutable_numerics(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.model.NumericSet.numerics)
+  return numerics_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::NumericSetEntry >*
+NumericSet::mutable_numerics() {
+  // @@protoc_insertion_point(field_mutable_list:v1.model.NumericSet.numerics)
+  return &numerics_;
+}
+inline const ::v1::model::NumericSetEntry& NumericSet::_internal_numerics(int index) const {
+  return numerics_.Get(index);
+}
+inline const ::v1::model::NumericSetEntry& NumericSet::numerics(int index) const {
+  // @@protoc_insertion_point(field_get:v1.model.NumericSet.numerics)
+  return _internal_numerics(index);
+}
+inline ::v1::model::NumericSetEntry* NumericSet::_internal_add_numerics() {
+  return numerics_.Add();
+}
+inline ::v1::model::NumericSetEntry* NumericSet::add_numerics() {
+  // @@protoc_insertion_point(field_add:v1.model.NumericSet.numerics)
+  return _internal_add_numerics();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::NumericSetEntry >&
+NumericSet::numerics() const {
+  // @@protoc_insertion_point(field_list:v1.model.NumericSet.numerics)
+  return numerics_;
 }
 
 // -------------------------------------------------------------------

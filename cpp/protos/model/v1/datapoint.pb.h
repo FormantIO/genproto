@@ -155,7 +155,7 @@ class Datapoint :
   enum DataCase {
     kText = 4,
     kNumeric = 5,
-    kMetricSet = 6,
+    kNumericSet = 17,
     kBitset = 7,
     kFile = 8,
     kImage = 9,
@@ -245,7 +245,7 @@ class Datapoint :
     kTimestampFieldNumber = 2,
     kTextFieldNumber = 4,
     kNumericFieldNumber = 5,
-    kMetricSetFieldNumber = 6,
+    kNumericSetFieldNumber = 17,
     kBitsetFieldNumber = 7,
     kFileFieldNumber = 8,
     kImageFieldNumber = 9,
@@ -329,19 +329,19 @@ class Datapoint :
   ::v1::model::Numeric* _internal_mutable_numeric();
   public:
 
-  // .v1.model.MetricSet metric_set = 6[json_name = "metricSet"];
-  bool has_metric_set() const;
+  // .v1.model.NumericSet numeric_set = 17[json_name = "numericSet"];
+  bool has_numeric_set() const;
   private:
-  bool _internal_has_metric_set() const;
+  bool _internal_has_numeric_set() const;
   public:
-  void clear_metric_set();
-  const ::v1::model::MetricSet& metric_set() const;
-  ::v1::model::MetricSet* release_metric_set();
-  ::v1::model::MetricSet* mutable_metric_set();
-  void set_allocated_metric_set(::v1::model::MetricSet* metric_set);
+  void clear_numeric_set();
+  const ::v1::model::NumericSet& numeric_set() const;
+  ::v1::model::NumericSet* release_numeric_set();
+  ::v1::model::NumericSet* mutable_numeric_set();
+  void set_allocated_numeric_set(::v1::model::NumericSet* numeric_set);
   private:
-  const ::v1::model::MetricSet& _internal_metric_set() const;
-  ::v1::model::MetricSet* _internal_mutable_metric_set();
+  const ::v1::model::NumericSet& _internal_numeric_set() const;
+  ::v1::model::NumericSet* _internal_mutable_numeric_set();
   public:
 
   // .v1.model.Bitset bitset = 7[json_name = "bitset"];
@@ -501,7 +501,7 @@ class Datapoint :
   class _Internal;
   void set_has_text();
   void set_has_numeric();
-  void set_has_metric_set();
+  void set_has_numeric_set();
   void set_has_bitset();
   void set_has_file();
   void set_has_image();
@@ -529,7 +529,7 @@ class Datapoint :
     DataUnion() {}
     ::v1::model::Text* text_;
     ::v1::model::Numeric* numeric_;
-    ::v1::model::MetricSet* metric_set_;
+    ::v1::model::NumericSet* numeric_set_;
     ::v1::model::Bitset* bitset_;
     ::v1::model::File* file_;
     ::v1::model::Image* image_;
@@ -756,48 +756,48 @@ inline ::v1::model::Numeric* Datapoint::mutable_numeric() {
   return _internal_mutable_numeric();
 }
 
-// .v1.model.MetricSet metric_set = 6[json_name = "metricSet"];
-inline bool Datapoint::_internal_has_metric_set() const {
-  return data_case() == kMetricSet;
+// .v1.model.NumericSet numeric_set = 17[json_name = "numericSet"];
+inline bool Datapoint::_internal_has_numeric_set() const {
+  return data_case() == kNumericSet;
 }
-inline bool Datapoint::has_metric_set() const {
-  return _internal_has_metric_set();
+inline bool Datapoint::has_numeric_set() const {
+  return _internal_has_numeric_set();
 }
-inline void Datapoint::set_has_metric_set() {
-  _oneof_case_[0] = kMetricSet;
+inline void Datapoint::set_has_numeric_set() {
+  _oneof_case_[0] = kNumericSet;
 }
-inline ::v1::model::MetricSet* Datapoint::release_metric_set() {
-  // @@protoc_insertion_point(field_release:v1.model.Datapoint.metric_set)
-  if (_internal_has_metric_set()) {
+inline ::v1::model::NumericSet* Datapoint::release_numeric_set() {
+  // @@protoc_insertion_point(field_release:v1.model.Datapoint.numeric_set)
+  if (_internal_has_numeric_set()) {
     clear_has_data();
-      ::v1::model::MetricSet* temp = data_.metric_set_;
-    data_.metric_set_ = nullptr;
+      ::v1::model::NumericSet* temp = data_.numeric_set_;
+    data_.numeric_set_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::v1::model::MetricSet& Datapoint::_internal_metric_set() const {
-  return _internal_has_metric_set()
-      ? *data_.metric_set_
-      : *reinterpret_cast< ::v1::model::MetricSet*>(&::v1::model::_MetricSet_default_instance_);
+inline const ::v1::model::NumericSet& Datapoint::_internal_numeric_set() const {
+  return _internal_has_numeric_set()
+      ? *data_.numeric_set_
+      : *reinterpret_cast< ::v1::model::NumericSet*>(&::v1::model::_NumericSet_default_instance_);
 }
-inline const ::v1::model::MetricSet& Datapoint::metric_set() const {
-  // @@protoc_insertion_point(field_get:v1.model.Datapoint.metric_set)
-  return _internal_metric_set();
+inline const ::v1::model::NumericSet& Datapoint::numeric_set() const {
+  // @@protoc_insertion_point(field_get:v1.model.Datapoint.numeric_set)
+  return _internal_numeric_set();
 }
-inline ::v1::model::MetricSet* Datapoint::_internal_mutable_metric_set() {
-  if (!_internal_has_metric_set()) {
+inline ::v1::model::NumericSet* Datapoint::_internal_mutable_numeric_set() {
+  if (!_internal_has_numeric_set()) {
     clear_data();
-    set_has_metric_set();
-    data_.metric_set_ = CreateMaybeMessage< ::v1::model::MetricSet >(
+    set_has_numeric_set();
+    data_.numeric_set_ = CreateMaybeMessage< ::v1::model::NumericSet >(
         GetArenaNoVirtual());
   }
-  return data_.metric_set_;
+  return data_.numeric_set_;
 }
-inline ::v1::model::MetricSet* Datapoint::mutable_metric_set() {
-  // @@protoc_insertion_point(field_mutable:v1.model.Datapoint.metric_set)
-  return _internal_mutable_metric_set();
+inline ::v1::model::NumericSet* Datapoint::mutable_numeric_set() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Datapoint.numeric_set)
+  return _internal_mutable_numeric_set();
 }
 
 // .v1.model.Bitset bitset = 7[json_name = "bitset"];

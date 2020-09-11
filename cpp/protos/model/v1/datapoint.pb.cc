@@ -23,8 +23,8 @@ extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmedia_2eproto ::PROTOBUF_N
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2ftext_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Json_protos_2fmodel_2fv1_2ftext_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fnavigation_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<5> scc_info_Localization_protos_2fmodel_2fv1_2fnavigation_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fnavigation_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Location_protos_2fmodel_2fv1_2fnavigation_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_MetricSet_protos_2fmodel_2fv1_2fmath_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmedia_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PointCloud_protos_2fmodel_2fv1_2fmedia_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2ftext_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Text_protos_2fmodel_2fv1_2ftext_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmedia_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto;
@@ -39,7 +39,7 @@ class DatapointDefaultTypeInternal {
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Datapoint> _instance;
   const ::v1::model::Text* text_;
   const ::v1::model::Numeric* numeric_;
-  const ::v1::model::MetricSet* metric_set_;
+  const ::v1::model::NumericSet* numeric_set_;
   const ::v1::model::Bitset* bitset_;
   const ::v1::model::File* file_;
   const ::v1::model::Image* image_;
@@ -69,7 +69,7 @@ static void InitDefaultsscc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2epro
       &scc_info_Datapoint_TagsEntry_DoNotUse_protos_2fmodel_2fv1_2fdatapoint_2eproto.base,
       &scc_info_Text_protos_2fmodel_2fv1_2ftext_2eproto.base,
       &scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto.base,
-      &scc_info_MetricSet_protos_2fmodel_2fv1_2fmath_2eproto.base,
+      &scc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto.base,
       &scc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto.base,
       &scc_info_File_protos_2fmodel_2fv1_2ffile_2eproto.base,
       &scc_info_Image_protos_2fmodel_2fv1_2fmedia_2eproto.base,
@@ -118,7 +118,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
   PROTOBUF_FIELD_OFFSET(::v1::model::Datapoint, tags_),
   offsetof(::v1::model::DatapointDefaultTypeInternal, text_),
   offsetof(::v1::model::DatapointDefaultTypeInternal, numeric_),
-  offsetof(::v1::model::DatapointDefaultTypeInternal, metric_set_),
+  offsetof(::v1::model::DatapointDefaultTypeInternal, numeric_set_),
   offsetof(::v1::model::DatapointDefaultTypeInternal, bitset_),
   offsetof(::v1::model::DatapointDefaultTypeInternal, file_),
   offsetof(::v1::model::DatapointDefaultTypeInternal, image_),
@@ -147,28 +147,28 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "model/v1/health.proto\032\032protos/model/v1/m"
   "ath.proto\032 protos/model/v1/navigation.pr"
   "oto\032\032protos/model/v1/text.proto\032\033protos/"
-  "model/v1/media.proto\"\216\006\n\tDatapoint\022\026\n\006st"
+  "model/v1/media.proto\"\227\006\n\tDatapoint\022\026\n\006st"
   "ream\030\001 \001(\tR\006stream\022\034\n\ttimestamp\030\002 \001(\003R\tt"
   "imestamp\0221\n\004tags\030\003 \003(\0132\035.v1.model.Datapo"
   "int.TagsEntryR\004tags\022$\n\004text\030\004 \001(\0132\016.v1.m"
   "odel.TextH\000R\004text\022-\n\007numeric\030\005 \001(\0132\021.v1."
-  "model.NumericH\000R\007numeric\0224\n\nmetric_set\030\006"
-  " \001(\0132\023.v1.model.MetricSetH\000R\tmetricSet\022*"
-  "\n\006bitset\030\007 \001(\0132\020.v1.model.BitsetH\000R\006bits"
-  "et\022$\n\004file\030\010 \001(\0132\016.v1.model.FileH\000R\004file"
-  "\022\'\n\005image\030\t \001(\0132\017.v1.model.ImageH\000R\005imag"
-  "e\0227\n\013point_cloud\030\n \001(\0132\024.v1.model.PointC"
-  "loudH\000R\npointCloud\0220\n\010location\030\013 \001(\0132\022.v"
-  "1.model.LocationH\000R\010location\022<\n\014localiza"
-  "tion\030\014 \001(\0132\026.v1.model.LocalizationH\000R\014lo"
-  "calization\022*\n\006health\030\r \001(\0132\020.v1.model.He"
-  "althH\000R\006health\022$\n\004json\030\016 \001(\0132\016.v1.model."
-  "JsonH\000R\004json\022-\n\007battery\030\017 \001(\0132\021.v1.model"
-  ".BatteryH\000R\007battery\022\'\n\005video\030\020 \001(\0132\017.v1."
-  "model.VideoH\000R\005video\0327\n\tTagsEntry\022\020\n\003key"
-  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\006\n"
-  "\004dataB+Z)github.com/FormantIO/genproto/g"
-  "o/v1/modelb\006proto3"
+  "model.NumericH\000R\007numeric\0227\n\013numeric_set\030"
+  "\021 \001(\0132\024.v1.model.NumericSetH\000R\nnumericSe"
+  "t\022*\n\006bitset\030\007 \001(\0132\020.v1.model.BitsetH\000R\006b"
+  "itset\022$\n\004file\030\010 \001(\0132\016.v1.model.FileH\000R\004f"
+  "ile\022\'\n\005image\030\t \001(\0132\017.v1.model.ImageH\000R\005i"
+  "mage\0227\n\013point_cloud\030\n \001(\0132\024.v1.model.Poi"
+  "ntCloudH\000R\npointCloud\0220\n\010location\030\013 \001(\0132"
+  "\022.v1.model.LocationH\000R\010location\022<\n\014local"
+  "ization\030\014 \001(\0132\026.v1.model.LocalizationH\000R"
+  "\014localization\022*\n\006health\030\r \001(\0132\020.v1.model"
+  ".HealthH\000R\006health\022$\n\004json\030\016 \001(\0132\016.v1.mod"
+  "el.JsonH\000R\004json\022-\n\007battery\030\017 \001(\0132\021.v1.mo"
+  "del.BatteryH\000R\007battery\022\'\n\005video\030\020 \001(\0132\017."
+  "v1.model.VideoH\000R\005video\0327\n\tTagsEntry\022\020\n\003"
+  "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001"
+  "B\006\n\004dataJ\004\010\006\020\007B+Z)github.com/FormantIO/g"
+  "enproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps[6] = {
   &::descriptor_table_protos_2fmodel_2fv1_2ffile_2eproto,
@@ -185,7 +185,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once;
 static bool descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto = {
-  &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 1058,
+  &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 1067,
   &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps, 2, 6,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto, 2, file_level_enum_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto,
@@ -220,8 +220,8 @@ void Datapoint::InitAsDefaultInstance() {
       ::v1::model::Text::internal_default_instance());
   ::v1::model::_Datapoint_default_instance_.numeric_ = const_cast< ::v1::model::Numeric*>(
       ::v1::model::Numeric::internal_default_instance());
-  ::v1::model::_Datapoint_default_instance_.metric_set_ = const_cast< ::v1::model::MetricSet*>(
-      ::v1::model::MetricSet::internal_default_instance());
+  ::v1::model::_Datapoint_default_instance_.numeric_set_ = const_cast< ::v1::model::NumericSet*>(
+      ::v1::model::NumericSet::internal_default_instance());
   ::v1::model::_Datapoint_default_instance_.bitset_ = const_cast< ::v1::model::Bitset*>(
       ::v1::model::Bitset::internal_default_instance());
   ::v1::model::_Datapoint_default_instance_.file_ = const_cast< ::v1::model::File*>(
@@ -247,7 +247,7 @@ class Datapoint::_Internal {
  public:
   static const ::v1::model::Text& text(const Datapoint* msg);
   static const ::v1::model::Numeric& numeric(const Datapoint* msg);
-  static const ::v1::model::MetricSet& metric_set(const Datapoint* msg);
+  static const ::v1::model::NumericSet& numeric_set(const Datapoint* msg);
   static const ::v1::model::Bitset& bitset(const Datapoint* msg);
   static const ::v1::model::File& file(const Datapoint* msg);
   static const ::v1::model::Image& image(const Datapoint* msg);
@@ -268,9 +268,9 @@ const ::v1::model::Numeric&
 Datapoint::_Internal::numeric(const Datapoint* msg) {
   return *msg->data_.numeric_;
 }
-const ::v1::model::MetricSet&
-Datapoint::_Internal::metric_set(const Datapoint* msg) {
-  return *msg->data_.metric_set_;
+const ::v1::model::NumericSet&
+Datapoint::_Internal::numeric_set(const Datapoint* msg) {
+  return *msg->data_.numeric_set_;
 }
 const ::v1::model::Bitset&
 Datapoint::_Internal::bitset(const Datapoint* msg) {
@@ -352,23 +352,23 @@ void Datapoint::clear_numeric() {
     clear_has_data();
   }
 }
-void Datapoint::set_allocated_metric_set(::v1::model::MetricSet* metric_set) {
+void Datapoint::set_allocated_numeric_set(::v1::model::NumericSet* numeric_set) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_data();
-  if (metric_set) {
+  if (numeric_set) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      metric_set = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, metric_set, submessage_arena);
+      numeric_set = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, numeric_set, submessage_arena);
     }
-    set_has_metric_set();
-    data_.metric_set_ = metric_set;
+    set_has_numeric_set();
+    data_.numeric_set_ = numeric_set;
   }
-  // @@protoc_insertion_point(field_set_allocated:v1.model.Datapoint.metric_set)
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Datapoint.numeric_set)
 }
-void Datapoint::clear_metric_set() {
-  if (_internal_has_metric_set()) {
-    delete data_.metric_set_;
+void Datapoint::clear_numeric_set() {
+  if (_internal_has_numeric_set()) {
+    delete data_.numeric_set_;
     clear_has_data();
   }
 }
@@ -597,8 +597,8 @@ Datapoint::Datapoint(const Datapoint& from)
       _internal_mutable_numeric()->::v1::model::Numeric::MergeFrom(from._internal_numeric());
       break;
     }
-    case kMetricSet: {
-      _internal_mutable_metric_set()->::v1::model::MetricSet::MergeFrom(from._internal_metric_set());
+    case kNumericSet: {
+      _internal_mutable_numeric_set()->::v1::model::NumericSet::MergeFrom(from._internal_numeric_set());
       break;
     }
     case kBitset: {
@@ -687,8 +687,8 @@ void Datapoint::clear_data() {
       delete data_.numeric_;
       break;
     }
-    case kMetricSet: {
-      delete data_.metric_set_;
+    case kNumericSet: {
+      delete data_.numeric_set_;
       break;
     }
     case kBitset: {
@@ -801,13 +801,6 @@ const char* Datapoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.MetricSet metric_set = 6[json_name = "metricSet"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
-          ptr = ctx->ParseMessage(_internal_mutable_metric_set(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
       // .v1.model.Bitset bitset = 7[json_name = "bitset"];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
@@ -875,6 +868,13 @@ const char* Datapoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
           ptr = ctx->ParseMessage(_internal_mutable_video(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.NumericSet numeric_set = 17[json_name = "numericSet"];
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
+          ptr = ctx->ParseMessage(_internal_mutable_numeric_set(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -981,14 +981,6 @@ failure:
         5, _Internal::numeric(this), target, stream);
   }
 
-  // .v1.model.MetricSet metric_set = 6[json_name = "metricSet"];
-  if (_internal_has_metric_set()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        6, _Internal::metric_set(this), target, stream);
-  }
-
   // .v1.model.Bitset bitset = 7[json_name = "bitset"];
   if (_internal_has_bitset()) {
     target = stream->EnsureSpace(target);
@@ -1069,6 +1061,14 @@ failure:
         16, _Internal::video(this), target, stream);
   }
 
+  // .v1.model.NumericSet numeric_set = 17[json_name = "numericSet"];
+  if (_internal_has_numeric_set()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        17, _Internal::numeric_set(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -1123,11 +1123,11 @@ size_t Datapoint::ByteSizeLong() const {
           *data_.numeric_);
       break;
     }
-    // .v1.model.MetricSet metric_set = 6[json_name = "metricSet"];
-    case kMetricSet: {
-      total_size += 1 +
+    // .v1.model.NumericSet numeric_set = 17[json_name = "numericSet"];
+    case kNumericSet: {
+      total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *data_.metric_set_);
+          *data_.numeric_set_);
       break;
     }
     // .v1.model.Bitset bitset = 7[json_name = "bitset"];
@@ -1252,8 +1252,8 @@ void Datapoint::MergeFrom(const Datapoint& from) {
       _internal_mutable_numeric()->::v1::model::Numeric::MergeFrom(from._internal_numeric());
       break;
     }
-    case kMetricSet: {
-      _internal_mutable_metric_set()->::v1::model::MetricSet::MergeFrom(from._internal_metric_set());
+    case kNumericSet: {
+      _internal_mutable_numeric_set()->::v1::model::NumericSet::MergeFrom(from._internal_numeric_set());
       break;
     }
     case kBitset: {

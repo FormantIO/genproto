@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.model',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
-  serialized_pb=b'\n\x1aprotos/model/v1/math.proto\x12\x08v1.model\"\x1f\n\x07Numeric\x12\x14\n\x05value\x18\x01 \x01(\x01R\x05value\"7\n\tMetricSet\x12*\n\x07metrics\x18\x01 \x03(\x0b\x32\x10.v1.model.MetricR\x07metrics\"2\n\x06Metric\x12\x14\n\x05value\x18\x01 \x01(\x01R\x05value\x12\x12\n\x04unit\x18\x02 \x01(\tR\x04unit\"-\n\x03\x42it\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\x08R\x05value\"+\n\x06\x42itset\x12!\n\x04\x62its\x18\x01 \x03(\x0b\x32\r.v1.model.BitR\x04\x62its\"_\n\x05Twist\x12)\n\x06linear\x18\x01 \x01(\x0b\x32\x11.v1.model.Vector3R\x06linear\x12+\n\x07\x61ngular\x18\x02 \x01(\x0b\x32\x11.v1.model.Vector3R\x07\x61ngular\"r\n\tTransform\x12\x33\n\x0btranslation\x18\x01 \x01(\x0b\x32\x11.v1.model.Vector3R\x0btranslation\x12\x30\n\x08rotation\x18\x02 \x01(\x0b\x32\x14.v1.model.QuaternionR\x08rotation\"\x87\x01\n\x0eTransformFrame\x12!\n\x0cparent_frame\x18\x01 \x01(\tR\x0bparentFrame\x12\x1f\n\x0b\x63hild_frame\x18\x02 \x01(\tR\nchildFrame\x12\x31\n\ttransform\x18\x03 \x01(\x0b\x32\x13.v1.model.TransformR\ttransform\"3\n\x07Vector3\x12\x0c\n\x01x\x18\x01 \x01(\x01R\x01x\x12\x0c\n\x01y\x18\x02 \x01(\x01R\x01y\x12\x0c\n\x01z\x18\x03 \x01(\x01R\x01z\"D\n\nQuaternion\x12\x0c\n\x01x\x18\x01 \x01(\x01R\x01x\x12\x0c\n\x01y\x18\x02 \x01(\x01R\x01y\x12\x0c\n\x01z\x18\x03 \x01(\x01R\x01z\x12\x0c\n\x01w\x18\x04 \x01(\x01R\x01wB+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x1aprotos/model/v1/math.proto\x12\x08v1.model\"\x1f\n\x07Numeric\x12\x14\n\x05value\x18\x01 \x01(\x01R\x05value\"Q\n\x0fNumericSetEntry\x12\x14\n\x05value\x18\x01 \x01(\x01R\x05value\x12\x14\n\x05label\x18\x02 \x01(\tR\x05label\x12\x12\n\x04unit\x18\x03 \x01(\tR\x04unit\"C\n\nNumericSet\x12\x35\n\x08numerics\x18\x01 \x03(\x0b\x32\x19.v1.model.NumericSetEntryR\x08numerics\"-\n\x03\x42it\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\x08R\x05value\"+\n\x06\x42itset\x12!\n\x04\x62its\x18\x01 \x03(\x0b\x32\r.v1.model.BitR\x04\x62its\"_\n\x05Twist\x12)\n\x06linear\x18\x01 \x01(\x0b\x32\x11.v1.model.Vector3R\x06linear\x12+\n\x07\x61ngular\x18\x02 \x01(\x0b\x32\x11.v1.model.Vector3R\x07\x61ngular\"r\n\tTransform\x12\x33\n\x0btranslation\x18\x01 \x01(\x0b\x32\x11.v1.model.Vector3R\x0btranslation\x12\x30\n\x08rotation\x18\x02 \x01(\x0b\x32\x14.v1.model.QuaternionR\x08rotation\"\x87\x01\n\x0eTransformFrame\x12!\n\x0cparent_frame\x18\x01 \x01(\tR\x0bparentFrame\x12\x1f\n\x0b\x63hild_frame\x18\x02 \x01(\tR\nchildFrame\x12\x31\n\ttransform\x18\x03 \x01(\x0b\x32\x13.v1.model.TransformR\ttransform\"3\n\x07Vector3\x12\x0c\n\x01x\x18\x01 \x01(\x01R\x01x\x12\x0c\n\x01y\x18\x02 \x01(\x01R\x01y\x12\x0c\n\x01z\x18\x03 \x01(\x01R\x01z\"D\n\nQuaternion\x12\x0c\n\x01x\x18\x01 \x01(\x01R\x01x\x12\x0c\n\x01y\x18\x02 \x01(\x01R\x01y\x12\x0c\n\x01z\x18\x03 \x01(\x01R\x01z\x12\x0c\n\x01w\x18\x04 \x01(\x01R\x01wB+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
 )
 
 
@@ -55,54 +55,30 @@ _NUMERIC = _descriptor.Descriptor(
 )
 
 
-_METRICSET = _descriptor.Descriptor(
-  name='MetricSet',
-  full_name='v1.model.MetricSet',
+_NUMERICSETENTRY = _descriptor.Descriptor(
+  name='NumericSetEntry',
+  full_name='v1.model.NumericSetEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='metrics', full_name='v1.model.MetricSet.metrics', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='metrics', file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=73,
-  serialized_end=128,
-)
-
-
-_METRIC = _descriptor.Descriptor(
-  name='Metric',
-  full_name='v1.model.Metric',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='v1.model.Metric.value', index=0,
+      name='value', full_name='v1.model.NumericSetEntry.value', index=0,
       number=1, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='value', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='unit', full_name='v1.model.Metric.unit', index=1,
+      name='label', full_name='v1.model.NumericSetEntry.label', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='label', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='unit', full_name='v1.model.NumericSetEntry.unit', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -119,8 +95,39 @@ _METRIC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=130,
-  serialized_end=180,
+  serialized_start=73,
+  serialized_end=154,
+)
+
+
+_NUMERICSET = _descriptor.Descriptor(
+  name='NumericSet',
+  full_name='v1.model.NumericSet',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='numerics', full_name='v1.model.NumericSet.numerics', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='numerics', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=156,
+  serialized_end=223,
 )
 
 
@@ -157,8 +164,8 @@ _BIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=182,
-  serialized_end=227,
+  serialized_start=225,
+  serialized_end=270,
 )
 
 
@@ -188,8 +195,8 @@ _BITSET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=229,
-  serialized_end=272,
+  serialized_start=272,
+  serialized_end=315,
 )
 
 
@@ -226,8 +233,8 @@ _TWIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=274,
-  serialized_end=369,
+  serialized_start=317,
+  serialized_end=412,
 )
 
 
@@ -264,8 +271,8 @@ _TRANSFORM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=371,
-  serialized_end=485,
+  serialized_start=414,
+  serialized_end=528,
 )
 
 
@@ -309,8 +316,8 @@ _TRANSFORMFRAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=488,
-  serialized_end=623,
+  serialized_start=531,
+  serialized_end=666,
 )
 
 
@@ -354,8 +361,8 @@ _VECTOR3 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=625,
-  serialized_end=676,
+  serialized_start=668,
+  serialized_end=719,
 )
 
 
@@ -406,11 +413,11 @@ _QUATERNION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=678,
-  serialized_end=746,
+  serialized_start=721,
+  serialized_end=789,
 )
 
-_METRICSET.fields_by_name['metrics'].message_type = _METRIC
+_NUMERICSET.fields_by_name['numerics'].message_type = _NUMERICSETENTRY
 _BITSET.fields_by_name['bits'].message_type = _BIT
 _TWIST.fields_by_name['linear'].message_type = _VECTOR3
 _TWIST.fields_by_name['angular'].message_type = _VECTOR3
@@ -418,8 +425,8 @@ _TRANSFORM.fields_by_name['translation'].message_type = _VECTOR3
 _TRANSFORM.fields_by_name['rotation'].message_type = _QUATERNION
 _TRANSFORMFRAME.fields_by_name['transform'].message_type = _TRANSFORM
 DESCRIPTOR.message_types_by_name['Numeric'] = _NUMERIC
-DESCRIPTOR.message_types_by_name['MetricSet'] = _METRICSET
-DESCRIPTOR.message_types_by_name['Metric'] = _METRIC
+DESCRIPTOR.message_types_by_name['NumericSetEntry'] = _NUMERICSETENTRY
+DESCRIPTOR.message_types_by_name['NumericSet'] = _NUMERICSET
 DESCRIPTOR.message_types_by_name['Bit'] = _BIT
 DESCRIPTOR.message_types_by_name['Bitset'] = _BITSET
 DESCRIPTOR.message_types_by_name['Twist'] = _TWIST
@@ -436,19 +443,19 @@ Numeric = _reflection.GeneratedProtocolMessageType('Numeric', (_message.Message,
   })
 _sym_db.RegisterMessage(Numeric)
 
-MetricSet = _reflection.GeneratedProtocolMessageType('MetricSet', (_message.Message,), {
-  'DESCRIPTOR' : _METRICSET,
+NumericSetEntry = _reflection.GeneratedProtocolMessageType('NumericSetEntry', (_message.Message,), {
+  'DESCRIPTOR' : _NUMERICSETENTRY,
   '__module__' : 'protos.model.v1.math_pb2'
-  # @@protoc_insertion_point(class_scope:v1.model.MetricSet)
+  # @@protoc_insertion_point(class_scope:v1.model.NumericSetEntry)
   })
-_sym_db.RegisterMessage(MetricSet)
+_sym_db.RegisterMessage(NumericSetEntry)
 
-Metric = _reflection.GeneratedProtocolMessageType('Metric', (_message.Message,), {
-  'DESCRIPTOR' : _METRIC,
+NumericSet = _reflection.GeneratedProtocolMessageType('NumericSet', (_message.Message,), {
+  'DESCRIPTOR' : _NUMERICSET,
   '__module__' : 'protos.model.v1.math_pb2'
-  # @@protoc_insertion_point(class_scope:v1.model.Metric)
+  # @@protoc_insertion_point(class_scope:v1.model.NumericSet)
   })
-_sym_db.RegisterMessage(Metric)
+_sym_db.RegisterMessage(NumericSet)
 
 Bit = _reflection.GeneratedProtocolMessageType('Bit', (_message.Message,), {
   'DESCRIPTOR' : _BIT,

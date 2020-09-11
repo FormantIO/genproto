@@ -15,7 +15,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Metric_protos_2fmodel_2fv1_2fmath_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Quaternion_protos_2fmodel_2fv1_2fmath_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector3_protos_2fmodel_2fv1_2fmath_2eproto;
@@ -25,14 +25,14 @@ class NumericDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Numeric> _instance;
 } _Numeric_default_instance_;
-class MetricSetDefaultTypeInternal {
+class NumericSetEntryDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MetricSet> _instance;
-} _MetricSet_default_instance_;
-class MetricDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<NumericSetEntry> _instance;
+} _NumericSetEntry_default_instance_;
+class NumericSetDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Metric> _instance;
-} _Metric_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<NumericSet> _instance;
+} _NumericSet_default_instance_;
 class BitDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Bit> _instance;
@@ -92,35 +92,6 @@ static void InitDefaultsscc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto}, {
       &scc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
 
-static void InitDefaultsscc_info_Metric_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Metric_default_instance_;
-    new (ptr) ::v1::model::Metric();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Metric::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Metric_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Metric_protos_2fmodel_2fv1_2fmath_2eproto}, {}};
-
-static void InitDefaultsscc_info_MetricSet_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_MetricSet_default_instance_;
-    new (ptr) ::v1::model::MetricSet();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::MetricSet::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_MetricSet_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_MetricSet_protos_2fmodel_2fv1_2fmath_2eproto}, {
-      &scc_info_Metric_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
-
 static void InitDefaultsscc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -134,6 +105,35 @@ static void InitDefaultsscc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto}, {}};
+
+static void InitDefaultsscc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::v1::model::_NumericSet_default_instance_;
+    new (ptr) ::v1::model::NumericSet();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::v1::model::NumericSet::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto}, {
+      &scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
+
+static void InitDefaultsscc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::v1::model::_NumericSetEntry_default_instance_;
+    new (ptr) ::v1::model::NumericSetEntry();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::v1::model::NumericSetEntry::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto}, {}};
 
 static void InitDefaultsscc_info_Quaternion_protos_2fmodel_2fv1_2fmath_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -221,18 +221,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fmath_2ep
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::v1::model::Numeric, value_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::v1::model::MetricSet, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::NumericSetEntry, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::v1::model::MetricSet, metrics_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::NumericSetEntry, value_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::NumericSetEntry, label_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::NumericSetEntry, unit_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::v1::model::Metric, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::NumericSet, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::v1::model::Metric, value_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::Metric, unit_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::NumericSet, numerics_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::Bit, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -288,21 +289,21 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fmath_2ep
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::v1::model::Numeric)},
-  { 6, -1, sizeof(::v1::model::MetricSet)},
-  { 12, -1, sizeof(::v1::model::Metric)},
-  { 19, -1, sizeof(::v1::model::Bit)},
-  { 26, -1, sizeof(::v1::model::Bitset)},
-  { 32, -1, sizeof(::v1::model::Twist)},
-  { 39, -1, sizeof(::v1::model::Transform)},
-  { 46, -1, sizeof(::v1::model::TransformFrame)},
-  { 54, -1, sizeof(::v1::model::Vector3)},
-  { 62, -1, sizeof(::v1::model::Quaternion)},
+  { 6, -1, sizeof(::v1::model::NumericSetEntry)},
+  { 14, -1, sizeof(::v1::model::NumericSet)},
+  { 20, -1, sizeof(::v1::model::Bit)},
+  { 27, -1, sizeof(::v1::model::Bitset)},
+  { 33, -1, sizeof(::v1::model::Twist)},
+  { 40, -1, sizeof(::v1::model::Transform)},
+  { 47, -1, sizeof(::v1::model::TransformFrame)},
+  { 55, -1, sizeof(::v1::model::Vector3)},
+  { 63, -1, sizeof(::v1::model::Quaternion)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Numeric_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_MetricSet_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Metric_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_NumericSetEntry_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_NumericSet_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Bit_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Bitset_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Twist_default_instance_),
@@ -314,34 +315,36 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fmath_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\032protos/model/v1/math.proto\022\010v1.model\"\037"
-  "\n\007Numeric\022\024\n\005value\030\001 \001(\001R\005value\"7\n\tMetri"
-  "cSet\022*\n\007metrics\030\001 \003(\0132\020.v1.model.MetricR"
-  "\007metrics\"2\n\006Metric\022\024\n\005value\030\001 \001(\001R\005value"
-  "\022\022\n\004unit\030\002 \001(\tR\004unit\"-\n\003Bit\022\020\n\003key\030\001 \001(\t"
-  "R\003key\022\024\n\005value\030\002 \001(\010R\005value\"+\n\006Bitset\022!\n"
-  "\004bits\030\001 \003(\0132\r.v1.model.BitR\004bits\"_\n\005Twis"
-  "t\022)\n\006linear\030\001 \001(\0132\021.v1.model.Vector3R\006li"
-  "near\022+\n\007angular\030\002 \001(\0132\021.v1.model.Vector3"
-  "R\007angular\"r\n\tTransform\0223\n\013translation\030\001 "
-  "\001(\0132\021.v1.model.Vector3R\013translation\0220\n\010r"
-  "otation\030\002 \001(\0132\024.v1.model.QuaternionR\010rot"
-  "ation\"\207\001\n\016TransformFrame\022!\n\014parent_frame"
-  "\030\001 \001(\tR\013parentFrame\022\037\n\013child_frame\030\002 \001(\t"
-  "R\nchildFrame\0221\n\ttransform\030\003 \001(\0132\023.v1.mod"
-  "el.TransformR\ttransform\"3\n\007Vector3\022\014\n\001x\030"
-  "\001 \001(\001R\001x\022\014\n\001y\030\002 \001(\001R\001y\022\014\n\001z\030\003 \001(\001R\001z\"D\n\n"
-  "Quaternion\022\014\n\001x\030\001 \001(\001R\001x\022\014\n\001y\030\002 \001(\001R\001y\022\014"
-  "\n\001z\030\003 \001(\001R\001z\022\014\n\001w\030\004 \001(\001R\001wB+Z)github.com"
-  "/FormantIO/genproto/go/v1/modelb\006proto3"
+  "\n\007Numeric\022\024\n\005value\030\001 \001(\001R\005value\"Q\n\017Numer"
+  "icSetEntry\022\024\n\005value\030\001 \001(\001R\005value\022\024\n\005labe"
+  "l\030\002 \001(\tR\005label\022\022\n\004unit\030\003 \001(\tR\004unit\"C\n\nNu"
+  "mericSet\0225\n\010numerics\030\001 \003(\0132\031.v1.model.Nu"
+  "mericSetEntryR\010numerics\"-\n\003Bit\022\020\n\003key\030\001 "
+  "\001(\tR\003key\022\024\n\005value\030\002 \001(\010R\005value\"+\n\006Bitset"
+  "\022!\n\004bits\030\001 \003(\0132\r.v1.model.BitR\004bits\"_\n\005T"
+  "wist\022)\n\006linear\030\001 \001(\0132\021.v1.model.Vector3R"
+  "\006linear\022+\n\007angular\030\002 \001(\0132\021.v1.model.Vect"
+  "or3R\007angular\"r\n\tTransform\0223\n\013translation"
+  "\030\001 \001(\0132\021.v1.model.Vector3R\013translation\0220"
+  "\n\010rotation\030\002 \001(\0132\024.v1.model.QuaternionR\010"
+  "rotation\"\207\001\n\016TransformFrame\022!\n\014parent_fr"
+  "ame\030\001 \001(\tR\013parentFrame\022\037\n\013child_frame\030\002 "
+  "\001(\tR\nchildFrame\0221\n\ttransform\030\003 \001(\0132\023.v1."
+  "model.TransformR\ttransform\"3\n\007Vector3\022\014\n"
+  "\001x\030\001 \001(\001R\001x\022\014\n\001y\030\002 \001(\001R\001y\022\014\n\001z\030\003 \001(\001R\001z\""
+  "D\n\nQuaternion\022\014\n\001x\030\001 \001(\001R\001x\022\014\n\001y\030\002 \001(\001R\001"
+  "y\022\014\n\001z\030\003 \001(\001R\001z\022\014\n\001w\030\004 \001(\001R\001wB+Z)github."
+  "com/FormantIO/genproto/go/v1/modelb\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_deps[1] = {
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_sccs[10] = {
   &scc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto.base,
   &scc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_Metric_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_MetricSet_protos_2fmodel_2fv1_2fmath_2eproto.base,
   &scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto.base,
+  &scc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto.base,
+  &scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto.base,
   &scc_info_Quaternion_protos_2fmodel_2fv1_2fmath_2eproto.base,
   &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,
   &scc_info_TransformFrame_protos_2fmodel_2fv1_2fmath_2eproto.base,
@@ -351,7 +354,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once;
 static bool descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto = {
-  &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fmath_2eproto, "protos/model/v1/math.proto", 799,
+  &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fmath_2eproto, "protos/model/v1/math.proto", 842,
   &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_deps, 10, 0,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fmath_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto, 10, file_level_enum_descriptors_protos_2fmodel_2fv1_2fmath_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fmath_2eproto,
@@ -548,70 +551,333 @@ void Numeric::InternalSwap(Numeric* other) {
 
 // ===================================================================
 
-void MetricSet::InitAsDefaultInstance() {
+void NumericSetEntry::InitAsDefaultInstance() {
 }
-class MetricSet::_Internal {
+class NumericSetEntry::_Internal {
  public:
 };
 
-MetricSet::MetricSet()
+NumericSetEntry::NumericSetEntry()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:v1.model.MetricSet)
+  // @@protoc_insertion_point(constructor:v1.model.NumericSetEntry)
 }
-MetricSet::MetricSet(const MetricSet& from)
+NumericSetEntry::NumericSetEntry(const NumericSetEntry& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
-      metrics_(from.metrics_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:v1.model.MetricSet)
+  label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_label().empty()) {
+    label_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.label_);
+  }
+  unit_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_unit().empty()) {
+    unit_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unit_);
+  }
+  value_ = from.value_;
+  // @@protoc_insertion_point(copy_constructor:v1.model.NumericSetEntry)
 }
 
-void MetricSet::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_MetricSet_protos_2fmodel_2fv1_2fmath_2eproto.base);
+void NumericSetEntry::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto.base);
+  label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  unit_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_ = 0;
 }
 
-MetricSet::~MetricSet() {
-  // @@protoc_insertion_point(destructor:v1.model.MetricSet)
+NumericSetEntry::~NumericSetEntry() {
+  // @@protoc_insertion_point(destructor:v1.model.NumericSetEntry)
   SharedDtor();
 }
 
-void MetricSet::SharedDtor() {
+void NumericSetEntry::SharedDtor() {
+  label_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  unit_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void MetricSet::SetCachedSize(int size) const {
+void NumericSetEntry::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const MetricSet& MetricSet::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_MetricSet_protos_2fmodel_2fv1_2fmath_2eproto.base);
+const NumericSetEntry& NumericSetEntry::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void MetricSet::Clear() {
-// @@protoc_insertion_point(message_clear_start:v1.model.MetricSet)
+void NumericSetEntry::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.model.NumericSetEntry)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  metrics_.Clear();
+  label_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  unit_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_ = 0;
   _internal_metadata_.Clear();
 }
 
-const char* MetricSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NumericSetEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .v1.model.Metric metrics = 1[json_name = "metrics"];
+      // double value = 1[json_name = "value"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+          value_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // string label = 2[json_name = "label"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_label();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.NumericSetEntry.label"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string unit = 3[json_name = "unit"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_unit();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.NumericSetEntry.unit"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* NumericSetEntry::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.model.NumericSetEntry)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // double value = 1[json_name = "value"];
+  if (!(this->value() <= 0 && this->value() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_value(), target);
+  }
+
+  // string label = 2[json_name = "label"];
+  if (this->label().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_label().data(), static_cast<int>(this->_internal_label().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.NumericSetEntry.label");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_label(), target);
+  }
+
+  // string unit = 3[json_name = "unit"];
+  if (this->unit().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_unit().data(), static_cast<int>(this->_internal_unit().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.NumericSetEntry.unit");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_unit(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.model.NumericSetEntry)
+  return target;
+}
+
+size_t NumericSetEntry::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.model.NumericSetEntry)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string label = 2[json_name = "label"];
+  if (this->label().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_label());
+  }
+
+  // string unit = 3[json_name = "unit"];
+  if (this->unit().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_unit());
+  }
+
+  // double value = 1[json_name = "value"];
+  if (!(this->value() <= 0 && this->value() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void NumericSetEntry::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.NumericSetEntry)
+  GOOGLE_DCHECK_NE(&from, this);
+  const NumericSetEntry* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<NumericSetEntry>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.NumericSetEntry)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.NumericSetEntry)
+    MergeFrom(*source);
+  }
+}
+
+void NumericSetEntry::MergeFrom(const NumericSetEntry& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.NumericSetEntry)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.label().size() > 0) {
+
+    label_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.label_);
+  }
+  if (from.unit().size() > 0) {
+
+    unit_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unit_);
+  }
+  if (!(from.value() <= 0 && from.value() >= 0)) {
+    _internal_set_value(from._internal_value());
+  }
+}
+
+void NumericSetEntry::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.NumericSetEntry)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void NumericSetEntry::CopyFrom(const NumericSetEntry& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.NumericSetEntry)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool NumericSetEntry::IsInitialized() const {
+  return true;
+}
+
+void NumericSetEntry::InternalSwap(NumericSetEntry* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  label_.Swap(&other->label_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  unit_.Swap(&other->unit_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(value_, other->value_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata NumericSetEntry::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void NumericSet::InitAsDefaultInstance() {
+}
+class NumericSet::_Internal {
+ public:
+};
+
+NumericSet::NumericSet()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:v1.model.NumericSet)
+}
+NumericSet::NumericSet(const NumericSet& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      numerics_(from.numerics_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:v1.model.NumericSet)
+}
+
+void NumericSet::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto.base);
+}
+
+NumericSet::~NumericSet() {
+  // @@protoc_insertion_point(destructor:v1.model.NumericSet)
+  SharedDtor();
+}
+
+void NumericSet::SharedDtor() {
+}
+
+void NumericSet::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const NumericSet& NumericSet::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void NumericSet::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.model.NumericSet)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  numerics_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* NumericSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .v1.model.NumericSetEntry numerics = 1[json_name = "numerics"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_metrics(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_numerics(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
@@ -637,39 +903,39 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* MetricSet::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* NumericSet::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:v1.model.MetricSet)
+  // @@protoc_insertion_point(serialize_to_array_start:v1.model.NumericSet)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .v1.model.Metric metrics = 1[json_name = "metrics"];
+  // repeated .v1.model.NumericSetEntry numerics = 1[json_name = "numerics"];
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_metrics_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_numerics_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_metrics(i), target, stream);
+      InternalWriteMessage(1, this->_internal_numerics(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:v1.model.MetricSet)
+  // @@protoc_insertion_point(serialize_to_array_end:v1.model.NumericSet)
   return target;
 }
 
-size_t MetricSet::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:v1.model.MetricSet)
+size_t NumericSet::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.model.NumericSet)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .v1.model.Metric metrics = 1[json_name = "metrics"];
-  total_size += 1UL * this->_internal_metrics_size();
-  for (const auto& msg : this->metrics_) {
+  // repeated .v1.model.NumericSetEntry numerics = 1[json_name = "numerics"];
+  total_size += 1UL * this->_internal_numerics_size();
+  for (const auto& msg : this->numerics_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -683,280 +949,56 @@ size_t MetricSet::ByteSizeLong() const {
   return total_size;
 }
 
-void MetricSet::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:v1.model.MetricSet)
+void NumericSet::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.NumericSet)
   GOOGLE_DCHECK_NE(&from, this);
-  const MetricSet* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<MetricSet>(
+  const NumericSet* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<NumericSet>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.MetricSet)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.NumericSet)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.MetricSet)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.NumericSet)
     MergeFrom(*source);
   }
 }
 
-void MetricSet::MergeFrom(const MetricSet& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.MetricSet)
+void NumericSet::MergeFrom(const NumericSet& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.NumericSet)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  metrics_.MergeFrom(from.metrics_);
+  numerics_.MergeFrom(from.numerics_);
 }
 
-void MetricSet::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:v1.model.MetricSet)
+void NumericSet::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.NumericSet)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void MetricSet::CopyFrom(const MetricSet& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.MetricSet)
+void NumericSet::CopyFrom(const NumericSet& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.NumericSet)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool MetricSet::IsInitialized() const {
+bool NumericSet::IsInitialized() const {
   return true;
 }
 
-void MetricSet::InternalSwap(MetricSet* other) {
+void NumericSet::InternalSwap(NumericSet* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  metrics_.InternalSwap(&other->metrics_);
+  numerics_.InternalSwap(&other->numerics_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata MetricSet::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void Metric::InitAsDefaultInstance() {
-}
-class Metric::_Internal {
- public:
-};
-
-Metric::Metric()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:v1.model.Metric)
-}
-Metric::Metric(const Metric& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  unit_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_unit().empty()) {
-    unit_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unit_);
-  }
-  value_ = from.value_;
-  // @@protoc_insertion_point(copy_constructor:v1.model.Metric)
-}
-
-void Metric::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Metric_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  unit_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  value_ = 0;
-}
-
-Metric::~Metric() {
-  // @@protoc_insertion_point(destructor:v1.model.Metric)
-  SharedDtor();
-}
-
-void Metric::SharedDtor() {
-  unit_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void Metric::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const Metric& Metric::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Metric_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void Metric::Clear() {
-// @@protoc_insertion_point(message_clear_start:v1.model.Metric)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  unit_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  value_ = 0;
-  _internal_metadata_.Clear();
-}
-
-const char* Metric::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // double value = 1[json_name = "value"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
-          value_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
-        } else goto handle_unusual;
-        continue;
-      // string unit = 2[json_name = "unit"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_unit();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Metric.unit"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* Metric::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:v1.model.Metric)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // double value = 1[json_name = "value"];
-  if (!(this->value() <= 0 && this->value() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_value(), target);
-  }
-
-  // string unit = 2[json_name = "unit"];
-  if (this->unit().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_unit().data(), static_cast<int>(this->_internal_unit().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "v1.model.Metric.unit");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_unit(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:v1.model.Metric)
-  return target;
-}
-
-size_t Metric::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:v1.model.Metric)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string unit = 2[json_name = "unit"];
-  if (this->unit().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_unit());
-  }
-
-  // double value = 1[json_name = "value"];
-  if (!(this->value() <= 0 && this->value() >= 0)) {
-    total_size += 1 + 8;
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Metric::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Metric)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Metric* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Metric>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Metric)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Metric)
-    MergeFrom(*source);
-  }
-}
-
-void Metric::MergeFrom(const Metric& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Metric)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.unit().size() > 0) {
-
-    unit_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unit_);
-  }
-  if (!(from.value() <= 0 && from.value() >= 0)) {
-    _internal_set_value(from._internal_value());
-  }
-}
-
-void Metric::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Metric)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void Metric::CopyFrom(const Metric& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.Metric)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Metric::IsInitialized() const {
-  return true;
-}
-
-void Metric::InternalSwap(Metric* other) {
-  using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  unit_.Swap(&other->unit_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(value_, other->value_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata Metric::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata NumericSet::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -2653,11 +2695,11 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::v1::model::Numeric* Arena::CreateMaybeMessage< ::v1::model::Numeric >(Arena* arena) {
   return Arena::CreateInternal< ::v1::model::Numeric >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::MetricSet* Arena::CreateMaybeMessage< ::v1::model::MetricSet >(Arena* arena) {
-  return Arena::CreateInternal< ::v1::model::MetricSet >(arena);
+template<> PROTOBUF_NOINLINE ::v1::model::NumericSetEntry* Arena::CreateMaybeMessage< ::v1::model::NumericSetEntry >(Arena* arena) {
+  return Arena::CreateInternal< ::v1::model::NumericSetEntry >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::Metric* Arena::CreateMaybeMessage< ::v1::model::Metric >(Arena* arena) {
-  return Arena::CreateInternal< ::v1::model::Metric >(arena);
+template<> PROTOBUF_NOINLINE ::v1::model::NumericSet* Arena::CreateMaybeMessage< ::v1::model::NumericSet >(Arena* arena) {
+  return Arena::CreateInternal< ::v1::model::NumericSet >(arena);
 }
 template<> PROTOBUF_NOINLINE ::v1::model::Bit* Arena::CreateMaybeMessage< ::v1::model::Bit >(Arena* arena) {
   return Arena::CreateInternal< ::v1::model::Bit >(arena);
