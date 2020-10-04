@@ -53,7 +53,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[19]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -80,6 +80,9 @@ extern ApplicationConfigurationDefaultTypeInternal _ApplicationConfiguration_def
 class ApplicationConfiguration_ConfigurationMapEntry_DoNotUse;
 class ApplicationConfiguration_ConfigurationMapEntry_DoNotUseDefaultTypeInternal;
 extern ApplicationConfiguration_ConfigurationMapEntry_DoNotUseDefaultTypeInternal _ApplicationConfiguration_ConfigurationMapEntry_DoNotUse_default_instance_;
+class BlobData;
+class BlobDataDefaultTypeInternal;
+extern BlobDataDefaultTypeInternal _BlobData_default_instance_;
 class Custom;
 class CustomDefaultTypeInternal;
 extern CustomDefaultTypeInternal _Custom_default_instance_;
@@ -125,6 +128,7 @@ template<> ::v1::model::AgentConfigurationDocument_TagsEntry_DoNotUse* Arena::Cr
 template<> ::v1::model::AgentConfigurationStore* Arena::CreateMaybeMessage<::v1::model::AgentConfigurationStore>(Arena*);
 template<> ::v1::model::ApplicationConfiguration* Arena::CreateMaybeMessage<::v1::model::ApplicationConfiguration>(Arena*);
 template<> ::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse>(Arena*);
+template<> ::v1::model::BlobData* Arena::CreateMaybeMessage<::v1::model::BlobData>(Arena*);
 template<> ::v1::model::Custom* Arena::CreateMaybeMessage<::v1::model::Custom>(Arena*);
 template<> ::v1::model::DirectoryWatch* Arena::CreateMaybeMessage<::v1::model::DirectoryWatch>(Arena*);
 template<> ::v1::model::DiskConfiguration* Arena::CreateMaybeMessage<::v1::model::DiskConfiguration>(Arena*);
@@ -689,6 +693,7 @@ class AgentConfigurationDocument :
     kApplicationFieldNumber = 5,
     kTeleopFieldNumber = 6,
     kPortForwardingFieldNumber = 7,
+    kBlobDataFieldNumber = 8,
     kVersionFieldNumber = 1,
   };
   // map<string, string> tags = 2[json_name = "tags"];
@@ -783,6 +788,21 @@ class AgentConfigurationDocument :
   ::v1::model::PortForwardingConfiguration* _internal_mutable_port_forwarding();
   public:
 
+  // .v1.model.BlobData blob_data = 8[json_name = "blobData"];
+  bool has_blob_data() const;
+  private:
+  bool _internal_has_blob_data() const;
+  public:
+  void clear_blob_data();
+  const ::v1::model::BlobData& blob_data() const;
+  ::v1::model::BlobData* release_blob_data();
+  ::v1::model::BlobData* mutable_blob_data();
+  void set_allocated_blob_data(::v1::model::BlobData* blob_data);
+  private:
+  const ::v1::model::BlobData& _internal_blob_data() const;
+  ::v1::model::BlobData* _internal_mutable_blob_data();
+  public:
+
   // int64 version = 1[json_name = "version"];
   void clear_version();
   ::PROTOBUF_NAMESPACE_ID::int64 version() const;
@@ -808,6 +828,7 @@ class AgentConfigurationDocument :
   ::v1::model::ApplicationConfiguration* application_;
   ::v1::model::TeleopConfiguration* teleop_;
   ::v1::model::PortForwardingConfiguration* port_forwarding_;
+  ::v1::model::BlobData* blob_data_;
   ::PROTOBUF_NAMESPACE_ID::int64 version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
@@ -2381,6 +2402,141 @@ class StreamConfiguration :
 };
 // -------------------------------------------------------------------
 
+class BlobData :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.BlobData) */ {
+ public:
+  BlobData();
+  virtual ~BlobData();
+
+  BlobData(const BlobData& from);
+  BlobData(BlobData&& from) noexcept
+    : BlobData() {
+    *this = ::std::move(from);
+  }
+
+  inline BlobData& operator=(const BlobData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BlobData& operator=(BlobData&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const BlobData& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const BlobData* internal_default_instance() {
+    return reinterpret_cast<const BlobData*>(
+               &_BlobData_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(BlobData& a, BlobData& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BlobData* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline BlobData* New() const final {
+    return CreateMaybeMessage<BlobData>(nullptr);
+  }
+
+  BlobData* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<BlobData>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const BlobData& from);
+  void MergeFrom(const BlobData& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BlobData* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.BlobData";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 1,
+  };
+  // string data = 1[json_name = "data"];
+  void clear_data();
+  const std::string& data() const;
+  void set_data(const std::string& value);
+  void set_data(std::string&& value);
+  void set_data(const char* value);
+  void set_data(const char* value, size_t size);
+  std::string* mutable_data();
+  std::string* release_data();
+  void set_allocated_data(std::string* data);
+  private:
+  const std::string& _internal_data() const;
+  void _internal_set_data(const std::string& value);
+  std::string* _internal_mutable_data();
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.BlobData)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr data_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Custom :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.Custom) */ {
  public:
@@ -2423,7 +2579,7 @@ class Custom :
                &_Custom_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(Custom& a, Custom& b) {
     a.Swap(&b);
@@ -2538,7 +2694,7 @@ class DirectoryWatch :
                &_DirectoryWatch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(DirectoryWatch& a, DirectoryWatch& b) {
     a.Swap(&b);
@@ -2713,7 +2869,7 @@ class FileTail :
                &_FileTail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(FileTail& a, FileTail& b) {
     a.Swap(&b);
@@ -3537,6 +3693,66 @@ inline void AgentConfigurationDocument::set_allocated_port_forwarding(::v1::mode
   }
   port_forwarding_ = port_forwarding;
   // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationDocument.port_forwarding)
+}
+
+// .v1.model.BlobData blob_data = 8[json_name = "blobData"];
+inline bool AgentConfigurationDocument::_internal_has_blob_data() const {
+  return this != internal_default_instance() && blob_data_ != nullptr;
+}
+inline bool AgentConfigurationDocument::has_blob_data() const {
+  return _internal_has_blob_data();
+}
+inline void AgentConfigurationDocument::clear_blob_data() {
+  if (GetArenaNoVirtual() == nullptr && blob_data_ != nullptr) {
+    delete blob_data_;
+  }
+  blob_data_ = nullptr;
+}
+inline const ::v1::model::BlobData& AgentConfigurationDocument::_internal_blob_data() const {
+  const ::v1::model::BlobData* p = blob_data_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::v1::model::BlobData*>(
+      &::v1::model::_BlobData_default_instance_);
+}
+inline const ::v1::model::BlobData& AgentConfigurationDocument::blob_data() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentConfigurationDocument.blob_data)
+  return _internal_blob_data();
+}
+inline ::v1::model::BlobData* AgentConfigurationDocument::release_blob_data() {
+  // @@protoc_insertion_point(field_release:v1.model.AgentConfigurationDocument.blob_data)
+  
+  ::v1::model::BlobData* temp = blob_data_;
+  blob_data_ = nullptr;
+  return temp;
+}
+inline ::v1::model::BlobData* AgentConfigurationDocument::_internal_mutable_blob_data() {
+  
+  if (blob_data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::BlobData>(GetArenaNoVirtual());
+    blob_data_ = p;
+  }
+  return blob_data_;
+}
+inline ::v1::model::BlobData* AgentConfigurationDocument::mutable_blob_data() {
+  // @@protoc_insertion_point(field_mutable:v1.model.AgentConfigurationDocument.blob_data)
+  return _internal_mutable_blob_data();
+}
+inline void AgentConfigurationDocument::set_allocated_blob_data(::v1::model::BlobData* blob_data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete blob_data_;
+  }
+  if (blob_data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      blob_data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, blob_data, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  blob_data_ = blob_data;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationDocument.blob_data)
 }
 
 // -------------------------------------------------------------------
@@ -4683,6 +4899,70 @@ inline StreamConfiguration::ConfigurationCase StreamConfiguration::configuration
 }
 // -------------------------------------------------------------------
 
+// BlobData
+
+// string data = 1[json_name = "data"];
+inline void BlobData::clear_data() {
+  data_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& BlobData::data() const {
+  // @@protoc_insertion_point(field_get:v1.model.BlobData.data)
+  return _internal_data();
+}
+inline void BlobData::set_data(const std::string& value) {
+  _internal_set_data(value);
+  // @@protoc_insertion_point(field_set:v1.model.BlobData.data)
+}
+inline std::string* BlobData::mutable_data() {
+  // @@protoc_insertion_point(field_mutable:v1.model.BlobData.data)
+  return _internal_mutable_data();
+}
+inline const std::string& BlobData::_internal_data() const {
+  return data_.GetNoArena();
+}
+inline void BlobData::_internal_set_data(const std::string& value) {
+  
+  data_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void BlobData::set_data(std::string&& value) {
+  
+  data_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.BlobData.data)
+}
+inline void BlobData::set_data(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  data_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:v1.model.BlobData.data)
+}
+inline void BlobData::set_data(const char* value, size_t size) {
+  
+  data_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:v1.model.BlobData.data)
+}
+inline std::string* BlobData::_internal_mutable_data() {
+  
+  return data_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* BlobData::release_data() {
+  // @@protoc_insertion_point(field_release:v1.model.BlobData.data)
+  
+  return data_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void BlobData::set_allocated_data(std::string* data) {
+  if (data != nullptr) {
+    
+  } else {
+    
+  }
+  data_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), data);
+  // @@protoc_insertion_point(field_set_allocated:v1.model.BlobData.data)
+}
+
+// -------------------------------------------------------------------
+
 // Custom
 
 // -------------------------------------------------------------------
@@ -5116,6 +5396,8 @@ inline void FileTail::set_allocated_regex(std::string* regex) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -62,6 +62,11 @@ class AgentStub(object):
         request_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetApplicationConfigurationRequest.SerializeToString,
         response_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetApplicationConfigurationResponse.FromString,
         )
+    self.GetConfigBlobData = channel.unary_unary(
+        '/v1.agent.Agent/GetConfigBlobData',
+        request_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetConfigBlobDataRequest.SerializeToString,
+        response_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetConfigBlobDataResponse.FromString,
+        )
     self.GetAgentConfiguration = channel.unary_unary(
         '/v1.agent.Agent/GetAgentConfiguration',
         request_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetAgentConfigurationRequest.SerializeToString,
@@ -171,6 +176,13 @@ class AgentServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetConfigBlobData(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetAgentConfiguration(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -274,6 +286,11 @@ def add_AgentServicer_to_server(servicer, server):
           servicer.GetApplicationConfiguration,
           request_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetApplicationConfigurationRequest.FromString,
           response_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetApplicationConfigurationResponse.SerializeToString,
+      ),
+      'GetConfigBlobData': grpc.unary_unary_rpc_method_handler(
+          servicer.GetConfigBlobData,
+          request_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetConfigBlobDataRequest.FromString,
+          response_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetConfigBlobDataResponse.SerializeToString,
       ),
       'GetAgentConfiguration': grpc.unary_unary_rpc_method_handler(
           servicer.GetAgentConfiguration,

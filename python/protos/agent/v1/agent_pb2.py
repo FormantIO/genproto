@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.agent',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/agent',
-  serialized_pb=b'\n\x1bprotos/agent/v1/agent.proto\x12\x08v1.agent\x1a\x1fprotos/model/v1/datapoint.proto\x1a\"protos/model/v1/intervention.proto\x1a\x1eprotos/model/v1/commands.proto\x1a\x1cprotos/model/v1/config.proto\x1a\x1aprotos/model/v1/math.proto\x1a\x1bprotos/model/v1/event.proto\"\x14\n\x12StreamDataResponse\"\x12\n\x10PostDataResponse\"q\n\rPostDataError\x12\x14\n\x05index\x18\x01 \x01(\rR\x05index\x12\x12\n\x04\x63ode\x18\x02 \x01(\rR\x04\x63ode\x12\x1c\n\tretryable\x18\x03 \x01(\x08R\tretryable\x12\x18\n\x07message\x18\x04 \x01(\tR\x07message\"K\n\x14PostDataMultiRequest\x12\x33\n\ndatapoints\x18\x01 \x03(\x0b\x32\x13.v1.model.DatapointR\ndatapoints\"\x17\n\x15PostDataMultiResponse\"E\n\x12PostDataMultiError\x12/\n\x06\x65rrors\x18\x01 \x03(\x0b\x32\x17.v1.agent.PostDataErrorR\x06\x65rrors\"/\n\x1dGetInterventionRequestRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"?\n\x1eGetInterventionResponseRequest\x12\x1d\n\nrequest_id\x18\x01 \x01(\tR\trequestId\" \n\x1eGetStreamsConfigurationRequest\"Z\n\x1fGetStreamsConfigurationResponse\x12\x37\n\x07streams\x18\x01 \x03(\x0b\x32\x1d.v1.model.StreamConfigurationR\x07streams\"$\n\"GetApplicationConfigurationRequest\"o\n#GetApplicationConfigurationResponse\x12H\n\rconfiguration\x18\x01 \x01(\x0b\x32\".v1.model.ApplicationConfigurationR\rconfiguration\"\x1e\n\x1cGetAgentConfigurationRequest\"c\n\x1dGetAgentConfigurationResponse\x12\x42\n\rconfiguration\x18\x01 \x01(\x0b\x32\x1c.v1.model.AgentConfigurationR\rconfiguration\"\x0f\n\rHealthRequest\"\x10\n\x0eHealthResponse\"A\n\x18GetCommandRequestRequest\x12%\n\x0e\x63ommand_filter\x18\x01 \x03(\tR\rcommandFilter\"O\n\x19GetCommandRequestResponse\x12\x32\n\x07request\x18\x01 \x01(\x0b\x32\x18.v1.model.CommandRequestR\x07request\"S\n\x1aSendCommandResponseRequest\x12\x35\n\x08response\x18\x01 \x01(\x0b\x32\x19.v1.model.CommandResponseR\x08response\"\x1d\n\x1bSendCommandResponseResponse\"G\n\x1eGetCommandRequestStreamRequest\x12%\n\x0e\x63ommand_filter\x18\x01 \x03(\tR\rcommandFilter\"U\n\x1fGetCommandRequestStreamResponse\x12\x32\n\x07request\x18\x01 \x01(\x0b\x32\x18.v1.model.CommandRequestR\x07request\"\x1c\n\x1aPostTransformFrameResponse\"\'\n\x15SetBaseFrameIDRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"\x18\n\x16SetBaseFrameIDResponse\"\x1b\n\x19\x43learTransformTreeRequest\"\x1c\n\x1a\x43learTransformTreeResponse\";\n\x12\x43reateEventRequest\x12%\n\x05\x65vent\x18\x01 \x01(\x0b\x32\x0f.v1.model.EventR\x05\x65vent\"\x15\n\x13\x43reateEventResponse\"0\n\x10\x43reateEventError\x12\x1c\n\tretryable\x18\x01 \x01(\x08R\tretryable2\xbc\x0c\n\x05\x41gent\x12\x43\n\nStreamData\x12\x13.v1.model.Datapoint\x1a\x1c.v1.agent.StreamDataResponse\"\x00(\x01\x12=\n\x08PostData\x12\x13.v1.model.Datapoint\x1a\x1a.v1.agent.PostDataResponse\"\x00\x12R\n\rPostDataMulti\x12\x1e.v1.agent.PostDataMultiRequest\x1a\x1f.v1.agent.PostDataMultiResponse\"\x00\x12L\n\x0b\x43reateEvent\x12\x1c.v1.agent.CreateEventRequest\x1a\x1d.v1.agent.CreateEventResponse\"\x00\x12[\n\x19\x43reateInterventionRequest\x12\x1d.v1.model.InterventionRequest\x1a\x1d.v1.model.InterventionRequest\"\x00\x12\x62\n\x16GetInterventionRequest\x12\'.v1.agent.GetInterventionRequestRequest\x1a\x1d.v1.model.InterventionRequest\"\x00\x12\x65\n\x17GetInterventionResponse\x12(.v1.agent.GetInterventionResponseRequest\x1a\x1e.v1.model.InterventionResponse\"\x00\x12p\n\x17GetStreamsConfiguration\x12(.v1.agent.GetStreamsConfigurationRequest\x1a).v1.agent.GetStreamsConfigurationResponse\"\x00\x12|\n\x1bGetApplicationConfiguration\x12,.v1.agent.GetApplicationConfigurationRequest\x1a-.v1.agent.GetApplicationConfigurationResponse\"\x00\x12j\n\x15GetAgentConfiguration\x12&.v1.agent.GetAgentConfigurationRequest\x1a\'.v1.agent.GetAgentConfigurationResponse\"\x00\x12=\n\x06Health\x12\x17.v1.agent.HealthRequest\x1a\x18.v1.agent.HealthResponse\"\x00\x12^\n\x11GetCommandRequest\x12\".v1.agent.GetCommandRequestRequest\x1a#.v1.agent.GetCommandRequestResponse\"\x00\x12r\n\x17GetCommandRequestStream\x12(.v1.agent.GetCommandRequestStreamRequest\x1a).v1.agent.GetCommandRequestStreamResponse\"\x00\x30\x01\x12\x64\n\x13SendCommandResponse\x12$.v1.agent.SendCommandResponseRequest\x1a%.v1.agent.SendCommandResponseResponse\"\x00\x12V\n\x12PostTransformFrame\x12\x18.v1.model.TransformFrame\x1a$.v1.agent.PostTransformFrameResponse\"\x00\x12U\n\x0eSetBaseFrameID\x12\x1f.v1.agent.SetBaseFrameIDRequest\x1a .v1.agent.SetBaseFrameIDResponse\"\x00\x12\x61\n\x12\x43learTransformTree\x12#.v1.agent.ClearTransformTreeRequest\x1a$.v1.agent.ClearTransformTreeResponse\"\x00\x42+Z)github.com/FormantIO/genproto/go/v1/agentb\x06proto3'
+  serialized_pb=b'\n\x1bprotos/agent/v1/agent.proto\x12\x08v1.agent\x1a\x1fprotos/model/v1/datapoint.proto\x1a\"protos/model/v1/intervention.proto\x1a\x1eprotos/model/v1/commands.proto\x1a\x1cprotos/model/v1/config.proto\x1a\x1aprotos/model/v1/math.proto\x1a\x1bprotos/model/v1/event.proto\"\x14\n\x12StreamDataResponse\"\x12\n\x10PostDataResponse\"q\n\rPostDataError\x12\x14\n\x05index\x18\x01 \x01(\rR\x05index\x12\x12\n\x04\x63ode\x18\x02 \x01(\rR\x04\x63ode\x12\x1c\n\tretryable\x18\x03 \x01(\x08R\tretryable\x12\x18\n\x07message\x18\x04 \x01(\tR\x07message\"K\n\x14PostDataMultiRequest\x12\x33\n\ndatapoints\x18\x01 \x03(\x0b\x32\x13.v1.model.DatapointR\ndatapoints\"\x17\n\x15PostDataMultiResponse\"E\n\x12PostDataMultiError\x12/\n\x06\x65rrors\x18\x01 \x03(\x0b\x32\x17.v1.agent.PostDataErrorR\x06\x65rrors\"/\n\x1dGetInterventionRequestRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"?\n\x1eGetInterventionResponseRequest\x12\x1d\n\nrequest_id\x18\x01 \x01(\tR\trequestId\" \n\x1eGetStreamsConfigurationRequest\"Z\n\x1fGetStreamsConfigurationResponse\x12\x37\n\x07streams\x18\x01 \x03(\x0b\x32\x1d.v1.model.StreamConfigurationR\x07streams\"$\n\"GetApplicationConfigurationRequest\"o\n#GetApplicationConfigurationResponse\x12H\n\rconfiguration\x18\x01 \x01(\x0b\x32\".v1.model.ApplicationConfigurationR\rconfiguration\"\x1a\n\x18GetConfigBlobDataRequest\"L\n\x19GetConfigBlobDataResponse\x12/\n\tblob_data\x18\x01 \x01(\x0b\x32\x12.v1.model.BlobDataR\x08\x62lobData\"\x1e\n\x1cGetAgentConfigurationRequest\"c\n\x1dGetAgentConfigurationResponse\x12\x42\n\rconfiguration\x18\x01 \x01(\x0b\x32\x1c.v1.model.AgentConfigurationR\rconfiguration\"\x0f\n\rHealthRequest\"\x10\n\x0eHealthResponse\"A\n\x18GetCommandRequestRequest\x12%\n\x0e\x63ommand_filter\x18\x01 \x03(\tR\rcommandFilter\"O\n\x19GetCommandRequestResponse\x12\x32\n\x07request\x18\x01 \x01(\x0b\x32\x18.v1.model.CommandRequestR\x07request\"S\n\x1aSendCommandResponseRequest\x12\x35\n\x08response\x18\x01 \x01(\x0b\x32\x19.v1.model.CommandResponseR\x08response\"\x1d\n\x1bSendCommandResponseResponse\"G\n\x1eGetCommandRequestStreamRequest\x12%\n\x0e\x63ommand_filter\x18\x01 \x03(\tR\rcommandFilter\"U\n\x1fGetCommandRequestStreamResponse\x12\x32\n\x07request\x18\x01 \x01(\x0b\x32\x18.v1.model.CommandRequestR\x07request\"\x1c\n\x1aPostTransformFrameResponse\"\'\n\x15SetBaseFrameIDRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"\x18\n\x16SetBaseFrameIDResponse\"\x1b\n\x19\x43learTransformTreeRequest\"\x1c\n\x1a\x43learTransformTreeResponse\";\n\x12\x43reateEventRequest\x12%\n\x05\x65vent\x18\x01 \x01(\x0b\x32\x0f.v1.model.EventR\x05\x65vent\"\x15\n\x13\x43reateEventResponse\"0\n\x10\x43reateEventError\x12\x1c\n\tretryable\x18\x01 \x01(\x08R\tretryable2\x9c\r\n\x05\x41gent\x12\x43\n\nStreamData\x12\x13.v1.model.Datapoint\x1a\x1c.v1.agent.StreamDataResponse\"\x00(\x01\x12=\n\x08PostData\x12\x13.v1.model.Datapoint\x1a\x1a.v1.agent.PostDataResponse\"\x00\x12R\n\rPostDataMulti\x12\x1e.v1.agent.PostDataMultiRequest\x1a\x1f.v1.agent.PostDataMultiResponse\"\x00\x12L\n\x0b\x43reateEvent\x12\x1c.v1.agent.CreateEventRequest\x1a\x1d.v1.agent.CreateEventResponse\"\x00\x12[\n\x19\x43reateInterventionRequest\x12\x1d.v1.model.InterventionRequest\x1a\x1d.v1.model.InterventionRequest\"\x00\x12\x62\n\x16GetInterventionRequest\x12\'.v1.agent.GetInterventionRequestRequest\x1a\x1d.v1.model.InterventionRequest\"\x00\x12\x65\n\x17GetInterventionResponse\x12(.v1.agent.GetInterventionResponseRequest\x1a\x1e.v1.model.InterventionResponse\"\x00\x12p\n\x17GetStreamsConfiguration\x12(.v1.agent.GetStreamsConfigurationRequest\x1a).v1.agent.GetStreamsConfigurationResponse\"\x00\x12|\n\x1bGetApplicationConfiguration\x12,.v1.agent.GetApplicationConfigurationRequest\x1a-.v1.agent.GetApplicationConfigurationResponse\"\x00\x12^\n\x11GetConfigBlobData\x12\".v1.agent.GetConfigBlobDataRequest\x1a#.v1.agent.GetConfigBlobDataResponse\"\x00\x12j\n\x15GetAgentConfiguration\x12&.v1.agent.GetAgentConfigurationRequest\x1a\'.v1.agent.GetAgentConfigurationResponse\"\x00\x12=\n\x06Health\x12\x17.v1.agent.HealthRequest\x1a\x18.v1.agent.HealthResponse\"\x00\x12^\n\x11GetCommandRequest\x12\".v1.agent.GetCommandRequestRequest\x1a#.v1.agent.GetCommandRequestResponse\"\x00\x12r\n\x17GetCommandRequestStream\x12(.v1.agent.GetCommandRequestStreamRequest\x1a).v1.agent.GetCommandRequestStreamResponse\"\x00\x30\x01\x12\x64\n\x13SendCommandResponse\x12$.v1.agent.SendCommandResponseRequest\x1a%.v1.agent.SendCommandResponseResponse\"\x00\x12V\n\x12PostTransformFrame\x12\x18.v1.model.TransformFrame\x1a$.v1.agent.PostTransformFrameResponse\"\x00\x12U\n\x0eSetBaseFrameID\x12\x1f.v1.agent.SetBaseFrameIDRequest\x1a .v1.agent.SetBaseFrameIDResponse\"\x00\x12\x61\n\x12\x43learTransformTree\x12#.v1.agent.ClearTransformTreeRequest\x1a$.v1.agent.ClearTransformTreeResponse\"\x00\x42+Z)github.com/FormantIO/genproto/go/v1/agentb\x06proto3'
   ,
   dependencies=[protos_dot_model_dot_v1_dot_datapoint__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_intervention__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_commands__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_config__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_math__pb2.DESCRIPTOR,protos_dot_model_dot_v1_dot_event__pb2.DESCRIPTOR,])
 
@@ -389,6 +389,61 @@ _GETAPPLICATIONCONFIGURATIONRESPONSE = _descriptor.Descriptor(
 )
 
 
+_GETCONFIGBLOBDATAREQUEST = _descriptor.Descriptor(
+  name='GetConfigBlobDataRequest',
+  full_name='v1.agent.GetConfigBlobDataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=950,
+  serialized_end=976,
+)
+
+
+_GETCONFIGBLOBDATARESPONSE = _descriptor.Descriptor(
+  name='GetConfigBlobDataResponse',
+  full_name='v1.agent.GetConfigBlobDataResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='blob_data', full_name='v1.agent.GetConfigBlobDataResponse.blob_data', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='blobData', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=978,
+  serialized_end=1054,
+)
+
+
 _GETAGENTCONFIGURATIONREQUEST = _descriptor.Descriptor(
   name='GetAgentConfigurationRequest',
   full_name='v1.agent.GetAgentConfigurationRequest',
@@ -408,8 +463,8 @@ _GETAGENTCONFIGURATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=950,
-  serialized_end=980,
+  serialized_start=1056,
+  serialized_end=1086,
 )
 
 
@@ -439,8 +494,8 @@ _GETAGENTCONFIGURATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=982,
-  serialized_end=1081,
+  serialized_start=1088,
+  serialized_end=1187,
 )
 
 
@@ -463,8 +518,8 @@ _HEALTHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1083,
-  serialized_end=1098,
+  serialized_start=1189,
+  serialized_end=1204,
 )
 
 
@@ -487,8 +542,8 @@ _HEALTHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1100,
-  serialized_end=1116,
+  serialized_start=1206,
+  serialized_end=1222,
 )
 
 
@@ -518,8 +573,8 @@ _GETCOMMANDREQUESTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1118,
-  serialized_end=1183,
+  serialized_start=1224,
+  serialized_end=1289,
 )
 
 
@@ -549,8 +604,8 @@ _GETCOMMANDREQUESTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1185,
-  serialized_end=1264,
+  serialized_start=1291,
+  serialized_end=1370,
 )
 
 
@@ -580,8 +635,8 @@ _SENDCOMMANDRESPONSEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1266,
-  serialized_end=1349,
+  serialized_start=1372,
+  serialized_end=1455,
 )
 
 
@@ -604,8 +659,8 @@ _SENDCOMMANDRESPONSERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1351,
-  serialized_end=1380,
+  serialized_start=1457,
+  serialized_end=1486,
 )
 
 
@@ -635,8 +690,8 @@ _GETCOMMANDREQUESTSTREAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1382,
-  serialized_end=1453,
+  serialized_start=1488,
+  serialized_end=1559,
 )
 
 
@@ -666,8 +721,8 @@ _GETCOMMANDREQUESTSTREAMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1455,
-  serialized_end=1540,
+  serialized_start=1561,
+  serialized_end=1646,
 )
 
 
@@ -690,8 +745,8 @@ _POSTTRANSFORMFRAMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1542,
-  serialized_end=1570,
+  serialized_start=1648,
+  serialized_end=1676,
 )
 
 
@@ -721,8 +776,8 @@ _SETBASEFRAMEIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1572,
-  serialized_end=1611,
+  serialized_start=1678,
+  serialized_end=1717,
 )
 
 
@@ -745,8 +800,8 @@ _SETBASEFRAMEIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1613,
-  serialized_end=1637,
+  serialized_start=1719,
+  serialized_end=1743,
 )
 
 
@@ -769,8 +824,8 @@ _CLEARTRANSFORMTREEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1639,
-  serialized_end=1666,
+  serialized_start=1745,
+  serialized_end=1772,
 )
 
 
@@ -793,8 +848,8 @@ _CLEARTRANSFORMTREERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1668,
-  serialized_end=1696,
+  serialized_start=1774,
+  serialized_end=1802,
 )
 
 
@@ -824,8 +879,8 @@ _CREATEEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1698,
-  serialized_end=1757,
+  serialized_start=1804,
+  serialized_end=1863,
 )
 
 
@@ -848,8 +903,8 @@ _CREATEEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1759,
-  serialized_end=1780,
+  serialized_start=1865,
+  serialized_end=1886,
 )
 
 
@@ -879,14 +934,15 @@ _CREATEEVENTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1782,
-  serialized_end=1830,
+  serialized_start=1888,
+  serialized_end=1936,
 )
 
 _POSTDATAMULTIREQUEST.fields_by_name['datapoints'].message_type = protos_dot_model_dot_v1_dot_datapoint__pb2._DATAPOINT
 _POSTDATAMULTIERROR.fields_by_name['errors'].message_type = _POSTDATAERROR
 _GETSTREAMSCONFIGURATIONRESPONSE.fields_by_name['streams'].message_type = protos_dot_model_dot_v1_dot_config__pb2._STREAMCONFIGURATION
 _GETAPPLICATIONCONFIGURATIONRESPONSE.fields_by_name['configuration'].message_type = protos_dot_model_dot_v1_dot_config__pb2._APPLICATIONCONFIGURATION
+_GETCONFIGBLOBDATARESPONSE.fields_by_name['blob_data'].message_type = protos_dot_model_dot_v1_dot_config__pb2._BLOBDATA
 _GETAGENTCONFIGURATIONRESPONSE.fields_by_name['configuration'].message_type = protos_dot_model_dot_v1_dot_config__pb2._AGENTCONFIGURATION
 _GETCOMMANDREQUESTRESPONSE.fields_by_name['request'].message_type = protos_dot_model_dot_v1_dot_commands__pb2._COMMANDREQUEST
 _SENDCOMMANDRESPONSEREQUEST.fields_by_name['response'].message_type = protos_dot_model_dot_v1_dot_commands__pb2._COMMANDRESPONSE
@@ -904,6 +960,8 @@ DESCRIPTOR.message_types_by_name['GetStreamsConfigurationRequest'] = _GETSTREAMS
 DESCRIPTOR.message_types_by_name['GetStreamsConfigurationResponse'] = _GETSTREAMSCONFIGURATIONRESPONSE
 DESCRIPTOR.message_types_by_name['GetApplicationConfigurationRequest'] = _GETAPPLICATIONCONFIGURATIONREQUEST
 DESCRIPTOR.message_types_by_name['GetApplicationConfigurationResponse'] = _GETAPPLICATIONCONFIGURATIONRESPONSE
+DESCRIPTOR.message_types_by_name['GetConfigBlobDataRequest'] = _GETCONFIGBLOBDATAREQUEST
+DESCRIPTOR.message_types_by_name['GetConfigBlobDataResponse'] = _GETCONFIGBLOBDATARESPONSE
 DESCRIPTOR.message_types_by_name['GetAgentConfigurationRequest'] = _GETAGENTCONFIGURATIONREQUEST
 DESCRIPTOR.message_types_by_name['GetAgentConfigurationResponse'] = _GETAGENTCONFIGURATIONRESPONSE
 DESCRIPTOR.message_types_by_name['HealthRequest'] = _HEALTHREQUEST
@@ -1007,6 +1065,20 @@ GetApplicationConfigurationResponse = _reflection.GeneratedProtocolMessageType('
   # @@protoc_insertion_point(class_scope:v1.agent.GetApplicationConfigurationResponse)
   })
 _sym_db.RegisterMessage(GetApplicationConfigurationResponse)
+
+GetConfigBlobDataRequest = _reflection.GeneratedProtocolMessageType('GetConfigBlobDataRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETCONFIGBLOBDATAREQUEST,
+  '__module__' : 'protos.agent.v1.agent_pb2'
+  # @@protoc_insertion_point(class_scope:v1.agent.GetConfigBlobDataRequest)
+  })
+_sym_db.RegisterMessage(GetConfigBlobDataRequest)
+
+GetConfigBlobDataResponse = _reflection.GeneratedProtocolMessageType('GetConfigBlobDataResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETCONFIGBLOBDATARESPONSE,
+  '__module__' : 'protos.agent.v1.agent_pb2'
+  # @@protoc_insertion_point(class_scope:v1.agent.GetConfigBlobDataResponse)
+  })
+_sym_db.RegisterMessage(GetConfigBlobDataResponse)
 
 GetAgentConfigurationRequest = _reflection.GeneratedProtocolMessageType('GetAgentConfigurationRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETAGENTCONFIGURATIONREQUEST,
@@ -1143,8 +1215,8 @@ _AGENT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1833,
-  serialized_end=3429,
+  serialized_start=1939,
+  serialized_end=3631,
   methods=[
   _descriptor.MethodDescriptor(
     name='StreamData',
@@ -1228,9 +1300,18 @@ _AGENT = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
+    name='GetConfigBlobData',
+    full_name='v1.agent.Agent.GetConfigBlobData',
+    index=9,
+    containing_service=None,
+    input_type=_GETCONFIGBLOBDATAREQUEST,
+    output_type=_GETCONFIGBLOBDATARESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
     name='GetAgentConfiguration',
     full_name='v1.agent.Agent.GetAgentConfiguration',
-    index=9,
+    index=10,
     containing_service=None,
     input_type=_GETAGENTCONFIGURATIONREQUEST,
     output_type=_GETAGENTCONFIGURATIONRESPONSE,
@@ -1239,7 +1320,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Health',
     full_name='v1.agent.Agent.Health',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=_HEALTHREQUEST,
     output_type=_HEALTHRESPONSE,
@@ -1248,7 +1329,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetCommandRequest',
     full_name='v1.agent.Agent.GetCommandRequest',
-    index=11,
+    index=12,
     containing_service=None,
     input_type=_GETCOMMANDREQUESTREQUEST,
     output_type=_GETCOMMANDREQUESTRESPONSE,
@@ -1257,7 +1338,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetCommandRequestStream',
     full_name='v1.agent.Agent.GetCommandRequestStream',
-    index=12,
+    index=13,
     containing_service=None,
     input_type=_GETCOMMANDREQUESTSTREAMREQUEST,
     output_type=_GETCOMMANDREQUESTSTREAMRESPONSE,
@@ -1266,7 +1347,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SendCommandResponse',
     full_name='v1.agent.Agent.SendCommandResponse',
-    index=13,
+    index=14,
     containing_service=None,
     input_type=_SENDCOMMANDRESPONSEREQUEST,
     output_type=_SENDCOMMANDRESPONSERESPONSE,
@@ -1275,7 +1356,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PostTransformFrame',
     full_name='v1.agent.Agent.PostTransformFrame',
-    index=14,
+    index=15,
     containing_service=None,
     input_type=protos_dot_model_dot_v1_dot_math__pb2._TRANSFORMFRAME,
     output_type=_POSTTRANSFORMFRAMERESPONSE,
@@ -1284,7 +1365,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SetBaseFrameID',
     full_name='v1.agent.Agent.SetBaseFrameID',
-    index=15,
+    index=16,
     containing_service=None,
     input_type=_SETBASEFRAMEIDREQUEST,
     output_type=_SETBASEFRAMEIDRESPONSE,
@@ -1293,7 +1374,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ClearTransformTree',
     full_name='v1.agent.Agent.ClearTransformTree',
-    index=16,
+    index=17,
     containing_service=None,
     input_type=_CLEARTRANSFORMTREEREQUEST,
     output_type=_CLEARTRANSFORMTREERESPONSE,

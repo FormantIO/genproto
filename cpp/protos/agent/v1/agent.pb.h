@@ -53,7 +53,7 @@ struct TableStruct_protos_2fagent_2fv1_2fagent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[30]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[32]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -101,6 +101,12 @@ extern GetCommandRequestStreamRequestDefaultTypeInternal _GetCommandRequestStrea
 class GetCommandRequestStreamResponse;
 class GetCommandRequestStreamResponseDefaultTypeInternal;
 extern GetCommandRequestStreamResponseDefaultTypeInternal _GetCommandRequestStreamResponse_default_instance_;
+class GetConfigBlobDataRequest;
+class GetConfigBlobDataRequestDefaultTypeInternal;
+extern GetConfigBlobDataRequestDefaultTypeInternal _GetConfigBlobDataRequest_default_instance_;
+class GetConfigBlobDataResponse;
+class GetConfigBlobDataResponseDefaultTypeInternal;
+extern GetConfigBlobDataResponseDefaultTypeInternal _GetConfigBlobDataResponse_default_instance_;
 class GetInterventionRequestRequest;
 class GetInterventionRequestRequestDefaultTypeInternal;
 extern GetInterventionRequestRequestDefaultTypeInternal _GetInterventionRequestRequest_default_instance_;
@@ -168,6 +174,8 @@ template<> ::v1::agent::GetCommandRequestRequest* Arena::CreateMaybeMessage<::v1
 template<> ::v1::agent::GetCommandRequestResponse* Arena::CreateMaybeMessage<::v1::agent::GetCommandRequestResponse>(Arena*);
 template<> ::v1::agent::GetCommandRequestStreamRequest* Arena::CreateMaybeMessage<::v1::agent::GetCommandRequestStreamRequest>(Arena*);
 template<> ::v1::agent::GetCommandRequestStreamResponse* Arena::CreateMaybeMessage<::v1::agent::GetCommandRequestStreamResponse>(Arena*);
+template<> ::v1::agent::GetConfigBlobDataRequest* Arena::CreateMaybeMessage<::v1::agent::GetConfigBlobDataRequest>(Arena*);
+template<> ::v1::agent::GetConfigBlobDataResponse* Arena::CreateMaybeMessage<::v1::agent::GetConfigBlobDataResponse>(Arena*);
 template<> ::v1::agent::GetInterventionRequestRequest* Arena::CreateMaybeMessage<::v1::agent::GetInterventionRequestRequest>(Arena*);
 template<> ::v1::agent::GetInterventionResponseRequest* Arena::CreateMaybeMessage<::v1::agent::GetInterventionResponseRequest>(Arena*);
 template<> ::v1::agent::GetStreamsConfigurationRequest* Arena::CreateMaybeMessage<::v1::agent::GetStreamsConfigurationRequest>(Arena*);
@@ -1749,6 +1757,255 @@ class GetApplicationConfigurationResponse :
 };
 // -------------------------------------------------------------------
 
+class GetConfigBlobDataRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.GetConfigBlobDataRequest) */ {
+ public:
+  GetConfigBlobDataRequest();
+  virtual ~GetConfigBlobDataRequest();
+
+  GetConfigBlobDataRequest(const GetConfigBlobDataRequest& from);
+  GetConfigBlobDataRequest(GetConfigBlobDataRequest&& from) noexcept
+    : GetConfigBlobDataRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetConfigBlobDataRequest& operator=(const GetConfigBlobDataRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetConfigBlobDataRequest& operator=(GetConfigBlobDataRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetConfigBlobDataRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetConfigBlobDataRequest* internal_default_instance() {
+    return reinterpret_cast<const GetConfigBlobDataRequest*>(
+               &_GetConfigBlobDataRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(GetConfigBlobDataRequest& a, GetConfigBlobDataRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetConfigBlobDataRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetConfigBlobDataRequest* New() const final {
+    return CreateMaybeMessage<GetConfigBlobDataRequest>(nullptr);
+  }
+
+  GetConfigBlobDataRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetConfigBlobDataRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetConfigBlobDataRequest& from);
+  void MergeFrom(const GetConfigBlobDataRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetConfigBlobDataRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.GetConfigBlobDataRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto);
+    return ::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:v1.agent.GetConfigBlobDataRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetConfigBlobDataResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.GetConfigBlobDataResponse) */ {
+ public:
+  GetConfigBlobDataResponse();
+  virtual ~GetConfigBlobDataResponse();
+
+  GetConfigBlobDataResponse(const GetConfigBlobDataResponse& from);
+  GetConfigBlobDataResponse(GetConfigBlobDataResponse&& from) noexcept
+    : GetConfigBlobDataResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetConfigBlobDataResponse& operator=(const GetConfigBlobDataResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetConfigBlobDataResponse& operator=(GetConfigBlobDataResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetConfigBlobDataResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetConfigBlobDataResponse* internal_default_instance() {
+    return reinterpret_cast<const GetConfigBlobDataResponse*>(
+               &_GetConfigBlobDataResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(GetConfigBlobDataResponse& a, GetConfigBlobDataResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetConfigBlobDataResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetConfigBlobDataResponse* New() const final {
+    return CreateMaybeMessage<GetConfigBlobDataResponse>(nullptr);
+  }
+
+  GetConfigBlobDataResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetConfigBlobDataResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetConfigBlobDataResponse& from);
+  void MergeFrom(const GetConfigBlobDataResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetConfigBlobDataResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.GetConfigBlobDataResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto);
+    return ::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBlobDataFieldNumber = 1,
+  };
+  // .v1.model.BlobData blob_data = 1[json_name = "blobData"];
+  bool has_blob_data() const;
+  private:
+  bool _internal_has_blob_data() const;
+  public:
+  void clear_blob_data();
+  const ::v1::model::BlobData& blob_data() const;
+  ::v1::model::BlobData* release_blob_data();
+  ::v1::model::BlobData* mutable_blob_data();
+  void set_allocated_blob_data(::v1::model::BlobData* blob_data);
+  private:
+  const ::v1::model::BlobData& _internal_blob_data() const;
+  ::v1::model::BlobData* _internal_mutable_blob_data();
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.agent.GetConfigBlobDataResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::v1::model::BlobData* blob_data_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetAgentConfigurationRequest :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.GetAgentConfigurationRequest) */ {
  public:
@@ -1791,7 +2048,7 @@ class GetAgentConfigurationRequest :
                &_GetAgentConfigurationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(GetAgentConfigurationRequest& a, GetAgentConfigurationRequest& b) {
     a.Swap(&b);
@@ -1906,7 +2163,7 @@ class GetAgentConfigurationResponse :
                &_GetAgentConfigurationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(GetAgentConfigurationResponse& a, GetAgentConfigurationResponse& b) {
     a.Swap(&b);
@@ -2040,7 +2297,7 @@ class HealthRequest :
                &_HealthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(HealthRequest& a, HealthRequest& b) {
     a.Swap(&b);
@@ -2155,7 +2412,7 @@ class HealthResponse :
                &_HealthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(HealthResponse& a, HealthResponse& b) {
     a.Swap(&b);
@@ -2270,7 +2527,7 @@ class GetCommandRequestRequest :
                &_GetCommandRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(GetCommandRequestRequest& a, GetCommandRequestRequest& b) {
     a.Swap(&b);
@@ -2413,7 +2670,7 @@ class GetCommandRequestResponse :
                &_GetCommandRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(GetCommandRequestResponse& a, GetCommandRequestResponse& b) {
     a.Swap(&b);
@@ -2547,7 +2804,7 @@ class SendCommandResponseRequest :
                &_SendCommandResponseRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(SendCommandResponseRequest& a, SendCommandResponseRequest& b) {
     a.Swap(&b);
@@ -2681,7 +2938,7 @@ class SendCommandResponseResponse :
                &_SendCommandResponseResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(SendCommandResponseResponse& a, SendCommandResponseResponse& b) {
     a.Swap(&b);
@@ -2796,7 +3053,7 @@ class GetCommandRequestStreamRequest :
                &_GetCommandRequestStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(GetCommandRequestStreamRequest& a, GetCommandRequestStreamRequest& b) {
     a.Swap(&b);
@@ -2939,7 +3196,7 @@ class GetCommandRequestStreamResponse :
                &_GetCommandRequestStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(GetCommandRequestStreamResponse& a, GetCommandRequestStreamResponse& b) {
     a.Swap(&b);
@@ -3073,7 +3330,7 @@ class PostTransformFrameResponse :
                &_PostTransformFrameResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(PostTransformFrameResponse& a, PostTransformFrameResponse& b) {
     a.Swap(&b);
@@ -3188,7 +3445,7 @@ class SetBaseFrameIDRequest :
                &_SetBaseFrameIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(SetBaseFrameIDRequest& a, SetBaseFrameIDRequest& b) {
     a.Swap(&b);
@@ -3323,7 +3580,7 @@ class SetBaseFrameIDResponse :
                &_SetBaseFrameIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(SetBaseFrameIDResponse& a, SetBaseFrameIDResponse& b) {
     a.Swap(&b);
@@ -3438,7 +3695,7 @@ class ClearTransformTreeRequest :
                &_ClearTransformTreeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(ClearTransformTreeRequest& a, ClearTransformTreeRequest& b) {
     a.Swap(&b);
@@ -3553,7 +3810,7 @@ class ClearTransformTreeResponse :
                &_ClearTransformTreeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(ClearTransformTreeResponse& a, ClearTransformTreeResponse& b) {
     a.Swap(&b);
@@ -3668,7 +3925,7 @@ class CreateEventRequest :
                &_CreateEventRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(CreateEventRequest& a, CreateEventRequest& b) {
     a.Swap(&b);
@@ -3802,7 +4059,7 @@ class CreateEventResponse :
                &_CreateEventResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(CreateEventResponse& a, CreateEventResponse& b) {
     a.Swap(&b);
@@ -3917,7 +4174,7 @@ class CreateEventError :
                &_CreateEventError_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(CreateEventError& a, CreateEventError& b) {
     a.Swap(&b);
@@ -4459,6 +4716,68 @@ inline void GetApplicationConfigurationResponse::set_allocated_configuration(::v
   }
   configuration_ = configuration;
   // @@protoc_insertion_point(field_set_allocated:v1.agent.GetApplicationConfigurationResponse.configuration)
+}
+
+// -------------------------------------------------------------------
+
+// GetConfigBlobDataRequest
+
+// -------------------------------------------------------------------
+
+// GetConfigBlobDataResponse
+
+// .v1.model.BlobData blob_data = 1[json_name = "blobData"];
+inline bool GetConfigBlobDataResponse::_internal_has_blob_data() const {
+  return this != internal_default_instance() && blob_data_ != nullptr;
+}
+inline bool GetConfigBlobDataResponse::has_blob_data() const {
+  return _internal_has_blob_data();
+}
+inline const ::v1::model::BlobData& GetConfigBlobDataResponse::_internal_blob_data() const {
+  const ::v1::model::BlobData* p = blob_data_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::v1::model::BlobData*>(
+      &::v1::model::_BlobData_default_instance_);
+}
+inline const ::v1::model::BlobData& GetConfigBlobDataResponse::blob_data() const {
+  // @@protoc_insertion_point(field_get:v1.agent.GetConfigBlobDataResponse.blob_data)
+  return _internal_blob_data();
+}
+inline ::v1::model::BlobData* GetConfigBlobDataResponse::release_blob_data() {
+  // @@protoc_insertion_point(field_release:v1.agent.GetConfigBlobDataResponse.blob_data)
+  
+  ::v1::model::BlobData* temp = blob_data_;
+  blob_data_ = nullptr;
+  return temp;
+}
+inline ::v1::model::BlobData* GetConfigBlobDataResponse::_internal_mutable_blob_data() {
+  
+  if (blob_data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::BlobData>(GetArenaNoVirtual());
+    blob_data_ = p;
+  }
+  return blob_data_;
+}
+inline ::v1::model::BlobData* GetConfigBlobDataResponse::mutable_blob_data() {
+  // @@protoc_insertion_point(field_mutable:v1.agent.GetConfigBlobDataResponse.blob_data)
+  return _internal_mutable_blob_data();
+}
+inline void GetConfigBlobDataResponse::set_allocated_blob_data(::v1::model::BlobData* blob_data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(blob_data_);
+  }
+  if (blob_data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      blob_data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, blob_data, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  blob_data_ = blob_data;
+  // @@protoc_insertion_point(field_set_allocated:v1.agent.GetConfigBlobDataResponse.blob_data)
 }
 
 // -------------------------------------------------------------------
@@ -5034,6 +5353,10 @@ inline void CreateEventError::set_retryable(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -29,6 +29,7 @@ static const char* Agent_method_names[] = {
   "/v1.agent.Agent/GetInterventionResponse",
   "/v1.agent.Agent/GetStreamsConfiguration",
   "/v1.agent.Agent/GetApplicationConfiguration",
+  "/v1.agent.Agent/GetConfigBlobData",
   "/v1.agent.Agent/GetAgentConfiguration",
   "/v1.agent.Agent/Health",
   "/v1.agent.Agent/GetCommandRequest",
@@ -55,14 +56,15 @@ Agent::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   , rpcmethod_GetInterventionResponse_(Agent_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetStreamsConfiguration_(Agent_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetApplicationConfiguration_(Agent_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAgentConfiguration_(Agent_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Health_(Agent_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCommandRequest_(Agent_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCommandRequestStream_(Agent_method_names[12], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_SendCommandResponse_(Agent_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostTransformFrame_(Agent_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetBaseFrameID_(Agent_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ClearTransformTree_(Agent_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetConfigBlobData_(Agent_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAgentConfiguration_(Agent_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Health_(Agent_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCommandRequest_(Agent_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCommandRequestStream_(Agent_method_names[13], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_SendCommandResponse_(Agent_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PostTransformFrame_(Agent_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetBaseFrameID_(Agent_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ClearTransformTree_(Agent_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientWriter< ::v1::model::Datapoint>* Agent::Stub::StreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response) {
@@ -303,6 +305,34 @@ void Agent::Stub::experimental_async::GetApplicationConfiguration(::grpc::Client
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::GetApplicationConfigurationResponse>* Agent::Stub::PrepareAsyncGetApplicationConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetApplicationConfigurationResponse>::Create(channel_.get(), cq, rpcmethod_GetApplicationConfiguration_, context, request, false);
+}
+
+::grpc::Status Agent::Stub::GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest& request, ::v1::agent::GetConfigBlobDataResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetConfigBlobData_, context, request, response);
+}
+
+void Agent::Stub::experimental_async::GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetConfigBlobData_, context, request, response, std::move(f));
+}
+
+void Agent::Stub::experimental_async::GetConfigBlobData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetConfigBlobDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetConfigBlobData_, context, request, response, std::move(f));
+}
+
+void Agent::Stub::experimental_async::GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetConfigBlobData_, context, request, response, reactor);
+}
+
+void Agent::Stub::experimental_async::GetConfigBlobData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetConfigBlobData_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::GetConfigBlobDataResponse>* Agent::Stub::AsyncGetConfigBlobDataRaw(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetConfigBlobDataResponse>::Create(channel_.get(), cq, rpcmethod_GetConfigBlobData_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::GetConfigBlobDataResponse>* Agent::Stub::PrepareAsyncGetConfigBlobDataRaw(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetConfigBlobDataResponse>::Create(channel_.get(), cq, rpcmethod_GetConfigBlobData_, context, request, false);
 }
 
 ::grpc::Status Agent::Stub::GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest& request, ::v1::agent::GetAgentConfigurationResponse* response) {
@@ -566,40 +596,45 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>(
+          std::mem_fn(&Agent::Service::GetConfigBlobData), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Agent_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>(
           std::mem_fn(&Agent::Service::GetAgentConfiguration), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[10],
+      Agent_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>(
           std::mem_fn(&Agent::Service::Health), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[11],
+      Agent_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>(
           std::mem_fn(&Agent::Service::GetCommandRequest), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[12],
+      Agent_method_names[13],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Agent::Service, ::v1::agent::GetCommandRequestStreamRequest, ::v1::agent::GetCommandRequestStreamResponse>(
           std::mem_fn(&Agent::Service::GetCommandRequestStream), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[13],
+      Agent_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>(
           std::mem_fn(&Agent::Service::SendCommandResponse), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[14],
+      Agent_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>(
           std::mem_fn(&Agent::Service::PostTransformFrame), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[15],
+      Agent_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>(
           std::mem_fn(&Agent::Service::SetBaseFrameID), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[16],
+      Agent_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>(
           std::mem_fn(&Agent::Service::ClearTransformTree), this)));
@@ -665,6 +700,13 @@ Agent::Service::~Service() {
 }
 
 ::grpc::Status Agent::Service::GetApplicationConfiguration(::grpc::ServerContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Agent::Service::GetConfigBlobData(::grpc::ServerContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -17,6 +17,7 @@
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fagent_2fv1_2fagent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PostDataError_protos_2fagent_2fv1_2fagent_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fconfig_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AgentConfiguration_protos_2fmodel_2fv1_2fconfig_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fconfig_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ApplicationConfiguration_protos_2fmodel_2fv1_2fconfig_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fconfig_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BlobData_protos_2fmodel_2fv1_2fconfig_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CommandRequest_protos_2fmodel_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CommandResponse_protos_2fmodel_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fdatapoint_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<14> scc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto;
@@ -72,6 +73,14 @@ class GetApplicationConfigurationResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetApplicationConfigurationResponse> _instance;
 } _GetApplicationConfigurationResponse_default_instance_;
+class GetConfigBlobDataRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetConfigBlobDataRequest> _instance;
+} _GetConfigBlobDataRequest_default_instance_;
+class GetConfigBlobDataResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetConfigBlobDataResponse> _instance;
+} _GetConfigBlobDataResponse_default_instance_;
 class GetAgentConfigurationRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetAgentConfigurationRequest> _instance;
@@ -333,6 +342,35 @@ static void InitDefaultsscc_info_GetCommandRequestStreamResponse_protos_2fagent_
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetCommandRequestStreamResponse_protos_2fagent_2fv1_2fagent_2eproto}, {
       &scc_info_CommandRequest_protos_2fmodel_2fv1_2fcommands_2eproto.base,}};
 
+static void InitDefaultsscc_info_GetConfigBlobDataRequest_protos_2fagent_2fv1_2fagent_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::v1::agent::_GetConfigBlobDataRequest_default_instance_;
+    new (ptr) ::v1::agent::GetConfigBlobDataRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::v1::agent::GetConfigBlobDataRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetConfigBlobDataRequest_protos_2fagent_2fv1_2fagent_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetConfigBlobDataRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::v1::agent::_GetConfigBlobDataResponse_default_instance_;
+    new (ptr) ::v1::agent::GetConfigBlobDataResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::v1::agent::GetConfigBlobDataResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto}, {
+      &scc_info_BlobData_protos_2fmodel_2fv1_2fconfig_2eproto.base,}};
+
 static void InitDefaultsscc_info_GetInterventionRequestRequest_protos_2fagent_2fv1_2fagent_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -575,7 +613,7 @@ static void InitDefaultsscc_info_StreamDataResponse_protos_2fagent_2fv1_2fagent_
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StreamDataResponse_protos_2fagent_2fv1_2fagent_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_StreamDataResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[30];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[32];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fagent_2fv1_2fagent_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fagent_2fv1_2fagent_2eproto = nullptr;
 
@@ -650,6 +688,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fagent_2fv1_2fagent_2e
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::v1::agent::GetApplicationConfigurationResponse, configuration_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::agent::GetConfigBlobDataRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::agent::GetConfigBlobDataResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::v1::agent::GetConfigBlobDataResponse, blob_data_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::agent::GetAgentConfigurationRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -763,24 +812,26 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 53, -1, sizeof(::v1::agent::GetStreamsConfigurationResponse)},
   { 59, -1, sizeof(::v1::agent::GetApplicationConfigurationRequest)},
   { 64, -1, sizeof(::v1::agent::GetApplicationConfigurationResponse)},
-  { 70, -1, sizeof(::v1::agent::GetAgentConfigurationRequest)},
-  { 75, -1, sizeof(::v1::agent::GetAgentConfigurationResponse)},
-  { 81, -1, sizeof(::v1::agent::HealthRequest)},
-  { 86, -1, sizeof(::v1::agent::HealthResponse)},
-  { 91, -1, sizeof(::v1::agent::GetCommandRequestRequest)},
-  { 97, -1, sizeof(::v1::agent::GetCommandRequestResponse)},
-  { 103, -1, sizeof(::v1::agent::SendCommandResponseRequest)},
-  { 109, -1, sizeof(::v1::agent::SendCommandResponseResponse)},
-  { 114, -1, sizeof(::v1::agent::GetCommandRequestStreamRequest)},
-  { 120, -1, sizeof(::v1::agent::GetCommandRequestStreamResponse)},
-  { 126, -1, sizeof(::v1::agent::PostTransformFrameResponse)},
-  { 131, -1, sizeof(::v1::agent::SetBaseFrameIDRequest)},
-  { 137, -1, sizeof(::v1::agent::SetBaseFrameIDResponse)},
-  { 142, -1, sizeof(::v1::agent::ClearTransformTreeRequest)},
-  { 147, -1, sizeof(::v1::agent::ClearTransformTreeResponse)},
-  { 152, -1, sizeof(::v1::agent::CreateEventRequest)},
-  { 158, -1, sizeof(::v1::agent::CreateEventResponse)},
-  { 163, -1, sizeof(::v1::agent::CreateEventError)},
+  { 70, -1, sizeof(::v1::agent::GetConfigBlobDataRequest)},
+  { 75, -1, sizeof(::v1::agent::GetConfigBlobDataResponse)},
+  { 81, -1, sizeof(::v1::agent::GetAgentConfigurationRequest)},
+  { 86, -1, sizeof(::v1::agent::GetAgentConfigurationResponse)},
+  { 92, -1, sizeof(::v1::agent::HealthRequest)},
+  { 97, -1, sizeof(::v1::agent::HealthResponse)},
+  { 102, -1, sizeof(::v1::agent::GetCommandRequestRequest)},
+  { 108, -1, sizeof(::v1::agent::GetCommandRequestResponse)},
+  { 114, -1, sizeof(::v1::agent::SendCommandResponseRequest)},
+  { 120, -1, sizeof(::v1::agent::SendCommandResponseResponse)},
+  { 125, -1, sizeof(::v1::agent::GetCommandRequestStreamRequest)},
+  { 131, -1, sizeof(::v1::agent::GetCommandRequestStreamResponse)},
+  { 137, -1, sizeof(::v1::agent::PostTransformFrameResponse)},
+  { 142, -1, sizeof(::v1::agent::SetBaseFrameIDRequest)},
+  { 148, -1, sizeof(::v1::agent::SetBaseFrameIDResponse)},
+  { 153, -1, sizeof(::v1::agent::ClearTransformTreeRequest)},
+  { 158, -1, sizeof(::v1::agent::ClearTransformTreeResponse)},
+  { 163, -1, sizeof(::v1::agent::CreateEventRequest)},
+  { 169, -1, sizeof(::v1::agent::CreateEventResponse)},
+  { 174, -1, sizeof(::v1::agent::CreateEventError)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -796,6 +847,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetStreamsConfigurationResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetApplicationConfigurationRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetApplicationConfigurationResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetConfigBlobDataRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetConfigBlobDataResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetAgentConfigurationRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetAgentConfigurationResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_HealthRequest_default_instance_),
@@ -840,71 +893,76 @@ const char descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto[] PROTO
   "\"GetApplicationConfigurationRequest\"o\n#G"
   "etApplicationConfigurationResponse\022H\n\rco"
   "nfiguration\030\001 \001(\0132\".v1.model.Application"
-  "ConfigurationR\rconfiguration\"\036\n\034GetAgent"
-  "ConfigurationRequest\"c\n\035GetAgentConfigur"
-  "ationResponse\022B\n\rconfiguration\030\001 \001(\0132\034.v"
-  "1.model.AgentConfigurationR\rconfiguratio"
-  "n\"\017\n\rHealthRequest\"\020\n\016HealthResponse\"A\n\030"
-  "GetCommandRequestRequest\022%\n\016command_filt"
-  "er\030\001 \003(\tR\rcommandFilter\"O\n\031GetCommandReq"
-  "uestResponse\0222\n\007request\030\001 \001(\0132\030.v1.model"
-  ".CommandRequestR\007request\"S\n\032SendCommandR"
-  "esponseRequest\0225\n\010response\030\001 \001(\0132\031.v1.mo"
-  "del.CommandResponseR\010response\"\035\n\033SendCom"
-  "mandResponseResponse\"G\n\036GetCommandReques"
-  "tStreamRequest\022%\n\016command_filter\030\001 \003(\tR\r"
-  "commandFilter\"U\n\037GetCommandRequestStream"
-  "Response\0222\n\007request\030\001 \001(\0132\030.v1.model.Com"
-  "mandRequestR\007request\"\034\n\032PostTransformFra"
-  "meResponse\"\'\n\025SetBaseFrameIDRequest\022\016\n\002i"
-  "d\030\001 \001(\tR\002id\"\030\n\026SetBaseFrameIDResponse\"\033\n"
-  "\031ClearTransformTreeRequest\"\034\n\032ClearTrans"
-  "formTreeResponse\";\n\022CreateEventRequest\022%"
-  "\n\005event\030\001 \001(\0132\017.v1.model.EventR\005event\"\025\n"
-  "\023CreateEventResponse\"0\n\020CreateEventError"
-  "\022\034\n\tretryable\030\001 \001(\010R\tretryable2\274\014\n\005Agent"
-  "\022C\n\nStreamData\022\023.v1.model.Datapoint\032\034.v1"
-  ".agent.StreamDataResponse\"\000(\001\022=\n\010PostDat"
-  "a\022\023.v1.model.Datapoint\032\032.v1.agent.PostDa"
-  "taResponse\"\000\022R\n\rPostDataMulti\022\036.v1.agent"
-  ".PostDataMultiRequest\032\037.v1.agent.PostDat"
-  "aMultiResponse\"\000\022L\n\013CreateEvent\022\034.v1.age"
-  "nt.CreateEventRequest\032\035.v1.agent.CreateE"
-  "ventResponse\"\000\022[\n\031CreateInterventionRequ"
-  "est\022\035.v1.model.InterventionRequest\032\035.v1."
-  "model.InterventionRequest\"\000\022b\n\026GetInterv"
-  "entionRequest\022\'.v1.agent.GetIntervention"
-  "RequestRequest\032\035.v1.model.InterventionRe"
-  "quest\"\000\022e\n\027GetInterventionResponse\022(.v1."
-  "agent.GetInterventionResponseRequest\032\036.v"
-  "1.model.InterventionResponse\"\000\022p\n\027GetStr"
-  "eamsConfiguration\022(.v1.agent.GetStreamsC"
-  "onfigurationRequest\032).v1.agent.GetStream"
-  "sConfigurationResponse\"\000\022|\n\033GetApplicati"
-  "onConfiguration\022,.v1.agent.GetApplicatio"
-  "nConfigurationRequest\032-.v1.agent.GetAppl"
-  "icationConfigurationResponse\"\000\022j\n\025GetAge"
-  "ntConfiguration\022&.v1.agent.GetAgentConfi"
-  "gurationRequest\032\'.v1.agent.GetAgentConfi"
-  "gurationResponse\"\000\022=\n\006Health\022\027.v1.agent."
-  "HealthRequest\032\030.v1.agent.HealthResponse\""
-  "\000\022^\n\021GetCommandRequest\022\".v1.agent.GetCom"
-  "mandRequestRequest\032#.v1.agent.GetCommand"
-  "RequestResponse\"\000\022r\n\027GetCommandRequestSt"
-  "ream\022(.v1.agent.GetCommandRequestStreamR"
-  "equest\032).v1.agent.GetCommandRequestStrea"
-  "mResponse\"\0000\001\022d\n\023SendCommandResponse\022$.v"
-  "1.agent.SendCommandResponseRequest\032%.v1."
-  "agent.SendCommandResponseResponse\"\000\022V\n\022P"
-  "ostTransformFrame\022\030.v1.model.TransformFr"
-  "ame\032$.v1.agent.PostTransformFrameRespons"
-  "e\"\000\022U\n\016SetBaseFrameID\022\037.v1.agent.SetBase"
-  "FrameIDRequest\032 .v1.agent.SetBaseFrameID"
-  "Response\"\000\022a\n\022ClearTransformTree\022#.v1.ag"
-  "ent.ClearTransformTreeRequest\032$.v1.agent"
-  ".ClearTransformTreeResponse\"\000B+Z)github."
-  "com/FormantIO/genproto/go/v1/agentb\006prot"
-  "o3"
+  "ConfigurationR\rconfiguration\"\032\n\030GetConfi"
+  "gBlobDataRequest\"L\n\031GetConfigBlobDataRes"
+  "ponse\022/\n\tblob_data\030\001 \001(\0132\022.v1.model.Blob"
+  "DataR\010blobData\"\036\n\034GetAgentConfigurationR"
+  "equest\"c\n\035GetAgentConfigurationResponse\022"
+  "B\n\rconfiguration\030\001 \001(\0132\034.v1.model.AgentC"
+  "onfigurationR\rconfiguration\"\017\n\rHealthReq"
+  "uest\"\020\n\016HealthResponse\"A\n\030GetCommandRequ"
+  "estRequest\022%\n\016command_filter\030\001 \003(\tR\rcomm"
+  "andFilter\"O\n\031GetCommandRequestResponse\0222"
+  "\n\007request\030\001 \001(\0132\030.v1.model.CommandReques"
+  "tR\007request\"S\n\032SendCommandResponseRequest"
+  "\0225\n\010response\030\001 \001(\0132\031.v1.model.CommandRes"
+  "ponseR\010response\"\035\n\033SendCommandResponseRe"
+  "sponse\"G\n\036GetCommandRequestStreamRequest"
+  "\022%\n\016command_filter\030\001 \003(\tR\rcommandFilter\""
+  "U\n\037GetCommandRequestStreamResponse\0222\n\007re"
+  "quest\030\001 \001(\0132\030.v1.model.CommandRequestR\007r"
+  "equest\"\034\n\032PostTransformFrameResponse\"\'\n\025"
+  "SetBaseFrameIDRequest\022\016\n\002id\030\001 \001(\tR\002id\"\030\n"
+  "\026SetBaseFrameIDResponse\"\033\n\031ClearTransfor"
+  "mTreeRequest\"\034\n\032ClearTransformTreeRespon"
+  "se\";\n\022CreateEventRequest\022%\n\005event\030\001 \001(\0132"
+  "\017.v1.model.EventR\005event\"\025\n\023CreateEventRe"
+  "sponse\"0\n\020CreateEventError\022\034\n\tretryable\030"
+  "\001 \001(\010R\tretryable2\234\r\n\005Agent\022C\n\nStreamData"
+  "\022\023.v1.model.Datapoint\032\034.v1.agent.StreamD"
+  "ataResponse\"\000(\001\022=\n\010PostData\022\023.v1.model.D"
+  "atapoint\032\032.v1.agent.PostDataResponse\"\000\022R"
+  "\n\rPostDataMulti\022\036.v1.agent.PostDataMulti"
+  "Request\032\037.v1.agent.PostDataMultiResponse"
+  "\"\000\022L\n\013CreateEvent\022\034.v1.agent.CreateEvent"
+  "Request\032\035.v1.agent.CreateEventResponse\"\000"
+  "\022[\n\031CreateInterventionRequest\022\035.v1.model"
+  ".InterventionRequest\032\035.v1.model.Interven"
+  "tionRequest\"\000\022b\n\026GetInterventionRequest\022"
+  "\'.v1.agent.GetInterventionRequestRequest"
+  "\032\035.v1.model.InterventionRequest\"\000\022e\n\027Get"
+  "InterventionResponse\022(.v1.agent.GetInter"
+  "ventionResponseRequest\032\036.v1.model.Interv"
+  "entionResponse\"\000\022p\n\027GetStreamsConfigurat"
+  "ion\022(.v1.agent.GetStreamsConfigurationRe"
+  "quest\032).v1.agent.GetStreamsConfiguration"
+  "Response\"\000\022|\n\033GetApplicationConfiguratio"
+  "n\022,.v1.agent.GetApplicationConfiguration"
+  "Request\032-.v1.agent.GetApplicationConfigu"
+  "rationResponse\"\000\022^\n\021GetConfigBlobData\022\"."
+  "v1.agent.GetConfigBlobDataRequest\032#.v1.a"
+  "gent.GetConfigBlobDataResponse\"\000\022j\n\025GetA"
+  "gentConfiguration\022&.v1.agent.GetAgentCon"
+  "figurationRequest\032\'.v1.agent.GetAgentCon"
+  "figurationResponse\"\000\022=\n\006Health\022\027.v1.agen"
+  "t.HealthRequest\032\030.v1.agent.HealthRespons"
+  "e\"\000\022^\n\021GetCommandRequest\022\".v1.agent.GetC"
+  "ommandRequestRequest\032#.v1.agent.GetComma"
+  "ndRequestResponse\"\000\022r\n\027GetCommandRequest"
+  "Stream\022(.v1.agent.GetCommandRequestStrea"
+  "mRequest\032).v1.agent.GetCommandRequestStr"
+  "eamResponse\"\0000\001\022d\n\023SendCommandResponse\022$"
+  ".v1.agent.SendCommandResponseRequest\032%.v"
+  "1.agent.SendCommandResponseResponse\"\000\022V\n"
+  "\022PostTransformFrame\022\030.v1.model.Transform"
+  "Frame\032$.v1.agent.PostTransformFrameRespo"
+  "nse\"\000\022U\n\016SetBaseFrameID\022\037.v1.agent.SetBa"
+  "seFrameIDRequest\032 .v1.agent.SetBaseFrame"
+  "IDResponse\"\000\022a\n\022ClearTransformTree\022#.v1."
+  "agent.ClearTransformTreeRequest\032$.v1.age"
+  "nt.ClearTransformTreeResponse\"\000B+Z)githu"
+  "b.com/FormantIO/genproto/go/v1/agentb\006pr"
+  "oto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps[6] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fcommands_2eproto,
@@ -914,7 +972,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_sccs[30] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_sccs[32] = {
   &scc_info_ClearTransformTreeRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
   &scc_info_ClearTransformTreeResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
   &scc_info_CreateEventError_protos_2fagent_2fv1_2fagent_2eproto.base,
@@ -928,6 +986,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_GetCommandRequestResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
   &scc_info_GetCommandRequestStreamRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
   &scc_info_GetCommandRequestStreamResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
+  &scc_info_GetConfigBlobDataRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
+  &scc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
   &scc_info_GetInterventionRequestRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
   &scc_info_GetInterventionResponseRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
   &scc_info_GetStreamsConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
@@ -949,10 +1009,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once;
 static bool descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fagent_2fv1_2fagent_2eproto = {
-  &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_initialized, descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto, "protos/agent/v1/agent.proto", 3482,
-  &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once, descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_sccs, descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps, 30, 6,
+  &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_initialized, descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto, "protos/agent/v1/agent.proto", 3684,
+  &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once, descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_sccs, descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps, 32, 6,
   schemas, file_default_instances, TableStruct_protos_2fagent_2fv1_2fagent_2eproto::offsets,
-  file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto, 30, file_level_enum_descriptors_protos_2fagent_2fv1_2fagent_2eproto, file_level_service_descriptors_protos_2fagent_2fv1_2fagent_2eproto,
+  file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto, 32, file_level_enum_descriptors_protos_2fagent_2fv1_2fagent_2eproto, file_level_service_descriptors_protos_2fagent_2fv1_2fagent_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -3191,6 +3251,370 @@ void GetApplicationConfigurationResponse::InternalSwap(GetApplicationConfigurati
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetApplicationConfigurationResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetConfigBlobDataRequest::InitAsDefaultInstance() {
+}
+class GetConfigBlobDataRequest::_Internal {
+ public:
+};
+
+GetConfigBlobDataRequest::GetConfigBlobDataRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:v1.agent.GetConfigBlobDataRequest)
+}
+GetConfigBlobDataRequest::GetConfigBlobDataRequest(const GetConfigBlobDataRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:v1.agent.GetConfigBlobDataRequest)
+}
+
+void GetConfigBlobDataRequest::SharedCtor() {
+}
+
+GetConfigBlobDataRequest::~GetConfigBlobDataRequest() {
+  // @@protoc_insertion_point(destructor:v1.agent.GetConfigBlobDataRequest)
+  SharedDtor();
+}
+
+void GetConfigBlobDataRequest::SharedDtor() {
+}
+
+void GetConfigBlobDataRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetConfigBlobDataRequest& GetConfigBlobDataRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetConfigBlobDataRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetConfigBlobDataRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.agent.GetConfigBlobDataRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* GetConfigBlobDataRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetConfigBlobDataRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.agent.GetConfigBlobDataRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.agent.GetConfigBlobDataRequest)
+  return target;
+}
+
+size_t GetConfigBlobDataRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.agent.GetConfigBlobDataRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetConfigBlobDataRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.agent.GetConfigBlobDataRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetConfigBlobDataRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetConfigBlobDataRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.agent.GetConfigBlobDataRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.agent.GetConfigBlobDataRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetConfigBlobDataRequest::MergeFrom(const GetConfigBlobDataRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.agent.GetConfigBlobDataRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void GetConfigBlobDataRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.agent.GetConfigBlobDataRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetConfigBlobDataRequest::CopyFrom(const GetConfigBlobDataRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.agent.GetConfigBlobDataRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetConfigBlobDataRequest::IsInitialized() const {
+  return true;
+}
+
+void GetConfigBlobDataRequest::InternalSwap(GetConfigBlobDataRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetConfigBlobDataRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetConfigBlobDataResponse::InitAsDefaultInstance() {
+  ::v1::agent::_GetConfigBlobDataResponse_default_instance_._instance.get_mutable()->blob_data_ = const_cast< ::v1::model::BlobData*>(
+      ::v1::model::BlobData::internal_default_instance());
+}
+class GetConfigBlobDataResponse::_Internal {
+ public:
+  static const ::v1::model::BlobData& blob_data(const GetConfigBlobDataResponse* msg);
+};
+
+const ::v1::model::BlobData&
+GetConfigBlobDataResponse::_Internal::blob_data(const GetConfigBlobDataResponse* msg) {
+  return *msg->blob_data_;
+}
+void GetConfigBlobDataResponse::clear_blob_data() {
+  if (GetArenaNoVirtual() == nullptr && blob_data_ != nullptr) {
+    delete blob_data_;
+  }
+  blob_data_ = nullptr;
+}
+GetConfigBlobDataResponse::GetConfigBlobDataResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:v1.agent.GetConfigBlobDataResponse)
+}
+GetConfigBlobDataResponse::GetConfigBlobDataResponse(const GetConfigBlobDataResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._internal_has_blob_data()) {
+    blob_data_ = new ::v1::model::BlobData(*from.blob_data_);
+  } else {
+    blob_data_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:v1.agent.GetConfigBlobDataResponse)
+}
+
+void GetConfigBlobDataResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
+  blob_data_ = nullptr;
+}
+
+GetConfigBlobDataResponse::~GetConfigBlobDataResponse() {
+  // @@protoc_insertion_point(destructor:v1.agent.GetConfigBlobDataResponse)
+  SharedDtor();
+}
+
+void GetConfigBlobDataResponse::SharedDtor() {
+  if (this != internal_default_instance()) delete blob_data_;
+}
+
+void GetConfigBlobDataResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetConfigBlobDataResponse& GetConfigBlobDataResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetConfigBlobDataResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.agent.GetConfigBlobDataResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && blob_data_ != nullptr) {
+    delete blob_data_;
+  }
+  blob_data_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+const char* GetConfigBlobDataResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .v1.model.BlobData blob_data = 1[json_name = "blobData"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_blob_data(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetConfigBlobDataResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.agent.GetConfigBlobDataResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .v1.model.BlobData blob_data = 1[json_name = "blobData"];
+  if (this->has_blob_data()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::blob_data(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.agent.GetConfigBlobDataResponse)
+  return target;
+}
+
+size_t GetConfigBlobDataResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.agent.GetConfigBlobDataResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .v1.model.BlobData blob_data = 1[json_name = "blobData"];
+  if (this->has_blob_data()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *blob_data_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetConfigBlobDataResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.agent.GetConfigBlobDataResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetConfigBlobDataResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetConfigBlobDataResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.agent.GetConfigBlobDataResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.agent.GetConfigBlobDataResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetConfigBlobDataResponse::MergeFrom(const GetConfigBlobDataResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.agent.GetConfigBlobDataResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_blob_data()) {
+    _internal_mutable_blob_data()->::v1::model::BlobData::MergeFrom(from._internal_blob_data());
+  }
+}
+
+void GetConfigBlobDataResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.agent.GetConfigBlobDataResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetConfigBlobDataResponse::CopyFrom(const GetConfigBlobDataResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.agent.GetConfigBlobDataResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetConfigBlobDataResponse::IsInitialized() const {
+  return true;
+}
+
+void GetConfigBlobDataResponse::InternalSwap(GetConfigBlobDataResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(blob_data_, other->blob_data_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetConfigBlobDataResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -6445,6 +6869,12 @@ template<> PROTOBUF_NOINLINE ::v1::agent::GetApplicationConfigurationRequest* Ar
 }
 template<> PROTOBUF_NOINLINE ::v1::agent::GetApplicationConfigurationResponse* Arena::CreateMaybeMessage< ::v1::agent::GetApplicationConfigurationResponse >(Arena* arena) {
   return Arena::CreateInternal< ::v1::agent::GetApplicationConfigurationResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::v1::agent::GetConfigBlobDataRequest* Arena::CreateMaybeMessage< ::v1::agent::GetConfigBlobDataRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::v1::agent::GetConfigBlobDataRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::v1::agent::GetConfigBlobDataResponse* Arena::CreateMaybeMessage< ::v1::agent::GetConfigBlobDataResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::v1::agent::GetConfigBlobDataResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::v1::agent::GetAgentConfigurationRequest* Arena::CreateMaybeMessage< ::v1::agent::GetAgentConfigurationRequest >(Arena* arena) {
   return Arena::CreateInternal< ::v1::agent::GetAgentConfigurationRequest >(arena);
