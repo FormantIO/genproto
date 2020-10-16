@@ -32,6 +32,11 @@ class AgentStub(object):
         request_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.PostDataMultiRequest.SerializeToString,
         response_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.PostDataMultiResponse.FromString,
         )
+    self.GetTeleopControlDataStream = channel.unary_stream(
+        '/v1.agent.Agent/GetTeleopControlDataStream',
+        request_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetTeleopControlDataStreamRequest.SerializeToString,
+        response_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetTeleopControlDataStreamResponse.FromString,
+        )
     self.CreateEvent = channel.unary_unary(
         '/v1.agent.Agent/CreateEvent',
         request_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.CreateEventRequest.SerializeToString,
@@ -128,6 +133,13 @@ class AgentServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def PostDataMulti(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetTeleopControlDataStream(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -256,6 +268,11 @@ def add_AgentServicer_to_server(servicer, server):
           servicer.PostDataMulti,
           request_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.PostDataMultiRequest.FromString,
           response_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.PostDataMultiResponse.SerializeToString,
+      ),
+      'GetTeleopControlDataStream': grpc.unary_stream_rpc_method_handler(
+          servicer.GetTeleopControlDataStream,
+          request_deserializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetTeleopControlDataStreamRequest.FromString,
+          response_serializer=protos_dot_agent_dot_v1_dot_agent__pb2.GetTeleopControlDataStreamResponse.SerializeToString,
       ),
       'CreateEvent': grpc.unary_unary_rpc_method_handler(
           servicer.CreateEvent,

@@ -37,6 +37,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "protos/model/v1/ros.pb.h"
+#include "protos/model/v1/rtc.pb.h"
 #include <google/protobuf/wrappers.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -53,7 +54,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[19]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[21]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -86,6 +87,9 @@ extern BlobDataDefaultTypeInternal _BlobData_default_instance_;
 class Custom;
 class CustomDefaultTypeInternal;
 extern CustomDefaultTypeInternal _Custom_default_instance_;
+class Diagnostics;
+class DiagnosticsDefaultTypeInternal;
+extern DiagnosticsDefaultTypeInternal _Diagnostics_default_instance_;
 class DirectoryWatch;
 class DirectoryWatchDefaultTypeInternal;
 extern DirectoryWatchDefaultTypeInternal _DirectoryWatch_default_instance_;
@@ -116,6 +120,9 @@ extern TelemetryConfigurationDefaultTypeInternal _TelemetryConfiguration_default
 class TeleopConfiguration;
 class TeleopConfigurationDefaultTypeInternal;
 extern TeleopConfigurationDefaultTypeInternal _TeleopConfiguration_default_instance_;
+class TeleopCustomStreamConfiguration;
+class TeleopCustomStreamConfigurationDefaultTypeInternal;
+extern TeleopCustomStreamConfigurationDefaultTypeInternal _TeleopCustomStreamConfiguration_default_instance_;
 class TeleopRosStreamConfiguration;
 class TeleopRosStreamConfigurationDefaultTypeInternal;
 extern TeleopRosStreamConfigurationDefaultTypeInternal _TeleopRosStreamConfiguration_default_instance_;
@@ -130,6 +137,7 @@ template<> ::v1::model::ApplicationConfiguration* Arena::CreateMaybeMessage<::v1
 template<> ::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse>(Arena*);
 template<> ::v1::model::BlobData* Arena::CreateMaybeMessage<::v1::model::BlobData>(Arena*);
 template<> ::v1::model::Custom* Arena::CreateMaybeMessage<::v1::model::Custom>(Arena*);
+template<> ::v1::model::Diagnostics* Arena::CreateMaybeMessage<::v1::model::Diagnostics>(Arena*);
 template<> ::v1::model::DirectoryWatch* Arena::CreateMaybeMessage<::v1::model::DirectoryWatch>(Arena*);
 template<> ::v1::model::DiskConfiguration* Arena::CreateMaybeMessage<::v1::model::DiskConfiguration>(Arena*);
 template<> ::v1::model::FileTail* Arena::CreateMaybeMessage<::v1::model::FileTail>(Arena*);
@@ -140,35 +148,36 @@ template<> ::v1::model::StreamConfiguration* Arena::CreateMaybeMessage<::v1::mod
 template<> ::v1::model::StreamConfiguration_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::StreamConfiguration_TagsEntry_DoNotUse>(Arena*);
 template<> ::v1::model::TelemetryConfiguration* Arena::CreateMaybeMessage<::v1::model::TelemetryConfiguration>(Arena*);
 template<> ::v1::model::TeleopConfiguration* Arena::CreateMaybeMessage<::v1::model::TeleopConfiguration>(Arena*);
+template<> ::v1::model::TeleopCustomStreamConfiguration* Arena::CreateMaybeMessage<::v1::model::TeleopCustomStreamConfiguration>(Arena*);
 template<> ::v1::model::TeleopRosStreamConfiguration* Arena::CreateMaybeMessage<::v1::model::TeleopRosStreamConfiguration>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace v1 {
 namespace model {
 
-enum TeleopRosStreamConfigurationMode : int {
+enum TeleopMode : int {
   COMMAND = 0,
   OBSERVE = 1,
-  TeleopRosStreamConfigurationMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  TeleopRosStreamConfigurationMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+  TeleopMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  TeleopMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool TeleopRosStreamConfigurationMode_IsValid(int value);
-constexpr TeleopRosStreamConfigurationMode TeleopRosStreamConfigurationMode_MIN = COMMAND;
-constexpr TeleopRosStreamConfigurationMode TeleopRosStreamConfigurationMode_MAX = OBSERVE;
-constexpr int TeleopRosStreamConfigurationMode_ARRAYSIZE = TeleopRosStreamConfigurationMode_MAX + 1;
+bool TeleopMode_IsValid(int value);
+constexpr TeleopMode TeleopMode_MIN = COMMAND;
+constexpr TeleopMode TeleopMode_MAX = OBSERVE;
+constexpr int TeleopMode_ARRAYSIZE = TeleopMode_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TeleopRosStreamConfigurationMode_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TeleopMode_descriptor();
 template<typename T>
-inline const std::string& TeleopRosStreamConfigurationMode_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, TeleopRosStreamConfigurationMode>::value ||
+inline const std::string& TeleopMode_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, TeleopMode>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function TeleopRosStreamConfigurationMode_Name.");
+    "Incorrect type passed to function TeleopMode_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    TeleopRosStreamConfigurationMode_descriptor(), enum_t_value);
+    TeleopMode_descriptor(), enum_t_value);
 }
-inline bool TeleopRosStreamConfigurationMode_Parse(
-    const std::string& name, TeleopRosStreamConfigurationMode* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<TeleopRosStreamConfigurationMode>(
-    TeleopRosStreamConfigurationMode_descriptor(), name, value);
+inline bool TeleopMode_Parse(
+    const std::string& name, TeleopMode* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<TeleopMode>(
+    TeleopMode_descriptor(), name, value);
 }
 enum FileFormat : int {
   PLAIN_TEXT = 0,
@@ -694,6 +703,7 @@ class AgentConfigurationDocument :
     kTeleopFieldNumber = 6,
     kPortForwardingFieldNumber = 7,
     kBlobDataFieldNumber = 8,
+    kDiagnosticsFieldNumber = 9,
     kVersionFieldNumber = 1,
   };
   // map<string, string> tags = 2[json_name = "tags"];
@@ -803,6 +813,21 @@ class AgentConfigurationDocument :
   ::v1::model::BlobData* _internal_mutable_blob_data();
   public:
 
+  // .v1.model.Diagnostics diagnostics = 9[json_name = "diagnostics"];
+  bool has_diagnostics() const;
+  private:
+  bool _internal_has_diagnostics() const;
+  public:
+  void clear_diagnostics();
+  const ::v1::model::Diagnostics& diagnostics() const;
+  ::v1::model::Diagnostics* release_diagnostics();
+  ::v1::model::Diagnostics* mutable_diagnostics();
+  void set_allocated_diagnostics(::v1::model::Diagnostics* diagnostics);
+  private:
+  const ::v1::model::Diagnostics& _internal_diagnostics() const;
+  ::v1::model::Diagnostics* _internal_mutable_diagnostics();
+  public:
+
   // int64 version = 1[json_name = "version"];
   void clear_version();
   ::PROTOBUF_NAMESPACE_ID::int64 version() const;
@@ -829,6 +854,7 @@ class AgentConfigurationDocument :
   ::v1::model::TeleopConfiguration* teleop_;
   ::v1::model::PortForwardingConfiguration* port_forwarding_;
   ::v1::model::BlobData* blob_data_;
+  ::v1::model::Diagnostics* diagnostics_;
   ::PROTOBUF_NAMESPACE_ID::int64 version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
@@ -942,6 +968,7 @@ class TeleopConfiguration :
 
   enum : int {
     kRosStreamsFieldNumber = 1,
+    kCustomStreamsFieldNumber = 2,
   };
   // repeated .v1.model.TeleopRosStreamConfiguration ros_streams = 1[json_name = "rosStreams"];
   int ros_streams_size() const;
@@ -961,12 +988,31 @@ class TeleopConfiguration :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopRosStreamConfiguration >&
       ros_streams() const;
 
+  // repeated .v1.model.TeleopCustomStreamConfiguration custom_streams = 2[json_name = "customStreams"];
+  int custom_streams_size() const;
+  private:
+  int _internal_custom_streams_size() const;
+  public:
+  void clear_custom_streams();
+  ::v1::model::TeleopCustomStreamConfiguration* mutable_custom_streams(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopCustomStreamConfiguration >*
+      mutable_custom_streams();
+  private:
+  const ::v1::model::TeleopCustomStreamConfiguration& _internal_custom_streams(int index) const;
+  ::v1::model::TeleopCustomStreamConfiguration* _internal_add_custom_streams();
+  public:
+  const ::v1::model::TeleopCustomStreamConfiguration& custom_streams(int index) const;
+  ::v1::model::TeleopCustomStreamConfiguration* add_custom_streams();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopCustomStreamConfiguration >&
+      custom_streams() const;
+
   // @@protoc_insertion_point(class_scope:v1.model.TeleopConfiguration)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopRosStreamConfiguration > ros_streams_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopCustomStreamConfiguration > custom_streams_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -1242,13 +1288,13 @@ class TeleopRosStreamConfiguration :
   void _internal_set_topic_type(::v1::model::ROSTopicType value);
   public:
 
-  // .v1.model.TeleopRosStreamConfigurationMode mode = 3[json_name = "mode"];
+  // .v1.model.TeleopMode mode = 3[json_name = "mode"];
   void clear_mode();
-  ::v1::model::TeleopRosStreamConfigurationMode mode() const;
-  void set_mode(::v1::model::TeleopRosStreamConfigurationMode value);
+  ::v1::model::TeleopMode mode() const;
+  void set_mode(::v1::model::TeleopMode value);
   private:
-  ::v1::model::TeleopRosStreamConfigurationMode _internal_mode() const;
-  void _internal_set_mode(::v1::model::TeleopRosStreamConfigurationMode value);
+  ::v1::model::TeleopMode _internal_mode() const;
+  void _internal_set_mode(::v1::model::TeleopMode value);
   public:
 
   // bool encode_video = 4[json_name = "encodeVideo"];
@@ -1267,6 +1313,181 @@ class TeleopRosStreamConfiguration :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
   int topic_type_;
+  int mode_;
+  bool encode_video_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TeleopCustomStreamConfiguration :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.TeleopCustomStreamConfiguration) */ {
+ public:
+  TeleopCustomStreamConfiguration();
+  virtual ~TeleopCustomStreamConfiguration();
+
+  TeleopCustomStreamConfiguration(const TeleopCustomStreamConfiguration& from);
+  TeleopCustomStreamConfiguration(TeleopCustomStreamConfiguration&& from) noexcept
+    : TeleopCustomStreamConfiguration() {
+    *this = ::std::move(from);
+  }
+
+  inline TeleopCustomStreamConfiguration& operator=(const TeleopCustomStreamConfiguration& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TeleopCustomStreamConfiguration& operator=(TeleopCustomStreamConfiguration&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const TeleopCustomStreamConfiguration& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TeleopCustomStreamConfiguration* internal_default_instance() {
+    return reinterpret_cast<const TeleopCustomStreamConfiguration*>(
+               &_TeleopCustomStreamConfiguration_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(TeleopCustomStreamConfiguration& a, TeleopCustomStreamConfiguration& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TeleopCustomStreamConfiguration* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TeleopCustomStreamConfiguration* New() const final {
+    return CreateMaybeMessage<TeleopCustomStreamConfiguration>(nullptr);
+  }
+
+  TeleopCustomStreamConfiguration* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TeleopCustomStreamConfiguration>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const TeleopCustomStreamConfiguration& from);
+  void MergeFrom(const TeleopCustomStreamConfiguration& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TeleopCustomStreamConfiguration* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.TeleopCustomStreamConfiguration";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+    kRtcStreamTypeFieldNumber = 2,
+    kModeFieldNumber = 3,
+    kEncodeVideoFieldNumber = 4,
+  };
+  // string name = 1[json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string rtc_stream_type = 2[json_name = "rtcStreamType"];
+  void clear_rtc_stream_type();
+  const std::string& rtc_stream_type() const;
+  void set_rtc_stream_type(const std::string& value);
+  void set_rtc_stream_type(std::string&& value);
+  void set_rtc_stream_type(const char* value);
+  void set_rtc_stream_type(const char* value, size_t size);
+  std::string* mutable_rtc_stream_type();
+  std::string* release_rtc_stream_type();
+  void set_allocated_rtc_stream_type(std::string* rtc_stream_type);
+  private:
+  const std::string& _internal_rtc_stream_type() const;
+  void _internal_set_rtc_stream_type(const std::string& value);
+  std::string* _internal_mutable_rtc_stream_type();
+  public:
+
+  // .v1.model.TeleopMode mode = 3[json_name = "mode"];
+  void clear_mode();
+  ::v1::model::TeleopMode mode() const;
+  void set_mode(::v1::model::TeleopMode value);
+  private:
+  ::v1::model::TeleopMode _internal_mode() const;
+  void _internal_set_mode(::v1::model::TeleopMode value);
+  public:
+
+  // bool encode_video = 4[json_name = "encodeVideo"];
+  void clear_encode_video();
+  bool encode_video() const;
+  void set_encode_video(bool value);
+  private:
+  bool _internal_encode_video() const;
+  void _internal_set_encode_video(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.TeleopCustomStreamConfiguration)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rtc_stream_type_;
   int mode_;
   bool encode_video_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1316,7 +1537,7 @@ class TelemetryConfiguration :
                &_TelemetryConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(TelemetryConfiguration& a, TelemetryConfiguration& b) {
     a.Swap(&b);
@@ -1454,7 +1675,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
-    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[8];
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[9];
   }
 
   public:
@@ -1504,7 +1725,7 @@ class ApplicationConfiguration :
                &_ApplicationConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(ApplicationConfiguration& a, ApplicationConfiguration& b) {
     a.Swap(&b);
@@ -1646,7 +1867,7 @@ class ResourcesConfiguration :
                &_ResourcesConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(ResourcesConfiguration& a, ResourcesConfiguration& b) {
     a.Swap(&b);
@@ -1797,7 +2018,7 @@ class DiskConfiguration :
                &_DiskConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(DiskConfiguration& a, DiskConfiguration& b) {
     a.Swap(&b);
@@ -1936,7 +2157,7 @@ class ROSConfiguration :
                &_ROSConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(ROSConfiguration& a, ROSConfiguration& b) {
     a.Swap(&b);
@@ -2055,7 +2276,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
-    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[13];
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[14];
   }
 
   public:
@@ -2115,7 +2336,7 @@ class StreamConfiguration :
                &_StreamConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(StreamConfiguration& a, StreamConfiguration& b) {
     a.Swap(&b);
@@ -2444,7 +2665,7 @@ class BlobData :
                &_BlobData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(BlobData& a, BlobData& b) {
     a.Swap(&b);
@@ -2537,6 +2758,157 @@ class BlobData :
 };
 // -------------------------------------------------------------------
 
+class Diagnostics :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.Diagnostics) */ {
+ public:
+  Diagnostics();
+  virtual ~Diagnostics();
+
+  Diagnostics(const Diagnostics& from);
+  Diagnostics(Diagnostics&& from) noexcept
+    : Diagnostics() {
+    *this = ::std::move(from);
+  }
+
+  inline Diagnostics& operator=(const Diagnostics& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Diagnostics& operator=(Diagnostics&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Diagnostics& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Diagnostics* internal_default_instance() {
+    return reinterpret_cast<const Diagnostics*>(
+               &_Diagnostics_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(Diagnostics& a, Diagnostics& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Diagnostics* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Diagnostics* New() const final {
+    return CreateMaybeMessage<Diagnostics>(nullptr);
+  }
+
+  Diagnostics* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Diagnostics>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Diagnostics& from);
+  void MergeFrom(const Diagnostics& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Diagnostics* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.Diagnostics";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kReportLogsFieldNumber = 1,
+    kReportMetricsFieldNumber = 2,
+  };
+  // .google.protobuf.BoolValue report_logs = 1[json_name = "reportLogs"];
+  bool has_report_logs() const;
+  private:
+  bool _internal_has_report_logs() const;
+  public:
+  void clear_report_logs();
+  const PROTOBUF_NAMESPACE_ID::BoolValue& report_logs() const;
+  PROTOBUF_NAMESPACE_ID::BoolValue* release_report_logs();
+  PROTOBUF_NAMESPACE_ID::BoolValue* mutable_report_logs();
+  void set_allocated_report_logs(PROTOBUF_NAMESPACE_ID::BoolValue* report_logs);
+  private:
+  const PROTOBUF_NAMESPACE_ID::BoolValue& _internal_report_logs() const;
+  PROTOBUF_NAMESPACE_ID::BoolValue* _internal_mutable_report_logs();
+  public:
+
+  // .google.protobuf.BoolValue report_metrics = 2[json_name = "reportMetrics"];
+  bool has_report_metrics() const;
+  private:
+  bool _internal_has_report_metrics() const;
+  public:
+  void clear_report_metrics();
+  const PROTOBUF_NAMESPACE_ID::BoolValue& report_metrics() const;
+  PROTOBUF_NAMESPACE_ID::BoolValue* release_report_metrics();
+  PROTOBUF_NAMESPACE_ID::BoolValue* mutable_report_metrics();
+  void set_allocated_report_metrics(PROTOBUF_NAMESPACE_ID::BoolValue* report_metrics);
+  private:
+  const PROTOBUF_NAMESPACE_ID::BoolValue& _internal_report_metrics() const;
+  PROTOBUF_NAMESPACE_ID::BoolValue* _internal_mutable_report_metrics();
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.Diagnostics)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  PROTOBUF_NAMESPACE_ID::BoolValue* report_logs_;
+  PROTOBUF_NAMESPACE_ID::BoolValue* report_metrics_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Custom :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.Custom) */ {
  public:
@@ -2579,7 +2951,7 @@ class Custom :
                &_Custom_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(Custom& a, Custom& b) {
     a.Swap(&b);
@@ -2694,7 +3066,7 @@ class DirectoryWatch :
                &_DirectoryWatch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(DirectoryWatch& a, DirectoryWatch& b) {
     a.Swap(&b);
@@ -2869,7 +3241,7 @@ class FileTail :
                &_FileTail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(FileTail& a, FileTail& b) {
     a.Swap(&b);
@@ -3755,6 +4127,66 @@ inline void AgentConfigurationDocument::set_allocated_blob_data(::v1::model::Blo
   // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationDocument.blob_data)
 }
 
+// .v1.model.Diagnostics diagnostics = 9[json_name = "diagnostics"];
+inline bool AgentConfigurationDocument::_internal_has_diagnostics() const {
+  return this != internal_default_instance() && diagnostics_ != nullptr;
+}
+inline bool AgentConfigurationDocument::has_diagnostics() const {
+  return _internal_has_diagnostics();
+}
+inline void AgentConfigurationDocument::clear_diagnostics() {
+  if (GetArenaNoVirtual() == nullptr && diagnostics_ != nullptr) {
+    delete diagnostics_;
+  }
+  diagnostics_ = nullptr;
+}
+inline const ::v1::model::Diagnostics& AgentConfigurationDocument::_internal_diagnostics() const {
+  const ::v1::model::Diagnostics* p = diagnostics_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::v1::model::Diagnostics*>(
+      &::v1::model::_Diagnostics_default_instance_);
+}
+inline const ::v1::model::Diagnostics& AgentConfigurationDocument::diagnostics() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentConfigurationDocument.diagnostics)
+  return _internal_diagnostics();
+}
+inline ::v1::model::Diagnostics* AgentConfigurationDocument::release_diagnostics() {
+  // @@protoc_insertion_point(field_release:v1.model.AgentConfigurationDocument.diagnostics)
+  
+  ::v1::model::Diagnostics* temp = diagnostics_;
+  diagnostics_ = nullptr;
+  return temp;
+}
+inline ::v1::model::Diagnostics* AgentConfigurationDocument::_internal_mutable_diagnostics() {
+  
+  if (diagnostics_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::Diagnostics>(GetArenaNoVirtual());
+    diagnostics_ = p;
+  }
+  return diagnostics_;
+}
+inline ::v1::model::Diagnostics* AgentConfigurationDocument::mutable_diagnostics() {
+  // @@protoc_insertion_point(field_mutable:v1.model.AgentConfigurationDocument.diagnostics)
+  return _internal_mutable_diagnostics();
+}
+inline void AgentConfigurationDocument::set_allocated_diagnostics(::v1::model::Diagnostics* diagnostics) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete diagnostics_;
+  }
+  if (diagnostics) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      diagnostics = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, diagnostics, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  diagnostics_ = diagnostics;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationDocument.diagnostics)
+}
+
 // -------------------------------------------------------------------
 
 // TeleopConfiguration
@@ -3796,6 +4228,45 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopRosSt
 TeleopConfiguration::ros_streams() const {
   // @@protoc_insertion_point(field_list:v1.model.TeleopConfiguration.ros_streams)
   return ros_streams_;
+}
+
+// repeated .v1.model.TeleopCustomStreamConfiguration custom_streams = 2[json_name = "customStreams"];
+inline int TeleopConfiguration::_internal_custom_streams_size() const {
+  return custom_streams_.size();
+}
+inline int TeleopConfiguration::custom_streams_size() const {
+  return _internal_custom_streams_size();
+}
+inline void TeleopConfiguration::clear_custom_streams() {
+  custom_streams_.Clear();
+}
+inline ::v1::model::TeleopCustomStreamConfiguration* TeleopConfiguration::mutable_custom_streams(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopConfiguration.custom_streams)
+  return custom_streams_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopCustomStreamConfiguration >*
+TeleopConfiguration::mutable_custom_streams() {
+  // @@protoc_insertion_point(field_mutable_list:v1.model.TeleopConfiguration.custom_streams)
+  return &custom_streams_;
+}
+inline const ::v1::model::TeleopCustomStreamConfiguration& TeleopConfiguration::_internal_custom_streams(int index) const {
+  return custom_streams_.Get(index);
+}
+inline const ::v1::model::TeleopCustomStreamConfiguration& TeleopConfiguration::custom_streams(int index) const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopConfiguration.custom_streams)
+  return _internal_custom_streams(index);
+}
+inline ::v1::model::TeleopCustomStreamConfiguration* TeleopConfiguration::_internal_add_custom_streams() {
+  return custom_streams_.Add();
+}
+inline ::v1::model::TeleopCustomStreamConfiguration* TeleopConfiguration::add_custom_streams() {
+  // @@protoc_insertion_point(field_add:v1.model.TeleopConfiguration.custom_streams)
+  return _internal_add_custom_streams();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopCustomStreamConfiguration >&
+TeleopConfiguration::custom_streams() const {
+  // @@protoc_insertion_point(field_list:v1.model.TeleopConfiguration.custom_streams)
+  return custom_streams_;
 }
 
 // -------------------------------------------------------------------
@@ -3941,22 +4412,22 @@ inline void TeleopRosStreamConfiguration::set_topic_type(::v1::model::ROSTopicTy
   // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.topic_type)
 }
 
-// .v1.model.TeleopRosStreamConfigurationMode mode = 3[json_name = "mode"];
+// .v1.model.TeleopMode mode = 3[json_name = "mode"];
 inline void TeleopRosStreamConfiguration::clear_mode() {
   mode_ = 0;
 }
-inline ::v1::model::TeleopRosStreamConfigurationMode TeleopRosStreamConfiguration::_internal_mode() const {
-  return static_cast< ::v1::model::TeleopRosStreamConfigurationMode >(mode_);
+inline ::v1::model::TeleopMode TeleopRosStreamConfiguration::_internal_mode() const {
+  return static_cast< ::v1::model::TeleopMode >(mode_);
 }
-inline ::v1::model::TeleopRosStreamConfigurationMode TeleopRosStreamConfiguration::mode() const {
+inline ::v1::model::TeleopMode TeleopRosStreamConfiguration::mode() const {
   // @@protoc_insertion_point(field_get:v1.model.TeleopRosStreamConfiguration.mode)
   return _internal_mode();
 }
-inline void TeleopRosStreamConfiguration::_internal_set_mode(::v1::model::TeleopRosStreamConfigurationMode value) {
+inline void TeleopRosStreamConfiguration::_internal_set_mode(::v1::model::TeleopMode value) {
   
   mode_ = value;
 }
-inline void TeleopRosStreamConfiguration::set_mode(::v1::model::TeleopRosStreamConfigurationMode value) {
+inline void TeleopRosStreamConfiguration::set_mode(::v1::model::TeleopMode value) {
   _internal_set_mode(value);
   // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.mode)
 }
@@ -3979,6 +4450,170 @@ inline void TeleopRosStreamConfiguration::_internal_set_encode_video(bool value)
 inline void TeleopRosStreamConfiguration::set_encode_video(bool value) {
   _internal_set_encode_video(value);
   // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.encode_video)
+}
+
+// -------------------------------------------------------------------
+
+// TeleopCustomStreamConfiguration
+
+// string name = 1[json_name = "name"];
+inline void TeleopCustomStreamConfiguration::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& TeleopCustomStreamConfiguration::name() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopCustomStreamConfiguration.name)
+  return _internal_name();
+}
+inline void TeleopCustomStreamConfiguration::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopCustomStreamConfiguration.name)
+}
+inline std::string* TeleopCustomStreamConfiguration::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopCustomStreamConfiguration.name)
+  return _internal_mutable_name();
+}
+inline const std::string& TeleopCustomStreamConfiguration::_internal_name() const {
+  return name_.GetNoArena();
+}
+inline void TeleopCustomStreamConfiguration::_internal_set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void TeleopCustomStreamConfiguration::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.TeleopCustomStreamConfiguration.name)
+}
+inline void TeleopCustomStreamConfiguration::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:v1.model.TeleopCustomStreamConfiguration.name)
+}
+inline void TeleopCustomStreamConfiguration::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:v1.model.TeleopCustomStreamConfiguration.name)
+}
+inline std::string* TeleopCustomStreamConfiguration::_internal_mutable_name() {
+  
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* TeleopCustomStreamConfiguration::release_name() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopCustomStreamConfiguration.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void TeleopCustomStreamConfiguration::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopCustomStreamConfiguration.name)
+}
+
+// string rtc_stream_type = 2[json_name = "rtcStreamType"];
+inline void TeleopCustomStreamConfiguration::clear_rtc_stream_type() {
+  rtc_stream_type_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& TeleopCustomStreamConfiguration::rtc_stream_type() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopCustomStreamConfiguration.rtc_stream_type)
+  return _internal_rtc_stream_type();
+}
+inline void TeleopCustomStreamConfiguration::set_rtc_stream_type(const std::string& value) {
+  _internal_set_rtc_stream_type(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopCustomStreamConfiguration.rtc_stream_type)
+}
+inline std::string* TeleopCustomStreamConfiguration::mutable_rtc_stream_type() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopCustomStreamConfiguration.rtc_stream_type)
+  return _internal_mutable_rtc_stream_type();
+}
+inline const std::string& TeleopCustomStreamConfiguration::_internal_rtc_stream_type() const {
+  return rtc_stream_type_.GetNoArena();
+}
+inline void TeleopCustomStreamConfiguration::_internal_set_rtc_stream_type(const std::string& value) {
+  
+  rtc_stream_type_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void TeleopCustomStreamConfiguration::set_rtc_stream_type(std::string&& value) {
+  
+  rtc_stream_type_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.TeleopCustomStreamConfiguration.rtc_stream_type)
+}
+inline void TeleopCustomStreamConfiguration::set_rtc_stream_type(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  rtc_stream_type_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:v1.model.TeleopCustomStreamConfiguration.rtc_stream_type)
+}
+inline void TeleopCustomStreamConfiguration::set_rtc_stream_type(const char* value, size_t size) {
+  
+  rtc_stream_type_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:v1.model.TeleopCustomStreamConfiguration.rtc_stream_type)
+}
+inline std::string* TeleopCustomStreamConfiguration::_internal_mutable_rtc_stream_type() {
+  
+  return rtc_stream_type_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* TeleopCustomStreamConfiguration::release_rtc_stream_type() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopCustomStreamConfiguration.rtc_stream_type)
+  
+  return rtc_stream_type_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void TeleopCustomStreamConfiguration::set_allocated_rtc_stream_type(std::string* rtc_stream_type) {
+  if (rtc_stream_type != nullptr) {
+    
+  } else {
+    
+  }
+  rtc_stream_type_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rtc_stream_type);
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopCustomStreamConfiguration.rtc_stream_type)
+}
+
+// .v1.model.TeleopMode mode = 3[json_name = "mode"];
+inline void TeleopCustomStreamConfiguration::clear_mode() {
+  mode_ = 0;
+}
+inline ::v1::model::TeleopMode TeleopCustomStreamConfiguration::_internal_mode() const {
+  return static_cast< ::v1::model::TeleopMode >(mode_);
+}
+inline ::v1::model::TeleopMode TeleopCustomStreamConfiguration::mode() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopCustomStreamConfiguration.mode)
+  return _internal_mode();
+}
+inline void TeleopCustomStreamConfiguration::_internal_set_mode(::v1::model::TeleopMode value) {
+  
+  mode_ = value;
+}
+inline void TeleopCustomStreamConfiguration::set_mode(::v1::model::TeleopMode value) {
+  _internal_set_mode(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopCustomStreamConfiguration.mode)
+}
+
+// bool encode_video = 4[json_name = "encodeVideo"];
+inline void TeleopCustomStreamConfiguration::clear_encode_video() {
+  encode_video_ = false;
+}
+inline bool TeleopCustomStreamConfiguration::_internal_encode_video() const {
+  return encode_video_;
+}
+inline bool TeleopCustomStreamConfiguration::encode_video() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopCustomStreamConfiguration.encode_video)
+  return _internal_encode_video();
+}
+inline void TeleopCustomStreamConfiguration::_internal_set_encode_video(bool value) {
+  
+  encode_video_ = value;
+}
+inline void TeleopCustomStreamConfiguration::set_encode_video(bool value) {
+  _internal_set_encode_video(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopCustomStreamConfiguration.encode_video)
 }
 
 // -------------------------------------------------------------------
@@ -4963,6 +5598,120 @@ inline void BlobData::set_allocated_data(std::string* data) {
 
 // -------------------------------------------------------------------
 
+// Diagnostics
+
+// .google.protobuf.BoolValue report_logs = 1[json_name = "reportLogs"];
+inline bool Diagnostics::_internal_has_report_logs() const {
+  return this != internal_default_instance() && report_logs_ != nullptr;
+}
+inline bool Diagnostics::has_report_logs() const {
+  return _internal_has_report_logs();
+}
+inline const PROTOBUF_NAMESPACE_ID::BoolValue& Diagnostics::_internal_report_logs() const {
+  const PROTOBUF_NAMESPACE_ID::BoolValue* p = report_logs_;
+  return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::BoolValue*>(
+      &PROTOBUF_NAMESPACE_ID::_BoolValue_default_instance_);
+}
+inline const PROTOBUF_NAMESPACE_ID::BoolValue& Diagnostics::report_logs() const {
+  // @@protoc_insertion_point(field_get:v1.model.Diagnostics.report_logs)
+  return _internal_report_logs();
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* Diagnostics::release_report_logs() {
+  // @@protoc_insertion_point(field_release:v1.model.Diagnostics.report_logs)
+  
+  PROTOBUF_NAMESPACE_ID::BoolValue* temp = report_logs_;
+  report_logs_ = nullptr;
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* Diagnostics::_internal_mutable_report_logs() {
+  
+  if (report_logs_ == nullptr) {
+    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::BoolValue>(GetArenaNoVirtual());
+    report_logs_ = p;
+  }
+  return report_logs_;
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* Diagnostics::mutable_report_logs() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Diagnostics.report_logs)
+  return _internal_mutable_report_logs();
+}
+inline void Diagnostics::set_allocated_report_logs(PROTOBUF_NAMESPACE_ID::BoolValue* report_logs) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(report_logs_);
+  }
+  if (report_logs) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(report_logs)->GetArena();
+    if (message_arena != submessage_arena) {
+      report_logs = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, report_logs, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  report_logs_ = report_logs;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Diagnostics.report_logs)
+}
+
+// .google.protobuf.BoolValue report_metrics = 2[json_name = "reportMetrics"];
+inline bool Diagnostics::_internal_has_report_metrics() const {
+  return this != internal_default_instance() && report_metrics_ != nullptr;
+}
+inline bool Diagnostics::has_report_metrics() const {
+  return _internal_has_report_metrics();
+}
+inline const PROTOBUF_NAMESPACE_ID::BoolValue& Diagnostics::_internal_report_metrics() const {
+  const PROTOBUF_NAMESPACE_ID::BoolValue* p = report_metrics_;
+  return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::BoolValue*>(
+      &PROTOBUF_NAMESPACE_ID::_BoolValue_default_instance_);
+}
+inline const PROTOBUF_NAMESPACE_ID::BoolValue& Diagnostics::report_metrics() const {
+  // @@protoc_insertion_point(field_get:v1.model.Diagnostics.report_metrics)
+  return _internal_report_metrics();
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* Diagnostics::release_report_metrics() {
+  // @@protoc_insertion_point(field_release:v1.model.Diagnostics.report_metrics)
+  
+  PROTOBUF_NAMESPACE_ID::BoolValue* temp = report_metrics_;
+  report_metrics_ = nullptr;
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* Diagnostics::_internal_mutable_report_metrics() {
+  
+  if (report_metrics_ == nullptr) {
+    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::BoolValue>(GetArenaNoVirtual());
+    report_metrics_ = p;
+  }
+  return report_metrics_;
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* Diagnostics::mutable_report_metrics() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Diagnostics.report_metrics)
+  return _internal_mutable_report_metrics();
+}
+inline void Diagnostics::set_allocated_report_metrics(PROTOBUF_NAMESPACE_ID::BoolValue* report_metrics) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(report_metrics_);
+  }
+  if (report_metrics) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(report_metrics)->GetArena();
+    if (message_arena != submessage_arena) {
+      report_metrics = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, report_metrics, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  report_metrics_ = report_metrics;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Diagnostics.report_metrics)
+}
+
+// -------------------------------------------------------------------
+
 // Custom
 
 // -------------------------------------------------------------------
@@ -5432,6 +6181,10 @@ inline void FileTail::set_allocated_regex(std::string* regex) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -5440,10 +6193,10 @@ inline void FileTail::set_allocated_regex(std::string* regex) {
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::v1::model::TeleopRosStreamConfigurationMode> : ::std::true_type {};
+template <> struct is_proto_enum< ::v1::model::TeleopMode> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::v1::model::TeleopRosStreamConfigurationMode>() {
-  return ::v1::model::TeleopRosStreamConfigurationMode_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::v1::model::TeleopMode>() {
+  return ::v1::model::TeleopMode_descriptor();
 }
 template <> struct is_proto_enum< ::v1::model::FileFormat> : ::std::true_type {};
 template <>

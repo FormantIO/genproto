@@ -56,7 +56,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -65,6 +65,9 @@ struct TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto;
 namespace v1 {
 namespace model {
+class ControlDatapoint;
+class ControlDatapointDefaultTypeInternal;
+extern ControlDatapointDefaultTypeInternal _ControlDatapoint_default_instance_;
 class Datapoint;
 class DatapointDefaultTypeInternal;
 extern DatapointDefaultTypeInternal _Datapoint_default_instance_;
@@ -74,6 +77,7 @@ extern Datapoint_TagsEntry_DoNotUseDefaultTypeInternal _Datapoint_TagsEntry_DoNo
 }  // namespace model
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
+template<> ::v1::model::ControlDatapoint* Arena::CreateMaybeMessage<::v1::model::ControlDatapoint>(Arena*);
 template<> ::v1::model::Datapoint* Arena::CreateMaybeMessage<::v1::model::Datapoint>(Arena*);
 template<> ::v1::model::Datapoint_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::Datapoint_TagsEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -540,6 +544,223 @@ class Datapoint :
     ::v1::model::Json* json_;
     ::v1::model::Battery* battery_;
     ::v1::model::Video* video_;
+  } data_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ControlDatapoint :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.ControlDatapoint) */ {
+ public:
+  ControlDatapoint();
+  virtual ~ControlDatapoint();
+
+  ControlDatapoint(const ControlDatapoint& from);
+  ControlDatapoint(ControlDatapoint&& from) noexcept
+    : ControlDatapoint() {
+    *this = ::std::move(from);
+  }
+
+  inline ControlDatapoint& operator=(const ControlDatapoint& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ControlDatapoint& operator=(ControlDatapoint&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ControlDatapoint& default_instance();
+
+  enum DataCase {
+    kBitset = 3,
+    kTwist = 4,
+    kPose = 5,
+    DATA_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ControlDatapoint* internal_default_instance() {
+    return reinterpret_cast<const ControlDatapoint*>(
+               &_ControlDatapoint_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(ControlDatapoint& a, ControlDatapoint& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ControlDatapoint* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ControlDatapoint* New() const final {
+    return CreateMaybeMessage<ControlDatapoint>(nullptr);
+  }
+
+  ControlDatapoint* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ControlDatapoint>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ControlDatapoint& from);
+  void MergeFrom(const ControlDatapoint& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ControlDatapoint* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.ControlDatapoint";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStreamFieldNumber = 1,
+    kTimestampFieldNumber = 2,
+    kBitsetFieldNumber = 3,
+    kTwistFieldNumber = 4,
+    kPoseFieldNumber = 5,
+  };
+  // string stream = 1[json_name = "stream"];
+  void clear_stream();
+  const std::string& stream() const;
+  void set_stream(const std::string& value);
+  void set_stream(std::string&& value);
+  void set_stream(const char* value);
+  void set_stream(const char* value, size_t size);
+  std::string* mutable_stream();
+  std::string* release_stream();
+  void set_allocated_stream(std::string* stream);
+  private:
+  const std::string& _internal_stream() const;
+  void _internal_set_stream(const std::string& value);
+  std::string* _internal_mutable_stream();
+  public:
+
+  // int64 timestamp = 2[json_name = "timestamp"];
+  void clear_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::int64 timestamp() const;
+  void set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_timestamp() const;
+  void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // .v1.model.Bitset bitset = 3[json_name = "bitset"];
+  bool has_bitset() const;
+  private:
+  bool _internal_has_bitset() const;
+  public:
+  void clear_bitset();
+  const ::v1::model::Bitset& bitset() const;
+  ::v1::model::Bitset* release_bitset();
+  ::v1::model::Bitset* mutable_bitset();
+  void set_allocated_bitset(::v1::model::Bitset* bitset);
+  private:
+  const ::v1::model::Bitset& _internal_bitset() const;
+  ::v1::model::Bitset* _internal_mutable_bitset();
+  public:
+
+  // .v1.model.Twist twist = 4[json_name = "twist"];
+  bool has_twist() const;
+  private:
+  bool _internal_has_twist() const;
+  public:
+  void clear_twist();
+  const ::v1::model::Twist& twist() const;
+  ::v1::model::Twist* release_twist();
+  ::v1::model::Twist* mutable_twist();
+  void set_allocated_twist(::v1::model::Twist* twist);
+  private:
+  const ::v1::model::Twist& _internal_twist() const;
+  ::v1::model::Twist* _internal_mutable_twist();
+  public:
+
+  // .v1.model.Transform pose = 5[json_name = "pose"];
+  bool has_pose() const;
+  private:
+  bool _internal_has_pose() const;
+  public:
+  void clear_pose();
+  const ::v1::model::Transform& pose() const;
+  ::v1::model::Transform* release_pose();
+  ::v1::model::Transform* mutable_pose();
+  void set_allocated_pose(::v1::model::Transform* pose);
+  private:
+  const ::v1::model::Transform& _internal_pose() const;
+  ::v1::model::Transform* _internal_mutable_pose();
+  public:
+
+  void clear_data();
+  DataCase data_case() const;
+  // @@protoc_insertion_point(class_scope:v1.model.ControlDatapoint)
+ private:
+  class _Internal;
+  void set_has_bitset();
+  void set_has_twist();
+  void set_has_pose();
+
+  inline bool has_data() const;
+  inline void clear_has_data();
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stream_;
+  ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
+  union DataUnion {
+    DataUnion() {}
+    ::v1::model::Bitset* bitset_;
+    ::v1::model::Twist* twist_;
+    ::v1::model::Transform* pose_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1249,9 +1470,236 @@ inline void Datapoint::clear_has_data() {
 inline Datapoint::DataCase Datapoint::data_case() const {
   return Datapoint::DataCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// ControlDatapoint
+
+// string stream = 1[json_name = "stream"];
+inline void ControlDatapoint::clear_stream() {
+  stream_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& ControlDatapoint::stream() const {
+  // @@protoc_insertion_point(field_get:v1.model.ControlDatapoint.stream)
+  return _internal_stream();
+}
+inline void ControlDatapoint::set_stream(const std::string& value) {
+  _internal_set_stream(value);
+  // @@protoc_insertion_point(field_set:v1.model.ControlDatapoint.stream)
+}
+inline std::string* ControlDatapoint::mutable_stream() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ControlDatapoint.stream)
+  return _internal_mutable_stream();
+}
+inline const std::string& ControlDatapoint::_internal_stream() const {
+  return stream_.GetNoArena();
+}
+inline void ControlDatapoint::_internal_set_stream(const std::string& value) {
+  
+  stream_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void ControlDatapoint::set_stream(std::string&& value) {
+  
+  stream_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.ControlDatapoint.stream)
+}
+inline void ControlDatapoint::set_stream(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  stream_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:v1.model.ControlDatapoint.stream)
+}
+inline void ControlDatapoint::set_stream(const char* value, size_t size) {
+  
+  stream_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:v1.model.ControlDatapoint.stream)
+}
+inline std::string* ControlDatapoint::_internal_mutable_stream() {
+  
+  return stream_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* ControlDatapoint::release_stream() {
+  // @@protoc_insertion_point(field_release:v1.model.ControlDatapoint.stream)
+  
+  return stream_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void ControlDatapoint::set_allocated_stream(std::string* stream) {
+  if (stream != nullptr) {
+    
+  } else {
+    
+  }
+  stream_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), stream);
+  // @@protoc_insertion_point(field_set_allocated:v1.model.ControlDatapoint.stream)
+}
+
+// int64 timestamp = 2[json_name = "timestamp"];
+inline void ControlDatapoint::clear_timestamp() {
+  timestamp_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 ControlDatapoint::_internal_timestamp() const {
+  return timestamp_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 ControlDatapoint::timestamp() const {
+  // @@protoc_insertion_point(field_get:v1.model.ControlDatapoint.timestamp)
+  return _internal_timestamp();
+}
+inline void ControlDatapoint::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  timestamp_ = value;
+}
+inline void ControlDatapoint::set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_timestamp(value);
+  // @@protoc_insertion_point(field_set:v1.model.ControlDatapoint.timestamp)
+}
+
+// .v1.model.Bitset bitset = 3[json_name = "bitset"];
+inline bool ControlDatapoint::_internal_has_bitset() const {
+  return data_case() == kBitset;
+}
+inline bool ControlDatapoint::has_bitset() const {
+  return _internal_has_bitset();
+}
+inline void ControlDatapoint::set_has_bitset() {
+  _oneof_case_[0] = kBitset;
+}
+inline ::v1::model::Bitset* ControlDatapoint::release_bitset() {
+  // @@protoc_insertion_point(field_release:v1.model.ControlDatapoint.bitset)
+  if (_internal_has_bitset()) {
+    clear_has_data();
+      ::v1::model::Bitset* temp = data_.bitset_;
+    data_.bitset_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Bitset& ControlDatapoint::_internal_bitset() const {
+  return _internal_has_bitset()
+      ? *data_.bitset_
+      : *reinterpret_cast< ::v1::model::Bitset*>(&::v1::model::_Bitset_default_instance_);
+}
+inline const ::v1::model::Bitset& ControlDatapoint::bitset() const {
+  // @@protoc_insertion_point(field_get:v1.model.ControlDatapoint.bitset)
+  return _internal_bitset();
+}
+inline ::v1::model::Bitset* ControlDatapoint::_internal_mutable_bitset() {
+  if (!_internal_has_bitset()) {
+    clear_data();
+    set_has_bitset();
+    data_.bitset_ = CreateMaybeMessage< ::v1::model::Bitset >(
+        GetArenaNoVirtual());
+  }
+  return data_.bitset_;
+}
+inline ::v1::model::Bitset* ControlDatapoint::mutable_bitset() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ControlDatapoint.bitset)
+  return _internal_mutable_bitset();
+}
+
+// .v1.model.Twist twist = 4[json_name = "twist"];
+inline bool ControlDatapoint::_internal_has_twist() const {
+  return data_case() == kTwist;
+}
+inline bool ControlDatapoint::has_twist() const {
+  return _internal_has_twist();
+}
+inline void ControlDatapoint::set_has_twist() {
+  _oneof_case_[0] = kTwist;
+}
+inline ::v1::model::Twist* ControlDatapoint::release_twist() {
+  // @@protoc_insertion_point(field_release:v1.model.ControlDatapoint.twist)
+  if (_internal_has_twist()) {
+    clear_has_data();
+      ::v1::model::Twist* temp = data_.twist_;
+    data_.twist_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Twist& ControlDatapoint::_internal_twist() const {
+  return _internal_has_twist()
+      ? *data_.twist_
+      : *reinterpret_cast< ::v1::model::Twist*>(&::v1::model::_Twist_default_instance_);
+}
+inline const ::v1::model::Twist& ControlDatapoint::twist() const {
+  // @@protoc_insertion_point(field_get:v1.model.ControlDatapoint.twist)
+  return _internal_twist();
+}
+inline ::v1::model::Twist* ControlDatapoint::_internal_mutable_twist() {
+  if (!_internal_has_twist()) {
+    clear_data();
+    set_has_twist();
+    data_.twist_ = CreateMaybeMessage< ::v1::model::Twist >(
+        GetArenaNoVirtual());
+  }
+  return data_.twist_;
+}
+inline ::v1::model::Twist* ControlDatapoint::mutable_twist() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ControlDatapoint.twist)
+  return _internal_mutable_twist();
+}
+
+// .v1.model.Transform pose = 5[json_name = "pose"];
+inline bool ControlDatapoint::_internal_has_pose() const {
+  return data_case() == kPose;
+}
+inline bool ControlDatapoint::has_pose() const {
+  return _internal_has_pose();
+}
+inline void ControlDatapoint::set_has_pose() {
+  _oneof_case_[0] = kPose;
+}
+inline ::v1::model::Transform* ControlDatapoint::release_pose() {
+  // @@protoc_insertion_point(field_release:v1.model.ControlDatapoint.pose)
+  if (_internal_has_pose()) {
+    clear_has_data();
+      ::v1::model::Transform* temp = data_.pose_;
+    data_.pose_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Transform& ControlDatapoint::_internal_pose() const {
+  return _internal_has_pose()
+      ? *data_.pose_
+      : *reinterpret_cast< ::v1::model::Transform*>(&::v1::model::_Transform_default_instance_);
+}
+inline const ::v1::model::Transform& ControlDatapoint::pose() const {
+  // @@protoc_insertion_point(field_get:v1.model.ControlDatapoint.pose)
+  return _internal_pose();
+}
+inline ::v1::model::Transform* ControlDatapoint::_internal_mutable_pose() {
+  if (!_internal_has_pose()) {
+    clear_data();
+    set_has_pose();
+    data_.pose_ = CreateMaybeMessage< ::v1::model::Transform >(
+        GetArenaNoVirtual());
+  }
+  return data_.pose_;
+}
+inline ::v1::model::Transform* ControlDatapoint::mutable_pose() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ControlDatapoint.pose)
+  return _internal_mutable_pose();
+}
+
+inline bool ControlDatapoint::has_data() const {
+  return data_case() != DATA_NOT_SET;
+}
+inline void ControlDatapoint::clear_has_data() {
+  _oneof_case_[0] = DATA_NOT_SET;
+}
+inline ControlDatapoint::DataCase ControlDatapoint::data_case() const {
+  return ControlDatapoint::DataCase(_oneof_case_[0]);
+}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

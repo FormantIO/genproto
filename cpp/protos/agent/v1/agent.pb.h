@@ -53,7 +53,7 @@ struct TableStruct_protos_2fagent_2fv1_2fagent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[32]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[34]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -119,6 +119,12 @@ extern GetStreamsConfigurationRequestDefaultTypeInternal _GetStreamsConfiguratio
 class GetStreamsConfigurationResponse;
 class GetStreamsConfigurationResponseDefaultTypeInternal;
 extern GetStreamsConfigurationResponseDefaultTypeInternal _GetStreamsConfigurationResponse_default_instance_;
+class GetTeleopControlDataStreamRequest;
+class GetTeleopControlDataStreamRequestDefaultTypeInternal;
+extern GetTeleopControlDataStreamRequestDefaultTypeInternal _GetTeleopControlDataStreamRequest_default_instance_;
+class GetTeleopControlDataStreamResponse;
+class GetTeleopControlDataStreamResponseDefaultTypeInternal;
+extern GetTeleopControlDataStreamResponseDefaultTypeInternal _GetTeleopControlDataStreamResponse_default_instance_;
 class HealthRequest;
 class HealthRequestDefaultTypeInternal;
 extern HealthRequestDefaultTypeInternal _HealthRequest_default_instance_;
@@ -180,6 +186,8 @@ template<> ::v1::agent::GetInterventionRequestRequest* Arena::CreateMaybeMessage
 template<> ::v1::agent::GetInterventionResponseRequest* Arena::CreateMaybeMessage<::v1::agent::GetInterventionResponseRequest>(Arena*);
 template<> ::v1::agent::GetStreamsConfigurationRequest* Arena::CreateMaybeMessage<::v1::agent::GetStreamsConfigurationRequest>(Arena*);
 template<> ::v1::agent::GetStreamsConfigurationResponse* Arena::CreateMaybeMessage<::v1::agent::GetStreamsConfigurationResponse>(Arena*);
+template<> ::v1::agent::GetTeleopControlDataStreamRequest* Arena::CreateMaybeMessage<::v1::agent::GetTeleopControlDataStreamRequest>(Arena*);
+template<> ::v1::agent::GetTeleopControlDataStreamResponse* Arena::CreateMaybeMessage<::v1::agent::GetTeleopControlDataStreamResponse>(Arena*);
 template<> ::v1::agent::HealthRequest* Arena::CreateMaybeMessage<::v1::agent::HealthRequest>(Arena*);
 template<> ::v1::agent::HealthResponse* Arena::CreateMaybeMessage<::v1::agent::HealthResponse>(Arena*);
 template<> ::v1::agent::PostDataError* Arena::CreateMaybeMessage<::v1::agent::PostDataError>(Arena*);
@@ -3288,6 +3296,283 @@ class GetCommandRequestStreamResponse :
 };
 // -------------------------------------------------------------------
 
+class GetTeleopControlDataStreamRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.GetTeleopControlDataStreamRequest) */ {
+ public:
+  GetTeleopControlDataStreamRequest();
+  virtual ~GetTeleopControlDataStreamRequest();
+
+  GetTeleopControlDataStreamRequest(const GetTeleopControlDataStreamRequest& from);
+  GetTeleopControlDataStreamRequest(GetTeleopControlDataStreamRequest&& from) noexcept
+    : GetTeleopControlDataStreamRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTeleopControlDataStreamRequest& operator=(const GetTeleopControlDataStreamRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTeleopControlDataStreamRequest& operator=(GetTeleopControlDataStreamRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetTeleopControlDataStreamRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetTeleopControlDataStreamRequest* internal_default_instance() {
+    return reinterpret_cast<const GetTeleopControlDataStreamRequest*>(
+               &_GetTeleopControlDataStreamRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(GetTeleopControlDataStreamRequest& a, GetTeleopControlDataStreamRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTeleopControlDataStreamRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTeleopControlDataStreamRequest* New() const final {
+    return CreateMaybeMessage<GetTeleopControlDataStreamRequest>(nullptr);
+  }
+
+  GetTeleopControlDataStreamRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTeleopControlDataStreamRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetTeleopControlDataStreamRequest& from);
+  void MergeFrom(const GetTeleopControlDataStreamRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTeleopControlDataStreamRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.GetTeleopControlDataStreamRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto);
+    return ::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStreamFilterFieldNumber = 1,
+  };
+  // repeated string stream_filter = 1[json_name = "streamFilter"];
+  int stream_filter_size() const;
+  private:
+  int _internal_stream_filter_size() const;
+  public:
+  void clear_stream_filter();
+  const std::string& stream_filter(int index) const;
+  std::string* mutable_stream_filter(int index);
+  void set_stream_filter(int index, const std::string& value);
+  void set_stream_filter(int index, std::string&& value);
+  void set_stream_filter(int index, const char* value);
+  void set_stream_filter(int index, const char* value, size_t size);
+  std::string* add_stream_filter();
+  void add_stream_filter(const std::string& value);
+  void add_stream_filter(std::string&& value);
+  void add_stream_filter(const char* value);
+  void add_stream_filter(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& stream_filter() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_stream_filter();
+  private:
+  const std::string& _internal_stream_filter(int index) const;
+  std::string* _internal_add_stream_filter();
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.agent.GetTeleopControlDataStreamRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> stream_filter_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTeleopControlDataStreamResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.GetTeleopControlDataStreamResponse) */ {
+ public:
+  GetTeleopControlDataStreamResponse();
+  virtual ~GetTeleopControlDataStreamResponse();
+
+  GetTeleopControlDataStreamResponse(const GetTeleopControlDataStreamResponse& from);
+  GetTeleopControlDataStreamResponse(GetTeleopControlDataStreamResponse&& from) noexcept
+    : GetTeleopControlDataStreamResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTeleopControlDataStreamResponse& operator=(const GetTeleopControlDataStreamResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTeleopControlDataStreamResponse& operator=(GetTeleopControlDataStreamResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetTeleopControlDataStreamResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetTeleopControlDataStreamResponse* internal_default_instance() {
+    return reinterpret_cast<const GetTeleopControlDataStreamResponse*>(
+               &_GetTeleopControlDataStreamResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(GetTeleopControlDataStreamResponse& a, GetTeleopControlDataStreamResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTeleopControlDataStreamResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTeleopControlDataStreamResponse* New() const final {
+    return CreateMaybeMessage<GetTeleopControlDataStreamResponse>(nullptr);
+  }
+
+  GetTeleopControlDataStreamResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTeleopControlDataStreamResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetTeleopControlDataStreamResponse& from);
+  void MergeFrom(const GetTeleopControlDataStreamResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTeleopControlDataStreamResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.GetTeleopControlDataStreamResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto);
+    return ::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kControlDatapointFieldNumber = 1,
+  };
+  // .v1.model.ControlDatapoint control_datapoint = 1[json_name = "controlDatapoint"];
+  bool has_control_datapoint() const;
+  private:
+  bool _internal_has_control_datapoint() const;
+  public:
+  void clear_control_datapoint();
+  const ::v1::model::ControlDatapoint& control_datapoint() const;
+  ::v1::model::ControlDatapoint* release_control_datapoint();
+  ::v1::model::ControlDatapoint* mutable_control_datapoint();
+  void set_allocated_control_datapoint(::v1::model::ControlDatapoint* control_datapoint);
+  private:
+  const ::v1::model::ControlDatapoint& _internal_control_datapoint() const;
+  ::v1::model::ControlDatapoint* _internal_mutable_control_datapoint();
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.agent.GetTeleopControlDataStreamResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::v1::model::ControlDatapoint* control_datapoint_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
 class PostTransformFrameResponse :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.PostTransformFrameResponse) */ {
  public:
@@ -3330,7 +3615,7 @@ class PostTransformFrameResponse :
                &_PostTransformFrameResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(PostTransformFrameResponse& a, PostTransformFrameResponse& b) {
     a.Swap(&b);
@@ -3445,7 +3730,7 @@ class SetBaseFrameIDRequest :
                &_SetBaseFrameIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(SetBaseFrameIDRequest& a, SetBaseFrameIDRequest& b) {
     a.Swap(&b);
@@ -3580,7 +3865,7 @@ class SetBaseFrameIDResponse :
                &_SetBaseFrameIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(SetBaseFrameIDResponse& a, SetBaseFrameIDResponse& b) {
     a.Swap(&b);
@@ -3695,7 +3980,7 @@ class ClearTransformTreeRequest :
                &_ClearTransformTreeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(ClearTransformTreeRequest& a, ClearTransformTreeRequest& b) {
     a.Swap(&b);
@@ -3810,7 +4095,7 @@ class ClearTransformTreeResponse :
                &_ClearTransformTreeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(ClearTransformTreeResponse& a, ClearTransformTreeResponse& b) {
     a.Swap(&b);
@@ -3925,7 +4210,7 @@ class CreateEventRequest :
                &_CreateEventRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(CreateEventRequest& a, CreateEventRequest& b) {
     a.Swap(&b);
@@ -4059,7 +4344,7 @@ class CreateEventResponse :
                &_CreateEventResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(CreateEventResponse& a, CreateEventResponse& b) {
     a.Swap(&b);
@@ -4174,7 +4459,7 @@ class CreateEventError :
                &_CreateEventError_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(CreateEventError& a, CreateEventError& b) {
     a.Swap(&b);
@@ -5186,6 +5471,142 @@ inline void GetCommandRequestStreamResponse::set_allocated_request(::v1::model::
 
 // -------------------------------------------------------------------
 
+// GetTeleopControlDataStreamRequest
+
+// repeated string stream_filter = 1[json_name = "streamFilter"];
+inline int GetTeleopControlDataStreamRequest::_internal_stream_filter_size() const {
+  return stream_filter_.size();
+}
+inline int GetTeleopControlDataStreamRequest::stream_filter_size() const {
+  return _internal_stream_filter_size();
+}
+inline void GetTeleopControlDataStreamRequest::clear_stream_filter() {
+  stream_filter_.Clear();
+}
+inline std::string* GetTeleopControlDataStreamRequest::add_stream_filter() {
+  // @@protoc_insertion_point(field_add_mutable:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+  return _internal_add_stream_filter();
+}
+inline const std::string& GetTeleopControlDataStreamRequest::_internal_stream_filter(int index) const {
+  return stream_filter_.Get(index);
+}
+inline const std::string& GetTeleopControlDataStreamRequest::stream_filter(int index) const {
+  // @@protoc_insertion_point(field_get:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+  return _internal_stream_filter(index);
+}
+inline std::string* GetTeleopControlDataStreamRequest::mutable_stream_filter(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+  return stream_filter_.Mutable(index);
+}
+inline void GetTeleopControlDataStreamRequest::set_stream_filter(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+  stream_filter_.Mutable(index)->assign(value);
+}
+inline void GetTeleopControlDataStreamRequest::set_stream_filter(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+  stream_filter_.Mutable(index)->assign(std::move(value));
+}
+inline void GetTeleopControlDataStreamRequest::set_stream_filter(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  stream_filter_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+}
+inline void GetTeleopControlDataStreamRequest::set_stream_filter(int index, const char* value, size_t size) {
+  stream_filter_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+}
+inline std::string* GetTeleopControlDataStreamRequest::_internal_add_stream_filter() {
+  return stream_filter_.Add();
+}
+inline void GetTeleopControlDataStreamRequest::add_stream_filter(const std::string& value) {
+  stream_filter_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+}
+inline void GetTeleopControlDataStreamRequest::add_stream_filter(std::string&& value) {
+  stream_filter_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+}
+inline void GetTeleopControlDataStreamRequest::add_stream_filter(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  stream_filter_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+}
+inline void GetTeleopControlDataStreamRequest::add_stream_filter(const char* value, size_t size) {
+  stream_filter_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+GetTeleopControlDataStreamRequest::stream_filter() const {
+  // @@protoc_insertion_point(field_list:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+  return stream_filter_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+GetTeleopControlDataStreamRequest::mutable_stream_filter() {
+  // @@protoc_insertion_point(field_mutable_list:v1.agent.GetTeleopControlDataStreamRequest.stream_filter)
+  return &stream_filter_;
+}
+
+// -------------------------------------------------------------------
+
+// GetTeleopControlDataStreamResponse
+
+// .v1.model.ControlDatapoint control_datapoint = 1[json_name = "controlDatapoint"];
+inline bool GetTeleopControlDataStreamResponse::_internal_has_control_datapoint() const {
+  return this != internal_default_instance() && control_datapoint_ != nullptr;
+}
+inline bool GetTeleopControlDataStreamResponse::has_control_datapoint() const {
+  return _internal_has_control_datapoint();
+}
+inline const ::v1::model::ControlDatapoint& GetTeleopControlDataStreamResponse::_internal_control_datapoint() const {
+  const ::v1::model::ControlDatapoint* p = control_datapoint_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::v1::model::ControlDatapoint*>(
+      &::v1::model::_ControlDatapoint_default_instance_);
+}
+inline const ::v1::model::ControlDatapoint& GetTeleopControlDataStreamResponse::control_datapoint() const {
+  // @@protoc_insertion_point(field_get:v1.agent.GetTeleopControlDataStreamResponse.control_datapoint)
+  return _internal_control_datapoint();
+}
+inline ::v1::model::ControlDatapoint* GetTeleopControlDataStreamResponse::release_control_datapoint() {
+  // @@protoc_insertion_point(field_release:v1.agent.GetTeleopControlDataStreamResponse.control_datapoint)
+  
+  ::v1::model::ControlDatapoint* temp = control_datapoint_;
+  control_datapoint_ = nullptr;
+  return temp;
+}
+inline ::v1::model::ControlDatapoint* GetTeleopControlDataStreamResponse::_internal_mutable_control_datapoint() {
+  
+  if (control_datapoint_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::ControlDatapoint>(GetArenaNoVirtual());
+    control_datapoint_ = p;
+  }
+  return control_datapoint_;
+}
+inline ::v1::model::ControlDatapoint* GetTeleopControlDataStreamResponse::mutable_control_datapoint() {
+  // @@protoc_insertion_point(field_mutable:v1.agent.GetTeleopControlDataStreamResponse.control_datapoint)
+  return _internal_mutable_control_datapoint();
+}
+inline void GetTeleopControlDataStreamResponse::set_allocated_control_datapoint(::v1::model::ControlDatapoint* control_datapoint) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(control_datapoint_);
+  }
+  if (control_datapoint) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      control_datapoint = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, control_datapoint, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  control_datapoint_ = control_datapoint;
+  // @@protoc_insertion_point(field_set_allocated:v1.agent.GetTeleopControlDataStreamResponse.control_datapoint)
+}
+
+// -------------------------------------------------------------------
+
 // PostTransformFrameResponse
 
 // -------------------------------------------------------------------
@@ -5353,6 +5774,10 @@ inline void CreateEventError::set_retryable(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
