@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.model',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
-  serialized_pb=b'\n\x1bprotos/model/v1/event.proto\x12\x08v1.model\"\x9c\x02\n\x05\x45vent\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\x12\x1f\n\x0bstream_name\x18\x03 \x01(\tR\nstreamName\x12\x1f\n\x0bstream_type\x18\x04 \x01(\tR\nstreamType\x12\x31\n\x14notification_enabled\x18\x05 \x01(\x08R\x13notificationEnabled\x12-\n\x04tags\x18\x06 \x03(\x0b\x32\x19.v1.model.Event.TagsEntryR\x04tags\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x80\x01\n\x17\x41gentEventConfiguration\x12\x42\n\x0e\x65vent_triggers\x18\x01 \x03(\x0b\x32\x1b.v1.model.AgentEventTriggerR\reventTriggers\x12!\n\x0clast_updated\x18\x02 \x01(\x03R\x0blastUpdated\"\xf4\x02\n\x11\x41gentEventTrigger\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n\x06stream\x18\x02 \x01(\tR\x06stream\x12\x1a\n\x08interval\x18\x03 \x01(\x03R\x08interval\x12\x45\n\x08presence\x18\x04 \x01(\x0b\x32\'.v1.model.PresenceEventTriggerConditionH\x00R\x08presence\x12H\n\tthreshold\x18\x05 \x01(\x0b\x32(.v1.model.ThresholdEventTriggerConditionH\x00R\tthreshold\x12<\n\x05regex\x18\x06 \x01(\x0b\x32$.v1.model.RegexEventTriggerConditionH\x00R\x05regex\x12?\n\x06\x62itset\x18\x07 \x01(\x0b\x32%.v1.model.BitsetEventTriggerConditionH\x00R\x06\x62itsetB\x0b\n\tcondition\"\x1f\n\x1dPresenceEventTriggerCondition\"o\n\x1eThresholdEventTriggerCondition\x12\x14\n\x05value\x18\x01 \x01(\x01R\x05value\x12\x37\n\x08operator\x18\x02 \x01(\x0e\x32\x1b.v1.model.ThresholdOperatorR\x08operator\"2\n\x1aRegexEventTriggerCondition\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\"\x95\x01\n\x1b\x42itsetEventTriggerCondition\x12@\n\x0e\x62it_conditions\x18\x01 \x03(\x0b\x32\x19.v1.model.BitsetConditionR\rbitConditions\x12\x34\n\x08operator\x18\x02 \x01(\x0e\x32\x18.v1.model.BitsetOperatorR\x08operator\"M\n\x0f\x42itsetCondition\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x12\n\x04true\x18\x02 \x01(\x08R\x04true\x12\x14\n\x05\x66\x61lse\x18\x03 \x01(\x08R\x05\x66\x61lse*F\n\x11ThresholdOperator\x12\x06\n\x02LT\x10\x00\x12\x07\n\x03LTE\x10\x01\x12\x06\n\x02GT\x10\x02\x12\x07\n\x03GTE\x10\x03\x12\x06\n\x02\x45Q\x10\x04\x12\x07\n\x03NEQ\x10\x05*\"\n\x0e\x42itsetOperator\x12\x07\n\x03\x41NY\x10\x00\x12\x07\n\x03\x41LL\x10\x01\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x1bprotos/model/v1/event.proto\x12\x08v1.model\"\xc1\x02\n\x05\x45vent\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\x12#\n\rend_timestamp\x18\x08 \x01(\x03R\x0c\x65ndTimestamp\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\x12\x1f\n\x0bstream_name\x18\x03 \x01(\tR\nstreamName\x12\x1f\n\x0bstream_type\x18\x04 \x01(\tR\nstreamType\x12\x31\n\x14notification_enabled\x18\x05 \x01(\x08R\x13notificationEnabled\x12-\n\x04tags\x18\x06 \x03(\x0b\x32\x19.v1.model.Event.TagsEntryR\x04tags\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x80\x01\n\x17\x41gentEventConfiguration\x12\x42\n\x0e\x65vent_triggers\x18\x01 \x03(\x0b\x32\x1b.v1.model.AgentEventTriggerR\reventTriggers\x12!\n\x0clast_updated\x18\x02 \x01(\x03R\x0blastUpdated\"\xf4\x02\n\x11\x41gentEventTrigger\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n\x06stream\x18\x02 \x01(\tR\x06stream\x12\x1a\n\x08interval\x18\x03 \x01(\x03R\x08interval\x12\x45\n\x08presence\x18\x04 \x01(\x0b\x32\'.v1.model.PresenceEventTriggerConditionH\x00R\x08presence\x12H\n\tthreshold\x18\x05 \x01(\x0b\x32(.v1.model.ThresholdEventTriggerConditionH\x00R\tthreshold\x12<\n\x05regex\x18\x06 \x01(\x0b\x32$.v1.model.RegexEventTriggerConditionH\x00R\x05regex\x12?\n\x06\x62itset\x18\x07 \x01(\x0b\x32%.v1.model.BitsetEventTriggerConditionH\x00R\x06\x62itsetB\x0b\n\tcondition\"\x1f\n\x1dPresenceEventTriggerCondition\"o\n\x1eThresholdEventTriggerCondition\x12\x14\n\x05value\x18\x01 \x01(\x01R\x05value\x12\x37\n\x08operator\x18\x02 \x01(\x0e\x32\x1b.v1.model.ThresholdOperatorR\x08operator\"2\n\x1aRegexEventTriggerCondition\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\"\x95\x01\n\x1b\x42itsetEventTriggerCondition\x12@\n\x0e\x62it_conditions\x18\x01 \x03(\x0b\x32\x19.v1.model.BitsetConditionR\rbitConditions\x12\x34\n\x08operator\x18\x02 \x01(\x0e\x32\x18.v1.model.BitsetOperatorR\x08operator\"M\n\x0f\x42itsetCondition\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x12\n\x04true\x18\x02 \x01(\x08R\x04true\x12\x14\n\x05\x66\x61lse\x18\x03 \x01(\x08R\x05\x66\x61lse*F\n\x11ThresholdOperator\x12\x06\n\x02LT\x10\x00\x12\x07\n\x03LTE\x10\x01\x12\x06\n\x02GT\x10\x02\x12\x07\n\x03GTE\x10\x03\x12\x06\n\x02\x45Q\x10\x04\x12\x07\n\x03NEQ\x10\x05*\"\n\x0e\x42itsetOperator\x12\x07\n\x03\x41NY\x10\x00\x12\x07\n\x03\x41LL\x10\x01\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
 )
 
 _THRESHOLDOPERATOR = _descriptor.EnumDescriptor(
@@ -55,8 +55,8 @@ _THRESHOLDOPERATOR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1263,
-  serialized_end=1333,
+  serialized_start=1300,
+  serialized_end=1370,
 )
 _sym_db.RegisterEnumDescriptor(_THRESHOLDOPERATOR)
 
@@ -78,8 +78,8 @@ _BITSETOPERATOR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1335,
-  serialized_end=1369,
+  serialized_start=1372,
+  serialized_end=1406,
 )
 _sym_db.RegisterEnumDescriptor(_BITSETOPERATOR)
 
@@ -128,8 +128,8 @@ _EVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=271,
-  serialized_end=326,
+  serialized_start=308,
+  serialized_end=363,
 )
 
 _EVENT = _descriptor.Descriptor(
@@ -147,35 +147,42 @@ _EVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='timestamp', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='message', full_name='v1.model.Event.message', index=1,
+      name='end_timestamp', full_name='v1.model.Event.end_timestamp', index=1,
+      number=8, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='endTimestamp', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='v1.model.Event.message', index=2,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='message', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='stream_name', full_name='v1.model.Event.stream_name', index=2,
+      name='stream_name', full_name='v1.model.Event.stream_name', index=3,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='streamName', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='stream_type', full_name='v1.model.Event.stream_type', index=3,
+      name='stream_type', full_name='v1.model.Event.stream_type', index=4,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='streamType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='notification_enabled', full_name='v1.model.Event.notification_enabled', index=4,
+      name='notification_enabled', full_name='v1.model.Event.notification_enabled', index=5,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='notificationEnabled', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='tags', full_name='v1.model.Event.tags', index=5,
+      name='tags', full_name='v1.model.Event.tags', index=6,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -194,7 +201,7 @@ _EVENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=42,
-  serialized_end=326,
+  serialized_end=363,
 )
 
 
@@ -231,8 +238,8 @@ _AGENTEVENTCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=457,
+  serialized_start=366,
+  serialized_end=494,
 )
 
 
@@ -307,8 +314,8 @@ _AGENTEVENTTRIGGER = _descriptor.Descriptor(
       name='condition', full_name='v1.model.AgentEventTrigger.condition',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=460,
-  serialized_end=832,
+  serialized_start=497,
+  serialized_end=869,
 )
 
 
@@ -331,8 +338,8 @@ _PRESENCEEVENTTRIGGERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=834,
-  serialized_end=865,
+  serialized_start=871,
+  serialized_end=902,
 )
 
 
@@ -369,8 +376,8 @@ _THRESHOLDEVENTTRIGGERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=867,
-  serialized_end=978,
+  serialized_start=904,
+  serialized_end=1015,
 )
 
 
@@ -400,8 +407,8 @@ _REGEXEVENTTRIGGERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=980,
-  serialized_end=1030,
+  serialized_start=1017,
+  serialized_end=1067,
 )
 
 
@@ -438,8 +445,8 @@ _BITSETEVENTTRIGGERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1033,
-  serialized_end=1182,
+  serialized_start=1070,
+  serialized_end=1219,
 )
 
 
@@ -483,8 +490,8 @@ _BITSETCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1184,
-  serialized_end=1261,
+  serialized_start=1221,
+  serialized_end=1298,
 )
 
 _EVENT_TAGSENTRY.containing_type = _EVENT

@@ -305,6 +305,7 @@ class Event :
     kStreamNameFieldNumber = 3,
     kStreamTypeFieldNumber = 4,
     kTimestampFieldNumber = 1,
+    kEndTimestampFieldNumber = 8,
     kNotificationEnabledFieldNumber = 5,
   };
   // map<string, string> tags = 6[json_name = "tags"];
@@ -381,6 +382,15 @@ class Event :
   void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
+  // int64 end_timestamp = 8[json_name = "endTimestamp"];
+  void clear_end_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::int64 end_timestamp() const;
+  void set_end_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_end_timestamp() const;
+  void _internal_set_end_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
   // bool notification_enabled = 5[json_name = "notificationEnabled"];
   void clear_notification_enabled();
   bool notification_enabled() const;
@@ -405,6 +415,7 @@ class Event :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stream_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stream_type_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
+  ::PROTOBUF_NAMESPACE_ID::int64 end_timestamp_;
   bool notification_enabled_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fevent_2eproto;
@@ -1536,6 +1547,26 @@ inline void Event::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value)
 inline void Event::set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_timestamp(value);
   // @@protoc_insertion_point(field_set:v1.model.Event.timestamp)
+}
+
+// int64 end_timestamp = 8[json_name = "endTimestamp"];
+inline void Event::clear_end_timestamp() {
+  end_timestamp_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 Event::_internal_end_timestamp() const {
+  return end_timestamp_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 Event::end_timestamp() const {
+  // @@protoc_insertion_point(field_get:v1.model.Event.end_timestamp)
+  return _internal_end_timestamp();
+}
+inline void Event::_internal_set_end_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  end_timestamp_ = value;
+}
+inline void Event::set_end_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_end_timestamp(value);
+  // @@protoc_insertion_point(field_set:v1.model.Event.end_timestamp)
 }
 
 // string message = 2[json_name = "message"];

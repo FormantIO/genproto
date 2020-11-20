@@ -217,6 +217,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fevent_2e
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Event, end_timestamp_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, message_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, stream_name_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, stream_type_),
@@ -279,13 +280,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fevent_2e
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::v1::model::Event_TagsEntry_DoNotUse)},
   { 9, -1, sizeof(::v1::model::Event)},
-  { 20, -1, sizeof(::v1::model::AgentEventConfiguration)},
-  { 27, -1, sizeof(::v1::model::AgentEventTrigger)},
-  { 40, -1, sizeof(::v1::model::PresenceEventTriggerCondition)},
-  { 45, -1, sizeof(::v1::model::ThresholdEventTriggerCondition)},
-  { 52, -1, sizeof(::v1::model::RegexEventTriggerCondition)},
-  { 58, -1, sizeof(::v1::model::BitsetEventTriggerCondition)},
-  { 65, -1, sizeof(::v1::model::BitsetCondition)},
+  { 21, -1, sizeof(::v1::model::AgentEventConfiguration)},
+  { 28, -1, sizeof(::v1::model::AgentEventTrigger)},
+  { 41, -1, sizeof(::v1::model::PresenceEventTriggerCondition)},
+  { 46, -1, sizeof(::v1::model::ThresholdEventTriggerCondition)},
+  { 53, -1, sizeof(::v1::model::RegexEventTriggerCondition)},
+  { 59, -1, sizeof(::v1::model::BitsetEventTriggerCondition)},
+  { 66, -1, sizeof(::v1::model::BitsetCondition)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -302,41 +303,42 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\033protos/model/v1/event.proto\022\010v1.model\""
-  "\234\002\n\005Event\022\034\n\ttimestamp\030\001 \001(\003R\ttimestamp\022"
-  "\030\n\007message\030\002 \001(\tR\007message\022\037\n\013stream_name"
-  "\030\003 \001(\tR\nstreamName\022\037\n\013stream_type\030\004 \001(\tR"
-  "\nstreamType\0221\n\024notification_enabled\030\005 \001("
-  "\010R\023notificationEnabled\022-\n\004tags\030\006 \003(\0132\031.v"
-  "1.model.Event.TagsEntryR\004tags\0327\n\tTagsEnt"
-  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
-  "ue:\0028\001\"\200\001\n\027AgentEventConfiguration\022B\n\016ev"
-  "ent_triggers\030\001 \003(\0132\033.v1.model.AgentEvent"
-  "TriggerR\reventTriggers\022!\n\014last_updated\030\002"
-  " \001(\003R\013lastUpdated\"\364\002\n\021AgentEventTrigger\022"
-  "\016\n\002id\030\001 \001(\tR\002id\022\026\n\006stream\030\002 \001(\tR\006stream\022"
-  "\032\n\010interval\030\003 \001(\003R\010interval\022E\n\010presence\030"
-  "\004 \001(\0132\'.v1.model.PresenceEventTriggerCon"
-  "ditionH\000R\010presence\022H\n\tthreshold\030\005 \001(\0132(."
-  "v1.model.ThresholdEventTriggerConditionH"
-  "\000R\tthreshold\022<\n\005regex\030\006 \001(\0132$.v1.model.R"
-  "egexEventTriggerConditionH\000R\005regex\022\?\n\006bi"
-  "tset\030\007 \001(\0132%.v1.model.BitsetEventTrigger"
-  "ConditionH\000R\006bitsetB\013\n\tcondition\"\037\n\035Pres"
-  "enceEventTriggerCondition\"o\n\036ThresholdEv"
-  "entTriggerCondition\022\024\n\005value\030\001 \001(\001R\005valu"
-  "e\0227\n\010operator\030\002 \001(\0162\033.v1.model.Threshold"
-  "OperatorR\010operator\"2\n\032RegexEventTriggerC"
-  "ondition\022\024\n\005value\030\001 \001(\tR\005value\"\225\001\n\033Bitse"
-  "tEventTriggerCondition\022@\n\016bit_conditions"
-  "\030\001 \003(\0132\031.v1.model.BitsetConditionR\rbitCo"
-  "nditions\0224\n\010operator\030\002 \001(\0162\030.v1.model.Bi"
-  "tsetOperatorR\010operator\"M\n\017BitsetConditio"
-  "n\022\020\n\003key\030\001 \001(\tR\003key\022\022\n\004true\030\002 \001(\010R\004true\022"
-  "\024\n\005false\030\003 \001(\010R\005false*F\n\021ThresholdOperat"
-  "or\022\006\n\002LT\020\000\022\007\n\003LTE\020\001\022\006\n\002GT\020\002\022\007\n\003GTE\020\003\022\006\n\002"
-  "EQ\020\004\022\007\n\003NEQ\020\005*\"\n\016BitsetOperator\022\007\n\003ANY\020\000"
-  "\022\007\n\003ALL\020\001B+Z)github.com/FormantIO/genpro"
-  "to/go/v1/modelb\006proto3"
+  "\301\002\n\005Event\022\034\n\ttimestamp\030\001 \001(\003R\ttimestamp\022"
+  "#\n\rend_timestamp\030\010 \001(\003R\014endTimestamp\022\030\n\007"
+  "message\030\002 \001(\tR\007message\022\037\n\013stream_name\030\003 "
+  "\001(\tR\nstreamName\022\037\n\013stream_type\030\004 \001(\tR\nst"
+  "reamType\0221\n\024notification_enabled\030\005 \001(\010R\023"
+  "notificationEnabled\022-\n\004tags\030\006 \003(\0132\031.v1.m"
+  "odel.Event.TagsEntryR\004tags\0327\n\tTagsEntry\022"
+  "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:"
+  "\0028\001\"\200\001\n\027AgentEventConfiguration\022B\n\016event"
+  "_triggers\030\001 \003(\0132\033.v1.model.AgentEventTri"
+  "ggerR\reventTriggers\022!\n\014last_updated\030\002 \001("
+  "\003R\013lastUpdated\"\364\002\n\021AgentEventTrigger\022\016\n\002"
+  "id\030\001 \001(\tR\002id\022\026\n\006stream\030\002 \001(\tR\006stream\022\032\n\010"
+  "interval\030\003 \001(\003R\010interval\022E\n\010presence\030\004 \001"
+  "(\0132\'.v1.model.PresenceEventTriggerCondit"
+  "ionH\000R\010presence\022H\n\tthreshold\030\005 \001(\0132(.v1."
+  "model.ThresholdEventTriggerConditionH\000R\t"
+  "threshold\022<\n\005regex\030\006 \001(\0132$.v1.model.Rege"
+  "xEventTriggerConditionH\000R\005regex\022\?\n\006bitse"
+  "t\030\007 \001(\0132%.v1.model.BitsetEventTriggerCon"
+  "ditionH\000R\006bitsetB\013\n\tcondition\"\037\n\035Presenc"
+  "eEventTriggerCondition\"o\n\036ThresholdEvent"
+  "TriggerCondition\022\024\n\005value\030\001 \001(\001R\005value\0227"
+  "\n\010operator\030\002 \001(\0162\033.v1.model.ThresholdOpe"
+  "ratorR\010operator\"2\n\032RegexEventTriggerCond"
+  "ition\022\024\n\005value\030\001 \001(\tR\005value\"\225\001\n\033BitsetEv"
+  "entTriggerCondition\022@\n\016bit_conditions\030\001 "
+  "\003(\0132\031.v1.model.BitsetConditionR\rbitCondi"
+  "tions\0224\n\010operator\030\002 \001(\0162\030.v1.model.Bitse"
+  "tOperatorR\010operator\"M\n\017BitsetCondition\022\020"
+  "\n\003key\030\001 \001(\tR\003key\022\022\n\004true\030\002 \001(\010R\004true\022\024\n\005"
+  "false\030\003 \001(\010R\005false*F\n\021ThresholdOperator\022"
+  "\006\n\002LT\020\000\022\007\n\003LTE\020\001\022\006\n\002GT\020\002\022\007\n\003GTE\020\003\022\006\n\002EQ\020"
+  "\004\022\007\n\003NEQ\020\005*\"\n\016BitsetOperator\022\007\n\003ANY\020\000\022\007\n"
+  "\003ALL\020\001B+Z)github.com/FormantIO/genproto/"
+  "go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_deps[1] = {
 };
@@ -354,7 +356,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once;
 static bool descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto = {
-  &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto, "protos/model/v1/event.proto", 1422,
+  &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto, "protos/model/v1/event.proto", 1459,
   &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_deps, 9, 0,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fevent_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto, 9, file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fevent_2eproto,
@@ -556,6 +558,13 @@ const char* Event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
         } else goto handle_unusual;
         continue;
+      // int64 end_timestamp = 8[json_name = "endTimestamp"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          end_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -669,6 +678,12 @@ failure:
     }
   }
 
+  // int64 end_timestamp = 8[json_name = "endTimestamp"];
+  if (this->end_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(8, this->_internal_end_timestamp(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -720,6 +735,13 @@ size_t Event::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
         this->_internal_timestamp());
+  }
+
+  // int64 end_timestamp = 8[json_name = "endTimestamp"];
+  if (this->end_timestamp() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_end_timestamp());
   }
 
   // bool notification_enabled = 5[json_name = "notificationEnabled"];
@@ -774,6 +796,9 @@ void Event::MergeFrom(const Event& from) {
   if (from.timestamp() != 0) {
     _internal_set_timestamp(from._internal_timestamp());
   }
+  if (from.end_timestamp() != 0) {
+    _internal_set_end_timestamp(from._internal_end_timestamp());
+  }
   if (from.notification_enabled() != 0) {
     _internal_set_notification_enabled(from._internal_notification_enabled());
   }
@@ -808,6 +833,7 @@ void Event::InternalSwap(Event* other) {
   stream_type_.Swap(&other->stream_type_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(timestamp_, other->timestamp_);
+  swap(end_timestamp_, other->end_timestamp_);
   swap(notification_enabled_, other->notification_enabled_);
 }
 
