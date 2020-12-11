@@ -198,7 +198,7 @@ static void InitDefaultsscc_info_ThresholdEventTriggerCondition_protos_2fmodel_2
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ThresholdEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto}, {}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[9];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto[2];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto[3];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fevent_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fevent_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -222,6 +222,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fevent_2e
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, stream_name_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, stream_type_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, notification_enabled_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Event, severity_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, tags_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::AgentEventConfiguration, _internal_metadata_),
@@ -280,13 +281,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fevent_2e
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::v1::model::Event_TagsEntry_DoNotUse)},
   { 9, -1, sizeof(::v1::model::Event)},
-  { 21, -1, sizeof(::v1::model::AgentEventConfiguration)},
-  { 28, -1, sizeof(::v1::model::AgentEventTrigger)},
-  { 41, -1, sizeof(::v1::model::PresenceEventTriggerCondition)},
-  { 46, -1, sizeof(::v1::model::ThresholdEventTriggerCondition)},
-  { 53, -1, sizeof(::v1::model::RegexEventTriggerCondition)},
-  { 59, -1, sizeof(::v1::model::BitsetEventTriggerCondition)},
-  { 66, -1, sizeof(::v1::model::BitsetCondition)},
+  { 22, -1, sizeof(::v1::model::AgentEventConfiguration)},
+  { 29, -1, sizeof(::v1::model::AgentEventTrigger)},
+  { 42, -1, sizeof(::v1::model::PresenceEventTriggerCondition)},
+  { 47, -1, sizeof(::v1::model::ThresholdEventTriggerCondition)},
+  { 54, -1, sizeof(::v1::model::RegexEventTriggerCondition)},
+  { 60, -1, sizeof(::v1::model::BitsetEventTriggerCondition)},
+  { 67, -1, sizeof(::v1::model::BitsetCondition)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -303,42 +304,45 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\033protos/model/v1/event.proto\022\010v1.model\""
-  "\301\002\n\005Event\022\034\n\ttimestamp\030\001 \001(\003R\ttimestamp\022"
+  "\367\002\n\005Event\022\034\n\ttimestamp\030\001 \001(\003R\ttimestamp\022"
   "#\n\rend_timestamp\030\010 \001(\003R\014endTimestamp\022\030\n\007"
   "message\030\002 \001(\tR\007message\022\037\n\013stream_name\030\003 "
   "\001(\tR\nstreamName\022\037\n\013stream_type\030\004 \001(\tR\nst"
   "reamType\0221\n\024notification_enabled\030\005 \001(\010R\023"
-  "notificationEnabled\022-\n\004tags\030\006 \003(\0132\031.v1.m"
-  "odel.Event.TagsEntryR\004tags\0327\n\tTagsEntry\022"
-  "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:"
-  "\0028\001\"\200\001\n\027AgentEventConfiguration\022B\n\016event"
-  "_triggers\030\001 \003(\0132\033.v1.model.AgentEventTri"
-  "ggerR\reventTriggers\022!\n\014last_updated\030\002 \001("
-  "\003R\013lastUpdated\"\364\002\n\021AgentEventTrigger\022\016\n\002"
-  "id\030\001 \001(\tR\002id\022\026\n\006stream\030\002 \001(\tR\006stream\022\032\n\010"
-  "interval\030\003 \001(\003R\010interval\022E\n\010presence\030\004 \001"
-  "(\0132\'.v1.model.PresenceEventTriggerCondit"
-  "ionH\000R\010presence\022H\n\tthreshold\030\005 \001(\0132(.v1."
-  "model.ThresholdEventTriggerConditionH\000R\t"
-  "threshold\022<\n\005regex\030\006 \001(\0132$.v1.model.Rege"
-  "xEventTriggerConditionH\000R\005regex\022\?\n\006bitse"
-  "t\030\007 \001(\0132%.v1.model.BitsetEventTriggerCon"
-  "ditionH\000R\006bitsetB\013\n\tcondition\"\037\n\035Presenc"
-  "eEventTriggerCondition\"o\n\036ThresholdEvent"
-  "TriggerCondition\022\024\n\005value\030\001 \001(\001R\005value\0227"
-  "\n\010operator\030\002 \001(\0162\033.v1.model.ThresholdOpe"
-  "ratorR\010operator\"2\n\032RegexEventTriggerCond"
-  "ition\022\024\n\005value\030\001 \001(\tR\005value\"\225\001\n\033BitsetEv"
-  "entTriggerCondition\022@\n\016bit_conditions\030\001 "
-  "\003(\0132\031.v1.model.BitsetConditionR\rbitCondi"
-  "tions\0224\n\010operator\030\002 \001(\0162\030.v1.model.Bitse"
-  "tOperatorR\010operator\"M\n\017BitsetCondition\022\020"
-  "\n\003key\030\001 \001(\tR\003key\022\022\n\004true\030\002 \001(\010R\004true\022\024\n\005"
-  "false\030\003 \001(\010R\005false*F\n\021ThresholdOperator\022"
-  "\006\n\002LT\020\000\022\007\n\003LTE\020\001\022\006\n\002GT\020\002\022\007\n\003GTE\020\003\022\006\n\002EQ\020"
-  "\004\022\007\n\003NEQ\020\005*\"\n\016BitsetOperator\022\007\n\003ANY\020\000\022\007\n"
-  "\003ALL\020\001B+Z)github.com/FormantIO/genproto/"
-  "go/v1/modelb\006proto3"
+  "notificationEnabled\022.\n\010severity\030\t \001(\0162\022."
+  "v1.model.SeverityR\010severity\022-\n\004tags\030\006 \003("
+  "\0132\031.v1.model.Event.TagsEntryR\004tags\0327\n\tTa"
+  "gsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t"
+  "R\005value:\0028\001J\004\010\007\020\010\"\200\001\n\027AgentEventConfigur"
+  "ation\022B\n\016event_triggers\030\001 \003(\0132\033.v1.model"
+  ".AgentEventTriggerR\reventTriggers\022!\n\014las"
+  "t_updated\030\002 \001(\003R\013lastUpdated\"\364\002\n\021AgentEv"
+  "entTrigger\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006stream\030\002 \001"
+  "(\tR\006stream\022\032\n\010interval\030\003 \001(\003R\010interval\022E"
+  "\n\010presence\030\004 \001(\0132\'.v1.model.PresenceEven"
+  "tTriggerConditionH\000R\010presence\022H\n\tthresho"
+  "ld\030\005 \001(\0132(.v1.model.ThresholdEventTrigge"
+  "rConditionH\000R\tthreshold\022<\n\005regex\030\006 \001(\0132$"
+  ".v1.model.RegexEventTriggerConditionH\000R\005"
+  "regex\022\?\n\006bitset\030\007 \001(\0132%.v1.model.BitsetE"
+  "ventTriggerConditionH\000R\006bitsetB\013\n\tcondit"
+  "ion\"\037\n\035PresenceEventTriggerCondition\"o\n\036"
+  "ThresholdEventTriggerCondition\022\024\n\005value\030"
+  "\001 \001(\001R\005value\0227\n\010operator\030\002 \001(\0162\033.v1.mode"
+  "l.ThresholdOperatorR\010operator\"2\n\032RegexEv"
+  "entTriggerCondition\022\024\n\005value\030\001 \001(\tR\005valu"
+  "e\"\225\001\n\033BitsetEventTriggerCondition\022@\n\016bit"
+  "_conditions\030\001 \003(\0132\031.v1.model.BitsetCondi"
+  "tionR\rbitConditions\0224\n\010operator\030\002 \001(\0162\030."
+  "v1.model.BitsetOperatorR\010operator\"M\n\017Bit"
+  "setCondition\022\020\n\003key\030\001 \001(\tR\003key\022\022\n\004true\030\002"
+  " \001(\010R\004true\022\024\n\005false\030\003 \001(\010R\005false*:\n\010Seve"
+  "rity\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\t\n\005ERROR\020\002\022\014"
+  "\n\010CRITICAL\020\003*F\n\021ThresholdOperator\022\006\n\002LT\020"
+  "\000\022\007\n\003LTE\020\001\022\006\n\002GT\020\002\022\007\n\003GTE\020\003\022\006\n\002EQ\020\004\022\007\n\003N"
+  "EQ\020\005*\"\n\016BitsetOperator\022\007\n\003ANY\020\000\022\007\n\003ALL\020\001"
+  "B+Z)github.com/FormantIO/genproto/go/v1/"
+  "modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_deps[1] = {
 };
@@ -356,7 +360,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once;
 static bool descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto = {
-  &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto, "protos/model/v1/event.proto", 1459,
+  &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto, "protos/model/v1/event.proto", 1573,
   &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_deps, 9, 0,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fevent_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto, 9, file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fevent_2eproto,
@@ -366,9 +370,25 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos
 static bool dynamic_init_dummy_protos_2fmodel_2fv1_2fevent_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto), true);
 namespace v1 {
 namespace model {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ThresholdOperator_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Severity_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto);
   return file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto[0];
+}
+bool Severity_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ThresholdOperator_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto);
+  return file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto[1];
 }
 bool ThresholdOperator_IsValid(int value) {
   switch (value) {
@@ -386,7 +406,7 @@ bool ThresholdOperator_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BitsetOperator_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto);
-  return file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto[1];
+  return file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto[2];
 }
 bool BitsetOperator_IsValid(int value) {
   switch (value) {
@@ -447,8 +467,8 @@ Event::Event(const Event& from)
     stream_type_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.stream_type_);
   }
   ::memcpy(&timestamp_, &from.timestamp_,
-    static_cast<size_t>(reinterpret_cast<char*>(&notification_enabled_) -
-    reinterpret_cast<char*>(&timestamp_)) + sizeof(notification_enabled_));
+    static_cast<size_t>(reinterpret_cast<char*>(&end_timestamp_) -
+    reinterpret_cast<char*>(&timestamp_)) + sizeof(end_timestamp_));
   // @@protoc_insertion_point(copy_constructor:v1.model.Event)
 }
 
@@ -458,8 +478,8 @@ void Event::SharedCtor() {
   stream_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   stream_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&notification_enabled_) -
-      reinterpret_cast<char*>(&timestamp_)) + sizeof(notification_enabled_));
+      reinterpret_cast<char*>(&end_timestamp_) -
+      reinterpret_cast<char*>(&timestamp_)) + sizeof(end_timestamp_));
 }
 
 Event::~Event() {
@@ -493,8 +513,8 @@ void Event::Clear() {
   stream_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   stream_type_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&notification_enabled_) -
-      reinterpret_cast<char*>(&timestamp_)) + sizeof(notification_enabled_));
+      reinterpret_cast<char*>(&end_timestamp_) -
+      reinterpret_cast<char*>(&timestamp_)) + sizeof(end_timestamp_));
   _internal_metadata_.Clear();
 }
 
@@ -563,6 +583,14 @@ const char* Event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           end_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.Severity severity = 9[json_name = "severity"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_severity(static_cast<::v1::model::Severity>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -684,6 +712,13 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(8, this->_internal_end_timestamp(), target);
   }
 
+  // .v1.model.Severity severity = 9[json_name = "severity"];
+  if (this->severity() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      9, this->_internal_severity(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -737,16 +772,22 @@ size_t Event::ByteSizeLong() const {
         this->_internal_timestamp());
   }
 
+  // bool notification_enabled = 5[json_name = "notificationEnabled"];
+  if (this->notification_enabled() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // .v1.model.Severity severity = 9[json_name = "severity"];
+  if (this->severity() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_severity());
+  }
+
   // int64 end_timestamp = 8[json_name = "endTimestamp"];
   if (this->end_timestamp() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
         this->_internal_end_timestamp());
-  }
-
-  // bool notification_enabled = 5[json_name = "notificationEnabled"];
-  if (this->notification_enabled() != 0) {
-    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -796,11 +837,14 @@ void Event::MergeFrom(const Event& from) {
   if (from.timestamp() != 0) {
     _internal_set_timestamp(from._internal_timestamp());
   }
-  if (from.end_timestamp() != 0) {
-    _internal_set_end_timestamp(from._internal_end_timestamp());
-  }
   if (from.notification_enabled() != 0) {
     _internal_set_notification_enabled(from._internal_notification_enabled());
+  }
+  if (from.severity() != 0) {
+    _internal_set_severity(from._internal_severity());
+  }
+  if (from.end_timestamp() != 0) {
+    _internal_set_end_timestamp(from._internal_end_timestamp());
   }
 }
 
@@ -833,8 +877,9 @@ void Event::InternalSwap(Event* other) {
   stream_type_.Swap(&other->stream_type_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(timestamp_, other->timestamp_);
-  swap(end_timestamp_, other->end_timestamp_);
   swap(notification_enabled_, other->notification_enabled_);
+  swap(severity_, other->severity_);
+  swap(end_timestamp_, other->end_timestamp_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Event::GetMetadata() const {

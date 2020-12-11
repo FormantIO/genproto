@@ -225,7 +225,7 @@ static void InitDefaultsscc_info_Vertex_protos_2fmodel_2fv1_2fintervention_2epro
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Vertex_protos_2fmodel_2fv1_2fintervention_2eproto}, {}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fintervention_2eproto[10];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fintervention_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2fintervention_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fintervention_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fintervention_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -345,47 +345,47 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fintervention_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"protos/model/v1/intervention.proto\022\010v1"
-  ".model\032\033protos/model/v1/media.proto\"\302\003\n\023"
-  "InterventionRequest\022\016\n\002id\030\001 \001(\tR\002id\022\034\n\tt"
-  "imestamp\030\002 \001(\003R\ttimestamp\022.\n\010severity\030\003 "
-  "\001(\0162\022.v1.model.SeverityR\010severity\022I\n\021sel"
-  "ection_request\030\004 \001(\0132\032.v1.model.Selectio"
-  "nRequestH\000R\020selectionRequest\022F\n\020labeling"
-  "_request\030\005 \001(\0132\031.v1.model.LabelingReques"
-  "tH\000R\017labelingRequest\022;\n\004tags\030\006 \003(\0132\'.v1."
-  "model.InterventionRequest.TagsEntryR\004tag"
-  "s\022<\n\tresponses\030\007 \003(\0132\036.v1.model.Interven"
-  "tionResponseR\tresponses\0327\n\tTagsEntry\022\020\n\003"
-  "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001"
-  "B\006\n\004data\"\204\002\n\024InterventionResponse\022\016\n\002id\030"
-  "\001 \001(\tR\002id\022\035\n\nrequest_id\030\002 \001(\tR\trequestId"
-  "\022\034\n\ttimestamp\030\003 \001(\003R\ttimestamp\022L\n\022select"
-  "ion_response\030\004 \001(\0132\033.v1.model.SelectionR"
-  "esponseH\000R\021selectionResponse\022I\n\021labeling"
-  "_response\030\005 \001(\0132\032.v1.model.LabelingRespo"
-  "nseH\000R\020labelingResponseB\006\n\004data\"@\n\005Label"
-  "\022\024\n\005value\030\001 \001(\tR\005value\022!\n\014display_name\030\002"
-  " \001(\tR\013displayName\"V\n\016LabeledPolygon\022,\n\010v"
-  "ertices\030\001 \003(\0132\020.v1.model.VertexR\010vertice"
-  "s\022\026\n\006labels\030\002 \003(\tR\006labels\"$\n\006Vertex\022\014\n\001x"
-  "\030\001 \001(\001R\001x\022\014\n\001y\030\002 \001(\001R\001y\"\307\001\n\017LabelingRequ"
-  "est\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013instruction"
-  "\030\002 \001(\tR\013instruction\022%\n\005image\030\003 \001(\0132\017.v1."
-  "model.ImageR\005image\022\'\n\006labels\030\004 \003(\0132\017.v1."
-  "model.LabelR\006labels\022,\n\004hint\030\005 \003(\0132\030.v1.m"
-  "odel.LabeledPolygonR\004hint\"B\n\020LabelingRes"
-  "ponse\022.\n\005value\030\001 \003(\0132\030.v1.model.LabeledP"
-  "olygonR\005value\"\251\001\n\020SelectionRequest\022\024\n\005ti"
-  "tle\030\001 \001(\tR\005title\022\'\n\005image\030\002 \001(\0132\017.v1.mod"
-  "el.ImageH\000R\005image\022 \n\013instruction\030\003 \001(\tR\013"
-  "instruction\022\030\n\007options\030\004 \003(\tR\007options\022\022\n"
-  "\004hint\030\005 \001(\rR\004hintB\006\n\004data\")\n\021SelectionRe"
-  "sponse\022\024\n\005value\030\001 \001(\rR\005value*:\n\010Severity"
-  "\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\t\n\005ERROR\020\002\022\014\n\010CR"
-  "ITICAL\020\003B+Z)github.com/FormantIO/genprot"
-  "o/go/v1/modelb\006proto3"
+  ".model\032\033protos/model/v1/media.proto\032\033pro"
+  "tos/model/v1/event.proto\"\302\003\n\023Interventio"
+  "nRequest\022\016\n\002id\030\001 \001(\tR\002id\022\034\n\ttimestamp\030\002 "
+  "\001(\003R\ttimestamp\022.\n\010severity\030\003 \001(\0162\022.v1.mo"
+  "del.SeverityR\010severity\022I\n\021selection_requ"
+  "est\030\004 \001(\0132\032.v1.model.SelectionRequestH\000R"
+  "\020selectionRequest\022F\n\020labeling_request\030\005 "
+  "\001(\0132\031.v1.model.LabelingRequestH\000R\017labeli"
+  "ngRequest\022;\n\004tags\030\006 \003(\0132\'.v1.model.Inter"
+  "ventionRequest.TagsEntryR\004tags\022<\n\trespon"
+  "ses\030\007 \003(\0132\036.v1.model.InterventionRespons"
+  "eR\tresponses\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003"
+  "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\006\n\004data\"\204\002"
+  "\n\024InterventionResponse\022\016\n\002id\030\001 \001(\tR\002id\022\035"
+  "\n\nrequest_id\030\002 \001(\tR\trequestId\022\034\n\ttimesta"
+  "mp\030\003 \001(\003R\ttimestamp\022L\n\022selection_respons"
+  "e\030\004 \001(\0132\033.v1.model.SelectionResponseH\000R\021"
+  "selectionResponse\022I\n\021labeling_response\030\005"
+  " \001(\0132\032.v1.model.LabelingResponseH\000R\020labe"
+  "lingResponseB\006\n\004data\"@\n\005Label\022\024\n\005value\030\001"
+  " \001(\tR\005value\022!\n\014display_name\030\002 \001(\tR\013displ"
+  "ayName\"V\n\016LabeledPolygon\022,\n\010vertices\030\001 \003"
+  "(\0132\020.v1.model.VertexR\010vertices\022\026\n\006labels"
+  "\030\002 \003(\tR\006labels\"$\n\006Vertex\022\014\n\001x\030\001 \001(\001R\001x\022\014"
+  "\n\001y\030\002 \001(\001R\001y\"\307\001\n\017LabelingRequest\022\024\n\005titl"
+  "e\030\001 \001(\tR\005title\022 \n\013instruction\030\002 \001(\tR\013ins"
+  "truction\022%\n\005image\030\003 \001(\0132\017.v1.model.Image"
+  "R\005image\022\'\n\006labels\030\004 \003(\0132\017.v1.model.Label"
+  "R\006labels\022,\n\004hint\030\005 \003(\0132\030.v1.model.Labele"
+  "dPolygonR\004hint\"B\n\020LabelingResponse\022.\n\005va"
+  "lue\030\001 \003(\0132\030.v1.model.LabeledPolygonR\005val"
+  "ue\"\251\001\n\020SelectionRequest\022\024\n\005title\030\001 \001(\tR\005"
+  "title\022\'\n\005image\030\002 \001(\0132\017.v1.model.ImageH\000R"
+  "\005image\022 \n\013instruction\030\003 \001(\tR\013instruction"
+  "\022\030\n\007options\030\004 \003(\tR\007options\022\022\n\004hint\030\005 \001(\r"
+  "R\004hintB\006\n\004data\")\n\021SelectionResponse\022\024\n\005v"
+  "alue\030\001 \001(\rR\005valueB+Z)github.com/FormantI"
+  "O/genproto/go/v1/modelb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_deps[1] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_deps[2] = {
+  &::descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_sccs[10] = {
@@ -403,8 +403,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_once;
 static bool descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto = {
-  &descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fintervention_2eproto, "protos/model/v1/intervention.proto", 1581,
-  &descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_deps, 10, 1,
+  &descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fintervention_2eproto, "protos/model/v1/intervention.proto", 1550,
+  &descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_deps, 10, 2,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fintervention_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fintervention_2eproto, 10, file_level_enum_descriptors_protos_2fmodel_2fv1_2fintervention_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fintervention_2eproto,
 };
@@ -413,22 +413,6 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos
 static bool dynamic_init_dummy_protos_2fmodel_2fv1_2fintervention_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto), true);
 namespace v1 {
 namespace model {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Severity_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto);
-  return file_level_enum_descriptors_protos_2fmodel_2fv1_2fintervention_2eproto[0];
-}
-bool Severity_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-      return true;
-    default:
-      return false;
-  }
-}
-
 
 // ===================================================================
 

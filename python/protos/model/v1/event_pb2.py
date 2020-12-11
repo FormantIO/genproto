@@ -19,9 +19,40 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1.model',
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
-  serialized_pb=b'\n\x1bprotos/model/v1/event.proto\x12\x08v1.model\"\xc1\x02\n\x05\x45vent\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\x12#\n\rend_timestamp\x18\x08 \x01(\x03R\x0c\x65ndTimestamp\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\x12\x1f\n\x0bstream_name\x18\x03 \x01(\tR\nstreamName\x12\x1f\n\x0bstream_type\x18\x04 \x01(\tR\nstreamType\x12\x31\n\x14notification_enabled\x18\x05 \x01(\x08R\x13notificationEnabled\x12-\n\x04tags\x18\x06 \x03(\x0b\x32\x19.v1.model.Event.TagsEntryR\x04tags\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x80\x01\n\x17\x41gentEventConfiguration\x12\x42\n\x0e\x65vent_triggers\x18\x01 \x03(\x0b\x32\x1b.v1.model.AgentEventTriggerR\reventTriggers\x12!\n\x0clast_updated\x18\x02 \x01(\x03R\x0blastUpdated\"\xf4\x02\n\x11\x41gentEventTrigger\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n\x06stream\x18\x02 \x01(\tR\x06stream\x12\x1a\n\x08interval\x18\x03 \x01(\x03R\x08interval\x12\x45\n\x08presence\x18\x04 \x01(\x0b\x32\'.v1.model.PresenceEventTriggerConditionH\x00R\x08presence\x12H\n\tthreshold\x18\x05 \x01(\x0b\x32(.v1.model.ThresholdEventTriggerConditionH\x00R\tthreshold\x12<\n\x05regex\x18\x06 \x01(\x0b\x32$.v1.model.RegexEventTriggerConditionH\x00R\x05regex\x12?\n\x06\x62itset\x18\x07 \x01(\x0b\x32%.v1.model.BitsetEventTriggerConditionH\x00R\x06\x62itsetB\x0b\n\tcondition\"\x1f\n\x1dPresenceEventTriggerCondition\"o\n\x1eThresholdEventTriggerCondition\x12\x14\n\x05value\x18\x01 \x01(\x01R\x05value\x12\x37\n\x08operator\x18\x02 \x01(\x0e\x32\x1b.v1.model.ThresholdOperatorR\x08operator\"2\n\x1aRegexEventTriggerCondition\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\"\x95\x01\n\x1b\x42itsetEventTriggerCondition\x12@\n\x0e\x62it_conditions\x18\x01 \x03(\x0b\x32\x19.v1.model.BitsetConditionR\rbitConditions\x12\x34\n\x08operator\x18\x02 \x01(\x0e\x32\x18.v1.model.BitsetOperatorR\x08operator\"M\n\x0f\x42itsetCondition\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x12\n\x04true\x18\x02 \x01(\x08R\x04true\x12\x14\n\x05\x66\x61lse\x18\x03 \x01(\x08R\x05\x66\x61lse*F\n\x11ThresholdOperator\x12\x06\n\x02LT\x10\x00\x12\x07\n\x03LTE\x10\x01\x12\x06\n\x02GT\x10\x02\x12\x07\n\x03GTE\x10\x03\x12\x06\n\x02\x45Q\x10\x04\x12\x07\n\x03NEQ\x10\x05*\"\n\x0e\x42itsetOperator\x12\x07\n\x03\x41NY\x10\x00\x12\x07\n\x03\x41LL\x10\x01\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x1bprotos/model/v1/event.proto\x12\x08v1.model\"\xf7\x02\n\x05\x45vent\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\x12#\n\rend_timestamp\x18\x08 \x01(\x03R\x0c\x65ndTimestamp\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\x12\x1f\n\x0bstream_name\x18\x03 \x01(\tR\nstreamName\x12\x1f\n\x0bstream_type\x18\x04 \x01(\tR\nstreamType\x12\x31\n\x14notification_enabled\x18\x05 \x01(\x08R\x13notificationEnabled\x12.\n\x08severity\x18\t \x01(\x0e\x32\x12.v1.model.SeverityR\x08severity\x12-\n\x04tags\x18\x06 \x03(\x0b\x32\x19.v1.model.Event.TagsEntryR\x04tags\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01J\x04\x08\x07\x10\x08\"\x80\x01\n\x17\x41gentEventConfiguration\x12\x42\n\x0e\x65vent_triggers\x18\x01 \x03(\x0b\x32\x1b.v1.model.AgentEventTriggerR\reventTriggers\x12!\n\x0clast_updated\x18\x02 \x01(\x03R\x0blastUpdated\"\xf4\x02\n\x11\x41gentEventTrigger\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n\x06stream\x18\x02 \x01(\tR\x06stream\x12\x1a\n\x08interval\x18\x03 \x01(\x03R\x08interval\x12\x45\n\x08presence\x18\x04 \x01(\x0b\x32\'.v1.model.PresenceEventTriggerConditionH\x00R\x08presence\x12H\n\tthreshold\x18\x05 \x01(\x0b\x32(.v1.model.ThresholdEventTriggerConditionH\x00R\tthreshold\x12<\n\x05regex\x18\x06 \x01(\x0b\x32$.v1.model.RegexEventTriggerConditionH\x00R\x05regex\x12?\n\x06\x62itset\x18\x07 \x01(\x0b\x32%.v1.model.BitsetEventTriggerConditionH\x00R\x06\x62itsetB\x0b\n\tcondition\"\x1f\n\x1dPresenceEventTriggerCondition\"o\n\x1eThresholdEventTriggerCondition\x12\x14\n\x05value\x18\x01 \x01(\x01R\x05value\x12\x37\n\x08operator\x18\x02 \x01(\x0e\x32\x1b.v1.model.ThresholdOperatorR\x08operator\"2\n\x1aRegexEventTriggerCondition\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\"\x95\x01\n\x1b\x42itsetEventTriggerCondition\x12@\n\x0e\x62it_conditions\x18\x01 \x03(\x0b\x32\x19.v1.model.BitsetConditionR\rbitConditions\x12\x34\n\x08operator\x18\x02 \x01(\x0e\x32\x18.v1.model.BitsetOperatorR\x08operator\"M\n\x0f\x42itsetCondition\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x12\n\x04true\x18\x02 \x01(\x08R\x04true\x12\x14\n\x05\x66\x61lse\x18\x03 \x01(\x08R\x05\x66\x61lse*:\n\x08Severity\x12\x08\n\x04INFO\x10\x00\x12\x0b\n\x07WARNING\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\x0c\n\x08\x43RITICAL\x10\x03*F\n\x11ThresholdOperator\x12\x06\n\x02LT\x10\x00\x12\x07\n\x03LTE\x10\x01\x12\x06\n\x02GT\x10\x02\x12\x07\n\x03GTE\x10\x03\x12\x06\n\x02\x45Q\x10\x04\x12\x07\n\x03NEQ\x10\x05*\"\n\x0e\x42itsetOperator\x12\x07\n\x03\x41NY\x10\x00\x12\x07\n\x03\x41LL\x10\x01\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
 )
 
+_SEVERITY = _descriptor.EnumDescriptor(
+  name='Severity',
+  full_name='v1.model.Severity',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='INFO', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='WARNING', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ERROR', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='CRITICAL', index=3, number=3,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1354,
+  serialized_end=1412,
+)
+_sym_db.RegisterEnumDescriptor(_SEVERITY)
+
+Severity = enum_type_wrapper.EnumTypeWrapper(_SEVERITY)
 _THRESHOLDOPERATOR = _descriptor.EnumDescriptor(
   name='ThresholdOperator',
   full_name='v1.model.ThresholdOperator',
@@ -55,8 +86,8 @@ _THRESHOLDOPERATOR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1300,
-  serialized_end=1370,
+  serialized_start=1414,
+  serialized_end=1484,
 )
 _sym_db.RegisterEnumDescriptor(_THRESHOLDOPERATOR)
 
@@ -78,12 +109,16 @@ _BITSETOPERATOR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1372,
-  serialized_end=1406,
+  serialized_start=1486,
+  serialized_end=1520,
 )
 _sym_db.RegisterEnumDescriptor(_BITSETOPERATOR)
 
 BitsetOperator = enum_type_wrapper.EnumTypeWrapper(_BITSETOPERATOR)
+INFO = 0
+WARNING = 1
+ERROR = 2
+CRITICAL = 3
 LT = 0
 LTE = 1
 GT = 2
@@ -128,8 +163,8 @@ _EVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=308,
-  serialized_end=363,
+  serialized_start=356,
+  serialized_end=411,
 )
 
 _EVENT = _descriptor.Descriptor(
@@ -182,7 +217,14 @@ _EVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='notificationEnabled', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='tags', full_name='v1.model.Event.tags', index=6,
+      name='severity', full_name='v1.model.Event.severity', index=6,
+      number=9, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='severity', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='v1.model.Event.tags', index=7,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -201,7 +243,7 @@ _EVENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=42,
-  serialized_end=363,
+  serialized_end=417,
 )
 
 
@@ -238,8 +280,8 @@ _AGENTEVENTCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=366,
-  serialized_end=494,
+  serialized_start=420,
+  serialized_end=548,
 )
 
 
@@ -314,8 +356,8 @@ _AGENTEVENTTRIGGER = _descriptor.Descriptor(
       name='condition', full_name='v1.model.AgentEventTrigger.condition',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=497,
-  serialized_end=869,
+  serialized_start=551,
+  serialized_end=923,
 )
 
 
@@ -338,8 +380,8 @@ _PRESENCEEVENTTRIGGERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=871,
-  serialized_end=902,
+  serialized_start=925,
+  serialized_end=956,
 )
 
 
@@ -376,8 +418,8 @@ _THRESHOLDEVENTTRIGGERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=904,
-  serialized_end=1015,
+  serialized_start=958,
+  serialized_end=1069,
 )
 
 
@@ -407,8 +449,8 @@ _REGEXEVENTTRIGGERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1017,
-  serialized_end=1067,
+  serialized_start=1071,
+  serialized_end=1121,
 )
 
 
@@ -445,8 +487,8 @@ _BITSETEVENTTRIGGERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1070,
-  serialized_end=1219,
+  serialized_start=1124,
+  serialized_end=1273,
 )
 
 
@@ -490,11 +532,12 @@ _BITSETCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1221,
-  serialized_end=1298,
+  serialized_start=1275,
+  serialized_end=1352,
 )
 
 _EVENT_TAGSENTRY.containing_type = _EVENT
+_EVENT.fields_by_name['severity'].enum_type = _SEVERITY
 _EVENT.fields_by_name['tags'].message_type = _EVENT_TAGSENTRY
 _AGENTEVENTCONFIGURATION.fields_by_name['event_triggers'].message_type = _AGENTEVENTTRIGGER
 _AGENTEVENTTRIGGER.fields_by_name['presence'].message_type = _PRESENCEEVENTTRIGGERCONDITION
@@ -524,6 +567,7 @@ DESCRIPTOR.message_types_by_name['ThresholdEventTriggerCondition'] = _THRESHOLDE
 DESCRIPTOR.message_types_by_name['RegexEventTriggerCondition'] = _REGEXEVENTTRIGGERCONDITION
 DESCRIPTOR.message_types_by_name['BitsetEventTriggerCondition'] = _BITSETEVENTTRIGGERCONDITION
 DESCRIPTOR.message_types_by_name['BitsetCondition'] = _BITSETCONDITION
+DESCRIPTOR.enum_types_by_name['Severity'] = _SEVERITY
 DESCRIPTOR.enum_types_by_name['ThresholdOperator'] = _THRESHOLDOPERATOR
 DESCRIPTOR.enum_types_by_name['BitsetOperator'] = _BITSETOPERATOR
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

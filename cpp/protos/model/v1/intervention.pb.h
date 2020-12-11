@@ -34,9 +34,9 @@
 #include <google/protobuf/map.h>  // IWYU pragma: export
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "protos/model/v1/media.pb.h"
+#include "protos/model/v1/event.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fintervention_2eproto
@@ -108,33 +108,6 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace v1 {
 namespace model {
 
-enum Severity : int {
-  INFO = 0,
-  WARNING = 1,
-  ERROR = 2,
-  CRITICAL = 3,
-  Severity_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  Severity_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool Severity_IsValid(int value);
-constexpr Severity Severity_MIN = INFO;
-constexpr Severity Severity_MAX = CRITICAL;
-constexpr int Severity_ARRAYSIZE = Severity_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Severity_descriptor();
-template<typename T>
-inline const std::string& Severity_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, Severity>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function Severity_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    Severity_descriptor(), enum_t_value);
-}
-inline bool Severity_Parse(
-    const std::string& name, Severity* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Severity>(
-    Severity_descriptor(), name, value);
-}
 // ===================================================================
 
 class InterventionRequest_TagsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<InterventionRequest_TagsEntry_DoNotUse, 
@@ -3240,16 +3213,6 @@ inline void SelectionResponse::set_value(::PROTOBUF_NAMESPACE_ID::uint32 value) 
 
 }  // namespace model
 }  // namespace v1
-
-PROTOBUF_NAMESPACE_OPEN
-
-template <> struct is_proto_enum< ::v1::model::Severity> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::v1::model::Severity>() {
-  return ::v1::model::Severity_descriptor();
-}
-
-PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

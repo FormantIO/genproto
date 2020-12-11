@@ -103,6 +103,33 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace v1 {
 namespace model {
 
+enum Severity : int {
+  INFO = 0,
+  WARNING = 1,
+  ERROR = 2,
+  CRITICAL = 3,
+  Severity_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  Severity_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool Severity_IsValid(int value);
+constexpr Severity Severity_MIN = INFO;
+constexpr Severity Severity_MAX = CRITICAL;
+constexpr int Severity_ARRAYSIZE = Severity_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Severity_descriptor();
+template<typename T>
+inline const std::string& Severity_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, Severity>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function Severity_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    Severity_descriptor(), enum_t_value);
+}
+inline bool Severity_Parse(
+    const std::string& name, Severity* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Severity>(
+    Severity_descriptor(), name, value);
+}
 enum ThresholdOperator : int {
   LT = 0,
   LTE = 1,
@@ -305,8 +332,9 @@ class Event :
     kStreamNameFieldNumber = 3,
     kStreamTypeFieldNumber = 4,
     kTimestampFieldNumber = 1,
-    kEndTimestampFieldNumber = 8,
     kNotificationEnabledFieldNumber = 5,
+    kSeverityFieldNumber = 9,
+    kEndTimestampFieldNumber = 8,
   };
   // map<string, string> tags = 6[json_name = "tags"];
   int tags_size() const;
@@ -382,15 +410,6 @@ class Event :
   void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int64 end_timestamp = 8[json_name = "endTimestamp"];
-  void clear_end_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::int64 end_timestamp() const;
-  void set_end_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_end_timestamp() const;
-  void _internal_set_end_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
-  public:
-
   // bool notification_enabled = 5[json_name = "notificationEnabled"];
   void clear_notification_enabled();
   bool notification_enabled() const;
@@ -398,6 +417,24 @@ class Event :
   private:
   bool _internal_notification_enabled() const;
   void _internal_set_notification_enabled(bool value);
+  public:
+
+  // .v1.model.Severity severity = 9[json_name = "severity"];
+  void clear_severity();
+  ::v1::model::Severity severity() const;
+  void set_severity(::v1::model::Severity value);
+  private:
+  ::v1::model::Severity _internal_severity() const;
+  void _internal_set_severity(::v1::model::Severity value);
+  public:
+
+  // int64 end_timestamp = 8[json_name = "endTimestamp"];
+  void clear_end_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::int64 end_timestamp() const;
+  void set_end_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_end_timestamp() const;
+  void _internal_set_end_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:v1.model.Event)
@@ -415,8 +452,9 @@ class Event :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stream_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stream_type_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
-  ::PROTOBUF_NAMESPACE_ID::int64 end_timestamp_;
   bool notification_enabled_;
+  int severity_;
+  ::PROTOBUF_NAMESPACE_ID::int64 end_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fevent_2eproto;
 };
@@ -1769,6 +1807,26 @@ inline void Event::set_notification_enabled(bool value) {
   // @@protoc_insertion_point(field_set:v1.model.Event.notification_enabled)
 }
 
+// .v1.model.Severity severity = 9[json_name = "severity"];
+inline void Event::clear_severity() {
+  severity_ = 0;
+}
+inline ::v1::model::Severity Event::_internal_severity() const {
+  return static_cast< ::v1::model::Severity >(severity_);
+}
+inline ::v1::model::Severity Event::severity() const {
+  // @@protoc_insertion_point(field_get:v1.model.Event.severity)
+  return _internal_severity();
+}
+inline void Event::_internal_set_severity(::v1::model::Severity value) {
+  
+  severity_ = value;
+}
+inline void Event::set_severity(::v1::model::Severity value) {
+  _internal_set_severity(value);
+  // @@protoc_insertion_point(field_set:v1.model.Event.severity)
+}
+
 // map<string, string> tags = 6[json_name = "tags"];
 inline int Event::_internal_tags_size() const {
   return tags_.size();
@@ -2520,6 +2578,11 @@ inline void BitsetCondition::set_false_(bool value) {
 
 PROTOBUF_NAMESPACE_OPEN
 
+template <> struct is_proto_enum< ::v1::model::Severity> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::v1::model::Severity>() {
+  return ::v1::model::Severity_descriptor();
+}
 template <> struct is_proto_enum< ::v1::model::ThresholdOperator> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::v1::model::ThresholdOperator>() {
