@@ -104,16 +104,15 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_Health_protos_2fmodel_2fv1_2fhealth_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once;
-static bool descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto = {
-  &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_initialized, descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto, "protos/model/v1/health.proto", 368,
+  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto, "protos/model/v1/health.proto", 368,
   &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fhealth_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto, 2, file_level_enum_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_protos_2fmodel_2fv1_2fhealth_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto), true);
+static bool dynamic_init_dummy_protos_2fmodel_2fv1_2fhealth_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto)), true);
 namespace v1 {
 namespace model {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* HealthStatus_descriptor() {
@@ -141,15 +140,15 @@ class Health::_Internal {
  public:
 };
 
-Health::Health()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Health::Health(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:v1.model.Health)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:v1.model.Health)
 }
 Health::Health(const Health& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   status_ = from.status_;
   // @@protoc_insertion_point(copy_constructor:v1.model.Health)
 }
@@ -161,11 +160,19 @@ void Health::SharedCtor() {
 Health::~Health() {
   // @@protoc_insertion_point(destructor:v1.model.Health)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Health::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void Health::ArenaDtor(void* object) {
+  Health* _this = reinterpret_cast< Health* >(object);
+  (void)_this;
+}
+void Health::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Health::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -182,11 +189,12 @@ void Health::Clear() {
   (void) cached_has_bits;
 
   status_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Health::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -195,7 +203,7 @@ const char* Health::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       // .v1.model.HealthStatus status = 1[json_name = "status"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::v1::model::HealthStatus>(val));
         } else goto handle_unusual;
@@ -206,7 +214,9 @@ const char* Health::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -235,7 +245,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Health)
   return target;
@@ -282,7 +292,7 @@ void Health::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Health::MergeFrom(const Health& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Health)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -311,7 +321,7 @@ bool Health::IsInitialized() const {
 
 void Health::InternalSwap(Health* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(status_, other->status_);
 }
 
@@ -328,15 +338,15 @@ class Battery::_Internal {
  public:
 };
 
-Battery::Battery()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Battery::Battery(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:v1.model.Battery)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:v1.model.Battery)
 }
 Battery::Battery(const Battery& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&percentage_, &from.percentage_,
     static_cast<size_t>(reinterpret_cast<char*>(&charge_) -
     reinterpret_cast<char*>(&percentage_)) + sizeof(charge_));
@@ -352,11 +362,19 @@ void Battery::SharedCtor() {
 Battery::~Battery() {
   // @@protoc_insertion_point(destructor:v1.model.Battery)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Battery::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void Battery::ArenaDtor(void* object) {
+  Battery* _this = reinterpret_cast< Battery* >(object);
+  (void)_this;
+}
+void Battery::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Battery::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -375,11 +393,12 @@ void Battery::Clear() {
   ::memset(&percentage_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&charge_) -
       reinterpret_cast<char*>(&percentage_)) + sizeof(charge_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Battery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -419,7 +438,9 @@ const char* Battery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -465,7 +486,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Battery)
   return target;
@@ -526,7 +547,7 @@ void Battery::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Battery::MergeFrom(const Battery& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Battery)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -564,11 +585,13 @@ bool Battery::IsInitialized() const {
 
 void Battery::InternalSwap(Battery* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(percentage_, other->percentage_);
-  swap(voltage_, other->voltage_);
-  swap(current_, other->current_);
-  swap(charge_, other->charge_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Battery, charge_)
+      + sizeof(Battery::charge_)
+      - PROTOBUF_FIELD_OFFSET(Battery, percentage_)>(
+          reinterpret_cast<char*>(&percentage_),
+          reinterpret_cast<char*>(&other->percentage_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Battery::GetMetadata() const {
@@ -581,10 +604,10 @@ void Battery::InternalSwap(Battery* other) {
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::v1::model::Health* Arena::CreateMaybeMessage< ::v1::model::Health >(Arena* arena) {
-  return Arena::CreateInternal< ::v1::model::Health >(arena);
+  return Arena::CreateMessageInternal< ::v1::model::Health >(arena);
 }
 template<> PROTOBUF_NOINLINE ::v1::model::Battery* Arena::CreateMaybeMessage< ::v1::model::Battery >(Arena* arena) {
-  return Arena::CreateInternal< ::v1::model::Battery >(arena);
+  return Arena::CreateMessageInternal< ::v1::model::Battery >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
