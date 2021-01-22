@@ -183,13 +183,14 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBU
   "ge\030\004 \001(\014H\000R\017compressedImage\022\024\n\004text\030\005 \001("
   "\tH\000R\004text\022)\n\004pose\030\006 \001(\0132\023.v1.model.Trans"
   "formH\000R\004pose\022*\n\006goalID\030\t \001(\0132\020.v1.model."
-  "GoalIDH\000R\006goalIDB\006\n\004data*\307\001\n\014ROSTopicTyp"
+  "GoalIDH\000R\006goalIDB\006\n\004data*\330\001\n\014ROSTopicTyp"
   "e\022\013\n\007UNKNOWN\020\000\022\021\n\rSTD_MSGS_BOOL\020\001\022 \n\034SEN"
   "SOR_MSGS_COMPRESSED_IMAGE\020\002\022\023\n\017STD_MSGS_"
   "STRING\020\003\022\026\n\022GEOMETRY_MSGS_POSE\020\004\022\031\n\025ACTI"
   "ONLIB_MSGS_GOALID\020\005\022\027\n\023GEOMETRY_MSGS_TWI"
-  "ST\020\006\022\024\n\020H264_VIDEO_FRAME\020\007B+Z)github.com"
-  "/FormantIO/genproto/go/v1/modelb\006proto3"
+  "ST\020\006\022\024\n\020H264_VIDEO_FRAME\020\007\022\017\n\013AUDIO_CHUN"
+  "K\020\010B+Z)github.com/FormantIO/genproto/go/"
+  "v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
@@ -203,7 +204,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fros_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 1079,
+  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 1096,
   &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps, 4, 2,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fros_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto, 4, file_level_enum_descriptors_protos_2fmodel_2fv1_2fros_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fros_2eproto,
@@ -227,6 +228,7 @@ bool ROSTopicType_IsValid(int value) {
     case 5:
     case 6:
     case 7:
+    case 8:
       return true;
     default:
       return false;

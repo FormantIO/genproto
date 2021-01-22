@@ -33,6 +33,10 @@ class H264VideoFrameDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<H264VideoFrame> _instance;
 } _H264VideoFrame_default_instance_;
+class AudioChunkDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AudioChunk> _instance;
+} _AudioChunk_default_instance_;
 class VideoDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Video> _instance;
@@ -41,6 +45,20 @@ class VideoDefaultTypeInternal {
 } _Video_default_instance_;
 }  // namespace model
 }  // namespace v1
+static void InitDefaultsscc_info_AudioChunk_protos_2fmodel_2fv1_2fmedia_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::v1::model::_AudioChunk_default_instance_;
+    new (ptr) ::v1::model::AudioChunk();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::v1::model::AudioChunk::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AudioChunk_protos_2fmodel_2fv1_2fmedia_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AudioChunk_protos_2fmodel_2fv1_2fmedia_2eproto}, {}};
+
 static void InitDefaultsscc_info_H264VideoFrame_protos_2fmodel_2fv1_2fmedia_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -98,7 +116,7 @@ static void InitDefaultsscc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Video_protos_2fmodel_2fv1_2fmedia_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[4];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[5];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto = nullptr;
 
@@ -130,6 +148,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fmedia_2e
   PROTOBUF_FIELD_OFFSET(::v1::model::H264VideoFrame, flags_),
   PROTOBUF_FIELD_OFFSET(::v1::model::H264VideoFrame, frame_data_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::model::AudioChunk, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::v1::model::AudioChunk, index_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::AudioChunk, format_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::AudioChunk, chunk_data_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::Video, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::v1::model::Video, _oneof_case_[0]),
@@ -144,13 +170,15 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::v1::model::Image)},
   { 9, -1, sizeof(::v1::model::PointCloud)},
   { 18, -1, sizeof(::v1::model::H264VideoFrame)},
-  { 26, -1, sizeof(::v1::model::Video)},
+  { 26, -1, sizeof(::v1::model::AudioChunk)},
+  { 34, -1, sizeof(::v1::model::Video)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Image_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_PointCloud_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_H264VideoFrame_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_AudioChunk_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Video_default_instance_),
 };
 
@@ -164,16 +192,19 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto[] PROTO
   "v1.model.TransformR\014worldToLocalB\006\n\004data"
   "\"[\n\016H264VideoFrame\022\024\n\005index\030\001 \001(\005R\005index"
   "\022\024\n\005flags\030\002 \001(\005R\005flags\022\035\n\nframe_data\030\003 \001"
-  "(\014R\tframeData\"p\n\005Video\022\033\n\tmime_type\030\001 \001("
-  "\tR\010mimeType\022\032\n\010duration\030\002 \001(\003R\010duration\022"
-  "\022\n\003url\030\003 \001(\tH\000R\003url\022\022\n\003raw\030\004 \001(\014H\000R\003rawB"
-  "\006\n\004dataB+Z)github.com/FormantIO/genproto"
-  "/go/v1/modelb\006proto3"
+  "(\014R\tframeData\"Y\n\nAudioChunk\022\024\n\005index\030\001 \001"
+  "(\005R\005index\022\026\n\006format\030\002 \001(\tR\006format\022\035\n\nchu"
+  "nk_data\030\003 \001(\014R\tchunkData\"p\n\005Video\022\033\n\tmim"
+  "e_type\030\001 \001(\tR\010mimeType\022\032\n\010duration\030\002 \001(\003"
+  "R\010duration\022\022\n\003url\030\003 \001(\tH\000R\003url\022\022\n\003raw\030\004 "
+  "\001(\014H\000R\003rawB\006\n\004dataB+Z)github.com/Formant"
+  "IO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps[1] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_sccs[4] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_sccs[5] = {
+  &scc_info_AudioChunk_protos_2fmodel_2fv1_2fmedia_2eproto.base,
   &scc_info_H264VideoFrame_protos_2fmodel_2fv1_2fmedia_2eproto.base,
   &scc_info_Image_protos_2fmodel_2fv1_2fmedia_2eproto.base,
   &scc_info_PointCloud_protos_2fmodel_2fv1_2fmedia_2eproto.base,
@@ -181,10 +212,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto, "protos/model/v1/media.proto", 540,
-  &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps, 4, 1,
+  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto, "protos/model/v1/media.proto", 631,
+  &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps, 5, 1,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fmedia_2eproto::offsets,
-  file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto, 4, file_level_enum_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto,
+  file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto, 5, file_level_enum_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1107,6 +1138,275 @@ void H264VideoFrame::InternalSwap(H264VideoFrame* other) {
 
 // ===================================================================
 
+void AudioChunk::InitAsDefaultInstance() {
+}
+class AudioChunk::_Internal {
+ public:
+};
+
+AudioChunk::AudioChunk(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:v1.model.AudioChunk)
+}
+AudioChunk::AudioChunk(const AudioChunk& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_format().empty()) {
+    format_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_format(),
+      GetArena());
+  }
+  chunk_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_chunk_data().empty()) {
+    chunk_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_chunk_data(),
+      GetArena());
+  }
+  index_ = from.index_;
+  // @@protoc_insertion_point(copy_constructor:v1.model.AudioChunk)
+}
+
+void AudioChunk::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AudioChunk_protos_2fmodel_2fv1_2fmedia_2eproto.base);
+  format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  chunk_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  index_ = 0;
+}
+
+AudioChunk::~AudioChunk() {
+  // @@protoc_insertion_point(destructor:v1.model.AudioChunk)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void AudioChunk::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  format_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  chunk_data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void AudioChunk::ArenaDtor(void* object) {
+  AudioChunk* _this = reinterpret_cast< AudioChunk* >(object);
+  (void)_this;
+}
+void AudioChunk::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AudioChunk::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AudioChunk& AudioChunk::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AudioChunk_protos_2fmodel_2fv1_2fmedia_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AudioChunk::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.model.AudioChunk)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  format_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  chunk_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  index_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AudioChunk::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 index = 1[json_name = "index"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string format = 2[json_name = "format"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_format();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.AudioChunk.format"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes chunk_data = 3[json_name = "chunkData"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_chunk_data();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AudioChunk::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.model.AudioChunk)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 index = 1[json_name = "index"];
+  if (this->index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_index(), target);
+  }
+
+  // string format = 2[json_name = "format"];
+  if (this->format().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_format().data(), static_cast<int>(this->_internal_format().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.AudioChunk.format");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_format(), target);
+  }
+
+  // bytes chunk_data = 3[json_name = "chunkData"];
+  if (this->chunk_data().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        3, this->_internal_chunk_data(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.model.AudioChunk)
+  return target;
+}
+
+size_t AudioChunk::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.model.AudioChunk)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string format = 2[json_name = "format"];
+  if (this->format().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_format());
+  }
+
+  // bytes chunk_data = 3[json_name = "chunkData"];
+  if (this->chunk_data().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_chunk_data());
+  }
+
+  // int32 index = 1[json_name = "index"];
+  if (this->index() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_index());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AudioChunk::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.AudioChunk)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AudioChunk* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AudioChunk>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.AudioChunk)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.AudioChunk)
+    MergeFrom(*source);
+  }
+}
+
+void AudioChunk::MergeFrom(const AudioChunk& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.AudioChunk)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.format().size() > 0) {
+    _internal_set_format(from._internal_format());
+  }
+  if (from.chunk_data().size() > 0) {
+    _internal_set_chunk_data(from._internal_chunk_data());
+  }
+  if (from.index() != 0) {
+    _internal_set_index(from._internal_index());
+  }
+}
+
+void AudioChunk::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.AudioChunk)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AudioChunk::CopyFrom(const AudioChunk& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.AudioChunk)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AudioChunk::IsInitialized() const {
+  return true;
+}
+
+void AudioChunk::InternalSwap(AudioChunk* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  format_.Swap(&other->format_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  chunk_data_.Swap(&other->chunk_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(index_, other->index_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AudioChunk::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 void Video::InitAsDefaultInstance() {
   ::v1::model::_Video_default_instance_.url_.UnsafeSetDefault(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1462,6 +1762,9 @@ template<> PROTOBUF_NOINLINE ::v1::model::PointCloud* Arena::CreateMaybeMessage<
 }
 template<> PROTOBUF_NOINLINE ::v1::model::H264VideoFrame* Arena::CreateMaybeMessage< ::v1::model::H264VideoFrame >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::H264VideoFrame >(arena);
+}
+template<> PROTOBUF_NOINLINE ::v1::model::AudioChunk* Arena::CreateMaybeMessage< ::v1::model::AudioChunk >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::v1::model::AudioChunk >(arena);
 }
 template<> PROTOBUF_NOINLINE ::v1::model::Video* Arena::CreateMaybeMessage< ::v1::model::Video >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Video >(arena);

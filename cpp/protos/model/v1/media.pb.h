@@ -48,7 +48,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fmedia_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -57,6 +57,9 @@ struct TableStruct_protos_2fmodel_2fv1_2fmedia_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto;
 namespace v1 {
 namespace model {
+class AudioChunk;
+class AudioChunkDefaultTypeInternal;
+extern AudioChunkDefaultTypeInternal _AudioChunk_default_instance_;
 class H264VideoFrame;
 class H264VideoFrameDefaultTypeInternal;
 extern H264VideoFrameDefaultTypeInternal _H264VideoFrame_default_instance_;
@@ -72,6 +75,7 @@ extern VideoDefaultTypeInternal _Video_default_instance_;
 }  // namespace model
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
+template<> ::v1::model::AudioChunk* Arena::CreateMaybeMessage<::v1::model::AudioChunk>(Arena*);
 template<> ::v1::model::H264VideoFrame* Arena::CreateMaybeMessage<::v1::model::H264VideoFrame>(Arena*);
 template<> ::v1::model::Image* Arena::CreateMaybeMessage<::v1::model::Image>(Arena*);
 template<> ::v1::model::PointCloud* Arena::CreateMaybeMessage<::v1::model::PointCloud>(Arena*);
@@ -658,6 +662,179 @@ class H264VideoFrame PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class AudioChunk PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.AudioChunk) */ {
+ public:
+  inline AudioChunk() : AudioChunk(nullptr) {}
+  virtual ~AudioChunk();
+
+  AudioChunk(const AudioChunk& from);
+  AudioChunk(AudioChunk&& from) noexcept
+    : AudioChunk() {
+    *this = ::std::move(from);
+  }
+
+  inline AudioChunk& operator=(const AudioChunk& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AudioChunk& operator=(AudioChunk&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const AudioChunk& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AudioChunk* internal_default_instance() {
+    return reinterpret_cast<const AudioChunk*>(
+               &_AudioChunk_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(AudioChunk& a, AudioChunk& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AudioChunk* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AudioChunk* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AudioChunk* New() const final {
+    return CreateMaybeMessage<AudioChunk>(nullptr);
+  }
+
+  AudioChunk* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AudioChunk>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const AudioChunk& from);
+  void MergeFrom(const AudioChunk& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AudioChunk* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.AudioChunk";
+  }
+  protected:
+  explicit AudioChunk(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFormatFieldNumber = 2,
+    kChunkDataFieldNumber = 3,
+    kIndexFieldNumber = 1,
+  };
+  // string format = 2[json_name = "format"];
+  void clear_format();
+  const std::string& format() const;
+  void set_format(const std::string& value);
+  void set_format(std::string&& value);
+  void set_format(const char* value);
+  void set_format(const char* value, size_t size);
+  std::string* mutable_format();
+  std::string* release_format();
+  void set_allocated_format(std::string* format);
+  private:
+  const std::string& _internal_format() const;
+  void _internal_set_format(const std::string& value);
+  std::string* _internal_mutable_format();
+  public:
+
+  // bytes chunk_data = 3[json_name = "chunkData"];
+  void clear_chunk_data();
+  const std::string& chunk_data() const;
+  void set_chunk_data(const std::string& value);
+  void set_chunk_data(std::string&& value);
+  void set_chunk_data(const char* value);
+  void set_chunk_data(const void* value, size_t size);
+  std::string* mutable_chunk_data();
+  std::string* release_chunk_data();
+  void set_allocated_chunk_data(std::string* chunk_data);
+  private:
+  const std::string& _internal_chunk_data() const;
+  void _internal_set_chunk_data(const std::string& value);
+  std::string* _internal_mutable_chunk_data();
+  public:
+
+  // int32 index = 1[json_name = "index"];
+  void clear_index();
+  ::PROTOBUF_NAMESPACE_ID::int32 index() const;
+  void set_index(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_index() const;
+  void _internal_set_index(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.AudioChunk)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr format_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chunk_data_;
+  ::PROTOBUF_NAMESPACE_ID::int32 index_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fmedia_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Video PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.Video) */ {
  public:
@@ -706,7 +883,7 @@ class Video PROTOBUF_FINAL :
                &_Video_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(Video& a, Video& b) {
     a.Swap(&b);
@@ -1575,6 +1752,154 @@ inline void H264VideoFrame::set_allocated_frame_data(std::string* frame_data) {
 
 // -------------------------------------------------------------------
 
+// AudioChunk
+
+// int32 index = 1[json_name = "index"];
+inline void AudioChunk::clear_index() {
+  index_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 AudioChunk::_internal_index() const {
+  return index_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 AudioChunk::index() const {
+  // @@protoc_insertion_point(field_get:v1.model.AudioChunk.index)
+  return _internal_index();
+}
+inline void AudioChunk::_internal_set_index(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  index_ = value;
+}
+inline void AudioChunk::set_index(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_index(value);
+  // @@protoc_insertion_point(field_set:v1.model.AudioChunk.index)
+}
+
+// string format = 2[json_name = "format"];
+inline void AudioChunk::clear_format() {
+  format_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& AudioChunk::format() const {
+  // @@protoc_insertion_point(field_get:v1.model.AudioChunk.format)
+  return _internal_format();
+}
+inline void AudioChunk::set_format(const std::string& value) {
+  _internal_set_format(value);
+  // @@protoc_insertion_point(field_set:v1.model.AudioChunk.format)
+}
+inline std::string* AudioChunk::mutable_format() {
+  // @@protoc_insertion_point(field_mutable:v1.model.AudioChunk.format)
+  return _internal_mutable_format();
+}
+inline const std::string& AudioChunk::_internal_format() const {
+  return format_.Get();
+}
+inline void AudioChunk::_internal_set_format(const std::string& value) {
+  
+  format_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void AudioChunk::set_format(std::string&& value) {
+  
+  format_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.AudioChunk.format)
+}
+inline void AudioChunk::set_format(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  format_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.AudioChunk.format)
+}
+inline void AudioChunk::set_format(const char* value,
+    size_t size) {
+  
+  format_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.AudioChunk.format)
+}
+inline std::string* AudioChunk::_internal_mutable_format() {
+  
+  return format_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* AudioChunk::release_format() {
+  // @@protoc_insertion_point(field_release:v1.model.AudioChunk.format)
+  return format_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void AudioChunk::set_allocated_format(std::string* format) {
+  if (format != nullptr) {
+    
+  } else {
+    
+  }
+  format_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), format,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.AudioChunk.format)
+}
+
+// bytes chunk_data = 3[json_name = "chunkData"];
+inline void AudioChunk::clear_chunk_data() {
+  chunk_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& AudioChunk::chunk_data() const {
+  // @@protoc_insertion_point(field_get:v1.model.AudioChunk.chunk_data)
+  return _internal_chunk_data();
+}
+inline void AudioChunk::set_chunk_data(const std::string& value) {
+  _internal_set_chunk_data(value);
+  // @@protoc_insertion_point(field_set:v1.model.AudioChunk.chunk_data)
+}
+inline std::string* AudioChunk::mutable_chunk_data() {
+  // @@protoc_insertion_point(field_mutable:v1.model.AudioChunk.chunk_data)
+  return _internal_mutable_chunk_data();
+}
+inline const std::string& AudioChunk::_internal_chunk_data() const {
+  return chunk_data_.Get();
+}
+inline void AudioChunk::_internal_set_chunk_data(const std::string& value) {
+  
+  chunk_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void AudioChunk::set_chunk_data(std::string&& value) {
+  
+  chunk_data_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.AudioChunk.chunk_data)
+}
+inline void AudioChunk::set_chunk_data(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  chunk_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.AudioChunk.chunk_data)
+}
+inline void AudioChunk::set_chunk_data(const void* value,
+    size_t size) {
+  
+  chunk_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.AudioChunk.chunk_data)
+}
+inline std::string* AudioChunk::_internal_mutable_chunk_data() {
+  
+  return chunk_data_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* AudioChunk::release_chunk_data() {
+  // @@protoc_insertion_point(field_release:v1.model.AudioChunk.chunk_data)
+  return chunk_data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void AudioChunk::set_allocated_chunk_data(std::string* chunk_data) {
+  if (chunk_data != nullptr) {
+    
+  } else {
+    
+  }
+  chunk_data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chunk_data,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.AudioChunk.chunk_data)
+}
+
+// -------------------------------------------------------------------
+
 // Video
 
 // string mime_type = 1[json_name = "mimeType"];
@@ -1883,6 +2208,8 @@ inline Video::DataCase Video::data_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

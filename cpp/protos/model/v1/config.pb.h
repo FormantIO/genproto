@@ -734,6 +734,7 @@ class AgentConfigurationDocument PROTOBUF_FINAL :
     kPortForwardingFieldNumber = 7,
     kBlobDataFieldNumber = 8,
     kDiagnosticsFieldNumber = 9,
+    kTerminalAccessFieldNumber = 10,
     kVersionFieldNumber = 1,
   };
   // map<string, string> tags = 2[json_name = "tags"];
@@ -879,6 +880,24 @@ class AgentConfigurationDocument PROTOBUF_FINAL :
       ::v1::model::Diagnostics* diagnostics);
   ::v1::model::Diagnostics* unsafe_arena_release_diagnostics();
 
+  // .google.protobuf.BoolValue terminal_access = 10[json_name = "terminalAccess"];
+  bool has_terminal_access() const;
+  private:
+  bool _internal_has_terminal_access() const;
+  public:
+  void clear_terminal_access();
+  const PROTOBUF_NAMESPACE_ID::BoolValue& terminal_access() const;
+  PROTOBUF_NAMESPACE_ID::BoolValue* release_terminal_access();
+  PROTOBUF_NAMESPACE_ID::BoolValue* mutable_terminal_access();
+  void set_allocated_terminal_access(PROTOBUF_NAMESPACE_ID::BoolValue* terminal_access);
+  private:
+  const PROTOBUF_NAMESPACE_ID::BoolValue& _internal_terminal_access() const;
+  PROTOBUF_NAMESPACE_ID::BoolValue* _internal_mutable_terminal_access();
+  public:
+  void unsafe_arena_set_allocated_terminal_access(
+      PROTOBUF_NAMESPACE_ID::BoolValue* terminal_access);
+  PROTOBUF_NAMESPACE_ID::BoolValue* unsafe_arena_release_terminal_access();
+
   // int64 version = 1[json_name = "version"];
   void clear_version();
   ::PROTOBUF_NAMESPACE_ID::int64 version() const;
@@ -908,6 +927,7 @@ class AgentConfigurationDocument PROTOBUF_FINAL :
   ::v1::model::PortForwardingConfiguration* port_forwarding_;
   ::v1::model::BlobData* blob_data_;
   ::v1::model::Diagnostics* diagnostics_;
+  PROTOBUF_NAMESPACE_ID::BoolValue* terminal_access_;
   ::PROTOBUF_NAMESPACE_ID::int64 version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
@@ -1340,6 +1360,7 @@ class TeleopRosStreamConfiguration PROTOBUF_FINAL :
 
   enum : int {
     kTopicNameFieldNumber = 1,
+    kAudioCodecFieldNumber = 5,
     kTopicTypeFieldNumber = 2,
     kModeFieldNumber = 3,
     kEncodeVideoFieldNumber = 4,
@@ -1358,6 +1379,22 @@ class TeleopRosStreamConfiguration PROTOBUF_FINAL :
   const std::string& _internal_topic_name() const;
   void _internal_set_topic_name(const std::string& value);
   std::string* _internal_mutable_topic_name();
+  public:
+
+  // string audio_codec = 5[json_name = "audioCodec"];
+  void clear_audio_codec();
+  const std::string& audio_codec() const;
+  void set_audio_codec(const std::string& value);
+  void set_audio_codec(std::string&& value);
+  void set_audio_codec(const char* value);
+  void set_audio_codec(const char* value, size_t size);
+  std::string* mutable_audio_codec();
+  std::string* release_audio_codec();
+  void set_allocated_audio_codec(std::string* audio_codec);
+  private:
+  const std::string& _internal_audio_codec() const;
+  void _internal_set_audio_codec(const std::string& value);
+  std::string* _internal_mutable_audio_codec();
   public:
 
   // .v1.model.ROSTopicType topic_type = 2[json_name = "topicType"];
@@ -1395,6 +1432,7 @@ class TeleopRosStreamConfiguration PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr audio_codec_;
   int topic_type_;
   int mode_;
   bool encode_video_;
@@ -4633,6 +4671,83 @@ inline void AgentConfigurationDocument::set_allocated_diagnostics(::v1::model::D
   // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationDocument.diagnostics)
 }
 
+// .google.protobuf.BoolValue terminal_access = 10[json_name = "terminalAccess"];
+inline bool AgentConfigurationDocument::_internal_has_terminal_access() const {
+  return this != internal_default_instance() && terminal_access_ != nullptr;
+}
+inline bool AgentConfigurationDocument::has_terminal_access() const {
+  return _internal_has_terminal_access();
+}
+inline const PROTOBUF_NAMESPACE_ID::BoolValue& AgentConfigurationDocument::_internal_terminal_access() const {
+  const PROTOBUF_NAMESPACE_ID::BoolValue* p = terminal_access_;
+  return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::BoolValue*>(
+      &PROTOBUF_NAMESPACE_ID::_BoolValue_default_instance_);
+}
+inline const PROTOBUF_NAMESPACE_ID::BoolValue& AgentConfigurationDocument::terminal_access() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentConfigurationDocument.terminal_access)
+  return _internal_terminal_access();
+}
+inline void AgentConfigurationDocument::unsafe_arena_set_allocated_terminal_access(
+    PROTOBUF_NAMESPACE_ID::BoolValue* terminal_access) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(terminal_access_);
+  }
+  terminal_access_ = terminal_access;
+  if (terminal_access) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.AgentConfigurationDocument.terminal_access)
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* AgentConfigurationDocument::release_terminal_access() {
+  
+  PROTOBUF_NAMESPACE_ID::BoolValue* temp = terminal_access_;
+  terminal_access_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* AgentConfigurationDocument::unsafe_arena_release_terminal_access() {
+  // @@protoc_insertion_point(field_release:v1.model.AgentConfigurationDocument.terminal_access)
+  
+  PROTOBUF_NAMESPACE_ID::BoolValue* temp = terminal_access_;
+  terminal_access_ = nullptr;
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* AgentConfigurationDocument::_internal_mutable_terminal_access() {
+  
+  if (terminal_access_ == nullptr) {
+    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::BoolValue>(GetArena());
+    terminal_access_ = p;
+  }
+  return terminal_access_;
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* AgentConfigurationDocument::mutable_terminal_access() {
+  // @@protoc_insertion_point(field_mutable:v1.model.AgentConfigurationDocument.terminal_access)
+  return _internal_mutable_terminal_access();
+}
+inline void AgentConfigurationDocument::set_allocated_terminal_access(PROTOBUF_NAMESPACE_ID::BoolValue* terminal_access) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(terminal_access_);
+  }
+  if (terminal_access) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(terminal_access)->GetArena();
+    if (message_arena != submessage_arena) {
+      terminal_access = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, terminal_access, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  terminal_access_ = terminal_access;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationDocument.terminal_access)
+}
+
 // -------------------------------------------------------------------
 
 // TeleopConfiguration
@@ -4920,6 +5035,68 @@ inline void TeleopRosStreamConfiguration::_internal_set_encode_video(bool value)
 inline void TeleopRosStreamConfiguration::set_encode_video(bool value) {
   _internal_set_encode_video(value);
   // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.encode_video)
+}
+
+// string audio_codec = 5[json_name = "audioCodec"];
+inline void TeleopRosStreamConfiguration::clear_audio_codec() {
+  audio_codec_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& TeleopRosStreamConfiguration::audio_codec() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopRosStreamConfiguration.audio_codec)
+  return _internal_audio_codec();
+}
+inline void TeleopRosStreamConfiguration::set_audio_codec(const std::string& value) {
+  _internal_set_audio_codec(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.audio_codec)
+}
+inline std::string* TeleopRosStreamConfiguration::mutable_audio_codec() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopRosStreamConfiguration.audio_codec)
+  return _internal_mutable_audio_codec();
+}
+inline const std::string& TeleopRosStreamConfiguration::_internal_audio_codec() const {
+  return audio_codec_.Get();
+}
+inline void TeleopRosStreamConfiguration::_internal_set_audio_codec(const std::string& value) {
+  
+  audio_codec_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void TeleopRosStreamConfiguration::set_audio_codec(std::string&& value) {
+  
+  audio_codec_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.TeleopRosStreamConfiguration.audio_codec)
+}
+inline void TeleopRosStreamConfiguration::set_audio_codec(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  audio_codec_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.TeleopRosStreamConfiguration.audio_codec)
+}
+inline void TeleopRosStreamConfiguration::set_audio_codec(const char* value,
+    size_t size) {
+  
+  audio_codec_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.TeleopRosStreamConfiguration.audio_codec)
+}
+inline std::string* TeleopRosStreamConfiguration::_internal_mutable_audio_codec() {
+  
+  return audio_codec_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* TeleopRosStreamConfiguration::release_audio_codec() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopRosStreamConfiguration.audio_codec)
+  return audio_codec_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void TeleopRosStreamConfiguration::set_allocated_audio_codec(std::string* audio_codec) {
+  if (audio_codec != nullptr) {
+    
+  } else {
+    
+  }
+  audio_codec_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), audio_codec,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopRosStreamConfiguration.audio_codec)
 }
 
 // -------------------------------------------------------------------
