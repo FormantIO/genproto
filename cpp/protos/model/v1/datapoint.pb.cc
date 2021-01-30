@@ -59,6 +59,7 @@ class ControlDatapointDefaultTypeInternal {
   const ::v1::model::Bitset* bitset_;
   const ::v1::model::Twist* twist_;
   const ::v1::model::Transform* pose_;
+  const ::v1::model::Numeric* numeric_;
 } _ControlDatapoint_default_instance_;
 }  // namespace model
 }  // namespace v1
@@ -73,11 +74,12 @@ static void InitDefaultsscc_info_ControlDatapoint_protos_2fmodel_2fv1_2fdatapoin
   ::v1::model::ControlDatapoint::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_ControlDatapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_ControlDatapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ControlDatapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_ControlDatapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto}, {
       &scc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto.base,
       &scc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto.base,
-      &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
+      &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,
+      &scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
 
 static void InitDefaultsscc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -166,6 +168,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
   offsetof(::v1::model::ControlDatapointDefaultTypeInternal, bitset_),
   offsetof(::v1::model::ControlDatapointDefaultTypeInternal, twist_),
   offsetof(::v1::model::ControlDatapointDefaultTypeInternal, pose_),
+  offsetof(::v1::model::ControlDatapointDefaultTypeInternal, numeric_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ControlDatapoint, data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -206,13 +209,15 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "del.BatteryH\000R\007battery\022\'\n\005video\030\020 \001(\0132\017."
   "v1.model.VideoH\000R\005video\0327\n\tTagsEntry\022\020\n\003"
   "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001"
-  "B\006\n\004dataJ\004\010\006\020\007\"\320\001\n\020ControlDatapoint\022\026\n\006s"
+  "B\006\n\004dataJ\004\010\006\020\007\"\377\001\n\020ControlDatapoint\022\026\n\006s"
   "tream\030\001 \001(\tR\006stream\022\034\n\ttimestamp\030\002 \001(\003R\t"
   "timestamp\022*\n\006bitset\030\003 \001(\0132\020.v1.model.Bit"
   "setH\000R\006bitset\022\'\n\005twist\030\004 \001(\0132\017.v1.model."
   "TwistH\000R\005twist\022)\n\004pose\030\005 \001(\0132\023.v1.model."
-  "TransformH\000R\004poseB\006\n\004dataB+Z)github.com/"
-  "FormantIO/genproto/go/v1/modelb\006proto3"
+  "TransformH\000R\004pose\022-\n\007numeric\030\006 \001(\0132\021.v1."
+  "model.NumericH\000R\007numericB\006\n\004dataB+Z)gith"
+  "ub.com/FormantIO/genproto/go/v1/modelb\006p"
+  "roto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps[6] = {
   &::descriptor_table_protos_2fmodel_2fv1_2ffile_2eproto,
@@ -229,7 +234,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 1278,
+  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 1325,
   &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps, 3, 6,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto, 3, file_level_enum_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto,
@@ -1465,12 +1470,15 @@ void ControlDatapoint::InitAsDefaultInstance() {
       ::v1::model::Twist::internal_default_instance());
   ::v1::model::_ControlDatapoint_default_instance_.pose_ = const_cast< ::v1::model::Transform*>(
       ::v1::model::Transform::internal_default_instance());
+  ::v1::model::_ControlDatapoint_default_instance_.numeric_ = const_cast< ::v1::model::Numeric*>(
+      ::v1::model::Numeric::internal_default_instance());
 }
 class ControlDatapoint::_Internal {
  public:
   static const ::v1::model::Bitset& bitset(const ControlDatapoint* msg);
   static const ::v1::model::Twist& twist(const ControlDatapoint* msg);
   static const ::v1::model::Transform& pose(const ControlDatapoint* msg);
+  static const ::v1::model::Numeric& numeric(const ControlDatapoint* msg);
 };
 
 const ::v1::model::Bitset&
@@ -1484,6 +1492,10 @@ ControlDatapoint::_Internal::twist(const ControlDatapoint* msg) {
 const ::v1::model::Transform&
 ControlDatapoint::_Internal::pose(const ControlDatapoint* msg) {
   return *msg->data_.pose_;
+}
+const ::v1::model::Numeric&
+ControlDatapoint::_Internal::numeric(const ControlDatapoint* msg) {
+  return *msg->data_.numeric_;
 }
 void ControlDatapoint::set_allocated_bitset(::v1::model::Bitset* bitset) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
@@ -1554,6 +1566,29 @@ void ControlDatapoint::clear_pose() {
     clear_has_data();
   }
 }
+void ControlDatapoint::set_allocated_numeric(::v1::model::Numeric* numeric) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_data();
+  if (numeric) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(numeric)->GetArena();
+    if (message_arena != submessage_arena) {
+      numeric = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, numeric, submessage_arena);
+    }
+    set_has_numeric();
+    data_.numeric_ = numeric;
+  }
+  // @@protoc_insertion_point(field_set_allocated:v1.model.ControlDatapoint.numeric)
+}
+void ControlDatapoint::clear_numeric() {
+  if (_internal_has_numeric()) {
+    if (GetArena() == nullptr) {
+      delete data_.numeric_;
+    }
+    clear_has_data();
+  }
+}
 ControlDatapoint::ControlDatapoint(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -1581,6 +1616,10 @@ ControlDatapoint::ControlDatapoint(const ControlDatapoint& from)
     }
     case kPose: {
       _internal_mutable_pose()->::v1::model::Transform::MergeFrom(from._internal_pose());
+      break;
+    }
+    case kNumeric: {
+      _internal_mutable_numeric()->::v1::model::Numeric::MergeFrom(from._internal_numeric());
       break;
     }
     case DATA_NOT_SET: {
@@ -1647,6 +1686,12 @@ void ControlDatapoint::clear_data() {
       }
       break;
     }
+    case kNumeric: {
+      if (GetArena() == nullptr) {
+        delete data_.numeric_;
+      }
+      break;
+    }
     case DATA_NOT_SET: {
       break;
     }
@@ -1709,6 +1754,13 @@ const char* ControlDatapoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_pose(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.Numeric numeric = 6[json_name = "numeric"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_numeric(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1780,6 +1832,14 @@ failure:
         5, _Internal::pose(this), target, stream);
   }
 
+  // .v1.model.Numeric numeric = 6[json_name = "numeric"];
+  if (_internal_has_numeric()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        6, _Internal::numeric(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1830,6 +1890,13 @@ size_t ControlDatapoint::ByteSizeLong() const {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *data_.pose_);
+      break;
+    }
+    // .v1.model.Numeric numeric = 6[json_name = "numeric"];
+    case kNumeric: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *data_.numeric_);
       break;
     }
     case DATA_NOT_SET: {
@@ -1884,6 +1951,10 @@ void ControlDatapoint::MergeFrom(const ControlDatapoint& from) {
     }
     case kPose: {
       _internal_mutable_pose()->::v1::model::Transform::MergeFrom(from._internal_pose());
+      break;
+    }
+    case kNumeric: {
+      _internal_mutable_numeric()->::v1::model::Numeric::MergeFrom(from._internal_numeric());
       break;
     }
     case DATA_NOT_SET: {

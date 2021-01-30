@@ -15,6 +15,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fnavigation_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GoalID_protos_2fmodel_2fv1_2fnavigation_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto;
 namespace v1 {
@@ -40,6 +41,7 @@ class ROSMessageToPublishDefaultTypeInternal {
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr text_;
   const ::v1::model::Transform* pose_;
   const ::v1::model::GoalID* goalid_;
+  const ::v1::model::Numeric* numeric_;
 } _ROSMessageToPublish_default_instance_;
 }  // namespace model
 }  // namespace v1
@@ -68,11 +70,12 @@ static void InitDefaultsscc_info_ROSMessageToPublish_protos_2fmodel_2fv1_2fros_2
   ::v1::model::ROSMessageToPublish::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_ROSMessageToPublish_protos_2fmodel_2fv1_2fros_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_ROSMessageToPublish_protos_2fmodel_2fv1_2fros_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ROSMessageToPublish_protos_2fmodel_2fv1_2fros_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_ROSMessageToPublish_protos_2fmodel_2fv1_2fros_2eproto}, {
       &scc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto.base,
       &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,
-      &scc_info_GoalID_protos_2fmodel_2fv1_2fnavigation_2eproto.base,}};
+      &scc_info_GoalID_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
+      &scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
 
 static void InitDefaultsscc_info_ROSTopic_protos_2fmodel_2fv1_2fros_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -146,6 +149,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fros_2epr
   offsetof(::v1::model::ROSMessageToPublishDefaultTypeInternal, text_),
   offsetof(::v1::model::ROSMessageToPublishDefaultTypeInternal, pose_),
   offsetof(::v1::model::ROSMessageToPublishDefaultTypeInternal, goalid_),
+  offsetof(::v1::model::ROSMessageToPublishDefaultTypeInternal, numeric_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSMessageToPublish, data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -175,7 +179,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBU
   "\001(\tR\tgoalTopic\0220\n\024base_reference_frame\030\006"
   " \001(\tR\022baseReferenceFrame\"D\n\020ROSTransform"
   "Tree\0220\n\024base_reference_frame\030\001 \001(\tR\022base"
-  "ReferenceFrame\"\307\002\n\023ROSMessageToPublish\022\026"
+  "ReferenceFrame\"\366\002\n\023ROSMessageToPublish\022\026"
   "\n\006stream\030\001 \001(\tR\006stream\022\031\n\010frame_id\030\007 \001(\t"
   "R\007frameId\022\034\n\ttimestamp\030\010 \001(\004R\ttimestamp\022"
   "\'\n\005twist\030\002 \001(\0132\017.v1.model.TwistH\000R\005twist"
@@ -183,14 +187,16 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBU
   "ge\030\004 \001(\014H\000R\017compressedImage\022\024\n\004text\030\005 \001("
   "\tH\000R\004text\022)\n\004pose\030\006 \001(\0132\023.v1.model.Trans"
   "formH\000R\004pose\022*\n\006goalID\030\t \001(\0132\020.v1.model."
-  "GoalIDH\000R\006goalIDB\006\n\004data*\330\001\n\014ROSTopicTyp"
-  "e\022\013\n\007UNKNOWN\020\000\022\021\n\rSTD_MSGS_BOOL\020\001\022 \n\034SEN"
-  "SOR_MSGS_COMPRESSED_IMAGE\020\002\022\023\n\017STD_MSGS_"
-  "STRING\020\003\022\026\n\022GEOMETRY_MSGS_POSE\020\004\022\031\n\025ACTI"
-  "ONLIB_MSGS_GOALID\020\005\022\027\n\023GEOMETRY_MSGS_TWI"
-  "ST\020\006\022\024\n\020H264_VIDEO_FRAME\020\007\022\017\n\013AUDIO_CHUN"
-  "K\020\010B+Z)github.com/FormantIO/genproto/go/"
-  "v1/modelb\006proto3"
+  "GoalIDH\000R\006goalID\022-\n\007numeric\030\n \001(\0132\021.v1.m"
+  "odel.NumericH\000R\007numericB\006\n\004data*\356\001\n\014ROST"
+  "opicType\022\013\n\007UNKNOWN\020\000\022\021\n\rSTD_MSGS_BOOL\020\001"
+  "\022 \n\034SENSOR_MSGS_COMPRESSED_IMAGE\020\002\022\023\n\017ST"
+  "D_MSGS_STRING\020\003\022\026\n\022GEOMETRY_MSGS_POSE\020\004\022"
+  "\031\n\025ACTIONLIB_MSGS_GOALID\020\005\022\027\n\023GEOMETRY_M"
+  "SGS_TWIST\020\006\022\024\n\020H264_VIDEO_FRAME\020\007\022\017\n\013AUD"
+  "IO_CHUNK\020\010\022\024\n\020STD_MSGS_FLOAT64\020\tB+Z)gith"
+  "ub.com/FormantIO/genproto/go/v1/modelb\006p"
+  "roto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
@@ -204,7 +210,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fros_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 1096,
+  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 1165,
   &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps, 4, 2,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fros_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto, 4, file_level_enum_descriptors_protos_2fmodel_2fv1_2fros_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fros_2eproto,
@@ -229,6 +235,7 @@ bool ROSTopicType_IsValid(int value) {
     case 6:
     case 7:
     case 8:
+    case 9:
       return true;
     default:
       return false;
@@ -1129,12 +1136,15 @@ void ROSMessageToPublish::InitAsDefaultInstance() {
       ::v1::model::Transform::internal_default_instance());
   ::v1::model::_ROSMessageToPublish_default_instance_.goalid_ = const_cast< ::v1::model::GoalID*>(
       ::v1::model::GoalID::internal_default_instance());
+  ::v1::model::_ROSMessageToPublish_default_instance_.numeric_ = const_cast< ::v1::model::Numeric*>(
+      ::v1::model::Numeric::internal_default_instance());
 }
 class ROSMessageToPublish::_Internal {
  public:
   static const ::v1::model::Twist& twist(const ROSMessageToPublish* msg);
   static const ::v1::model::Transform& pose(const ROSMessageToPublish* msg);
   static const ::v1::model::GoalID& goalid(const ROSMessageToPublish* msg);
+  static const ::v1::model::Numeric& numeric(const ROSMessageToPublish* msg);
 };
 
 const ::v1::model::Twist&
@@ -1148,6 +1158,10 @@ ROSMessageToPublish::_Internal::pose(const ROSMessageToPublish* msg) {
 const ::v1::model::GoalID&
 ROSMessageToPublish::_Internal::goalid(const ROSMessageToPublish* msg) {
   return *msg->data_.goalid_;
+}
+const ::v1::model::Numeric&
+ROSMessageToPublish::_Internal::numeric(const ROSMessageToPublish* msg) {
+  return *msg->data_.numeric_;
 }
 void ROSMessageToPublish::set_allocated_twist(::v1::model::Twist* twist) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
@@ -1218,6 +1232,29 @@ void ROSMessageToPublish::clear_goalid() {
     clear_has_data();
   }
 }
+void ROSMessageToPublish::set_allocated_numeric(::v1::model::Numeric* numeric) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_data();
+  if (numeric) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(numeric)->GetArena();
+    if (message_arena != submessage_arena) {
+      numeric = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, numeric, submessage_arena);
+    }
+    set_has_numeric();
+    data_.numeric_ = numeric;
+  }
+  // @@protoc_insertion_point(field_set_allocated:v1.model.ROSMessageToPublish.numeric)
+}
+void ROSMessageToPublish::clear_numeric() {
+  if (_internal_has_numeric()) {
+    if (GetArena() == nullptr) {
+      delete data_.numeric_;
+    }
+    clear_has_data();
+  }
+}
 ROSMessageToPublish::ROSMessageToPublish(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -1262,6 +1299,10 @@ ROSMessageToPublish::ROSMessageToPublish(const ROSMessageToPublish& from)
     }
     case kGoalID: {
       _internal_mutable_goalid()->::v1::model::GoalID::MergeFrom(from._internal_goalid());
+      break;
+    }
+    case kNumeric: {
+      _internal_mutable_numeric()->::v1::model::Numeric::MergeFrom(from._internal_numeric());
       break;
     }
     case DATA_NOT_SET: {
@@ -1339,6 +1380,12 @@ void ROSMessageToPublish::clear_data() {
     case kGoalID: {
       if (GetArena() == nullptr) {
         delete data_.goalid_;
+      }
+      break;
+    }
+    case kNumeric: {
+      if (GetArena() == nullptr) {
+        delete data_.numeric_;
       }
       break;
     }
@@ -1438,6 +1485,13 @@ const char* ROSMessageToPublish::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_goalid(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.Numeric numeric = 10[json_name = "numeric"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          ptr = ctx->ParseMessage(_internal_mutable_numeric(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1541,6 +1595,14 @@ failure:
         9, _Internal::goalid(this), target, stream);
   }
 
+  // .v1.model.Numeric numeric = 10[json_name = "numeric"];
+  if (_internal_has_numeric()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        10, _Internal::numeric(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1619,6 +1681,13 @@ size_t ROSMessageToPublish::ByteSizeLong() const {
           *data_.goalid_);
       break;
     }
+    // .v1.model.Numeric numeric = 10[json_name = "numeric"];
+    case kNumeric: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *data_.numeric_);
+      break;
+    }
     case DATA_NOT_SET: {
       break;
     }
@@ -1686,6 +1755,10 @@ void ROSMessageToPublish::MergeFrom(const ROSMessageToPublish& from) {
     }
     case kGoalID: {
       _internal_mutable_goalid()->::v1::model::GoalID::MergeFrom(from._internal_goalid());
+      break;
+    }
+    case kNumeric: {
+      _internal_mutable_numeric()->::v1::model::Numeric::MergeFrom(from._internal_numeric());
       break;
     }
     case DATA_NOT_SET: {

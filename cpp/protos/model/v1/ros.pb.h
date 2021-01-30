@@ -92,12 +92,13 @@ enum ROSTopicType : int {
   GEOMETRY_MSGS_TWIST = 6,
   H264_VIDEO_FRAME = 7,
   AUDIO_CHUNK = 8,
+  STD_MSGS_FLOAT64 = 9,
   ROSTopicType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ROSTopicType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool ROSTopicType_IsValid(int value);
 constexpr ROSTopicType ROSTopicType_MIN = UNKNOWN;
-constexpr ROSTopicType ROSTopicType_MAX = AUDIO_CHUNK;
+constexpr ROSTopicType ROSTopicType_MAX = STD_MSGS_FLOAT64;
 constexpr int ROSTopicType_ARRAYSIZE = ROSTopicType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ROSTopicType_descriptor();
@@ -718,6 +719,7 @@ class ROSMessageToPublish PROTOBUF_FINAL :
     kText = 5,
     kPose = 6,
     kGoalID = 9,
+    kNumeric = 10,
     DATA_NOT_SET = 0,
   };
 
@@ -807,6 +809,7 @@ class ROSMessageToPublish PROTOBUF_FINAL :
     kTextFieldNumber = 5,
     kPoseFieldNumber = 6,
     kGoalIDFieldNumber = 9,
+    kNumericFieldNumber = 10,
   };
   // string stream = 1[json_name = "stream"];
   void clear_stream();
@@ -953,6 +956,24 @@ class ROSMessageToPublish PROTOBUF_FINAL :
       ::v1::model::GoalID* goalid);
   ::v1::model::GoalID* unsafe_arena_release_goalid();
 
+  // .v1.model.Numeric numeric = 10[json_name = "numeric"];
+  bool has_numeric() const;
+  private:
+  bool _internal_has_numeric() const;
+  public:
+  void clear_numeric();
+  const ::v1::model::Numeric& numeric() const;
+  ::v1::model::Numeric* release_numeric();
+  ::v1::model::Numeric* mutable_numeric();
+  void set_allocated_numeric(::v1::model::Numeric* numeric);
+  private:
+  const ::v1::model::Numeric& _internal_numeric() const;
+  ::v1::model::Numeric* _internal_mutable_numeric();
+  public:
+  void unsafe_arena_set_allocated_numeric(
+      ::v1::model::Numeric* numeric);
+  ::v1::model::Numeric* unsafe_arena_release_numeric();
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.ROSMessageToPublish)
@@ -964,6 +985,7 @@ class ROSMessageToPublish PROTOBUF_FINAL :
   void set_has_text();
   void set_has_pose();
   void set_has_goalid();
+  void set_has_numeric();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -982,6 +1004,7 @@ class ROSMessageToPublish PROTOBUF_FINAL :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr text_;
     ::v1::model::Transform* pose_;
     ::v1::model::GoalID* goalid_;
+    ::v1::model::Numeric* numeric_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2185,6 +2208,71 @@ inline ::v1::model::GoalID* ROSMessageToPublish::_internal_mutable_goalid() {
 inline ::v1::model::GoalID* ROSMessageToPublish::mutable_goalid() {
   // @@protoc_insertion_point(field_mutable:v1.model.ROSMessageToPublish.goalID)
   return _internal_mutable_goalid();
+}
+
+// .v1.model.Numeric numeric = 10[json_name = "numeric"];
+inline bool ROSMessageToPublish::_internal_has_numeric() const {
+  return data_case() == kNumeric;
+}
+inline bool ROSMessageToPublish::has_numeric() const {
+  return _internal_has_numeric();
+}
+inline void ROSMessageToPublish::set_has_numeric() {
+  _oneof_case_[0] = kNumeric;
+}
+inline ::v1::model::Numeric* ROSMessageToPublish::release_numeric() {
+  // @@protoc_insertion_point(field_release:v1.model.ROSMessageToPublish.numeric)
+  if (_internal_has_numeric()) {
+    clear_has_data();
+      ::v1::model::Numeric* temp = data_.numeric_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    data_.numeric_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Numeric& ROSMessageToPublish::_internal_numeric() const {
+  return _internal_has_numeric()
+      ? *data_.numeric_
+      : *reinterpret_cast< ::v1::model::Numeric*>(&::v1::model::_Numeric_default_instance_);
+}
+inline const ::v1::model::Numeric& ROSMessageToPublish::numeric() const {
+  // @@protoc_insertion_point(field_get:v1.model.ROSMessageToPublish.numeric)
+  return _internal_numeric();
+}
+inline ::v1::model::Numeric* ROSMessageToPublish::unsafe_arena_release_numeric() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.ROSMessageToPublish.numeric)
+  if (_internal_has_numeric()) {
+    clear_has_data();
+    ::v1::model::Numeric* temp = data_.numeric_;
+    data_.numeric_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ROSMessageToPublish::unsafe_arena_set_allocated_numeric(::v1::model::Numeric* numeric) {
+  clear_data();
+  if (numeric) {
+    set_has_numeric();
+    data_.numeric_ = numeric;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.ROSMessageToPublish.numeric)
+}
+inline ::v1::model::Numeric* ROSMessageToPublish::_internal_mutable_numeric() {
+  if (!_internal_has_numeric()) {
+    clear_data();
+    set_has_numeric();
+    data_.numeric_ = CreateMaybeMessage< ::v1::model::Numeric >(GetArena());
+  }
+  return data_.numeric_;
+}
+inline ::v1::model::Numeric* ROSMessageToPublish::mutable_numeric() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ROSMessageToPublish.numeric)
+  return _internal_mutable_numeric();
 }
 
 inline bool ROSMessageToPublish::has_data() const {

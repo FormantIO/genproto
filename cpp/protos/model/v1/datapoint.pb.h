@@ -640,6 +640,7 @@ class ControlDatapoint PROTOBUF_FINAL :
     kBitset = 3,
     kTwist = 4,
     kPose = 5,
+    kNumeric = 6,
     DATA_NOT_SET = 0,
   };
 
@@ -725,6 +726,7 @@ class ControlDatapoint PROTOBUF_FINAL :
     kBitsetFieldNumber = 3,
     kTwistFieldNumber = 4,
     kPoseFieldNumber = 5,
+    kNumericFieldNumber = 6,
   };
   // string stream = 1[json_name = "stream"];
   void clear_stream();
@@ -805,6 +807,24 @@ class ControlDatapoint PROTOBUF_FINAL :
       ::v1::model::Transform* pose);
   ::v1::model::Transform* unsafe_arena_release_pose();
 
+  // .v1.model.Numeric numeric = 6[json_name = "numeric"];
+  bool has_numeric() const;
+  private:
+  bool _internal_has_numeric() const;
+  public:
+  void clear_numeric();
+  const ::v1::model::Numeric& numeric() const;
+  ::v1::model::Numeric* release_numeric();
+  ::v1::model::Numeric* mutable_numeric();
+  void set_allocated_numeric(::v1::model::Numeric* numeric);
+  private:
+  const ::v1::model::Numeric& _internal_numeric() const;
+  ::v1::model::Numeric* _internal_mutable_numeric();
+  public:
+  void unsafe_arena_set_allocated_numeric(
+      ::v1::model::Numeric* numeric);
+  ::v1::model::Numeric* unsafe_arena_release_numeric();
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.ControlDatapoint)
@@ -813,6 +833,7 @@ class ControlDatapoint PROTOBUF_FINAL :
   void set_has_bitset();
   void set_has_twist();
   void set_has_pose();
+  void set_has_numeric();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -827,6 +848,7 @@ class ControlDatapoint PROTOBUF_FINAL :
     ::v1::model::Bitset* bitset_;
     ::v1::model::Twist* twist_;
     ::v1::model::Transform* pose_;
+    ::v1::model::Numeric* numeric_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2090,6 +2112,71 @@ inline ::v1::model::Transform* ControlDatapoint::_internal_mutable_pose() {
 inline ::v1::model::Transform* ControlDatapoint::mutable_pose() {
   // @@protoc_insertion_point(field_mutable:v1.model.ControlDatapoint.pose)
   return _internal_mutable_pose();
+}
+
+// .v1.model.Numeric numeric = 6[json_name = "numeric"];
+inline bool ControlDatapoint::_internal_has_numeric() const {
+  return data_case() == kNumeric;
+}
+inline bool ControlDatapoint::has_numeric() const {
+  return _internal_has_numeric();
+}
+inline void ControlDatapoint::set_has_numeric() {
+  _oneof_case_[0] = kNumeric;
+}
+inline ::v1::model::Numeric* ControlDatapoint::release_numeric() {
+  // @@protoc_insertion_point(field_release:v1.model.ControlDatapoint.numeric)
+  if (_internal_has_numeric()) {
+    clear_has_data();
+      ::v1::model::Numeric* temp = data_.numeric_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    data_.numeric_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Numeric& ControlDatapoint::_internal_numeric() const {
+  return _internal_has_numeric()
+      ? *data_.numeric_
+      : *reinterpret_cast< ::v1::model::Numeric*>(&::v1::model::_Numeric_default_instance_);
+}
+inline const ::v1::model::Numeric& ControlDatapoint::numeric() const {
+  // @@protoc_insertion_point(field_get:v1.model.ControlDatapoint.numeric)
+  return _internal_numeric();
+}
+inline ::v1::model::Numeric* ControlDatapoint::unsafe_arena_release_numeric() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.ControlDatapoint.numeric)
+  if (_internal_has_numeric()) {
+    clear_has_data();
+    ::v1::model::Numeric* temp = data_.numeric_;
+    data_.numeric_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ControlDatapoint::unsafe_arena_set_allocated_numeric(::v1::model::Numeric* numeric) {
+  clear_data();
+  if (numeric) {
+    set_has_numeric();
+    data_.numeric_ = numeric;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.ControlDatapoint.numeric)
+}
+inline ::v1::model::Numeric* ControlDatapoint::_internal_mutable_numeric() {
+  if (!_internal_has_numeric()) {
+    clear_data();
+    set_has_numeric();
+    data_.numeric_ = CreateMaybeMessage< ::v1::model::Numeric >(GetArena());
+  }
+  return data_.numeric_;
+}
+inline ::v1::model::Numeric* ControlDatapoint::mutable_numeric() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ControlDatapoint.numeric)
+  return _internal_mutable_numeric();
 }
 
 inline bool ControlDatapoint::has_data() const {
