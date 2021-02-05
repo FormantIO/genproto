@@ -53,7 +53,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[21]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -113,6 +113,9 @@ extern StreamConfigurationDefaultTypeInternal _StreamConfiguration_default_insta
 class StreamConfiguration_TagsEntry_DoNotUse;
 class StreamConfiguration_TagsEntry_DoNotUseDefaultTypeInternal;
 extern StreamConfiguration_TagsEntry_DoNotUseDefaultTypeInternal _StreamConfiguration_TagsEntry_DoNotUse_default_instance_;
+class StreamTransformConfiguration;
+class StreamTransformConfigurationDefaultTypeInternal;
+extern StreamTransformConfigurationDefaultTypeInternal _StreamTransformConfiguration_default_instance_;
 class TelemetryConfiguration;
 class TelemetryConfigurationDefaultTypeInternal;
 extern TelemetryConfigurationDefaultTypeInternal _TelemetryConfiguration_default_instance_;
@@ -145,6 +148,7 @@ template<> ::v1::model::ROSConfiguration* Arena::CreateMaybeMessage<::v1::model:
 template<> ::v1::model::ResourcesConfiguration* Arena::CreateMaybeMessage<::v1::model::ResourcesConfiguration>(Arena*);
 template<> ::v1::model::StreamConfiguration* Arena::CreateMaybeMessage<::v1::model::StreamConfiguration>(Arena*);
 template<> ::v1::model::StreamConfiguration_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::StreamConfiguration_TagsEntry_DoNotUse>(Arena*);
+template<> ::v1::model::StreamTransformConfiguration* Arena::CreateMaybeMessage<::v1::model::StreamTransformConfiguration>(Arena*);
 template<> ::v1::model::TelemetryConfiguration* Arena::CreateMaybeMessage<::v1::model::TelemetryConfiguration>(Arena*);
 template<> ::v1::model::TeleopConfiguration* Arena::CreateMaybeMessage<::v1::model::TeleopConfiguration>(Arena*);
 template<> ::v1::model::TeleopCustomStreamConfiguration* Arena::CreateMaybeMessage<::v1::model::TeleopCustomStreamConfiguration>(Arena*);
@@ -2597,6 +2601,7 @@ class StreamConfiguration PROTOBUF_FINAL :
     kThrottleHzFieldNumber = 8,
     kDisabledFieldNumber = 19,
     kOnDemandFieldNumber = 20,
+    kTransformFieldNumber = 21,
     kRosTopicFieldNumber = 3,
     kRosLocalizationFieldNumber = 4,
     kDirectoryWatchFieldNumber = 5,
@@ -2690,6 +2695,24 @@ class StreamConfiguration PROTOBUF_FINAL :
   void unsafe_arena_set_allocated_on_demand(
       PROTOBUF_NAMESPACE_ID::BoolValue* on_demand);
   PROTOBUF_NAMESPACE_ID::BoolValue* unsafe_arena_release_on_demand();
+
+  // .v1.model.StreamTransformConfiguration transform = 21[json_name = "transform"];
+  bool has_transform() const;
+  private:
+  bool _internal_has_transform() const;
+  public:
+  void clear_transform();
+  const ::v1::model::StreamTransformConfiguration& transform() const;
+  ::v1::model::StreamTransformConfiguration* release_transform();
+  ::v1::model::StreamTransformConfiguration* mutable_transform();
+  void set_allocated_transform(::v1::model::StreamTransformConfiguration* transform);
+  private:
+  const ::v1::model::StreamTransformConfiguration& _internal_transform() const;
+  ::v1::model::StreamTransformConfiguration* _internal_mutable_transform();
+  public:
+  void unsafe_arena_set_allocated_transform(
+      ::v1::model::StreamTransformConfiguration* transform);
+  ::v1::model::StreamTransformConfiguration* unsafe_arena_release_transform();
 
   // .v1.model.ROSTopic ros_topic = 3[json_name = "rosTopic"];
   bool has_ros_topic() const;
@@ -2827,6 +2850,7 @@ class StreamConfiguration PROTOBUF_FINAL :
   PROTOBUF_NAMESPACE_ID::DoubleValue* throttle_hz_;
   PROTOBUF_NAMESPACE_ID::BoolValue* disabled_;
   PROTOBUF_NAMESPACE_ID::BoolValue* on_demand_;
+  ::v1::model::StreamTransformConfiguration* transform_;
   union ConfigurationUnion {
     ConfigurationUnion() {}
     ::v1::model::ROSTopic* ros_topic_;
@@ -2839,6 +2863,152 @@ class StreamConfiguration PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
 
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StreamTransformConfiguration PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.StreamTransformConfiguration) */ {
+ public:
+  inline StreamTransformConfiguration() : StreamTransformConfiguration(nullptr) {}
+  virtual ~StreamTransformConfiguration();
+
+  StreamTransformConfiguration(const StreamTransformConfiguration& from);
+  StreamTransformConfiguration(StreamTransformConfiguration&& from) noexcept
+    : StreamTransformConfiguration() {
+    *this = ::std::move(from);
+  }
+
+  inline StreamTransformConfiguration& operator=(const StreamTransformConfiguration& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StreamTransformConfiguration& operator=(StreamTransformConfiguration&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const StreamTransformConfiguration& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StreamTransformConfiguration* internal_default_instance() {
+    return reinterpret_cast<const StreamTransformConfiguration*>(
+               &_StreamTransformConfiguration_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(StreamTransformConfiguration& a, StreamTransformConfiguration& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StreamTransformConfiguration* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StreamTransformConfiguration* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StreamTransformConfiguration* New() const final {
+    return CreateMaybeMessage<StreamTransformConfiguration>(nullptr);
+  }
+
+  StreamTransformConfiguration* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StreamTransformConfiguration>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const StreamTransformConfiguration& from);
+  void MergeFrom(const StreamTransformConfiguration& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StreamTransformConfiguration* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.StreamTransformConfiguration";
+  }
+  protected:
+  explicit StreamTransformConfiguration(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVideoEncodingEnabledFieldNumber = 1,
+  };
+  // .google.protobuf.BoolValue video_encoding_enabled = 1[json_name = "videoEncodingEnabled"];
+  bool has_video_encoding_enabled() const;
+  private:
+  bool _internal_has_video_encoding_enabled() const;
+  public:
+  void clear_video_encoding_enabled();
+  const PROTOBUF_NAMESPACE_ID::BoolValue& video_encoding_enabled() const;
+  PROTOBUF_NAMESPACE_ID::BoolValue* release_video_encoding_enabled();
+  PROTOBUF_NAMESPACE_ID::BoolValue* mutable_video_encoding_enabled();
+  void set_allocated_video_encoding_enabled(PROTOBUF_NAMESPACE_ID::BoolValue* video_encoding_enabled);
+  private:
+  const PROTOBUF_NAMESPACE_ID::BoolValue& _internal_video_encoding_enabled() const;
+  PROTOBUF_NAMESPACE_ID::BoolValue* _internal_mutable_video_encoding_enabled();
+  public:
+  void unsafe_arena_set_allocated_video_encoding_enabled(
+      PROTOBUF_NAMESPACE_ID::BoolValue* video_encoding_enabled);
+  PROTOBUF_NAMESPACE_ID::BoolValue* unsafe_arena_release_video_encoding_enabled();
+
+  // @@protoc_insertion_point(class_scope:v1.model.StreamTransformConfiguration)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  PROTOBUF_NAMESPACE_ID::BoolValue* video_encoding_enabled_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
 // -------------------------------------------------------------------
@@ -2885,7 +3055,7 @@ class BlobData PROTOBUF_FINAL :
                &_BlobData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(BlobData& a, BlobData& b) {
     a.Swap(&b);
@@ -3029,7 +3199,7 @@ class Diagnostics PROTOBUF_FINAL :
                &_Diagnostics_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(Diagnostics& a, Diagnostics& b) {
     a.Swap(&b);
@@ -3195,7 +3365,7 @@ class Custom PROTOBUF_FINAL :
                &_Custom_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(Custom& a, Custom& b) {
     a.Swap(&b);
@@ -3319,7 +3489,7 @@ class DirectoryWatch PROTOBUF_FINAL :
                &_DirectoryWatch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(DirectoryWatch& a, DirectoryWatch& b) {
     a.Swap(&b);
@@ -3503,7 +3673,7 @@ class FileTail PROTOBUF_FINAL :
                &_FileTail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(FileTail& a, FileTail& b) {
     a.Swap(&b);
@@ -6444,6 +6614,89 @@ inline void StreamConfiguration::set_allocated_on_demand(PROTOBUF_NAMESPACE_ID::
   // @@protoc_insertion_point(field_set_allocated:v1.model.StreamConfiguration.on_demand)
 }
 
+// .v1.model.StreamTransformConfiguration transform = 21[json_name = "transform"];
+inline bool StreamConfiguration::_internal_has_transform() const {
+  return this != internal_default_instance() && transform_ != nullptr;
+}
+inline bool StreamConfiguration::has_transform() const {
+  return _internal_has_transform();
+}
+inline void StreamConfiguration::clear_transform() {
+  if (GetArena() == nullptr && transform_ != nullptr) {
+    delete transform_;
+  }
+  transform_ = nullptr;
+}
+inline const ::v1::model::StreamTransformConfiguration& StreamConfiguration::_internal_transform() const {
+  const ::v1::model::StreamTransformConfiguration* p = transform_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::v1::model::StreamTransformConfiguration*>(
+      &::v1::model::_StreamTransformConfiguration_default_instance_);
+}
+inline const ::v1::model::StreamTransformConfiguration& StreamConfiguration::transform() const {
+  // @@protoc_insertion_point(field_get:v1.model.StreamConfiguration.transform)
+  return _internal_transform();
+}
+inline void StreamConfiguration::unsafe_arena_set_allocated_transform(
+    ::v1::model::StreamTransformConfiguration* transform) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transform_);
+  }
+  transform_ = transform;
+  if (transform) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.StreamConfiguration.transform)
+}
+inline ::v1::model::StreamTransformConfiguration* StreamConfiguration::release_transform() {
+  
+  ::v1::model::StreamTransformConfiguration* temp = transform_;
+  transform_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::v1::model::StreamTransformConfiguration* StreamConfiguration::unsafe_arena_release_transform() {
+  // @@protoc_insertion_point(field_release:v1.model.StreamConfiguration.transform)
+  
+  ::v1::model::StreamTransformConfiguration* temp = transform_;
+  transform_ = nullptr;
+  return temp;
+}
+inline ::v1::model::StreamTransformConfiguration* StreamConfiguration::_internal_mutable_transform() {
+  
+  if (transform_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::StreamTransformConfiguration>(GetArena());
+    transform_ = p;
+  }
+  return transform_;
+}
+inline ::v1::model::StreamTransformConfiguration* StreamConfiguration::mutable_transform() {
+  // @@protoc_insertion_point(field_mutable:v1.model.StreamConfiguration.transform)
+  return _internal_mutable_transform();
+}
+inline void StreamConfiguration::set_allocated_transform(::v1::model::StreamTransformConfiguration* transform) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete transform_;
+  }
+  if (transform) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(transform);
+    if (message_arena != submessage_arena) {
+      transform = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transform, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  transform_ = transform;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.StreamConfiguration.transform)
+}
+
 inline bool StreamConfiguration::has_configuration() const {
   return configuration_case() != CONFIGURATION_NOT_SET;
 }
@@ -6453,6 +6706,87 @@ inline void StreamConfiguration::clear_has_configuration() {
 inline StreamConfiguration::ConfigurationCase StreamConfiguration::configuration_case() const {
   return StreamConfiguration::ConfigurationCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// StreamTransformConfiguration
+
+// .google.protobuf.BoolValue video_encoding_enabled = 1[json_name = "videoEncodingEnabled"];
+inline bool StreamTransformConfiguration::_internal_has_video_encoding_enabled() const {
+  return this != internal_default_instance() && video_encoding_enabled_ != nullptr;
+}
+inline bool StreamTransformConfiguration::has_video_encoding_enabled() const {
+  return _internal_has_video_encoding_enabled();
+}
+inline const PROTOBUF_NAMESPACE_ID::BoolValue& StreamTransformConfiguration::_internal_video_encoding_enabled() const {
+  const PROTOBUF_NAMESPACE_ID::BoolValue* p = video_encoding_enabled_;
+  return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::BoolValue*>(
+      &PROTOBUF_NAMESPACE_ID::_BoolValue_default_instance_);
+}
+inline const PROTOBUF_NAMESPACE_ID::BoolValue& StreamTransformConfiguration::video_encoding_enabled() const {
+  // @@protoc_insertion_point(field_get:v1.model.StreamTransformConfiguration.video_encoding_enabled)
+  return _internal_video_encoding_enabled();
+}
+inline void StreamTransformConfiguration::unsafe_arena_set_allocated_video_encoding_enabled(
+    PROTOBUF_NAMESPACE_ID::BoolValue* video_encoding_enabled) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(video_encoding_enabled_);
+  }
+  video_encoding_enabled_ = video_encoding_enabled;
+  if (video_encoding_enabled) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.StreamTransformConfiguration.video_encoding_enabled)
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* StreamTransformConfiguration::release_video_encoding_enabled() {
+  
+  PROTOBUF_NAMESPACE_ID::BoolValue* temp = video_encoding_enabled_;
+  video_encoding_enabled_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* StreamTransformConfiguration::unsafe_arena_release_video_encoding_enabled() {
+  // @@protoc_insertion_point(field_release:v1.model.StreamTransformConfiguration.video_encoding_enabled)
+  
+  PROTOBUF_NAMESPACE_ID::BoolValue* temp = video_encoding_enabled_;
+  video_encoding_enabled_ = nullptr;
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* StreamTransformConfiguration::_internal_mutable_video_encoding_enabled() {
+  
+  if (video_encoding_enabled_ == nullptr) {
+    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::BoolValue>(GetArena());
+    video_encoding_enabled_ = p;
+  }
+  return video_encoding_enabled_;
+}
+inline PROTOBUF_NAMESPACE_ID::BoolValue* StreamTransformConfiguration::mutable_video_encoding_enabled() {
+  // @@protoc_insertion_point(field_mutable:v1.model.StreamTransformConfiguration.video_encoding_enabled)
+  return _internal_mutable_video_encoding_enabled();
+}
+inline void StreamTransformConfiguration::set_allocated_video_encoding_enabled(PROTOBUF_NAMESPACE_ID::BoolValue* video_encoding_enabled) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(video_encoding_enabled_);
+  }
+  if (video_encoding_enabled) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(video_encoding_enabled)->GetArena();
+    if (message_arena != submessage_arena) {
+      video_encoding_enabled = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, video_encoding_enabled, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  video_encoding_enabled_ = video_encoding_enabled;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.StreamTransformConfiguration.video_encoding_enabled)
+}
+
 // -------------------------------------------------------------------
 
 // BlobData
@@ -7124,6 +7458,8 @@ inline void FileTail::set_allocated_regex(std::string* regex) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
