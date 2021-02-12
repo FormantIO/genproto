@@ -53,7 +53,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[23]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -125,6 +125,9 @@ extern TeleopConfigurationDefaultTypeInternal _TeleopConfiguration_default_insta
 class TeleopCustomStreamConfiguration;
 class TeleopCustomStreamConfigurationDefaultTypeInternal;
 extern TeleopCustomStreamConfigurationDefaultTypeInternal _TeleopCustomStreamConfiguration_default_instance_;
+class TeleopHardwareStreamConfiguration;
+class TeleopHardwareStreamConfigurationDefaultTypeInternal;
+extern TeleopHardwareStreamConfigurationDefaultTypeInternal _TeleopHardwareStreamConfiguration_default_instance_;
 class TeleopRosStreamConfiguration;
 class TeleopRosStreamConfigurationDefaultTypeInternal;
 extern TeleopRosStreamConfigurationDefaultTypeInternal _TeleopRosStreamConfiguration_default_instance_;
@@ -152,6 +155,7 @@ template<> ::v1::model::StreamTransformConfiguration* Arena::CreateMaybeMessage<
 template<> ::v1::model::TelemetryConfiguration* Arena::CreateMaybeMessage<::v1::model::TelemetryConfiguration>(Arena*);
 template<> ::v1::model::TeleopConfiguration* Arena::CreateMaybeMessage<::v1::model::TeleopConfiguration>(Arena*);
 template<> ::v1::model::TeleopCustomStreamConfiguration* Arena::CreateMaybeMessage<::v1::model::TeleopCustomStreamConfiguration>(Arena*);
+template<> ::v1::model::TeleopHardwareStreamConfiguration* Arena::CreateMaybeMessage<::v1::model::TeleopHardwareStreamConfiguration>(Arena*);
 template<> ::v1::model::TeleopRosStreamConfiguration* Arena::CreateMaybeMessage<::v1::model::TeleopRosStreamConfiguration>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace v1 {
@@ -1053,6 +1057,7 @@ class TeleopConfiguration PROTOBUF_FINAL :
   enum : int {
     kRosStreamsFieldNumber = 1,
     kCustomStreamsFieldNumber = 2,
+    kHardwareStreamsFieldNumber = 3,
   };
   // repeated .v1.model.TeleopRosStreamConfiguration ros_streams = 1[json_name = "rosStreams"];
   int ros_streams_size() const;
@@ -1090,6 +1095,24 @@ class TeleopConfiguration PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopCustomStreamConfiguration >&
       custom_streams() const;
 
+  // repeated .v1.model.TeleopHardwareStreamConfiguration hardware_streams = 3[json_name = "hardwareStreams"];
+  int hardware_streams_size() const;
+  private:
+  int _internal_hardware_streams_size() const;
+  public:
+  void clear_hardware_streams();
+  ::v1::model::TeleopHardwareStreamConfiguration* mutable_hardware_streams(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopHardwareStreamConfiguration >*
+      mutable_hardware_streams();
+  private:
+  const ::v1::model::TeleopHardwareStreamConfiguration& _internal_hardware_streams(int index) const;
+  ::v1::model::TeleopHardwareStreamConfiguration* _internal_add_hardware_streams();
+  public:
+  const ::v1::model::TeleopHardwareStreamConfiguration& hardware_streams(int index) const;
+  ::v1::model::TeleopHardwareStreamConfiguration* add_hardware_streams();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopHardwareStreamConfiguration >&
+      hardware_streams() const;
+
   // @@protoc_insertion_point(class_scope:v1.model.TeleopConfiguration)
  private:
   class _Internal;
@@ -1099,6 +1122,7 @@ class TeleopConfiguration PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopRosStreamConfiguration > ros_streams_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopCustomStreamConfiguration > custom_streams_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopHardwareStreamConfiguration > hardware_streams_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -1445,6 +1469,197 @@ class TeleopRosStreamConfiguration PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class TeleopHardwareStreamConfiguration PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.TeleopHardwareStreamConfiguration) */ {
+ public:
+  inline TeleopHardwareStreamConfiguration() : TeleopHardwareStreamConfiguration(nullptr) {}
+  virtual ~TeleopHardwareStreamConfiguration();
+
+  TeleopHardwareStreamConfiguration(const TeleopHardwareStreamConfiguration& from);
+  TeleopHardwareStreamConfiguration(TeleopHardwareStreamConfiguration&& from) noexcept
+    : TeleopHardwareStreamConfiguration() {
+    *this = ::std::move(from);
+  }
+
+  inline TeleopHardwareStreamConfiguration& operator=(const TeleopHardwareStreamConfiguration& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TeleopHardwareStreamConfiguration& operator=(TeleopHardwareStreamConfiguration&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const TeleopHardwareStreamConfiguration& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TeleopHardwareStreamConfiguration* internal_default_instance() {
+    return reinterpret_cast<const TeleopHardwareStreamConfiguration*>(
+               &_TeleopHardwareStreamConfiguration_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(TeleopHardwareStreamConfiguration& a, TeleopHardwareStreamConfiguration& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TeleopHardwareStreamConfiguration* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TeleopHardwareStreamConfiguration* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TeleopHardwareStreamConfiguration* New() const final {
+    return CreateMaybeMessage<TeleopHardwareStreamConfiguration>(nullptr);
+  }
+
+  TeleopHardwareStreamConfiguration* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TeleopHardwareStreamConfiguration>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const TeleopHardwareStreamConfiguration& from);
+  void MergeFrom(const TeleopHardwareStreamConfiguration& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TeleopHardwareStreamConfiguration* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.TeleopHardwareStreamConfiguration";
+  }
+  protected:
+  explicit TeleopHardwareStreamConfiguration(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+    kRtcStreamTypeFieldNumber = 2,
+    kHwDescriptorFieldNumber = 4,
+    kModeFieldNumber = 3,
+  };
+  // string name = 1[json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string rtc_stream_type = 2[json_name = "rtcStreamType"];
+  void clear_rtc_stream_type();
+  const std::string& rtc_stream_type() const;
+  void set_rtc_stream_type(const std::string& value);
+  void set_rtc_stream_type(std::string&& value);
+  void set_rtc_stream_type(const char* value);
+  void set_rtc_stream_type(const char* value, size_t size);
+  std::string* mutable_rtc_stream_type();
+  std::string* release_rtc_stream_type();
+  void set_allocated_rtc_stream_type(std::string* rtc_stream_type);
+  private:
+  const std::string& _internal_rtc_stream_type() const;
+  void _internal_set_rtc_stream_type(const std::string& value);
+  std::string* _internal_mutable_rtc_stream_type();
+  public:
+
+  // string hw_descriptor = 4[json_name = "hwDescriptor"];
+  void clear_hw_descriptor();
+  const std::string& hw_descriptor() const;
+  void set_hw_descriptor(const std::string& value);
+  void set_hw_descriptor(std::string&& value);
+  void set_hw_descriptor(const char* value);
+  void set_hw_descriptor(const char* value, size_t size);
+  std::string* mutable_hw_descriptor();
+  std::string* release_hw_descriptor();
+  void set_allocated_hw_descriptor(std::string* hw_descriptor);
+  private:
+  const std::string& _internal_hw_descriptor() const;
+  void _internal_set_hw_descriptor(const std::string& value);
+  std::string* _internal_mutable_hw_descriptor();
+  public:
+
+  // .v1.model.TeleopMode mode = 3[json_name = "mode"];
+  void clear_mode();
+  ::v1::model::TeleopMode mode() const;
+  void set_mode(::v1::model::TeleopMode value);
+  private:
+  ::v1::model::TeleopMode _internal_mode() const;
+  void _internal_set_mode(::v1::model::TeleopMode value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.TeleopHardwareStreamConfiguration)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rtc_stream_type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hw_descriptor_;
+  int mode_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
 class TeleopCustomStreamConfiguration PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.TeleopCustomStreamConfiguration) */ {
  public:
@@ -1487,7 +1702,7 @@ class TeleopCustomStreamConfiguration PROTOBUF_FINAL :
                &_TeleopCustomStreamConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(TeleopCustomStreamConfiguration& a, TeleopCustomStreamConfiguration& b) {
     a.Swap(&b);
@@ -1671,7 +1886,7 @@ class TelemetryConfiguration PROTOBUF_FINAL :
                &_TelemetryConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(TelemetryConfiguration& a, TelemetryConfiguration& b) {
     a.Swap(&b);
@@ -1821,7 +2036,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
-    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[9];
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[10];
   }
 
   public:
@@ -1871,7 +2086,7 @@ class ApplicationConfiguration PROTOBUF_FINAL :
                &_ApplicationConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(ApplicationConfiguration& a, ApplicationConfiguration& b) {
     a.Swap(&b);
@@ -2022,7 +2237,7 @@ class ResourcesConfiguration PROTOBUF_FINAL :
                &_ResourcesConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(ResourcesConfiguration& a, ResourcesConfiguration& b) {
     a.Swap(&b);
@@ -2188,7 +2403,7 @@ class DiskConfiguration PROTOBUF_FINAL :
                &_DiskConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(DiskConfiguration& a, DiskConfiguration& b) {
     a.Swap(&b);
@@ -2336,7 +2551,7 @@ class ROSConfiguration PROTOBUF_FINAL :
                &_ROSConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(ROSConfiguration& a, ROSConfiguration& b) {
     a.Swap(&b);
@@ -2464,7 +2679,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
-    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[14];
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[15];
   }
 
   public:
@@ -2524,7 +2739,7 @@ class StreamConfiguration PROTOBUF_FINAL :
                &_StreamConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(StreamConfiguration& a, StreamConfiguration& b) {
     a.Swap(&b);
@@ -2909,7 +3124,7 @@ class StreamTransformConfiguration PROTOBUF_FINAL :
                &_StreamTransformConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(StreamTransformConfiguration& a, StreamTransformConfiguration& b) {
     a.Swap(&b);
@@ -3055,7 +3270,7 @@ class BlobData PROTOBUF_FINAL :
                &_BlobData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(BlobData& a, BlobData& b) {
     a.Swap(&b);
@@ -3199,7 +3414,7 @@ class Diagnostics PROTOBUF_FINAL :
                &_Diagnostics_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(Diagnostics& a, Diagnostics& b) {
     a.Swap(&b);
@@ -3365,7 +3580,7 @@ class Custom PROTOBUF_FINAL :
                &_Custom_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(Custom& a, Custom& b) {
     a.Swap(&b);
@@ -3489,7 +3704,7 @@ class DirectoryWatch PROTOBUF_FINAL :
                &_DirectoryWatch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(DirectoryWatch& a, DirectoryWatch& b) {
     a.Swap(&b);
@@ -3673,7 +3888,7 @@ class FileTail PROTOBUF_FINAL :
                &_FileTail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(FileTail& a, FileTail& b) {
     a.Swap(&b);
@@ -5000,6 +5215,45 @@ TeleopConfiguration::custom_streams() const {
   return custom_streams_;
 }
 
+// repeated .v1.model.TeleopHardwareStreamConfiguration hardware_streams = 3[json_name = "hardwareStreams"];
+inline int TeleopConfiguration::_internal_hardware_streams_size() const {
+  return hardware_streams_.size();
+}
+inline int TeleopConfiguration::hardware_streams_size() const {
+  return _internal_hardware_streams_size();
+}
+inline void TeleopConfiguration::clear_hardware_streams() {
+  hardware_streams_.Clear();
+}
+inline ::v1::model::TeleopHardwareStreamConfiguration* TeleopConfiguration::mutable_hardware_streams(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopConfiguration.hardware_streams)
+  return hardware_streams_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopHardwareStreamConfiguration >*
+TeleopConfiguration::mutable_hardware_streams() {
+  // @@protoc_insertion_point(field_mutable_list:v1.model.TeleopConfiguration.hardware_streams)
+  return &hardware_streams_;
+}
+inline const ::v1::model::TeleopHardwareStreamConfiguration& TeleopConfiguration::_internal_hardware_streams(int index) const {
+  return hardware_streams_.Get(index);
+}
+inline const ::v1::model::TeleopHardwareStreamConfiguration& TeleopConfiguration::hardware_streams(int index) const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopConfiguration.hardware_streams)
+  return _internal_hardware_streams(index);
+}
+inline ::v1::model::TeleopHardwareStreamConfiguration* TeleopConfiguration::_internal_add_hardware_streams() {
+  return hardware_streams_.Add();
+}
+inline ::v1::model::TeleopHardwareStreamConfiguration* TeleopConfiguration::add_hardware_streams() {
+  // @@protoc_insertion_point(field_add:v1.model.TeleopConfiguration.hardware_streams)
+  return _internal_add_hardware_streams();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::TeleopHardwareStreamConfiguration >&
+TeleopConfiguration::hardware_streams() const {
+  // @@protoc_insertion_point(field_list:v1.model.TeleopConfiguration.hardware_streams)
+  return hardware_streams_;
+}
+
 // -------------------------------------------------------------------
 
 // PortForwardingConfiguration
@@ -5267,6 +5521,216 @@ inline void TeleopRosStreamConfiguration::set_allocated_audio_codec(std::string*
   audio_codec_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), audio_codec,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopRosStreamConfiguration.audio_codec)
+}
+
+// -------------------------------------------------------------------
+
+// TeleopHardwareStreamConfiguration
+
+// string name = 1[json_name = "name"];
+inline void TeleopHardwareStreamConfiguration::clear_name() {
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& TeleopHardwareStreamConfiguration::name() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopHardwareStreamConfiguration.name)
+  return _internal_name();
+}
+inline void TeleopHardwareStreamConfiguration::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopHardwareStreamConfiguration.name)
+}
+inline std::string* TeleopHardwareStreamConfiguration::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopHardwareStreamConfiguration.name)
+  return _internal_mutable_name();
+}
+inline const std::string& TeleopHardwareStreamConfiguration::_internal_name() const {
+  return name_.Get();
+}
+inline void TeleopHardwareStreamConfiguration::_internal_set_name(const std::string& value) {
+  
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void TeleopHardwareStreamConfiguration::set_name(std::string&& value) {
+  
+  name_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.TeleopHardwareStreamConfiguration.name)
+}
+inline void TeleopHardwareStreamConfiguration::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.TeleopHardwareStreamConfiguration.name)
+}
+inline void TeleopHardwareStreamConfiguration::set_name(const char* value,
+    size_t size) {
+  
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.TeleopHardwareStreamConfiguration.name)
+}
+inline std::string* TeleopHardwareStreamConfiguration::_internal_mutable_name() {
+  
+  return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* TeleopHardwareStreamConfiguration::release_name() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopHardwareStreamConfiguration.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void TeleopHardwareStreamConfiguration::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopHardwareStreamConfiguration.name)
+}
+
+// string rtc_stream_type = 2[json_name = "rtcStreamType"];
+inline void TeleopHardwareStreamConfiguration::clear_rtc_stream_type() {
+  rtc_stream_type_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& TeleopHardwareStreamConfiguration::rtc_stream_type() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopHardwareStreamConfiguration.rtc_stream_type)
+  return _internal_rtc_stream_type();
+}
+inline void TeleopHardwareStreamConfiguration::set_rtc_stream_type(const std::string& value) {
+  _internal_set_rtc_stream_type(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopHardwareStreamConfiguration.rtc_stream_type)
+}
+inline std::string* TeleopHardwareStreamConfiguration::mutable_rtc_stream_type() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopHardwareStreamConfiguration.rtc_stream_type)
+  return _internal_mutable_rtc_stream_type();
+}
+inline const std::string& TeleopHardwareStreamConfiguration::_internal_rtc_stream_type() const {
+  return rtc_stream_type_.Get();
+}
+inline void TeleopHardwareStreamConfiguration::_internal_set_rtc_stream_type(const std::string& value) {
+  
+  rtc_stream_type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void TeleopHardwareStreamConfiguration::set_rtc_stream_type(std::string&& value) {
+  
+  rtc_stream_type_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.TeleopHardwareStreamConfiguration.rtc_stream_type)
+}
+inline void TeleopHardwareStreamConfiguration::set_rtc_stream_type(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  rtc_stream_type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.TeleopHardwareStreamConfiguration.rtc_stream_type)
+}
+inline void TeleopHardwareStreamConfiguration::set_rtc_stream_type(const char* value,
+    size_t size) {
+  
+  rtc_stream_type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.TeleopHardwareStreamConfiguration.rtc_stream_type)
+}
+inline std::string* TeleopHardwareStreamConfiguration::_internal_mutable_rtc_stream_type() {
+  
+  return rtc_stream_type_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* TeleopHardwareStreamConfiguration::release_rtc_stream_type() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopHardwareStreamConfiguration.rtc_stream_type)
+  return rtc_stream_type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void TeleopHardwareStreamConfiguration::set_allocated_rtc_stream_type(std::string* rtc_stream_type) {
+  if (rtc_stream_type != nullptr) {
+    
+  } else {
+    
+  }
+  rtc_stream_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rtc_stream_type,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopHardwareStreamConfiguration.rtc_stream_type)
+}
+
+// .v1.model.TeleopMode mode = 3[json_name = "mode"];
+inline void TeleopHardwareStreamConfiguration::clear_mode() {
+  mode_ = 0;
+}
+inline ::v1::model::TeleopMode TeleopHardwareStreamConfiguration::_internal_mode() const {
+  return static_cast< ::v1::model::TeleopMode >(mode_);
+}
+inline ::v1::model::TeleopMode TeleopHardwareStreamConfiguration::mode() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopHardwareStreamConfiguration.mode)
+  return _internal_mode();
+}
+inline void TeleopHardwareStreamConfiguration::_internal_set_mode(::v1::model::TeleopMode value) {
+  
+  mode_ = value;
+}
+inline void TeleopHardwareStreamConfiguration::set_mode(::v1::model::TeleopMode value) {
+  _internal_set_mode(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopHardwareStreamConfiguration.mode)
+}
+
+// string hw_descriptor = 4[json_name = "hwDescriptor"];
+inline void TeleopHardwareStreamConfiguration::clear_hw_descriptor() {
+  hw_descriptor_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& TeleopHardwareStreamConfiguration::hw_descriptor() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopHardwareStreamConfiguration.hw_descriptor)
+  return _internal_hw_descriptor();
+}
+inline void TeleopHardwareStreamConfiguration::set_hw_descriptor(const std::string& value) {
+  _internal_set_hw_descriptor(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopHardwareStreamConfiguration.hw_descriptor)
+}
+inline std::string* TeleopHardwareStreamConfiguration::mutable_hw_descriptor() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopHardwareStreamConfiguration.hw_descriptor)
+  return _internal_mutable_hw_descriptor();
+}
+inline const std::string& TeleopHardwareStreamConfiguration::_internal_hw_descriptor() const {
+  return hw_descriptor_.Get();
+}
+inline void TeleopHardwareStreamConfiguration::_internal_set_hw_descriptor(const std::string& value) {
+  
+  hw_descriptor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void TeleopHardwareStreamConfiguration::set_hw_descriptor(std::string&& value) {
+  
+  hw_descriptor_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.TeleopHardwareStreamConfiguration.hw_descriptor)
+}
+inline void TeleopHardwareStreamConfiguration::set_hw_descriptor(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  hw_descriptor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.TeleopHardwareStreamConfiguration.hw_descriptor)
+}
+inline void TeleopHardwareStreamConfiguration::set_hw_descriptor(const char* value,
+    size_t size) {
+  
+  hw_descriptor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.TeleopHardwareStreamConfiguration.hw_descriptor)
+}
+inline std::string* TeleopHardwareStreamConfiguration::_internal_mutable_hw_descriptor() {
+  
+  return hw_descriptor_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* TeleopHardwareStreamConfiguration::release_hw_descriptor() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopHardwareStreamConfiguration.hw_descriptor)
+  return hw_descriptor_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void TeleopHardwareStreamConfiguration::set_allocated_hw_descriptor(std::string* hw_descriptor) {
+  if (hw_descriptor != nullptr) {
+    
+  } else {
+    
+  }
+  hw_descriptor_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), hw_descriptor,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopHardwareStreamConfiguration.hw_descriptor)
 }
 
 // -------------------------------------------------------------------
@@ -7458,6 +7922,8 @@ inline void FileTail::set_allocated_regex(std::string* regex) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

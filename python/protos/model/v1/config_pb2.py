@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z)github.com/FormantIO/genproto/go/v1/model',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1cprotos/model/v1/config.proto\x12\x08v1.model\x1a\x19protos/model/v1/ros.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x82\x01\n\x17\x41gentConfigurationStore\x12#\n\ragent_version\x18\x01 \x01(\tR\x0c\x61gentVersion\x12\x42\n\rconfiguration\x18\x02 \x01(\x0b\x32\x1c.v1.model.AgentConfigurationR\rconfiguration\"z\n\x12\x41gentConfiguration\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12@\n\x08\x64ocument\x18\x03 \x01(\x0b\x32$.v1.model.AgentConfigurationDocumentR\x08\x64ocument\"\xaf\x05\n\x1a\x41gentConfigurationDocument\x12\x18\n\x07version\x18\x01 \x01(\x03R\x07version\x12\x42\n\x04tags\x18\x02 \x03(\x0b\x32..v1.model.AgentConfigurationDocument.TagsEntryR\x04tags\x12>\n\ttelemetry\x18\x03 \x01(\x0b\x32 .v1.model.TelemetryConfigurationR\ttelemetry\x12>\n\tresources\x18\x04 \x01(\x0b\x32 .v1.model.ResourcesConfigurationR\tresources\x12\x44\n\x0b\x61pplication\x18\x05 \x01(\x0b\x32\".v1.model.ApplicationConfigurationR\x0b\x61pplication\x12\x35\n\x06teleop\x18\x06 \x01(\x0b\x32\x1d.v1.model.TeleopConfigurationR\x06teleop\x12N\n\x0fport_forwarding\x18\x07 \x01(\x0b\x32%.v1.model.PortForwardingConfigurationR\x0eportForwarding\x12/\n\tblob_data\x18\x08 \x01(\x0b\x32\x12.v1.model.BlobDataR\x08\x62lobData\x12\x37\n\x0b\x64iagnostics\x18\t \x01(\x0b\x32\x15.v1.model.DiagnosticsR\x0b\x64iagnostics\x12\x43\n\x0fterminal_access\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x0eterminalAccess\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\xb0\x01\n\x13TeleopConfiguration\x12G\n\x0bros_streams\x18\x01 \x03(\x0b\x32&.v1.model.TeleopRosStreamConfigurationR\nrosStreams\x12P\n\x0e\x63ustom_streams\x18\x02 \x03(\x0b\x32).v1.model.TeleopCustomStreamConfigurationR\rcustomStreams\"S\n\x1bPortForwardingConfiguration\x12\x34\n\x07\x65nabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x07\x65nabled\"\xe2\x01\n\x1cTeleopRosStreamConfiguration\x12\x1d\n\ntopic_name\x18\x01 \x01(\tR\ttopicName\x12\x35\n\ntopic_type\x18\x02 \x01(\x0e\x32\x16.v1.model.ROSTopicTypeR\ttopicType\x12(\n\x04mode\x18\x03 \x01(\x0e\x32\x14.v1.model.TeleopModeR\x04mode\x12!\n\x0c\x65ncode_video\x18\x04 \x01(\x08R\x0b\x65ncodeVideo\x12\x1f\n\x0b\x61udio_codec\x18\x05 \x01(\tR\naudioCodec\"\xaa\x01\n\x1fTeleopCustomStreamConfiguration\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12&\n\x0frtc_stream_type\x18\x02 \x01(\tR\rrtcStreamType\x12(\n\x04mode\x18\x03 \x01(\x0e\x32\x14.v1.model.TeleopModeR\x04mode\x12!\n\x0c\x65ncode_video\x18\x04 \x01(\x08R\x0b\x65ncodeVideo\"\x7f\n\x16TelemetryConfiguration\x12\x37\n\x07streams\x18\x01 \x03(\x0b\x32\x1d.v1.model.StreamConfigurationR\x07streams\x12,\n\x03ros\x18\x02 \x01(\x0b\x32\x1a.v1.model.ROSConfigurationR\x03ros\"\xc6\x01\n\x18\x41pplicationConfiguration\x12\x65\n\x11\x63onfiguration_map\x18\x01 \x03(\x0b\x32\x38.v1.model.ApplicationConfiguration.ConfigurationMapEntryR\x10\x63onfigurationMap\x1a\x43\n\x15\x43onfigurationMapEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x95\x01\n\x16ResourcesConfiguration\x12/\n\x04\x64isk\x18\x01 \x01(\x0b\x32\x1b.v1.model.DiskConfigurationR\x04\x64isk\x12J\n\x12stream_throttle_hz\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueR\x10streamThrottleHz\"g\n\x11\x44iskConfiguration\x12\x1f\n\x0b\x62uffer_size\x18\x01 \x01(\x03R\nbufferSize\x12\x31\n\x15on_demand_buffer_size\x18\x02 \x01(\x03R\x12onDemandBufferSize\"K\n\x10ROSConfiguration\x12\x37\n\x18world_reference_frame_id\x18\x01 \x01(\tR\x15worldReferenceFrameId\"\x91\x06\n\x13StreamConfiguration\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12;\n\x04tags\x18\x02 \x03(\x0b\x32\'.v1.model.StreamConfiguration.TagsEntryR\x04tags\x12\x31\n\tros_topic\x18\x03 \x01(\x0b\x32\x12.v1.model.ROSTopicH\x00R\x08rosTopic\x12\x46\n\x10ros_localization\x18\x04 \x01(\x0b\x32\x19.v1.model.ROSLocalizationH\x00R\x0frosLocalization\x12\x43\n\x0f\x64irectory_watch\x18\x05 \x01(\x0b\x32\x18.v1.model.DirectoryWatchH\x00R\x0e\x64irectoryWatch\x12\x31\n\tfile_tail\x18\x06 \x01(\x0b\x32\x12.v1.model.FileTailH\x00R\x08\x66ileTail\x12J\n\x12ros_transform_tree\x18\x07 \x01(\x0b\x32\x1a.v1.model.ROSTransformTreeH\x00R\x10rosTransformTree\x12*\n\x06\x63ustom\x18\t \x01(\x0b\x32\x10.v1.model.CustomH\x00R\x06\x63ustom\x12=\n\x0bthrottle_hz\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueR\nthrottleHz\x12\x36\n\x08\x64isabled\x18\x13 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x08\x64isabled\x12\x37\n\ton_demand\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x08onDemand\x12\x44\n\ttransform\x18\x15 \x01(\x0b\x32&.v1.model.StreamTransformConfigurationR\ttransform\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x0f\n\rconfiguration\"p\n\x1cStreamTransformConfiguration\x12P\n\x16video_encoding_enabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x14videoEncodingEnabled\"\x1e\n\x08\x42lobData\x12\x12\n\x04\x64\x61ta\x18\x01 \x01(\tR\x04\x64\x61ta\"\x8d\x01\n\x0b\x44iagnostics\x12;\n\x0breport_logs\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\nreportLogs\x12\x41\n\x0ereport_metrics\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\rreportMetrics\"\x08\n\x06\x43ustom\"\xa0\x01\n\x0e\x44irectoryWatch\x12\x1c\n\tdirectory\x18\x01 \x01(\tR\tdirectory\x12\x1c\n\textension\x18\x02 \x01(\tR\textension\x12/\n\tfile_type\x18\x03 \x01(\x0e\x32\x12.v1.model.FileTypeR\x08\x66ileType\x12!\n\x0cremote_agent\x18\x04 \x01(\x08R\x0bremoteAgent\"\xaf\x01\n\x08\x46ileTail\x12\x1a\n\x08\x66ilename\x18\x01 \x01(\tR\x08\x66ilename\x12\x35\n\x0b\x66ile_format\x18\x02 \x01(\x0e\x32\x14.v1.model.FileFormatR\nfileFormat\x12\x19\n\x08time_key\x18\x03 \x01(\tR\x07timeKey\x12\x1f\n\x0btime_format\x18\x04 \x01(\tR\ntimeFormat\x12\x14\n\x05regex\x18\x05 \x01(\tR\x05regex*&\n\nTeleopMode\x12\x0b\n\x07\x43OMMAND\x10\x00\x12\x0b\n\x07OBSERVE\x10\x01*&\n\nFileFormat\x12\x0e\n\nPLAIN_TEXT\x10\x00\x12\x08\n\x04JSON\x10\x01*;\n\x08\x46ileType\x12\x08\n\x04\x46ILE\x10\x00\x12\t\n\x05IMAGE\x10\x01\x12\x0f\n\x0bPOINT_CLOUD\x10\x04\x12\t\n\x05VIDEO\x10\x05\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
+  serialized_pb=b'\n\x1cprotos/model/v1/config.proto\x12\x08v1.model\x1a\x19protos/model/v1/ros.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x82\x01\n\x17\x41gentConfigurationStore\x12#\n\ragent_version\x18\x01 \x01(\tR\x0c\x61gentVersion\x12\x42\n\rconfiguration\x18\x02 \x01(\x0b\x32\x1c.v1.model.AgentConfigurationR\rconfiguration\"z\n\x12\x41gentConfiguration\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12@\n\x08\x64ocument\x18\x03 \x01(\x0b\x32$.v1.model.AgentConfigurationDocumentR\x08\x64ocument\"\xaf\x05\n\x1a\x41gentConfigurationDocument\x12\x18\n\x07version\x18\x01 \x01(\x03R\x07version\x12\x42\n\x04tags\x18\x02 \x03(\x0b\x32..v1.model.AgentConfigurationDocument.TagsEntryR\x04tags\x12>\n\ttelemetry\x18\x03 \x01(\x0b\x32 .v1.model.TelemetryConfigurationR\ttelemetry\x12>\n\tresources\x18\x04 \x01(\x0b\x32 .v1.model.ResourcesConfigurationR\tresources\x12\x44\n\x0b\x61pplication\x18\x05 \x01(\x0b\x32\".v1.model.ApplicationConfigurationR\x0b\x61pplication\x12\x35\n\x06teleop\x18\x06 \x01(\x0b\x32\x1d.v1.model.TeleopConfigurationR\x06teleop\x12N\n\x0fport_forwarding\x18\x07 \x01(\x0b\x32%.v1.model.PortForwardingConfigurationR\x0eportForwarding\x12/\n\tblob_data\x18\x08 \x01(\x0b\x32\x12.v1.model.BlobDataR\x08\x62lobData\x12\x37\n\x0b\x64iagnostics\x18\t \x01(\x0b\x32\x15.v1.model.DiagnosticsR\x0b\x64iagnostics\x12\x43\n\x0fterminal_access\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x0eterminalAccess\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x88\x02\n\x13TeleopConfiguration\x12G\n\x0bros_streams\x18\x01 \x03(\x0b\x32&.v1.model.TeleopRosStreamConfigurationR\nrosStreams\x12P\n\x0e\x63ustom_streams\x18\x02 \x03(\x0b\x32).v1.model.TeleopCustomStreamConfigurationR\rcustomStreams\x12V\n\x10hardware_streams\x18\x03 \x03(\x0b\x32+.v1.model.TeleopHardwareStreamConfigurationR\x0fhardwareStreams\"S\n\x1bPortForwardingConfiguration\x12\x34\n\x07\x65nabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x07\x65nabled\"\xe2\x01\n\x1cTeleopRosStreamConfiguration\x12\x1d\n\ntopic_name\x18\x01 \x01(\tR\ttopicName\x12\x35\n\ntopic_type\x18\x02 \x01(\x0e\x32\x16.v1.model.ROSTopicTypeR\ttopicType\x12(\n\x04mode\x18\x03 \x01(\x0e\x32\x14.v1.model.TeleopModeR\x04mode\x12!\n\x0c\x65ncode_video\x18\x04 \x01(\x08R\x0b\x65ncodeVideo\x12\x1f\n\x0b\x61udio_codec\x18\x05 \x01(\tR\naudioCodec\"\xae\x01\n!TeleopHardwareStreamConfiguration\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12&\n\x0frtc_stream_type\x18\x02 \x01(\tR\rrtcStreamType\x12(\n\x04mode\x18\x03 \x01(\x0e\x32\x14.v1.model.TeleopModeR\x04mode\x12#\n\rhw_descriptor\x18\x04 \x01(\tR\x0chwDescriptor\"\xaa\x01\n\x1fTeleopCustomStreamConfiguration\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12&\n\x0frtc_stream_type\x18\x02 \x01(\tR\rrtcStreamType\x12(\n\x04mode\x18\x03 \x01(\x0e\x32\x14.v1.model.TeleopModeR\x04mode\x12!\n\x0c\x65ncode_video\x18\x04 \x01(\x08R\x0b\x65ncodeVideo\"\x7f\n\x16TelemetryConfiguration\x12\x37\n\x07streams\x18\x01 \x03(\x0b\x32\x1d.v1.model.StreamConfigurationR\x07streams\x12,\n\x03ros\x18\x02 \x01(\x0b\x32\x1a.v1.model.ROSConfigurationR\x03ros\"\xc6\x01\n\x18\x41pplicationConfiguration\x12\x65\n\x11\x63onfiguration_map\x18\x01 \x03(\x0b\x32\x38.v1.model.ApplicationConfiguration.ConfigurationMapEntryR\x10\x63onfigurationMap\x1a\x43\n\x15\x43onfigurationMapEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x95\x01\n\x16ResourcesConfiguration\x12/\n\x04\x64isk\x18\x01 \x01(\x0b\x32\x1b.v1.model.DiskConfigurationR\x04\x64isk\x12J\n\x12stream_throttle_hz\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueR\x10streamThrottleHz\"g\n\x11\x44iskConfiguration\x12\x1f\n\x0b\x62uffer_size\x18\x01 \x01(\x03R\nbufferSize\x12\x31\n\x15on_demand_buffer_size\x18\x02 \x01(\x03R\x12onDemandBufferSize\"K\n\x10ROSConfiguration\x12\x37\n\x18world_reference_frame_id\x18\x01 \x01(\tR\x15worldReferenceFrameId\"\x91\x06\n\x13StreamConfiguration\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12;\n\x04tags\x18\x02 \x03(\x0b\x32\'.v1.model.StreamConfiguration.TagsEntryR\x04tags\x12\x31\n\tros_topic\x18\x03 \x01(\x0b\x32\x12.v1.model.ROSTopicH\x00R\x08rosTopic\x12\x46\n\x10ros_localization\x18\x04 \x01(\x0b\x32\x19.v1.model.ROSLocalizationH\x00R\x0frosLocalization\x12\x43\n\x0f\x64irectory_watch\x18\x05 \x01(\x0b\x32\x18.v1.model.DirectoryWatchH\x00R\x0e\x64irectoryWatch\x12\x31\n\tfile_tail\x18\x06 \x01(\x0b\x32\x12.v1.model.FileTailH\x00R\x08\x66ileTail\x12J\n\x12ros_transform_tree\x18\x07 \x01(\x0b\x32\x1a.v1.model.ROSTransformTreeH\x00R\x10rosTransformTree\x12*\n\x06\x63ustom\x18\t \x01(\x0b\x32\x10.v1.model.CustomH\x00R\x06\x63ustom\x12=\n\x0bthrottle_hz\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueR\nthrottleHz\x12\x36\n\x08\x64isabled\x18\x13 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x08\x64isabled\x12\x37\n\ton_demand\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x08onDemand\x12\x44\n\ttransform\x18\x15 \x01(\x0b\x32&.v1.model.StreamTransformConfigurationR\ttransform\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x0f\n\rconfiguration\"p\n\x1cStreamTransformConfiguration\x12P\n\x16video_encoding_enabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\x14videoEncodingEnabled\"\x1e\n\x08\x42lobData\x12\x12\n\x04\x64\x61ta\x18\x01 \x01(\tR\x04\x64\x61ta\"\x8d\x01\n\x0b\x44iagnostics\x12;\n\x0breport_logs\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\nreportLogs\x12\x41\n\x0ereport_metrics\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValueR\rreportMetrics\"\x08\n\x06\x43ustom\"\xa0\x01\n\x0e\x44irectoryWatch\x12\x1c\n\tdirectory\x18\x01 \x01(\tR\tdirectory\x12\x1c\n\textension\x18\x02 \x01(\tR\textension\x12/\n\tfile_type\x18\x03 \x01(\x0e\x32\x12.v1.model.FileTypeR\x08\x66ileType\x12!\n\x0cremote_agent\x18\x04 \x01(\x08R\x0bremoteAgent\"\xaf\x01\n\x08\x46ileTail\x12\x1a\n\x08\x66ilename\x18\x01 \x01(\tR\x08\x66ilename\x12\x35\n\x0b\x66ile_format\x18\x02 \x01(\x0e\x32\x14.v1.model.FileFormatR\nfileFormat\x12\x19\n\x08time_key\x18\x03 \x01(\tR\x07timeKey\x12\x1f\n\x0btime_format\x18\x04 \x01(\tR\ntimeFormat\x12\x14\n\x05regex\x18\x05 \x01(\tR\x05regex*&\n\nTeleopMode\x12\x0b\n\x07\x43OMMAND\x10\x00\x12\x0b\n\x07OBSERVE\x10\x01*&\n\nFileFormat\x12\x0e\n\nPLAIN_TEXT\x10\x00\x12\x08\n\x04JSON\x10\x01*;\n\x08\x46ileType\x12\x08\n\x04\x46ILE\x10\x00\x12\t\n\x05IMAGE\x10\x01\x12\x0f\n\x0bPOINT_CLOUD\x10\x04\x12\t\n\x05VIDEO\x10\x05\x42+Z)github.com/FormantIO/genproto/go/v1/modelb\x06proto3'
   ,
   dependencies=[protos_dot_model_dot_v1_dot_ros__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
@@ -46,8 +46,8 @@ _TELEOPMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3807,
-  serialized_end=3845,
+  serialized_start=4072,
+  serialized_end=4110,
 )
 _sym_db.RegisterEnumDescriptor(_TELEOPMODE)
 
@@ -72,8 +72,8 @@ _FILEFORMAT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3847,
-  serialized_end=3885,
+  serialized_start=4112,
+  serialized_end=4150,
 )
 _sym_db.RegisterEnumDescriptor(_FILEFORMAT)
 
@@ -108,8 +108,8 @@ _FILETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3887,
-  serialized_end=3946,
+  serialized_start=4152,
+  serialized_end=4211,
 )
 _sym_db.RegisterEnumDescriptor(_FILETYPE)
 
@@ -365,6 +365,13 @@ _TELEOPCONFIGURATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='customStreams', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='hardware_streams', full_name='v1.model.TeleopConfiguration.hardware_streams', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='hardwareStreams', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -378,7 +385,7 @@ _TELEOPCONFIGURATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1049,
-  serialized_end=1225,
+  serialized_end=1313,
 )
 
 
@@ -409,8 +416,8 @@ _PORTFORWARDINGCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1227,
-  serialized_end=1310,
+  serialized_start=1315,
+  serialized_end=1398,
 )
 
 
@@ -469,8 +476,61 @@ _TELEOPROSSTREAMCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1313,
-  serialized_end=1539,
+  serialized_start=1401,
+  serialized_end=1627,
+)
+
+
+_TELEOPHARDWARESTREAMCONFIGURATION = _descriptor.Descriptor(
+  name='TeleopHardwareStreamConfiguration',
+  full_name='v1.model.TeleopHardwareStreamConfiguration',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='v1.model.TeleopHardwareStreamConfiguration.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rtc_stream_type', full_name='v1.model.TeleopHardwareStreamConfiguration.rtc_stream_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='rtcStreamType', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mode', full_name='v1.model.TeleopHardwareStreamConfiguration.mode', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='mode', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='hw_descriptor', full_name='v1.model.TeleopHardwareStreamConfiguration.hw_descriptor', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='hwDescriptor', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1630,
+  serialized_end=1804,
 )
 
 
@@ -522,8 +582,8 @@ _TELEOPCUSTOMSTREAMCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1542,
-  serialized_end=1712,
+  serialized_start=1807,
+  serialized_end=1977,
 )
 
 
@@ -561,8 +621,8 @@ _TELEMETRYCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1714,
-  serialized_end=1841,
+  serialized_start=1979,
+  serialized_end=2106,
 )
 
 
@@ -600,8 +660,8 @@ _APPLICATIONCONFIGURATION_CONFIGURATIONMAPENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1975,
-  serialized_end=2042,
+  serialized_start=2240,
+  serialized_end=2307,
 )
 
 _APPLICATIONCONFIGURATION = _descriptor.Descriptor(
@@ -631,8 +691,8 @@ _APPLICATIONCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1844,
-  serialized_end=2042,
+  serialized_start=2109,
+  serialized_end=2307,
 )
 
 
@@ -670,8 +730,8 @@ _RESOURCESCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2045,
-  serialized_end=2194,
+  serialized_start=2310,
+  serialized_end=2459,
 )
 
 
@@ -709,8 +769,8 @@ _DISKCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2196,
-  serialized_end=2299,
+  serialized_start=2461,
+  serialized_end=2564,
 )
 
 
@@ -741,8 +801,8 @@ _ROSCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2301,
-  serialized_end=2376,
+  serialized_start=2566,
+  serialized_end=2641,
 )
 
 
@@ -893,8 +953,8 @@ _STREAMCONFIGURATION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2379,
-  serialized_end=3164,
+  serialized_start=2644,
+  serialized_end=3429,
 )
 
 
@@ -925,8 +985,8 @@ _STREAMTRANSFORMCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3166,
-  serialized_end=3278,
+  serialized_start=3431,
+  serialized_end=3543,
 )
 
 
@@ -957,8 +1017,8 @@ _BLOBDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3280,
-  serialized_end=3310,
+  serialized_start=3545,
+  serialized_end=3575,
 )
 
 
@@ -996,8 +1056,8 @@ _DIAGNOSTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3313,
-  serialized_end=3454,
+  serialized_start=3578,
+  serialized_end=3719,
 )
 
 
@@ -1021,8 +1081,8 @@ _CUSTOM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3456,
-  serialized_end=3464,
+  serialized_start=3721,
+  serialized_end=3729,
 )
 
 
@@ -1074,8 +1134,8 @@ _DIRECTORYWATCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3467,
-  serialized_end=3627,
+  serialized_start=3732,
+  serialized_end=3892,
 )
 
 
@@ -1134,8 +1194,8 @@ _FILETAIL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3630,
-  serialized_end=3805,
+  serialized_start=3895,
+  serialized_end=4070,
 )
 
 _AGENTCONFIGURATIONSTORE.fields_by_name['configuration'].message_type = _AGENTCONFIGURATION
@@ -1152,9 +1212,11 @@ _AGENTCONFIGURATIONDOCUMENT.fields_by_name['diagnostics'].message_type = _DIAGNO
 _AGENTCONFIGURATIONDOCUMENT.fields_by_name['terminal_access'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _TELEOPCONFIGURATION.fields_by_name['ros_streams'].message_type = _TELEOPROSSTREAMCONFIGURATION
 _TELEOPCONFIGURATION.fields_by_name['custom_streams'].message_type = _TELEOPCUSTOMSTREAMCONFIGURATION
+_TELEOPCONFIGURATION.fields_by_name['hardware_streams'].message_type = _TELEOPHARDWARESTREAMCONFIGURATION
 _PORTFORWARDINGCONFIGURATION.fields_by_name['enabled'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _TELEOPROSSTREAMCONFIGURATION.fields_by_name['topic_type'].enum_type = protos_dot_model_dot_v1_dot_ros__pb2._ROSTOPICTYPE
 _TELEOPROSSTREAMCONFIGURATION.fields_by_name['mode'].enum_type = _TELEOPMODE
+_TELEOPHARDWARESTREAMCONFIGURATION.fields_by_name['mode'].enum_type = _TELEOPMODE
 _TELEOPCUSTOMSTREAMCONFIGURATION.fields_by_name['mode'].enum_type = _TELEOPMODE
 _TELEMETRYCONFIGURATION.fields_by_name['streams'].message_type = _STREAMCONFIGURATION
 _TELEMETRYCONFIGURATION.fields_by_name['ros'].message_type = _ROSCONFIGURATION
@@ -1203,6 +1265,7 @@ DESCRIPTOR.message_types_by_name['AgentConfigurationDocument'] = _AGENTCONFIGURA
 DESCRIPTOR.message_types_by_name['TeleopConfiguration'] = _TELEOPCONFIGURATION
 DESCRIPTOR.message_types_by_name['PortForwardingConfiguration'] = _PORTFORWARDINGCONFIGURATION
 DESCRIPTOR.message_types_by_name['TeleopRosStreamConfiguration'] = _TELEOPROSSTREAMCONFIGURATION
+DESCRIPTOR.message_types_by_name['TeleopHardwareStreamConfiguration'] = _TELEOPHARDWARESTREAMCONFIGURATION
 DESCRIPTOR.message_types_by_name['TeleopCustomStreamConfiguration'] = _TELEOPCUSTOMSTREAMCONFIGURATION
 DESCRIPTOR.message_types_by_name['TelemetryConfiguration'] = _TELEMETRYCONFIGURATION
 DESCRIPTOR.message_types_by_name['ApplicationConfiguration'] = _APPLICATIONCONFIGURATION
@@ -1270,6 +1333,13 @@ TeleopRosStreamConfiguration = _reflection.GeneratedProtocolMessageType('TeleopR
   # @@protoc_insertion_point(class_scope:v1.model.TeleopRosStreamConfiguration)
   })
 _sym_db.RegisterMessage(TeleopRosStreamConfiguration)
+
+TeleopHardwareStreamConfiguration = _reflection.GeneratedProtocolMessageType('TeleopHardwareStreamConfiguration', (_message.Message,), {
+  'DESCRIPTOR' : _TELEOPHARDWARESTREAMCONFIGURATION,
+  '__module__' : 'protos.model.v1.config_pb2'
+  # @@protoc_insertion_point(class_scope:v1.model.TeleopHardwareStreamConfiguration)
+  })
+_sym_db.RegisterMessage(TeleopHardwareStreamConfiguration)
 
 TeleopCustomStreamConfiguration = _reflection.GeneratedProtocolMessageType('TeleopCustomStreamConfiguration', (_message.Message,), {
   'DESCRIPTOR' : _TELEOPCUSTOMSTREAMCONFIGURATION,
