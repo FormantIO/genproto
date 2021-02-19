@@ -53,7 +53,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[23]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[24]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -74,6 +74,9 @@ extern AgentConfigurationDocument_TagsEntry_DoNotUseDefaultTypeInternal _AgentCo
 class AgentConfigurationStore;
 class AgentConfigurationStoreDefaultTypeInternal;
 extern AgentConfigurationStoreDefaultTypeInternal _AgentConfigurationStore_default_instance_;
+class AgentFeatureSet;
+class AgentFeatureSetDefaultTypeInternal;
+extern AgentFeatureSetDefaultTypeInternal _AgentFeatureSet_default_instance_;
 class ApplicationConfiguration;
 class ApplicationConfigurationDefaultTypeInternal;
 extern ApplicationConfigurationDefaultTypeInternal _ApplicationConfiguration_default_instance_;
@@ -138,6 +141,7 @@ template<> ::v1::model::AgentConfiguration* Arena::CreateMaybeMessage<::v1::mode
 template<> ::v1::model::AgentConfigurationDocument* Arena::CreateMaybeMessage<::v1::model::AgentConfigurationDocument>(Arena*);
 template<> ::v1::model::AgentConfigurationDocument_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::AgentConfigurationDocument_TagsEntry_DoNotUse>(Arena*);
 template<> ::v1::model::AgentConfigurationStore* Arena::CreateMaybeMessage<::v1::model::AgentConfigurationStore>(Arena*);
+template<> ::v1::model::AgentFeatureSet* Arena::CreateMaybeMessage<::v1::model::AgentFeatureSet>(Arena*);
 template<> ::v1::model::ApplicationConfiguration* Arena::CreateMaybeMessage<::v1::model::ApplicationConfiguration>(Arena*);
 template<> ::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse>(Arena*);
 template<> ::v1::model::BlobData* Arena::CreateMaybeMessage<::v1::model::BlobData>(Arena*);
@@ -355,6 +359,7 @@ class AgentConfigurationStore PROTOBUF_FINAL :
   enum : int {
     kAgentVersionFieldNumber = 1,
     kConfigurationFieldNumber = 2,
+    kFeatureSetFieldNumber = 3,
   };
   // string agent_version = 1[json_name = "agentVersion"];
   void clear_agent_version();
@@ -390,6 +395,24 @@ class AgentConfigurationStore PROTOBUF_FINAL :
       ::v1::model::AgentConfiguration* configuration);
   ::v1::model::AgentConfiguration* unsafe_arena_release_configuration();
 
+  // .v1.model.AgentFeatureSet feature_set = 3[json_name = "featureSet"];
+  bool has_feature_set() const;
+  private:
+  bool _internal_has_feature_set() const;
+  public:
+  void clear_feature_set();
+  const ::v1::model::AgentFeatureSet& feature_set() const;
+  ::v1::model::AgentFeatureSet* release_feature_set();
+  ::v1::model::AgentFeatureSet* mutable_feature_set();
+  void set_allocated_feature_set(::v1::model::AgentFeatureSet* feature_set);
+  private:
+  const ::v1::model::AgentFeatureSet& _internal_feature_set() const;
+  ::v1::model::AgentFeatureSet* _internal_mutable_feature_set();
+  public:
+  void unsafe_arena_set_allocated_feature_set(
+      ::v1::model::AgentFeatureSet* feature_set);
+  ::v1::model::AgentFeatureSet* unsafe_arena_release_feature_set();
+
   // @@protoc_insertion_point(class_scope:v1.model.AgentConfigurationStore)
  private:
   class _Internal;
@@ -399,6 +422,265 @@ class AgentConfigurationStore PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr agent_version_;
   ::v1::model::AgentConfiguration* configuration_;
+  ::v1::model::AgentFeatureSet* feature_set_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AgentFeatureSet PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.AgentFeatureSet) */ {
+ public:
+  inline AgentFeatureSet() : AgentFeatureSet(nullptr) {}
+  virtual ~AgentFeatureSet();
+
+  AgentFeatureSet(const AgentFeatureSet& from);
+  AgentFeatureSet(AgentFeatureSet&& from) noexcept
+    : AgentFeatureSet() {
+    *this = ::std::move(from);
+  }
+
+  inline AgentFeatureSet& operator=(const AgentFeatureSet& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AgentFeatureSet& operator=(AgentFeatureSet&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const AgentFeatureSet& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AgentFeatureSet* internal_default_instance() {
+    return reinterpret_cast<const AgentFeatureSet*>(
+               &_AgentFeatureSet_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(AgentFeatureSet& a, AgentFeatureSet& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AgentFeatureSet* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AgentFeatureSet* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AgentFeatureSet* New() const final {
+    return CreateMaybeMessage<AgentFeatureSet>(nullptr);
+  }
+
+  AgentFeatureSet* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AgentFeatureSet>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const AgentFeatureSet& from);
+  void MergeFrom(const AgentFeatureSet& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AgentFeatureSet* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.AgentFeatureSet";
+  }
+  protected:
+  explicit AgentFeatureSet(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTelemetryFieldNumber = 1,
+    kInternalTelemetryFieldNumber = 2,
+    kTeleopFieldNumber = 3,
+    kCustomEventsFieldNumber = 4,
+    kTriggeredEventsFieldNumber = 5,
+    kSshFieldNumber = 6,
+    kPortForwardingFieldNumber = 7,
+    kCommandsFieldNumber = 8,
+    kInterventionsFieldNumber = 9,
+    kOnDemandFieldNumber = 10,
+    kAppConfigFieldNumber = 11,
+    kBlobStorageFieldNumber = 12,
+  };
+  // bool telemetry = 1[json_name = "telemetry"];
+  void clear_telemetry();
+  bool telemetry() const;
+  void set_telemetry(bool value);
+  private:
+  bool _internal_telemetry() const;
+  void _internal_set_telemetry(bool value);
+  public:
+
+  // bool internal_telemetry = 2[json_name = "internalTelemetry"];
+  void clear_internal_telemetry();
+  bool internal_telemetry() const;
+  void set_internal_telemetry(bool value);
+  private:
+  bool _internal_internal_telemetry() const;
+  void _internal_set_internal_telemetry(bool value);
+  public:
+
+  // bool teleop = 3[json_name = "teleop"];
+  void clear_teleop();
+  bool teleop() const;
+  void set_teleop(bool value);
+  private:
+  bool _internal_teleop() const;
+  void _internal_set_teleop(bool value);
+  public:
+
+  // bool custom_events = 4[json_name = "customEvents"];
+  void clear_custom_events();
+  bool custom_events() const;
+  void set_custom_events(bool value);
+  private:
+  bool _internal_custom_events() const;
+  void _internal_set_custom_events(bool value);
+  public:
+
+  // bool triggered_events = 5[json_name = "triggeredEvents"];
+  void clear_triggered_events();
+  bool triggered_events() const;
+  void set_triggered_events(bool value);
+  private:
+  bool _internal_triggered_events() const;
+  void _internal_set_triggered_events(bool value);
+  public:
+
+  // bool ssh = 6[json_name = "ssh"];
+  void clear_ssh();
+  bool ssh() const;
+  void set_ssh(bool value);
+  private:
+  bool _internal_ssh() const;
+  void _internal_set_ssh(bool value);
+  public:
+
+  // bool port_forwarding = 7[json_name = "portForwarding"];
+  void clear_port_forwarding();
+  bool port_forwarding() const;
+  void set_port_forwarding(bool value);
+  private:
+  bool _internal_port_forwarding() const;
+  void _internal_set_port_forwarding(bool value);
+  public:
+
+  // bool commands = 8[json_name = "commands"];
+  void clear_commands();
+  bool commands() const;
+  void set_commands(bool value);
+  private:
+  bool _internal_commands() const;
+  void _internal_set_commands(bool value);
+  public:
+
+  // bool interventions = 9[json_name = "interventions"];
+  void clear_interventions();
+  bool interventions() const;
+  void set_interventions(bool value);
+  private:
+  bool _internal_interventions() const;
+  void _internal_set_interventions(bool value);
+  public:
+
+  // bool on_demand = 10[json_name = "onDemand"];
+  void clear_on_demand();
+  bool on_demand() const;
+  void set_on_demand(bool value);
+  private:
+  bool _internal_on_demand() const;
+  void _internal_set_on_demand(bool value);
+  public:
+
+  // bool app_config = 11[json_name = "appConfig"];
+  void clear_app_config();
+  bool app_config() const;
+  void set_app_config(bool value);
+  private:
+  bool _internal_app_config() const;
+  void _internal_set_app_config(bool value);
+  public:
+
+  // bool blob_storage = 12[json_name = "blobStorage"];
+  void clear_blob_storage();
+  bool blob_storage() const;
+  void set_blob_storage(bool value);
+  private:
+  bool _internal_blob_storage() const;
+  void _internal_set_blob_storage(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.AgentFeatureSet)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  bool telemetry_;
+  bool internal_telemetry_;
+  bool teleop_;
+  bool custom_events_;
+  bool triggered_events_;
+  bool ssh_;
+  bool port_forwarding_;
+  bool commands_;
+  bool interventions_;
+  bool on_demand_;
+  bool app_config_;
+  bool blob_storage_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -446,7 +728,7 @@ class AgentConfiguration PROTOBUF_FINAL :
                &_AgentConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(AgentConfiguration& a, AgentConfiguration& b) {
     a.Swap(&b);
@@ -612,7 +894,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
-    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[2];
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[3];
   }
 
   public:
@@ -662,7 +944,7 @@ class AgentConfigurationDocument PROTOBUF_FINAL :
                &_AgentConfigurationDocument_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(AgentConfigurationDocument& a, AgentConfigurationDocument& b) {
     a.Swap(&b);
@@ -984,7 +1266,7 @@ class TeleopConfiguration PROTOBUF_FINAL :
                &_TeleopConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(TeleopConfiguration& a, TeleopConfiguration& b) {
     a.Swap(&b);
@@ -1170,7 +1452,7 @@ class PortForwardingConfiguration PROTOBUF_FINAL :
                &_PortForwardingConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(PortForwardingConfiguration& a, PortForwardingConfiguration& b) {
     a.Swap(&b);
@@ -1316,7 +1598,7 @@ class TeleopRosStreamConfiguration PROTOBUF_FINAL :
                &_TeleopRosStreamConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(TeleopRosStreamConfiguration& a, TeleopRosStreamConfiguration& b) {
     a.Swap(&b);
@@ -1511,7 +1793,7 @@ class TeleopHardwareStreamConfiguration PROTOBUF_FINAL :
                &_TeleopHardwareStreamConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(TeleopHardwareStreamConfiguration& a, TeleopHardwareStreamConfiguration& b) {
     a.Swap(&b);
@@ -1702,7 +1984,7 @@ class TeleopCustomStreamConfiguration PROTOBUF_FINAL :
                &_TeleopCustomStreamConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(TeleopCustomStreamConfiguration& a, TeleopCustomStreamConfiguration& b) {
     a.Swap(&b);
@@ -1886,7 +2168,7 @@ class TelemetryConfiguration PROTOBUF_FINAL :
                &_TelemetryConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(TelemetryConfiguration& a, TelemetryConfiguration& b) {
     a.Swap(&b);
@@ -2036,7 +2318,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
-    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[10];
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[11];
   }
 
   public:
@@ -2086,7 +2368,7 @@ class ApplicationConfiguration PROTOBUF_FINAL :
                &_ApplicationConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(ApplicationConfiguration& a, ApplicationConfiguration& b) {
     a.Swap(&b);
@@ -2237,7 +2519,7 @@ class ResourcesConfiguration PROTOBUF_FINAL :
                &_ResourcesConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(ResourcesConfiguration& a, ResourcesConfiguration& b) {
     a.Swap(&b);
@@ -2403,7 +2685,7 @@ class DiskConfiguration PROTOBUF_FINAL :
                &_DiskConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(DiskConfiguration& a, DiskConfiguration& b) {
     a.Swap(&b);
@@ -2551,7 +2833,7 @@ class ROSConfiguration PROTOBUF_FINAL :
                &_ROSConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(ROSConfiguration& a, ROSConfiguration& b) {
     a.Swap(&b);
@@ -2679,7 +2961,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
-    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[15];
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[16];
   }
 
   public:
@@ -2739,7 +3021,7 @@ class StreamConfiguration PROTOBUF_FINAL :
                &_StreamConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(StreamConfiguration& a, StreamConfiguration& b) {
     a.Swap(&b);
@@ -3124,7 +3406,7 @@ class StreamTransformConfiguration PROTOBUF_FINAL :
                &_StreamTransformConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(StreamTransformConfiguration& a, StreamTransformConfiguration& b) {
     a.Swap(&b);
@@ -3270,7 +3552,7 @@ class BlobData PROTOBUF_FINAL :
                &_BlobData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(BlobData& a, BlobData& b) {
     a.Swap(&b);
@@ -3414,7 +3696,7 @@ class Diagnostics PROTOBUF_FINAL :
                &_Diagnostics_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(Diagnostics& a, Diagnostics& b) {
     a.Swap(&b);
@@ -3580,7 +3862,7 @@ class Custom PROTOBUF_FINAL :
                &_Custom_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(Custom& a, Custom& b) {
     a.Swap(&b);
@@ -3704,7 +3986,7 @@ class DirectoryWatch PROTOBUF_FINAL :
                &_DirectoryWatch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(DirectoryWatch& a, DirectoryWatch& b) {
     a.Swap(&b);
@@ -3888,7 +4170,7 @@ class FileTail PROTOBUF_FINAL :
                &_FileTail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(FileTail& a, FileTail& b) {
     a.Swap(&b);
@@ -4207,6 +4489,333 @@ inline void AgentConfigurationStore::set_allocated_configuration(::v1::model::Ag
   }
   configuration_ = configuration;
   // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationStore.configuration)
+}
+
+// .v1.model.AgentFeatureSet feature_set = 3[json_name = "featureSet"];
+inline bool AgentConfigurationStore::_internal_has_feature_set() const {
+  return this != internal_default_instance() && feature_set_ != nullptr;
+}
+inline bool AgentConfigurationStore::has_feature_set() const {
+  return _internal_has_feature_set();
+}
+inline void AgentConfigurationStore::clear_feature_set() {
+  if (GetArena() == nullptr && feature_set_ != nullptr) {
+    delete feature_set_;
+  }
+  feature_set_ = nullptr;
+}
+inline const ::v1::model::AgentFeatureSet& AgentConfigurationStore::_internal_feature_set() const {
+  const ::v1::model::AgentFeatureSet* p = feature_set_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::v1::model::AgentFeatureSet*>(
+      &::v1::model::_AgentFeatureSet_default_instance_);
+}
+inline const ::v1::model::AgentFeatureSet& AgentConfigurationStore::feature_set() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentConfigurationStore.feature_set)
+  return _internal_feature_set();
+}
+inline void AgentConfigurationStore::unsafe_arena_set_allocated_feature_set(
+    ::v1::model::AgentFeatureSet* feature_set) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(feature_set_);
+  }
+  feature_set_ = feature_set;
+  if (feature_set) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.AgentConfigurationStore.feature_set)
+}
+inline ::v1::model::AgentFeatureSet* AgentConfigurationStore::release_feature_set() {
+  
+  ::v1::model::AgentFeatureSet* temp = feature_set_;
+  feature_set_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::v1::model::AgentFeatureSet* AgentConfigurationStore::unsafe_arena_release_feature_set() {
+  // @@protoc_insertion_point(field_release:v1.model.AgentConfigurationStore.feature_set)
+  
+  ::v1::model::AgentFeatureSet* temp = feature_set_;
+  feature_set_ = nullptr;
+  return temp;
+}
+inline ::v1::model::AgentFeatureSet* AgentConfigurationStore::_internal_mutable_feature_set() {
+  
+  if (feature_set_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::AgentFeatureSet>(GetArena());
+    feature_set_ = p;
+  }
+  return feature_set_;
+}
+inline ::v1::model::AgentFeatureSet* AgentConfigurationStore::mutable_feature_set() {
+  // @@protoc_insertion_point(field_mutable:v1.model.AgentConfigurationStore.feature_set)
+  return _internal_mutable_feature_set();
+}
+inline void AgentConfigurationStore::set_allocated_feature_set(::v1::model::AgentFeatureSet* feature_set) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete feature_set_;
+  }
+  if (feature_set) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(feature_set);
+    if (message_arena != submessage_arena) {
+      feature_set = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, feature_set, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  feature_set_ = feature_set;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationStore.feature_set)
+}
+
+// -------------------------------------------------------------------
+
+// AgentFeatureSet
+
+// bool telemetry = 1[json_name = "telemetry"];
+inline void AgentFeatureSet::clear_telemetry() {
+  telemetry_ = false;
+}
+inline bool AgentFeatureSet::_internal_telemetry() const {
+  return telemetry_;
+}
+inline bool AgentFeatureSet::telemetry() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.telemetry)
+  return _internal_telemetry();
+}
+inline void AgentFeatureSet::_internal_set_telemetry(bool value) {
+  
+  telemetry_ = value;
+}
+inline void AgentFeatureSet::set_telemetry(bool value) {
+  _internal_set_telemetry(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.telemetry)
+}
+
+// bool internal_telemetry = 2[json_name = "internalTelemetry"];
+inline void AgentFeatureSet::clear_internal_telemetry() {
+  internal_telemetry_ = false;
+}
+inline bool AgentFeatureSet::_internal_internal_telemetry() const {
+  return internal_telemetry_;
+}
+inline bool AgentFeatureSet::internal_telemetry() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.internal_telemetry)
+  return _internal_internal_telemetry();
+}
+inline void AgentFeatureSet::_internal_set_internal_telemetry(bool value) {
+  
+  internal_telemetry_ = value;
+}
+inline void AgentFeatureSet::set_internal_telemetry(bool value) {
+  _internal_set_internal_telemetry(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.internal_telemetry)
+}
+
+// bool teleop = 3[json_name = "teleop"];
+inline void AgentFeatureSet::clear_teleop() {
+  teleop_ = false;
+}
+inline bool AgentFeatureSet::_internal_teleop() const {
+  return teleop_;
+}
+inline bool AgentFeatureSet::teleop() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.teleop)
+  return _internal_teleop();
+}
+inline void AgentFeatureSet::_internal_set_teleop(bool value) {
+  
+  teleop_ = value;
+}
+inline void AgentFeatureSet::set_teleop(bool value) {
+  _internal_set_teleop(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.teleop)
+}
+
+// bool custom_events = 4[json_name = "customEvents"];
+inline void AgentFeatureSet::clear_custom_events() {
+  custom_events_ = false;
+}
+inline bool AgentFeatureSet::_internal_custom_events() const {
+  return custom_events_;
+}
+inline bool AgentFeatureSet::custom_events() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.custom_events)
+  return _internal_custom_events();
+}
+inline void AgentFeatureSet::_internal_set_custom_events(bool value) {
+  
+  custom_events_ = value;
+}
+inline void AgentFeatureSet::set_custom_events(bool value) {
+  _internal_set_custom_events(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.custom_events)
+}
+
+// bool triggered_events = 5[json_name = "triggeredEvents"];
+inline void AgentFeatureSet::clear_triggered_events() {
+  triggered_events_ = false;
+}
+inline bool AgentFeatureSet::_internal_triggered_events() const {
+  return triggered_events_;
+}
+inline bool AgentFeatureSet::triggered_events() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.triggered_events)
+  return _internal_triggered_events();
+}
+inline void AgentFeatureSet::_internal_set_triggered_events(bool value) {
+  
+  triggered_events_ = value;
+}
+inline void AgentFeatureSet::set_triggered_events(bool value) {
+  _internal_set_triggered_events(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.triggered_events)
+}
+
+// bool ssh = 6[json_name = "ssh"];
+inline void AgentFeatureSet::clear_ssh() {
+  ssh_ = false;
+}
+inline bool AgentFeatureSet::_internal_ssh() const {
+  return ssh_;
+}
+inline bool AgentFeatureSet::ssh() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.ssh)
+  return _internal_ssh();
+}
+inline void AgentFeatureSet::_internal_set_ssh(bool value) {
+  
+  ssh_ = value;
+}
+inline void AgentFeatureSet::set_ssh(bool value) {
+  _internal_set_ssh(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.ssh)
+}
+
+// bool port_forwarding = 7[json_name = "portForwarding"];
+inline void AgentFeatureSet::clear_port_forwarding() {
+  port_forwarding_ = false;
+}
+inline bool AgentFeatureSet::_internal_port_forwarding() const {
+  return port_forwarding_;
+}
+inline bool AgentFeatureSet::port_forwarding() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.port_forwarding)
+  return _internal_port_forwarding();
+}
+inline void AgentFeatureSet::_internal_set_port_forwarding(bool value) {
+  
+  port_forwarding_ = value;
+}
+inline void AgentFeatureSet::set_port_forwarding(bool value) {
+  _internal_set_port_forwarding(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.port_forwarding)
+}
+
+// bool commands = 8[json_name = "commands"];
+inline void AgentFeatureSet::clear_commands() {
+  commands_ = false;
+}
+inline bool AgentFeatureSet::_internal_commands() const {
+  return commands_;
+}
+inline bool AgentFeatureSet::commands() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.commands)
+  return _internal_commands();
+}
+inline void AgentFeatureSet::_internal_set_commands(bool value) {
+  
+  commands_ = value;
+}
+inline void AgentFeatureSet::set_commands(bool value) {
+  _internal_set_commands(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.commands)
+}
+
+// bool interventions = 9[json_name = "interventions"];
+inline void AgentFeatureSet::clear_interventions() {
+  interventions_ = false;
+}
+inline bool AgentFeatureSet::_internal_interventions() const {
+  return interventions_;
+}
+inline bool AgentFeatureSet::interventions() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.interventions)
+  return _internal_interventions();
+}
+inline void AgentFeatureSet::_internal_set_interventions(bool value) {
+  
+  interventions_ = value;
+}
+inline void AgentFeatureSet::set_interventions(bool value) {
+  _internal_set_interventions(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.interventions)
+}
+
+// bool on_demand = 10[json_name = "onDemand"];
+inline void AgentFeatureSet::clear_on_demand() {
+  on_demand_ = false;
+}
+inline bool AgentFeatureSet::_internal_on_demand() const {
+  return on_demand_;
+}
+inline bool AgentFeatureSet::on_demand() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.on_demand)
+  return _internal_on_demand();
+}
+inline void AgentFeatureSet::_internal_set_on_demand(bool value) {
+  
+  on_demand_ = value;
+}
+inline void AgentFeatureSet::set_on_demand(bool value) {
+  _internal_set_on_demand(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.on_demand)
+}
+
+// bool app_config = 11[json_name = "appConfig"];
+inline void AgentFeatureSet::clear_app_config() {
+  app_config_ = false;
+}
+inline bool AgentFeatureSet::_internal_app_config() const {
+  return app_config_;
+}
+inline bool AgentFeatureSet::app_config() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.app_config)
+  return _internal_app_config();
+}
+inline void AgentFeatureSet::_internal_set_app_config(bool value) {
+  
+  app_config_ = value;
+}
+inline void AgentFeatureSet::set_app_config(bool value) {
+  _internal_set_app_config(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.app_config)
+}
+
+// bool blob_storage = 12[json_name = "blobStorage"];
+inline void AgentFeatureSet::clear_blob_storage() {
+  blob_storage_ = false;
+}
+inline bool AgentFeatureSet::_internal_blob_storage() const {
+  return blob_storage_;
+}
+inline bool AgentFeatureSet::blob_storage() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentFeatureSet.blob_storage)
+  return _internal_blob_storage();
+}
+inline void AgentFeatureSet::_internal_set_blob_storage(bool value) {
+  
+  blob_storage_ = value;
+}
+inline void AgentFeatureSet::set_blob_storage(bool value) {
+  _internal_set_blob_storage(value);
+  // @@protoc_insertion_point(field_set:v1.model.AgentFeatureSet.blob_storage)
 }
 
 // -------------------------------------------------------------------
@@ -7922,6 +8531,8 @@ inline void FileTail::set_allocated_regex(std::string* regex) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
