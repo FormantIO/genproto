@@ -70,6 +70,9 @@ class MockAgentStub : public Agent::StubInterface {
   MOCK_METHOD3(ClearTransformTree, ::grpc::Status(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::v1::agent::ClearTransformTreeResponse* response));
   MOCK_METHOD3(AsyncClearTransformTreeRaw, ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::ClearTransformTreeResponse>*(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq));
   MOCK_METHOD3(PrepareAsyncClearTransformTreeRaw, ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::ClearTransformTreeResponse>*(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(GetTeleopInfo, ::grpc::Status(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::v1::agent::GetTeleopInfoResponse* response));
+  MOCK_METHOD3(AsyncGetTeleopInfoRaw, ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetTeleopInfoResponse>*(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(PrepareAsyncGetTeleopInfoRaw, ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetTeleopInfoResponse>*(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq));
 };
 
 } // namespace v1

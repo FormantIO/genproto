@@ -53,7 +53,7 @@ struct TableStruct_protos_2fagent_2fv1_2fagent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[34]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[36]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -125,6 +125,12 @@ extern GetTeleopControlDataStreamRequestDefaultTypeInternal _GetTeleopControlDat
 class GetTeleopControlDataStreamResponse;
 class GetTeleopControlDataStreamResponseDefaultTypeInternal;
 extern GetTeleopControlDataStreamResponseDefaultTypeInternal _GetTeleopControlDataStreamResponse_default_instance_;
+class GetTeleopInfoRequest;
+class GetTeleopInfoRequestDefaultTypeInternal;
+extern GetTeleopInfoRequestDefaultTypeInternal _GetTeleopInfoRequest_default_instance_;
+class GetTeleopInfoResponse;
+class GetTeleopInfoResponseDefaultTypeInternal;
+extern GetTeleopInfoResponseDefaultTypeInternal _GetTeleopInfoResponse_default_instance_;
 class HealthRequest;
 class HealthRequestDefaultTypeInternal;
 extern HealthRequestDefaultTypeInternal _HealthRequest_default_instance_;
@@ -188,6 +194,8 @@ template<> ::v1::agent::GetStreamsConfigurationRequest* Arena::CreateMaybeMessag
 template<> ::v1::agent::GetStreamsConfigurationResponse* Arena::CreateMaybeMessage<::v1::agent::GetStreamsConfigurationResponse>(Arena*);
 template<> ::v1::agent::GetTeleopControlDataStreamRequest* Arena::CreateMaybeMessage<::v1::agent::GetTeleopControlDataStreamRequest>(Arena*);
 template<> ::v1::agent::GetTeleopControlDataStreamResponse* Arena::CreateMaybeMessage<::v1::agent::GetTeleopControlDataStreamResponse>(Arena*);
+template<> ::v1::agent::GetTeleopInfoRequest* Arena::CreateMaybeMessage<::v1::agent::GetTeleopInfoRequest>(Arena*);
+template<> ::v1::agent::GetTeleopInfoResponse* Arena::CreateMaybeMessage<::v1::agent::GetTeleopInfoResponse>(Arena*);
 template<> ::v1::agent::HealthRequest* Arena::CreateMaybeMessage<::v1::agent::HealthRequest>(Arena*);
 template<> ::v1::agent::HealthResponse* Arena::CreateMaybeMessage<::v1::agent::HealthResponse>(Arena*);
 template<> ::v1::agent::PostDataError* Arena::CreateMaybeMessage<::v1::agent::PostDataError>(Arena*);
@@ -4873,6 +4881,267 @@ class CreateEventError PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
 };
+// -------------------------------------------------------------------
+
+class GetTeleopInfoRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.GetTeleopInfoRequest) */ {
+ public:
+  inline GetTeleopInfoRequest() : GetTeleopInfoRequest(nullptr) {}
+  virtual ~GetTeleopInfoRequest();
+
+  GetTeleopInfoRequest(const GetTeleopInfoRequest& from);
+  GetTeleopInfoRequest(GetTeleopInfoRequest&& from) noexcept
+    : GetTeleopInfoRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTeleopInfoRequest& operator=(const GetTeleopInfoRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTeleopInfoRequest& operator=(GetTeleopInfoRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetTeleopInfoRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetTeleopInfoRequest* internal_default_instance() {
+    return reinterpret_cast<const GetTeleopInfoRequest*>(
+               &_GetTeleopInfoRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    34;
+
+  friend void swap(GetTeleopInfoRequest& a, GetTeleopInfoRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTeleopInfoRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTeleopInfoRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTeleopInfoRequest* New() const final {
+    return CreateMaybeMessage<GetTeleopInfoRequest>(nullptr);
+  }
+
+  GetTeleopInfoRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTeleopInfoRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetTeleopInfoRequest& from);
+  void MergeFrom(const GetTeleopInfoRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTeleopInfoRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.GetTeleopInfoRequest";
+  }
+  protected:
+  explicit GetTeleopInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto);
+    return ::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:v1.agent.GetTeleopInfoRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTeleopInfoResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.GetTeleopInfoResponse) */ {
+ public:
+  inline GetTeleopInfoResponse() : GetTeleopInfoResponse(nullptr) {}
+  virtual ~GetTeleopInfoResponse();
+
+  GetTeleopInfoResponse(const GetTeleopInfoResponse& from);
+  GetTeleopInfoResponse(GetTeleopInfoResponse&& from) noexcept
+    : GetTeleopInfoResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTeleopInfoResponse& operator=(const GetTeleopInfoResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTeleopInfoResponse& operator=(GetTeleopInfoResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetTeleopInfoResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetTeleopInfoResponse* internal_default_instance() {
+    return reinterpret_cast<const GetTeleopInfoResponse*>(
+               &_GetTeleopInfoResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    35;
+
+  friend void swap(GetTeleopInfoResponse& a, GetTeleopInfoResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTeleopInfoResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTeleopInfoResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTeleopInfoResponse* New() const final {
+    return CreateMaybeMessage<GetTeleopInfoResponse>(nullptr);
+  }
+
+  GetTeleopInfoResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTeleopInfoResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetTeleopInfoResponse& from);
+  void MergeFrom(const GetTeleopInfoResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTeleopInfoResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.GetTeleopInfoResponse";
+  }
+  protected:
+  explicit GetTeleopInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto);
+    return ::descriptor_table_protos_2fagent_2fv1_2fagent_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kConnectionCountFieldNumber = 1,
+  };
+  // uint32 connection_count = 1[json_name = "connectionCount"];
+  void clear_connection_count();
+  ::PROTOBUF_NAMESPACE_ID::uint32 connection_count() const;
+  void set_connection_count(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_connection_count() const;
+  void _internal_set_connection_count(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.agent.GetTeleopInfoResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 connection_count_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
 // ===================================================================
 
 
@@ -6293,9 +6562,41 @@ inline void CreateEventError::set_retryable(bool value) {
   // @@protoc_insertion_point(field_set:v1.agent.CreateEventError.retryable)
 }
 
+// -------------------------------------------------------------------
+
+// GetTeleopInfoRequest
+
+// -------------------------------------------------------------------
+
+// GetTeleopInfoResponse
+
+// uint32 connection_count = 1[json_name = "connectionCount"];
+inline void GetTeleopInfoResponse::clear_connection_count() {
+  connection_count_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetTeleopInfoResponse::_internal_connection_count() const {
+  return connection_count_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetTeleopInfoResponse::connection_count() const {
+  // @@protoc_insertion_point(field_get:v1.agent.GetTeleopInfoResponse.connection_count)
+  return _internal_connection_count();
+}
+inline void GetTeleopInfoResponse::_internal_set_connection_count(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  connection_count_ = value;
+}
+inline void GetTeleopInfoResponse::set_connection_count(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_connection_count(value);
+  // @@protoc_insertion_point(field_set:v1.agent.GetTeleopInfoResponse.connection_count)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

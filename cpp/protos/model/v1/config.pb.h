@@ -53,7 +53,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[24]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[25]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -101,6 +101,9 @@ extern DiskConfigurationDefaultTypeInternal _DiskConfiguration_default_instance_
 class FileTail;
 class FileTailDefaultTypeInternal;
 extern FileTailDefaultTypeInternal _FileTail_default_instance_;
+class Hardware;
+class HardwareDefaultTypeInternal;
+extern HardwareDefaultTypeInternal _Hardware_default_instance_;
 class PortForwardingConfiguration;
 class PortForwardingConfigurationDefaultTypeInternal;
 extern PortForwardingConfigurationDefaultTypeInternal _PortForwardingConfiguration_default_instance_;
@@ -150,6 +153,7 @@ template<> ::v1::model::Diagnostics* Arena::CreateMaybeMessage<::v1::model::Diag
 template<> ::v1::model::DirectoryWatch* Arena::CreateMaybeMessage<::v1::model::DirectoryWatch>(Arena*);
 template<> ::v1::model::DiskConfiguration* Arena::CreateMaybeMessage<::v1::model::DiskConfiguration>(Arena*);
 template<> ::v1::model::FileTail* Arena::CreateMaybeMessage<::v1::model::FileTail>(Arena*);
+template<> ::v1::model::Hardware* Arena::CreateMaybeMessage<::v1::model::Hardware>(Arena*);
 template<> ::v1::model::PortForwardingConfiguration* Arena::CreateMaybeMessage<::v1::model::PortForwardingConfiguration>(Arena*);
 template<> ::v1::model::ROSConfiguration* Arena::CreateMaybeMessage<::v1::model::ROSConfiguration>(Arena*);
 template<> ::v1::model::ResourcesConfiguration* Arena::CreateMaybeMessage<::v1::model::ResourcesConfiguration>(Arena*);
@@ -1867,6 +1871,7 @@ class TeleopHardwareStreamConfiguration PROTOBUF_FINAL :
     kNameFieldNumber = 1,
     kRtcStreamTypeFieldNumber = 2,
     kHwDescriptorFieldNumber = 4,
+    kQualityFieldNumber = 5,
     kModeFieldNumber = 3,
   };
   // string name = 1[json_name = "name"];
@@ -1917,6 +1922,22 @@ class TeleopHardwareStreamConfiguration PROTOBUF_FINAL :
   std::string* _internal_mutable_hw_descriptor();
   public:
 
+  // string quality = 5[json_name = "quality"];
+  void clear_quality();
+  const std::string& quality() const;
+  void set_quality(const std::string& value);
+  void set_quality(std::string&& value);
+  void set_quality(const char* value);
+  void set_quality(const char* value, size_t size);
+  std::string* mutable_quality();
+  std::string* release_quality();
+  void set_allocated_quality(std::string* quality);
+  private:
+  const std::string& _internal_quality() const;
+  void _internal_set_quality(const std::string& value);
+  std::string* _internal_mutable_quality();
+  public:
+
   // .v1.model.TeleopMode mode = 3[json_name = "mode"];
   void clear_mode();
   ::v1::model::TeleopMode mode() const;
@@ -1936,6 +1957,7 @@ class TeleopHardwareStreamConfiguration PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rtc_stream_type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hw_descriptor_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quality_;
   int mode_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
@@ -3012,6 +3034,7 @@ class StreamConfiguration PROTOBUF_FINAL :
     kFileTail = 6,
     kRosTransformTree = 7,
     kCustom = 9,
+    kHardware = 10,
     CONFIGURATION_NOT_SET = 0,
   };
 
@@ -3105,6 +3128,7 @@ class StreamConfiguration PROTOBUF_FINAL :
     kFileTailFieldNumber = 6,
     kRosTransformTreeFieldNumber = 7,
     kCustomFieldNumber = 9,
+    kHardwareFieldNumber = 10,
   };
   // map<string, string> tags = 2[json_name = "tags"];
   int tags_size() const;
@@ -3319,6 +3343,24 @@ class StreamConfiguration PROTOBUF_FINAL :
       ::v1::model::Custom* custom);
   ::v1::model::Custom* unsafe_arena_release_custom();
 
+  // .v1.model.Hardware hardware = 10[json_name = "hardware"];
+  bool has_hardware() const;
+  private:
+  bool _internal_has_hardware() const;
+  public:
+  void clear_hardware();
+  const ::v1::model::Hardware& hardware() const;
+  ::v1::model::Hardware* release_hardware();
+  ::v1::model::Hardware* mutable_hardware();
+  void set_allocated_hardware(::v1::model::Hardware* hardware);
+  private:
+  const ::v1::model::Hardware& _internal_hardware() const;
+  ::v1::model::Hardware* _internal_mutable_hardware();
+  public:
+  void unsafe_arena_set_allocated_hardware(
+      ::v1::model::Hardware* hardware);
+  ::v1::model::Hardware* unsafe_arena_release_hardware();
+
   void clear_configuration();
   ConfigurationCase configuration_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.StreamConfiguration)
@@ -3330,6 +3372,7 @@ class StreamConfiguration PROTOBUF_FINAL :
   void set_has_file_tail();
   void set_has_ros_transform_tree();
   void set_has_custom();
+  void set_has_hardware();
 
   inline bool has_configuration() const;
   inline void clear_has_configuration();
@@ -3356,6 +3399,7 @@ class StreamConfiguration PROTOBUF_FINAL :
     ::v1::model::FileTail* file_tail_;
     ::v1::model::ROSTransformTree* ros_transform_tree_;
     ::v1::model::Custom* custom_;
+    ::v1::model::Hardware* hardware_;
   } configuration_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -3944,6 +3988,168 @@ class Custom PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class Hardware PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.Hardware) */ {
+ public:
+  inline Hardware() : Hardware(nullptr) {}
+  virtual ~Hardware();
+
+  Hardware(const Hardware& from);
+  Hardware(Hardware&& from) noexcept
+    : Hardware() {
+    *this = ::std::move(from);
+  }
+
+  inline Hardware& operator=(const Hardware& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Hardware& operator=(Hardware&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Hardware& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Hardware* internal_default_instance() {
+    return reinterpret_cast<const Hardware*>(
+               &_Hardware_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(Hardware& a, Hardware& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Hardware* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Hardware* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Hardware* New() const final {
+    return CreateMaybeMessage<Hardware>(nullptr);
+  }
+
+  Hardware* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Hardware>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Hardware& from);
+  void MergeFrom(const Hardware& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Hardware* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.Hardware";
+  }
+  protected:
+  explicit Hardware(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto);
+    return ::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kHwDescriptorFieldNumber = 1,
+    kQualityFieldNumber = 2,
+  };
+  // string hw_descriptor = 1[json_name = "hwDescriptor"];
+  void clear_hw_descriptor();
+  const std::string& hw_descriptor() const;
+  void set_hw_descriptor(const std::string& value);
+  void set_hw_descriptor(std::string&& value);
+  void set_hw_descriptor(const char* value);
+  void set_hw_descriptor(const char* value, size_t size);
+  std::string* mutable_hw_descriptor();
+  std::string* release_hw_descriptor();
+  void set_allocated_hw_descriptor(std::string* hw_descriptor);
+  private:
+  const std::string& _internal_hw_descriptor() const;
+  void _internal_set_hw_descriptor(const std::string& value);
+  std::string* _internal_mutable_hw_descriptor();
+  public:
+
+  // string quality = 2[json_name = "quality"];
+  void clear_quality();
+  const std::string& quality() const;
+  void set_quality(const std::string& value);
+  void set_quality(std::string&& value);
+  void set_quality(const char* value);
+  void set_quality(const char* value, size_t size);
+  std::string* mutable_quality();
+  std::string* release_quality();
+  void set_allocated_quality(std::string* quality);
+  private:
+  const std::string& _internal_quality() const;
+  void _internal_set_quality(const std::string& value);
+  std::string* _internal_mutable_quality();
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.Hardware)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hw_descriptor_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quality_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
 class DirectoryWatch PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.DirectoryWatch) */ {
  public:
@@ -3986,7 +4192,7 @@ class DirectoryWatch PROTOBUF_FINAL :
                &_DirectoryWatch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(DirectoryWatch& a, DirectoryWatch& b) {
     a.Swap(&b);
@@ -4170,7 +4376,7 @@ class FileTail PROTOBUF_FINAL :
                &_FileTail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(FileTail& a, FileTail& b) {
     a.Swap(&b);
@@ -6342,6 +6548,68 @@ inline void TeleopHardwareStreamConfiguration::set_allocated_hw_descriptor(std::
   // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopHardwareStreamConfiguration.hw_descriptor)
 }
 
+// string quality = 5[json_name = "quality"];
+inline void TeleopHardwareStreamConfiguration::clear_quality() {
+  quality_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& TeleopHardwareStreamConfiguration::quality() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopHardwareStreamConfiguration.quality)
+  return _internal_quality();
+}
+inline void TeleopHardwareStreamConfiguration::set_quality(const std::string& value) {
+  _internal_set_quality(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopHardwareStreamConfiguration.quality)
+}
+inline std::string* TeleopHardwareStreamConfiguration::mutable_quality() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopHardwareStreamConfiguration.quality)
+  return _internal_mutable_quality();
+}
+inline const std::string& TeleopHardwareStreamConfiguration::_internal_quality() const {
+  return quality_.Get();
+}
+inline void TeleopHardwareStreamConfiguration::_internal_set_quality(const std::string& value) {
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void TeleopHardwareStreamConfiguration::set_quality(std::string&& value) {
+  
+  quality_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.TeleopHardwareStreamConfiguration.quality)
+}
+inline void TeleopHardwareStreamConfiguration::set_quality(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.TeleopHardwareStreamConfiguration.quality)
+}
+inline void TeleopHardwareStreamConfiguration::set_quality(const char* value,
+    size_t size) {
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.TeleopHardwareStreamConfiguration.quality)
+}
+inline std::string* TeleopHardwareStreamConfiguration::_internal_mutable_quality() {
+  
+  return quality_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* TeleopHardwareStreamConfiguration::release_quality() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopHardwareStreamConfiguration.quality)
+  return quality_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void TeleopHardwareStreamConfiguration::set_allocated_quality(std::string* quality) {
+  if (quality != nullptr) {
+    
+  } else {
+    
+  }
+  quality_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), quality,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopHardwareStreamConfiguration.quality)
+}
+
 // -------------------------------------------------------------------
 
 // TeleopCustomStreamConfiguration
@@ -7456,6 +7724,79 @@ inline ::v1::model::Custom* StreamConfiguration::mutable_custom() {
   return _internal_mutable_custom();
 }
 
+// .v1.model.Hardware hardware = 10[json_name = "hardware"];
+inline bool StreamConfiguration::_internal_has_hardware() const {
+  return configuration_case() == kHardware;
+}
+inline bool StreamConfiguration::has_hardware() const {
+  return _internal_has_hardware();
+}
+inline void StreamConfiguration::set_has_hardware() {
+  _oneof_case_[0] = kHardware;
+}
+inline void StreamConfiguration::clear_hardware() {
+  if (_internal_has_hardware()) {
+    if (GetArena() == nullptr) {
+      delete configuration_.hardware_;
+    }
+    clear_has_configuration();
+  }
+}
+inline ::v1::model::Hardware* StreamConfiguration::release_hardware() {
+  // @@protoc_insertion_point(field_release:v1.model.StreamConfiguration.hardware)
+  if (_internal_has_hardware()) {
+    clear_has_configuration();
+      ::v1::model::Hardware* temp = configuration_.hardware_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    configuration_.hardware_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Hardware& StreamConfiguration::_internal_hardware() const {
+  return _internal_has_hardware()
+      ? *configuration_.hardware_
+      : *reinterpret_cast< ::v1::model::Hardware*>(&::v1::model::_Hardware_default_instance_);
+}
+inline const ::v1::model::Hardware& StreamConfiguration::hardware() const {
+  // @@protoc_insertion_point(field_get:v1.model.StreamConfiguration.hardware)
+  return _internal_hardware();
+}
+inline ::v1::model::Hardware* StreamConfiguration::unsafe_arena_release_hardware() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.StreamConfiguration.hardware)
+  if (_internal_has_hardware()) {
+    clear_has_configuration();
+    ::v1::model::Hardware* temp = configuration_.hardware_;
+    configuration_.hardware_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void StreamConfiguration::unsafe_arena_set_allocated_hardware(::v1::model::Hardware* hardware) {
+  clear_configuration();
+  if (hardware) {
+    set_has_hardware();
+    configuration_.hardware_ = hardware;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.StreamConfiguration.hardware)
+}
+inline ::v1::model::Hardware* StreamConfiguration::_internal_mutable_hardware() {
+  if (!_internal_has_hardware()) {
+    clear_configuration();
+    set_has_hardware();
+    configuration_.hardware_ = CreateMaybeMessage< ::v1::model::Hardware >(GetArena());
+  }
+  return configuration_.hardware_;
+}
+inline ::v1::model::Hardware* StreamConfiguration::mutable_hardware() {
+  // @@protoc_insertion_point(field_mutable:v1.model.StreamConfiguration.hardware)
+  return _internal_mutable_hardware();
+}
+
 // .google.protobuf.DoubleValue throttle_hz = 8[json_name = "throttleHz"];
 inline bool StreamConfiguration::_internal_has_throttle_hz() const {
   return this != internal_default_instance() && throttle_hz_ != nullptr;
@@ -8090,6 +8431,134 @@ inline void Diagnostics::set_allocated_report_metrics(PROTOBUF_NAMESPACE_ID::Boo
 
 // -------------------------------------------------------------------
 
+// Hardware
+
+// string hw_descriptor = 1[json_name = "hwDescriptor"];
+inline void Hardware::clear_hw_descriptor() {
+  hw_descriptor_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& Hardware::hw_descriptor() const {
+  // @@protoc_insertion_point(field_get:v1.model.Hardware.hw_descriptor)
+  return _internal_hw_descriptor();
+}
+inline void Hardware::set_hw_descriptor(const std::string& value) {
+  _internal_set_hw_descriptor(value);
+  // @@protoc_insertion_point(field_set:v1.model.Hardware.hw_descriptor)
+}
+inline std::string* Hardware::mutable_hw_descriptor() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Hardware.hw_descriptor)
+  return _internal_mutable_hw_descriptor();
+}
+inline const std::string& Hardware::_internal_hw_descriptor() const {
+  return hw_descriptor_.Get();
+}
+inline void Hardware::_internal_set_hw_descriptor(const std::string& value) {
+  
+  hw_descriptor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void Hardware::set_hw_descriptor(std::string&& value) {
+  
+  hw_descriptor_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.Hardware.hw_descriptor)
+}
+inline void Hardware::set_hw_descriptor(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  hw_descriptor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.Hardware.hw_descriptor)
+}
+inline void Hardware::set_hw_descriptor(const char* value,
+    size_t size) {
+  
+  hw_descriptor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.Hardware.hw_descriptor)
+}
+inline std::string* Hardware::_internal_mutable_hw_descriptor() {
+  
+  return hw_descriptor_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* Hardware::release_hw_descriptor() {
+  // @@protoc_insertion_point(field_release:v1.model.Hardware.hw_descriptor)
+  return hw_descriptor_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void Hardware::set_allocated_hw_descriptor(std::string* hw_descriptor) {
+  if (hw_descriptor != nullptr) {
+    
+  } else {
+    
+  }
+  hw_descriptor_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), hw_descriptor,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Hardware.hw_descriptor)
+}
+
+// string quality = 2[json_name = "quality"];
+inline void Hardware::clear_quality() {
+  quality_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& Hardware::quality() const {
+  // @@protoc_insertion_point(field_get:v1.model.Hardware.quality)
+  return _internal_quality();
+}
+inline void Hardware::set_quality(const std::string& value) {
+  _internal_set_quality(value);
+  // @@protoc_insertion_point(field_set:v1.model.Hardware.quality)
+}
+inline std::string* Hardware::mutable_quality() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Hardware.quality)
+  return _internal_mutable_quality();
+}
+inline const std::string& Hardware::_internal_quality() const {
+  return quality_.Get();
+}
+inline void Hardware::_internal_set_quality(const std::string& value) {
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void Hardware::set_quality(std::string&& value) {
+  
+  quality_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.Hardware.quality)
+}
+inline void Hardware::set_quality(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.Hardware.quality)
+}
+inline void Hardware::set_quality(const char* value,
+    size_t size) {
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.Hardware.quality)
+}
+inline std::string* Hardware::_internal_mutable_quality() {
+  
+  return quality_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* Hardware::release_quality() {
+  // @@protoc_insertion_point(field_release:v1.model.Hardware.quality)
+  return quality_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void Hardware::set_allocated_quality(std::string* quality) {
+  if (quality != nullptr) {
+    
+  } else {
+    
+  }
+  quality_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), quality,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Hardware.quality)
+}
+
+// -------------------------------------------------------------------
+
 // DirectoryWatch
 
 // string directory = 1[json_name = "directory"];
@@ -8531,6 +9000,8 @@ inline void FileTail::set_allocated_regex(std::string* regex) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

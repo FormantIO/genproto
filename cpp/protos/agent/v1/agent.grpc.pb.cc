@@ -42,6 +42,7 @@ static const char* Agent_method_names[] = {
   "/v1.agent.Agent/PostTransformFrame",
   "/v1.agent.Agent/SetBaseFrameID",
   "/v1.agent.Agent/ClearTransformTree",
+  "/v1.agent.Agent/GetTeleopInfo",
 };
 
 std::unique_ptr< Agent::Stub> Agent::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -70,6 +71,7 @@ Agent::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   , rpcmethod_PostTransformFrame_(Agent_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetBaseFrameID_(Agent_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ClearTransformTree_(Agent_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTeleopInfo_(Agent_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientWriter< ::v1::model::Datapoint>* Agent::Stub::StreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response) {
@@ -568,6 +570,34 @@ void Agent::Stub::experimental_async::ClearTransformTree(::grpc::ClientContext* 
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::ClearTransformTreeResponse>::Create(channel_.get(), cq, rpcmethod_ClearTransformTree_, context, request, false);
 }
 
+::grpc::Status Agent::Stub::GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::v1::agent::GetTeleopInfoResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTeleopInfo_, context, request, response);
+}
+
+void Agent::Stub::experimental_async::GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTeleopInfo_, context, request, response, std::move(f));
+}
+
+void Agent::Stub::experimental_async::GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTeleopInfo_, context, request, response, std::move(f));
+}
+
+void Agent::Stub::experimental_async::GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTeleopInfo_, context, request, response, reactor);
+}
+
+void Agent::Stub::experimental_async::GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTeleopInfo_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>* Agent::Stub::AsyncGetTeleopInfoRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetTeleopInfoResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopInfo_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>* Agent::Stub::PrepareAsyncGetTeleopInfoRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetTeleopInfoResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopInfo_, context, request, false);
+}
+
 Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[0],
@@ -759,6 +789,16 @@ Agent::Service::Service() {
              ::v1::agent::ClearTransformTreeResponse* resp) {
                return service->ClearTransformTree(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Agent_method_names[19],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>(
+          [](Agent::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::v1::agent::GetTeleopInfoRequest* req,
+             ::v1::agent::GetTeleopInfoResponse* resp) {
+               return service->GetTeleopInfo(ctx, req, resp);
+             }, this)));
 }
 
 Agent::Service::~Service() {
@@ -891,6 +931,13 @@ Agent::Service::~Service() {
 }
 
 ::grpc::Status Agent::Service::ClearTransformTree(::grpc::ServerContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Agent::Service::GetTeleopInfo(::grpc::ServerContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response) {
   (void) context;
   (void) request;
   (void) response;

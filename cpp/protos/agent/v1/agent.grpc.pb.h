@@ -176,6 +176,13 @@ class Agent final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::ClearTransformTreeResponse>> PrepareAsyncClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::ClearTransformTreeResponse>>(PrepareAsyncClearTransformTreeRaw(context, request, cq));
     }
+    virtual ::grpc::Status GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::v1::agent::GetTeleopInfoResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetTeleopInfoResponse>> AsyncGetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetTeleopInfoResponse>>(AsyncGetTeleopInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetTeleopInfoResponse>> PrepareAsyncGetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetTeleopInfoResponse>>(PrepareAsyncGetTeleopInfoRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -386,6 +393,18 @@ class Agent final {
       #else
       virtual void ClearTransformTree(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -436,6 +455,8 @@ class Agent final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::SetBaseFrameIDResponse>* PrepareAsyncSetBaseFrameIDRaw(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::ClearTransformTreeResponse>* AsyncClearTransformTreeRaw(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::ClearTransformTreeResponse>* PrepareAsyncClearTransformTreeRaw(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetTeleopInfoResponse>* AsyncGetTeleopInfoRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetTeleopInfoResponse>* PrepareAsyncGetTeleopInfoRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -578,6 +599,13 @@ class Agent final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::ClearTransformTreeResponse>> PrepareAsyncClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::ClearTransformTreeResponse>>(PrepareAsyncClearTransformTreeRaw(context, request, cq));
+    }
+    ::grpc::Status GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::v1::agent::GetTeleopInfoResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>> AsyncGetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>>(AsyncGetTeleopInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>> PrepareAsyncGetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>>(PrepareAsyncGetTeleopInfoRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -789,6 +817,18 @@ class Agent final {
       #else
       void ClearTransformTree(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -841,6 +881,8 @@ class Agent final {
     ::grpc::ClientAsyncResponseReader< ::v1::agent::SetBaseFrameIDResponse>* PrepareAsyncSetBaseFrameIDRaw(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::v1::agent::ClearTransformTreeResponse>* AsyncClearTransformTreeRaw(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::v1::agent::ClearTransformTreeResponse>* PrepareAsyncClearTransformTreeRaw(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>* AsyncGetTeleopInfoRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>* PrepareAsyncGetTeleopInfoRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_StreamData_;
     const ::grpc::internal::RpcMethod rpcmethod_PostData_;
     const ::grpc::internal::RpcMethod rpcmethod_PostDataMulti_;
@@ -860,6 +902,7 @@ class Agent final {
     const ::grpc::internal::RpcMethod rpcmethod_PostTransformFrame_;
     const ::grpc::internal::RpcMethod rpcmethod_SetBaseFrameID_;
     const ::grpc::internal::RpcMethod rpcmethod_ClearTransformTree_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetTeleopInfo_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -886,6 +929,7 @@ class Agent final {
     virtual ::grpc::Status PostTransformFrame(::grpc::ServerContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response);
     virtual ::grpc::Status SetBaseFrameID(::grpc::ServerContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response);
     virtual ::grpc::Status ClearTransformTree(::grpc::ServerContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response);
+    virtual ::grpc::Status GetTeleopInfo(::grpc::ServerContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_StreamData : public BaseClass {
@@ -1267,7 +1311,27 @@ class Agent final {
       ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_StreamData<WithAsyncMethod_PostData<WithAsyncMethod_PostDataMulti<WithAsyncMethod_GetTeleopControlDataStream<WithAsyncMethod_CreateEvent<WithAsyncMethod_CreateInterventionRequest<WithAsyncMethod_GetInterventionRequest<WithAsyncMethod_GetInterventionResponse<WithAsyncMethod_GetStreamsConfiguration<WithAsyncMethod_GetApplicationConfiguration<WithAsyncMethod_GetConfigBlobData<WithAsyncMethod_GetAgentConfiguration<WithAsyncMethod_Health<WithAsyncMethod_GetCommandRequest<WithAsyncMethod_GetCommandRequestStream<WithAsyncMethod_SendCommandResponse<WithAsyncMethod_PostTransformFrame<WithAsyncMethod_SetBaseFrameID<WithAsyncMethod_ClearTransformTree<Service > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetTeleopInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetTeleopInfo() {
+      ::grpc::Service::MarkMethodAsync(19);
+    }
+    ~WithAsyncMethod_GetTeleopInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTeleopInfo(::grpc::ServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTeleopInfo(::grpc::ServerContext* context, ::v1::agent::GetTeleopInfoRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::GetTeleopInfoResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_StreamData<WithAsyncMethod_PostData<WithAsyncMethod_PostDataMulti<WithAsyncMethod_GetTeleopControlDataStream<WithAsyncMethod_CreateEvent<WithAsyncMethod_CreateInterventionRequest<WithAsyncMethod_GetInterventionRequest<WithAsyncMethod_GetInterventionResponse<WithAsyncMethod_GetStreamsConfiguration<WithAsyncMethod_GetApplicationConfiguration<WithAsyncMethod_GetConfigBlobData<WithAsyncMethod_GetAgentConfiguration<WithAsyncMethod_Health<WithAsyncMethod_GetCommandRequest<WithAsyncMethod_GetCommandRequestStream<WithAsyncMethod_SendCommandResponse<WithAsyncMethod_PostTransformFrame<WithAsyncMethod_SetBaseFrameID<WithAsyncMethod_ClearTransformTree<WithAsyncMethod_GetTeleopInfo<Service > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_StreamData : public BaseClass {
    private:
@@ -2134,11 +2198,58 @@ class Agent final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetTeleopInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_GetTeleopInfo() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(19,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response) { return this->GetTeleopInfo(context, request, response); }));}
+    void SetMessageAllocatorFor_GetTeleopInfo(
+        ::grpc::experimental::MessageAllocator< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(19);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_GetTeleopInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTeleopInfo(::grpc::ServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetTeleopInfo(
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetTeleopInfo(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_StreamData<ExperimentalWithCallbackMethod_PostData<ExperimentalWithCallbackMethod_PostDataMulti<ExperimentalWithCallbackMethod_GetTeleopControlDataStream<ExperimentalWithCallbackMethod_CreateEvent<ExperimentalWithCallbackMethod_CreateInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionResponse<ExperimentalWithCallbackMethod_GetStreamsConfiguration<ExperimentalWithCallbackMethod_GetApplicationConfiguration<ExperimentalWithCallbackMethod_GetConfigBlobData<ExperimentalWithCallbackMethod_GetAgentConfiguration<ExperimentalWithCallbackMethod_Health<ExperimentalWithCallbackMethod_GetCommandRequest<ExperimentalWithCallbackMethod_GetCommandRequestStream<ExperimentalWithCallbackMethod_SendCommandResponse<ExperimentalWithCallbackMethod_PostTransformFrame<ExperimentalWithCallbackMethod_SetBaseFrameID<ExperimentalWithCallbackMethod_ClearTransformTree<Service > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_StreamData<ExperimentalWithCallbackMethod_PostData<ExperimentalWithCallbackMethod_PostDataMulti<ExperimentalWithCallbackMethod_GetTeleopControlDataStream<ExperimentalWithCallbackMethod_CreateEvent<ExperimentalWithCallbackMethod_CreateInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionResponse<ExperimentalWithCallbackMethod_GetStreamsConfiguration<ExperimentalWithCallbackMethod_GetApplicationConfiguration<ExperimentalWithCallbackMethod_GetConfigBlobData<ExperimentalWithCallbackMethod_GetAgentConfiguration<ExperimentalWithCallbackMethod_Health<ExperimentalWithCallbackMethod_GetCommandRequest<ExperimentalWithCallbackMethod_GetCommandRequestStream<ExperimentalWithCallbackMethod_SendCommandResponse<ExperimentalWithCallbackMethod_PostTransformFrame<ExperimentalWithCallbackMethod_SetBaseFrameID<ExperimentalWithCallbackMethod_ClearTransformTree<ExperimentalWithCallbackMethod_GetTeleopInfo<Service > > > > > > > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_StreamData<ExperimentalWithCallbackMethod_PostData<ExperimentalWithCallbackMethod_PostDataMulti<ExperimentalWithCallbackMethod_GetTeleopControlDataStream<ExperimentalWithCallbackMethod_CreateEvent<ExperimentalWithCallbackMethod_CreateInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionResponse<ExperimentalWithCallbackMethod_GetStreamsConfiguration<ExperimentalWithCallbackMethod_GetApplicationConfiguration<ExperimentalWithCallbackMethod_GetConfigBlobData<ExperimentalWithCallbackMethod_GetAgentConfiguration<ExperimentalWithCallbackMethod_Health<ExperimentalWithCallbackMethod_GetCommandRequest<ExperimentalWithCallbackMethod_GetCommandRequestStream<ExperimentalWithCallbackMethod_SendCommandResponse<ExperimentalWithCallbackMethod_PostTransformFrame<ExperimentalWithCallbackMethod_SetBaseFrameID<ExperimentalWithCallbackMethod_ClearTransformTree<Service > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_StreamData<ExperimentalWithCallbackMethod_PostData<ExperimentalWithCallbackMethod_PostDataMulti<ExperimentalWithCallbackMethod_GetTeleopControlDataStream<ExperimentalWithCallbackMethod_CreateEvent<ExperimentalWithCallbackMethod_CreateInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionResponse<ExperimentalWithCallbackMethod_GetStreamsConfiguration<ExperimentalWithCallbackMethod_GetApplicationConfiguration<ExperimentalWithCallbackMethod_GetConfigBlobData<ExperimentalWithCallbackMethod_GetAgentConfiguration<ExperimentalWithCallbackMethod_Health<ExperimentalWithCallbackMethod_GetCommandRequest<ExperimentalWithCallbackMethod_GetCommandRequestStream<ExperimentalWithCallbackMethod_SendCommandResponse<ExperimentalWithCallbackMethod_PostTransformFrame<ExperimentalWithCallbackMethod_SetBaseFrameID<ExperimentalWithCallbackMethod_ClearTransformTree<ExperimentalWithCallbackMethod_GetTeleopInfo<Service > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_StreamData : public BaseClass {
    private:
@@ -2458,6 +2569,23 @@ class Agent final {
     }
     // disable synchronous version of this method
     ::grpc::Status ClearTransformTree(::grpc::ServerContext* /*context*/, const ::v1::agent::ClearTransformTreeRequest* /*request*/, ::v1::agent::ClearTransformTreeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetTeleopInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetTeleopInfo() {
+      ::grpc::Service::MarkMethodGeneric(19);
+    }
+    ~WithGenericMethod_GetTeleopInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTeleopInfo(::grpc::ServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2840,6 +2968,26 @@ class Agent final {
     }
     void RequestClearTransformTree(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetTeleopInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetTeleopInfo() {
+      ::grpc::Service::MarkMethodRaw(19);
+    }
+    ~WithRawMethod_GetTeleopInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTeleopInfo(::grpc::ServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTeleopInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3565,6 +3713,44 @@ class Agent final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetTeleopInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetTeleopInfo() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(19,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetTeleopInfo(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetTeleopInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTeleopInfo(::grpc::ServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetTeleopInfo(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetTeleopInfo(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_PostData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -3996,7 +4182,34 @@ class Agent final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedClearTransformTree(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::v1::agent::ClearTransformTreeRequest,::v1::agent::ClearTransformTreeResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_PostData<WithStreamedUnaryMethod_PostDataMulti<WithStreamedUnaryMethod_CreateEvent<WithStreamedUnaryMethod_CreateInterventionRequest<WithStreamedUnaryMethod_GetInterventionRequest<WithStreamedUnaryMethod_GetInterventionResponse<WithStreamedUnaryMethod_GetStreamsConfiguration<WithStreamedUnaryMethod_GetApplicationConfiguration<WithStreamedUnaryMethod_GetConfigBlobData<WithStreamedUnaryMethod_GetAgentConfiguration<WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_GetCommandRequest<WithStreamedUnaryMethod_SendCommandResponse<WithStreamedUnaryMethod_PostTransformFrame<WithStreamedUnaryMethod_SetBaseFrameID<WithStreamedUnaryMethod_ClearTransformTree<Service > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetTeleopInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetTeleopInfo() {
+      ::grpc::Service::MarkMethodStreamed(19,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>* streamer) {
+                       return this->StreamedGetTeleopInfo(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetTeleopInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetTeleopInfo(::grpc::ServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetTeleopInfo(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::v1::agent::GetTeleopInfoRequest,::v1::agent::GetTeleopInfoResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_PostData<WithStreamedUnaryMethod_PostDataMulti<WithStreamedUnaryMethod_CreateEvent<WithStreamedUnaryMethod_CreateInterventionRequest<WithStreamedUnaryMethod_GetInterventionRequest<WithStreamedUnaryMethod_GetInterventionResponse<WithStreamedUnaryMethod_GetStreamsConfiguration<WithStreamedUnaryMethod_GetApplicationConfiguration<WithStreamedUnaryMethod_GetConfigBlobData<WithStreamedUnaryMethod_GetAgentConfiguration<WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_GetCommandRequest<WithStreamedUnaryMethod_SendCommandResponse<WithStreamedUnaryMethod_PostTransformFrame<WithStreamedUnaryMethod_SetBaseFrameID<WithStreamedUnaryMethod_ClearTransformTree<WithStreamedUnaryMethod_GetTeleopInfo<Service > > > > > > > > > > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_GetTeleopControlDataStream : public BaseClass {
    private:
@@ -4052,7 +4265,7 @@ class Agent final {
     virtual ::grpc::Status StreamedGetCommandRequestStream(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::v1::agent::GetCommandRequestStreamRequest,::v1::agent::GetCommandRequestStreamResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_GetTeleopControlDataStream<WithSplitStreamingMethod_GetCommandRequestStream<Service > > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_PostData<WithStreamedUnaryMethod_PostDataMulti<WithSplitStreamingMethod_GetTeleopControlDataStream<WithStreamedUnaryMethod_CreateEvent<WithStreamedUnaryMethod_CreateInterventionRequest<WithStreamedUnaryMethod_GetInterventionRequest<WithStreamedUnaryMethod_GetInterventionResponse<WithStreamedUnaryMethod_GetStreamsConfiguration<WithStreamedUnaryMethod_GetApplicationConfiguration<WithStreamedUnaryMethod_GetConfigBlobData<WithStreamedUnaryMethod_GetAgentConfiguration<WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_GetCommandRequest<WithSplitStreamingMethod_GetCommandRequestStream<WithStreamedUnaryMethod_SendCommandResponse<WithStreamedUnaryMethod_PostTransformFrame<WithStreamedUnaryMethod_SetBaseFrameID<WithStreamedUnaryMethod_ClearTransformTree<Service > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_PostData<WithStreamedUnaryMethod_PostDataMulti<WithSplitStreamingMethod_GetTeleopControlDataStream<WithStreamedUnaryMethod_CreateEvent<WithStreamedUnaryMethod_CreateInterventionRequest<WithStreamedUnaryMethod_GetInterventionRequest<WithStreamedUnaryMethod_GetInterventionResponse<WithStreamedUnaryMethod_GetStreamsConfiguration<WithStreamedUnaryMethod_GetApplicationConfiguration<WithStreamedUnaryMethod_GetConfigBlobData<WithStreamedUnaryMethod_GetAgentConfiguration<WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_GetCommandRequest<WithSplitStreamingMethod_GetCommandRequestStream<WithStreamedUnaryMethod_SendCommandResponse<WithStreamedUnaryMethod_PostTransformFrame<WithStreamedUnaryMethod_SetBaseFrameID<WithStreamedUnaryMethod_ClearTransformTree<WithStreamedUnaryMethod_GetTeleopInfo<Service > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace agent
