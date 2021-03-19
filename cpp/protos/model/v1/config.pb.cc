@@ -741,6 +741,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fconfig_2
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::v1::model::Hardware, hw_descriptor_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Hardware, quality_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Hardware, audio_hw_descriptor_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::DirectoryWatch, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -785,8 +786,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 182, -1, sizeof(::v1::model::Diagnostics)},
   { 189, -1, sizeof(::v1::model::Custom)},
   { 194, -1, sizeof(::v1::model::Hardware)},
-  { 201, -1, sizeof(::v1::model::DirectoryWatch)},
-  { 210, -1, sizeof(::v1::model::FileTail)},
+  { 202, -1, sizeof(::v1::model::DirectoryWatch)},
+  { 211, -1, sizeof(::v1::model::FileTail)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -925,22 +926,23 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto[] PROT
   "ogs\030\001 \001(\0132\032.google.protobuf.BoolValueR\nr"
   "eportLogs\022A\n\016report_metrics\030\002 \001(\0132\032.goog"
   "le.protobuf.BoolValueR\rreportMetrics\"\010\n\006"
-  "Custom\"I\n\010Hardware\022#\n\rhw_descriptor\030\001 \001("
+  "Custom\"y\n\010Hardware\022#\n\rhw_descriptor\030\001 \001("
   "\tR\014hwDescriptor\022\030\n\007quality\030\002 \001(\tR\007qualit"
-  "y\"\240\001\n\016DirectoryWatch\022\034\n\tdirectory\030\001 \001(\tR"
-  "\tdirectory\022\034\n\textension\030\002 \001(\tR\textension"
-  "\022/\n\tfile_type\030\003 \001(\0162\022.v1.model.FileTypeR"
-  "\010fileType\022!\n\014remote_agent\030\004 \001(\010R\013remoteA"
-  "gent\"\257\001\n\010FileTail\022\032\n\010filename\030\001 \001(\tR\010fil"
-  "ename\0225\n\013file_format\030\002 \001(\0162\024.v1.model.Fi"
-  "leFormatR\nfileFormat\022\031\n\010time_key\030\003 \001(\tR\007"
-  "timeKey\022\037\n\013time_format\030\004 \001(\tR\ntimeFormat"
-  "\022\024\n\005regex\030\005 \001(\tR\005regex*&\n\nTeleopMode\022\013\n\007"
-  "COMMAND\020\000\022\013\n\007OBSERVE\020\001*&\n\nFileFormat\022\016\n\n"
-  "PLAIN_TEXT\020\000\022\010\n\004JSON\020\001*;\n\010FileType\022\010\n\004FI"
-  "LE\020\000\022\t\n\005IMAGE\020\001\022\017\n\013POINT_CLOUD\020\004\022\t\n\005VIDE"
-  "O\020\005B+Z)github.com/FormantIO/genproto/go/"
-  "v1/modelb\006proto3"
+  "y\022.\n\023audio_hw_descriptor\030\003 \001(\tR\021audioHwD"
+  "escriptor\"\240\001\n\016DirectoryWatch\022\034\n\tdirector"
+  "y\030\001 \001(\tR\tdirectory\022\034\n\textension\030\002 \001(\tR\te"
+  "xtension\022/\n\tfile_type\030\003 \001(\0162\022.v1.model.F"
+  "ileTypeR\010fileType\022!\n\014remote_agent\030\004 \001(\010R"
+  "\013remoteAgent\"\257\001\n\010FileTail\022\032\n\010filename\030\001 "
+  "\001(\tR\010filename\0225\n\013file_format\030\002 \001(\0162\024.v1."
+  "model.FileFormatR\nfileFormat\022\031\n\010time_key"
+  "\030\003 \001(\tR\007timeKey\022\037\n\013time_format\030\004 \001(\tR\nti"
+  "meFormat\022\024\n\005regex\030\005 \001(\tR\005regex*&\n\nTeleop"
+  "Mode\022\013\n\007COMMAND\020\000\022\013\n\007OBSERVE\020\001*&\n\nFileFo"
+  "rmat\022\016\n\nPLAIN_TEXT\020\000\022\010\n\004JSON\020\001*;\n\010FileTy"
+  "pe\022\010\n\004FILE\020\000\022\t\n\005IMAGE\020\001\022\017\n\013POINT_CLOUD\020\004"
+  "\022\t\n\005VIDEO\020\005B+Z)github.com/FormantIO/genp"
+  "roto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fwrappers_2eproto,
@@ -975,7 +977,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 4896,
+  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 4944,
   &descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps, 25, 2,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fconfig_2eproto, 25, file_level_enum_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto,
@@ -7242,6 +7244,11 @@ Hardware::Hardware(const Hardware& from)
     quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_quality(),
       GetArena());
   }
+  audio_hw_descriptor_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_audio_hw_descriptor().empty()) {
+    audio_hw_descriptor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_audio_hw_descriptor(),
+      GetArena());
+  }
   // @@protoc_insertion_point(copy_constructor:v1.model.Hardware)
 }
 
@@ -7249,6 +7256,7 @@ void Hardware::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Hardware_protos_2fmodel_2fv1_2fconfig_2eproto.base);
   hw_descriptor_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   quality_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  audio_hw_descriptor_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Hardware::~Hardware() {
@@ -7261,6 +7269,7 @@ void Hardware::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   hw_descriptor_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   quality_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  audio_hw_descriptor_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Hardware::ArenaDtor(void* object) {
@@ -7286,6 +7295,7 @@ void Hardware::Clear() {
 
   hw_descriptor_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   quality_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  audio_hw_descriptor_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7312,6 +7322,15 @@ const char* Hardware::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           auto str = _internal_mutable_quality();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Hardware.quality"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string audio_hw_descriptor = 3[json_name = "audioHwDescriptor"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_audio_hw_descriptor();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Hardware.audio_hw_descriptor"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7363,6 +7382,16 @@ failure:
         2, this->_internal_quality(), target);
   }
 
+  // string audio_hw_descriptor = 3[json_name = "audioHwDescriptor"];
+  if (this->audio_hw_descriptor().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_audio_hw_descriptor().data(), static_cast<int>(this->_internal_audio_hw_descriptor().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.Hardware.audio_hw_descriptor");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_audio_hw_descriptor(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -7391,6 +7420,13 @@ size_t Hardware::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_quality());
+  }
+
+  // string audio_hw_descriptor = 3[json_name = "audioHwDescriptor"];
+  if (this->audio_hw_descriptor().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_audio_hw_descriptor());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7430,6 +7466,9 @@ void Hardware::MergeFrom(const Hardware& from) {
   if (from.quality().size() > 0) {
     _internal_set_quality(from._internal_quality());
   }
+  if (from.audio_hw_descriptor().size() > 0) {
+    _internal_set_audio_hw_descriptor(from._internal_audio_hw_descriptor());
+  }
 }
 
 void Hardware::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -7455,6 +7494,7 @@ void Hardware::InternalSwap(Hardware* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   hw_descriptor_.Swap(&other->hw_descriptor_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   quality_.Swap(&other->quality_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  audio_hw_descriptor_.Swap(&other->audio_hw_descriptor_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Hardware::GetMetadata() const {

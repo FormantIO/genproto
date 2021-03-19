@@ -4103,6 +4103,7 @@ class Hardware PROTOBUF_FINAL :
   enum : int {
     kHwDescriptorFieldNumber = 1,
     kQualityFieldNumber = 2,
+    kAudioHwDescriptorFieldNumber = 3,
   };
   // string hw_descriptor = 1[json_name = "hwDescriptor"];
   void clear_hw_descriptor();
@@ -4136,6 +4137,22 @@ class Hardware PROTOBUF_FINAL :
   std::string* _internal_mutable_quality();
   public:
 
+  // string audio_hw_descriptor = 3[json_name = "audioHwDescriptor"];
+  void clear_audio_hw_descriptor();
+  const std::string& audio_hw_descriptor() const;
+  void set_audio_hw_descriptor(const std::string& value);
+  void set_audio_hw_descriptor(std::string&& value);
+  void set_audio_hw_descriptor(const char* value);
+  void set_audio_hw_descriptor(const char* value, size_t size);
+  std::string* mutable_audio_hw_descriptor();
+  std::string* release_audio_hw_descriptor();
+  void set_allocated_audio_hw_descriptor(std::string* audio_hw_descriptor);
+  private:
+  const std::string& _internal_audio_hw_descriptor() const;
+  void _internal_set_audio_hw_descriptor(const std::string& value);
+  std::string* _internal_mutable_audio_hw_descriptor();
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.Hardware)
  private:
   class _Internal;
@@ -4145,6 +4162,7 @@ class Hardware PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hw_descriptor_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quality_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr audio_hw_descriptor_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -8555,6 +8573,68 @@ inline void Hardware::set_allocated_quality(std::string* quality) {
   quality_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), quality,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:v1.model.Hardware.quality)
+}
+
+// string audio_hw_descriptor = 3[json_name = "audioHwDescriptor"];
+inline void Hardware::clear_audio_hw_descriptor() {
+  audio_hw_descriptor_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& Hardware::audio_hw_descriptor() const {
+  // @@protoc_insertion_point(field_get:v1.model.Hardware.audio_hw_descriptor)
+  return _internal_audio_hw_descriptor();
+}
+inline void Hardware::set_audio_hw_descriptor(const std::string& value) {
+  _internal_set_audio_hw_descriptor(value);
+  // @@protoc_insertion_point(field_set:v1.model.Hardware.audio_hw_descriptor)
+}
+inline std::string* Hardware::mutable_audio_hw_descriptor() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Hardware.audio_hw_descriptor)
+  return _internal_mutable_audio_hw_descriptor();
+}
+inline const std::string& Hardware::_internal_audio_hw_descriptor() const {
+  return audio_hw_descriptor_.Get();
+}
+inline void Hardware::_internal_set_audio_hw_descriptor(const std::string& value) {
+  
+  audio_hw_descriptor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void Hardware::set_audio_hw_descriptor(std::string&& value) {
+  
+  audio_hw_descriptor_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.Hardware.audio_hw_descriptor)
+}
+inline void Hardware::set_audio_hw_descriptor(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  audio_hw_descriptor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.Hardware.audio_hw_descriptor)
+}
+inline void Hardware::set_audio_hw_descriptor(const char* value,
+    size_t size) {
+  
+  audio_hw_descriptor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.Hardware.audio_hw_descriptor)
+}
+inline std::string* Hardware::_internal_mutable_audio_hw_descriptor() {
+  
+  return audio_hw_descriptor_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* Hardware::release_audio_hw_descriptor() {
+  // @@protoc_insertion_point(field_release:v1.model.Hardware.audio_hw_descriptor)
+  return audio_hw_descriptor_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void Hardware::set_allocated_audio_hw_descriptor(std::string* audio_hw_descriptor) {
+  if (audio_hw_descriptor != nullptr) {
+    
+  } else {
+    
+  }
+  audio_hw_descriptor_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), audio_hw_descriptor,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Hardware.audio_hw_descriptor)
 }
 
 // -------------------------------------------------------------------
