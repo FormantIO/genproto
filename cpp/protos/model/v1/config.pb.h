@@ -1675,6 +1675,7 @@ class TeleopRosStreamConfiguration PROTOBUF_FINAL :
   enum : int {
     kTopicNameFieldNumber = 1,
     kAudioCodecFieldNumber = 5,
+    kQualityFieldNumber = 6,
     kTopicTypeFieldNumber = 2,
     kModeFieldNumber = 3,
     kEncodeVideoFieldNumber = 4,
@@ -1709,6 +1710,22 @@ class TeleopRosStreamConfiguration PROTOBUF_FINAL :
   const std::string& _internal_audio_codec() const;
   void _internal_set_audio_codec(const std::string& value);
   std::string* _internal_mutable_audio_codec();
+  public:
+
+  // string quality = 6[json_name = "quality"];
+  void clear_quality();
+  const std::string& quality() const;
+  void set_quality(const std::string& value);
+  void set_quality(std::string&& value);
+  void set_quality(const char* value);
+  void set_quality(const char* value, size_t size);
+  std::string* mutable_quality();
+  std::string* release_quality();
+  void set_allocated_quality(std::string* quality);
+  private:
+  const std::string& _internal_quality() const;
+  void _internal_set_quality(const std::string& value);
+  std::string* _internal_mutable_quality();
   public:
 
   // .v1.model.ROSTopicType topic_type = 2[json_name = "topicType"];
@@ -1747,6 +1764,7 @@ class TeleopRosStreamConfiguration PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr audio_codec_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quality_;
   int topic_type_;
   int mode_;
   bool encode_video_;
@@ -2079,6 +2097,7 @@ class TeleopCustomStreamConfiguration PROTOBUF_FINAL :
   enum : int {
     kNameFieldNumber = 1,
     kRtcStreamTypeFieldNumber = 2,
+    kQualityFieldNumber = 5,
     kModeFieldNumber = 3,
     kEncodeVideoFieldNumber = 4,
   };
@@ -2114,6 +2133,22 @@ class TeleopCustomStreamConfiguration PROTOBUF_FINAL :
   std::string* _internal_mutable_rtc_stream_type();
   public:
 
+  // string quality = 5[json_name = "quality"];
+  void clear_quality();
+  const std::string& quality() const;
+  void set_quality(const std::string& value);
+  void set_quality(std::string&& value);
+  void set_quality(const char* value);
+  void set_quality(const char* value, size_t size);
+  std::string* mutable_quality();
+  std::string* release_quality();
+  void set_allocated_quality(std::string* quality);
+  private:
+  const std::string& _internal_quality() const;
+  void _internal_set_quality(const std::string& value);
+  std::string* _internal_mutable_quality();
+  public:
+
   // .v1.model.TeleopMode mode = 3[json_name = "mode"];
   void clear_mode();
   ::v1::model::TeleopMode mode() const;
@@ -2141,6 +2176,7 @@ class TeleopCustomStreamConfiguration PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rtc_stream_type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quality_;
   int mode_;
   bool encode_video_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3118,6 +3154,7 @@ class StreamConfiguration PROTOBUF_FINAL :
   enum : int {
     kTagsFieldNumber = 2,
     kNameFieldNumber = 1,
+    kQualityFieldNumber = 22,
     kThrottleHzFieldNumber = 8,
     kDisabledFieldNumber = 19,
     kOnDemandFieldNumber = 20,
@@ -3161,6 +3198,22 @@ class StreamConfiguration PROTOBUF_FINAL :
   const std::string& _internal_name() const;
   void _internal_set_name(const std::string& value);
   std::string* _internal_mutable_name();
+  public:
+
+  // string quality = 22[json_name = "quality"];
+  void clear_quality();
+  const std::string& quality() const;
+  void set_quality(const std::string& value);
+  void set_quality(std::string&& value);
+  void set_quality(const char* value);
+  void set_quality(const char* value, size_t size);
+  std::string* mutable_quality();
+  std::string* release_quality();
+  void set_allocated_quality(std::string* quality);
+  private:
+  const std::string& _internal_quality() const;
+  void _internal_set_quality(const std::string& value);
+  std::string* _internal_mutable_quality();
   public:
 
   // .google.protobuf.DoubleValue throttle_hz = 8[json_name = "throttleHz"];
@@ -3387,6 +3440,7 @@ class StreamConfiguration PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       0 > tags_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quality_;
   PROTOBUF_NAMESPACE_ID::DoubleValue* throttle_hz_;
   PROTOBUF_NAMESPACE_ID::BoolValue* disabled_;
   PROTOBUF_NAMESPACE_ID::BoolValue* on_demand_;
@@ -4102,7 +4156,6 @@ class Hardware PROTOBUF_FINAL :
 
   enum : int {
     kHwDescriptorFieldNumber = 1,
-    kQualityFieldNumber = 2,
     kAudioHwDescriptorFieldNumber = 3,
   };
   // string hw_descriptor = 1[json_name = "hwDescriptor"];
@@ -4119,22 +4172,6 @@ class Hardware PROTOBUF_FINAL :
   const std::string& _internal_hw_descriptor() const;
   void _internal_set_hw_descriptor(const std::string& value);
   std::string* _internal_mutable_hw_descriptor();
-  public:
-
-  // string quality = 2[json_name = "quality"];
-  void clear_quality();
-  const std::string& quality() const;
-  void set_quality(const std::string& value);
-  void set_quality(std::string&& value);
-  void set_quality(const char* value);
-  void set_quality(const char* value, size_t size);
-  std::string* mutable_quality();
-  std::string* release_quality();
-  void set_allocated_quality(std::string* quality);
-  private:
-  const std::string& _internal_quality() const;
-  void _internal_set_quality(const std::string& value);
-  std::string* _internal_mutable_quality();
   public:
 
   // string audio_hw_descriptor = 3[json_name = "audioHwDescriptor"];
@@ -4161,7 +4198,6 @@ class Hardware PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hw_descriptor_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quality_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr audio_hw_descriptor_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
@@ -6356,6 +6392,68 @@ inline void TeleopRosStreamConfiguration::set_allocated_audio_codec(std::string*
   // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopRosStreamConfiguration.audio_codec)
 }
 
+// string quality = 6[json_name = "quality"];
+inline void TeleopRosStreamConfiguration::clear_quality() {
+  quality_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& TeleopRosStreamConfiguration::quality() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopRosStreamConfiguration.quality)
+  return _internal_quality();
+}
+inline void TeleopRosStreamConfiguration::set_quality(const std::string& value) {
+  _internal_set_quality(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.quality)
+}
+inline std::string* TeleopRosStreamConfiguration::mutable_quality() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopRosStreamConfiguration.quality)
+  return _internal_mutable_quality();
+}
+inline const std::string& TeleopRosStreamConfiguration::_internal_quality() const {
+  return quality_.Get();
+}
+inline void TeleopRosStreamConfiguration::_internal_set_quality(const std::string& value) {
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void TeleopRosStreamConfiguration::set_quality(std::string&& value) {
+  
+  quality_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.TeleopRosStreamConfiguration.quality)
+}
+inline void TeleopRosStreamConfiguration::set_quality(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.TeleopRosStreamConfiguration.quality)
+}
+inline void TeleopRosStreamConfiguration::set_quality(const char* value,
+    size_t size) {
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.TeleopRosStreamConfiguration.quality)
+}
+inline std::string* TeleopRosStreamConfiguration::_internal_mutable_quality() {
+  
+  return quality_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* TeleopRosStreamConfiguration::release_quality() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopRosStreamConfiguration.quality)
+  return quality_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void TeleopRosStreamConfiguration::set_allocated_quality(std::string* quality) {
+  if (quality != nullptr) {
+    
+  } else {
+    
+  }
+  quality_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), quality,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopRosStreamConfiguration.quality)
+}
+
 // -------------------------------------------------------------------
 
 // TeleopHardwareStreamConfiguration
@@ -6794,6 +6892,68 @@ inline void TeleopCustomStreamConfiguration::_internal_set_encode_video(bool val
 inline void TeleopCustomStreamConfiguration::set_encode_video(bool value) {
   _internal_set_encode_video(value);
   // @@protoc_insertion_point(field_set:v1.model.TeleopCustomStreamConfiguration.encode_video)
+}
+
+// string quality = 5[json_name = "quality"];
+inline void TeleopCustomStreamConfiguration::clear_quality() {
+  quality_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& TeleopCustomStreamConfiguration::quality() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopCustomStreamConfiguration.quality)
+  return _internal_quality();
+}
+inline void TeleopCustomStreamConfiguration::set_quality(const std::string& value) {
+  _internal_set_quality(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopCustomStreamConfiguration.quality)
+}
+inline std::string* TeleopCustomStreamConfiguration::mutable_quality() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopCustomStreamConfiguration.quality)
+  return _internal_mutable_quality();
+}
+inline const std::string& TeleopCustomStreamConfiguration::_internal_quality() const {
+  return quality_.Get();
+}
+inline void TeleopCustomStreamConfiguration::_internal_set_quality(const std::string& value) {
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void TeleopCustomStreamConfiguration::set_quality(std::string&& value) {
+  
+  quality_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.TeleopCustomStreamConfiguration.quality)
+}
+inline void TeleopCustomStreamConfiguration::set_quality(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.TeleopCustomStreamConfiguration.quality)
+}
+inline void TeleopCustomStreamConfiguration::set_quality(const char* value,
+    size_t size) {
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.TeleopCustomStreamConfiguration.quality)
+}
+inline std::string* TeleopCustomStreamConfiguration::_internal_mutable_quality() {
+  
+  return quality_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* TeleopCustomStreamConfiguration::release_quality() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopCustomStreamConfiguration.quality)
+  return quality_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void TeleopCustomStreamConfiguration::set_allocated_quality(std::string* quality) {
+  if (quality != nullptr) {
+    
+  } else {
+    
+  }
+  quality_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), quality,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopCustomStreamConfiguration.quality)
 }
 
 // -------------------------------------------------------------------
@@ -8129,6 +8289,68 @@ inline void StreamConfiguration::set_allocated_transform(::v1::model::StreamTran
   // @@protoc_insertion_point(field_set_allocated:v1.model.StreamConfiguration.transform)
 }
 
+// string quality = 22[json_name = "quality"];
+inline void StreamConfiguration::clear_quality() {
+  quality_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& StreamConfiguration::quality() const {
+  // @@protoc_insertion_point(field_get:v1.model.StreamConfiguration.quality)
+  return _internal_quality();
+}
+inline void StreamConfiguration::set_quality(const std::string& value) {
+  _internal_set_quality(value);
+  // @@protoc_insertion_point(field_set:v1.model.StreamConfiguration.quality)
+}
+inline std::string* StreamConfiguration::mutable_quality() {
+  // @@protoc_insertion_point(field_mutable:v1.model.StreamConfiguration.quality)
+  return _internal_mutable_quality();
+}
+inline const std::string& StreamConfiguration::_internal_quality() const {
+  return quality_.Get();
+}
+inline void StreamConfiguration::_internal_set_quality(const std::string& value) {
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void StreamConfiguration::set_quality(std::string&& value) {
+  
+  quality_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:v1.model.StreamConfiguration.quality)
+}
+inline void StreamConfiguration::set_quality(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:v1.model.StreamConfiguration.quality)
+}
+inline void StreamConfiguration::set_quality(const char* value,
+    size_t size) {
+  
+  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:v1.model.StreamConfiguration.quality)
+}
+inline std::string* StreamConfiguration::_internal_mutable_quality() {
+  
+  return quality_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* StreamConfiguration::release_quality() {
+  // @@protoc_insertion_point(field_release:v1.model.StreamConfiguration.quality)
+  return quality_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void StreamConfiguration::set_allocated_quality(std::string* quality) {
+  if (quality != nullptr) {
+    
+  } else {
+    
+  }
+  quality_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), quality,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.StreamConfiguration.quality)
+}
+
 inline bool StreamConfiguration::has_configuration() const {
   return configuration_case() != CONFIGURATION_NOT_SET;
 }
@@ -8511,68 +8733,6 @@ inline void Hardware::set_allocated_hw_descriptor(std::string* hw_descriptor) {
   hw_descriptor_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), hw_descriptor,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:v1.model.Hardware.hw_descriptor)
-}
-
-// string quality = 2[json_name = "quality"];
-inline void Hardware::clear_quality() {
-  quality_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline const std::string& Hardware::quality() const {
-  // @@protoc_insertion_point(field_get:v1.model.Hardware.quality)
-  return _internal_quality();
-}
-inline void Hardware::set_quality(const std::string& value) {
-  _internal_set_quality(value);
-  // @@protoc_insertion_point(field_set:v1.model.Hardware.quality)
-}
-inline std::string* Hardware::mutable_quality() {
-  // @@protoc_insertion_point(field_mutable:v1.model.Hardware.quality)
-  return _internal_mutable_quality();
-}
-inline const std::string& Hardware::_internal_quality() const {
-  return quality_.Get();
-}
-inline void Hardware::_internal_set_quality(const std::string& value) {
-  
-  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
-}
-inline void Hardware::set_quality(std::string&& value) {
-  
-  quality_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:v1.model.Hardware.quality)
-}
-inline void Hardware::set_quality(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
-  // @@protoc_insertion_point(field_set_char:v1.model.Hardware.quality)
-}
-inline void Hardware::set_quality(const char* value,
-    size_t size) {
-  
-  quality_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:v1.model.Hardware.quality)
-}
-inline std::string* Hardware::_internal_mutable_quality() {
-  
-  return quality_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline std::string* Hardware::release_quality() {
-  // @@protoc_insertion_point(field_release:v1.model.Hardware.quality)
-  return quality_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void Hardware::set_allocated_quality(std::string* quality) {
-  if (quality != nullptr) {
-    
-  } else {
-    
-  }
-  quality_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), quality,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:v1.model.Hardware.quality)
 }
 
 // string audio_hw_descriptor = 3[json_name = "audioHwDescriptor"];
