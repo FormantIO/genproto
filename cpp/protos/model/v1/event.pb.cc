@@ -14,189 +14,136 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fevent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_AgentEventTrigger_protos_2fmodel_2fv1_2fevent_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fevent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BitsetCondition_protos_2fmodel_2fv1_2fevent_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fevent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_BitsetEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fevent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Event_TagsEntry_DoNotUse_protos_2fmodel_2fv1_2fevent_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fevent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PresenceEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fevent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RegexEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fevent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ThresholdEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace v1 {
 namespace model {
-class Event_TagsEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Event_TagsEntry_DoNotUse> _instance;
-} _Event_TagsEntry_DoNotUse_default_instance_;
-class EventDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Event> _instance;
-} _Event_default_instance_;
-class AgentEventConfigurationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AgentEventConfiguration> _instance;
-} _AgentEventConfiguration_default_instance_;
-class AgentEventTriggerDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AgentEventTrigger> _instance;
-  const ::v1::model::PresenceEventTriggerCondition* presence_;
-  const ::v1::model::ThresholdEventTriggerCondition* threshold_;
-  const ::v1::model::RegexEventTriggerCondition* regex_;
-  const ::v1::model::BitsetEventTriggerCondition* bitset_;
-} _AgentEventTrigger_default_instance_;
-class PresenceEventTriggerConditionDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PresenceEventTriggerCondition> _instance;
-} _PresenceEventTriggerCondition_default_instance_;
-class ThresholdEventTriggerConditionDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ThresholdEventTriggerCondition> _instance;
-} _ThresholdEventTriggerCondition_default_instance_;
-class RegexEventTriggerConditionDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RegexEventTriggerCondition> _instance;
-} _RegexEventTriggerCondition_default_instance_;
-class BitsetEventTriggerConditionDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BitsetEventTriggerCondition> _instance;
-} _BitsetEventTriggerCondition_default_instance_;
-class BitsetConditionDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BitsetCondition> _instance;
-} _BitsetCondition_default_instance_;
+constexpr Event_TagsEntry_DoNotUse::Event_TagsEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct Event_TagsEntry_DoNotUseDefaultTypeInternal {
+  constexpr Event_TagsEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~Event_TagsEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    Event_TagsEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Event_TagsEntry_DoNotUseDefaultTypeInternal _Event_TagsEntry_DoNotUse_default_instance_;
+constexpr Event::Event(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : tags_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , stream_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , stream_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , timestamp_(PROTOBUF_LONGLONG(0))
+  , notification_enabled_(false)
+  , severity_(0)
+
+  , end_timestamp_(PROTOBUF_LONGLONG(0)){}
+struct EventDefaultTypeInternal {
+  constexpr EventDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~EventDefaultTypeInternal() {}
+  union {
+    Event _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EventDefaultTypeInternal _Event_default_instance_;
+constexpr AgentEventConfiguration::AgentEventConfiguration(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : event_triggers_()
+  , last_updated_(PROTOBUF_LONGLONG(0)){}
+struct AgentEventConfigurationDefaultTypeInternal {
+  constexpr AgentEventConfigurationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AgentEventConfigurationDefaultTypeInternal() {}
+  union {
+    AgentEventConfiguration _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AgentEventConfigurationDefaultTypeInternal _AgentEventConfiguration_default_instance_;
+constexpr AgentEventTrigger::AgentEventTrigger(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , stream_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , interval_(PROTOBUF_LONGLONG(0))
+  , _oneof_case_{}{}
+struct AgentEventTriggerDefaultTypeInternal {
+  constexpr AgentEventTriggerDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AgentEventTriggerDefaultTypeInternal() {}
+  union {
+    AgentEventTrigger _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AgentEventTriggerDefaultTypeInternal _AgentEventTrigger_default_instance_;
+constexpr PresenceEventTriggerCondition::PresenceEventTriggerCondition(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct PresenceEventTriggerConditionDefaultTypeInternal {
+  constexpr PresenceEventTriggerConditionDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PresenceEventTriggerConditionDefaultTypeInternal() {}
+  union {
+    PresenceEventTriggerCondition _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PresenceEventTriggerConditionDefaultTypeInternal _PresenceEventTriggerCondition_default_instance_;
+constexpr ThresholdEventTriggerCondition::ThresholdEventTriggerCondition(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : value_(0)
+  , operator__(0)
+{}
+struct ThresholdEventTriggerConditionDefaultTypeInternal {
+  constexpr ThresholdEventTriggerConditionDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ThresholdEventTriggerConditionDefaultTypeInternal() {}
+  union {
+    ThresholdEventTriggerCondition _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ThresholdEventTriggerConditionDefaultTypeInternal _ThresholdEventTriggerCondition_default_instance_;
+constexpr RegexEventTriggerCondition::RegexEventTriggerCondition(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct RegexEventTriggerConditionDefaultTypeInternal {
+  constexpr RegexEventTriggerConditionDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RegexEventTriggerConditionDefaultTypeInternal() {}
+  union {
+    RegexEventTriggerCondition _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RegexEventTriggerConditionDefaultTypeInternal _RegexEventTriggerCondition_default_instance_;
+constexpr BitsetEventTriggerCondition::BitsetEventTriggerCondition(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : bit_conditions_()
+  , operator__(0)
+{}
+struct BitsetEventTriggerConditionDefaultTypeInternal {
+  constexpr BitsetEventTriggerConditionDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BitsetEventTriggerConditionDefaultTypeInternal() {}
+  union {
+    BitsetEventTriggerCondition _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BitsetEventTriggerConditionDefaultTypeInternal _BitsetEventTriggerCondition_default_instance_;
+constexpr BitsetCondition::BitsetCondition(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , true__(false)
+  , false__(false){}
+struct BitsetConditionDefaultTypeInternal {
+  constexpr BitsetConditionDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BitsetConditionDefaultTypeInternal() {}
+  union {
+    BitsetCondition _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BitsetConditionDefaultTypeInternal _BitsetCondition_default_instance_;
 }  // namespace model
 }  // namespace v1
-static void InitDefaultsscc_info_AgentEventConfiguration_protos_2fmodel_2fv1_2fevent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_AgentEventConfiguration_default_instance_;
-    new (ptr) ::v1::model::AgentEventConfiguration();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::AgentEventConfiguration::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AgentEventConfiguration_protos_2fmodel_2fv1_2fevent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_AgentEventConfiguration_protos_2fmodel_2fv1_2fevent_2eproto}, {
-      &scc_info_AgentEventTrigger_protos_2fmodel_2fv1_2fevent_2eproto.base,}};
-
-static void InitDefaultsscc_info_AgentEventTrigger_protos_2fmodel_2fv1_2fevent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_AgentEventTrigger_default_instance_;
-    new (ptr) ::v1::model::AgentEventTrigger();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::AgentEventTrigger::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_AgentEventTrigger_protos_2fmodel_2fv1_2fevent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_AgentEventTrigger_protos_2fmodel_2fv1_2fevent_2eproto}, {
-      &scc_info_PresenceEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base,
-      &scc_info_ThresholdEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base,
-      &scc_info_RegexEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base,
-      &scc_info_BitsetEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base,}};
-
-static void InitDefaultsscc_info_BitsetCondition_protos_2fmodel_2fv1_2fevent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_BitsetCondition_default_instance_;
-    new (ptr) ::v1::model::BitsetCondition();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::BitsetCondition::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BitsetCondition_protos_2fmodel_2fv1_2fevent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BitsetCondition_protos_2fmodel_2fv1_2fevent_2eproto}, {}};
-
-static void InitDefaultsscc_info_BitsetEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_BitsetEventTriggerCondition_default_instance_;
-    new (ptr) ::v1::model::BitsetEventTriggerCondition();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::BitsetEventTriggerCondition::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_BitsetEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_BitsetEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto}, {
-      &scc_info_BitsetCondition_protos_2fmodel_2fv1_2fevent_2eproto.base,}};
-
-static void InitDefaultsscc_info_Event_protos_2fmodel_2fv1_2fevent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Event_default_instance_;
-    new (ptr) ::v1::model::Event();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Event::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Event_protos_2fmodel_2fv1_2fevent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Event_protos_2fmodel_2fv1_2fevent_2eproto}, {
-      &scc_info_Event_TagsEntry_DoNotUse_protos_2fmodel_2fv1_2fevent_2eproto.base,}};
-
-static void InitDefaultsscc_info_Event_TagsEntry_DoNotUse_protos_2fmodel_2fv1_2fevent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Event_TagsEntry_DoNotUse_default_instance_;
-    new (ptr) ::v1::model::Event_TagsEntry_DoNotUse();
-  }
-  ::v1::model::Event_TagsEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Event_TagsEntry_DoNotUse_protos_2fmodel_2fv1_2fevent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Event_TagsEntry_DoNotUse_protos_2fmodel_2fv1_2fevent_2eproto}, {}};
-
-static void InitDefaultsscc_info_PresenceEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_PresenceEventTriggerCondition_default_instance_;
-    new (ptr) ::v1::model::PresenceEventTriggerCondition();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::PresenceEventTriggerCondition::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PresenceEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PresenceEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto}, {}};
-
-static void InitDefaultsscc_info_RegexEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_RegexEventTriggerCondition_default_instance_;
-    new (ptr) ::v1::model::RegexEventTriggerCondition();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::RegexEventTriggerCondition::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RegexEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RegexEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto}, {}};
-
-static void InitDefaultsscc_info_ThresholdEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_ThresholdEventTriggerCondition_default_instance_;
-    new (ptr) ::v1::model::ThresholdEventTriggerCondition();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::ThresholdEventTriggerCondition::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ThresholdEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ThresholdEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[9];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto[3];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fevent_2eproto = nullptr;
@@ -239,10 +186,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fevent_2e
   PROTOBUF_FIELD_OFFSET(::v1::model::AgentEventTrigger, id_),
   PROTOBUF_FIELD_OFFSET(::v1::model::AgentEventTrigger, stream_),
   PROTOBUF_FIELD_OFFSET(::v1::model::AgentEventTrigger, interval_),
-  offsetof(::v1::model::AgentEventTriggerDefaultTypeInternal, presence_),
-  offsetof(::v1::model::AgentEventTriggerDefaultTypeInternal, threshold_),
-  offsetof(::v1::model::AgentEventTriggerDefaultTypeInternal, regex_),
-  offsetof(::v1::model::AgentEventTriggerDefaultTypeInternal, bitset_),
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::AgentEventTrigger, condition_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::PresenceEventTriggerCondition, _internal_metadata_),
@@ -344,29 +291,21 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto[] PROTO
   "B+Z)github.com/FormantIO/genproto/go/v1/"
   "modelb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_sccs[9] = {
-  &scc_info_AgentEventConfiguration_protos_2fmodel_2fv1_2fevent_2eproto.base,
-  &scc_info_AgentEventTrigger_protos_2fmodel_2fv1_2fevent_2eproto.base,
-  &scc_info_BitsetCondition_protos_2fmodel_2fv1_2fevent_2eproto.base,
-  &scc_info_BitsetEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base,
-  &scc_info_Event_protos_2fmodel_2fv1_2fevent_2eproto.base,
-  &scc_info_Event_TagsEntry_DoNotUse_protos_2fmodel_2fv1_2fevent_2eproto.base,
-  &scc_info_PresenceEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base,
-  &scc_info_RegexEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base,
-  &scc_info_ThresholdEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto, "protos/model/v1/event.proto", 1573,
-  &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_deps, 9, 0,
+  false, false, 1573, descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto, "protos/model/v1/event.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once, nullptr, 0, 9,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fevent_2eproto::offsets,
-  file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto, 9, file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fevent_2eproto,
+  file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fevent_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto);
+  return descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto.file_level_metadata[index];
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_protos_2fmodel_2fv1_2fevent_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2fevent_2eproto(&descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto);
 namespace v1 {
 namespace model {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Severity_descriptor() {
@@ -437,8 +376,6 @@ void Event_TagsEntry_DoNotUse::MergeFrom(
 
 // ===================================================================
 
-void Event::InitAsDefaultInstance() {
-}
 class Event::_Internal {
  public:
 };
@@ -456,17 +393,17 @@ Event::Event(const Event& from)
   tags_.MergeFrom(from.tags_);
   message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_message().empty()) {
-    message_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_message(),
+    message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_message(), 
       GetArena());
   }
   stream_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_stream_name().empty()) {
-    stream_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_stream_name(),
+    stream_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_stream_name(), 
       GetArena());
   }
   stream_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_stream_type().empty()) {
-    stream_type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_stream_type(),
+    stream_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_stream_type(), 
       GetArena());
   }
   ::memcpy(&timestamp_, &from.timestamp_,
@@ -476,13 +413,13 @@ Event::Event(const Event& from)
 }
 
 void Event::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Event_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  stream_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  stream_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&end_timestamp_) -
-      reinterpret_cast<char*>(&timestamp_)) + sizeof(end_timestamp_));
+message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+stream_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+stream_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&timestamp_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&end_timestamp_) -
+    reinterpret_cast<char*>(&timestamp_)) + sizeof(end_timestamp_));
 }
 
 Event::~Event() {
@@ -507,11 +444,6 @@ void Event::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Event::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Event& Event::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Event_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Event::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Event)
@@ -520,9 +452,9 @@ void Event::Clear() {
   (void) cached_has_bits;
 
   tags_.Clear();
-  message_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  stream_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  stream_type_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  message_.ClearToEmpty();
+  stream_name_.ClearToEmpty();
+  stream_type_.ClearToEmpty();
   ::memset(&timestamp_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&end_timestamp_) -
       reinterpret_cast<char*>(&timestamp_)) + sizeof(end_timestamp_));
@@ -531,20 +463,19 @@ void Event::Clear() {
 
 const char* Event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int64 timestamp = 1[json_name = "timestamp"];
+      // int64 timestamp = 1 [json_name = "timestamp"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string message = 2[json_name = "message"];
+      // string message = 2 [json_name = "message"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_message();
@@ -553,7 +484,7 @@ const char* Event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string stream_name = 3[json_name = "streamName"];
+      // string stream_name = 3 [json_name = "streamName"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_stream_name();
@@ -562,7 +493,7 @@ const char* Event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string stream_type = 4[json_name = "streamType"];
+      // string stream_type = 4 [json_name = "streamType"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_stream_type();
@@ -571,14 +502,14 @@ const char* Event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool notification_enabled = 5[json_name = "notificationEnabled"];
+      // bool notification_enabled = 5 [json_name = "notificationEnabled"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           notification_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // map<string, string> tags = 6[json_name = "tags"];
+      // map<string, string> tags = 6 [json_name = "tags"];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr -= 1;
@@ -590,14 +521,14 @@ const char* Event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
         } else goto handle_unusual;
         continue;
-      // int64 end_timestamp = 8[json_name = "endTimestamp"];
+      // int64 end_timestamp = 8 [json_name = "endTimestamp"];
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           end_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Severity severity = 9[json_name = "severity"];
+      // .v1.model.Severity severity = 9 [json_name = "severity"];
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -633,13 +564,13 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 timestamp = 1[json_name = "timestamp"];
+  // int64 timestamp = 1 [json_name = "timestamp"];
   if (this->timestamp() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_timestamp(), target);
   }
 
-  // string message = 2[json_name = "message"];
+  // string message = 2 [json_name = "message"];
   if (this->message().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
@@ -649,7 +580,7 @@ failure:
         2, this->_internal_message(), target);
   }
 
-  // string stream_name = 3[json_name = "streamName"];
+  // string stream_name = 3 [json_name = "streamName"];
   if (this->stream_name().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_stream_name().data(), static_cast<int>(this->_internal_stream_name().length()),
@@ -659,7 +590,7 @@ failure:
         3, this->_internal_stream_name(), target);
   }
 
-  // string stream_type = 4[json_name = "streamType"];
+  // string stream_type = 4 [json_name = "streamType"];
   if (this->stream_type().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_stream_type().data(), static_cast<int>(this->_internal_stream_type().length()),
@@ -669,13 +600,13 @@ failure:
         4, this->_internal_stream_type(), target);
   }
 
-  // bool notification_enabled = 5[json_name = "notificationEnabled"];
+  // bool notification_enabled = 5 [json_name = "notificationEnabled"];
   if (this->notification_enabled() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_notification_enabled(), target);
   }
 
-  // map<string, string> tags = 6[json_name = "tags"];
+  // map<string, string> tags = 6 [json_name = "tags"];
   if (!this->_internal_tags().empty()) {
     typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
         ConstPtr;
@@ -720,13 +651,13 @@ failure:
     }
   }
 
-  // int64 end_timestamp = 8[json_name = "endTimestamp"];
+  // int64 end_timestamp = 8 [json_name = "endTimestamp"];
   if (this->end_timestamp() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(8, this->_internal_end_timestamp(), target);
   }
 
-  // .v1.model.Severity severity = 9[json_name = "severity"];
+  // .v1.model.Severity severity = 9 [json_name = "severity"];
   if (this->severity() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -749,7 +680,7 @@ size_t Event::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> tags = 6[json_name = "tags"];
+  // map<string, string> tags = 6 [json_name = "tags"];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_tags_size());
   for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
@@ -758,46 +689,46 @@ size_t Event::ByteSizeLong() const {
     total_size += Event_TagsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
-  // string message = 2[json_name = "message"];
+  // string message = 2 [json_name = "message"];
   if (this->message().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_message());
   }
 
-  // string stream_name = 3[json_name = "streamName"];
+  // string stream_name = 3 [json_name = "streamName"];
   if (this->stream_name().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_stream_name());
   }
 
-  // string stream_type = 4[json_name = "streamType"];
+  // string stream_type = 4 [json_name = "streamType"];
   if (this->stream_type().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_stream_type());
   }
 
-  // int64 timestamp = 1[json_name = "timestamp"];
+  // int64 timestamp = 1 [json_name = "timestamp"];
   if (this->timestamp() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
         this->_internal_timestamp());
   }
 
-  // bool notification_enabled = 5[json_name = "notificationEnabled"];
+  // bool notification_enabled = 5 [json_name = "notificationEnabled"];
   if (this->notification_enabled() != 0) {
     total_size += 1 + 1;
   }
 
-  // .v1.model.Severity severity = 9[json_name = "severity"];
+  // .v1.model.Severity severity = 9 [json_name = "severity"];
   if (this->severity() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_severity());
   }
 
-  // int64 end_timestamp = 8[json_name = "endTimestamp"];
+  // int64 end_timestamp = 8 [json_name = "endTimestamp"];
   if (this->end_timestamp() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
@@ -899,8 +830,6 @@ void Event::InternalSwap(Event* other) {
 
 // ===================================================================
 
-void AgentEventConfiguration::InitAsDefaultInstance() {
-}
 class AgentEventConfiguration::_Internal {
  public:
 };
@@ -921,8 +850,7 @@ AgentEventConfiguration::AgentEventConfiguration(const AgentEventConfiguration& 
 }
 
 void AgentEventConfiguration::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AgentEventConfiguration_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  last_updated_ = PROTOBUF_LONGLONG(0);
+last_updated_ = PROTOBUF_LONGLONG(0);
 }
 
 AgentEventConfiguration::~AgentEventConfiguration() {
@@ -944,11 +872,6 @@ void AgentEventConfiguration::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*)
 void AgentEventConfiguration::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AgentEventConfiguration& AgentEventConfiguration::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AgentEventConfiguration_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AgentEventConfiguration::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.AgentEventConfiguration)
@@ -963,13 +886,12 @@ void AgentEventConfiguration::Clear() {
 
 const char* AgentEventConfiguration::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .v1.model.AgentEventTrigger event_triggers = 1[json_name = "eventTriggers"];
+      // repeated .v1.model.AgentEventTrigger event_triggers = 1 [json_name = "eventTriggers"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -981,7 +903,7 @@ const char* AgentEventConfiguration::_InternalParse(const char* ptr, ::PROTOBUF_
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
-      // int64 last_updated = 2[json_name = "lastUpdated"];
+      // int64 last_updated = 2 [json_name = "lastUpdated"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           last_updated_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1016,7 +938,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .v1.model.AgentEventTrigger event_triggers = 1[json_name = "eventTriggers"];
+  // repeated .v1.model.AgentEventTrigger event_triggers = 1 [json_name = "eventTriggers"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_event_triggers_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1024,7 +946,7 @@ failure:
       InternalWriteMessage(1, this->_internal_event_triggers(i), target, stream);
   }
 
-  // int64 last_updated = 2[json_name = "lastUpdated"];
+  // int64 last_updated = 2 [json_name = "lastUpdated"];
   if (this->last_updated() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_last_updated(), target);
@@ -1046,14 +968,14 @@ size_t AgentEventConfiguration::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .v1.model.AgentEventTrigger event_triggers = 1[json_name = "eventTriggers"];
+  // repeated .v1.model.AgentEventTrigger event_triggers = 1 [json_name = "eventTriggers"];
   total_size += 1UL * this->_internal_event_triggers_size();
   for (const auto& msg : this->event_triggers_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // int64 last_updated = 2[json_name = "lastUpdated"];
+  // int64 last_updated = 2 [json_name = "lastUpdated"];
   if (this->last_updated() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
@@ -1129,16 +1051,6 @@ void AgentEventConfiguration::InternalSwap(AgentEventConfiguration* other) {
 
 // ===================================================================
 
-void AgentEventTrigger::InitAsDefaultInstance() {
-  ::v1::model::_AgentEventTrigger_default_instance_.presence_ = const_cast< ::v1::model::PresenceEventTriggerCondition*>(
-      ::v1::model::PresenceEventTriggerCondition::internal_default_instance());
-  ::v1::model::_AgentEventTrigger_default_instance_.threshold_ = const_cast< ::v1::model::ThresholdEventTriggerCondition*>(
-      ::v1::model::ThresholdEventTriggerCondition::internal_default_instance());
-  ::v1::model::_AgentEventTrigger_default_instance_.regex_ = const_cast< ::v1::model::RegexEventTriggerCondition*>(
-      ::v1::model::RegexEventTriggerCondition::internal_default_instance());
-  ::v1::model::_AgentEventTrigger_default_instance_.bitset_ = const_cast< ::v1::model::BitsetEventTriggerCondition*>(
-      ::v1::model::BitsetEventTriggerCondition::internal_default_instance());
-}
 class AgentEventTrigger::_Internal {
  public:
   static const ::v1::model::PresenceEventTriggerCondition& presence(const AgentEventTrigger* msg);
@@ -1234,12 +1146,12 @@ AgentEventTrigger::AgentEventTrigger(const AgentEventTrigger& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_id(),
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArena());
   }
   stream_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_stream().empty()) {
-    stream_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_stream(),
+    stream_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_stream(), 
       GetArena());
   }
   interval_ = from.interval_;
@@ -1269,11 +1181,10 @@ AgentEventTrigger::AgentEventTrigger(const AgentEventTrigger& from)
 }
 
 void AgentEventTrigger::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AgentEventTrigger_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  stream_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  interval_ = PROTOBUF_LONGLONG(0);
-  clear_has_condition();
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+stream_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+interval_ = PROTOBUF_LONGLONG(0);
+clear_has_condition();
 }
 
 AgentEventTrigger::~AgentEventTrigger() {
@@ -1300,11 +1211,6 @@ void AgentEventTrigger::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void AgentEventTrigger::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AgentEventTrigger& AgentEventTrigger::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AgentEventTrigger_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AgentEventTrigger::clear_condition() {
 // @@protoc_insertion_point(one_of_clear_start:v1.model.AgentEventTrigger)
@@ -1347,8 +1253,8 @@ void AgentEventTrigger::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  stream_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  id_.ClearToEmpty();
+  stream_.ClearToEmpty();
   interval_ = PROTOBUF_LONGLONG(0);
   clear_condition();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1356,13 +1262,12 @@ void AgentEventTrigger::Clear() {
 
 const char* AgentEventTrigger::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string id = 1[json_name = "id"];
+      // string id = 1 [json_name = "id"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_id();
@@ -1371,7 +1276,7 @@ const char* AgentEventTrigger::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string stream = 2[json_name = "stream"];
+      // string stream = 2 [json_name = "stream"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_stream();
@@ -1380,35 +1285,35 @@ const char* AgentEventTrigger::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 interval = 3[json_name = "interval"];
+      // int64 interval = 3 [json_name = "interval"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           interval_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.PresenceEventTriggerCondition presence = 4[json_name = "presence"];
+      // .v1.model.PresenceEventTriggerCondition presence = 4 [json_name = "presence"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_presence(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.ThresholdEventTriggerCondition threshold = 5[json_name = "threshold"];
+      // .v1.model.ThresholdEventTriggerCondition threshold = 5 [json_name = "threshold"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_threshold(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.RegexEventTriggerCondition regex = 6[json_name = "regex"];
+      // .v1.model.RegexEventTriggerCondition regex = 6 [json_name = "regex"];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_regex(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.BitsetEventTriggerCondition bitset = 7[json_name = "bitset"];
+      // .v1.model.BitsetEventTriggerCondition bitset = 7 [json_name = "bitset"];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           ptr = ctx->ParseMessage(_internal_mutable_bitset(), ptr);
@@ -1443,7 +1348,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1[json_name = "id"];
+  // string id = 1 [json_name = "id"];
   if (this->id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
@@ -1453,7 +1358,7 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // string stream = 2[json_name = "stream"];
+  // string stream = 2 [json_name = "stream"];
   if (this->stream().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_stream().data(), static_cast<int>(this->_internal_stream().length()),
@@ -1463,13 +1368,13 @@ failure:
         2, this->_internal_stream(), target);
   }
 
-  // int64 interval = 3[json_name = "interval"];
+  // int64 interval = 3 [json_name = "interval"];
   if (this->interval() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_interval(), target);
   }
 
-  // .v1.model.PresenceEventTriggerCondition presence = 4[json_name = "presence"];
+  // .v1.model.PresenceEventTriggerCondition presence = 4 [json_name = "presence"];
   if (_internal_has_presence()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1477,7 +1382,7 @@ failure:
         4, _Internal::presence(this), target, stream);
   }
 
-  // .v1.model.ThresholdEventTriggerCondition threshold = 5[json_name = "threshold"];
+  // .v1.model.ThresholdEventTriggerCondition threshold = 5 [json_name = "threshold"];
   if (_internal_has_threshold()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1485,7 +1390,7 @@ failure:
         5, _Internal::threshold(this), target, stream);
   }
 
-  // .v1.model.RegexEventTriggerCondition regex = 6[json_name = "regex"];
+  // .v1.model.RegexEventTriggerCondition regex = 6 [json_name = "regex"];
   if (_internal_has_regex()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1493,7 +1398,7 @@ failure:
         6, _Internal::regex(this), target, stream);
   }
 
-  // .v1.model.BitsetEventTriggerCondition bitset = 7[json_name = "bitset"];
+  // .v1.model.BitsetEventTriggerCondition bitset = 7 [json_name = "bitset"];
   if (_internal_has_bitset()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1517,21 +1422,21 @@ size_t AgentEventTrigger::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1[json_name = "id"];
+  // string id = 1 [json_name = "id"];
   if (this->id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_id());
   }
 
-  // string stream = 2[json_name = "stream"];
+  // string stream = 2 [json_name = "stream"];
   if (this->stream().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_stream());
   }
 
-  // int64 interval = 3[json_name = "interval"];
+  // int64 interval = 3 [json_name = "interval"];
   if (this->interval() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
@@ -1539,28 +1444,28 @@ size_t AgentEventTrigger::ByteSizeLong() const {
   }
 
   switch (condition_case()) {
-    // .v1.model.PresenceEventTriggerCondition presence = 4[json_name = "presence"];
+    // .v1.model.PresenceEventTriggerCondition presence = 4 [json_name = "presence"];
     case kPresence: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *condition_.presence_);
       break;
     }
-    // .v1.model.ThresholdEventTriggerCondition threshold = 5[json_name = "threshold"];
+    // .v1.model.ThresholdEventTriggerCondition threshold = 5 [json_name = "threshold"];
     case kThreshold: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *condition_.threshold_);
       break;
     }
-    // .v1.model.RegexEventTriggerCondition regex = 6[json_name = "regex"];
+    // .v1.model.RegexEventTriggerCondition regex = 6 [json_name = "regex"];
     case kRegex: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *condition_.regex_);
       break;
     }
-    // .v1.model.BitsetEventTriggerCondition bitset = 7[json_name = "bitset"];
+    // .v1.model.BitsetEventTriggerCondition bitset = 7 [json_name = "bitset"];
     case kBitset: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1669,8 +1574,6 @@ void AgentEventTrigger::InternalSwap(AgentEventTrigger* other) {
 
 // ===================================================================
 
-void PresenceEventTriggerCondition::InitAsDefaultInstance() {
-}
 class PresenceEventTriggerCondition::_Internal {
  public:
 };
@@ -1709,11 +1612,6 @@ void PresenceEventTriggerCondition::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::A
 void PresenceEventTriggerCondition::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PresenceEventTriggerCondition& PresenceEventTriggerCondition::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PresenceEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PresenceEventTriggerCondition::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.PresenceEventTriggerCondition)
@@ -1726,7 +1624,6 @@ void PresenceEventTriggerCondition::Clear() {
 
 const char* PresenceEventTriggerCondition::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1834,8 +1731,6 @@ void PresenceEventTriggerCondition::InternalSwap(PresenceEventTriggerCondition* 
 
 // ===================================================================
 
-void ThresholdEventTriggerCondition::InitAsDefaultInstance() {
-}
 class ThresholdEventTriggerCondition::_Internal {
  public:
 };
@@ -1856,9 +1751,10 @@ ThresholdEventTriggerCondition::ThresholdEventTriggerCondition(const ThresholdEv
 }
 
 void ThresholdEventTriggerCondition::SharedCtor() {
-  ::memset(&value_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&operator__) -
-      reinterpret_cast<char*>(&value_)) + sizeof(operator__));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&value_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&operator__) -
+    reinterpret_cast<char*>(&value_)) + sizeof(operator__));
 }
 
 ThresholdEventTriggerCondition::~ThresholdEventTriggerCondition() {
@@ -1880,11 +1776,6 @@ void ThresholdEventTriggerCondition::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::
 void ThresholdEventTriggerCondition::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ThresholdEventTriggerCondition& ThresholdEventTriggerCondition::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ThresholdEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ThresholdEventTriggerCondition::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.ThresholdEventTriggerCondition)
@@ -1900,20 +1791,19 @@ void ThresholdEventTriggerCondition::Clear() {
 
 const char* ThresholdEventTriggerCondition::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double value = 1[json_name = "value"];
+      // double value = 1 [json_name = "value"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
           value_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // .v1.model.ThresholdOperator operator = 2[json_name = "operator"];
+      // .v1.model.ThresholdOperator operator = 2 [json_name = "operator"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1949,13 +1839,13 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double value = 1[json_name = "value"];
+  // double value = 1 [json_name = "value"];
   if (!(this->value() <= 0 && this->value() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_value(), target);
   }
 
-  // .v1.model.ThresholdOperator operator = 2[json_name = "operator"];
+  // .v1.model.ThresholdOperator operator = 2 [json_name = "operator"];
   if (this->operator_() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -1978,12 +1868,12 @@ size_t ThresholdEventTriggerCondition::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double value = 1[json_name = "value"];
+  // double value = 1 [json_name = "value"];
   if (!(this->value() <= 0 && this->value() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // .v1.model.ThresholdOperator operator = 2[json_name = "operator"];
+  // .v1.model.ThresholdOperator operator = 2 [json_name = "operator"];
   if (this->operator_() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_operator_());
@@ -2064,8 +1954,6 @@ void ThresholdEventTriggerCondition::InternalSwap(ThresholdEventTriggerCondition
 
 // ===================================================================
 
-void RegexEventTriggerCondition::InitAsDefaultInstance() {
-}
 class RegexEventTriggerCondition::_Internal {
  public:
 };
@@ -2081,15 +1969,14 @@ RegexEventTriggerCondition::RegexEventTriggerCondition(const RegexEventTriggerCo
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_value().empty()) {
-    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
+    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:v1.model.RegexEventTriggerCondition)
 }
 
 void RegexEventTriggerCondition::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RegexEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 RegexEventTriggerCondition::~RegexEventTriggerCondition() {
@@ -2112,11 +1999,6 @@ void RegexEventTriggerCondition::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Aren
 void RegexEventTriggerCondition::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RegexEventTriggerCondition& RegexEventTriggerCondition::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RegexEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RegexEventTriggerCondition::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.RegexEventTriggerCondition)
@@ -2124,19 +2006,18 @@ void RegexEventTriggerCondition::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* RegexEventTriggerCondition::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string value = 1[json_name = "value"];
+      // string value = 1 [json_name = "value"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_value();
@@ -2173,7 +2054,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string value = 1[json_name = "value"];
+  // string value = 1 [json_name = "value"];
   if (this->value().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
@@ -2199,7 +2080,7 @@ size_t RegexEventTriggerCondition::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string value = 1[json_name = "value"];
+  // string value = 1 [json_name = "value"];
   if (this->value().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -2273,8 +2154,6 @@ void RegexEventTriggerCondition::InternalSwap(RegexEventTriggerCondition* other)
 
 // ===================================================================
 
-void BitsetEventTriggerCondition::InitAsDefaultInstance() {
-}
 class BitsetEventTriggerCondition::_Internal {
  public:
 };
@@ -2295,8 +2174,7 @@ BitsetEventTriggerCondition::BitsetEventTriggerCondition(const BitsetEventTrigge
 }
 
 void BitsetEventTriggerCondition::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BitsetEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  operator__ = 0;
+operator__ = 0;
 }
 
 BitsetEventTriggerCondition::~BitsetEventTriggerCondition() {
@@ -2318,11 +2196,6 @@ void BitsetEventTriggerCondition::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Are
 void BitsetEventTriggerCondition::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const BitsetEventTriggerCondition& BitsetEventTriggerCondition::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BitsetEventTriggerCondition_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void BitsetEventTriggerCondition::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.BitsetEventTriggerCondition)
@@ -2337,13 +2210,12 @@ void BitsetEventTriggerCondition::Clear() {
 
 const char* BitsetEventTriggerCondition::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .v1.model.BitsetCondition bit_conditions = 1[json_name = "bitConditions"];
+      // repeated .v1.model.BitsetCondition bit_conditions = 1 [json_name = "bitConditions"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -2355,7 +2227,7 @@ const char* BitsetEventTriggerCondition::_InternalParse(const char* ptr, ::PROTO
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
-      // .v1.model.BitsetOperator operator = 2[json_name = "operator"];
+      // .v1.model.BitsetOperator operator = 2 [json_name = "operator"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -2391,7 +2263,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .v1.model.BitsetCondition bit_conditions = 1[json_name = "bitConditions"];
+  // repeated .v1.model.BitsetCondition bit_conditions = 1 [json_name = "bitConditions"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_bit_conditions_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -2399,7 +2271,7 @@ failure:
       InternalWriteMessage(1, this->_internal_bit_conditions(i), target, stream);
   }
 
-  // .v1.model.BitsetOperator operator = 2[json_name = "operator"];
+  // .v1.model.BitsetOperator operator = 2 [json_name = "operator"];
   if (this->operator_() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -2422,14 +2294,14 @@ size_t BitsetEventTriggerCondition::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .v1.model.BitsetCondition bit_conditions = 1[json_name = "bitConditions"];
+  // repeated .v1.model.BitsetCondition bit_conditions = 1 [json_name = "bitConditions"];
   total_size += 1UL * this->_internal_bit_conditions_size();
   for (const auto& msg : this->bit_conditions_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // .v1.model.BitsetOperator operator = 2[json_name = "operator"];
+  // .v1.model.BitsetOperator operator = 2 [json_name = "operator"];
   if (this->operator_() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_operator_());
@@ -2504,8 +2376,6 @@ void BitsetEventTriggerCondition::InternalSwap(BitsetEventTriggerCondition* othe
 
 // ===================================================================
 
-void BitsetCondition::InitAsDefaultInstance() {
-}
 class BitsetCondition::_Internal {
  public:
 };
@@ -2521,7 +2391,7 @@ BitsetCondition::BitsetCondition(const BitsetCondition& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+    key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
       GetArena());
   }
   ::memcpy(&true__, &from.true__,
@@ -2531,11 +2401,11 @@ BitsetCondition::BitsetCondition(const BitsetCondition& from)
 }
 
 void BitsetCondition::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BitsetCondition_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&true__, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&false__) -
-      reinterpret_cast<char*>(&true__)) + sizeof(false__));
+key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&true__) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&false__) -
+    reinterpret_cast<char*>(&true__)) + sizeof(false__));
 }
 
 BitsetCondition::~BitsetCondition() {
@@ -2558,11 +2428,6 @@ void BitsetCondition::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void BitsetCondition::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const BitsetCondition& BitsetCondition::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BitsetCondition_protos_2fmodel_2fv1_2fevent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void BitsetCondition::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.BitsetCondition)
@@ -2570,7 +2435,7 @@ void BitsetCondition::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  key_.ClearToEmpty();
   ::memset(&true__, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&false__) -
       reinterpret_cast<char*>(&true__)) + sizeof(false__));
@@ -2579,13 +2444,12 @@ void BitsetCondition::Clear() {
 
 const char* BitsetCondition::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string key = 1[json_name = "key"];
+      // string key = 1 [json_name = "key"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_key();
@@ -2594,14 +2458,14 @@ const char* BitsetCondition::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool true = 2[json_name = "true"];
+      // bool true = 2 [json_name = "true"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           true__ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool false = 3[json_name = "false"];
+      // bool false = 3 [json_name = "false"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           false__ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -2636,7 +2500,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string key = 1[json_name = "key"];
+  // string key = 1 [json_name = "key"];
   if (this->key().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_key().data(), static_cast<int>(this->_internal_key().length()),
@@ -2646,13 +2510,13 @@ failure:
         1, this->_internal_key(), target);
   }
 
-  // bool true = 2[json_name = "true"];
+  // bool true = 2 [json_name = "true"];
   if (this->true_() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_true_(), target);
   }
 
-  // bool false = 3[json_name = "false"];
+  // bool false = 3 [json_name = "false"];
   if (this->false_() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_false_(), target);
@@ -2674,19 +2538,19 @@ size_t BitsetCondition::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string key = 1[json_name = "key"];
+  // string key = 1 [json_name = "key"];
   if (this->key().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_key());
   }
 
-  // bool true = 2[json_name = "true"];
+  // bool true = 2 [json_name = "true"];
   if (this->true_() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool false = 3[json_name = "false"];
+  // bool false = 3 [json_name = "false"];
   if (this->false_() != 0) {
     total_size += 1 + 1;
   }

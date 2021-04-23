@@ -14,46 +14,40 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace v1 {
 namespace model {
-class HealthDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Health> _instance;
-} _Health_default_instance_;
-class BatteryDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Battery> _instance;
-} _Battery_default_instance_;
+constexpr Health::Health(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(0)
+{}
+struct HealthDefaultTypeInternal {
+  constexpr HealthDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~HealthDefaultTypeInternal() {}
+  union {
+    Health _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HealthDefaultTypeInternal _Health_default_instance_;
+constexpr Battery::Battery(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : percentage_(0)
+  , voltage_(0)
+  , current_(0)
+  , charge_(0){}
+struct BatteryDefaultTypeInternal {
+  constexpr BatteryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BatteryDefaultTypeInternal() {}
+  union {
+    Battery _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BatteryDefaultTypeInternal _Battery_default_instance_;
 }  // namespace model
 }  // namespace v1
-static void InitDefaultsscc_info_Battery_protos_2fmodel_2fv1_2fhealth_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Battery_default_instance_;
-    new (ptr) ::v1::model::Battery();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Battery::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Battery_protos_2fmodel_2fv1_2fhealth_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Battery_protos_2fmodel_2fv1_2fhealth_2eproto}, {}};
-
-static void InitDefaultsscc_info_Health_protos_2fmodel_2fv1_2fhealth_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Health_default_instance_;
-    new (ptr) ::v1::model::Health();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Health::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Health_protos_2fmodel_2fv1_2fhealth_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Health_protos_2fmodel_2fv1_2fhealth_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto[2];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto = nullptr;
@@ -97,22 +91,21 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto[] PROT
   "ithub.com/FormantIO/genproto/go/v1/model"
   "b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_sccs[2] = {
-  &scc_info_Battery_protos_2fmodel_2fv1_2fhealth_2eproto.base,
-  &scc_info_Health_protos_2fmodel_2fv1_2fhealth_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto, "protos/model/v1/health.proto", 368,
-  &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_deps, 2, 0,
+  false, false, 368, descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto, "protos/model/v1/health.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fhealth_2eproto::offsets,
-  file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto, 2, file_level_enum_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto,
+  file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto);
+  return descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto.file_level_metadata[index];
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_protos_2fmodel_2fv1_2fhealth_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2fhealth_2eproto(&descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto);
 namespace v1 {
 namespace model {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* HealthStatus_descriptor() {
@@ -134,8 +127,6 @@ bool HealthStatus_IsValid(int value) {
 
 // ===================================================================
 
-void Health::InitAsDefaultInstance() {
-}
 class Health::_Internal {
  public:
 };
@@ -154,7 +145,7 @@ Health::Health(const Health& from)
 }
 
 void Health::SharedCtor() {
-  status_ = 0;
+status_ = 0;
 }
 
 Health::~Health() {
@@ -176,11 +167,6 @@ void Health::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Health::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Health& Health::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Health_protos_2fmodel_2fv1_2fhealth_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Health::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Health)
@@ -194,13 +180,12 @@ void Health::Clear() {
 
 const char* Health::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.HealthStatus status = 1[json_name = "status"];
+      // .v1.model.HealthStatus status = 1 [json_name = "status"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -236,7 +221,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.HealthStatus status = 1[json_name = "status"];
+  // .v1.model.HealthStatus status = 1 [json_name = "status"];
   if (this->status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -259,7 +244,7 @@ size_t Health::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.HealthStatus status = 1[json_name = "status"];
+  // .v1.model.HealthStatus status = 1 [json_name = "status"];
   if (this->status() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
@@ -332,8 +317,6 @@ void Health::InternalSwap(Health* other) {
 
 // ===================================================================
 
-void Battery::InitAsDefaultInstance() {
-}
 class Battery::_Internal {
  public:
 };
@@ -354,9 +337,10 @@ Battery::Battery(const Battery& from)
 }
 
 void Battery::SharedCtor() {
-  ::memset(&percentage_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&charge_) -
-      reinterpret_cast<char*>(&percentage_)) + sizeof(charge_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&percentage_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&charge_) -
+    reinterpret_cast<char*>(&percentage_)) + sizeof(charge_));
 }
 
 Battery::~Battery() {
@@ -378,11 +362,6 @@ void Battery::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Battery::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Battery& Battery::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Battery_protos_2fmodel_2fv1_2fhealth_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Battery::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Battery)
@@ -398,34 +377,33 @@ void Battery::Clear() {
 
 const char* Battery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double percentage = 1[json_name = "percentage"];
+      // double percentage = 1 [json_name = "percentage"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
           percentage_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double voltage = 2[json_name = "voltage"];
+      // double voltage = 2 [json_name = "voltage"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           voltage_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double current = 3[json_name = "current"];
+      // double current = 3 [json_name = "current"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
           current_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double charge = 4[json_name = "charge"];
+      // double charge = 4 [json_name = "charge"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33)) {
           charge_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
@@ -460,25 +438,25 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double percentage = 1[json_name = "percentage"];
+  // double percentage = 1 [json_name = "percentage"];
   if (!(this->percentage() <= 0 && this->percentage() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_percentage(), target);
   }
 
-  // double voltage = 2[json_name = "voltage"];
+  // double voltage = 2 [json_name = "voltage"];
   if (!(this->voltage() <= 0 && this->voltage() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_voltage(), target);
   }
 
-  // double current = 3[json_name = "current"];
+  // double current = 3 [json_name = "current"];
   if (!(this->current() <= 0 && this->current() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_current(), target);
   }
 
-  // double charge = 4[json_name = "charge"];
+  // double charge = 4 [json_name = "charge"];
   if (!(this->charge() <= 0 && this->charge() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->_internal_charge(), target);
@@ -500,22 +478,22 @@ size_t Battery::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double percentage = 1[json_name = "percentage"];
+  // double percentage = 1 [json_name = "percentage"];
   if (!(this->percentage() <= 0 && this->percentage() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double voltage = 2[json_name = "voltage"];
+  // double voltage = 2 [json_name = "voltage"];
   if (!(this->voltage() <= 0 && this->voltage() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double current = 3[json_name = "current"];
+  // double current = 3 [json_name = "current"];
   if (!(this->current() <= 0 && this->current() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double charge = 4[json_name = "charge"];
+  // double charge = 4 [json_name = "charge"];
   if (!(this->charge() <= 0 && this->charge() >= 0)) {
     total_size += 1 + 8;
   }

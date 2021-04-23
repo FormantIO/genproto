@@ -14,46 +14,36 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace v1 {
 namespace model {
-class TextDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Text> _instance;
-} _Text_default_instance_;
-class JsonDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Json> _instance;
-} _Json_default_instance_;
+constexpr Text::Text(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct TextDefaultTypeInternal {
+  constexpr TextDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TextDefaultTypeInternal() {}
+  union {
+    Text _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TextDefaultTypeInternal _Text_default_instance_;
+constexpr Json::Json(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct JsonDefaultTypeInternal {
+  constexpr JsonDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~JsonDefaultTypeInternal() {}
+  union {
+    Json _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT JsonDefaultTypeInternal _Json_default_instance_;
 }  // namespace model
 }  // namespace v1
-static void InitDefaultsscc_info_Json_protos_2fmodel_2fv1_2ftext_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Json_default_instance_;
-    new (ptr) ::v1::model::Json();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Json::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Json_protos_2fmodel_2fv1_2ftext_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Json_protos_2fmodel_2fv1_2ftext_2eproto}, {}};
-
-static void InitDefaultsscc_info_Text_protos_2fmodel_2fv1_2ftext_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Text_default_instance_;
-    new (ptr) ::v1::model::Text();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Text::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Text_protos_2fmodel_2fv1_2ftext_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Text_protos_2fmodel_2fv1_2ftext_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2ftext_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2ftext_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2ftext_2eproto = nullptr;
@@ -88,29 +78,26 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2ftext_2eproto[] PROTOB
   "value\030\001 \001(\tR\005valueB+Z)github.com/Formant"
   "IO/genproto/go/v1/modelb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto_sccs[2] = {
-  &scc_info_Json_protos_2fmodel_2fv1_2ftext_2eproto.base,
-  &scc_info_Text_protos_2fmodel_2fv1_2ftext_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2ftext_2eproto, "protos/model/v1/text.proto", 151,
-  &descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto_deps, 2, 0,
+  false, false, 151, descriptor_table_protodef_protos_2fmodel_2fv1_2ftext_2eproto, "protos/model/v1/text.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2ftext_2eproto::offsets,
-  file_level_metadata_protos_2fmodel_2fv1_2ftext_2eproto, 2, file_level_enum_descriptors_protos_2fmodel_2fv1_2ftext_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2ftext_2eproto,
+  file_level_metadata_protos_2fmodel_2fv1_2ftext_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2ftext_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2ftext_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto);
+  return descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto.file_level_metadata[index];
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_protos_2fmodel_2fv1_2ftext_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2ftext_2eproto(&descriptor_table_protos_2fmodel_2fv1_2ftext_2eproto);
 namespace v1 {
 namespace model {
 
 // ===================================================================
 
-void Text::InitAsDefaultInstance() {
-}
 class Text::_Internal {
  public:
 };
@@ -126,15 +113,14 @@ Text::Text(const Text& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_value().empty()) {
-    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
+    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:v1.model.Text)
 }
 
 void Text::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Text_protos_2fmodel_2fv1_2ftext_2eproto.base);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Text::~Text() {
@@ -157,11 +143,6 @@ void Text::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Text::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Text& Text::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Text_protos_2fmodel_2fv1_2ftext_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Text::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Text)
@@ -169,19 +150,18 @@ void Text::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Text::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string value = 1[json_name = "value"];
+      // string value = 1 [json_name = "value"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_value();
@@ -218,7 +198,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string value = 1[json_name = "value"];
+  // string value = 1 [json_name = "value"];
   if (this->value().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
@@ -244,7 +224,7 @@ size_t Text::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string value = 1[json_name = "value"];
+  // string value = 1 [json_name = "value"];
   if (this->value().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -318,8 +298,6 @@ void Text::InternalSwap(Text* other) {
 
 // ===================================================================
 
-void Json::InitAsDefaultInstance() {
-}
 class Json::_Internal {
  public:
 };
@@ -335,15 +313,14 @@ Json::Json(const Json& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_value().empty()) {
-    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
+    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:v1.model.Json)
 }
 
 void Json::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Json_protos_2fmodel_2fv1_2ftext_2eproto.base);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Json::~Json() {
@@ -366,11 +343,6 @@ void Json::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Json::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Json& Json::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Json_protos_2fmodel_2fv1_2ftext_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Json::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Json)
@@ -378,19 +350,18 @@ void Json::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Json::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string value = 1[json_name = "value"];
+      // string value = 1 [json_name = "value"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_value();
@@ -427,7 +398,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string value = 1[json_name = "value"];
+  // string value = 1 [json_name = "value"];
   if (this->value().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
@@ -453,7 +424,7 @@ size_t Json::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string value = 1[json_name = "value"];
+  // string value = 1 [json_name = "value"];
   if (this->value().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(

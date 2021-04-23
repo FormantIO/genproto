@@ -14,201 +14,144 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Quaternion_protos_2fmodel_2fv1_2fmath_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector3_protos_2fmodel_2fv1_2fmath_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace v1 {
 namespace model {
-class NumericDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Numeric> _instance;
-} _Numeric_default_instance_;
-class NumericSetEntryDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<NumericSetEntry> _instance;
-} _NumericSetEntry_default_instance_;
-class NumericSetDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<NumericSet> _instance;
-} _NumericSet_default_instance_;
-class BitDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Bit> _instance;
-} _Bit_default_instance_;
-class BitsetDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Bitset> _instance;
-} _Bitset_default_instance_;
-class TwistDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Twist> _instance;
-} _Twist_default_instance_;
-class TransformDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Transform> _instance;
-} _Transform_default_instance_;
-class TransformFrameDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TransformFrame> _instance;
-} _TransformFrame_default_instance_;
-class Vector3DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Vector3> _instance;
-} _Vector3_default_instance_;
-class QuaternionDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Quaternion> _instance;
-} _Quaternion_default_instance_;
+constexpr Numeric::Numeric(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : value_(0){}
+struct NumericDefaultTypeInternal {
+  constexpr NumericDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~NumericDefaultTypeInternal() {}
+  union {
+    Numeric _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NumericDefaultTypeInternal _Numeric_default_instance_;
+constexpr NumericSetEntry::NumericSetEntry(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : label_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , unit_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , value_(0){}
+struct NumericSetEntryDefaultTypeInternal {
+  constexpr NumericSetEntryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~NumericSetEntryDefaultTypeInternal() {}
+  union {
+    NumericSetEntry _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NumericSetEntryDefaultTypeInternal _NumericSetEntry_default_instance_;
+constexpr NumericSet::NumericSet(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : numerics_(){}
+struct NumericSetDefaultTypeInternal {
+  constexpr NumericSetDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~NumericSetDefaultTypeInternal() {}
+  union {
+    NumericSet _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NumericSetDefaultTypeInternal _NumericSet_default_instance_;
+constexpr Bit::Bit(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , value_(false){}
+struct BitDefaultTypeInternal {
+  constexpr BitDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BitDefaultTypeInternal() {}
+  union {
+    Bit _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BitDefaultTypeInternal _Bit_default_instance_;
+constexpr Bitset::Bitset(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : bits_(){}
+struct BitsetDefaultTypeInternal {
+  constexpr BitsetDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BitsetDefaultTypeInternal() {}
+  union {
+    Bitset _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BitsetDefaultTypeInternal _Bitset_default_instance_;
+constexpr Twist::Twist(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : linear_(nullptr)
+  , angular_(nullptr){}
+struct TwistDefaultTypeInternal {
+  constexpr TwistDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TwistDefaultTypeInternal() {}
+  union {
+    Twist _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TwistDefaultTypeInternal _Twist_default_instance_;
+constexpr Transform::Transform(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : translation_(nullptr)
+  , rotation_(nullptr){}
+struct TransformDefaultTypeInternal {
+  constexpr TransformDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TransformDefaultTypeInternal() {}
+  union {
+    Transform _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransformDefaultTypeInternal _Transform_default_instance_;
+constexpr TransformFrame::TransformFrame(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : parent_frame_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , child_frame_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , transform_(nullptr){}
+struct TransformFrameDefaultTypeInternal {
+  constexpr TransformFrameDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TransformFrameDefaultTypeInternal() {}
+  union {
+    TransformFrame _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransformFrameDefaultTypeInternal _TransformFrame_default_instance_;
+constexpr Vector3::Vector3(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : x_(0)
+  , y_(0)
+  , z_(0){}
+struct Vector3DefaultTypeInternal {
+  constexpr Vector3DefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~Vector3DefaultTypeInternal() {}
+  union {
+    Vector3 _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Vector3DefaultTypeInternal _Vector3_default_instance_;
+constexpr Quaternion::Quaternion(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : x_(0)
+  , y_(0)
+  , z_(0)
+  , w_(0){}
+struct QuaternionDefaultTypeInternal {
+  constexpr QuaternionDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~QuaternionDefaultTypeInternal() {}
+  union {
+    Quaternion _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT QuaternionDefaultTypeInternal _Quaternion_default_instance_;
 }  // namespace model
 }  // namespace v1
-static void InitDefaultsscc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Bit_default_instance_;
-    new (ptr) ::v1::model::Bit();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Bit::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto}, {}};
-
-static void InitDefaultsscc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Bitset_default_instance_;
-    new (ptr) ::v1::model::Bitset();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Bitset::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto}, {
-      &scc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
-
-static void InitDefaultsscc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Numeric_default_instance_;
-    new (ptr) ::v1::model::Numeric();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Numeric::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto}, {}};
-
-static void InitDefaultsscc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_NumericSet_default_instance_;
-    new (ptr) ::v1::model::NumericSet();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::NumericSet::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto}, {
-      &scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
-
-static void InitDefaultsscc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_NumericSetEntry_default_instance_;
-    new (ptr) ::v1::model::NumericSetEntry();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::NumericSetEntry::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto}, {}};
-
-static void InitDefaultsscc_info_Quaternion_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Quaternion_default_instance_;
-    new (ptr) ::v1::model::Quaternion();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Quaternion::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Quaternion_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Quaternion_protos_2fmodel_2fv1_2fmath_2eproto}, {}};
-
-static void InitDefaultsscc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Transform_default_instance_;
-    new (ptr) ::v1::model::Transform();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Transform::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto}, {
-      &scc_info_Vector3_protos_2fmodel_2fv1_2fmath_2eproto.base,
-      &scc_info_Quaternion_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
-
-static void InitDefaultsscc_info_TransformFrame_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_TransformFrame_default_instance_;
-    new (ptr) ::v1::model::TransformFrame();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::TransformFrame::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TransformFrame_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_TransformFrame_protos_2fmodel_2fv1_2fmath_2eproto}, {
-      &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
-
-static void InitDefaultsscc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Twist_default_instance_;
-    new (ptr) ::v1::model::Twist();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Twist::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto}, {
-      &scc_info_Vector3_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
-
-static void InitDefaultsscc_info_Vector3_protos_2fmodel_2fv1_2fmath_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Vector3_default_instance_;
-    new (ptr) ::v1::model::Vector3();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Vector3::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector3_protos_2fmodel_2fv1_2fmath_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Vector3_protos_2fmodel_2fv1_2fmath_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[10];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2fmath_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fmath_2eproto = nullptr;
@@ -337,37 +280,26 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fmath_2eproto[] PROTOB
   "com/FormantIO/genproto/go/v1/modelb\006prot"
   "o3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_sccs[10] = {
-  &scc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_Quaternion_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_TransformFrame_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto.base,
-  &scc_info_Vector3_protos_2fmodel_2fv1_2fmath_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fmath_2eproto, "protos/model/v1/math.proto", 842,
-  &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_deps, 10, 0,
+  false, false, 842, descriptor_table_protodef_protos_2fmodel_2fv1_2fmath_2eproto, "protos/model/v1/math.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once, nullptr, 0, 10,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fmath_2eproto::offsets,
-  file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto, 10, file_level_enum_descriptors_protos_2fmodel_2fv1_2fmath_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fmath_2eproto,
+  file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fmath_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fmath_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto);
+  return descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto.file_level_metadata[index];
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_protos_2fmodel_2fv1_2fmath_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2fmath_2eproto(&descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto);
 namespace v1 {
 namespace model {
 
 // ===================================================================
 
-void Numeric::InitAsDefaultInstance() {
-}
 class Numeric::_Internal {
  public:
 };
@@ -386,7 +318,7 @@ Numeric::Numeric(const Numeric& from)
 }
 
 void Numeric::SharedCtor() {
-  value_ = 0;
+value_ = 0;
 }
 
 Numeric::~Numeric() {
@@ -408,11 +340,6 @@ void Numeric::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Numeric::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Numeric& Numeric::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Numeric_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Numeric::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Numeric)
@@ -426,13 +353,12 @@ void Numeric::Clear() {
 
 const char* Numeric::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double value = 1[json_name = "value"];
+      // double value = 1 [json_name = "value"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
           value_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
@@ -467,7 +393,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double value = 1[json_name = "value"];
+  // double value = 1 [json_name = "value"];
   if (!(this->value() <= 0 && this->value() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_value(), target);
@@ -489,7 +415,7 @@ size_t Numeric::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double value = 1[json_name = "value"];
+  // double value = 1 [json_name = "value"];
   if (!(this->value() <= 0 && this->value() >= 0)) {
     total_size += 1 + 8;
   }
@@ -561,8 +487,6 @@ void Numeric::InternalSwap(Numeric* other) {
 
 // ===================================================================
 
-void NumericSetEntry::InitAsDefaultInstance() {
-}
 class NumericSetEntry::_Internal {
  public:
 };
@@ -578,12 +502,12 @@ NumericSetEntry::NumericSetEntry(const NumericSetEntry& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_label().empty()) {
-    label_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_label(),
+    label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_label(), 
       GetArena());
   }
   unit_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_unit().empty()) {
-    unit_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_unit(),
+    unit_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_unit(), 
       GetArena());
   }
   value_ = from.value_;
@@ -591,10 +515,9 @@ NumericSetEntry::NumericSetEntry(const NumericSetEntry& from)
 }
 
 void NumericSetEntry::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  unit_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  value_ = 0;
+label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+unit_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+value_ = 0;
 }
 
 NumericSetEntry::~NumericSetEntry() {
@@ -618,11 +541,6 @@ void NumericSetEntry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void NumericSetEntry::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const NumericSetEntry& NumericSetEntry::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_NumericSetEntry_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void NumericSetEntry::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.NumericSetEntry)
@@ -630,28 +548,27 @@ void NumericSetEntry::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  label_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  unit_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  label_.ClearToEmpty();
+  unit_.ClearToEmpty();
   value_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* NumericSetEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double value = 1[json_name = "value"];
+      // double value = 1 [json_name = "value"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
           value_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // string label = 2[json_name = "label"];
+      // string label = 2 [json_name = "label"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_label();
@@ -660,7 +577,7 @@ const char* NumericSetEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string unit = 3[json_name = "unit"];
+      // string unit = 3 [json_name = "unit"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_unit();
@@ -697,13 +614,13 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double value = 1[json_name = "value"];
+  // double value = 1 [json_name = "value"];
   if (!(this->value() <= 0 && this->value() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_value(), target);
   }
 
-  // string label = 2[json_name = "label"];
+  // string label = 2 [json_name = "label"];
   if (this->label().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_label().data(), static_cast<int>(this->_internal_label().length()),
@@ -713,7 +630,7 @@ failure:
         2, this->_internal_label(), target);
   }
 
-  // string unit = 3[json_name = "unit"];
+  // string unit = 3 [json_name = "unit"];
   if (this->unit().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_unit().data(), static_cast<int>(this->_internal_unit().length()),
@@ -739,21 +656,21 @@ size_t NumericSetEntry::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string label = 2[json_name = "label"];
+  // string label = 2 [json_name = "label"];
   if (this->label().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_label());
   }
 
-  // string unit = 3[json_name = "unit"];
+  // string unit = 3 [json_name = "unit"];
   if (this->unit().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_unit());
   }
 
-  // double value = 1[json_name = "value"];
+  // double value = 1 [json_name = "value"];
   if (!(this->value() <= 0 && this->value() >= 0)) {
     total_size += 1 + 8;
   }
@@ -833,8 +750,6 @@ void NumericSetEntry::InternalSwap(NumericSetEntry* other) {
 
 // ===================================================================
 
-void NumericSet::InitAsDefaultInstance() {
-}
 class NumericSet::_Internal {
  public:
 };
@@ -854,7 +769,6 @@ NumericSet::NumericSet(const NumericSet& from)
 }
 
 void NumericSet::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto.base);
 }
 
 NumericSet::~NumericSet() {
@@ -876,11 +790,6 @@ void NumericSet::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void NumericSet::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const NumericSet& NumericSet::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_NumericSet_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void NumericSet::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.NumericSet)
@@ -894,13 +803,12 @@ void NumericSet::Clear() {
 
 const char* NumericSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .v1.model.NumericSetEntry numerics = 1[json_name = "numerics"];
+      // repeated .v1.model.NumericSetEntry numerics = 1 [json_name = "numerics"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -940,7 +848,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .v1.model.NumericSetEntry numerics = 1[json_name = "numerics"];
+  // repeated .v1.model.NumericSetEntry numerics = 1 [json_name = "numerics"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_numerics_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -964,7 +872,7 @@ size_t NumericSet::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .v1.model.NumericSetEntry numerics = 1[json_name = "numerics"];
+  // repeated .v1.model.NumericSetEntry numerics = 1 [json_name = "numerics"];
   total_size += 1UL * this->_internal_numerics_size();
   for (const auto& msg : this->numerics_) {
     total_size +=
@@ -1036,8 +944,6 @@ void NumericSet::InternalSwap(NumericSet* other) {
 
 // ===================================================================
 
-void Bit::InitAsDefaultInstance() {
-}
 class Bit::_Internal {
  public:
 };
@@ -1053,7 +959,7 @@ Bit::Bit(const Bit& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+    key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
       GetArena());
   }
   value_ = from.value_;
@@ -1061,9 +967,8 @@ Bit::Bit(const Bit& from)
 }
 
 void Bit::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  value_ = false;
+key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+value_ = false;
 }
 
 Bit::~Bit() {
@@ -1086,11 +991,6 @@ void Bit::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Bit::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Bit& Bit::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Bit_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Bit::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Bit)
@@ -1098,20 +998,19 @@ void Bit::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  key_.ClearToEmpty();
   value_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Bit::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string key = 1[json_name = "key"];
+      // string key = 1 [json_name = "key"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_key();
@@ -1120,7 +1019,7 @@ const char* Bit::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::intern
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool value = 2[json_name = "value"];
+      // bool value = 2 [json_name = "value"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1155,7 +1054,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string key = 1[json_name = "key"];
+  // string key = 1 [json_name = "key"];
   if (this->key().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_key().data(), static_cast<int>(this->_internal_key().length()),
@@ -1165,7 +1064,7 @@ failure:
         1, this->_internal_key(), target);
   }
 
-  // bool value = 2[json_name = "value"];
+  // bool value = 2 [json_name = "value"];
   if (this->value() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_value(), target);
@@ -1187,14 +1086,14 @@ size_t Bit::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string key = 1[json_name = "key"];
+  // string key = 1 [json_name = "key"];
   if (this->key().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_key());
   }
 
-  // bool value = 2[json_name = "value"];
+  // bool value = 2 [json_name = "value"];
   if (this->value() != 0) {
     total_size += 1 + 1;
   }
@@ -1270,8 +1169,6 @@ void Bit::InternalSwap(Bit* other) {
 
 // ===================================================================
 
-void Bitset::InitAsDefaultInstance() {
-}
 class Bitset::_Internal {
  public:
 };
@@ -1291,7 +1188,6 @@ Bitset::Bitset(const Bitset& from)
 }
 
 void Bitset::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto.base);
 }
 
 Bitset::~Bitset() {
@@ -1313,11 +1209,6 @@ void Bitset::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Bitset::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Bitset& Bitset::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Bitset_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Bitset::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Bitset)
@@ -1331,13 +1222,12 @@ void Bitset::Clear() {
 
 const char* Bitset::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .v1.model.Bit bits = 1[json_name = "bits"];
+      // repeated .v1.model.Bit bits = 1 [json_name = "bits"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -1377,7 +1267,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .v1.model.Bit bits = 1[json_name = "bits"];
+  // repeated .v1.model.Bit bits = 1 [json_name = "bits"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_bits_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1401,7 +1291,7 @@ size_t Bitset::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .v1.model.Bit bits = 1[json_name = "bits"];
+  // repeated .v1.model.Bit bits = 1 [json_name = "bits"];
   total_size += 1UL * this->_internal_bits_size();
   for (const auto& msg : this->bits_) {
     total_size +=
@@ -1473,12 +1363,6 @@ void Bitset::InternalSwap(Bitset* other) {
 
 // ===================================================================
 
-void Twist::InitAsDefaultInstance() {
-  ::v1::model::_Twist_default_instance_._instance.get_mutable()->linear_ = const_cast< ::v1::model::Vector3*>(
-      ::v1::model::Vector3::internal_default_instance());
-  ::v1::model::_Twist_default_instance_._instance.get_mutable()->angular_ = const_cast< ::v1::model::Vector3*>(
-      ::v1::model::Vector3::internal_default_instance());
-}
 class Twist::_Internal {
  public:
   static const ::v1::model::Vector3& linear(const Twist* msg);
@@ -1516,10 +1400,10 @@ Twist::Twist(const Twist& from)
 }
 
 void Twist::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  ::memset(&linear_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&angular_) -
-      reinterpret_cast<char*>(&linear_)) + sizeof(angular_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&linear_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&angular_) -
+    reinterpret_cast<char*>(&linear_)) + sizeof(angular_));
 }
 
 Twist::~Twist() {
@@ -1543,11 +1427,6 @@ void Twist::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Twist::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Twist& Twist::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Twist::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Twist)
@@ -1568,20 +1447,19 @@ void Twist::Clear() {
 
 const char* Twist::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.Vector3 linear = 1[json_name = "linear"];
+      // .v1.model.Vector3 linear = 1 [json_name = "linear"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_linear(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Vector3 angular = 2[json_name = "angular"];
+      // .v1.model.Vector3 angular = 2 [json_name = "angular"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_angular(), ptr);
@@ -1616,7 +1494,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.Vector3 linear = 1[json_name = "linear"];
+  // .v1.model.Vector3 linear = 1 [json_name = "linear"];
   if (this->has_linear()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1624,7 +1502,7 @@ failure:
         1, _Internal::linear(this), target, stream);
   }
 
-  // .v1.model.Vector3 angular = 2[json_name = "angular"];
+  // .v1.model.Vector3 angular = 2 [json_name = "angular"];
   if (this->has_angular()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1648,14 +1526,14 @@ size_t Twist::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.Vector3 linear = 1[json_name = "linear"];
+  // .v1.model.Vector3 linear = 1 [json_name = "linear"];
   if (this->has_linear()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *linear_);
   }
 
-  // .v1.model.Vector3 angular = 2[json_name = "angular"];
+  // .v1.model.Vector3 angular = 2 [json_name = "angular"];
   if (this->has_angular()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1737,12 +1615,6 @@ void Twist::InternalSwap(Twist* other) {
 
 // ===================================================================
 
-void Transform::InitAsDefaultInstance() {
-  ::v1::model::_Transform_default_instance_._instance.get_mutable()->translation_ = const_cast< ::v1::model::Vector3*>(
-      ::v1::model::Vector3::internal_default_instance());
-  ::v1::model::_Transform_default_instance_._instance.get_mutable()->rotation_ = const_cast< ::v1::model::Quaternion*>(
-      ::v1::model::Quaternion::internal_default_instance());
-}
 class Transform::_Internal {
  public:
   static const ::v1::model::Vector3& translation(const Transform* msg);
@@ -1780,10 +1652,10 @@ Transform::Transform(const Transform& from)
 }
 
 void Transform::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  ::memset(&translation_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rotation_) -
-      reinterpret_cast<char*>(&translation_)) + sizeof(rotation_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&translation_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&rotation_) -
+    reinterpret_cast<char*>(&translation_)) + sizeof(rotation_));
 }
 
 Transform::~Transform() {
@@ -1807,11 +1679,6 @@ void Transform::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Transform::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Transform& Transform::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Transform::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Transform)
@@ -1832,20 +1699,19 @@ void Transform::Clear() {
 
 const char* Transform::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.Vector3 translation = 1[json_name = "translation"];
+      // .v1.model.Vector3 translation = 1 [json_name = "translation"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_translation(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Quaternion rotation = 2[json_name = "rotation"];
+      // .v1.model.Quaternion rotation = 2 [json_name = "rotation"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_rotation(), ptr);
@@ -1880,7 +1746,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.Vector3 translation = 1[json_name = "translation"];
+  // .v1.model.Vector3 translation = 1 [json_name = "translation"];
   if (this->has_translation()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1888,7 +1754,7 @@ failure:
         1, _Internal::translation(this), target, stream);
   }
 
-  // .v1.model.Quaternion rotation = 2[json_name = "rotation"];
+  // .v1.model.Quaternion rotation = 2 [json_name = "rotation"];
   if (this->has_rotation()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1912,14 +1778,14 @@ size_t Transform::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.Vector3 translation = 1[json_name = "translation"];
+  // .v1.model.Vector3 translation = 1 [json_name = "translation"];
   if (this->has_translation()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *translation_);
   }
 
-  // .v1.model.Quaternion rotation = 2[json_name = "rotation"];
+  // .v1.model.Quaternion rotation = 2 [json_name = "rotation"];
   if (this->has_rotation()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2001,10 +1867,6 @@ void Transform::InternalSwap(Transform* other) {
 
 // ===================================================================
 
-void TransformFrame::InitAsDefaultInstance() {
-  ::v1::model::_TransformFrame_default_instance_._instance.get_mutable()->transform_ = const_cast< ::v1::model::Transform*>(
-      ::v1::model::Transform::internal_default_instance());
-}
 class TransformFrame::_Internal {
  public:
   static const ::v1::model::Transform& transform(const TransformFrame* msg);
@@ -2025,12 +1887,12 @@ TransformFrame::TransformFrame(const TransformFrame& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   parent_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_parent_frame().empty()) {
-    parent_frame_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_parent_frame(),
+    parent_frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_parent_frame(), 
       GetArena());
   }
   child_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_child_frame().empty()) {
-    child_frame_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_child_frame(),
+    child_frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_child_frame(), 
       GetArena());
   }
   if (from._internal_has_transform()) {
@@ -2042,10 +1904,9 @@ TransformFrame::TransformFrame(const TransformFrame& from)
 }
 
 void TransformFrame::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TransformFrame_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  parent_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  child_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  transform_ = nullptr;
+parent_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+child_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+transform_ = nullptr;
 }
 
 TransformFrame::~TransformFrame() {
@@ -2070,11 +1931,6 @@ void TransformFrame::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void TransformFrame::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const TransformFrame& TransformFrame::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TransformFrame_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void TransformFrame::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.TransformFrame)
@@ -2082,8 +1938,8 @@ void TransformFrame::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  parent_frame_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  child_frame_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  parent_frame_.ClearToEmpty();
+  child_frame_.ClearToEmpty();
   if (GetArena() == nullptr && transform_ != nullptr) {
     delete transform_;
   }
@@ -2093,13 +1949,12 @@ void TransformFrame::Clear() {
 
 const char* TransformFrame::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string parent_frame = 1[json_name = "parentFrame"];
+      // string parent_frame = 1 [json_name = "parentFrame"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_parent_frame();
@@ -2108,7 +1963,7 @@ const char* TransformFrame::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string child_frame = 2[json_name = "childFrame"];
+      // string child_frame = 2 [json_name = "childFrame"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_child_frame();
@@ -2117,7 +1972,7 @@ const char* TransformFrame::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Transform transform = 3[json_name = "transform"];
+      // .v1.model.Transform transform = 3 [json_name = "transform"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_transform(), ptr);
@@ -2152,7 +2007,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string parent_frame = 1[json_name = "parentFrame"];
+  // string parent_frame = 1 [json_name = "parentFrame"];
   if (this->parent_frame().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_parent_frame().data(), static_cast<int>(this->_internal_parent_frame().length()),
@@ -2162,7 +2017,7 @@ failure:
         1, this->_internal_parent_frame(), target);
   }
 
-  // string child_frame = 2[json_name = "childFrame"];
+  // string child_frame = 2 [json_name = "childFrame"];
   if (this->child_frame().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_child_frame().data(), static_cast<int>(this->_internal_child_frame().length()),
@@ -2172,7 +2027,7 @@ failure:
         2, this->_internal_child_frame(), target);
   }
 
-  // .v1.model.Transform transform = 3[json_name = "transform"];
+  // .v1.model.Transform transform = 3 [json_name = "transform"];
   if (this->has_transform()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2196,21 +2051,21 @@ size_t TransformFrame::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string parent_frame = 1[json_name = "parentFrame"];
+  // string parent_frame = 1 [json_name = "parentFrame"];
   if (this->parent_frame().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_parent_frame());
   }
 
-  // string child_frame = 2[json_name = "childFrame"];
+  // string child_frame = 2 [json_name = "childFrame"];
   if (this->child_frame().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_child_frame());
   }
 
-  // .v1.model.Transform transform = 3[json_name = "transform"];
+  // .v1.model.Transform transform = 3 [json_name = "transform"];
   if (this->has_transform()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2292,8 +2147,6 @@ void TransformFrame::InternalSwap(TransformFrame* other) {
 
 // ===================================================================
 
-void Vector3::InitAsDefaultInstance() {
-}
 class Vector3::_Internal {
  public:
 };
@@ -2314,9 +2167,10 @@ Vector3::Vector3(const Vector3& from)
 }
 
 void Vector3::SharedCtor() {
-  ::memset(&x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&z_) -
-      reinterpret_cast<char*>(&x_)) + sizeof(z_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&x_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&z_) -
+    reinterpret_cast<char*>(&x_)) + sizeof(z_));
 }
 
 Vector3::~Vector3() {
@@ -2338,11 +2192,6 @@ void Vector3::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Vector3::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Vector3& Vector3::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Vector3_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Vector3::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Vector3)
@@ -2358,27 +2207,26 @@ void Vector3::Clear() {
 
 const char* Vector3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double x = 1[json_name = "x"];
+      // double x = 1 [json_name = "x"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
           x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double y = 2[json_name = "y"];
+      // double y = 2 [json_name = "y"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double z = 3[json_name = "z"];
+      // double z = 3 [json_name = "z"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
           z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
@@ -2413,19 +2261,19 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double x = 1[json_name = "x"];
+  // double x = 1 [json_name = "x"];
   if (!(this->x() <= 0 && this->x() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_x(), target);
   }
 
-  // double y = 2[json_name = "y"];
+  // double y = 2 [json_name = "y"];
   if (!(this->y() <= 0 && this->y() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_y(), target);
   }
 
-  // double z = 3[json_name = "z"];
+  // double z = 3 [json_name = "z"];
   if (!(this->z() <= 0 && this->z() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_z(), target);
@@ -2447,17 +2295,17 @@ size_t Vector3::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double x = 1[json_name = "x"];
+  // double x = 1 [json_name = "x"];
   if (!(this->x() <= 0 && this->x() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double y = 2[json_name = "y"];
+  // double y = 2 [json_name = "y"];
   if (!(this->y() <= 0 && this->y() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double z = 3[json_name = "z"];
+  // double z = 3 [json_name = "z"];
   if (!(this->z() <= 0 && this->z() >= 0)) {
     total_size += 1 + 8;
   }
@@ -2540,8 +2388,6 @@ void Vector3::InternalSwap(Vector3* other) {
 
 // ===================================================================
 
-void Quaternion::InitAsDefaultInstance() {
-}
 class Quaternion::_Internal {
  public:
 };
@@ -2562,9 +2408,10 @@ Quaternion::Quaternion(const Quaternion& from)
 }
 
 void Quaternion::SharedCtor() {
-  ::memset(&x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&w_) -
-      reinterpret_cast<char*>(&x_)) + sizeof(w_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&x_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&w_) -
+    reinterpret_cast<char*>(&x_)) + sizeof(w_));
 }
 
 Quaternion::~Quaternion() {
@@ -2586,11 +2433,6 @@ void Quaternion::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Quaternion::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Quaternion& Quaternion::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Quaternion_protos_2fmodel_2fv1_2fmath_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Quaternion::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Quaternion)
@@ -2606,34 +2448,33 @@ void Quaternion::Clear() {
 
 const char* Quaternion::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double x = 1[json_name = "x"];
+      // double x = 1 [json_name = "x"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
           x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double y = 2[json_name = "y"];
+      // double y = 2 [json_name = "y"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double z = 3[json_name = "z"];
+      // double z = 3 [json_name = "z"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
           z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double w = 4[json_name = "w"];
+      // double w = 4 [json_name = "w"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33)) {
           w_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
@@ -2668,25 +2509,25 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double x = 1[json_name = "x"];
+  // double x = 1 [json_name = "x"];
   if (!(this->x() <= 0 && this->x() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_x(), target);
   }
 
-  // double y = 2[json_name = "y"];
+  // double y = 2 [json_name = "y"];
   if (!(this->y() <= 0 && this->y() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_y(), target);
   }
 
-  // double z = 3[json_name = "z"];
+  // double z = 3 [json_name = "z"];
   if (!(this->z() <= 0 && this->z() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_z(), target);
   }
 
-  // double w = 4[json_name = "w"];
+  // double w = 4 [json_name = "w"];
   if (!(this->w() <= 0 && this->w() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->_internal_w(), target);
@@ -2708,22 +2549,22 @@ size_t Quaternion::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double x = 1[json_name = "x"];
+  // double x = 1 [json_name = "x"];
   if (!(this->x() <= 0 && this->x() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double y = 2[json_name = "y"];
+  // double y = 2 [json_name = "y"];
   if (!(this->y() <= 0 && this->y() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double z = 3[json_name = "z"];
+  // double z = 3 [json_name = "z"];
   if (!(this->z() <= 0 && this->z() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double w = 4[json_name = "w"];
+  // double w = 4 [json_name = "w"];
   if (!(this->w() <= 0 && this->w() >= 0)) {
     total_size += 1 + 8;
   }

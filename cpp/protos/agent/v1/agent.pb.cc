@@ -14,679 +14,431 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fagent_2fv1_2fagent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PostDataError_protos_2fagent_2fv1_2fagent_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fconfig_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AgentConfiguration_protos_2fmodel_2fv1_2fconfig_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fconfig_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ApplicationConfiguration_protos_2fmodel_2fv1_2fconfig_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fconfig_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BlobData_protos_2fmodel_2fv1_2fconfig_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CommandRequest_protos_2fmodel_2fv1_2fcommands_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CommandResponse_protos_2fmodel_2fv1_2fcommands_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fdatapoint_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ControlDatapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fdatapoint_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<14> scc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fevent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Event_protos_2fmodel_2fv1_2fevent_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fconfig_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<11> scc_info_StreamConfiguration_protos_2fmodel_2fv1_2fconfig_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace v1 {
 namespace agent {
-class StreamDataResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<StreamDataResponse> _instance;
-} _StreamDataResponse_default_instance_;
-class PostDataResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PostDataResponse> _instance;
-} _PostDataResponse_default_instance_;
-class PostDataErrorDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PostDataError> _instance;
-} _PostDataError_default_instance_;
-class PostDataMultiRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PostDataMultiRequest> _instance;
-} _PostDataMultiRequest_default_instance_;
-class PostDataMultiResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PostDataMultiResponse> _instance;
-} _PostDataMultiResponse_default_instance_;
-class PostDataMultiErrorDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PostDataMultiError> _instance;
-} _PostDataMultiError_default_instance_;
-class GetInterventionRequestRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetInterventionRequestRequest> _instance;
-} _GetInterventionRequestRequest_default_instance_;
-class GetInterventionResponseRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetInterventionResponseRequest> _instance;
-} _GetInterventionResponseRequest_default_instance_;
-class GetStreamsConfigurationRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetStreamsConfigurationRequest> _instance;
-} _GetStreamsConfigurationRequest_default_instance_;
-class GetStreamsConfigurationResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetStreamsConfigurationResponse> _instance;
-} _GetStreamsConfigurationResponse_default_instance_;
-class GetApplicationConfigurationRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetApplicationConfigurationRequest> _instance;
-} _GetApplicationConfigurationRequest_default_instance_;
-class GetApplicationConfigurationResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetApplicationConfigurationResponse> _instance;
-} _GetApplicationConfigurationResponse_default_instance_;
-class GetConfigBlobDataRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetConfigBlobDataRequest> _instance;
-} _GetConfigBlobDataRequest_default_instance_;
-class GetConfigBlobDataResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetConfigBlobDataResponse> _instance;
-} _GetConfigBlobDataResponse_default_instance_;
-class GetAgentConfigurationRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetAgentConfigurationRequest> _instance;
-} _GetAgentConfigurationRequest_default_instance_;
-class GetAgentConfigurationResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetAgentConfigurationResponse> _instance;
-} _GetAgentConfigurationResponse_default_instance_;
-class HealthRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<HealthRequest> _instance;
-} _HealthRequest_default_instance_;
-class HealthResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<HealthResponse> _instance;
-} _HealthResponse_default_instance_;
-class GetCommandRequestRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetCommandRequestRequest> _instance;
-} _GetCommandRequestRequest_default_instance_;
-class GetCommandRequestResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetCommandRequestResponse> _instance;
-} _GetCommandRequestResponse_default_instance_;
-class SendCommandResponseRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SendCommandResponseRequest> _instance;
-} _SendCommandResponseRequest_default_instance_;
-class SendCommandResponseResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SendCommandResponseResponse> _instance;
-} _SendCommandResponseResponse_default_instance_;
-class GetCommandRequestStreamRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetCommandRequestStreamRequest> _instance;
-} _GetCommandRequestStreamRequest_default_instance_;
-class GetCommandRequestStreamResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetCommandRequestStreamResponse> _instance;
-} _GetCommandRequestStreamResponse_default_instance_;
-class GetTeleopControlDataStreamRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetTeleopControlDataStreamRequest> _instance;
-} _GetTeleopControlDataStreamRequest_default_instance_;
-class GetTeleopControlDataStreamResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetTeleopControlDataStreamResponse> _instance;
-} _GetTeleopControlDataStreamResponse_default_instance_;
-class PostTransformFrameResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PostTransformFrameResponse> _instance;
-} _PostTransformFrameResponse_default_instance_;
-class SetBaseFrameIDRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SetBaseFrameIDRequest> _instance;
-} _SetBaseFrameIDRequest_default_instance_;
-class SetBaseFrameIDResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SetBaseFrameIDResponse> _instance;
-} _SetBaseFrameIDResponse_default_instance_;
-class ClearTransformTreeRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClearTransformTreeRequest> _instance;
-} _ClearTransformTreeRequest_default_instance_;
-class ClearTransformTreeResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClearTransformTreeResponse> _instance;
-} _ClearTransformTreeResponse_default_instance_;
-class CreateEventRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateEventRequest> _instance;
-} _CreateEventRequest_default_instance_;
-class CreateEventResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateEventResponse> _instance;
-} _CreateEventResponse_default_instance_;
-class CreateEventErrorDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateEventError> _instance;
-} _CreateEventError_default_instance_;
-class GetTeleopInfoRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetTeleopInfoRequest> _instance;
-} _GetTeleopInfoRequest_default_instance_;
-class GetTeleopInfoResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetTeleopInfoResponse> _instance;
-} _GetTeleopInfoResponse_default_instance_;
+constexpr StreamDataResponse::StreamDataResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct StreamDataResponseDefaultTypeInternal {
+  constexpr StreamDataResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~StreamDataResponseDefaultTypeInternal() {}
+  union {
+    StreamDataResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StreamDataResponseDefaultTypeInternal _StreamDataResponse_default_instance_;
+constexpr PostDataResponse::PostDataResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct PostDataResponseDefaultTypeInternal {
+  constexpr PostDataResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PostDataResponseDefaultTypeInternal() {}
+  union {
+    PostDataResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PostDataResponseDefaultTypeInternal _PostDataResponse_default_instance_;
+constexpr PostDataError::PostDataError(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , index_(0u)
+  , code_(0u)
+  , retryable_(false){}
+struct PostDataErrorDefaultTypeInternal {
+  constexpr PostDataErrorDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PostDataErrorDefaultTypeInternal() {}
+  union {
+    PostDataError _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PostDataErrorDefaultTypeInternal _PostDataError_default_instance_;
+constexpr PostDataMultiRequest::PostDataMultiRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : datapoints_(){}
+struct PostDataMultiRequestDefaultTypeInternal {
+  constexpr PostDataMultiRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PostDataMultiRequestDefaultTypeInternal() {}
+  union {
+    PostDataMultiRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PostDataMultiRequestDefaultTypeInternal _PostDataMultiRequest_default_instance_;
+constexpr PostDataMultiResponse::PostDataMultiResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct PostDataMultiResponseDefaultTypeInternal {
+  constexpr PostDataMultiResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PostDataMultiResponseDefaultTypeInternal() {}
+  union {
+    PostDataMultiResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PostDataMultiResponseDefaultTypeInternal _PostDataMultiResponse_default_instance_;
+constexpr PostDataMultiError::PostDataMultiError(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : errors_(){}
+struct PostDataMultiErrorDefaultTypeInternal {
+  constexpr PostDataMultiErrorDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PostDataMultiErrorDefaultTypeInternal() {}
+  union {
+    PostDataMultiError _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PostDataMultiErrorDefaultTypeInternal _PostDataMultiError_default_instance_;
+constexpr GetInterventionRequestRequest::GetInterventionRequestRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GetInterventionRequestRequestDefaultTypeInternal {
+  constexpr GetInterventionRequestRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetInterventionRequestRequestDefaultTypeInternal() {}
+  union {
+    GetInterventionRequestRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetInterventionRequestRequestDefaultTypeInternal _GetInterventionRequestRequest_default_instance_;
+constexpr GetInterventionResponseRequest::GetInterventionResponseRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : request_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GetInterventionResponseRequestDefaultTypeInternal {
+  constexpr GetInterventionResponseRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetInterventionResponseRequestDefaultTypeInternal() {}
+  union {
+    GetInterventionResponseRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetInterventionResponseRequestDefaultTypeInternal _GetInterventionResponseRequest_default_instance_;
+constexpr GetStreamsConfigurationRequest::GetStreamsConfigurationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct GetStreamsConfigurationRequestDefaultTypeInternal {
+  constexpr GetStreamsConfigurationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetStreamsConfigurationRequestDefaultTypeInternal() {}
+  union {
+    GetStreamsConfigurationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetStreamsConfigurationRequestDefaultTypeInternal _GetStreamsConfigurationRequest_default_instance_;
+constexpr GetStreamsConfigurationResponse::GetStreamsConfigurationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : streams_(){}
+struct GetStreamsConfigurationResponseDefaultTypeInternal {
+  constexpr GetStreamsConfigurationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetStreamsConfigurationResponseDefaultTypeInternal() {}
+  union {
+    GetStreamsConfigurationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetStreamsConfigurationResponseDefaultTypeInternal _GetStreamsConfigurationResponse_default_instance_;
+constexpr GetApplicationConfigurationRequest::GetApplicationConfigurationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct GetApplicationConfigurationRequestDefaultTypeInternal {
+  constexpr GetApplicationConfigurationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetApplicationConfigurationRequestDefaultTypeInternal() {}
+  union {
+    GetApplicationConfigurationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetApplicationConfigurationRequestDefaultTypeInternal _GetApplicationConfigurationRequest_default_instance_;
+constexpr GetApplicationConfigurationResponse::GetApplicationConfigurationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : configuration_(nullptr){}
+struct GetApplicationConfigurationResponseDefaultTypeInternal {
+  constexpr GetApplicationConfigurationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetApplicationConfigurationResponseDefaultTypeInternal() {}
+  union {
+    GetApplicationConfigurationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetApplicationConfigurationResponseDefaultTypeInternal _GetApplicationConfigurationResponse_default_instance_;
+constexpr GetConfigBlobDataRequest::GetConfigBlobDataRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct GetConfigBlobDataRequestDefaultTypeInternal {
+  constexpr GetConfigBlobDataRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetConfigBlobDataRequestDefaultTypeInternal() {}
+  union {
+    GetConfigBlobDataRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetConfigBlobDataRequestDefaultTypeInternal _GetConfigBlobDataRequest_default_instance_;
+constexpr GetConfigBlobDataResponse::GetConfigBlobDataResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : blob_data_(nullptr){}
+struct GetConfigBlobDataResponseDefaultTypeInternal {
+  constexpr GetConfigBlobDataResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetConfigBlobDataResponseDefaultTypeInternal() {}
+  union {
+    GetConfigBlobDataResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetConfigBlobDataResponseDefaultTypeInternal _GetConfigBlobDataResponse_default_instance_;
+constexpr GetAgentConfigurationRequest::GetAgentConfigurationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct GetAgentConfigurationRequestDefaultTypeInternal {
+  constexpr GetAgentConfigurationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetAgentConfigurationRequestDefaultTypeInternal() {}
+  union {
+    GetAgentConfigurationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetAgentConfigurationRequestDefaultTypeInternal _GetAgentConfigurationRequest_default_instance_;
+constexpr GetAgentConfigurationResponse::GetAgentConfigurationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : configuration_(nullptr){}
+struct GetAgentConfigurationResponseDefaultTypeInternal {
+  constexpr GetAgentConfigurationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetAgentConfigurationResponseDefaultTypeInternal() {}
+  union {
+    GetAgentConfigurationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetAgentConfigurationResponseDefaultTypeInternal _GetAgentConfigurationResponse_default_instance_;
+constexpr HealthRequest::HealthRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct HealthRequestDefaultTypeInternal {
+  constexpr HealthRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~HealthRequestDefaultTypeInternal() {}
+  union {
+    HealthRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HealthRequestDefaultTypeInternal _HealthRequest_default_instance_;
+constexpr HealthResponse::HealthResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct HealthResponseDefaultTypeInternal {
+  constexpr HealthResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~HealthResponseDefaultTypeInternal() {}
+  union {
+    HealthResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HealthResponseDefaultTypeInternal _HealthResponse_default_instance_;
+constexpr GetCommandRequestRequest::GetCommandRequestRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : command_filter_(){}
+struct GetCommandRequestRequestDefaultTypeInternal {
+  constexpr GetCommandRequestRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetCommandRequestRequestDefaultTypeInternal() {}
+  union {
+    GetCommandRequestRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetCommandRequestRequestDefaultTypeInternal _GetCommandRequestRequest_default_instance_;
+constexpr GetCommandRequestResponse::GetCommandRequestResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : request_(nullptr){}
+struct GetCommandRequestResponseDefaultTypeInternal {
+  constexpr GetCommandRequestResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetCommandRequestResponseDefaultTypeInternal() {}
+  union {
+    GetCommandRequestResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetCommandRequestResponseDefaultTypeInternal _GetCommandRequestResponse_default_instance_;
+constexpr SendCommandResponseRequest::SendCommandResponseRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : response_(nullptr){}
+struct SendCommandResponseRequestDefaultTypeInternal {
+  constexpr SendCommandResponseRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SendCommandResponseRequestDefaultTypeInternal() {}
+  union {
+    SendCommandResponseRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SendCommandResponseRequestDefaultTypeInternal _SendCommandResponseRequest_default_instance_;
+constexpr SendCommandResponseResponse::SendCommandResponseResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct SendCommandResponseResponseDefaultTypeInternal {
+  constexpr SendCommandResponseResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SendCommandResponseResponseDefaultTypeInternal() {}
+  union {
+    SendCommandResponseResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SendCommandResponseResponseDefaultTypeInternal _SendCommandResponseResponse_default_instance_;
+constexpr GetCommandRequestStreamRequest::GetCommandRequestStreamRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : command_filter_(){}
+struct GetCommandRequestStreamRequestDefaultTypeInternal {
+  constexpr GetCommandRequestStreamRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetCommandRequestStreamRequestDefaultTypeInternal() {}
+  union {
+    GetCommandRequestStreamRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetCommandRequestStreamRequestDefaultTypeInternal _GetCommandRequestStreamRequest_default_instance_;
+constexpr GetCommandRequestStreamResponse::GetCommandRequestStreamResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : request_(nullptr){}
+struct GetCommandRequestStreamResponseDefaultTypeInternal {
+  constexpr GetCommandRequestStreamResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetCommandRequestStreamResponseDefaultTypeInternal() {}
+  union {
+    GetCommandRequestStreamResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetCommandRequestStreamResponseDefaultTypeInternal _GetCommandRequestStreamResponse_default_instance_;
+constexpr GetTeleopControlDataStreamRequest::GetTeleopControlDataStreamRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : stream_filter_(){}
+struct GetTeleopControlDataStreamRequestDefaultTypeInternal {
+  constexpr GetTeleopControlDataStreamRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetTeleopControlDataStreamRequestDefaultTypeInternal() {}
+  union {
+    GetTeleopControlDataStreamRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTeleopControlDataStreamRequestDefaultTypeInternal _GetTeleopControlDataStreamRequest_default_instance_;
+constexpr GetTeleopControlDataStreamResponse::GetTeleopControlDataStreamResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : control_datapoint_(nullptr){}
+struct GetTeleopControlDataStreamResponseDefaultTypeInternal {
+  constexpr GetTeleopControlDataStreamResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetTeleopControlDataStreamResponseDefaultTypeInternal() {}
+  union {
+    GetTeleopControlDataStreamResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTeleopControlDataStreamResponseDefaultTypeInternal _GetTeleopControlDataStreamResponse_default_instance_;
+constexpr PostTransformFrameResponse::PostTransformFrameResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct PostTransformFrameResponseDefaultTypeInternal {
+  constexpr PostTransformFrameResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PostTransformFrameResponseDefaultTypeInternal() {}
+  union {
+    PostTransformFrameResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PostTransformFrameResponseDefaultTypeInternal _PostTransformFrameResponse_default_instance_;
+constexpr SetBaseFrameIDRequest::SetBaseFrameIDRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SetBaseFrameIDRequestDefaultTypeInternal {
+  constexpr SetBaseFrameIDRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SetBaseFrameIDRequestDefaultTypeInternal() {}
+  union {
+    SetBaseFrameIDRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetBaseFrameIDRequestDefaultTypeInternal _SetBaseFrameIDRequest_default_instance_;
+constexpr SetBaseFrameIDResponse::SetBaseFrameIDResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct SetBaseFrameIDResponseDefaultTypeInternal {
+  constexpr SetBaseFrameIDResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SetBaseFrameIDResponseDefaultTypeInternal() {}
+  union {
+    SetBaseFrameIDResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetBaseFrameIDResponseDefaultTypeInternal _SetBaseFrameIDResponse_default_instance_;
+constexpr ClearTransformTreeRequest::ClearTransformTreeRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct ClearTransformTreeRequestDefaultTypeInternal {
+  constexpr ClearTransformTreeRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ClearTransformTreeRequestDefaultTypeInternal() {}
+  union {
+    ClearTransformTreeRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClearTransformTreeRequestDefaultTypeInternal _ClearTransformTreeRequest_default_instance_;
+constexpr ClearTransformTreeResponse::ClearTransformTreeResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct ClearTransformTreeResponseDefaultTypeInternal {
+  constexpr ClearTransformTreeResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ClearTransformTreeResponseDefaultTypeInternal() {}
+  union {
+    ClearTransformTreeResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClearTransformTreeResponseDefaultTypeInternal _ClearTransformTreeResponse_default_instance_;
+constexpr CreateEventRequest::CreateEventRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : event_(nullptr){}
+struct CreateEventRequestDefaultTypeInternal {
+  constexpr CreateEventRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateEventRequestDefaultTypeInternal() {}
+  union {
+    CreateEventRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateEventRequestDefaultTypeInternal _CreateEventRequest_default_instance_;
+constexpr CreateEventResponse::CreateEventResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct CreateEventResponseDefaultTypeInternal {
+  constexpr CreateEventResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateEventResponseDefaultTypeInternal() {}
+  union {
+    CreateEventResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateEventResponseDefaultTypeInternal _CreateEventResponse_default_instance_;
+constexpr CreateEventError::CreateEventError(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : retryable_(false){}
+struct CreateEventErrorDefaultTypeInternal {
+  constexpr CreateEventErrorDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateEventErrorDefaultTypeInternal() {}
+  union {
+    CreateEventError _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateEventErrorDefaultTypeInternal _CreateEventError_default_instance_;
+constexpr GetTeleopInfoRequest::GetTeleopInfoRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct GetTeleopInfoRequestDefaultTypeInternal {
+  constexpr GetTeleopInfoRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetTeleopInfoRequestDefaultTypeInternal() {}
+  union {
+    GetTeleopInfoRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTeleopInfoRequestDefaultTypeInternal _GetTeleopInfoRequest_default_instance_;
+constexpr GetTeleopInfoResponse::GetTeleopInfoResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : connection_count_(0u){}
+struct GetTeleopInfoResponseDefaultTypeInternal {
+  constexpr GetTeleopInfoResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetTeleopInfoResponseDefaultTypeInternal() {}
+  union {
+    GetTeleopInfoResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTeleopInfoResponseDefaultTypeInternal _GetTeleopInfoResponse_default_instance_;
 }  // namespace agent
 }  // namespace v1
-static void InitDefaultsscc_info_ClearTransformTreeRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_ClearTransformTreeRequest_default_instance_;
-    new (ptr) ::v1::agent::ClearTransformTreeRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::ClearTransformTreeRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ClearTransformTreeRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ClearTransformTreeRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_ClearTransformTreeResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_ClearTransformTreeResponse_default_instance_;
-    new (ptr) ::v1::agent::ClearTransformTreeResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::ClearTransformTreeResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ClearTransformTreeResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ClearTransformTreeResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_CreateEventError_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_CreateEventError_default_instance_;
-    new (ptr) ::v1::agent::CreateEventError();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::CreateEventError::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateEventError_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateEventError_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_CreateEventRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_CreateEventRequest_default_instance_;
-    new (ptr) ::v1::agent::CreateEventRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::CreateEventRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CreateEventRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_CreateEventRequest_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_Event_protos_2fmodel_2fv1_2fevent_2eproto.base,}};
-
-static void InitDefaultsscc_info_CreateEventResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_CreateEventResponse_default_instance_;
-    new (ptr) ::v1::agent::CreateEventResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::CreateEventResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateEventResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateEventResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetAgentConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetAgentConfigurationRequest_default_instance_;
-    new (ptr) ::v1::agent::GetAgentConfigurationRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetAgentConfigurationRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetAgentConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetAgentConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetAgentConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetAgentConfigurationResponse_default_instance_;
-    new (ptr) ::v1::agent::GetAgentConfigurationResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetAgentConfigurationResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetAgentConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetAgentConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_AgentConfiguration_protos_2fmodel_2fv1_2fconfig_2eproto.base,}};
-
-static void InitDefaultsscc_info_GetApplicationConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetApplicationConfigurationRequest_default_instance_;
-    new (ptr) ::v1::agent::GetApplicationConfigurationRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetApplicationConfigurationRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetApplicationConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetApplicationConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetApplicationConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetApplicationConfigurationResponse_default_instance_;
-    new (ptr) ::v1::agent::GetApplicationConfigurationResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetApplicationConfigurationResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetApplicationConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetApplicationConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_ApplicationConfiguration_protos_2fmodel_2fv1_2fconfig_2eproto.base,}};
-
-static void InitDefaultsscc_info_GetCommandRequestRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetCommandRequestRequest_default_instance_;
-    new (ptr) ::v1::agent::GetCommandRequestRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetCommandRequestRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetCommandRequestRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetCommandRequestRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetCommandRequestResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetCommandRequestResponse_default_instance_;
-    new (ptr) ::v1::agent::GetCommandRequestResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetCommandRequestResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetCommandRequestResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetCommandRequestResponse_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_CommandRequest_protos_2fmodel_2fv1_2fcommands_2eproto.base,}};
-
-static void InitDefaultsscc_info_GetCommandRequestStreamRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetCommandRequestStreamRequest_default_instance_;
-    new (ptr) ::v1::agent::GetCommandRequestStreamRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetCommandRequestStreamRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetCommandRequestStreamRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetCommandRequestStreamRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetCommandRequestStreamResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetCommandRequestStreamResponse_default_instance_;
-    new (ptr) ::v1::agent::GetCommandRequestStreamResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetCommandRequestStreamResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetCommandRequestStreamResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetCommandRequestStreamResponse_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_CommandRequest_protos_2fmodel_2fv1_2fcommands_2eproto.base,}};
-
-static void InitDefaultsscc_info_GetConfigBlobDataRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetConfigBlobDataRequest_default_instance_;
-    new (ptr) ::v1::agent::GetConfigBlobDataRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetConfigBlobDataRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetConfigBlobDataRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetConfigBlobDataRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetConfigBlobDataResponse_default_instance_;
-    new (ptr) ::v1::agent::GetConfigBlobDataResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetConfigBlobDataResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_BlobData_protos_2fmodel_2fv1_2fconfig_2eproto.base,}};
-
-static void InitDefaultsscc_info_GetInterventionRequestRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetInterventionRequestRequest_default_instance_;
-    new (ptr) ::v1::agent::GetInterventionRequestRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetInterventionRequestRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetInterventionRequestRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetInterventionRequestRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetInterventionResponseRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetInterventionResponseRequest_default_instance_;
-    new (ptr) ::v1::agent::GetInterventionResponseRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetInterventionResponseRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetInterventionResponseRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetInterventionResponseRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetStreamsConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetStreamsConfigurationRequest_default_instance_;
-    new (ptr) ::v1::agent::GetStreamsConfigurationRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetStreamsConfigurationRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetStreamsConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetStreamsConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetStreamsConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetStreamsConfigurationResponse_default_instance_;
-    new (ptr) ::v1::agent::GetStreamsConfigurationResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetStreamsConfigurationResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetStreamsConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetStreamsConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_StreamConfiguration_protos_2fmodel_2fv1_2fconfig_2eproto.base,}};
-
-static void InitDefaultsscc_info_GetTeleopControlDataStreamRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetTeleopControlDataStreamRequest_default_instance_;
-    new (ptr) ::v1::agent::GetTeleopControlDataStreamRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetTeleopControlDataStreamRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetTeleopControlDataStreamRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetTeleopControlDataStreamRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetTeleopControlDataStreamResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetTeleopControlDataStreamResponse_default_instance_;
-    new (ptr) ::v1::agent::GetTeleopControlDataStreamResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetTeleopControlDataStreamResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetTeleopControlDataStreamResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetTeleopControlDataStreamResponse_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_ControlDatapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto.base,}};
-
-static void InitDefaultsscc_info_GetTeleopInfoRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetTeleopInfoRequest_default_instance_;
-    new (ptr) ::v1::agent::GetTeleopInfoRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetTeleopInfoRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetTeleopInfoRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetTeleopInfoRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetTeleopInfoResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_GetTeleopInfoResponse_default_instance_;
-    new (ptr) ::v1::agent::GetTeleopInfoResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::GetTeleopInfoResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetTeleopInfoResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetTeleopInfoResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_HealthRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_HealthRequest_default_instance_;
-    new (ptr) ::v1::agent::HealthRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::HealthRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HealthRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_HealthRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_HealthResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_HealthResponse_default_instance_;
-    new (ptr) ::v1::agent::HealthResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::HealthResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HealthResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_HealthResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_PostDataError_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_PostDataError_default_instance_;
-    new (ptr) ::v1::agent::PostDataError();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::PostDataError::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PostDataError_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PostDataError_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_PostDataMultiError_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_PostDataMultiError_default_instance_;
-    new (ptr) ::v1::agent::PostDataMultiError();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::PostDataMultiError::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PostDataMultiError_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PostDataMultiError_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_PostDataError_protos_2fagent_2fv1_2fagent_2eproto.base,}};
-
-static void InitDefaultsscc_info_PostDataMultiRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_PostDataMultiRequest_default_instance_;
-    new (ptr) ::v1::agent::PostDataMultiRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::PostDataMultiRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PostDataMultiRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PostDataMultiRequest_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_Datapoint_protos_2fmodel_2fv1_2fdatapoint_2eproto.base,}};
-
-static void InitDefaultsscc_info_PostDataMultiResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_PostDataMultiResponse_default_instance_;
-    new (ptr) ::v1::agent::PostDataMultiResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::PostDataMultiResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PostDataMultiResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PostDataMultiResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_PostDataResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_PostDataResponse_default_instance_;
-    new (ptr) ::v1::agent::PostDataResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::PostDataResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PostDataResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PostDataResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_PostTransformFrameResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_PostTransformFrameResponse_default_instance_;
-    new (ptr) ::v1::agent::PostTransformFrameResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::PostTransformFrameResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PostTransformFrameResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PostTransformFrameResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_SendCommandResponseRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_SendCommandResponseRequest_default_instance_;
-    new (ptr) ::v1::agent::SendCommandResponseRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::SendCommandResponseRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SendCommandResponseRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_SendCommandResponseRequest_protos_2fagent_2fv1_2fagent_2eproto}, {
-      &scc_info_CommandResponse_protos_2fmodel_2fv1_2fcommands_2eproto.base,}};
-
-static void InitDefaultsscc_info_SendCommandResponseResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_SendCommandResponseResponse_default_instance_;
-    new (ptr) ::v1::agent::SendCommandResponseResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::SendCommandResponseResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SendCommandResponseResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SendCommandResponseResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_SetBaseFrameIDRequest_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_SetBaseFrameIDRequest_default_instance_;
-    new (ptr) ::v1::agent::SetBaseFrameIDRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::SetBaseFrameIDRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SetBaseFrameIDRequest_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SetBaseFrameIDRequest_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_SetBaseFrameIDResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_SetBaseFrameIDResponse_default_instance_;
-    new (ptr) ::v1::agent::SetBaseFrameIDResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::SetBaseFrameIDResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SetBaseFrameIDResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SetBaseFrameIDResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
-static void InitDefaultsscc_info_StreamDataResponse_protos_2fagent_2fv1_2fagent_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::agent::_StreamDataResponse_default_instance_;
-    new (ptr) ::v1::agent::StreamDataResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::agent::StreamDataResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StreamDataResponse_protos_2fagent_2fv1_2fagent_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_StreamDataResponse_protos_2fagent_2fv1_2fagent_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[36];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fagent_2fv1_2fagent_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fagent_2fv1_2fagent_2eproto = nullptr;
@@ -1089,61 +841,26 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_sccs[36] = {
-  &scc_info_ClearTransformTreeRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_ClearTransformTreeResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_CreateEventError_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_CreateEventRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_CreateEventResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetAgentConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetAgentConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetApplicationConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetApplicationConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetCommandRequestRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetCommandRequestResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetCommandRequestStreamRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetCommandRequestStreamResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetConfigBlobDataRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetInterventionRequestRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetInterventionResponseRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetStreamsConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetStreamsConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetTeleopControlDataStreamRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetTeleopControlDataStreamResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetTeleopInfoRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_GetTeleopInfoResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_HealthRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_HealthResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_PostDataError_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_PostDataMultiError_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_PostDataMultiRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_PostDataMultiResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_PostDataResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_PostTransformFrameResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_SendCommandResponseRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_SendCommandResponseResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_SetBaseFrameIDRequest_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_SetBaseFrameIDResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-  &scc_info_StreamDataResponse_protos_2fagent_2fv1_2fagent_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fagent_2fv1_2fagent_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto, "protos/agent/v1/agent.proto", 4170,
-  &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once, descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_sccs, descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps, 36, 6,
+  false, false, 4170, descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto, "protos/agent/v1/agent.proto", 
+  &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once, descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps, 6, 36,
   schemas, file_default_instances, TableStruct_protos_2fagent_2fv1_2fagent_2eproto::offsets,
-  file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto, 36, file_level_enum_descriptors_protos_2fagent_2fv1_2fagent_2eproto, file_level_service_descriptors_protos_2fagent_2fv1_2fagent_2eproto,
+  file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto, file_level_enum_descriptors_protos_2fagent_2fv1_2fagent_2eproto, file_level_service_descriptors_protos_2fagent_2fv1_2fagent_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fagent_2fv1_2fagent_2eproto);
+  return descriptor_table_protos_2fagent_2fv1_2fagent_2eproto.file_level_metadata[index];
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_protos_2fagent_2fv1_2fagent_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_protos_2fagent_2fv1_2fagent_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_protos_2fagent_2fv1_2fagent_2eproto(&descriptor_table_protos_2fagent_2fv1_2fagent_2eproto);
 namespace v1 {
 namespace agent {
 
 // ===================================================================
 
-void StreamDataResponse::InitAsDefaultInstance() {
-}
 class StreamDataResponse::_Internal {
  public:
 };
@@ -1182,11 +899,6 @@ void StreamDataResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void StreamDataResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const StreamDataResponse& StreamDataResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_StreamDataResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void StreamDataResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.StreamDataResponse)
@@ -1199,7 +911,6 @@ void StreamDataResponse::Clear() {
 
 const char* StreamDataResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1307,8 +1018,6 @@ void StreamDataResponse::InternalSwap(StreamDataResponse* other) {
 
 // ===================================================================
 
-void PostDataResponse::InitAsDefaultInstance() {
-}
 class PostDataResponse::_Internal {
  public:
 };
@@ -1347,11 +1056,6 @@ void PostDataResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void PostDataResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PostDataResponse& PostDataResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PostDataResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PostDataResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.PostDataResponse)
@@ -1364,7 +1068,6 @@ void PostDataResponse::Clear() {
 
 const char* PostDataResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1472,8 +1175,6 @@ void PostDataResponse::InternalSwap(PostDataResponse* other) {
 
 // ===================================================================
 
-void PostDataError::InitAsDefaultInstance() {
-}
 class PostDataError::_Internal {
  public:
 };
@@ -1489,7 +1190,7 @@ PostDataError::PostDataError(const PostDataError& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_message().empty()) {
-    message_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_message(),
+    message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_message(), 
       GetArena());
   }
   ::memcpy(&index_, &from.index_,
@@ -1499,11 +1200,11 @@ PostDataError::PostDataError(const PostDataError& from)
 }
 
 void PostDataError::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PostDataError_protos_2fagent_2fv1_2fagent_2eproto.base);
-  message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&retryable_) -
-      reinterpret_cast<char*>(&index_)) + sizeof(retryable_));
+message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&index_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&retryable_) -
+    reinterpret_cast<char*>(&index_)) + sizeof(retryable_));
 }
 
 PostDataError::~PostDataError() {
@@ -1526,11 +1227,6 @@ void PostDataError::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void PostDataError::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PostDataError& PostDataError::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PostDataError_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PostDataError::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.PostDataError)
@@ -1538,7 +1234,7 @@ void PostDataError::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  message_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  message_.ClearToEmpty();
   ::memset(&index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&retryable_) -
       reinterpret_cast<char*>(&index_)) + sizeof(retryable_));
@@ -1547,34 +1243,33 @@ void PostDataError::Clear() {
 
 const char* PostDataError::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 index = 1[json_name = "index"];
+      // uint32 index = 1 [json_name = "index"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 code = 2[json_name = "code"];
+      // uint32 code = 2 [json_name = "code"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool retryable = 3[json_name = "retryable"];
+      // bool retryable = 3 [json_name = "retryable"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           retryable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string message = 4[json_name = "message"];
+      // string message = 4 [json_name = "message"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_message();
@@ -1611,25 +1306,25 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 index = 1[json_name = "index"];
+  // uint32 index = 1 [json_name = "index"];
   if (this->index() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_index(), target);
   }
 
-  // uint32 code = 2[json_name = "code"];
+  // uint32 code = 2 [json_name = "code"];
   if (this->code() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_code(), target);
   }
 
-  // bool retryable = 3[json_name = "retryable"];
+  // bool retryable = 3 [json_name = "retryable"];
   if (this->retryable() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_retryable(), target);
   }
 
-  // string message = 4[json_name = "message"];
+  // string message = 4 [json_name = "message"];
   if (this->message().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
@@ -1655,28 +1350,28 @@ size_t PostDataError::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string message = 4[json_name = "message"];
+  // string message = 4 [json_name = "message"];
   if (this->message().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_message());
   }
 
-  // uint32 index = 1[json_name = "index"];
+  // uint32 index = 1 [json_name = "index"];
   if (this->index() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_index());
   }
 
-  // uint32 code = 2[json_name = "code"];
+  // uint32 code = 2 [json_name = "code"];
   if (this->code() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_code());
   }
 
-  // bool retryable = 3[json_name = "retryable"];
+  // bool retryable = 3 [json_name = "retryable"];
   if (this->retryable() != 0) {
     total_size += 1 + 1;
   }
@@ -1763,8 +1458,6 @@ void PostDataError::InternalSwap(PostDataError* other) {
 
 // ===================================================================
 
-void PostDataMultiRequest::InitAsDefaultInstance() {
-}
 class PostDataMultiRequest::_Internal {
  public:
 };
@@ -1787,7 +1480,6 @@ PostDataMultiRequest::PostDataMultiRequest(const PostDataMultiRequest& from)
 }
 
 void PostDataMultiRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PostDataMultiRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
 }
 
 PostDataMultiRequest::~PostDataMultiRequest() {
@@ -1809,11 +1501,6 @@ void PostDataMultiRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void PostDataMultiRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PostDataMultiRequest& PostDataMultiRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PostDataMultiRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PostDataMultiRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.PostDataMultiRequest)
@@ -1827,13 +1514,12 @@ void PostDataMultiRequest::Clear() {
 
 const char* PostDataMultiRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .v1.model.Datapoint datapoints = 1[json_name = "datapoints"];
+      // repeated .v1.model.Datapoint datapoints = 1 [json_name = "datapoints"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -1873,7 +1559,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .v1.model.Datapoint datapoints = 1[json_name = "datapoints"];
+  // repeated .v1.model.Datapoint datapoints = 1 [json_name = "datapoints"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_datapoints_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1897,7 +1583,7 @@ size_t PostDataMultiRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .v1.model.Datapoint datapoints = 1[json_name = "datapoints"];
+  // repeated .v1.model.Datapoint datapoints = 1 [json_name = "datapoints"];
   total_size += 1UL * this->_internal_datapoints_size();
   for (const auto& msg : this->datapoints_) {
     total_size +=
@@ -1969,8 +1655,6 @@ void PostDataMultiRequest::InternalSwap(PostDataMultiRequest* other) {
 
 // ===================================================================
 
-void PostDataMultiResponse::InitAsDefaultInstance() {
-}
 class PostDataMultiResponse::_Internal {
  public:
 };
@@ -2009,11 +1693,6 @@ void PostDataMultiResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void PostDataMultiResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PostDataMultiResponse& PostDataMultiResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PostDataMultiResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PostDataMultiResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.PostDataMultiResponse)
@@ -2026,7 +1705,6 @@ void PostDataMultiResponse::Clear() {
 
 const char* PostDataMultiResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2134,8 +1812,6 @@ void PostDataMultiResponse::InternalSwap(PostDataMultiResponse* other) {
 
 // ===================================================================
 
-void PostDataMultiError::InitAsDefaultInstance() {
-}
 class PostDataMultiError::_Internal {
  public:
 };
@@ -2155,7 +1831,6 @@ PostDataMultiError::PostDataMultiError(const PostDataMultiError& from)
 }
 
 void PostDataMultiError::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PostDataMultiError_protos_2fagent_2fv1_2fagent_2eproto.base);
 }
 
 PostDataMultiError::~PostDataMultiError() {
@@ -2177,11 +1852,6 @@ void PostDataMultiError::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void PostDataMultiError::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PostDataMultiError& PostDataMultiError::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PostDataMultiError_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PostDataMultiError::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.PostDataMultiError)
@@ -2195,13 +1865,12 @@ void PostDataMultiError::Clear() {
 
 const char* PostDataMultiError::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .v1.agent.PostDataError errors = 1[json_name = "errors"];
+      // repeated .v1.agent.PostDataError errors = 1 [json_name = "errors"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -2241,7 +1910,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .v1.agent.PostDataError errors = 1[json_name = "errors"];
+  // repeated .v1.agent.PostDataError errors = 1 [json_name = "errors"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_errors_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -2265,7 +1934,7 @@ size_t PostDataMultiError::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .v1.agent.PostDataError errors = 1[json_name = "errors"];
+  // repeated .v1.agent.PostDataError errors = 1 [json_name = "errors"];
   total_size += 1UL * this->_internal_errors_size();
   for (const auto& msg : this->errors_) {
     total_size +=
@@ -2337,8 +2006,6 @@ void PostDataMultiError::InternalSwap(PostDataMultiError* other) {
 
 // ===================================================================
 
-void GetInterventionRequestRequest::InitAsDefaultInstance() {
-}
 class GetInterventionRequestRequest::_Internal {
  public:
 };
@@ -2354,15 +2021,14 @@ GetInterventionRequestRequest::GetInterventionRequestRequest(const GetInterventi
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_id(),
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:v1.agent.GetInterventionRequestRequest)
 }
 
 void GetInterventionRequestRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetInterventionRequestRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GetInterventionRequestRequest::~GetInterventionRequestRequest() {
@@ -2385,11 +2051,6 @@ void GetInterventionRequestRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::A
 void GetInterventionRequestRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetInterventionRequestRequest& GetInterventionRequestRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetInterventionRequestRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetInterventionRequestRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetInterventionRequestRequest)
@@ -2397,19 +2058,18 @@ void GetInterventionRequestRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetInterventionRequestRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string id = 1[json_name = "id"];
+      // string id = 1 [json_name = "id"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_id();
@@ -2446,7 +2106,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1[json_name = "id"];
+  // string id = 1 [json_name = "id"];
   if (this->id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
@@ -2472,7 +2132,7 @@ size_t GetInterventionRequestRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1[json_name = "id"];
+  // string id = 1 [json_name = "id"];
   if (this->id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -2546,8 +2206,6 @@ void GetInterventionRequestRequest::InternalSwap(GetInterventionRequestRequest* 
 
 // ===================================================================
 
-void GetInterventionResponseRequest::InitAsDefaultInstance() {
-}
 class GetInterventionResponseRequest::_Internal {
  public:
 };
@@ -2563,15 +2221,14 @@ GetInterventionResponseRequest::GetInterventionResponseRequest(const GetInterven
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   request_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_request_id().empty()) {
-    request_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_request_id(),
+    request_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_request_id(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:v1.agent.GetInterventionResponseRequest)
 }
 
 void GetInterventionResponseRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetInterventionResponseRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  request_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+request_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GetInterventionResponseRequest::~GetInterventionResponseRequest() {
@@ -2594,11 +2251,6 @@ void GetInterventionResponseRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::
 void GetInterventionResponseRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetInterventionResponseRequest& GetInterventionResponseRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetInterventionResponseRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetInterventionResponseRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetInterventionResponseRequest)
@@ -2606,19 +2258,18 @@ void GetInterventionResponseRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  request_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  request_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetInterventionResponseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string request_id = 1[json_name = "requestId"];
+      // string request_id = 1 [json_name = "requestId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_request_id();
@@ -2655,7 +2306,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string request_id = 1[json_name = "requestId"];
+  // string request_id = 1 [json_name = "requestId"];
   if (this->request_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_request_id().data(), static_cast<int>(this->_internal_request_id().length()),
@@ -2681,7 +2332,7 @@ size_t GetInterventionResponseRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string request_id = 1[json_name = "requestId"];
+  // string request_id = 1 [json_name = "requestId"];
   if (this->request_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -2755,8 +2406,6 @@ void GetInterventionResponseRequest::InternalSwap(GetInterventionResponseRequest
 
 // ===================================================================
 
-void GetStreamsConfigurationRequest::InitAsDefaultInstance() {
-}
 class GetStreamsConfigurationRequest::_Internal {
  public:
 };
@@ -2795,11 +2444,6 @@ void GetStreamsConfigurationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::
 void GetStreamsConfigurationRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetStreamsConfigurationRequest& GetStreamsConfigurationRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetStreamsConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetStreamsConfigurationRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetStreamsConfigurationRequest)
@@ -2812,7 +2456,6 @@ void GetStreamsConfigurationRequest::Clear() {
 
 const char* GetStreamsConfigurationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2920,8 +2563,6 @@ void GetStreamsConfigurationRequest::InternalSwap(GetStreamsConfigurationRequest
 
 // ===================================================================
 
-void GetStreamsConfigurationResponse::InitAsDefaultInstance() {
-}
 class GetStreamsConfigurationResponse::_Internal {
  public:
 };
@@ -2944,7 +2585,6 @@ GetStreamsConfigurationResponse::GetStreamsConfigurationResponse(const GetStream
 }
 
 void GetStreamsConfigurationResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetStreamsConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
 }
 
 GetStreamsConfigurationResponse::~GetStreamsConfigurationResponse() {
@@ -2966,11 +2606,6 @@ void GetStreamsConfigurationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID:
 void GetStreamsConfigurationResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetStreamsConfigurationResponse& GetStreamsConfigurationResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetStreamsConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetStreamsConfigurationResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetStreamsConfigurationResponse)
@@ -2984,13 +2619,12 @@ void GetStreamsConfigurationResponse::Clear() {
 
 const char* GetStreamsConfigurationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .v1.model.StreamConfiguration streams = 1[json_name = "streams"];
+      // repeated .v1.model.StreamConfiguration streams = 1 [json_name = "streams"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -3030,7 +2664,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .v1.model.StreamConfiguration streams = 1[json_name = "streams"];
+  // repeated .v1.model.StreamConfiguration streams = 1 [json_name = "streams"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_streams_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -3054,7 +2688,7 @@ size_t GetStreamsConfigurationResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .v1.model.StreamConfiguration streams = 1[json_name = "streams"];
+  // repeated .v1.model.StreamConfiguration streams = 1 [json_name = "streams"];
   total_size += 1UL * this->_internal_streams_size();
   for (const auto& msg : this->streams_) {
     total_size +=
@@ -3126,8 +2760,6 @@ void GetStreamsConfigurationResponse::InternalSwap(GetStreamsConfigurationRespon
 
 // ===================================================================
 
-void GetApplicationConfigurationRequest::InitAsDefaultInstance() {
-}
 class GetApplicationConfigurationRequest::_Internal {
  public:
 };
@@ -3166,11 +2798,6 @@ void GetApplicationConfigurationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_
 void GetApplicationConfigurationRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetApplicationConfigurationRequest& GetApplicationConfigurationRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetApplicationConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetApplicationConfigurationRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetApplicationConfigurationRequest)
@@ -3183,7 +2810,6 @@ void GetApplicationConfigurationRequest::Clear() {
 
 const char* GetApplicationConfigurationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3291,10 +2917,6 @@ void GetApplicationConfigurationRequest::InternalSwap(GetApplicationConfiguratio
 
 // ===================================================================
 
-void GetApplicationConfigurationResponse::InitAsDefaultInstance() {
-  ::v1::agent::_GetApplicationConfigurationResponse_default_instance_._instance.get_mutable()->configuration_ = const_cast< ::v1::model::ApplicationConfiguration*>(
-      ::v1::model::ApplicationConfiguration::internal_default_instance());
-}
 class GetApplicationConfigurationResponse::_Internal {
  public:
   static const ::v1::model::ApplicationConfiguration& configuration(const GetApplicationConfigurationResponse* msg);
@@ -3328,8 +2950,7 @@ GetApplicationConfigurationResponse::GetApplicationConfigurationResponse(const G
 }
 
 void GetApplicationConfigurationResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetApplicationConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  configuration_ = nullptr;
+configuration_ = nullptr;
 }
 
 GetApplicationConfigurationResponse::~GetApplicationConfigurationResponse() {
@@ -3352,11 +2973,6 @@ void GetApplicationConfigurationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE
 void GetApplicationConfigurationResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetApplicationConfigurationResponse& GetApplicationConfigurationResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetApplicationConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetApplicationConfigurationResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetApplicationConfigurationResponse)
@@ -3373,13 +2989,12 @@ void GetApplicationConfigurationResponse::Clear() {
 
 const char* GetApplicationConfigurationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.ApplicationConfiguration configuration = 1[json_name = "configuration"];
+      // .v1.model.ApplicationConfiguration configuration = 1 [json_name = "configuration"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_configuration(), ptr);
@@ -3414,7 +3029,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.ApplicationConfiguration configuration = 1[json_name = "configuration"];
+  // .v1.model.ApplicationConfiguration configuration = 1 [json_name = "configuration"];
   if (this->has_configuration()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3438,7 +3053,7 @@ size_t GetApplicationConfigurationResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.ApplicationConfiguration configuration = 1[json_name = "configuration"];
+  // .v1.model.ApplicationConfiguration configuration = 1 [json_name = "configuration"];
   if (this->has_configuration()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3512,8 +3127,6 @@ void GetApplicationConfigurationResponse::InternalSwap(GetApplicationConfigurati
 
 // ===================================================================
 
-void GetConfigBlobDataRequest::InitAsDefaultInstance() {
-}
 class GetConfigBlobDataRequest::_Internal {
  public:
 };
@@ -3552,11 +3165,6 @@ void GetConfigBlobDataRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*
 void GetConfigBlobDataRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetConfigBlobDataRequest& GetConfigBlobDataRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetConfigBlobDataRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetConfigBlobDataRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetConfigBlobDataRequest)
@@ -3569,7 +3177,6 @@ void GetConfigBlobDataRequest::Clear() {
 
 const char* GetConfigBlobDataRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3677,10 +3284,6 @@ void GetConfigBlobDataRequest::InternalSwap(GetConfigBlobDataRequest* other) {
 
 // ===================================================================
 
-void GetConfigBlobDataResponse::InitAsDefaultInstance() {
-  ::v1::agent::_GetConfigBlobDataResponse_default_instance_._instance.get_mutable()->blob_data_ = const_cast< ::v1::model::BlobData*>(
-      ::v1::model::BlobData::internal_default_instance());
-}
 class GetConfigBlobDataResponse::_Internal {
  public:
   static const ::v1::model::BlobData& blob_data(const GetConfigBlobDataResponse* msg);
@@ -3714,8 +3317,7 @@ GetConfigBlobDataResponse::GetConfigBlobDataResponse(const GetConfigBlobDataResp
 }
 
 void GetConfigBlobDataResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  blob_data_ = nullptr;
+blob_data_ = nullptr;
 }
 
 GetConfigBlobDataResponse::~GetConfigBlobDataResponse() {
@@ -3738,11 +3340,6 @@ void GetConfigBlobDataResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena
 void GetConfigBlobDataResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetConfigBlobDataResponse& GetConfigBlobDataResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetConfigBlobDataResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetConfigBlobDataResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetConfigBlobDataResponse)
@@ -3759,13 +3356,12 @@ void GetConfigBlobDataResponse::Clear() {
 
 const char* GetConfigBlobDataResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.BlobData blob_data = 1[json_name = "blobData"];
+      // .v1.model.BlobData blob_data = 1 [json_name = "blobData"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_blob_data(), ptr);
@@ -3800,7 +3396,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.BlobData blob_data = 1[json_name = "blobData"];
+  // .v1.model.BlobData blob_data = 1 [json_name = "blobData"];
   if (this->has_blob_data()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3824,7 +3420,7 @@ size_t GetConfigBlobDataResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.BlobData blob_data = 1[json_name = "blobData"];
+  // .v1.model.BlobData blob_data = 1 [json_name = "blobData"];
   if (this->has_blob_data()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3898,8 +3494,6 @@ void GetConfigBlobDataResponse::InternalSwap(GetConfigBlobDataResponse* other) {
 
 // ===================================================================
 
-void GetAgentConfigurationRequest::InitAsDefaultInstance() {
-}
 class GetAgentConfigurationRequest::_Internal {
  public:
 };
@@ -3938,11 +3532,6 @@ void GetAgentConfigurationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Ar
 void GetAgentConfigurationRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetAgentConfigurationRequest& GetAgentConfigurationRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetAgentConfigurationRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetAgentConfigurationRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetAgentConfigurationRequest)
@@ -3955,7 +3544,6 @@ void GetAgentConfigurationRequest::Clear() {
 
 const char* GetAgentConfigurationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4063,10 +3651,6 @@ void GetAgentConfigurationRequest::InternalSwap(GetAgentConfigurationRequest* ot
 
 // ===================================================================
 
-void GetAgentConfigurationResponse::InitAsDefaultInstance() {
-  ::v1::agent::_GetAgentConfigurationResponse_default_instance_._instance.get_mutable()->configuration_ = const_cast< ::v1::model::AgentConfiguration*>(
-      ::v1::model::AgentConfiguration::internal_default_instance());
-}
 class GetAgentConfigurationResponse::_Internal {
  public:
   static const ::v1::model::AgentConfiguration& configuration(const GetAgentConfigurationResponse* msg);
@@ -4100,8 +3684,7 @@ GetAgentConfigurationResponse::GetAgentConfigurationResponse(const GetAgentConfi
 }
 
 void GetAgentConfigurationResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetAgentConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  configuration_ = nullptr;
+configuration_ = nullptr;
 }
 
 GetAgentConfigurationResponse::~GetAgentConfigurationResponse() {
@@ -4124,11 +3707,6 @@ void GetAgentConfigurationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::A
 void GetAgentConfigurationResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetAgentConfigurationResponse& GetAgentConfigurationResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetAgentConfigurationResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetAgentConfigurationResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetAgentConfigurationResponse)
@@ -4145,13 +3723,12 @@ void GetAgentConfigurationResponse::Clear() {
 
 const char* GetAgentConfigurationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.AgentConfiguration configuration = 1[json_name = "configuration"];
+      // .v1.model.AgentConfiguration configuration = 1 [json_name = "configuration"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_configuration(), ptr);
@@ -4186,7 +3763,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.AgentConfiguration configuration = 1[json_name = "configuration"];
+  // .v1.model.AgentConfiguration configuration = 1 [json_name = "configuration"];
   if (this->has_configuration()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -4210,7 +3787,7 @@ size_t GetAgentConfigurationResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.AgentConfiguration configuration = 1[json_name = "configuration"];
+  // .v1.model.AgentConfiguration configuration = 1 [json_name = "configuration"];
   if (this->has_configuration()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4284,8 +3861,6 @@ void GetAgentConfigurationResponse::InternalSwap(GetAgentConfigurationResponse* 
 
 // ===================================================================
 
-void HealthRequest::InitAsDefaultInstance() {
-}
 class HealthRequest::_Internal {
  public:
 };
@@ -4324,11 +3899,6 @@ void HealthRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void HealthRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const HealthRequest& HealthRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_HealthRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void HealthRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.HealthRequest)
@@ -4341,7 +3911,6 @@ void HealthRequest::Clear() {
 
 const char* HealthRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4449,8 +4018,6 @@ void HealthRequest::InternalSwap(HealthRequest* other) {
 
 // ===================================================================
 
-void HealthResponse::InitAsDefaultInstance() {
-}
 class HealthResponse::_Internal {
  public:
 };
@@ -4489,11 +4056,6 @@ void HealthResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void HealthResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const HealthResponse& HealthResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_HealthResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void HealthResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.HealthResponse)
@@ -4506,7 +4068,6 @@ void HealthResponse::Clear() {
 
 const char* HealthResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4614,8 +4175,6 @@ void HealthResponse::InternalSwap(HealthResponse* other) {
 
 // ===================================================================
 
-void GetCommandRequestRequest::InitAsDefaultInstance() {
-}
 class GetCommandRequestRequest::_Internal {
  public:
 };
@@ -4635,7 +4194,6 @@ GetCommandRequestRequest::GetCommandRequestRequest(const GetCommandRequestReques
 }
 
 void GetCommandRequestRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetCommandRequestRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
 }
 
 GetCommandRequestRequest::~GetCommandRequestRequest() {
@@ -4657,11 +4215,6 @@ void GetCommandRequestRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*
 void GetCommandRequestRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetCommandRequestRequest& GetCommandRequestRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetCommandRequestRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetCommandRequestRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetCommandRequestRequest)
@@ -4675,13 +4228,12 @@ void GetCommandRequestRequest::Clear() {
 
 const char* GetCommandRequestRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated string command_filter = 1[json_name = "commandFilter"];
+      // repeated string command_filter = 1 [json_name = "commandFilter"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -4723,7 +4275,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string command_filter = 1[json_name = "commandFilter"];
+  // repeated string command_filter = 1 [json_name = "commandFilter"];
   for (int i = 0, n = this->_internal_command_filter_size(); i < n; i++) {
     const auto& s = this->_internal_command_filter(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
@@ -4749,7 +4301,7 @@ size_t GetCommandRequestRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string command_filter = 1[json_name = "commandFilter"];
+  // repeated string command_filter = 1 [json_name = "commandFilter"];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(command_filter_.size());
   for (int i = 0, n = command_filter_.size(); i < n; i++) {
@@ -4822,10 +4374,6 @@ void GetCommandRequestRequest::InternalSwap(GetCommandRequestRequest* other) {
 
 // ===================================================================
 
-void GetCommandRequestResponse::InitAsDefaultInstance() {
-  ::v1::agent::_GetCommandRequestResponse_default_instance_._instance.get_mutable()->request_ = const_cast< ::v1::model::CommandRequest*>(
-      ::v1::model::CommandRequest::internal_default_instance());
-}
 class GetCommandRequestResponse::_Internal {
  public:
   static const ::v1::model::CommandRequest& request(const GetCommandRequestResponse* msg);
@@ -4859,8 +4407,7 @@ GetCommandRequestResponse::GetCommandRequestResponse(const GetCommandRequestResp
 }
 
 void GetCommandRequestResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetCommandRequestResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  request_ = nullptr;
+request_ = nullptr;
 }
 
 GetCommandRequestResponse::~GetCommandRequestResponse() {
@@ -4883,11 +4430,6 @@ void GetCommandRequestResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena
 void GetCommandRequestResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetCommandRequestResponse& GetCommandRequestResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetCommandRequestResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetCommandRequestResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetCommandRequestResponse)
@@ -4904,13 +4446,12 @@ void GetCommandRequestResponse::Clear() {
 
 const char* GetCommandRequestResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.CommandRequest request = 1[json_name = "request"];
+      // .v1.model.CommandRequest request = 1 [json_name = "request"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_request(), ptr);
@@ -4945,7 +4486,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.CommandRequest request = 1[json_name = "request"];
+  // .v1.model.CommandRequest request = 1 [json_name = "request"];
   if (this->has_request()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -4969,7 +4510,7 @@ size_t GetCommandRequestResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.CommandRequest request = 1[json_name = "request"];
+  // .v1.model.CommandRequest request = 1 [json_name = "request"];
   if (this->has_request()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -5043,10 +4584,6 @@ void GetCommandRequestResponse::InternalSwap(GetCommandRequestResponse* other) {
 
 // ===================================================================
 
-void SendCommandResponseRequest::InitAsDefaultInstance() {
-  ::v1::agent::_SendCommandResponseRequest_default_instance_._instance.get_mutable()->response_ = const_cast< ::v1::model::CommandResponse*>(
-      ::v1::model::CommandResponse::internal_default_instance());
-}
 class SendCommandResponseRequest::_Internal {
  public:
   static const ::v1::model::CommandResponse& response(const SendCommandResponseRequest* msg);
@@ -5080,8 +4617,7 @@ SendCommandResponseRequest::SendCommandResponseRequest(const SendCommandResponse
 }
 
 void SendCommandResponseRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SendCommandResponseRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  response_ = nullptr;
+response_ = nullptr;
 }
 
 SendCommandResponseRequest::~SendCommandResponseRequest() {
@@ -5104,11 +4640,6 @@ void SendCommandResponseRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Aren
 void SendCommandResponseRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SendCommandResponseRequest& SendCommandResponseRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SendCommandResponseRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SendCommandResponseRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.SendCommandResponseRequest)
@@ -5125,13 +4656,12 @@ void SendCommandResponseRequest::Clear() {
 
 const char* SendCommandResponseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.CommandResponse response = 1[json_name = "response"];
+      // .v1.model.CommandResponse response = 1 [json_name = "response"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_response(), ptr);
@@ -5166,7 +4696,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.CommandResponse response = 1[json_name = "response"];
+  // .v1.model.CommandResponse response = 1 [json_name = "response"];
   if (this->has_response()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -5190,7 +4720,7 @@ size_t SendCommandResponseRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.CommandResponse response = 1[json_name = "response"];
+  // .v1.model.CommandResponse response = 1 [json_name = "response"];
   if (this->has_response()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -5264,8 +4794,6 @@ void SendCommandResponseRequest::InternalSwap(SendCommandResponseRequest* other)
 
 // ===================================================================
 
-void SendCommandResponseResponse::InitAsDefaultInstance() {
-}
 class SendCommandResponseResponse::_Internal {
  public:
 };
@@ -5304,11 +4832,6 @@ void SendCommandResponseResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Are
 void SendCommandResponseResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SendCommandResponseResponse& SendCommandResponseResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SendCommandResponseResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SendCommandResponseResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.SendCommandResponseResponse)
@@ -5321,7 +4844,6 @@ void SendCommandResponseResponse::Clear() {
 
 const char* SendCommandResponseResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5429,8 +4951,6 @@ void SendCommandResponseResponse::InternalSwap(SendCommandResponseResponse* othe
 
 // ===================================================================
 
-void GetCommandRequestStreamRequest::InitAsDefaultInstance() {
-}
 class GetCommandRequestStreamRequest::_Internal {
  public:
 };
@@ -5450,7 +4970,6 @@ GetCommandRequestStreamRequest::GetCommandRequestStreamRequest(const GetCommandR
 }
 
 void GetCommandRequestStreamRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetCommandRequestStreamRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
 }
 
 GetCommandRequestStreamRequest::~GetCommandRequestStreamRequest() {
@@ -5472,11 +4991,6 @@ void GetCommandRequestStreamRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::
 void GetCommandRequestStreamRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetCommandRequestStreamRequest& GetCommandRequestStreamRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetCommandRequestStreamRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetCommandRequestStreamRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetCommandRequestStreamRequest)
@@ -5490,13 +5004,12 @@ void GetCommandRequestStreamRequest::Clear() {
 
 const char* GetCommandRequestStreamRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated string command_filter = 1[json_name = "commandFilter"];
+      // repeated string command_filter = 1 [json_name = "commandFilter"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -5538,7 +5051,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string command_filter = 1[json_name = "commandFilter"];
+  // repeated string command_filter = 1 [json_name = "commandFilter"];
   for (int i = 0, n = this->_internal_command_filter_size(); i < n; i++) {
     const auto& s = this->_internal_command_filter(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
@@ -5564,7 +5077,7 @@ size_t GetCommandRequestStreamRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string command_filter = 1[json_name = "commandFilter"];
+  // repeated string command_filter = 1 [json_name = "commandFilter"];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(command_filter_.size());
   for (int i = 0, n = command_filter_.size(); i < n; i++) {
@@ -5637,10 +5150,6 @@ void GetCommandRequestStreamRequest::InternalSwap(GetCommandRequestStreamRequest
 
 // ===================================================================
 
-void GetCommandRequestStreamResponse::InitAsDefaultInstance() {
-  ::v1::agent::_GetCommandRequestStreamResponse_default_instance_._instance.get_mutable()->request_ = const_cast< ::v1::model::CommandRequest*>(
-      ::v1::model::CommandRequest::internal_default_instance());
-}
 class GetCommandRequestStreamResponse::_Internal {
  public:
   static const ::v1::model::CommandRequest& request(const GetCommandRequestStreamResponse* msg);
@@ -5674,8 +5183,7 @@ GetCommandRequestStreamResponse::GetCommandRequestStreamResponse(const GetComman
 }
 
 void GetCommandRequestStreamResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetCommandRequestStreamResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  request_ = nullptr;
+request_ = nullptr;
 }
 
 GetCommandRequestStreamResponse::~GetCommandRequestStreamResponse() {
@@ -5698,11 +5206,6 @@ void GetCommandRequestStreamResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID:
 void GetCommandRequestStreamResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetCommandRequestStreamResponse& GetCommandRequestStreamResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetCommandRequestStreamResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetCommandRequestStreamResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetCommandRequestStreamResponse)
@@ -5719,13 +5222,12 @@ void GetCommandRequestStreamResponse::Clear() {
 
 const char* GetCommandRequestStreamResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.CommandRequest request = 1[json_name = "request"];
+      // .v1.model.CommandRequest request = 1 [json_name = "request"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_request(), ptr);
@@ -5760,7 +5262,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.CommandRequest request = 1[json_name = "request"];
+  // .v1.model.CommandRequest request = 1 [json_name = "request"];
   if (this->has_request()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -5784,7 +5286,7 @@ size_t GetCommandRequestStreamResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.CommandRequest request = 1[json_name = "request"];
+  // .v1.model.CommandRequest request = 1 [json_name = "request"];
   if (this->has_request()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -5858,8 +5360,6 @@ void GetCommandRequestStreamResponse::InternalSwap(GetCommandRequestStreamRespon
 
 // ===================================================================
 
-void GetTeleopControlDataStreamRequest::InitAsDefaultInstance() {
-}
 class GetTeleopControlDataStreamRequest::_Internal {
  public:
 };
@@ -5879,7 +5379,6 @@ GetTeleopControlDataStreamRequest::GetTeleopControlDataStreamRequest(const GetTe
 }
 
 void GetTeleopControlDataStreamRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetTeleopControlDataStreamRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
 }
 
 GetTeleopControlDataStreamRequest::~GetTeleopControlDataStreamRequest() {
@@ -5901,11 +5400,6 @@ void GetTeleopControlDataStreamRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_I
 void GetTeleopControlDataStreamRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetTeleopControlDataStreamRequest& GetTeleopControlDataStreamRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetTeleopControlDataStreamRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetTeleopControlDataStreamRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetTeleopControlDataStreamRequest)
@@ -5919,13 +5413,12 @@ void GetTeleopControlDataStreamRequest::Clear() {
 
 const char* GetTeleopControlDataStreamRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated string stream_filter = 1[json_name = "streamFilter"];
+      // repeated string stream_filter = 1 [json_name = "streamFilter"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -5967,7 +5460,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string stream_filter = 1[json_name = "streamFilter"];
+  // repeated string stream_filter = 1 [json_name = "streamFilter"];
   for (int i = 0, n = this->_internal_stream_filter_size(); i < n; i++) {
     const auto& s = this->_internal_stream_filter(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
@@ -5993,7 +5486,7 @@ size_t GetTeleopControlDataStreamRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string stream_filter = 1[json_name = "streamFilter"];
+  // repeated string stream_filter = 1 [json_name = "streamFilter"];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(stream_filter_.size());
   for (int i = 0, n = stream_filter_.size(); i < n; i++) {
@@ -6066,10 +5559,6 @@ void GetTeleopControlDataStreamRequest::InternalSwap(GetTeleopControlDataStreamR
 
 // ===================================================================
 
-void GetTeleopControlDataStreamResponse::InitAsDefaultInstance() {
-  ::v1::agent::_GetTeleopControlDataStreamResponse_default_instance_._instance.get_mutable()->control_datapoint_ = const_cast< ::v1::model::ControlDatapoint*>(
-      ::v1::model::ControlDatapoint::internal_default_instance());
-}
 class GetTeleopControlDataStreamResponse::_Internal {
  public:
   static const ::v1::model::ControlDatapoint& control_datapoint(const GetTeleopControlDataStreamResponse* msg);
@@ -6103,8 +5592,7 @@ GetTeleopControlDataStreamResponse::GetTeleopControlDataStreamResponse(const Get
 }
 
 void GetTeleopControlDataStreamResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetTeleopControlDataStreamResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  control_datapoint_ = nullptr;
+control_datapoint_ = nullptr;
 }
 
 GetTeleopControlDataStreamResponse::~GetTeleopControlDataStreamResponse() {
@@ -6127,11 +5615,6 @@ void GetTeleopControlDataStreamResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_
 void GetTeleopControlDataStreamResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetTeleopControlDataStreamResponse& GetTeleopControlDataStreamResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetTeleopControlDataStreamResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetTeleopControlDataStreamResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetTeleopControlDataStreamResponse)
@@ -6148,13 +5631,12 @@ void GetTeleopControlDataStreamResponse::Clear() {
 
 const char* GetTeleopControlDataStreamResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.ControlDatapoint control_datapoint = 1[json_name = "controlDatapoint"];
+      // .v1.model.ControlDatapoint control_datapoint = 1 [json_name = "controlDatapoint"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_control_datapoint(), ptr);
@@ -6189,7 +5671,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.ControlDatapoint control_datapoint = 1[json_name = "controlDatapoint"];
+  // .v1.model.ControlDatapoint control_datapoint = 1 [json_name = "controlDatapoint"];
   if (this->has_control_datapoint()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -6213,7 +5695,7 @@ size_t GetTeleopControlDataStreamResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.ControlDatapoint control_datapoint = 1[json_name = "controlDatapoint"];
+  // .v1.model.ControlDatapoint control_datapoint = 1 [json_name = "controlDatapoint"];
   if (this->has_control_datapoint()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -6287,8 +5769,6 @@ void GetTeleopControlDataStreamResponse::InternalSwap(GetTeleopControlDataStream
 
 // ===================================================================
 
-void PostTransformFrameResponse::InitAsDefaultInstance() {
-}
 class PostTransformFrameResponse::_Internal {
  public:
 };
@@ -6327,11 +5807,6 @@ void PostTransformFrameResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Aren
 void PostTransformFrameResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PostTransformFrameResponse& PostTransformFrameResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PostTransformFrameResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PostTransformFrameResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.PostTransformFrameResponse)
@@ -6344,7 +5819,6 @@ void PostTransformFrameResponse::Clear() {
 
 const char* PostTransformFrameResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6452,8 +5926,6 @@ void PostTransformFrameResponse::InternalSwap(PostTransformFrameResponse* other)
 
 // ===================================================================
 
-void SetBaseFrameIDRequest::InitAsDefaultInstance() {
-}
 class SetBaseFrameIDRequest::_Internal {
  public:
 };
@@ -6469,15 +5941,14 @@ SetBaseFrameIDRequest::SetBaseFrameIDRequest(const SetBaseFrameIDRequest& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_id(),
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:v1.agent.SetBaseFrameIDRequest)
 }
 
 void SetBaseFrameIDRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SetBaseFrameIDRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 SetBaseFrameIDRequest::~SetBaseFrameIDRequest() {
@@ -6500,11 +5971,6 @@ void SetBaseFrameIDRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void SetBaseFrameIDRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SetBaseFrameIDRequest& SetBaseFrameIDRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SetBaseFrameIDRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SetBaseFrameIDRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.SetBaseFrameIDRequest)
@@ -6512,19 +5978,18 @@ void SetBaseFrameIDRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* SetBaseFrameIDRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string id = 1[json_name = "id"];
+      // string id = 1 [json_name = "id"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_id();
@@ -6561,7 +6026,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1[json_name = "id"];
+  // string id = 1 [json_name = "id"];
   if (this->id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
@@ -6587,7 +6052,7 @@ size_t SetBaseFrameIDRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1[json_name = "id"];
+  // string id = 1 [json_name = "id"];
   if (this->id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -6661,8 +6126,6 @@ void SetBaseFrameIDRequest::InternalSwap(SetBaseFrameIDRequest* other) {
 
 // ===================================================================
 
-void SetBaseFrameIDResponse::InitAsDefaultInstance() {
-}
 class SetBaseFrameIDResponse::_Internal {
  public:
 };
@@ -6701,11 +6164,6 @@ void SetBaseFrameIDResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) 
 void SetBaseFrameIDResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SetBaseFrameIDResponse& SetBaseFrameIDResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SetBaseFrameIDResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SetBaseFrameIDResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.SetBaseFrameIDResponse)
@@ -6718,7 +6176,6 @@ void SetBaseFrameIDResponse::Clear() {
 
 const char* SetBaseFrameIDResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6826,8 +6283,6 @@ void SetBaseFrameIDResponse::InternalSwap(SetBaseFrameIDResponse* other) {
 
 // ===================================================================
 
-void ClearTransformTreeRequest::InitAsDefaultInstance() {
-}
 class ClearTransformTreeRequest::_Internal {
  public:
 };
@@ -6866,11 +6321,6 @@ void ClearTransformTreeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena
 void ClearTransformTreeRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ClearTransformTreeRequest& ClearTransformTreeRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClearTransformTreeRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ClearTransformTreeRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.ClearTransformTreeRequest)
@@ -6883,7 +6333,6 @@ void ClearTransformTreeRequest::Clear() {
 
 const char* ClearTransformTreeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6991,8 +6440,6 @@ void ClearTransformTreeRequest::InternalSwap(ClearTransformTreeRequest* other) {
 
 // ===================================================================
 
-void ClearTransformTreeResponse::InitAsDefaultInstance() {
-}
 class ClearTransformTreeResponse::_Internal {
  public:
 };
@@ -7031,11 +6478,6 @@ void ClearTransformTreeResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Aren
 void ClearTransformTreeResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ClearTransformTreeResponse& ClearTransformTreeResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClearTransformTreeResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ClearTransformTreeResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.ClearTransformTreeResponse)
@@ -7048,7 +6490,6 @@ void ClearTransformTreeResponse::Clear() {
 
 const char* ClearTransformTreeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -7156,10 +6597,6 @@ void ClearTransformTreeResponse::InternalSwap(ClearTransformTreeResponse* other)
 
 // ===================================================================
 
-void CreateEventRequest::InitAsDefaultInstance() {
-  ::v1::agent::_CreateEventRequest_default_instance_._instance.get_mutable()->event_ = const_cast< ::v1::model::Event*>(
-      ::v1::model::Event::internal_default_instance());
-}
 class CreateEventRequest::_Internal {
  public:
   static const ::v1::model::Event& event(const CreateEventRequest* msg);
@@ -7193,8 +6630,7 @@ CreateEventRequest::CreateEventRequest(const CreateEventRequest& from)
 }
 
 void CreateEventRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CreateEventRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  event_ = nullptr;
+event_ = nullptr;
 }
 
 CreateEventRequest::~CreateEventRequest() {
@@ -7217,11 +6653,6 @@ void CreateEventRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void CreateEventRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const CreateEventRequest& CreateEventRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateEventRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void CreateEventRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.CreateEventRequest)
@@ -7238,13 +6669,12 @@ void CreateEventRequest::Clear() {
 
 const char* CreateEventRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.Event event = 1[json_name = "event"];
+      // .v1.model.Event event = 1 [json_name = "event"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_event(), ptr);
@@ -7279,7 +6709,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.Event event = 1[json_name = "event"];
+  // .v1.model.Event event = 1 [json_name = "event"];
   if (this->has_event()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -7303,7 +6733,7 @@ size_t CreateEventRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.Event event = 1[json_name = "event"];
+  // .v1.model.Event event = 1 [json_name = "event"];
   if (this->has_event()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -7377,8 +6807,6 @@ void CreateEventRequest::InternalSwap(CreateEventRequest* other) {
 
 // ===================================================================
 
-void CreateEventResponse::InitAsDefaultInstance() {
-}
 class CreateEventResponse::_Internal {
  public:
 };
@@ -7417,11 +6845,6 @@ void CreateEventResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void CreateEventResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const CreateEventResponse& CreateEventResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateEventResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void CreateEventResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.CreateEventResponse)
@@ -7434,7 +6857,6 @@ void CreateEventResponse::Clear() {
 
 const char* CreateEventResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -7542,8 +6964,6 @@ void CreateEventResponse::InternalSwap(CreateEventResponse* other) {
 
 // ===================================================================
 
-void CreateEventError::InitAsDefaultInstance() {
-}
 class CreateEventError::_Internal {
  public:
 };
@@ -7562,7 +6982,7 @@ CreateEventError::CreateEventError(const CreateEventError& from)
 }
 
 void CreateEventError::SharedCtor() {
-  retryable_ = false;
+retryable_ = false;
 }
 
 CreateEventError::~CreateEventError() {
@@ -7584,11 +7004,6 @@ void CreateEventError::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void CreateEventError::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const CreateEventError& CreateEventError::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateEventError_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void CreateEventError::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.CreateEventError)
@@ -7602,13 +7017,12 @@ void CreateEventError::Clear() {
 
 const char* CreateEventError::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bool retryable = 1[json_name = "retryable"];
+      // bool retryable = 1 [json_name = "retryable"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           retryable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -7643,7 +7057,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bool retryable = 1[json_name = "retryable"];
+  // bool retryable = 1 [json_name = "retryable"];
   if (this->retryable() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_retryable(), target);
@@ -7665,7 +7079,7 @@ size_t CreateEventError::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bool retryable = 1[json_name = "retryable"];
+  // bool retryable = 1 [json_name = "retryable"];
   if (this->retryable() != 0) {
     total_size += 1 + 1;
   }
@@ -7737,8 +7151,6 @@ void CreateEventError::InternalSwap(CreateEventError* other) {
 
 // ===================================================================
 
-void GetTeleopInfoRequest::InitAsDefaultInstance() {
-}
 class GetTeleopInfoRequest::_Internal {
  public:
 };
@@ -7777,11 +7189,6 @@ void GetTeleopInfoRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void GetTeleopInfoRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetTeleopInfoRequest& GetTeleopInfoRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetTeleopInfoRequest_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetTeleopInfoRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetTeleopInfoRequest)
@@ -7794,7 +7201,6 @@ void GetTeleopInfoRequest::Clear() {
 
 const char* GetTeleopInfoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -7902,8 +7308,6 @@ void GetTeleopInfoRequest::InternalSwap(GetTeleopInfoRequest* other) {
 
 // ===================================================================
 
-void GetTeleopInfoResponse::InitAsDefaultInstance() {
-}
 class GetTeleopInfoResponse::_Internal {
  public:
 };
@@ -7922,7 +7326,7 @@ GetTeleopInfoResponse::GetTeleopInfoResponse(const GetTeleopInfoResponse& from)
 }
 
 void GetTeleopInfoResponse::SharedCtor() {
-  connection_count_ = 0u;
+connection_count_ = 0u;
 }
 
 GetTeleopInfoResponse::~GetTeleopInfoResponse() {
@@ -7944,11 +7348,6 @@ void GetTeleopInfoResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void GetTeleopInfoResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetTeleopInfoResponse& GetTeleopInfoResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetTeleopInfoResponse_protos_2fagent_2fv1_2fagent_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetTeleopInfoResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.agent.GetTeleopInfoResponse)
@@ -7962,13 +7361,12 @@ void GetTeleopInfoResponse::Clear() {
 
 const char* GetTeleopInfoResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 connection_count = 1[json_name = "connectionCount"];
+      // uint32 connection_count = 1 [json_name = "connectionCount"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           connection_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -8003,7 +7401,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 connection_count = 1[json_name = "connectionCount"];
+  // uint32 connection_count = 1 [json_name = "connectionCount"];
   if (this->connection_count() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_connection_count(), target);
@@ -8025,7 +7423,7 @@ size_t GetTeleopInfoResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 connection_count = 1[json_name = "connectionCount"];
+  // uint32 connection_count = 1 [json_name = "connectionCount"];
   if (this->connection_count() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(

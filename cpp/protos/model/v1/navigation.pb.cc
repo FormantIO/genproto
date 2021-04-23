@@ -14,176 +14,123 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fnavigation_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Goal_protos_2fmodel_2fv1_2fnavigation_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fnavigation_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Map_protos_2fmodel_2fv1_2fnavigation_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fnavigation_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OccupancyGrid_protos_2fmodel_2fv1_2fnavigation_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fnavigation_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Odometry_protos_2fmodel_2fv1_2fnavigation_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fnavigation_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Path_protos_2fmodel_2fv1_2fnavigation_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmedia_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PointCloud_protos_2fmodel_2fv1_2fmedia_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_protos_2fmodel_2fv1_2fmath_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace v1 {
 namespace model {
-class LocationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Location> _instance;
-} _Location_default_instance_;
-class LocalizationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Localization> _instance;
-} _Localization_default_instance_;
-class OdometryDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Odometry> _instance;
-} _Odometry_default_instance_;
-class MapDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Map> _instance;
-  const ::v1::model::OccupancyGrid* occupancy_grid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr url_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr raw_;
-} _Map_default_instance_;
-class OccupancyGridDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OccupancyGrid> _instance;
-} _OccupancyGrid_default_instance_;
-class PathDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Path> _instance;
-} _Path_default_instance_;
-class GoalDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Goal> _instance;
-} _Goal_default_instance_;
-class GoalIDDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GoalID> _instance;
-} _GoalID_default_instance_;
+constexpr Location::Location(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : latitude_(0)
+  , longitude_(0){}
+struct LocationDefaultTypeInternal {
+  constexpr LocationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LocationDefaultTypeInternal() {}
+  union {
+    Location _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LocationDefaultTypeInternal _Location_default_instance_;
+constexpr Localization::Localization(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : point_clouds_()
+  , odometry_(nullptr)
+  , map_(nullptr)
+  , path_(nullptr)
+  , goal_(nullptr){}
+struct LocalizationDefaultTypeInternal {
+  constexpr LocalizationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LocalizationDefaultTypeInternal() {}
+  union {
+    Localization _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LocalizationDefaultTypeInternal _Localization_default_instance_;
+constexpr Odometry::Odometry(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : pose_(nullptr)
+  , twist_(nullptr)
+  , world_to_local_(nullptr){}
+struct OdometryDefaultTypeInternal {
+  constexpr OdometryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~OdometryDefaultTypeInternal() {}
+  union {
+    Odometry _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OdometryDefaultTypeInternal _Odometry_default_instance_;
+constexpr Map::Map(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : origin_(nullptr)
+  , world_to_local_(nullptr)
+  , resolution_(0)
+  , width_(0u)
+  , height_(0u)
+  , _oneof_case_{}{}
+struct MapDefaultTypeInternal {
+  constexpr MapDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~MapDefaultTypeInternal() {}
+  union {
+    Map _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MapDefaultTypeInternal _Map_default_instance_;
+constexpr OccupancyGrid::OccupancyGrid(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : data_()
+  , _data_cached_byte_size_(){}
+struct OccupancyGridDefaultTypeInternal {
+  constexpr OccupancyGridDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~OccupancyGridDefaultTypeInternal() {}
+  union {
+    OccupancyGrid _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OccupancyGridDefaultTypeInternal _OccupancyGrid_default_instance_;
+constexpr Path::Path(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : poses_()
+  , world_to_local_(nullptr){}
+struct PathDefaultTypeInternal {
+  constexpr PathDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PathDefaultTypeInternal() {}
+  union {
+    Path _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PathDefaultTypeInternal _Path_default_instance_;
+constexpr Goal::Goal(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : world_to_local_(nullptr)
+  , pose_(nullptr){}
+struct GoalDefaultTypeInternal {
+  constexpr GoalDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GoalDefaultTypeInternal() {}
+  union {
+    Goal _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GoalDefaultTypeInternal _Goal_default_instance_;
+constexpr GoalID::GoalID(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GoalIDDefaultTypeInternal {
+  constexpr GoalIDDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GoalIDDefaultTypeInternal() {}
+  union {
+    GoalID _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GoalIDDefaultTypeInternal _GoalID_default_instance_;
 }  // namespace model
 }  // namespace v1
-static void InitDefaultsscc_info_Goal_protos_2fmodel_2fv1_2fnavigation_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Goal_default_instance_;
-    new (ptr) ::v1::model::Goal();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Goal::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Goal_protos_2fmodel_2fv1_2fnavigation_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Goal_protos_2fmodel_2fv1_2fnavigation_2eproto}, {
-      &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
-
-static void InitDefaultsscc_info_GoalID_protos_2fmodel_2fv1_2fnavigation_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_GoalID_default_instance_;
-    new (ptr) ::v1::model::GoalID();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::GoalID::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GoalID_protos_2fmodel_2fv1_2fnavigation_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GoalID_protos_2fmodel_2fv1_2fnavigation_2eproto}, {}};
-
-static void InitDefaultsscc_info_Localization_protos_2fmodel_2fv1_2fnavigation_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Localization_default_instance_;
-    new (ptr) ::v1::model::Localization();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Localization::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<5> scc_info_Localization_protos_2fmodel_2fv1_2fnavigation_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 5, 0, InitDefaultsscc_info_Localization_protos_2fmodel_2fv1_2fnavigation_2eproto}, {
-      &scc_info_Odometry_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-      &scc_info_Map_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-      &scc_info_PointCloud_protos_2fmodel_2fv1_2fmedia_2eproto.base,
-      &scc_info_Path_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-      &scc_info_Goal_protos_2fmodel_2fv1_2fnavigation_2eproto.base,}};
-
-static void InitDefaultsscc_info_Location_protos_2fmodel_2fv1_2fnavigation_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Location_default_instance_;
-    new (ptr) ::v1::model::Location();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Location::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Location_protos_2fmodel_2fv1_2fnavigation_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Location_protos_2fmodel_2fv1_2fnavigation_2eproto}, {}};
-
-static void InitDefaultsscc_info_Map_protos_2fmodel_2fv1_2fnavigation_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Map_default_instance_;
-    new (ptr) ::v1::model::Map();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Map::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Map_protos_2fmodel_2fv1_2fnavigation_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Map_protos_2fmodel_2fv1_2fnavigation_2eproto}, {
-      &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,
-      &scc_info_OccupancyGrid_protos_2fmodel_2fv1_2fnavigation_2eproto.base,}};
-
-static void InitDefaultsscc_info_OccupancyGrid_protos_2fmodel_2fv1_2fnavigation_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_OccupancyGrid_default_instance_;
-    new (ptr) ::v1::model::OccupancyGrid();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::OccupancyGrid::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OccupancyGrid_protos_2fmodel_2fv1_2fnavigation_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_OccupancyGrid_protos_2fmodel_2fv1_2fnavigation_2eproto}, {}};
-
-static void InitDefaultsscc_info_Odometry_protos_2fmodel_2fv1_2fnavigation_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Odometry_default_instance_;
-    new (ptr) ::v1::model::Odometry();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Odometry::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Odometry_protos_2fmodel_2fv1_2fnavigation_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Odometry_protos_2fmodel_2fv1_2fnavigation_2eproto}, {
-      &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,
-      &scc_info_Twist_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
-
-static void InitDefaultsscc_info_Path_protos_2fmodel_2fv1_2fnavigation_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::v1::model::_Path_default_instance_;
-    new (ptr) ::v1::model::Path();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::v1::model::Path::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Path_protos_2fmodel_2fv1_2fnavigation_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Path_protos_2fmodel_2fv1_2fnavigation_2eproto}, {
-      &scc_info_Transform_protos_2fmodel_2fv1_2fmath_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[8];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto = nullptr;
@@ -224,9 +171,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fnavigati
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, height_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, origin_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, world_to_local_),
-  offsetof(::v1::model::MapDefaultTypeInternal, occupancy_grid_),
-  offsetof(::v1::model::MapDefaultTypeInternal, url_),
-  offsetof(::v1::model::MapDefaultTypeInternal, raw_),
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, data_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::OccupancyGrid, _internal_metadata_),
@@ -313,33 +260,26 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_sccs[8] = {
-  &scc_info_Goal_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-  &scc_info_GoalID_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-  &scc_info_Localization_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-  &scc_info_Location_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-  &scc_info_Map_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-  &scc_info_OccupancyGrid_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-  &scc_info_Odometry_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-  &scc_info_Path_protos_2fmodel_2fv1_2fnavigation_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto = {
-  false, false, descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto, "protos/model/v1/navigation.proto", 1188,
-  &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_sccs, descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps, 8, 2,
+  false, false, 1188, descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto, "protos/model/v1/navigation.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps, 2, 8,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets,
-  file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto, 8, file_level_enum_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto,
+  file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto);
+  return descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto.file_level_metadata[index];
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_protos_2fmodel_2fv1_2fnavigation_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2fnavigation_2eproto(&descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto);
 namespace v1 {
 namespace model {
 
 // ===================================================================
 
-void Location::InitAsDefaultInstance() {
-}
 class Location::_Internal {
  public:
 };
@@ -360,9 +300,10 @@ Location::Location(const Location& from)
 }
 
 void Location::SharedCtor() {
-  ::memset(&latitude_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&longitude_) -
-      reinterpret_cast<char*>(&latitude_)) + sizeof(longitude_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&latitude_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&longitude_) -
+    reinterpret_cast<char*>(&latitude_)) + sizeof(longitude_));
 }
 
 Location::~Location() {
@@ -384,11 +325,6 @@ void Location::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Location::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Location& Location::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Location_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Location::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Location)
@@ -404,20 +340,19 @@ void Location::Clear() {
 
 const char* Location::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double latitude = 1[json_name = "latitude"];
+      // double latitude = 1 [json_name = "latitude"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
           latitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double longitude = 2[json_name = "longitude"];
+      // double longitude = 2 [json_name = "longitude"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           longitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
@@ -452,13 +387,13 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double latitude = 1[json_name = "latitude"];
+  // double latitude = 1 [json_name = "latitude"];
   if (!(this->latitude() <= 0 && this->latitude() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_latitude(), target);
   }
 
-  // double longitude = 2[json_name = "longitude"];
+  // double longitude = 2 [json_name = "longitude"];
   if (!(this->longitude() <= 0 && this->longitude() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_longitude(), target);
@@ -480,12 +415,12 @@ size_t Location::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double latitude = 1[json_name = "latitude"];
+  // double latitude = 1 [json_name = "latitude"];
   if (!(this->latitude() <= 0 && this->latitude() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double longitude = 2[json_name = "longitude"];
+  // double longitude = 2 [json_name = "longitude"];
   if (!(this->longitude() <= 0 && this->longitude() >= 0)) {
     total_size += 1 + 8;
   }
@@ -565,16 +500,6 @@ void Location::InternalSwap(Location* other) {
 
 // ===================================================================
 
-void Localization::InitAsDefaultInstance() {
-  ::v1::model::_Localization_default_instance_._instance.get_mutable()->odometry_ = const_cast< ::v1::model::Odometry*>(
-      ::v1::model::Odometry::internal_default_instance());
-  ::v1::model::_Localization_default_instance_._instance.get_mutable()->map_ = const_cast< ::v1::model::Map*>(
-      ::v1::model::Map::internal_default_instance());
-  ::v1::model::_Localization_default_instance_._instance.get_mutable()->path_ = const_cast< ::v1::model::Path*>(
-      ::v1::model::Path::internal_default_instance());
-  ::v1::model::_Localization_default_instance_._instance.get_mutable()->goal_ = const_cast< ::v1::model::Goal*>(
-      ::v1::model::Goal::internal_default_instance());
-}
 class Localization::_Internal {
  public:
   static const ::v1::model::Odometry& odometry(const Localization* msg);
@@ -637,10 +562,10 @@ Localization::Localization(const Localization& from)
 }
 
 void Localization::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Localization_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  ::memset(&odometry_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&goal_) -
-      reinterpret_cast<char*>(&odometry_)) + sizeof(goal_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&odometry_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&goal_) -
+    reinterpret_cast<char*>(&odometry_)) + sizeof(goal_));
 }
 
 Localization::~Localization() {
@@ -666,11 +591,6 @@ void Localization::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Localization::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Localization& Localization::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Localization_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Localization::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Localization)
@@ -700,27 +620,26 @@ void Localization::Clear() {
 
 const char* Localization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.Odometry odometry = 1[json_name = "odometry"];
+      // .v1.model.Odometry odometry = 1 [json_name = "odometry"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_odometry(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Map map = 2[json_name = "map"];
+      // .v1.model.Map map = 2 [json_name = "map"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_map(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .v1.model.PointCloud point_clouds = 3[json_name = "pointClouds"];
+      // repeated .v1.model.PointCloud point_clouds = 3 [json_name = "pointClouds"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
@@ -732,14 +651,14 @@ const char* Localization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else goto handle_unusual;
         continue;
-      // .v1.model.Path path = 4[json_name = "path"];
+      // .v1.model.Path path = 4 [json_name = "path"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_path(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Goal goal = 5[json_name = "goal"];
+      // .v1.model.Goal goal = 5 [json_name = "goal"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_goal(), ptr);
@@ -774,7 +693,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.Odometry odometry = 1[json_name = "odometry"];
+  // .v1.model.Odometry odometry = 1 [json_name = "odometry"];
   if (this->has_odometry()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -782,7 +701,7 @@ failure:
         1, _Internal::odometry(this), target, stream);
   }
 
-  // .v1.model.Map map = 2[json_name = "map"];
+  // .v1.model.Map map = 2 [json_name = "map"];
   if (this->has_map()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -790,7 +709,7 @@ failure:
         2, _Internal::map(this), target, stream);
   }
 
-  // repeated .v1.model.PointCloud point_clouds = 3[json_name = "pointClouds"];
+  // repeated .v1.model.PointCloud point_clouds = 3 [json_name = "pointClouds"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_point_clouds_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -798,7 +717,7 @@ failure:
       InternalWriteMessage(3, this->_internal_point_clouds(i), target, stream);
   }
 
-  // .v1.model.Path path = 4[json_name = "path"];
+  // .v1.model.Path path = 4 [json_name = "path"];
   if (this->has_path()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -806,7 +725,7 @@ failure:
         4, _Internal::path(this), target, stream);
   }
 
-  // .v1.model.Goal goal = 5[json_name = "goal"];
+  // .v1.model.Goal goal = 5 [json_name = "goal"];
   if (this->has_goal()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -830,35 +749,35 @@ size_t Localization::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .v1.model.PointCloud point_clouds = 3[json_name = "pointClouds"];
+  // repeated .v1.model.PointCloud point_clouds = 3 [json_name = "pointClouds"];
   total_size += 1UL * this->_internal_point_clouds_size();
   for (const auto& msg : this->point_clouds_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // .v1.model.Odometry odometry = 1[json_name = "odometry"];
+  // .v1.model.Odometry odometry = 1 [json_name = "odometry"];
   if (this->has_odometry()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *odometry_);
   }
 
-  // .v1.model.Map map = 2[json_name = "map"];
+  // .v1.model.Map map = 2 [json_name = "map"];
   if (this->has_map()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *map_);
   }
 
-  // .v1.model.Path path = 4[json_name = "path"];
+  // .v1.model.Path path = 4 [json_name = "path"];
   if (this->has_path()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *path_);
   }
 
-  // .v1.model.Goal goal = 5[json_name = "goal"];
+  // .v1.model.Goal goal = 5 [json_name = "goal"];
   if (this->has_goal()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -948,14 +867,6 @@ void Localization::InternalSwap(Localization* other) {
 
 // ===================================================================
 
-void Odometry::InitAsDefaultInstance() {
-  ::v1::model::_Odometry_default_instance_._instance.get_mutable()->pose_ = const_cast< ::v1::model::Transform*>(
-      ::v1::model::Transform::internal_default_instance());
-  ::v1::model::_Odometry_default_instance_._instance.get_mutable()->twist_ = const_cast< ::v1::model::Twist*>(
-      ::v1::model::Twist::internal_default_instance());
-  ::v1::model::_Odometry_default_instance_._instance.get_mutable()->world_to_local_ = const_cast< ::v1::model::Transform*>(
-      ::v1::model::Transform::internal_default_instance());
-}
 class Odometry::_Internal {
  public:
   static const ::v1::model::Transform& pose(const Odometry* msg);
@@ -1021,10 +932,10 @@ Odometry::Odometry(const Odometry& from)
 }
 
 void Odometry::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Odometry_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  ::memset(&pose_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&world_to_local_) -
-      reinterpret_cast<char*>(&pose_)) + sizeof(world_to_local_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&pose_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&world_to_local_) -
+    reinterpret_cast<char*>(&pose_)) + sizeof(world_to_local_));
 }
 
 Odometry::~Odometry() {
@@ -1049,11 +960,6 @@ void Odometry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Odometry::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Odometry& Odometry::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Odometry_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Odometry::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Odometry)
@@ -1078,27 +984,26 @@ void Odometry::Clear() {
 
 const char* Odometry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.Transform pose = 1[json_name = "pose"];
+      // .v1.model.Transform pose = 1 [json_name = "pose"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_pose(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Twist twist = 2[json_name = "twist"];
+      // .v1.model.Twist twist = 2 [json_name = "twist"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_twist(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Transform world_to_local = 3[json_name = "worldToLocal"];
+      // .v1.model.Transform world_to_local = 3 [json_name = "worldToLocal"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
@@ -1133,7 +1038,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.Transform pose = 1[json_name = "pose"];
+  // .v1.model.Transform pose = 1 [json_name = "pose"];
   if (this->has_pose()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1141,7 +1046,7 @@ failure:
         1, _Internal::pose(this), target, stream);
   }
 
-  // .v1.model.Twist twist = 2[json_name = "twist"];
+  // .v1.model.Twist twist = 2 [json_name = "twist"];
   if (this->has_twist()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1149,7 +1054,7 @@ failure:
         2, _Internal::twist(this), target, stream);
   }
 
-  // .v1.model.Transform world_to_local = 3[json_name = "worldToLocal"];
+  // .v1.model.Transform world_to_local = 3 [json_name = "worldToLocal"];
   if (this->has_world_to_local()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1173,21 +1078,21 @@ size_t Odometry::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.Transform pose = 1[json_name = "pose"];
+  // .v1.model.Transform pose = 1 [json_name = "pose"];
   if (this->has_pose()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pose_);
   }
 
-  // .v1.model.Twist twist = 2[json_name = "twist"];
+  // .v1.model.Twist twist = 2 [json_name = "twist"];
   if (this->has_twist()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *twist_);
   }
 
-  // .v1.model.Transform world_to_local = 3[json_name = "worldToLocal"];
+  // .v1.model.Transform world_to_local = 3 [json_name = "worldToLocal"];
   if (this->has_world_to_local()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1272,18 +1177,6 @@ void Odometry::InternalSwap(Odometry* other) {
 
 // ===================================================================
 
-void Map::InitAsDefaultInstance() {
-  ::v1::model::_Map_default_instance_._instance.get_mutable()->origin_ = const_cast< ::v1::model::Transform*>(
-      ::v1::model::Transform::internal_default_instance());
-  ::v1::model::_Map_default_instance_._instance.get_mutable()->world_to_local_ = const_cast< ::v1::model::Transform*>(
-      ::v1::model::Transform::internal_default_instance());
-  ::v1::model::_Map_default_instance_.occupancy_grid_ = const_cast< ::v1::model::OccupancyGrid*>(
-      ::v1::model::OccupancyGrid::internal_default_instance());
-  ::v1::model::_Map_default_instance_.url_.UnsafeSetDefault(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::v1::model::_Map_default_instance_.raw_.UnsafeSetDefault(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
 class Map::_Internal {
  public:
   static const ::v1::model::Transform& origin(const Map* msg);
@@ -1374,11 +1267,11 @@ Map::Map(const Map& from)
 }
 
 void Map::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Map_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  ::memset(&origin_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&height_) -
-      reinterpret_cast<char*>(&origin_)) + sizeof(height_));
-  clear_has_data();
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&origin_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&height_) -
+    reinterpret_cast<char*>(&origin_)) + sizeof(height_));
+clear_has_data();
 }
 
 Map::~Map() {
@@ -1405,11 +1298,6 @@ void Map::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Map::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Map& Map::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Map_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Map::clear_data() {
 // @@protoc_insertion_point(one_of_clear_start:v1.model.Map)
@@ -1421,11 +1309,11 @@ void Map::clear_data() {
       break;
     }
     case kUrl: {
-      data_.url_.Destroy(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+      data_.url_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
       break;
     }
     case kRaw: {
-      data_.raw_.Destroy(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+      data_.raw_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
       break;
     }
     case DATA_NOT_SET: {
@@ -1459,55 +1347,54 @@ void Map::Clear() {
 
 const char* Map::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double resolution = 1[json_name = "resolution"];
+      // double resolution = 1 [json_name = "resolution"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
           resolution_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // uint32 width = 2[json_name = "width"];
+      // uint32 width = 2 [json_name = "width"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           width_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 height = 3[json_name = "height"];
+      // uint32 height = 3 [json_name = "height"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Transform origin = 4[json_name = "origin"];
+      // .v1.model.Transform origin = 4 [json_name = "origin"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_origin(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Transform world_to_local = 5[json_name = "worldToLocal"];
+      // .v1.model.Transform world_to_local = 5 [json_name = "worldToLocal"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.OccupancyGrid occupancy_grid = 6[json_name = "occupancyGrid"];
+      // .v1.model.OccupancyGrid occupancy_grid = 6 [json_name = "occupancyGrid"];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_occupancy_grid(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string url = 7[json_name = "url"];
+      // string url = 7 [json_name = "url"];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_url();
@@ -1516,7 +1403,7 @@ const char* Map::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::intern
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes raw = 8[json_name = "raw"];
+      // bytes raw = 8 [json_name = "raw"];
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_raw();
@@ -1552,25 +1439,25 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double resolution = 1[json_name = "resolution"];
+  // double resolution = 1 [json_name = "resolution"];
   if (!(this->resolution() <= 0 && this->resolution() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_resolution(), target);
   }
 
-  // uint32 width = 2[json_name = "width"];
+  // uint32 width = 2 [json_name = "width"];
   if (this->width() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_width(), target);
   }
 
-  // uint32 height = 3[json_name = "height"];
+  // uint32 height = 3 [json_name = "height"];
   if (this->height() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_height(), target);
   }
 
-  // .v1.model.Transform origin = 4[json_name = "origin"];
+  // .v1.model.Transform origin = 4 [json_name = "origin"];
   if (this->has_origin()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1578,7 +1465,7 @@ failure:
         4, _Internal::origin(this), target, stream);
   }
 
-  // .v1.model.Transform world_to_local = 5[json_name = "worldToLocal"];
+  // .v1.model.Transform world_to_local = 5 [json_name = "worldToLocal"];
   if (this->has_world_to_local()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1586,7 +1473,7 @@ failure:
         5, _Internal::world_to_local(this), target, stream);
   }
 
-  // .v1.model.OccupancyGrid occupancy_grid = 6[json_name = "occupancyGrid"];
+  // .v1.model.OccupancyGrid occupancy_grid = 6 [json_name = "occupancyGrid"];
   if (_internal_has_occupancy_grid()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1594,7 +1481,7 @@ failure:
         6, _Internal::occupancy_grid(this), target, stream);
   }
 
-  // string url = 7[json_name = "url"];
+  // string url = 7 [json_name = "url"];
   if (_internal_has_url()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_url().data(), static_cast<int>(this->_internal_url().length()),
@@ -1604,7 +1491,7 @@ failure:
         7, this->_internal_url(), target);
   }
 
-  // bytes raw = 8[json_name = "raw"];
+  // bytes raw = 8 [json_name = "raw"];
   if (_internal_has_raw()) {
     target = stream->WriteBytesMaybeAliased(
         8, this->_internal_raw(), target);
@@ -1626,33 +1513,33 @@ size_t Map::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.Transform origin = 4[json_name = "origin"];
+  // .v1.model.Transform origin = 4 [json_name = "origin"];
   if (this->has_origin()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *origin_);
   }
 
-  // .v1.model.Transform world_to_local = 5[json_name = "worldToLocal"];
+  // .v1.model.Transform world_to_local = 5 [json_name = "worldToLocal"];
   if (this->has_world_to_local()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *world_to_local_);
   }
 
-  // double resolution = 1[json_name = "resolution"];
+  // double resolution = 1 [json_name = "resolution"];
   if (!(this->resolution() <= 0 && this->resolution() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // uint32 width = 2[json_name = "width"];
+  // uint32 width = 2 [json_name = "width"];
   if (this->width() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_width());
   }
 
-  // uint32 height = 3[json_name = "height"];
+  // uint32 height = 3 [json_name = "height"];
   if (this->height() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
@@ -1660,21 +1547,21 @@ size_t Map::ByteSizeLong() const {
   }
 
   switch (data_case()) {
-    // .v1.model.OccupancyGrid occupancy_grid = 6[json_name = "occupancyGrid"];
+    // .v1.model.OccupancyGrid occupancy_grid = 6 [json_name = "occupancyGrid"];
     case kOccupancyGrid: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *data_.occupancy_grid_);
       break;
     }
-    // string url = 7[json_name = "url"];
+    // string url = 7 [json_name = "url"];
     case kUrl: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_url());
       break;
     }
-    // bytes raw = 8[json_name = "raw"];
+    // bytes raw = 8 [json_name = "raw"];
     case kRaw: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -1788,8 +1675,6 @@ void Map::InternalSwap(Map* other) {
 
 // ===================================================================
 
-void OccupancyGrid::InitAsDefaultInstance() {
-}
 class OccupancyGrid::_Internal {
  public:
 };
@@ -1830,11 +1715,6 @@ void OccupancyGrid::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void OccupancyGrid::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const OccupancyGrid& OccupancyGrid::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OccupancyGrid_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void OccupancyGrid::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.OccupancyGrid)
@@ -1848,13 +1728,12 @@ void OccupancyGrid::Clear() {
 
 const char* OccupancyGrid::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated int32 data = 1[json_name = "data"];
+      // repeated int32 data = 1 [json_name = "data"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_data(), ptr, ctx);
@@ -1892,7 +1771,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated int32 data = 1[json_name = "data"];
+  // repeated int32 data = 1 [json_name = "data"];
   {
     int byte_size = _data_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
@@ -1917,7 +1796,7 @@ size_t OccupancyGrid::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated int32 data = 1[json_name = "data"];
+  // repeated int32 data = 1 [json_name = "data"];
   {
     size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       Int32Size(this->data_);
@@ -1997,10 +1876,6 @@ void OccupancyGrid::InternalSwap(OccupancyGrid* other) {
 
 // ===================================================================
 
-void Path::InitAsDefaultInstance() {
-  ::v1::model::_Path_default_instance_._instance.get_mutable()->world_to_local_ = const_cast< ::v1::model::Transform*>(
-      ::v1::model::Transform::internal_default_instance());
-}
 class Path::_Internal {
  public:
   static const ::v1::model::Transform& world_to_local(const Path* msg);
@@ -2039,8 +1914,7 @@ Path::Path(const Path& from)
 }
 
 void Path::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Path_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  world_to_local_ = nullptr;
+world_to_local_ = nullptr;
 }
 
 Path::~Path() {
@@ -2063,11 +1937,6 @@ void Path::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Path::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Path& Path::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Path_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Path::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Path)
@@ -2085,20 +1954,19 @@ void Path::Clear() {
 
 const char* Path::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.Transform world_to_local = 1[json_name = "worldToLocal"];
+      // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .v1.model.Transform poses = 2[json_name = "poses"];
+      // repeated .v1.model.Transform poses = 2 [json_name = "poses"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
@@ -2138,7 +2006,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.Transform world_to_local = 1[json_name = "worldToLocal"];
+  // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
   if (this->has_world_to_local()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2146,7 +2014,7 @@ failure:
         1, _Internal::world_to_local(this), target, stream);
   }
 
-  // repeated .v1.model.Transform poses = 2[json_name = "poses"];
+  // repeated .v1.model.Transform poses = 2 [json_name = "poses"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_poses_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -2170,14 +2038,14 @@ size_t Path::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .v1.model.Transform poses = 2[json_name = "poses"];
+  // repeated .v1.model.Transform poses = 2 [json_name = "poses"];
   total_size += 1UL * this->_internal_poses_size();
   for (const auto& msg : this->poses_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // .v1.model.Transform world_to_local = 1[json_name = "worldToLocal"];
+  // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
   if (this->has_world_to_local()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2253,12 +2121,6 @@ void Path::InternalSwap(Path* other) {
 
 // ===================================================================
 
-void Goal::InitAsDefaultInstance() {
-  ::v1::model::_Goal_default_instance_._instance.get_mutable()->world_to_local_ = const_cast< ::v1::model::Transform*>(
-      ::v1::model::Transform::internal_default_instance());
-  ::v1::model::_Goal_default_instance_._instance.get_mutable()->pose_ = const_cast< ::v1::model::Transform*>(
-      ::v1::model::Transform::internal_default_instance());
-}
 class Goal::_Internal {
  public:
   static const ::v1::model::Transform& world_to_local(const Goal* msg);
@@ -2308,10 +2170,10 @@ Goal::Goal(const Goal& from)
 }
 
 void Goal::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Goal_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  ::memset(&world_to_local_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&pose_) -
-      reinterpret_cast<char*>(&world_to_local_)) + sizeof(pose_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&world_to_local_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&pose_) -
+    reinterpret_cast<char*>(&world_to_local_)) + sizeof(pose_));
 }
 
 Goal::~Goal() {
@@ -2335,11 +2197,6 @@ void Goal::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Goal::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Goal& Goal::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Goal_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Goal::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Goal)
@@ -2360,20 +2217,19 @@ void Goal::Clear() {
 
 const char* Goal::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .v1.model.Transform world_to_local = 1[json_name = "worldToLocal"];
+      // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .v1.model.Transform pose = 2[json_name = "pose"];
+      // .v1.model.Transform pose = 2 [json_name = "pose"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_pose(), ptr);
@@ -2408,7 +2264,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .v1.model.Transform world_to_local = 1[json_name = "worldToLocal"];
+  // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
   if (this->has_world_to_local()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2416,7 +2272,7 @@ failure:
         1, _Internal::world_to_local(this), target, stream);
   }
 
-  // .v1.model.Transform pose = 2[json_name = "pose"];
+  // .v1.model.Transform pose = 2 [json_name = "pose"];
   if (this->has_pose()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2440,14 +2296,14 @@ size_t Goal::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .v1.model.Transform world_to_local = 1[json_name = "worldToLocal"];
+  // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
   if (this->has_world_to_local()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *world_to_local_);
   }
 
-  // .v1.model.Transform pose = 2[json_name = "pose"];
+  // .v1.model.Transform pose = 2 [json_name = "pose"];
   if (this->has_pose()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2529,8 +2385,6 @@ void Goal::InternalSwap(Goal* other) {
 
 // ===================================================================
 
-void GoalID::InitAsDefaultInstance() {
-}
 class GoalID::_Internal {
  public:
 };
@@ -2546,15 +2400,14 @@ GoalID::GoalID(const GoalID& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_id(),
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:v1.model.GoalID)
 }
 
 void GoalID::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GoalID_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GoalID::~GoalID() {
@@ -2577,11 +2430,6 @@ void GoalID::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void GoalID::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GoalID& GoalID::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GoalID_protos_2fmodel_2fv1_2fnavigation_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GoalID::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.GoalID)
@@ -2589,19 +2437,18 @@ void GoalID::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GoalID::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string id = 1[json_name = "id"];
+      // string id = 1 [json_name = "id"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_id();
@@ -2638,7 +2485,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1[json_name = "id"];
+  // string id = 1 [json_name = "id"];
   if (this->id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
@@ -2664,7 +2511,7 @@ size_t GoalID::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1[json_name = "id"];
+  // string id = 1 [json_name = "id"];
   if (this->id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
