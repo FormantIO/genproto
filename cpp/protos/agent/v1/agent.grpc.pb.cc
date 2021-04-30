@@ -27,6 +27,7 @@ static const char* Agent_method_names[] = {
   "/v1.agent.Agent/PostData",
   "/v1.agent.Agent/PostDataMulti",
   "/v1.agent.Agent/GetTeleopControlDataStream",
+  "/v1.agent.Agent/GetTeleopHeartbeatStream",
   "/v1.agent.Agent/CreateEvent",
   "/v1.agent.Agent/CreateInterventionRequest",
   "/v1.agent.Agent/GetInterventionRequest",
@@ -56,22 +57,23 @@ Agent::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   , rpcmethod_PostData_(Agent_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_PostDataMulti_(Agent_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetTeleopControlDataStream_(Agent_method_names[3], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_CreateEvent_(Agent_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateInterventionRequest_(Agent_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetInterventionRequest_(Agent_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetInterventionResponse_(Agent_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetStreamsConfiguration_(Agent_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetApplicationConfiguration_(Agent_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetConfigBlobData_(Agent_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAgentConfiguration_(Agent_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Health_(Agent_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCommandRequest_(Agent_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCommandRequestStream_(Agent_method_names[14], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_SendCommandResponse_(Agent_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostTransformFrame_(Agent_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetBaseFrameID_(Agent_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ClearTransformTree_(Agent_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetTeleopInfo_(Agent_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTeleopHeartbeatStream_(Agent_method_names[4], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_CreateEvent_(Agent_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateInterventionRequest_(Agent_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetInterventionRequest_(Agent_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetInterventionResponse_(Agent_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetStreamsConfiguration_(Agent_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetApplicationConfiguration_(Agent_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetConfigBlobData_(Agent_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAgentConfiguration_(Agent_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Health_(Agent_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCommandRequest_(Agent_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCommandRequestStream_(Agent_method_names[15], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_SendCommandResponse_(Agent_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PostTransformFrame_(Agent_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetBaseFrameID_(Agent_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ClearTransformTree_(Agent_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTeleopInfo_(Agent_method_names[20], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientWriter< ::v1::model::Datapoint>* Agent::Stub::StreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response) {
@@ -160,6 +162,22 @@ void Agent::Stub::experimental_async::GetTeleopControlDataStream(::grpc::ClientC
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetTeleopControlDataStreamResponse>* Agent::Stub::PrepareAsyncGetTeleopControlDataStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopControlDataStreamRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopControlDataStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopControlDataStream_, context, request, false, nullptr);
+}
+
+::grpc::ClientReader< ::v1::agent::GetTeleopHeartbeatStreamResponse>* Agent::Stub::GetTeleopHeartbeatStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(channel_.get(), rpcmethod_GetTeleopHeartbeatStream_, context, request);
+}
+
+void Agent::Stub::experimental_async::GetTeleopHeartbeatStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopHeartbeatStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetTeleopHeartbeatStream_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::v1::agent::GetTeleopHeartbeatStreamResponse>* Agent::Stub::AsyncGetTeleopHeartbeatStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopHeartbeatStream_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::v1::agent::GetTeleopHeartbeatStreamResponse>* Agent::Stub::PrepareAsyncGetTeleopHeartbeatStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopHeartbeatStream_, context, request, false, nullptr);
 }
 
 ::grpc::Status Agent::Stub::CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest& request, ::v1::agent::CreateEventResponse* response) {
@@ -641,6 +659,16 @@ Agent::Service::Service() {
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[4],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< Agent::Service, ::v1::agent::GetTeleopHeartbeatStreamRequest, ::v1::agent::GetTeleopHeartbeatStreamResponse>(
+          [](Agent::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::v1::agent::GetTeleopHeartbeatStreamRequest* req,
+             ::grpc_impl::ServerWriter<::v1::agent::GetTeleopHeartbeatStreamResponse>* writer) {
+               return service->GetTeleopHeartbeatStream(ctx, req, writer);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Agent_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse>(
           [](Agent::Service* service,
@@ -650,7 +678,7 @@ Agent::Service::Service() {
                return service->CreateEvent(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[5],
+      Agent_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::InterventionRequest, ::v1::model::InterventionRequest>(
           [](Agent::Service* service,
@@ -660,7 +688,7 @@ Agent::Service::Service() {
                return service->CreateInterventionRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[6],
+      Agent_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest>(
           [](Agent::Service* service,
@@ -670,7 +698,7 @@ Agent::Service::Service() {
                return service->GetInterventionRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[7],
+      Agent_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse>(
           [](Agent::Service* service,
@@ -680,7 +708,7 @@ Agent::Service::Service() {
                return service->GetInterventionResponse(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[8],
+      Agent_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse>(
           [](Agent::Service* service,
@@ -690,7 +718,7 @@ Agent::Service::Service() {
                return service->GetStreamsConfiguration(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[9],
+      Agent_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse>(
           [](Agent::Service* service,
@@ -700,7 +728,7 @@ Agent::Service::Service() {
                return service->GetApplicationConfiguration(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[10],
+      Agent_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>(
           [](Agent::Service* service,
@@ -710,7 +738,7 @@ Agent::Service::Service() {
                return service->GetConfigBlobData(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[11],
+      Agent_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>(
           [](Agent::Service* service,
@@ -720,7 +748,7 @@ Agent::Service::Service() {
                return service->GetAgentConfiguration(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[12],
+      Agent_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>(
           [](Agent::Service* service,
@@ -730,7 +758,7 @@ Agent::Service::Service() {
                return service->Health(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[13],
+      Agent_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>(
           [](Agent::Service* service,
@@ -740,7 +768,7 @@ Agent::Service::Service() {
                return service->GetCommandRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[14],
+      Agent_method_names[15],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Agent::Service, ::v1::agent::GetCommandRequestStreamRequest, ::v1::agent::GetCommandRequestStreamResponse>(
           [](Agent::Service* service,
@@ -750,7 +778,7 @@ Agent::Service::Service() {
                return service->GetCommandRequestStream(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[15],
+      Agent_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>(
           [](Agent::Service* service,
@@ -760,7 +788,7 @@ Agent::Service::Service() {
                return service->SendCommandResponse(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[16],
+      Agent_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>(
           [](Agent::Service* service,
@@ -770,7 +798,7 @@ Agent::Service::Service() {
                return service->PostTransformFrame(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[17],
+      Agent_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>(
           [](Agent::Service* service,
@@ -780,7 +808,7 @@ Agent::Service::Service() {
                return service->SetBaseFrameID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[18],
+      Agent_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>(
           [](Agent::Service* service,
@@ -790,7 +818,7 @@ Agent::Service::Service() {
                return service->ClearTransformTree(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[19],
+      Agent_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>(
           [](Agent::Service* service,
@@ -826,6 +854,13 @@ Agent::Service::~Service() {
 }
 
 ::grpc::Status Agent::Service::GetTeleopControlDataStream(::grpc::ServerContext* context, const ::v1::agent::GetTeleopControlDataStreamRequest* request, ::grpc::ServerWriter< ::v1::agent::GetTeleopControlDataStreamResponse>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Agent::Service::GetTeleopHeartbeatStream(::grpc::ServerContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest* request, ::grpc::ServerWriter< ::v1::agent::GetTeleopHeartbeatStreamResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
