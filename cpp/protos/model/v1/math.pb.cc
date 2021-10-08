@@ -135,6 +135,20 @@ struct Vector3DefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Vector3DefaultTypeInternal _Vector3_default_instance_;
+constexpr Point::Point(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : x_(0)
+  , y_(0)
+  , z_(0){}
+struct PointDefaultTypeInternal {
+  constexpr PointDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PointDefaultTypeInternal() {}
+  union {
+    Point _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PointDefaultTypeInternal _Point_default_instance_;
 constexpr Quaternion::Quaternion(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : x_(0)
@@ -152,7 +166,7 @@ struct QuaternionDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT QuaternionDefaultTypeInternal _Quaternion_default_instance_;
 }  // namespace model
 }  // namespace v1
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[10];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[11];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2fmath_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fmath_2eproto = nullptr;
 
@@ -221,6 +235,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fmath_2ep
   PROTOBUF_FIELD_OFFSET(::v1::model::Vector3, y_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Vector3, z_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::model::Point, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::v1::model::Point, x_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Point, y_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Point, z_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::Quaternion, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -240,7 +262,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 40, -1, sizeof(::v1::model::Transform)},
   { 47, -1, sizeof(::v1::model::TransformFrame)},
   { 55, -1, sizeof(::v1::model::Vector3)},
-  { 63, -1, sizeof(::v1::model::Quaternion)},
+  { 63, -1, sizeof(::v1::model::Point)},
+  { 71, -1, sizeof(::v1::model::Quaternion)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -253,6 +276,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Transform_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_TransformFrame_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Vector3_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Point_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Quaternion_default_instance_),
 };
 
@@ -275,22 +299,21 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fmath_2eproto[] PROTOB
   "\001(\tR\nchildFrame\0221\n\ttransform\030\003 \001(\0132\023.v1."
   "model.TransformR\ttransform\"3\n\007Vector3\022\014\n"
   "\001x\030\001 \001(\001R\001x\022\014\n\001y\030\002 \001(\001R\001y\022\014\n\001z\030\003 \001(\001R\001z\""
-  "D\n\nQuaternion\022\014\n\001x\030\001 \001(\001R\001x\022\014\n\001y\030\002 \001(\001R\001"
-  "y\022\014\n\001z\030\003 \001(\001R\001z\022\014\n\001w\030\004 \001(\001R\001wB+Z)github."
-  "com/FormantIO/genproto/go/v1/modelb\006prot"
-  "o3"
+  "1\n\005Point\022\014\n\001x\030\001 \001(\001R\001x\022\014\n\001y\030\002 \001(\001R\001y\022\014\n\001"
+  "z\030\003 \001(\001R\001z\"D\n\nQuaternion\022\014\n\001x\030\001 \001(\001R\001x\022\014"
+  "\n\001y\030\002 \001(\001R\001y\022\014\n\001z\030\003 \001(\001R\001z\022\014\n\001w\030\004 \001(\001R\001w"
+  "B+Z)github.com/FormantIO/genproto/go/v1/"
+  "modelb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto = {
-  false, false, 842, descriptor_table_protodef_protos_2fmodel_2fv1_2fmath_2eproto, "protos/model/v1/math.proto", 
-  &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once, nullptr, 0, 10,
+  false, false, 893, descriptor_table_protodef_protos_2fmodel_2fv1_2fmath_2eproto, "protos/model/v1/math.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once, nullptr, 0, 11,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fmath_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fmath_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fmath_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
-descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_metadata_getter(int index) {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto);
-  return descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto.file_level_metadata[index];
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter() {
+  return &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -328,7 +351,7 @@ Numeric::~Numeric() {
 }
 
 void Numeric::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void Numeric::ArenaDtor(void* object) {
@@ -356,7 +379,6 @@ const char* Numeric::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // double value = 1 [json_name = "value"];
       case 1:
@@ -367,7 +389,8 @@ const char* Numeric::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -476,14 +499,15 @@ bool Numeric::IsInitialized() const {
 
 void Numeric::InternalSwap(Numeric* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(value_, other->value_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Numeric::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -503,12 +527,12 @@ NumericSetEntry::NumericSetEntry(const NumericSetEntry& from)
   label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_label().empty()) {
     label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_label(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   unit_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_unit().empty()) {
     unit_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_unit(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   value_ = from.value_;
   // @@protoc_insertion_point(copy_constructor:v1.model.NumericSetEntry)
@@ -527,7 +551,7 @@ NumericSetEntry::~NumericSetEntry() {
 }
 
 void NumericSetEntry::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   label_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   unit_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -559,7 +583,6 @@ const char* NumericSetEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // double value = 1 [json_name = "value"];
       case 1:
@@ -588,7 +611,8 @@ const char* NumericSetEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -621,7 +645,7 @@ failure:
   }
 
   // string label = 2 [json_name = "label"];
-  if (this->label().size() > 0) {
+  if (!this->label().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_label().data(), static_cast<int>(this->_internal_label().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -631,7 +655,7 @@ failure:
   }
 
   // string unit = 3 [json_name = "unit"];
-  if (this->unit().size() > 0) {
+  if (!this->unit().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_unit().data(), static_cast<int>(this->_internal_unit().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -657,14 +681,14 @@ size_t NumericSetEntry::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string label = 2 [json_name = "label"];
-  if (this->label().size() > 0) {
+  if (!this->label().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_label());
   }
 
   // string unit = 3 [json_name = "unit"];
-  if (this->unit().size() > 0) {
+  if (!this->unit().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_unit());
@@ -706,10 +730,10 @@ void NumericSetEntry::MergeFrom(const NumericSetEntry& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.label().size() > 0) {
+  if (!from.label().empty()) {
     _internal_set_label(from._internal_label());
   }
-  if (from.unit().size() > 0) {
+  if (!from.unit().empty()) {
     _internal_set_unit(from._internal_unit());
   }
   if (!(from.value() <= 0 && from.value() >= 0)) {
@@ -737,16 +761,25 @@ bool NumericSetEntry::IsInitialized() const {
 
 void NumericSetEntry::InternalSwap(NumericSetEntry* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  label_.Swap(&other->label_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  unit_.Swap(&other->unit_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &label_, GetArenaForAllocation(),
+      &other->label_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &unit_, GetArenaForAllocation(),
+      &other->unit_, other->GetArenaForAllocation()
+  );
   swap(value_, other->value_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NumericSetEntry::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[1]);
 }
-
 
 // ===================================================================
 
@@ -778,7 +811,7 @@ NumericSet::~NumericSet() {
 }
 
 void NumericSet::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void NumericSet::ArenaDtor(void* object) {
@@ -806,7 +839,6 @@ const char* NumericSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .v1.model.NumericSetEntry numerics = 1 [json_name = "numerics"];
       case 1:
@@ -822,7 +854,8 @@ const char* NumericSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -933,14 +966,15 @@ bool NumericSet::IsInitialized() const {
 
 void NumericSet::InternalSwap(NumericSet* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   numerics_.InternalSwap(&other->numerics_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NumericSet::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[2]);
 }
-
 
 // ===================================================================
 
@@ -960,7 +994,7 @@ Bit::Bit(const Bit& from)
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
     key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   value_ = from.value_;
   // @@protoc_insertion_point(copy_constructor:v1.model.Bit)
@@ -978,7 +1012,7 @@ Bit::~Bit() {
 }
 
 void Bit::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1008,7 +1042,6 @@ const char* Bit::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::intern
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string key = 1 [json_name = "key"];
       case 1:
@@ -1028,7 +1061,8 @@ const char* Bit::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::intern
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1055,7 +1089,7 @@ failure:
   (void) cached_has_bits;
 
   // string key = 1 [json_name = "key"];
-  if (this->key().size() > 0) {
+  if (!this->key().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_key().data(), static_cast<int>(this->_internal_key().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1087,7 +1121,7 @@ size_t Bit::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string key = 1 [json_name = "key"];
-  if (this->key().size() > 0) {
+  if (!this->key().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_key());
@@ -1129,7 +1163,7 @@ void Bit::MergeFrom(const Bit& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.key().size() > 0) {
+  if (!from.key().empty()) {
     _internal_set_key(from._internal_key());
   }
   if (from.value() != 0) {
@@ -1157,15 +1191,20 @@ bool Bit::IsInitialized() const {
 
 void Bit::InternalSwap(Bit* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &key_, GetArenaForAllocation(),
+      &other->key_, other->GetArenaForAllocation()
+  );
   swap(value_, other->value_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Bit::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[3]);
 }
-
 
 // ===================================================================
 
@@ -1197,7 +1236,7 @@ Bitset::~Bitset() {
 }
 
 void Bitset::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void Bitset::ArenaDtor(void* object) {
@@ -1225,7 +1264,6 @@ const char* Bitset::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .v1.model.Bit bits = 1 [json_name = "bits"];
       case 1:
@@ -1241,7 +1279,8 @@ const char* Bitset::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1352,14 +1391,15 @@ bool Bitset::IsInitialized() const {
 
 void Bitset::InternalSwap(Bitset* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   bits_.InternalSwap(&other->bits_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Bitset::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[4]);
 }
-
 
 // ===================================================================
 
@@ -1413,7 +1453,7 @@ Twist::~Twist() {
 }
 
 void Twist::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete linear_;
   if (this != internal_default_instance()) delete angular_;
 }
@@ -1434,11 +1474,11 @@ void Twist::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && linear_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && linear_ != nullptr) {
     delete linear_;
   }
   linear_ = nullptr;
-  if (GetArena() == nullptr && angular_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && angular_ != nullptr) {
     delete angular_;
   }
   angular_ = nullptr;
@@ -1450,7 +1490,6 @@ const char* Twist::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .v1.model.Vector3 linear = 1 [json_name = "linear"];
       case 1:
@@ -1468,7 +1507,8 @@ const char* Twist::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1599,7 +1639,7 @@ bool Twist::IsInitialized() const {
 
 void Twist::InternalSwap(Twist* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Twist, angular_)
       + sizeof(Twist::angular_)
@@ -1609,9 +1649,10 @@ void Twist::InternalSwap(Twist* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Twist::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[5]);
 }
-
 
 // ===================================================================
 
@@ -1665,7 +1706,7 @@ Transform::~Transform() {
 }
 
 void Transform::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete translation_;
   if (this != internal_default_instance()) delete rotation_;
 }
@@ -1686,11 +1727,11 @@ void Transform::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && translation_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && translation_ != nullptr) {
     delete translation_;
   }
   translation_ = nullptr;
-  if (GetArena() == nullptr && rotation_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && rotation_ != nullptr) {
     delete rotation_;
   }
   rotation_ = nullptr;
@@ -1702,7 +1743,6 @@ const char* Transform::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .v1.model.Vector3 translation = 1 [json_name = "translation"];
       case 1:
@@ -1720,7 +1760,8 @@ const char* Transform::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1851,7 +1892,7 @@ bool Transform::IsInitialized() const {
 
 void Transform::InternalSwap(Transform* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Transform, rotation_)
       + sizeof(Transform::rotation_)
@@ -1861,9 +1902,10 @@ void Transform::InternalSwap(Transform* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Transform::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[6]);
 }
-
 
 // ===================================================================
 
@@ -1888,12 +1930,12 @@ TransformFrame::TransformFrame(const TransformFrame& from)
   parent_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_parent_frame().empty()) {
     parent_frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_parent_frame(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   child_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_child_frame().empty()) {
     child_frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_child_frame(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   if (from._internal_has_transform()) {
     transform_ = new ::v1::model::Transform(*from.transform_);
@@ -1916,7 +1958,7 @@ TransformFrame::~TransformFrame() {
 }
 
 void TransformFrame::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   parent_frame_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   child_frame_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete transform_;
@@ -1940,7 +1982,7 @@ void TransformFrame::Clear() {
 
   parent_frame_.ClearToEmpty();
   child_frame_.ClearToEmpty();
-  if (GetArena() == nullptr && transform_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && transform_ != nullptr) {
     delete transform_;
   }
   transform_ = nullptr;
@@ -1952,7 +1994,6 @@ const char* TransformFrame::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string parent_frame = 1 [json_name = "parentFrame"];
       case 1:
@@ -1981,7 +2022,8 @@ const char* TransformFrame::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2008,7 +2050,7 @@ failure:
   (void) cached_has_bits;
 
   // string parent_frame = 1 [json_name = "parentFrame"];
-  if (this->parent_frame().size() > 0) {
+  if (!this->parent_frame().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_parent_frame().data(), static_cast<int>(this->_internal_parent_frame().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -2018,7 +2060,7 @@ failure:
   }
 
   // string child_frame = 2 [json_name = "childFrame"];
-  if (this->child_frame().size() > 0) {
+  if (!this->child_frame().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_child_frame().data(), static_cast<int>(this->_internal_child_frame().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -2052,14 +2094,14 @@ size_t TransformFrame::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string parent_frame = 1 [json_name = "parentFrame"];
-  if (this->parent_frame().size() > 0) {
+  if (!this->parent_frame().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_parent_frame());
   }
 
   // string child_frame = 2 [json_name = "childFrame"];
-  if (this->child_frame().size() > 0) {
+  if (!this->child_frame().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_child_frame());
@@ -2103,10 +2145,10 @@ void TransformFrame::MergeFrom(const TransformFrame& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.parent_frame().size() > 0) {
+  if (!from.parent_frame().empty()) {
     _internal_set_parent_frame(from._internal_parent_frame());
   }
-  if (from.child_frame().size() > 0) {
+  if (!from.child_frame().empty()) {
     _internal_set_child_frame(from._internal_child_frame());
   }
   if (from.has_transform()) {
@@ -2134,16 +2176,25 @@ bool TransformFrame::IsInitialized() const {
 
 void TransformFrame::InternalSwap(TransformFrame* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  parent_frame_.Swap(&other->parent_frame_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  child_frame_.Swap(&other->child_frame_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &parent_frame_, GetArenaForAllocation(),
+      &other->parent_frame_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &child_frame_, GetArenaForAllocation(),
+      &other->child_frame_, other->GetArenaForAllocation()
+  );
   swap(transform_, other->transform_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TransformFrame::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[7]);
 }
-
 
 // ===================================================================
 
@@ -2180,7 +2231,7 @@ Vector3::~Vector3() {
 }
 
 void Vector3::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void Vector3::ArenaDtor(void* object) {
@@ -2210,7 +2261,6 @@ const char* Vector3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // double x = 1 [json_name = "x"];
       case 1:
@@ -2235,7 +2285,8 @@ const char* Vector3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2372,7 +2423,7 @@ bool Vector3::IsInitialized() const {
 
 void Vector3::InternalSwap(Vector3* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Vector3, z_)
       + sizeof(Vector3::z_)
@@ -2382,9 +2433,252 @@ void Vector3::InternalSwap(Vector3* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Vector3::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[8]);
 }
 
+// ===================================================================
+
+class Point::_Internal {
+ public:
+};
+
+Point::Point(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:v1.model.Point)
+}
+Point::Point(const Point& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&x_, &from.x_,
+    static_cast<size_t>(reinterpret_cast<char*>(&z_) -
+    reinterpret_cast<char*>(&x_)) + sizeof(z_));
+  // @@protoc_insertion_point(copy_constructor:v1.model.Point)
+}
+
+void Point::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&x_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&z_) -
+    reinterpret_cast<char*>(&x_)) + sizeof(z_));
+}
+
+Point::~Point() {
+  // @@protoc_insertion_point(destructor:v1.model.Point)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void Point::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void Point::ArenaDtor(void* object) {
+  Point* _this = reinterpret_cast< Point* >(object);
+  (void)_this;
+}
+void Point::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void Point::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void Point::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.model.Point)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&x_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&z_) -
+      reinterpret_cast<char*>(&x_)) + sizeof(z_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Point::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double x = 1 [json_name = "x"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+          x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // double y = 2 [json_name = "y"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
+          y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // double z = 3 [json_name = "z"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
+          z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Point::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.model.Point)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // double x = 1 [json_name = "x"];
+  if (!(this->x() <= 0 && this->x() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_x(), target);
+  }
+
+  // double y = 2 [json_name = "y"];
+  if (!(this->y() <= 0 && this->y() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_y(), target);
+  }
+
+  // double z = 3 [json_name = "z"];
+  if (!(this->z() <= 0 && this->z() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_z(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.model.Point)
+  return target;
+}
+
+size_t Point::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.model.Point)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // double x = 1 [json_name = "x"];
+  if (!(this->x() <= 0 && this->x() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // double y = 2 [json_name = "y"];
+  if (!(this->y() <= 0 && this->y() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // double z = 3 [json_name = "z"];
+  if (!(this->z() <= 0 && this->z() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Point::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Point)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Point* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Point>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Point)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Point)
+    MergeFrom(*source);
+  }
+}
+
+void Point::MergeFrom(const Point& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Point)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!(from.x() <= 0 && from.x() >= 0)) {
+    _internal_set_x(from._internal_x());
+  }
+  if (!(from.y() <= 0 && from.y() >= 0)) {
+    _internal_set_y(from._internal_y());
+  }
+  if (!(from.z() <= 0 && from.z() >= 0)) {
+    _internal_set_z(from._internal_z());
+  }
+}
+
+void Point::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Point)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Point::CopyFrom(const Point& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.Point)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Point::IsInitialized() const {
+  return true;
+}
+
+void Point::InternalSwap(Point* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Point, z_)
+      + sizeof(Point::z_)
+      - PROTOBUF_FIELD_OFFSET(Point, x_)>(
+          reinterpret_cast<char*>(&x_),
+          reinterpret_cast<char*>(&other->x_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Point::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[9]);
+}
 
 // ===================================================================
 
@@ -2421,7 +2715,7 @@ Quaternion::~Quaternion() {
 }
 
 void Quaternion::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void Quaternion::ArenaDtor(void* object) {
@@ -2451,7 +2745,6 @@ const char* Quaternion::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // double x = 1 [json_name = "x"];
       case 1:
@@ -2483,7 +2776,8 @@ const char* Quaternion::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2634,7 +2928,7 @@ bool Quaternion::IsInitialized() const {
 
 void Quaternion::InternalSwap(Quaternion* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Quaternion, w_)
       + sizeof(Quaternion::w_)
@@ -2644,9 +2938,10 @@ void Quaternion::InternalSwap(Quaternion* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Quaternion::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmath_2eproto[10]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace model
@@ -2678,6 +2973,9 @@ template<> PROTOBUF_NOINLINE ::v1::model::TransformFrame* Arena::CreateMaybeMess
 }
 template<> PROTOBUF_NOINLINE ::v1::model::Vector3* Arena::CreateMaybeMessage< ::v1::model::Vector3 >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Vector3 >(arena);
+}
+template<> PROTOBUF_NOINLINE ::v1::model::Point* Arena::CreateMaybeMessage< ::v1::model::Point >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::v1::model::Point >(arena);
 }
 template<> PROTOBUF_NOINLINE ::v1::model::Quaternion* Arena::CreateMaybeMessage< ::v1::model::Quaternion >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Quaternion >(arena);

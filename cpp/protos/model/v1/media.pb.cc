@@ -44,6 +44,19 @@ struct PointCloudDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PointCloudDefaultTypeInternal _PointCloud_default_instance_;
+constexpr RtcPointCloud::RtcPointCloud(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : data_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , world_to_local_(nullptr){}
+struct RtcPointCloudDefaultTypeInternal {
+  constexpr RtcPointCloudDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RtcPointCloudDefaultTypeInternal() {}
+  union {
+    RtcPointCloud _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RtcPointCloudDefaultTypeInternal _RtcPointCloud_default_instance_;
 constexpr H264VideoFrame::H264VideoFrame(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : frame_data_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -75,7 +88,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AudioChunkDefaultTypeInternal _
 constexpr Video::Video(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : mime_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , duration_(PROTOBUF_LONGLONG(0))
+  , duration_(int64_t{0})
   , _oneof_case_{}{}
 struct VideoDefaultTypeInternal {
   constexpr VideoDefaultTypeInternal()
@@ -86,9 +99,21 @@ struct VideoDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VideoDefaultTypeInternal _Video_default_instance_;
+constexpr TransformTree::TransformTree(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct TransformTreeDefaultTypeInternal {
+  constexpr TransformTreeDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TransformTreeDefaultTypeInternal() {}
+  union {
+    TransformTree _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransformTreeDefaultTypeInternal _TransformTree_default_instance_;
 }  // namespace model
 }  // namespace v1
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[5];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[7];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto = nullptr;
 
@@ -111,6 +136,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fmedia_2e
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::PointCloud, world_to_local_),
   PROTOBUF_FIELD_OFFSET(::v1::model::PointCloud, data_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::model::RtcPointCloud, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::v1::model::RtcPointCloud, data_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::RtcPointCloud, world_to_local_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::H264VideoFrame, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -137,21 +169,33 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fmedia_2e
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::Video, data_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::model::TransformTree, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::v1::model::TransformTree, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::v1::model::TransformTree, data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::v1::model::Image)},
   { 9, -1, sizeof(::v1::model::PointCloud)},
-  { 18, -1, sizeof(::v1::model::H264VideoFrame)},
-  { 26, -1, sizeof(::v1::model::AudioChunk)},
-  { 34, -1, sizeof(::v1::model::Video)},
+  { 18, -1, sizeof(::v1::model::RtcPointCloud)},
+  { 25, -1, sizeof(::v1::model::H264VideoFrame)},
+  { 33, -1, sizeof(::v1::model::AudioChunk)},
+  { 41, -1, sizeof(::v1::model::Video)},
+  { 51, -1, sizeof(::v1::model::TransformTree)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Image_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_PointCloud_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_RtcPointCloud_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_H264VideoFrame_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_AudioChunk_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Video_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_TransformTree_default_instance_),
 };
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -162,30 +206,32 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto[] PROTO
   "w\n\nPointCloud\022\022\n\003url\030\001 \001(\tH\000R\003url\022\022\n\003raw"
   "\030\002 \001(\014H\000R\003raw\0229\n\016world_to_local\030\003 \001(\0132\023."
   "v1.model.TransformR\014worldToLocalB\006\n\004data"
-  "\"[\n\016H264VideoFrame\022\024\n\005index\030\001 \001(\005R\005index"
-  "\022\024\n\005flags\030\002 \001(\005R\005flags\022\035\n\nframe_data\030\003 \001"
-  "(\014R\tframeData\"Y\n\nAudioChunk\022\024\n\005index\030\001 \001"
-  "(\005R\005index\022\026\n\006format\030\002 \001(\tR\006format\022\035\n\nchu"
-  "nk_data\030\003 \001(\014R\tchunkData\"p\n\005Video\022\033\n\tmim"
-  "e_type\030\001 \001(\tR\010mimeType\022\032\n\010duration\030\002 \001(\003"
-  "R\010duration\022\022\n\003url\030\003 \001(\tH\000R\003url\022\022\n\003raw\030\004 "
-  "\001(\014H\000R\003rawB\006\n\004dataB+Z)github.com/Formant"
-  "IO/genproto/go/v1/modelb\006proto3"
+  "\"^\n\rRtcPointCloud\022\022\n\004data\030\001 \001(\014R\004data\0229\n"
+  "\016world_to_local\030\002 \001(\0132\023.v1.model.Transfo"
+  "rmR\014worldToLocal\"[\n\016H264VideoFrame\022\024\n\005in"
+  "dex\030\001 \001(\005R\005index\022\024\n\005flags\030\002 \001(\005R\005flags\022\035"
+  "\n\nframe_data\030\003 \001(\014R\tframeData\"Y\n\nAudioCh"
+  "unk\022\024\n\005index\030\001 \001(\005R\005index\022\026\n\006format\030\002 \001("
+  "\tR\006format\022\035\n\nchunk_data\030\003 \001(\014R\tchunkData"
+  "\"p\n\005Video\022\033\n\tmime_type\030\001 \001(\tR\010mimeType\022\032"
+  "\n\010duration\030\002 \001(\003R\010duration\022\022\n\003url\030\003 \001(\tH"
+  "\000R\003url\022\022\n\003raw\030\004 \001(\014H\000R\003rawB\006\n\004data\"\?\n\rTr"
+  "ansformTree\022\022\n\003url\030\001 \001(\tH\000R\003url\022\022\n\003raw\030\002"
+  " \001(\014H\000R\003rawB\006\n\004dataB+Z)github.com/Forman"
+  "tIO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps[1] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto = {
-  false, false, 631, descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto, "protos/model/v1/media.proto", 
-  &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps, 1, 5,
+  false, false, 792, descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto, "protos/model/v1/media.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps, 1, 7,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fmedia_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
-descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_metadata_getter(int index) {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto);
-  return descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto.file_level_metadata[index];
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_getter() {
+  return &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -211,7 +257,7 @@ Image::Image(const Image& from)
   content_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_content_type().empty()) {
     content_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_content_type(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   clear_has_data();
   switch (from.data_case()) {
@@ -242,7 +288,7 @@ Image::~Image() {
 }
 
 void Image::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   content_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (has_data()) {
     clear_data();
@@ -263,11 +309,11 @@ void Image::clear_data() {
 // @@protoc_insertion_point(one_of_clear_start:v1.model.Image)
   switch (data_case()) {
     case kUrl: {
-      data_.url_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+      data_.url_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case kRaw: {
-      data_.raw_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+      data_.raw_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case DATA_NOT_SET: {
@@ -294,7 +340,6 @@ const char* Image::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string content_type = 1 [json_name = "contentType"];
       case 1:
@@ -324,7 +369,8 @@ const char* Image::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -351,7 +397,7 @@ failure:
   (void) cached_has_bits;
 
   // string content_type = 1 [json_name = "contentType"];
-  if (this->content_type().size() > 0) {
+  if (!this->content_type().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_content_type().data(), static_cast<int>(this->_internal_content_type().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -393,7 +439,7 @@ size_t Image::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string content_type = 1 [json_name = "contentType"];
-  if (this->content_type().size() > 0) {
+  if (!this->content_type().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_content_type());
@@ -449,7 +495,7 @@ void Image::MergeFrom(const Image& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.content_type().size() > 0) {
+  if (!from.content_type().empty()) {
     _internal_set_content_type(from._internal_content_type());
   }
   switch (from.data_case()) {
@@ -487,16 +533,21 @@ bool Image::IsInitialized() const {
 
 void Image::InternalSwap(Image* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  content_type_.Swap(&other->content_type_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &content_type_, GetArenaForAllocation(),
+      &other->content_type_, other->GetArenaForAllocation()
+  );
   swap(data_, other->data_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Image::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -510,7 +561,7 @@ PointCloud::_Internal::world_to_local(const PointCloud* msg) {
   return *msg->world_to_local_;
 }
 void PointCloud::clear_world_to_local() {
-  if (GetArena() == nullptr && world_to_local_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && world_to_local_ != nullptr) {
     delete world_to_local_;
   }
   world_to_local_ = nullptr;
@@ -558,7 +609,7 @@ PointCloud::~PointCloud() {
 }
 
 void PointCloud::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete world_to_local_;
   if (has_data()) {
     clear_data();
@@ -579,11 +630,11 @@ void PointCloud::clear_data() {
 // @@protoc_insertion_point(one_of_clear_start:v1.model.PointCloud)
   switch (data_case()) {
     case kUrl: {
-      data_.url_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+      data_.url_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case kRaw: {
-      data_.raw_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+      data_.raw_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case DATA_NOT_SET: {
@@ -600,7 +651,7 @@ void PointCloud::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && world_to_local_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && world_to_local_ != nullptr) {
     delete world_to_local_;
   }
   world_to_local_ = nullptr;
@@ -613,7 +664,6 @@ const char* PointCloud::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string url = 1 [json_name = "url"];
       case 1:
@@ -641,7 +691,8 @@ const char* PointCloud::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -802,16 +853,265 @@ bool PointCloud::IsInitialized() const {
 
 void PointCloud::InternalSwap(PointCloud* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(world_to_local_, other->world_to_local_);
   swap(data_, other->data_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PointCloud::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[1]);
 }
 
+// ===================================================================
+
+class RtcPointCloud::_Internal {
+ public:
+  static const ::v1::model::Transform& world_to_local(const RtcPointCloud* msg);
+};
+
+const ::v1::model::Transform&
+RtcPointCloud::_Internal::world_to_local(const RtcPointCloud* msg) {
+  return *msg->world_to_local_;
+}
+void RtcPointCloud::clear_world_to_local() {
+  if (GetArenaForAllocation() == nullptr && world_to_local_ != nullptr) {
+    delete world_to_local_;
+  }
+  world_to_local_ = nullptr;
+}
+RtcPointCloud::RtcPointCloud(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:v1.model.RtcPointCloud)
+}
+RtcPointCloud::RtcPointCloud(const RtcPointCloud& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_data().empty()) {
+    data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_data(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_world_to_local()) {
+    world_to_local_ = new ::v1::model::Transform(*from.world_to_local_);
+  } else {
+    world_to_local_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:v1.model.RtcPointCloud)
+}
+
+void RtcPointCloud::SharedCtor() {
+data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+world_to_local_ = nullptr;
+}
+
+RtcPointCloud::~RtcPointCloud() {
+  // @@protoc_insertion_point(destructor:v1.model.RtcPointCloud)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RtcPointCloud::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete world_to_local_;
+}
+
+void RtcPointCloud::ArenaDtor(void* object) {
+  RtcPointCloud* _this = reinterpret_cast< RtcPointCloud* >(object);
+  (void)_this;
+}
+void RtcPointCloud::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RtcPointCloud::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void RtcPointCloud::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.model.RtcPointCloud)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  data_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && world_to_local_ != nullptr) {
+    delete world_to_local_;
+  }
+  world_to_local_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RtcPointCloud::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes data = 1 [json_name = "data"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_data();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.Transform world_to_local = 2 [json_name = "worldToLocal"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RtcPointCloud::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.model.RtcPointCloud)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes data = 1 [json_name = "data"];
+  if (!this->data().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_data(), target);
+  }
+
+  // .v1.model.Transform world_to_local = 2 [json_name = "worldToLocal"];
+  if (this->has_world_to_local()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::world_to_local(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.model.RtcPointCloud)
+  return target;
+}
+
+size_t RtcPointCloud::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.model.RtcPointCloud)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes data = 1 [json_name = "data"];
+  if (!this->data().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_data());
+  }
+
+  // .v1.model.Transform world_to_local = 2 [json_name = "worldToLocal"];
+  if (this->has_world_to_local()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *world_to_local_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RtcPointCloud::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.RtcPointCloud)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RtcPointCloud* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RtcPointCloud>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.RtcPointCloud)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.RtcPointCloud)
+    MergeFrom(*source);
+  }
+}
+
+void RtcPointCloud::MergeFrom(const RtcPointCloud& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.RtcPointCloud)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from.data().empty()) {
+    _internal_set_data(from._internal_data());
+  }
+  if (from.has_world_to_local()) {
+    _internal_mutable_world_to_local()->::v1::model::Transform::MergeFrom(from._internal_world_to_local());
+  }
+}
+
+void RtcPointCloud::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.RtcPointCloud)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RtcPointCloud::CopyFrom(const RtcPointCloud& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.RtcPointCloud)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RtcPointCloud::IsInitialized() const {
+  return true;
+}
+
+void RtcPointCloud::InternalSwap(RtcPointCloud* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &data_, GetArenaForAllocation(),
+      &other->data_, other->GetArenaForAllocation()
+  );
+  swap(world_to_local_, other->world_to_local_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RtcPointCloud::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[2]);
+}
 
 // ===================================================================
 
@@ -831,7 +1131,7 @@ H264VideoFrame::H264VideoFrame(const H264VideoFrame& from)
   frame_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_frame_data().empty()) {
     frame_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_frame_data(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   ::memcpy(&index_, &from.index_,
     static_cast<size_t>(reinterpret_cast<char*>(&flags_) -
@@ -854,7 +1154,7 @@ H264VideoFrame::~H264VideoFrame() {
 }
 
 void H264VideoFrame::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   frame_data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -886,7 +1186,6 @@ const char* H264VideoFrame::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 index = 1 [json_name = "index"];
       case 1:
@@ -912,7 +1211,8 @@ const char* H264VideoFrame::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -951,7 +1251,7 @@ failure:
   }
 
   // bytes frame_data = 3 [json_name = "frameData"];
-  if (this->frame_data().size() > 0) {
+  if (!this->frame_data().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_frame_data(), target);
   }
@@ -973,7 +1273,7 @@ size_t H264VideoFrame::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes frame_data = 3 [json_name = "frameData"];
-  if (this->frame_data().size() > 0) {
+  if (!this->frame_data().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_frame_data());
@@ -1024,7 +1324,7 @@ void H264VideoFrame::MergeFrom(const H264VideoFrame& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.frame_data().size() > 0) {
+  if (!from.frame_data().empty()) {
     _internal_set_frame_data(from._internal_frame_data());
   }
   if (from.index() != 0) {
@@ -1055,8 +1355,12 @@ bool H264VideoFrame::IsInitialized() const {
 
 void H264VideoFrame::InternalSwap(H264VideoFrame* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  frame_data_.Swap(&other->frame_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &frame_data_, GetArenaForAllocation(),
+      &other->frame_data_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(H264VideoFrame, flags_)
       + sizeof(H264VideoFrame::flags_)
@@ -1066,9 +1370,10 @@ void H264VideoFrame::InternalSwap(H264VideoFrame* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata H264VideoFrame::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[3]);
 }
-
 
 // ===================================================================
 
@@ -1088,12 +1393,12 @@ AudioChunk::AudioChunk(const AudioChunk& from)
   format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_format().empty()) {
     format_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_format(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   chunk_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_chunk_data().empty()) {
     chunk_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_chunk_data(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   index_ = from.index_;
   // @@protoc_insertion_point(copy_constructor:v1.model.AudioChunk)
@@ -1112,7 +1417,7 @@ AudioChunk::~AudioChunk() {
 }
 
 void AudioChunk::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   format_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   chunk_data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1144,7 +1449,6 @@ const char* AudioChunk::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 index = 1 [json_name = "index"];
       case 1:
@@ -1172,7 +1476,8 @@ const char* AudioChunk::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1205,7 +1510,7 @@ failure:
   }
 
   // string format = 2 [json_name = "format"];
-  if (this->format().size() > 0) {
+  if (!this->format().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_format().data(), static_cast<int>(this->_internal_format().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1215,7 +1520,7 @@ failure:
   }
 
   // bytes chunk_data = 3 [json_name = "chunkData"];
-  if (this->chunk_data().size() > 0) {
+  if (!this->chunk_data().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_chunk_data(), target);
   }
@@ -1237,14 +1542,14 @@ size_t AudioChunk::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string format = 2 [json_name = "format"];
-  if (this->format().size() > 0) {
+  if (!this->format().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_format());
   }
 
   // bytes chunk_data = 3 [json_name = "chunkData"];
-  if (this->chunk_data().size() > 0) {
+  if (!this->chunk_data().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_chunk_data());
@@ -1288,10 +1593,10 @@ void AudioChunk::MergeFrom(const AudioChunk& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.format().size() > 0) {
+  if (!from.format().empty()) {
     _internal_set_format(from._internal_format());
   }
-  if (from.chunk_data().size() > 0) {
+  if (!from.chunk_data().empty()) {
     _internal_set_chunk_data(from._internal_chunk_data());
   }
   if (from.index() != 0) {
@@ -1319,16 +1624,25 @@ bool AudioChunk::IsInitialized() const {
 
 void AudioChunk::InternalSwap(AudioChunk* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  format_.Swap(&other->format_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  chunk_data_.Swap(&other->chunk_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &format_, GetArenaForAllocation(),
+      &other->format_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &chunk_data_, GetArenaForAllocation(),
+      &other->chunk_data_, other->GetArenaForAllocation()
+  );
   swap(index_, other->index_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AudioChunk::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[4]);
 }
-
 
 // ===================================================================
 
@@ -1348,7 +1662,7 @@ Video::Video(const Video& from)
   mime_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_mime_type().empty()) {
     mime_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mime_type(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   duration_ = from.duration_;
   clear_has_data();
@@ -1370,7 +1684,7 @@ Video::Video(const Video& from)
 
 void Video::SharedCtor() {
 mime_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-duration_ = PROTOBUF_LONGLONG(0);
+duration_ = int64_t{0};
 clear_has_data();
 }
 
@@ -1381,7 +1695,7 @@ Video::~Video() {
 }
 
 void Video::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   mime_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (has_data()) {
     clear_data();
@@ -1402,11 +1716,11 @@ void Video::clear_data() {
 // @@protoc_insertion_point(one_of_clear_start:v1.model.Video)
   switch (data_case()) {
     case kUrl: {
-      data_.url_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+      data_.url_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case kRaw: {
-      data_.raw_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+      data_.raw_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case DATA_NOT_SET: {
@@ -1424,7 +1738,7 @@ void Video::Clear() {
   (void) cached_has_bits;
 
   mime_type_.ClearToEmpty();
-  duration_ = PROTOBUF_LONGLONG(0);
+  duration_ = int64_t{0};
   clear_data();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1434,7 +1748,6 @@ const char* Video::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string mime_type = 1 [json_name = "mimeType"];
       case 1:
@@ -1471,7 +1784,8 @@ const char* Video::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1498,7 +1812,7 @@ failure:
   (void) cached_has_bits;
 
   // string mime_type = 1 [json_name = "mimeType"];
-  if (this->mime_type().size() > 0) {
+  if (!this->mime_type().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_mime_type().data(), static_cast<int>(this->_internal_mime_type().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1546,7 +1860,7 @@ size_t Video::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string mime_type = 1 [json_name = "mimeType"];
-  if (this->mime_type().size() > 0) {
+  if (!this->mime_type().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_mime_type());
@@ -1609,7 +1923,7 @@ void Video::MergeFrom(const Video& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.mime_type().size() > 0) {
+  if (!from.mime_type().empty()) {
     _internal_set_mime_type(from._internal_mime_type());
   }
   if (from.duration() != 0) {
@@ -1650,17 +1964,290 @@ bool Video::IsInitialized() const {
 
 void Video::InternalSwap(Video* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  mime_type_.Swap(&other->mime_type_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &mime_type_, GetArenaForAllocation(),
+      &other->mime_type_, other->GetArenaForAllocation()
+  );
   swap(duration_, other->duration_);
   swap(data_, other->data_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Video::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[5]);
 }
 
+// ===================================================================
+
+class TransformTree::_Internal {
+ public:
+};
+
+TransformTree::TransformTree(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:v1.model.TransformTree)
+}
+TransformTree::TransformTree(const TransformTree& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_data();
+  switch (from.data_case()) {
+    case kUrl: {
+      _internal_set_url(from._internal_url());
+      break;
+    }
+    case kRaw: {
+      _internal_set_raw(from._internal_raw());
+      break;
+    }
+    case DATA_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:v1.model.TransformTree)
+}
+
+void TransformTree::SharedCtor() {
+clear_has_data();
+}
+
+TransformTree::~TransformTree() {
+  // @@protoc_insertion_point(destructor:v1.model.TransformTree)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void TransformTree::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_data()) {
+    clear_data();
+  }
+}
+
+void TransformTree::ArenaDtor(void* object) {
+  TransformTree* _this = reinterpret_cast< TransformTree* >(object);
+  (void)_this;
+}
+void TransformTree::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TransformTree::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TransformTree::clear_data() {
+// @@protoc_insertion_point(one_of_clear_start:v1.model.TransformTree)
+  switch (data_case()) {
+    case kUrl: {
+      data_.url_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+      break;
+    }
+    case kRaw: {
+      data_.raw_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+      break;
+    }
+    case DATA_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = DATA_NOT_SET;
+}
+
+
+void TransformTree::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.model.TransformTree)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_data();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TransformTree::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string url = 1 [json_name = "url"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_url();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.TransformTree.url"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes raw = 2 [json_name = "raw"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_raw();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* TransformTree::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.model.TransformTree)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string url = 1 [json_name = "url"];
+  if (_internal_has_url()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_url().data(), static_cast<int>(this->_internal_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.TransformTree.url");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_url(), target);
+  }
+
+  // bytes raw = 2 [json_name = "raw"];
+  if (_internal_has_raw()) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_raw(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.model.TransformTree)
+  return target;
+}
+
+size_t TransformTree::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.model.TransformTree)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (data_case()) {
+    // string url = 1 [json_name = "url"];
+    case kUrl: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_url());
+      break;
+    }
+    // bytes raw = 2 [json_name = "raw"];
+    case kRaw: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+          this->_internal_raw());
+      break;
+    }
+    case DATA_NOT_SET: {
+      break;
+    }
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void TransformTree::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.TransformTree)
+  GOOGLE_DCHECK_NE(&from, this);
+  const TransformTree* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TransformTree>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.TransformTree)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.TransformTree)
+    MergeFrom(*source);
+  }
+}
+
+void TransformTree::MergeFrom(const TransformTree& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.TransformTree)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.data_case()) {
+    case kUrl: {
+      _internal_set_url(from._internal_url());
+      break;
+    }
+    case kRaw: {
+      _internal_set_raw(from._internal_raw());
+      break;
+    }
+    case DATA_NOT_SET: {
+      break;
+    }
+  }
+}
+
+void TransformTree::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.TransformTree)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TransformTree::CopyFrom(const TransformTree& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.TransformTree)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TransformTree::IsInitialized() const {
+  return true;
+}
+
+void TransformTree::InternalSwap(TransformTree* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(data_, other->data_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TransformTree::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto[6]);
+}
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace model
@@ -1672,6 +2259,9 @@ template<> PROTOBUF_NOINLINE ::v1::model::Image* Arena::CreateMaybeMessage< ::v1
 template<> PROTOBUF_NOINLINE ::v1::model::PointCloud* Arena::CreateMaybeMessage< ::v1::model::PointCloud >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::PointCloud >(arena);
 }
+template<> PROTOBUF_NOINLINE ::v1::model::RtcPointCloud* Arena::CreateMaybeMessage< ::v1::model::RtcPointCloud >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::v1::model::RtcPointCloud >(arena);
+}
 template<> PROTOBUF_NOINLINE ::v1::model::H264VideoFrame* Arena::CreateMaybeMessage< ::v1::model::H264VideoFrame >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::H264VideoFrame >(arena);
 }
@@ -1680,6 +2270,9 @@ template<> PROTOBUF_NOINLINE ::v1::model::AudioChunk* Arena::CreateMaybeMessage<
 }
 template<> PROTOBUF_NOINLINE ::v1::model::Video* Arena::CreateMaybeMessage< ::v1::model::Video >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Video >(arena);
+}
+template<> PROTOBUF_NOINLINE ::v1::model::TransformTree* Arena::CreateMaybeMessage< ::v1::model::TransformTree >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::v1::model::TransformTree >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
