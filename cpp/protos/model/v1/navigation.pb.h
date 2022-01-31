@@ -48,7 +48,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[13]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -57,6 +57,9 @@ struct TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto;
 namespace v1 {
 namespace model {
+class ColorRGBA;
+struct ColorRGBADefaultTypeInternal;
+extern ColorRGBADefaultTypeInternal _ColorRGBA_default_instance_;
 class Goal;
 struct GoalDefaultTypeInternal;
 extern GoalDefaultTypeInternal _Goal_default_instance_;
@@ -75,6 +78,12 @@ extern LocationDefaultTypeInternal _Location_default_instance_;
 class Map;
 struct MapDefaultTypeInternal;
 extern MapDefaultTypeInternal _Map_default_instance_;
+class Marker3D;
+struct Marker3DDefaultTypeInternal;
+extern Marker3DDefaultTypeInternal _Marker3D_default_instance_;
+class Marker3DArray;
+struct Marker3DArrayDefaultTypeInternal;
+extern Marker3DArrayDefaultTypeInternal _Marker3DArray_default_instance_;
 class OccupancyGrid;
 struct OccupancyGridDefaultTypeInternal;
 extern OccupancyGridDefaultTypeInternal _OccupancyGrid_default_instance_;
@@ -90,12 +99,15 @@ extern PoseWithCovarianceDefaultTypeInternal _PoseWithCovariance_default_instanc
 }  // namespace model
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
+template<> ::v1::model::ColorRGBA* Arena::CreateMaybeMessage<::v1::model::ColorRGBA>(Arena*);
 template<> ::v1::model::Goal* Arena::CreateMaybeMessage<::v1::model::Goal>(Arena*);
 template<> ::v1::model::GoalID* Arena::CreateMaybeMessage<::v1::model::GoalID>(Arena*);
 template<> ::v1::model::JointState* Arena::CreateMaybeMessage<::v1::model::JointState>(Arena*);
 template<> ::v1::model::Localization* Arena::CreateMaybeMessage<::v1::model::Localization>(Arena*);
 template<> ::v1::model::Location* Arena::CreateMaybeMessage<::v1::model::Location>(Arena*);
 template<> ::v1::model::Map* Arena::CreateMaybeMessage<::v1::model::Map>(Arena*);
+template<> ::v1::model::Marker3D* Arena::CreateMaybeMessage<::v1::model::Marker3D>(Arena*);
+template<> ::v1::model::Marker3DArray* Arena::CreateMaybeMessage<::v1::model::Marker3DArray>(Arena*);
 template<> ::v1::model::OccupancyGrid* Arena::CreateMaybeMessage<::v1::model::OccupancyGrid>(Arena*);
 template<> ::v1::model::Odometry* Arena::CreateMaybeMessage<::v1::model::Odometry>(Arena*);
 template<> ::v1::model::Path* Arena::CreateMaybeMessage<::v1::model::Path>(Arena*);
@@ -216,6 +228,8 @@ class Location final :
   enum : int {
     kLatitudeFieldNumber = 1,
     kLongitudeFieldNumber = 2,
+    kAltitudeFieldNumber = 3,
+    kOrientationFieldNumber = 4,
   };
   // double latitude = 1 [json_name = "latitude"];
   void clear_latitude();
@@ -235,6 +249,32 @@ class Location final :
   void _internal_set_longitude(double value);
   public:
 
+  // optional double altitude = 3 [json_name = "altitude"];
+  bool has_altitude() const;
+  private:
+  bool _internal_has_altitude() const;
+  public:
+  void clear_altitude();
+  double altitude() const;
+  void set_altitude(double value);
+  private:
+  double _internal_altitude() const;
+  void _internal_set_altitude(double value);
+  public:
+
+  // optional double orientation = 4 [json_name = "orientation"];
+  bool has_orientation() const;
+  private:
+  bool _internal_has_orientation() const;
+  public:
+  void clear_orientation();
+  double orientation() const;
+  void set_orientation(double value);
+  private:
+  double _internal_orientation() const;
+  void _internal_set_orientation(double value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.Location)
  private:
   class _Internal;
@@ -242,9 +282,12 @@ class Location final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   double latitude_;
   double longitude_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  double altitude_;
+  double orientation_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1933,6 +1976,677 @@ class PoseWithCovariance final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ColorRGBA final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.ColorRGBA) */ {
+ public:
+  inline ColorRGBA() : ColorRGBA(nullptr) {}
+  ~ColorRGBA() override;
+  explicit constexpr ColorRGBA(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ColorRGBA(const ColorRGBA& from);
+  ColorRGBA(ColorRGBA&& from) noexcept
+    : ColorRGBA() {
+    *this = ::std::move(from);
+  }
+
+  inline ColorRGBA& operator=(const ColorRGBA& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ColorRGBA& operator=(ColorRGBA&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ColorRGBA& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ColorRGBA* internal_default_instance() {
+    return reinterpret_cast<const ColorRGBA*>(
+               &_ColorRGBA_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(ColorRGBA& a, ColorRGBA& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ColorRGBA* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ColorRGBA* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ColorRGBA* New() const final {
+    return new ColorRGBA();
+  }
+
+  ColorRGBA* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ColorRGBA>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ColorRGBA& from);
+  void MergeFrom(const ColorRGBA& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ColorRGBA* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.ColorRGBA";
+  }
+  protected:
+  explicit ColorRGBA(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRFieldNumber = 1,
+    kGFieldNumber = 2,
+    kBFieldNumber = 3,
+    kAFieldNumber = 4,
+  };
+  // float r = 1 [json_name = "r"];
+  void clear_r();
+  float r() const;
+  void set_r(float value);
+  private:
+  float _internal_r() const;
+  void _internal_set_r(float value);
+  public:
+
+  // float g = 2 [json_name = "g"];
+  void clear_g();
+  float g() const;
+  void set_g(float value);
+  private:
+  float _internal_g() const;
+  void _internal_set_g(float value);
+  public:
+
+  // float b = 3 [json_name = "b"];
+  void clear_b();
+  float b() const;
+  void set_b(float value);
+  private:
+  float _internal_b() const;
+  void _internal_set_b(float value);
+  public:
+
+  // float a = 4 [json_name = "a"];
+  void clear_a();
+  float a() const;
+  void set_a(float value);
+  private:
+  float _internal_a() const;
+  void _internal_set_a(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.ColorRGBA)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  float r_;
+  float g_;
+  float b_;
+  float a_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Marker3D final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.Marker3D) */ {
+ public:
+  inline Marker3D() : Marker3D(nullptr) {}
+  ~Marker3D() override;
+  explicit constexpr Marker3D(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Marker3D(const Marker3D& from);
+  Marker3D(Marker3D&& from) noexcept
+    : Marker3D() {
+    *this = ::std::move(from);
+  }
+
+  inline Marker3D& operator=(const Marker3D& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Marker3D& operator=(Marker3D&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Marker3D& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Marker3D* internal_default_instance() {
+    return reinterpret_cast<const Marker3D*>(
+               &_Marker3D_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(Marker3D& a, Marker3D& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Marker3D* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Marker3D* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Marker3D* New() const final {
+    return new Marker3D();
+  }
+
+  Marker3D* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Marker3D>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Marker3D& from);
+  void MergeFrom(const Marker3D& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Marker3D* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.Marker3D";
+  }
+  protected:
+  explicit Marker3D(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPointsFieldNumber = 11,
+    kColorsFieldNumber = 12,
+    kNsFieldNumber = 2,
+    kTypeFieldNumber = 4,
+    kActionFieldNumber = 5,
+    kTextFieldNumber = 13,
+    kMeshResourceFieldNumber = 14,
+    kWorldToLocalFieldNumber = 1,
+    kPoseFieldNumber = 6,
+    kScaleFieldNumber = 7,
+    kColorFieldNumber = 8,
+    kLifetimeFieldNumber = 9,
+    kIdFieldNumber = 3,
+    kFrameLockedFieldNumber = 10,
+    kMeshUseEmbeddedMaterialsFieldNumber = 15,
+  };
+  // repeated .v1.model.Vector3 points = 11 [json_name = "points"];
+  int points_size() const;
+  private:
+  int _internal_points_size() const;
+  public:
+  void clear_points();
+  ::v1::model::Vector3* mutable_points(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Vector3 >*
+      mutable_points();
+  private:
+  const ::v1::model::Vector3& _internal_points(int index) const;
+  ::v1::model::Vector3* _internal_add_points();
+  public:
+  const ::v1::model::Vector3& points(int index) const;
+  ::v1::model::Vector3* add_points();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Vector3 >&
+      points() const;
+
+  // repeated .v1.model.ColorRGBA colors = 12 [json_name = "colors"];
+  int colors_size() const;
+  private:
+  int _internal_colors_size() const;
+  public:
+  void clear_colors();
+  ::v1::model::ColorRGBA* mutable_colors(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::ColorRGBA >*
+      mutable_colors();
+  private:
+  const ::v1::model::ColorRGBA& _internal_colors(int index) const;
+  ::v1::model::ColorRGBA* _internal_add_colors();
+  public:
+  const ::v1::model::ColorRGBA& colors(int index) const;
+  ::v1::model::ColorRGBA* add_colors();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::ColorRGBA >&
+      colors() const;
+
+  // string ns = 2 [json_name = "ns"];
+  void clear_ns();
+  const std::string& ns() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ns(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ns();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_ns();
+  void set_allocated_ns(std::string* ns);
+  private:
+  const std::string& _internal_ns() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ns(const std::string& value);
+  std::string* _internal_mutable_ns();
+  public:
+
+  // string type = 4 [json_name = "type"];
+  void clear_type();
+  const std::string& type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_type();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_type();
+  void set_allocated_type(std::string* type);
+  private:
+  const std::string& _internal_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_type(const std::string& value);
+  std::string* _internal_mutable_type();
+  public:
+
+  // string action = 5 [json_name = "action"];
+  void clear_action();
+  const std::string& action() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_action(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_action();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_action();
+  void set_allocated_action(std::string* action);
+  private:
+  const std::string& _internal_action() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_action(const std::string& value);
+  std::string* _internal_mutable_action();
+  public:
+
+  // string text = 13 [json_name = "text"];
+  void clear_text();
+  const std::string& text() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_text(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_text();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_text();
+  void set_allocated_text(std::string* text);
+  private:
+  const std::string& _internal_text() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_text(const std::string& value);
+  std::string* _internal_mutable_text();
+  public:
+
+  // string mesh_resource = 14 [json_name = "meshResource"];
+  void clear_mesh_resource();
+  const std::string& mesh_resource() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mesh_resource(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mesh_resource();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_mesh_resource();
+  void set_allocated_mesh_resource(std::string* mesh_resource);
+  private:
+  const std::string& _internal_mesh_resource() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mesh_resource(const std::string& value);
+  std::string* _internal_mutable_mesh_resource();
+  public:
+
+  // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
+  bool has_world_to_local() const;
+  private:
+  bool _internal_has_world_to_local() const;
+  public:
+  void clear_world_to_local();
+  const ::v1::model::Transform& world_to_local() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::Transform* release_world_to_local();
+  ::v1::model::Transform* mutable_world_to_local();
+  void set_allocated_world_to_local(::v1::model::Transform* world_to_local);
+  private:
+  const ::v1::model::Transform& _internal_world_to_local() const;
+  ::v1::model::Transform* _internal_mutable_world_to_local();
+  public:
+  void unsafe_arena_set_allocated_world_to_local(
+      ::v1::model::Transform* world_to_local);
+  ::v1::model::Transform* unsafe_arena_release_world_to_local();
+
+  // .v1.model.Transform pose = 6 [json_name = "pose"];
+  bool has_pose() const;
+  private:
+  bool _internal_has_pose() const;
+  public:
+  void clear_pose();
+  const ::v1::model::Transform& pose() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::Transform* release_pose();
+  ::v1::model::Transform* mutable_pose();
+  void set_allocated_pose(::v1::model::Transform* pose);
+  private:
+  const ::v1::model::Transform& _internal_pose() const;
+  ::v1::model::Transform* _internal_mutable_pose();
+  public:
+  void unsafe_arena_set_allocated_pose(
+      ::v1::model::Transform* pose);
+  ::v1::model::Transform* unsafe_arena_release_pose();
+
+  // .v1.model.Vector3 scale = 7 [json_name = "scale"];
+  bool has_scale() const;
+  private:
+  bool _internal_has_scale() const;
+  public:
+  void clear_scale();
+  const ::v1::model::Vector3& scale() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::Vector3* release_scale();
+  ::v1::model::Vector3* mutable_scale();
+  void set_allocated_scale(::v1::model::Vector3* scale);
+  private:
+  const ::v1::model::Vector3& _internal_scale() const;
+  ::v1::model::Vector3* _internal_mutable_scale();
+  public:
+  void unsafe_arena_set_allocated_scale(
+      ::v1::model::Vector3* scale);
+  ::v1::model::Vector3* unsafe_arena_release_scale();
+
+  // .v1.model.ColorRGBA color = 8 [json_name = "color"];
+  bool has_color() const;
+  private:
+  bool _internal_has_color() const;
+  public:
+  void clear_color();
+  const ::v1::model::ColorRGBA& color() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::ColorRGBA* release_color();
+  ::v1::model::ColorRGBA* mutable_color();
+  void set_allocated_color(::v1::model::ColorRGBA* color);
+  private:
+  const ::v1::model::ColorRGBA& _internal_color() const;
+  ::v1::model::ColorRGBA* _internal_mutable_color();
+  public:
+  void unsafe_arena_set_allocated_color(
+      ::v1::model::ColorRGBA* color);
+  ::v1::model::ColorRGBA* unsafe_arena_release_color();
+
+  // double lifetime = 9 [json_name = "lifetime"];
+  void clear_lifetime();
+  double lifetime() const;
+  void set_lifetime(double value);
+  private:
+  double _internal_lifetime() const;
+  void _internal_set_lifetime(double value);
+  public:
+
+  // int32 id = 3 [json_name = "id"];
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // bool frame_locked = 10 [json_name = "frameLocked"];
+  void clear_frame_locked();
+  bool frame_locked() const;
+  void set_frame_locked(bool value);
+  private:
+  bool _internal_frame_locked() const;
+  void _internal_set_frame_locked(bool value);
+  public:
+
+  // bool mesh_use_embedded_materials = 15 [json_name = "meshUseEmbeddedMaterials"];
+  void clear_mesh_use_embedded_materials();
+  bool mesh_use_embedded_materials() const;
+  void set_mesh_use_embedded_materials(bool value);
+  private:
+  bool _internal_mesh_use_embedded_materials() const;
+  void _internal_set_mesh_use_embedded_materials(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.Marker3D)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Vector3 > points_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::ColorRGBA > colors_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ns_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr action_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr text_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mesh_resource_;
+  ::v1::model::Transform* world_to_local_;
+  ::v1::model::Transform* pose_;
+  ::v1::model::Vector3* scale_;
+  ::v1::model::ColorRGBA* color_;
+  double lifetime_;
+  ::PROTOBUF_NAMESPACE_ID::int32 id_;
+  bool frame_locked_;
+  bool mesh_use_embedded_materials_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Marker3DArray final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.Marker3DArray) */ {
+ public:
+  inline Marker3DArray() : Marker3DArray(nullptr) {}
+  ~Marker3DArray() override;
+  explicit constexpr Marker3DArray(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Marker3DArray(const Marker3DArray& from);
+  Marker3DArray(Marker3DArray&& from) noexcept
+    : Marker3DArray() {
+    *this = ::std::move(from);
+  }
+
+  inline Marker3DArray& operator=(const Marker3DArray& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Marker3DArray& operator=(Marker3DArray&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Marker3DArray& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Marker3DArray* internal_default_instance() {
+    return reinterpret_cast<const Marker3DArray*>(
+               &_Marker3DArray_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(Marker3DArray& a, Marker3DArray& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Marker3DArray* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Marker3DArray* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Marker3DArray* New() const final {
+    return new Marker3DArray();
+  }
+
+  Marker3DArray* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Marker3DArray>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Marker3DArray& from);
+  void MergeFrom(const Marker3DArray& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Marker3DArray* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.Marker3DArray";
+  }
+  protected:
+  explicit Marker3DArray(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMarkersFieldNumber = 1,
+  };
+  // repeated .v1.model.Marker3D markers = 1 [json_name = "markers"];
+  int markers_size() const;
+  private:
+  int _internal_markers_size() const;
+  public:
+  void clear_markers();
+  ::v1::model::Marker3D* mutable_markers(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Marker3D >*
+      mutable_markers();
+  private:
+  const ::v1::model::Marker3D& _internal_markers(int index) const;
+  ::v1::model::Marker3D* _internal_add_markers();
+  public:
+  const ::v1::model::Marker3D& markers(int index) const;
+  ::v1::model::Marker3D* add_markers();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Marker3D >&
+      markers() const;
+
+  // @@protoc_insertion_point(class_scope:v1.model.Marker3DArray)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Marker3D > markers_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto;
+};
 // ===================================================================
 
 
@@ -1982,6 +2696,62 @@ inline void Location::_internal_set_longitude(double value) {
 inline void Location::set_longitude(double value) {
   _internal_set_longitude(value);
   // @@protoc_insertion_point(field_set:v1.model.Location.longitude)
+}
+
+// optional double altitude = 3 [json_name = "altitude"];
+inline bool Location::_internal_has_altitude() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool Location::has_altitude() const {
+  return _internal_has_altitude();
+}
+inline void Location::clear_altitude() {
+  altitude_ = 0;
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline double Location::_internal_altitude() const {
+  return altitude_;
+}
+inline double Location::altitude() const {
+  // @@protoc_insertion_point(field_get:v1.model.Location.altitude)
+  return _internal_altitude();
+}
+inline void Location::_internal_set_altitude(double value) {
+  _has_bits_[0] |= 0x00000001u;
+  altitude_ = value;
+}
+inline void Location::set_altitude(double value) {
+  _internal_set_altitude(value);
+  // @@protoc_insertion_point(field_set:v1.model.Location.altitude)
+}
+
+// optional double orientation = 4 [json_name = "orientation"];
+inline bool Location::_internal_has_orientation() const {
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool Location::has_orientation() const {
+  return _internal_has_orientation();
+}
+inline void Location::clear_orientation() {
+  orientation_ = 0;
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline double Location::_internal_orientation() const {
+  return orientation_;
+}
+inline double Location::orientation() const {
+  // @@protoc_insertion_point(field_get:v1.model.Location.orientation)
+  return _internal_orientation();
+}
+inline void Location::_internal_set_orientation(double value) {
+  _has_bits_[0] |= 0x00000002u;
+  orientation_ = value;
+}
+inline void Location::set_orientation(double value) {
+  _internal_set_orientation(value);
+  // @@protoc_insertion_point(field_set:v1.model.Location.orientation)
 }
 
 // -------------------------------------------------------------------
@@ -3872,9 +4642,846 @@ PoseWithCovariance::mutable_covariance() {
   return _internal_mutable_covariance();
 }
 
+// -------------------------------------------------------------------
+
+// ColorRGBA
+
+// float r = 1 [json_name = "r"];
+inline void ColorRGBA::clear_r() {
+  r_ = 0;
+}
+inline float ColorRGBA::_internal_r() const {
+  return r_;
+}
+inline float ColorRGBA::r() const {
+  // @@protoc_insertion_point(field_get:v1.model.ColorRGBA.r)
+  return _internal_r();
+}
+inline void ColorRGBA::_internal_set_r(float value) {
+  
+  r_ = value;
+}
+inline void ColorRGBA::set_r(float value) {
+  _internal_set_r(value);
+  // @@protoc_insertion_point(field_set:v1.model.ColorRGBA.r)
+}
+
+// float g = 2 [json_name = "g"];
+inline void ColorRGBA::clear_g() {
+  g_ = 0;
+}
+inline float ColorRGBA::_internal_g() const {
+  return g_;
+}
+inline float ColorRGBA::g() const {
+  // @@protoc_insertion_point(field_get:v1.model.ColorRGBA.g)
+  return _internal_g();
+}
+inline void ColorRGBA::_internal_set_g(float value) {
+  
+  g_ = value;
+}
+inline void ColorRGBA::set_g(float value) {
+  _internal_set_g(value);
+  // @@protoc_insertion_point(field_set:v1.model.ColorRGBA.g)
+}
+
+// float b = 3 [json_name = "b"];
+inline void ColorRGBA::clear_b() {
+  b_ = 0;
+}
+inline float ColorRGBA::_internal_b() const {
+  return b_;
+}
+inline float ColorRGBA::b() const {
+  // @@protoc_insertion_point(field_get:v1.model.ColorRGBA.b)
+  return _internal_b();
+}
+inline void ColorRGBA::_internal_set_b(float value) {
+  
+  b_ = value;
+}
+inline void ColorRGBA::set_b(float value) {
+  _internal_set_b(value);
+  // @@protoc_insertion_point(field_set:v1.model.ColorRGBA.b)
+}
+
+// float a = 4 [json_name = "a"];
+inline void ColorRGBA::clear_a() {
+  a_ = 0;
+}
+inline float ColorRGBA::_internal_a() const {
+  return a_;
+}
+inline float ColorRGBA::a() const {
+  // @@protoc_insertion_point(field_get:v1.model.ColorRGBA.a)
+  return _internal_a();
+}
+inline void ColorRGBA::_internal_set_a(float value) {
+  
+  a_ = value;
+}
+inline void ColorRGBA::set_a(float value) {
+  _internal_set_a(value);
+  // @@protoc_insertion_point(field_set:v1.model.ColorRGBA.a)
+}
+
+// -------------------------------------------------------------------
+
+// Marker3D
+
+// .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
+inline bool Marker3D::_internal_has_world_to_local() const {
+  return this != internal_default_instance() && world_to_local_ != nullptr;
+}
+inline bool Marker3D::has_world_to_local() const {
+  return _internal_has_world_to_local();
+}
+inline const ::v1::model::Transform& Marker3D::_internal_world_to_local() const {
+  const ::v1::model::Transform* p = world_to_local_;
+  return p != nullptr ? *p : reinterpret_cast<const ::v1::model::Transform&>(
+      ::v1::model::_Transform_default_instance_);
+}
+inline const ::v1::model::Transform& Marker3D::world_to_local() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.world_to_local)
+  return _internal_world_to_local();
+}
+inline void Marker3D::unsafe_arena_set_allocated_world_to_local(
+    ::v1::model::Transform* world_to_local) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(world_to_local_);
+  }
+  world_to_local_ = world_to_local;
+  if (world_to_local) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.Marker3D.world_to_local)
+}
+inline ::v1::model::Transform* Marker3D::release_world_to_local() {
+  
+  ::v1::model::Transform* temp = world_to_local_;
+  world_to_local_ = nullptr;
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::v1::model::Transform* Marker3D::unsafe_arena_release_world_to_local() {
+  // @@protoc_insertion_point(field_release:v1.model.Marker3D.world_to_local)
+  
+  ::v1::model::Transform* temp = world_to_local_;
+  world_to_local_ = nullptr;
+  return temp;
+}
+inline ::v1::model::Transform* Marker3D::_internal_mutable_world_to_local() {
+  
+  if (world_to_local_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::Transform>(GetArenaForAllocation());
+    world_to_local_ = p;
+  }
+  return world_to_local_;
+}
+inline ::v1::model::Transform* Marker3D::mutable_world_to_local() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.world_to_local)
+  return _internal_mutable_world_to_local();
+}
+inline void Marker3D::set_allocated_world_to_local(::v1::model::Transform* world_to_local) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(world_to_local_);
+  }
+  if (world_to_local) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(world_to_local));
+    if (message_arena != submessage_arena) {
+      world_to_local = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, world_to_local, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  world_to_local_ = world_to_local;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.world_to_local)
+}
+
+// string ns = 2 [json_name = "ns"];
+inline void Marker3D::clear_ns() {
+  ns_.ClearToEmpty();
+}
+inline const std::string& Marker3D::ns() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.ns)
+  return _internal_ns();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Marker3D::set_ns(ArgT0&& arg0, ArgT... args) {
+ 
+ ns_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Marker3D.ns)
+}
+inline std::string* Marker3D::mutable_ns() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.ns)
+  return _internal_mutable_ns();
+}
+inline const std::string& Marker3D::_internal_ns() const {
+  return ns_.Get();
+}
+inline void Marker3D::_internal_set_ns(const std::string& value) {
+  
+  ns_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Marker3D::_internal_mutable_ns() {
+  
+  return ns_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Marker3D::release_ns() {
+  // @@protoc_insertion_point(field_release:v1.model.Marker3D.ns)
+  return ns_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Marker3D::set_allocated_ns(std::string* ns) {
+  if (ns != nullptr) {
+    
+  } else {
+    
+  }
+  ns_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ns,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.ns)
+}
+
+// int32 id = 3 [json_name = "id"];
+inline void Marker3D::clear_id() {
+  id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Marker3D::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Marker3D::id() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.id)
+  return _internal_id();
+}
+inline void Marker3D::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  id_ = value;
+}
+inline void Marker3D::set_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:v1.model.Marker3D.id)
+}
+
+// string type = 4 [json_name = "type"];
+inline void Marker3D::clear_type() {
+  type_.ClearToEmpty();
+}
+inline const std::string& Marker3D::type() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.type)
+  return _internal_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Marker3D::set_type(ArgT0&& arg0, ArgT... args) {
+ 
+ type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Marker3D.type)
+}
+inline std::string* Marker3D::mutable_type() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.type)
+  return _internal_mutable_type();
+}
+inline const std::string& Marker3D::_internal_type() const {
+  return type_.Get();
+}
+inline void Marker3D::_internal_set_type(const std::string& value) {
+  
+  type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Marker3D::_internal_mutable_type() {
+  
+  return type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Marker3D::release_type() {
+  // @@protoc_insertion_point(field_release:v1.model.Marker3D.type)
+  return type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Marker3D::set_allocated_type(std::string* type) {
+  if (type != nullptr) {
+    
+  } else {
+    
+  }
+  type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), type,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.type)
+}
+
+// string action = 5 [json_name = "action"];
+inline void Marker3D::clear_action() {
+  action_.ClearToEmpty();
+}
+inline const std::string& Marker3D::action() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.action)
+  return _internal_action();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Marker3D::set_action(ArgT0&& arg0, ArgT... args) {
+ 
+ action_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Marker3D.action)
+}
+inline std::string* Marker3D::mutable_action() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.action)
+  return _internal_mutable_action();
+}
+inline const std::string& Marker3D::_internal_action() const {
+  return action_.Get();
+}
+inline void Marker3D::_internal_set_action(const std::string& value) {
+  
+  action_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Marker3D::_internal_mutable_action() {
+  
+  return action_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Marker3D::release_action() {
+  // @@protoc_insertion_point(field_release:v1.model.Marker3D.action)
+  return action_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Marker3D::set_allocated_action(std::string* action) {
+  if (action != nullptr) {
+    
+  } else {
+    
+  }
+  action_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), action,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.action)
+}
+
+// .v1.model.Transform pose = 6 [json_name = "pose"];
+inline bool Marker3D::_internal_has_pose() const {
+  return this != internal_default_instance() && pose_ != nullptr;
+}
+inline bool Marker3D::has_pose() const {
+  return _internal_has_pose();
+}
+inline const ::v1::model::Transform& Marker3D::_internal_pose() const {
+  const ::v1::model::Transform* p = pose_;
+  return p != nullptr ? *p : reinterpret_cast<const ::v1::model::Transform&>(
+      ::v1::model::_Transform_default_instance_);
+}
+inline const ::v1::model::Transform& Marker3D::pose() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.pose)
+  return _internal_pose();
+}
+inline void Marker3D::unsafe_arena_set_allocated_pose(
+    ::v1::model::Transform* pose) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pose_);
+  }
+  pose_ = pose;
+  if (pose) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.Marker3D.pose)
+}
+inline ::v1::model::Transform* Marker3D::release_pose() {
+  
+  ::v1::model::Transform* temp = pose_;
+  pose_ = nullptr;
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::v1::model::Transform* Marker3D::unsafe_arena_release_pose() {
+  // @@protoc_insertion_point(field_release:v1.model.Marker3D.pose)
+  
+  ::v1::model::Transform* temp = pose_;
+  pose_ = nullptr;
+  return temp;
+}
+inline ::v1::model::Transform* Marker3D::_internal_mutable_pose() {
+  
+  if (pose_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::Transform>(GetArenaForAllocation());
+    pose_ = p;
+  }
+  return pose_;
+}
+inline ::v1::model::Transform* Marker3D::mutable_pose() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.pose)
+  return _internal_mutable_pose();
+}
+inline void Marker3D::set_allocated_pose(::v1::model::Transform* pose) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(pose_);
+  }
+  if (pose) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pose));
+    if (message_arena != submessage_arena) {
+      pose = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, pose, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  pose_ = pose;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.pose)
+}
+
+// .v1.model.Vector3 scale = 7 [json_name = "scale"];
+inline bool Marker3D::_internal_has_scale() const {
+  return this != internal_default_instance() && scale_ != nullptr;
+}
+inline bool Marker3D::has_scale() const {
+  return _internal_has_scale();
+}
+inline const ::v1::model::Vector3& Marker3D::_internal_scale() const {
+  const ::v1::model::Vector3* p = scale_;
+  return p != nullptr ? *p : reinterpret_cast<const ::v1::model::Vector3&>(
+      ::v1::model::_Vector3_default_instance_);
+}
+inline const ::v1::model::Vector3& Marker3D::scale() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.scale)
+  return _internal_scale();
+}
+inline void Marker3D::unsafe_arena_set_allocated_scale(
+    ::v1::model::Vector3* scale) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(scale_);
+  }
+  scale_ = scale;
+  if (scale) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.Marker3D.scale)
+}
+inline ::v1::model::Vector3* Marker3D::release_scale() {
+  
+  ::v1::model::Vector3* temp = scale_;
+  scale_ = nullptr;
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::v1::model::Vector3* Marker3D::unsafe_arena_release_scale() {
+  // @@protoc_insertion_point(field_release:v1.model.Marker3D.scale)
+  
+  ::v1::model::Vector3* temp = scale_;
+  scale_ = nullptr;
+  return temp;
+}
+inline ::v1::model::Vector3* Marker3D::_internal_mutable_scale() {
+  
+  if (scale_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::Vector3>(GetArenaForAllocation());
+    scale_ = p;
+  }
+  return scale_;
+}
+inline ::v1::model::Vector3* Marker3D::mutable_scale() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.scale)
+  return _internal_mutable_scale();
+}
+inline void Marker3D::set_allocated_scale(::v1::model::Vector3* scale) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(scale_);
+  }
+  if (scale) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(scale));
+    if (message_arena != submessage_arena) {
+      scale = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, scale, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  scale_ = scale;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.scale)
+}
+
+// .v1.model.ColorRGBA color = 8 [json_name = "color"];
+inline bool Marker3D::_internal_has_color() const {
+  return this != internal_default_instance() && color_ != nullptr;
+}
+inline bool Marker3D::has_color() const {
+  return _internal_has_color();
+}
+inline void Marker3D::clear_color() {
+  if (GetArenaForAllocation() == nullptr && color_ != nullptr) {
+    delete color_;
+  }
+  color_ = nullptr;
+}
+inline const ::v1::model::ColorRGBA& Marker3D::_internal_color() const {
+  const ::v1::model::ColorRGBA* p = color_;
+  return p != nullptr ? *p : reinterpret_cast<const ::v1::model::ColorRGBA&>(
+      ::v1::model::_ColorRGBA_default_instance_);
+}
+inline const ::v1::model::ColorRGBA& Marker3D::color() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.color)
+  return _internal_color();
+}
+inline void Marker3D::unsafe_arena_set_allocated_color(
+    ::v1::model::ColorRGBA* color) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(color_);
+  }
+  color_ = color;
+  if (color) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.Marker3D.color)
+}
+inline ::v1::model::ColorRGBA* Marker3D::release_color() {
+  
+  ::v1::model::ColorRGBA* temp = color_;
+  color_ = nullptr;
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::v1::model::ColorRGBA* Marker3D::unsafe_arena_release_color() {
+  // @@protoc_insertion_point(field_release:v1.model.Marker3D.color)
+  
+  ::v1::model::ColorRGBA* temp = color_;
+  color_ = nullptr;
+  return temp;
+}
+inline ::v1::model::ColorRGBA* Marker3D::_internal_mutable_color() {
+  
+  if (color_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::ColorRGBA>(GetArenaForAllocation());
+    color_ = p;
+  }
+  return color_;
+}
+inline ::v1::model::ColorRGBA* Marker3D::mutable_color() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.color)
+  return _internal_mutable_color();
+}
+inline void Marker3D::set_allocated_color(::v1::model::ColorRGBA* color) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete color_;
+  }
+  if (color) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::v1::model::ColorRGBA>::GetOwningArena(color);
+    if (message_arena != submessage_arena) {
+      color = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, color, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  color_ = color;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.color)
+}
+
+// double lifetime = 9 [json_name = "lifetime"];
+inline void Marker3D::clear_lifetime() {
+  lifetime_ = 0;
+}
+inline double Marker3D::_internal_lifetime() const {
+  return lifetime_;
+}
+inline double Marker3D::lifetime() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.lifetime)
+  return _internal_lifetime();
+}
+inline void Marker3D::_internal_set_lifetime(double value) {
+  
+  lifetime_ = value;
+}
+inline void Marker3D::set_lifetime(double value) {
+  _internal_set_lifetime(value);
+  // @@protoc_insertion_point(field_set:v1.model.Marker3D.lifetime)
+}
+
+// bool frame_locked = 10 [json_name = "frameLocked"];
+inline void Marker3D::clear_frame_locked() {
+  frame_locked_ = false;
+}
+inline bool Marker3D::_internal_frame_locked() const {
+  return frame_locked_;
+}
+inline bool Marker3D::frame_locked() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.frame_locked)
+  return _internal_frame_locked();
+}
+inline void Marker3D::_internal_set_frame_locked(bool value) {
+  
+  frame_locked_ = value;
+}
+inline void Marker3D::set_frame_locked(bool value) {
+  _internal_set_frame_locked(value);
+  // @@protoc_insertion_point(field_set:v1.model.Marker3D.frame_locked)
+}
+
+// repeated .v1.model.Vector3 points = 11 [json_name = "points"];
+inline int Marker3D::_internal_points_size() const {
+  return points_.size();
+}
+inline int Marker3D::points_size() const {
+  return _internal_points_size();
+}
+inline ::v1::model::Vector3* Marker3D::mutable_points(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.points)
+  return points_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Vector3 >*
+Marker3D::mutable_points() {
+  // @@protoc_insertion_point(field_mutable_list:v1.model.Marker3D.points)
+  return &points_;
+}
+inline const ::v1::model::Vector3& Marker3D::_internal_points(int index) const {
+  return points_.Get(index);
+}
+inline const ::v1::model::Vector3& Marker3D::points(int index) const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.points)
+  return _internal_points(index);
+}
+inline ::v1::model::Vector3* Marker3D::_internal_add_points() {
+  return points_.Add();
+}
+inline ::v1::model::Vector3* Marker3D::add_points() {
+  // @@protoc_insertion_point(field_add:v1.model.Marker3D.points)
+  return _internal_add_points();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Vector3 >&
+Marker3D::points() const {
+  // @@protoc_insertion_point(field_list:v1.model.Marker3D.points)
+  return points_;
+}
+
+// repeated .v1.model.ColorRGBA colors = 12 [json_name = "colors"];
+inline int Marker3D::_internal_colors_size() const {
+  return colors_.size();
+}
+inline int Marker3D::colors_size() const {
+  return _internal_colors_size();
+}
+inline void Marker3D::clear_colors() {
+  colors_.Clear();
+}
+inline ::v1::model::ColorRGBA* Marker3D::mutable_colors(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.colors)
+  return colors_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::ColorRGBA >*
+Marker3D::mutable_colors() {
+  // @@protoc_insertion_point(field_mutable_list:v1.model.Marker3D.colors)
+  return &colors_;
+}
+inline const ::v1::model::ColorRGBA& Marker3D::_internal_colors(int index) const {
+  return colors_.Get(index);
+}
+inline const ::v1::model::ColorRGBA& Marker3D::colors(int index) const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.colors)
+  return _internal_colors(index);
+}
+inline ::v1::model::ColorRGBA* Marker3D::_internal_add_colors() {
+  return colors_.Add();
+}
+inline ::v1::model::ColorRGBA* Marker3D::add_colors() {
+  // @@protoc_insertion_point(field_add:v1.model.Marker3D.colors)
+  return _internal_add_colors();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::ColorRGBA >&
+Marker3D::colors() const {
+  // @@protoc_insertion_point(field_list:v1.model.Marker3D.colors)
+  return colors_;
+}
+
+// string text = 13 [json_name = "text"];
+inline void Marker3D::clear_text() {
+  text_.ClearToEmpty();
+}
+inline const std::string& Marker3D::text() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.text)
+  return _internal_text();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Marker3D::set_text(ArgT0&& arg0, ArgT... args) {
+ 
+ text_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Marker3D.text)
+}
+inline std::string* Marker3D::mutable_text() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.text)
+  return _internal_mutable_text();
+}
+inline const std::string& Marker3D::_internal_text() const {
+  return text_.Get();
+}
+inline void Marker3D::_internal_set_text(const std::string& value) {
+  
+  text_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Marker3D::_internal_mutable_text() {
+  
+  return text_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Marker3D::release_text() {
+  // @@protoc_insertion_point(field_release:v1.model.Marker3D.text)
+  return text_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Marker3D::set_allocated_text(std::string* text) {
+  if (text != nullptr) {
+    
+  } else {
+    
+  }
+  text_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), text,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.text)
+}
+
+// string mesh_resource = 14 [json_name = "meshResource"];
+inline void Marker3D::clear_mesh_resource() {
+  mesh_resource_.ClearToEmpty();
+}
+inline const std::string& Marker3D::mesh_resource() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.mesh_resource)
+  return _internal_mesh_resource();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Marker3D::set_mesh_resource(ArgT0&& arg0, ArgT... args) {
+ 
+ mesh_resource_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Marker3D.mesh_resource)
+}
+inline std::string* Marker3D::mutable_mesh_resource() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.mesh_resource)
+  return _internal_mutable_mesh_resource();
+}
+inline const std::string& Marker3D::_internal_mesh_resource() const {
+  return mesh_resource_.Get();
+}
+inline void Marker3D::_internal_set_mesh_resource(const std::string& value) {
+  
+  mesh_resource_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Marker3D::_internal_mutable_mesh_resource() {
+  
+  return mesh_resource_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Marker3D::release_mesh_resource() {
+  // @@protoc_insertion_point(field_release:v1.model.Marker3D.mesh_resource)
+  return mesh_resource_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Marker3D::set_allocated_mesh_resource(std::string* mesh_resource) {
+  if (mesh_resource != nullptr) {
+    
+  } else {
+    
+  }
+  mesh_resource_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mesh_resource,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.mesh_resource)
+}
+
+// bool mesh_use_embedded_materials = 15 [json_name = "meshUseEmbeddedMaterials"];
+inline void Marker3D::clear_mesh_use_embedded_materials() {
+  mesh_use_embedded_materials_ = false;
+}
+inline bool Marker3D::_internal_mesh_use_embedded_materials() const {
+  return mesh_use_embedded_materials_;
+}
+inline bool Marker3D::mesh_use_embedded_materials() const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3D.mesh_use_embedded_materials)
+  return _internal_mesh_use_embedded_materials();
+}
+inline void Marker3D::_internal_set_mesh_use_embedded_materials(bool value) {
+  
+  mesh_use_embedded_materials_ = value;
+}
+inline void Marker3D::set_mesh_use_embedded_materials(bool value) {
+  _internal_set_mesh_use_embedded_materials(value);
+  // @@protoc_insertion_point(field_set:v1.model.Marker3D.mesh_use_embedded_materials)
+}
+
+// -------------------------------------------------------------------
+
+// Marker3DArray
+
+// repeated .v1.model.Marker3D markers = 1 [json_name = "markers"];
+inline int Marker3DArray::_internal_markers_size() const {
+  return markers_.size();
+}
+inline int Marker3DArray::markers_size() const {
+  return _internal_markers_size();
+}
+inline void Marker3DArray::clear_markers() {
+  markers_.Clear();
+}
+inline ::v1::model::Marker3D* Marker3DArray::mutable_markers(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.model.Marker3DArray.markers)
+  return markers_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Marker3D >*
+Marker3DArray::mutable_markers() {
+  // @@protoc_insertion_point(field_mutable_list:v1.model.Marker3DArray.markers)
+  return &markers_;
+}
+inline const ::v1::model::Marker3D& Marker3DArray::_internal_markers(int index) const {
+  return markers_.Get(index);
+}
+inline const ::v1::model::Marker3D& Marker3DArray::markers(int index) const {
+  // @@protoc_insertion_point(field_get:v1.model.Marker3DArray.markers)
+  return _internal_markers(index);
+}
+inline ::v1::model::Marker3D* Marker3DArray::_internal_add_markers() {
+  return markers_.Add();
+}
+inline ::v1::model::Marker3D* Marker3DArray::add_markers() {
+  // @@protoc_insertion_point(field_add:v1.model.Marker3DArray.markers)
+  return _internal_add_markers();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Marker3D >&
+Marker3DArray::markers() const {
+  // @@protoc_insertion_point(field_list:v1.model.Marker3DArray.markers)
+  return markers_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
