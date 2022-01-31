@@ -184,6 +184,7 @@ constexpr Marker3D::Marker3D(
   , action_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , text_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , mesh_resource_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , frame_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , world_to_local_(nullptr)
   , pose_(nullptr)
   , scale_(nullptr)
@@ -337,6 +338,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fnavigati
   PROTOBUF_FIELD_OFFSET(::v1::model::Marker3D, text_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Marker3D, mesh_resource_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Marker3D, mesh_use_embedded_materials_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Marker3D, frame_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::Marker3DArray, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -357,7 +359,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 81, -1, sizeof(::v1::model::PoseWithCovariance)},
   { 88, -1, sizeof(::v1::model::ColorRGBA)},
   { 97, -1, sizeof(::v1::model::Marker3D)},
-  { 117, -1, sizeof(::v1::model::Marker3DArray)},
+  { 118, -1, sizeof(::v1::model::Marker3DArray)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -416,7 +418,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto[] 
   "e\030\001 \001(\0132\023.v1.model.TransformR\004pose\022\036\n\nco"
   "variance\030\002 \003(\001R\ncovariance\"C\n\tColorRGBA\022"
   "\014\n\001r\030\001 \001(\002R\001r\022\014\n\001g\030\002 \001(\002R\001g\022\014\n\001b\030\003 \001(\002R\001"
-  "b\022\014\n\001a\030\004 \001(\002R\001a\"\235\004\n\010Marker3D\0229\n\016world_to"
+  "b\022\014\n\001a\030\004 \001(\002R\001a\"\270\004\n\010Marker3D\0229\n\016world_to"
   "_local\030\001 \001(\0132\023.v1.model.TransformR\014world"
   "ToLocal\022\016\n\002ns\030\002 \001(\tR\002ns\022\016\n\002id\030\003 \001(\005R\002id\022"
   "\022\n\004type\030\004 \001(\tR\004type\022\026\n\006action\030\005 \001(\tR\006act"
@@ -429,10 +431,11 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto[] 
   "lors\030\014 \003(\0132\023.v1.model.ColorRGBAR\006colors\022"
   "\022\n\004text\030\r \001(\tR\004text\022#\n\rmesh_resource\030\016 \001"
   "(\tR\014meshResource\022=\n\033mesh_use_embedded_ma"
-  "terials\030\017 \001(\010R\030meshUseEmbeddedMaterials\""
-  "=\n\rMarker3DArray\022,\n\007markers\030\001 \003(\0132\022.v1.m"
-  "odel.Marker3DR\007markersB+Z)github.com/For"
-  "mantIO/genproto/go/v1/modelb\006proto3"
+  "terials\030\017 \001(\010R\030meshUseEmbeddedMaterials\022"
+  "\031\n\010frame_id\030\020 \001(\tR\007frameId\"=\n\rMarker3DAr"
+  "ray\022,\n\007markers\030\001 \003(\0132\022.v1.model.Marker3D"
+  "R\007markersB+Z)github.com/FormantIO/genpro"
+  "to/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
@@ -440,7 +443,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto = {
-  false, false, 2235, descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto, "protos/model/v1/navigation.proto", 
+  false, false, 2262, descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto, "protos/model/v1/navigation.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps, 2, 13,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto,
@@ -3775,6 +3778,11 @@ Marker3D::Marker3D(const Marker3D& from)
     mesh_resource_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mesh_resource(), 
       GetArenaForAllocation());
   }
+  frame_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_frame_id().empty()) {
+    frame_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_frame_id(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_world_to_local()) {
     world_to_local_ = new ::v1::model::Transform(*from.world_to_local_);
   } else {
@@ -3807,6 +3815,7 @@ type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 mesh_resource_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+frame_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&world_to_local_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&mesh_use_embedded_materials_) -
@@ -3826,6 +3835,7 @@ void Marker3D::SharedDtor() {
   action_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   text_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   mesh_resource_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  frame_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete world_to_local_;
   if (this != internal_default_instance()) delete pose_;
   if (this != internal_default_instance()) delete scale_;
@@ -3855,6 +3865,7 @@ void Marker3D::Clear() {
   action_.ClearToEmpty();
   text_.ClearToEmpty();
   mesh_resource_.ClearToEmpty();
+  frame_id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && world_to_local_ != nullptr) {
     delete world_to_local_;
   }
@@ -4005,6 +4016,15 @@ const char* Marker3D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 120)) {
           mesh_use_embedded_materials_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string frame_id = 16 [json_name = "frameId"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+          auto str = _internal_mutable_frame_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Marker3D.frame_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4159,6 +4179,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(15, this->_internal_mesh_use_embedded_materials(), target);
   }
 
+  // string frame_id = 16 [json_name = "frameId"];
+  if (!this->frame_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_frame_id().data(), static_cast<int>(this->_internal_frame_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.Marker3D.frame_id");
+    target = stream->WriteStringMaybeAliased(
+        16, this->_internal_frame_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4222,6 +4252,13 @@ size_t Marker3D::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_mesh_resource());
+  }
+
+  // string frame_id = 16 [json_name = "frameId"];
+  if (!this->frame_id().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_frame_id());
   }
 
   // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
@@ -4322,6 +4359,9 @@ void Marker3D::MergeFrom(const Marker3D& from) {
   if (!from.mesh_resource().empty()) {
     _internal_set_mesh_resource(from._internal_mesh_resource());
   }
+  if (!from.frame_id().empty()) {
+    _internal_set_frame_id(from._internal_frame_id());
+  }
   if (from.has_world_to_local()) {
     _internal_mutable_world_to_local()->::v1::model::Transform::MergeFrom(from._internal_world_to_local());
   }
@@ -4395,6 +4435,11 @@ void Marker3D::InternalSwap(Marker3D* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &mesh_resource_, GetArenaForAllocation(),
       &other->mesh_resource_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &frame_id_, GetArenaForAllocation(),
+      &other->frame_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Marker3D, mesh_use_embedded_materials_)
