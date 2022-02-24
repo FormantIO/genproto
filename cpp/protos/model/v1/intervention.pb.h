@@ -51,7 +51,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fintervention_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -87,6 +87,12 @@ extern SelectionRequestDefaultTypeInternal _SelectionRequest_default_instance_;
 class SelectionResponse;
 struct SelectionResponseDefaultTypeInternal;
 extern SelectionResponseDefaultTypeInternal _SelectionResponse_default_instance_;
+class TeleopRequest;
+struct TeleopRequestDefaultTypeInternal;
+extern TeleopRequestDefaultTypeInternal _TeleopRequest_default_instance_;
+class TeleopResponse;
+struct TeleopResponseDefaultTypeInternal;
+extern TeleopResponseDefaultTypeInternal _TeleopResponse_default_instance_;
 class Vertex;
 struct VertexDefaultTypeInternal;
 extern VertexDefaultTypeInternal _Vertex_default_instance_;
@@ -102,6 +108,8 @@ template<> ::v1::model::LabelingRequest* Arena::CreateMaybeMessage<::v1::model::
 template<> ::v1::model::LabelingResponse* Arena::CreateMaybeMessage<::v1::model::LabelingResponse>(Arena*);
 template<> ::v1::model::SelectionRequest* Arena::CreateMaybeMessage<::v1::model::SelectionRequest>(Arena*);
 template<> ::v1::model::SelectionResponse* Arena::CreateMaybeMessage<::v1::model::SelectionResponse>(Arena*);
+template<> ::v1::model::TeleopRequest* Arena::CreateMaybeMessage<::v1::model::TeleopRequest>(Arena*);
+template<> ::v1::model::TeleopResponse* Arena::CreateMaybeMessage<::v1::model::TeleopResponse>(Arena*);
 template<> ::v1::model::Vertex* Arena::CreateMaybeMessage<::v1::model::Vertex>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace v1 {
@@ -178,6 +186,7 @@ class InterventionRequest final :
   enum DataCase {
     kSelectionRequest = 4,
     kLabelingRequest = 5,
+    kTeleopRequest = 8,
     DATA_NOT_SET = 0,
   };
 
@@ -258,6 +267,7 @@ class InterventionRequest final :
     kSeverityFieldNumber = 3,
     kSelectionRequestFieldNumber = 4,
     kLabelingRequestFieldNumber = 5,
+    kTeleopRequestFieldNumber = 8,
   };
   // map<string, string> tags = 6 [json_name = "tags"];
   int tags_size() const;
@@ -362,6 +372,24 @@ class InterventionRequest final :
       ::v1::model::LabelingRequest* labeling_request);
   ::v1::model::LabelingRequest* unsafe_arena_release_labeling_request();
 
+  // .v1.model.TeleopRequest teleop_request = 8 [json_name = "teleopRequest"];
+  bool has_teleop_request() const;
+  private:
+  bool _internal_has_teleop_request() const;
+  public:
+  void clear_teleop_request();
+  const ::v1::model::TeleopRequest& teleop_request() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::TeleopRequest* release_teleop_request();
+  ::v1::model::TeleopRequest* mutable_teleop_request();
+  void set_allocated_teleop_request(::v1::model::TeleopRequest* teleop_request);
+  private:
+  const ::v1::model::TeleopRequest& _internal_teleop_request() const;
+  ::v1::model::TeleopRequest* _internal_mutable_teleop_request();
+  public:
+  void unsafe_arena_set_allocated_teleop_request(
+      ::v1::model::TeleopRequest* teleop_request);
+  ::v1::model::TeleopRequest* unsafe_arena_release_teleop_request();
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.InterventionRequest)
@@ -369,6 +397,7 @@ class InterventionRequest final :
   class _Internal;
   void set_has_selection_request();
   void set_has_labeling_request();
+  void set_has_teleop_request();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -390,6 +419,7 @@ class InterventionRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::v1::model::SelectionRequest* selection_request_;
     ::v1::model::LabelingRequest* labeling_request_;
+    ::v1::model::TeleopRequest* teleop_request_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -440,6 +470,7 @@ class InterventionResponse final :
   enum DataCase {
     kSelectionResponse = 4,
     kLabelingResponse = 5,
+    kTeleopResponse = 6,
     DATA_NOT_SET = 0,
   };
 
@@ -517,6 +548,7 @@ class InterventionResponse final :
     kTimestampFieldNumber = 3,
     kSelectionResponseFieldNumber = 4,
     kLabelingResponseFieldNumber = 5,
+    kTeleopResponseFieldNumber = 6,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -591,6 +623,24 @@ class InterventionResponse final :
       ::v1::model::LabelingResponse* labeling_response);
   ::v1::model::LabelingResponse* unsafe_arena_release_labeling_response();
 
+  // .v1.model.TeleopResponse teleop_response = 6 [json_name = "teleopResponse"];
+  bool has_teleop_response() const;
+  private:
+  bool _internal_has_teleop_response() const;
+  public:
+  void clear_teleop_response();
+  const ::v1::model::TeleopResponse& teleop_response() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::TeleopResponse* release_teleop_response();
+  ::v1::model::TeleopResponse* mutable_teleop_response();
+  void set_allocated_teleop_response(::v1::model::TeleopResponse* teleop_response);
+  private:
+  const ::v1::model::TeleopResponse& _internal_teleop_response() const;
+  ::v1::model::TeleopResponse* _internal_mutable_teleop_response();
+  public:
+  void unsafe_arena_set_allocated_teleop_response(
+      ::v1::model::TeleopResponse* teleop_response);
+  ::v1::model::TeleopResponse* unsafe_arena_release_teleop_response();
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.InterventionResponse)
@@ -598,6 +648,7 @@ class InterventionResponse final :
   class _Internal;
   void set_has_selection_response();
   void set_has_labeling_response();
+  void set_has_teleop_response();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -613,6 +664,7 @@ class InterventionResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::v1::model::SelectionResponse* selection_response_;
     ::v1::model::LabelingResponse* labeling_response_;
+    ::v1::model::TeleopResponse* teleop_response_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1795,6 +1847,296 @@ class SelectionResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fintervention_2eproto;
 };
+// -------------------------------------------------------------------
+
+class TeleopRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.TeleopRequest) */ {
+ public:
+  inline TeleopRequest() : TeleopRequest(nullptr) {}
+  ~TeleopRequest() override;
+  explicit constexpr TeleopRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TeleopRequest(const TeleopRequest& from);
+  TeleopRequest(TeleopRequest&& from) noexcept
+    : TeleopRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline TeleopRequest& operator=(const TeleopRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TeleopRequest& operator=(TeleopRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TeleopRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TeleopRequest* internal_default_instance() {
+    return reinterpret_cast<const TeleopRequest*>(
+               &_TeleopRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(TeleopRequest& a, TeleopRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TeleopRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TeleopRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TeleopRequest* New() const final {
+    return new TeleopRequest();
+  }
+
+  TeleopRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TeleopRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const TeleopRequest& from);
+  void MergeFrom(const TeleopRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TeleopRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.TeleopRequest";
+  }
+  protected:
+  explicit TeleopRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInstructionFieldNumber = 1,
+  };
+  // string instruction = 1 [json_name = "instruction"];
+  void clear_instruction();
+  const std::string& instruction() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_instruction(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_instruction();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_instruction();
+  void set_allocated_instruction(std::string* instruction);
+  private:
+  const std::string& _internal_instruction() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_instruction(const std::string& value);
+  std::string* _internal_mutable_instruction();
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.TeleopRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instruction_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fintervention_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TeleopResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.TeleopResponse) */ {
+ public:
+  inline TeleopResponse() : TeleopResponse(nullptr) {}
+  ~TeleopResponse() override;
+  explicit constexpr TeleopResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TeleopResponse(const TeleopResponse& from);
+  TeleopResponse(TeleopResponse&& from) noexcept
+    : TeleopResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline TeleopResponse& operator=(const TeleopResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TeleopResponse& operator=(TeleopResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TeleopResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TeleopResponse* internal_default_instance() {
+    return reinterpret_cast<const TeleopResponse*>(
+               &_TeleopResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(TeleopResponse& a, TeleopResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TeleopResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TeleopResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TeleopResponse* New() const final {
+    return new TeleopResponse();
+  }
+
+  TeleopResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TeleopResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const TeleopResponse& from);
+  void MergeFrom(const TeleopResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TeleopResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.TeleopResponse";
+  }
+  protected:
+  explicit TeleopResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStateFieldNumber = 1,
+    kNotesFieldNumber = 2,
+  };
+  // string state = 1 [json_name = "state"];
+  void clear_state();
+  const std::string& state() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_state(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_state();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_state();
+  void set_allocated_state(std::string* state);
+  private:
+  const std::string& _internal_state() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_state(const std::string& value);
+  std::string* _internal_mutable_state();
+  public:
+
+  // string notes = 2 [json_name = "notes"];
+  void clear_notes();
+  const std::string& notes() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_notes(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_notes();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_notes();
+  void set_allocated_notes(std::string* notes);
+  private:
+  const std::string& _internal_notes() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_notes(const std::string& value);
+  std::string* _internal_mutable_notes();
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.TeleopResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr state_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr notes_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fintervention_2eproto;
+};
 // ===================================================================
 
 
@@ -2037,6 +2379,79 @@ inline ::v1::model::LabelingRequest* InterventionRequest::_internal_mutable_labe
 inline ::v1::model::LabelingRequest* InterventionRequest::mutable_labeling_request() {
   // @@protoc_insertion_point(field_mutable:v1.model.InterventionRequest.labeling_request)
   return _internal_mutable_labeling_request();
+}
+
+// .v1.model.TeleopRequest teleop_request = 8 [json_name = "teleopRequest"];
+inline bool InterventionRequest::_internal_has_teleop_request() const {
+  return data_case() == kTeleopRequest;
+}
+inline bool InterventionRequest::has_teleop_request() const {
+  return _internal_has_teleop_request();
+}
+inline void InterventionRequest::set_has_teleop_request() {
+  _oneof_case_[0] = kTeleopRequest;
+}
+inline void InterventionRequest::clear_teleop_request() {
+  if (_internal_has_teleop_request()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete data_.teleop_request_;
+    }
+    clear_has_data();
+  }
+}
+inline ::v1::model::TeleopRequest* InterventionRequest::release_teleop_request() {
+  // @@protoc_insertion_point(field_release:v1.model.InterventionRequest.teleop_request)
+  if (_internal_has_teleop_request()) {
+    clear_has_data();
+      ::v1::model::TeleopRequest* temp = data_.teleop_request_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    data_.teleop_request_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::TeleopRequest& InterventionRequest::_internal_teleop_request() const {
+  return _internal_has_teleop_request()
+      ? *data_.teleop_request_
+      : reinterpret_cast< ::v1::model::TeleopRequest&>(::v1::model::_TeleopRequest_default_instance_);
+}
+inline const ::v1::model::TeleopRequest& InterventionRequest::teleop_request() const {
+  // @@protoc_insertion_point(field_get:v1.model.InterventionRequest.teleop_request)
+  return _internal_teleop_request();
+}
+inline ::v1::model::TeleopRequest* InterventionRequest::unsafe_arena_release_teleop_request() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.InterventionRequest.teleop_request)
+  if (_internal_has_teleop_request()) {
+    clear_has_data();
+    ::v1::model::TeleopRequest* temp = data_.teleop_request_;
+    data_.teleop_request_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InterventionRequest::unsafe_arena_set_allocated_teleop_request(::v1::model::TeleopRequest* teleop_request) {
+  clear_data();
+  if (teleop_request) {
+    set_has_teleop_request();
+    data_.teleop_request_ = teleop_request;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.InterventionRequest.teleop_request)
+}
+inline ::v1::model::TeleopRequest* InterventionRequest::_internal_mutable_teleop_request() {
+  if (!_internal_has_teleop_request()) {
+    clear_data();
+    set_has_teleop_request();
+    data_.teleop_request_ = CreateMaybeMessage< ::v1::model::TeleopRequest >(GetArenaForAllocation());
+  }
+  return data_.teleop_request_;
+}
+inline ::v1::model::TeleopRequest* InterventionRequest::mutable_teleop_request() {
+  // @@protoc_insertion_point(field_mutable:v1.model.InterventionRequest.teleop_request)
+  return _internal_mutable_teleop_request();
 }
 
 // map<string, string> tags = 6 [json_name = "tags"];
@@ -2374,6 +2789,79 @@ inline ::v1::model::LabelingResponse* InterventionResponse::_internal_mutable_la
 inline ::v1::model::LabelingResponse* InterventionResponse::mutable_labeling_response() {
   // @@protoc_insertion_point(field_mutable:v1.model.InterventionResponse.labeling_response)
   return _internal_mutable_labeling_response();
+}
+
+// .v1.model.TeleopResponse teleop_response = 6 [json_name = "teleopResponse"];
+inline bool InterventionResponse::_internal_has_teleop_response() const {
+  return data_case() == kTeleopResponse;
+}
+inline bool InterventionResponse::has_teleop_response() const {
+  return _internal_has_teleop_response();
+}
+inline void InterventionResponse::set_has_teleop_response() {
+  _oneof_case_[0] = kTeleopResponse;
+}
+inline void InterventionResponse::clear_teleop_response() {
+  if (_internal_has_teleop_response()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete data_.teleop_response_;
+    }
+    clear_has_data();
+  }
+}
+inline ::v1::model::TeleopResponse* InterventionResponse::release_teleop_response() {
+  // @@protoc_insertion_point(field_release:v1.model.InterventionResponse.teleop_response)
+  if (_internal_has_teleop_response()) {
+    clear_has_data();
+      ::v1::model::TeleopResponse* temp = data_.teleop_response_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    data_.teleop_response_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::TeleopResponse& InterventionResponse::_internal_teleop_response() const {
+  return _internal_has_teleop_response()
+      ? *data_.teleop_response_
+      : reinterpret_cast< ::v1::model::TeleopResponse&>(::v1::model::_TeleopResponse_default_instance_);
+}
+inline const ::v1::model::TeleopResponse& InterventionResponse::teleop_response() const {
+  // @@protoc_insertion_point(field_get:v1.model.InterventionResponse.teleop_response)
+  return _internal_teleop_response();
+}
+inline ::v1::model::TeleopResponse* InterventionResponse::unsafe_arena_release_teleop_response() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.InterventionResponse.teleop_response)
+  if (_internal_has_teleop_response()) {
+    clear_has_data();
+    ::v1::model::TeleopResponse* temp = data_.teleop_response_;
+    data_.teleop_response_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InterventionResponse::unsafe_arena_set_allocated_teleop_response(::v1::model::TeleopResponse* teleop_response) {
+  clear_data();
+  if (teleop_response) {
+    set_has_teleop_response();
+    data_.teleop_response_ = teleop_response;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.InterventionResponse.teleop_response)
+}
+inline ::v1::model::TeleopResponse* InterventionResponse::_internal_mutable_teleop_response() {
+  if (!_internal_has_teleop_response()) {
+    clear_data();
+    set_has_teleop_response();
+    data_.teleop_response_ = CreateMaybeMessage< ::v1::model::TeleopResponse >(GetArenaForAllocation());
+  }
+  return data_.teleop_response_;
+}
+inline ::v1::model::TeleopResponse* InterventionResponse::mutable_teleop_response() {
+  // @@protoc_insertion_point(field_mutable:v1.model.InterventionResponse.teleop_response)
+  return _internal_mutable_teleop_response();
 }
 
 inline bool InterventionResponse::has_data() const {
@@ -3220,9 +3708,156 @@ inline void SelectionResponse::set_value(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:v1.model.SelectionResponse.value)
 }
 
+// -------------------------------------------------------------------
+
+// TeleopRequest
+
+// string instruction = 1 [json_name = "instruction"];
+inline void TeleopRequest::clear_instruction() {
+  instruction_.ClearToEmpty();
+}
+inline const std::string& TeleopRequest::instruction() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopRequest.instruction)
+  return _internal_instruction();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TeleopRequest::set_instruction(ArgT0&& arg0, ArgT... args) {
+ 
+ instruction_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.TeleopRequest.instruction)
+}
+inline std::string* TeleopRequest::mutable_instruction() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopRequest.instruction)
+  return _internal_mutable_instruction();
+}
+inline const std::string& TeleopRequest::_internal_instruction() const {
+  return instruction_.Get();
+}
+inline void TeleopRequest::_internal_set_instruction(const std::string& value) {
+  
+  instruction_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TeleopRequest::_internal_mutable_instruction() {
+  
+  return instruction_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TeleopRequest::release_instruction() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopRequest.instruction)
+  return instruction_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TeleopRequest::set_allocated_instruction(std::string* instruction) {
+  if (instruction != nullptr) {
+    
+  } else {
+    
+  }
+  instruction_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), instruction,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopRequest.instruction)
+}
+
+// -------------------------------------------------------------------
+
+// TeleopResponse
+
+// string state = 1 [json_name = "state"];
+inline void TeleopResponse::clear_state() {
+  state_.ClearToEmpty();
+}
+inline const std::string& TeleopResponse::state() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopResponse.state)
+  return _internal_state();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TeleopResponse::set_state(ArgT0&& arg0, ArgT... args) {
+ 
+ state_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.TeleopResponse.state)
+}
+inline std::string* TeleopResponse::mutable_state() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopResponse.state)
+  return _internal_mutable_state();
+}
+inline const std::string& TeleopResponse::_internal_state() const {
+  return state_.Get();
+}
+inline void TeleopResponse::_internal_set_state(const std::string& value) {
+  
+  state_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TeleopResponse::_internal_mutable_state() {
+  
+  return state_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TeleopResponse::release_state() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopResponse.state)
+  return state_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TeleopResponse::set_allocated_state(std::string* state) {
+  if (state != nullptr) {
+    
+  } else {
+    
+  }
+  state_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), state,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopResponse.state)
+}
+
+// string notes = 2 [json_name = "notes"];
+inline void TeleopResponse::clear_notes() {
+  notes_.ClearToEmpty();
+}
+inline const std::string& TeleopResponse::notes() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopResponse.notes)
+  return _internal_notes();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TeleopResponse::set_notes(ArgT0&& arg0, ArgT... args) {
+ 
+ notes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.TeleopResponse.notes)
+}
+inline std::string* TeleopResponse::mutable_notes() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopResponse.notes)
+  return _internal_mutable_notes();
+}
+inline const std::string& TeleopResponse::_internal_notes() const {
+  return notes_.Get();
+}
+inline void TeleopResponse::_internal_set_notes(const std::string& value) {
+  
+  notes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TeleopResponse::_internal_mutable_notes() {
+  
+  return notes_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TeleopResponse::release_notes() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopResponse.notes)
+  return notes_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TeleopResponse::set_allocated_notes(std::string* notes) {
+  if (notes != nullptr) {
+    
+  } else {
+    
+  }
+  notes_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), notes,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopResponse.notes)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
