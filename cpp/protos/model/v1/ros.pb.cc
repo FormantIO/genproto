@@ -16,78 +16,83 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace v1 {
 namespace model {
-constexpr ROSTopic::ROSTopic(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , path_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+PROTOBUF_CONSTEXPR ROSTopic::ROSTopic(
+    ::_pbi::ConstantInitialized)
+  : name_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , path_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
   , encode_video_(false){}
 struct ROSTopicDefaultTypeInternal {
-  constexpr ROSTopicDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ROSTopicDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ROSTopicDefaultTypeInternal() {}
   union {
     ROSTopic _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ROSTopicDefaultTypeInternal _ROSTopic_default_instance_;
-constexpr ROSLocalization::ROSLocalization(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ROSTopicDefaultTypeInternal _ROSTopic_default_instance_;
+PROTOBUF_CONSTEXPR ROSLocalization::ROSLocalization(
+    ::_pbi::ConstantInitialized)
   : point_cloud_topics_()
-  , map_topic_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , odom_topic_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , path_topic_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , goal_topic_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , base_reference_frame_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , map_topic_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , odom_topic_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , path_topic_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , goal_topic_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , base_reference_frame_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
 struct ROSLocalizationDefaultTypeInternal {
-  constexpr ROSLocalizationDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ROSLocalizationDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ROSLocalizationDefaultTypeInternal() {}
   union {
     ROSLocalization _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ROSLocalizationDefaultTypeInternal _ROSLocalization_default_instance_;
-constexpr ROSTransformTree::ROSTransformTree(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : base_reference_frame_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ROSLocalizationDefaultTypeInternal _ROSLocalization_default_instance_;
+PROTOBUF_CONSTEXPR ROSTransformTree::ROSTransformTree(
+    ::_pbi::ConstantInitialized)
+  : base_reference_frame_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
 struct ROSTransformTreeDefaultTypeInternal {
-  constexpr ROSTransformTreeDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ROSTransformTreeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ROSTransformTreeDefaultTypeInternal() {}
   union {
     ROSTransformTree _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ROSTransformTreeDefaultTypeInternal _ROSTransformTree_default_instance_;
-constexpr ROSMessageToPublish::ROSMessageToPublish(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : stream_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , frame_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ROSTransformTreeDefaultTypeInternal _ROSTransformTree_default_instance_;
+PROTOBUF_CONSTEXPR ROSMessageToPublish::ROSMessageToPublish(
+    ::_pbi::ConstantInitialized)
+  : stream_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , frame_id_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
   , timestamp_(uint64_t{0u})
   , _oneof_case_{}{}
 struct ROSMessageToPublishDefaultTypeInternal {
-  constexpr ROSMessageToPublishDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ROSMessageToPublishDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ROSMessageToPublishDefaultTypeInternal() {}
   union {
     ROSMessageToPublish _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ROSMessageToPublishDefaultTypeInternal _ROSMessageToPublish_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ROSMessageToPublishDefaultTypeInternal _ROSMessageToPublish_default_instance_;
 }  // namespace model
 }  // namespace v1
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto[4];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fros_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fros_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto[4];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fros_2eproto[1];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fros_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fros_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_protos_2fmodel_2fv1_2fros_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, name_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, path_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, encode_video_),
@@ -96,6 +101,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fros_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSLocalization, map_topic_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSLocalization, odom_topic_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSLocalization, point_cloud_topics_),
@@ -107,38 +113,40 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fros_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTransformTree, base_reference_frame_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSMessageToPublish, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSMessageToPublish, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSMessageToPublish, stream_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSMessageToPublish, frame_id_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSMessageToPublish, timestamp_),
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSMessageToPublish, data_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::v1::model::ROSTopic)},
-  { 8, -1, sizeof(::v1::model::ROSLocalization)},
-  { 19, -1, sizeof(::v1::model::ROSTransformTree)},
-  { 25, -1, sizeof(::v1::model::ROSMessageToPublish)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::v1::model::ROSTopic)},
+  { 9, -1, -1, sizeof(::v1::model::ROSLocalization)},
+  { 21, -1, -1, sizeof(::v1::model::ROSTransformTree)},
+  { 28, -1, -1, sizeof(::v1::model::ROSMessageToPublish)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_ROSTopic_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_ROSLocalization_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_ROSTransformTree_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_ROSMessageToPublish_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::v1::model::_ROSTopic_default_instance_._instance,
+  &::v1::model::_ROSLocalization_default_instance_._instance,
+  &::v1::model::_ROSTransformTree_default_instance_._instance,
+  &::v1::model::_ROSMessageToPublish_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -180,23 +188,25 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBU
   "TION_MSGS_MARKER_ARRAY\020\017B+Z)github.com/F"
   "ormantIO/genproto/go/v1/modelb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps[2] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fros_2eproto = {
-  false, false, 1477, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 
-  &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps, 2, 4,
-  schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fros_2eproto::offsets,
-  file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fros_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fros_2eproto,
+static ::_pbi::once_flag descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fros_2eproto = {
+    false, false, 1477, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto,
+    "protos/model/v1/ros.proto",
+    &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps, 2, 4,
+    schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fros_2eproto::offsets,
+    file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fros_2eproto,
+    file_level_service_descriptors_protos_2fmodel_2fv1_2fros_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_getter() {
   return &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2fros_2eproto(&descriptor_table_protos_2fmodel_2fv1_2fros_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2fros_2eproto(&descriptor_table_protos_2fmodel_2fv1_2fros_2eproto);
 namespace v1 {
 namespace model {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ROSTopicType_descriptor() {
@@ -234,60 +244,69 @@ class ROSTopic::_Internal {
  public:
 };
 
-ROSTopic::ROSTopic(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+ROSTopic::ROSTopic(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.ROSTopic)
 }
 ROSTopic::ROSTopic(const ROSTopic& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+    name_.Set(from._internal_name(), 
       GetArenaForAllocation());
   }
-  path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  path_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    path_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_path().empty()) {
-    path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_path(), 
+    path_.Set(from._internal_path(), 
       GetArenaForAllocation());
   }
   encode_video_ = from.encode_video_;
   // @@protoc_insertion_point(copy_constructor:v1.model.ROSTopic)
 }
 
-void ROSTopic::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void ROSTopic::SharedCtor() {
+name_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+path_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  path_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 encode_video_ = false;
 }
 
 ROSTopic::~ROSTopic() {
   // @@protoc_insertion_point(destructor:v1.model.ROSTopic)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void ROSTopic::SharedDtor() {
+inline void ROSTopic::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.Destroy();
+  path_.Destroy();
 }
 
-void ROSTopic::ArenaDtor(void* object) {
-  ROSTopic* _this = reinterpret_cast< ROSTopic* >(object);
-  (void)_this;
-}
-void ROSTopic::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ROSTopic::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void ROSTopic::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.ROSTopic)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -297,68 +316,71 @@ void ROSTopic::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ROSTopic::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ROSTopic::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1 [json_name = "name"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSTopic.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSTopic.name"));
+        } else
+          goto handle_unusual;
         continue;
       // string path = 2 [json_name = "path"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_path();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSTopic.path"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSTopic.path"));
+        } else
+          goto handle_unusual;
         continue;
       // bool encode_video = 3 [json_name = "encodeVideo"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           encode_video_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ROSTopic::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ROSTopic::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.ROSTopic)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string name = 1 [json_name = "name"];
-  if (!this->name().empty()) {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -368,7 +390,7 @@ failure:
   }
 
   // string path = 2 [json_name = "path"];
-  if (!this->path().empty()) {
+  if (!this->_internal_path().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_path().data(), static_cast<int>(this->_internal_path().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -378,13 +400,13 @@ failure:
   }
 
   // bool encode_video = 3 [json_name = "encodeVideo"];
-  if (this->encode_video() != 0) {
+  if (this->_internal_encode_video() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_encode_video(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_encode_video(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.ROSTopic)
@@ -395,76 +417,61 @@ size_t ROSTopic::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.ROSTopic)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string name = 1 [json_name = "name"];
-  if (!this->name().empty()) {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
   }
 
   // string path = 2 [json_name = "path"];
-  if (!this->path().empty()) {
+  if (!this->_internal_path().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_path());
   }
 
   // bool encode_video = 3 [json_name = "encodeVideo"];
-  if (this->encode_video() != 0) {
+  if (this->_internal_encode_video() != 0) {
     total_size += 1 + 1;
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void ROSTopic::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:v1.model.ROSTopic)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ROSTopic* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ROSTopic>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.ROSTopic)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.ROSTopic)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ROSTopic::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ROSTopic::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ROSTopic::GetClassData() const { return &_class_data_; }
+
+void ROSTopic::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ROSTopic *>(to)->MergeFrom(
+      static_cast<const ROSTopic &>(from));
 }
+
 
 void ROSTopic::MergeFrom(const ROSTopic& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.ROSTopic)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from.name().empty()) {
+  if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
-  if (!from.path().empty()) {
+  if (!from._internal_path().empty()) {
     _internal_set_path(from._internal_path());
   }
-  if (from.encode_video() != 0) {
+  if (from._internal_encode_video() != 0) {
     _internal_set_encode_video(from._internal_encode_video());
   }
-}
-
-void ROSTopic::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:v1.model.ROSTopic)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ROSTopic::CopyFrom(const ROSTopic& from) {
@@ -480,22 +487,22 @@ bool ROSTopic::IsInitialized() const {
 
 void ROSTopic::InternalSwap(ROSTopic* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, GetArenaForAllocation(),
-      &other->name_, other->GetArenaForAllocation()
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &path_, GetArenaForAllocation(),
-      &other->path_, other->GetArenaForAllocation()
+      &path_, lhs_arena,
+      &other->path_, rhs_arena
   );
   swap(encode_video_, other->encode_video_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ROSTopic::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto[0]);
 }
@@ -506,81 +513,108 @@ class ROSLocalization::_Internal {
  public:
 };
 
-ROSLocalization::ROSLocalization(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+ROSLocalization::ROSLocalization(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   point_cloud_topics_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.ROSLocalization)
 }
 ROSLocalization::ROSLocalization(const ROSLocalization& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       point_cloud_topics_(from.point_cloud_topics_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  map_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  map_topic_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    map_topic_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_map_topic().empty()) {
-    map_topic_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_map_topic(), 
+    map_topic_.Set(from._internal_map_topic(), 
       GetArenaForAllocation());
   }
-  odom_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  odom_topic_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    odom_topic_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_odom_topic().empty()) {
-    odom_topic_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_odom_topic(), 
+    odom_topic_.Set(from._internal_odom_topic(), 
       GetArenaForAllocation());
   }
-  path_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  path_topic_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    path_topic_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_path_topic().empty()) {
-    path_topic_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_path_topic(), 
+    path_topic_.Set(from._internal_path_topic(), 
       GetArenaForAllocation());
   }
-  goal_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  goal_topic_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    goal_topic_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_goal_topic().empty()) {
-    goal_topic_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_goal_topic(), 
+    goal_topic_.Set(from._internal_goal_topic(), 
       GetArenaForAllocation());
   }
-  base_reference_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  base_reference_frame_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    base_reference_frame_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_base_reference_frame().empty()) {
-    base_reference_frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_base_reference_frame(), 
+    base_reference_frame_.Set(from._internal_base_reference_frame(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:v1.model.ROSLocalization)
 }
 
-void ROSLocalization::SharedCtor() {
-map_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-odom_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-path_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-goal_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-base_reference_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void ROSLocalization::SharedCtor() {
+map_topic_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  map_topic_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+odom_topic_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  odom_topic_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+path_topic_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  path_topic_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+goal_topic_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  goal_topic_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+base_reference_frame_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  base_reference_frame_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ROSLocalization::~ROSLocalization() {
   // @@protoc_insertion_point(destructor:v1.model.ROSLocalization)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void ROSLocalization::SharedDtor() {
+inline void ROSLocalization::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  map_topic_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  odom_topic_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  path_topic_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  goal_topic_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  base_reference_frame_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  map_topic_.Destroy();
+  odom_topic_.Destroy();
+  path_topic_.Destroy();
+  goal_topic_.Destroy();
+  base_reference_frame_.Destroy();
 }
 
-void ROSLocalization::ArenaDtor(void* object) {
-  ROSLocalization* _this = reinterpret_cast< ROSLocalization* >(object);
-  (void)_this;
-}
-void ROSLocalization::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ROSLocalization::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void ROSLocalization::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.ROSLocalization)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -593,102 +627,108 @@ void ROSLocalization::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ROSLocalization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ROSLocalization::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string map_topic = 1 [json_name = "mapTopic"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_map_topic();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSLocalization.map_topic"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSLocalization.map_topic"));
+        } else
+          goto handle_unusual;
         continue;
       // string odom_topic = 2 [json_name = "odomTopic"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_odom_topic();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSLocalization.odom_topic"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSLocalization.odom_topic"));
+        } else
+          goto handle_unusual;
         continue;
       // repeated string point_cloud_topics = 3 [json_name = "pointCloudTopics"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
             auto str = _internal_add_point_cloud_topics();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSLocalization.point_cloud_topics"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSLocalization.point_cloud_topics"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string path_topic = 4 [json_name = "pathTopic"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_path_topic();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSLocalization.path_topic"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSLocalization.path_topic"));
+        } else
+          goto handle_unusual;
         continue;
       // string goal_topic = 5 [json_name = "goalTopic"];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_goal_topic();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSLocalization.goal_topic"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSLocalization.goal_topic"));
+        } else
+          goto handle_unusual;
         continue;
       // string base_reference_frame = 6 [json_name = "baseReferenceFrame"];
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_base_reference_frame();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSLocalization.base_reference_frame"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSLocalization.base_reference_frame"));
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ROSLocalization::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ROSLocalization::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.ROSLocalization)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string map_topic = 1 [json_name = "mapTopic"];
-  if (!this->map_topic().empty()) {
+  if (!this->_internal_map_topic().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_map_topic().data(), static_cast<int>(this->_internal_map_topic().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -698,7 +738,7 @@ failure:
   }
 
   // string odom_topic = 2 [json_name = "odomTopic"];
-  if (!this->odom_topic().empty()) {
+  if (!this->_internal_odom_topic().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_odom_topic().data(), static_cast<int>(this->_internal_odom_topic().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -718,7 +758,7 @@ failure:
   }
 
   // string path_topic = 4 [json_name = "pathTopic"];
-  if (!this->path_topic().empty()) {
+  if (!this->_internal_path_topic().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_path_topic().data(), static_cast<int>(this->_internal_path_topic().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -728,7 +768,7 @@ failure:
   }
 
   // string goal_topic = 5 [json_name = "goalTopic"];
-  if (!this->goal_topic().empty()) {
+  if (!this->_internal_goal_topic().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_goal_topic().data(), static_cast<int>(this->_internal_goal_topic().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -738,7 +778,7 @@ failure:
   }
 
   // string base_reference_frame = 6 [json_name = "baseReferenceFrame"];
-  if (!this->base_reference_frame().empty()) {
+  if (!this->_internal_base_reference_frame().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_base_reference_frame().data(), static_cast<int>(this->_internal_base_reference_frame().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -748,7 +788,7 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.ROSLocalization)
@@ -759,7 +799,7 @@ size_t ROSLocalization::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.ROSLocalization)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -772,94 +812,79 @@ size_t ROSLocalization::ByteSizeLong() const {
   }
 
   // string map_topic = 1 [json_name = "mapTopic"];
-  if (!this->map_topic().empty()) {
+  if (!this->_internal_map_topic().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_map_topic());
   }
 
   // string odom_topic = 2 [json_name = "odomTopic"];
-  if (!this->odom_topic().empty()) {
+  if (!this->_internal_odom_topic().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_odom_topic());
   }
 
   // string path_topic = 4 [json_name = "pathTopic"];
-  if (!this->path_topic().empty()) {
+  if (!this->_internal_path_topic().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_path_topic());
   }
 
   // string goal_topic = 5 [json_name = "goalTopic"];
-  if (!this->goal_topic().empty()) {
+  if (!this->_internal_goal_topic().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_goal_topic());
   }
 
   // string base_reference_frame = 6 [json_name = "baseReferenceFrame"];
-  if (!this->base_reference_frame().empty()) {
+  if (!this->_internal_base_reference_frame().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_base_reference_frame());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void ROSLocalization::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:v1.model.ROSLocalization)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ROSLocalization* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ROSLocalization>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.ROSLocalization)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.ROSLocalization)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ROSLocalization::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ROSLocalization::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ROSLocalization::GetClassData() const { return &_class_data_; }
+
+void ROSLocalization::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ROSLocalization *>(to)->MergeFrom(
+      static_cast<const ROSLocalization &>(from));
 }
+
 
 void ROSLocalization::MergeFrom(const ROSLocalization& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.ROSLocalization)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   point_cloud_topics_.MergeFrom(from.point_cloud_topics_);
-  if (!from.map_topic().empty()) {
+  if (!from._internal_map_topic().empty()) {
     _internal_set_map_topic(from._internal_map_topic());
   }
-  if (!from.odom_topic().empty()) {
+  if (!from._internal_odom_topic().empty()) {
     _internal_set_odom_topic(from._internal_odom_topic());
   }
-  if (!from.path_topic().empty()) {
+  if (!from._internal_path_topic().empty()) {
     _internal_set_path_topic(from._internal_path_topic());
   }
-  if (!from.goal_topic().empty()) {
+  if (!from._internal_goal_topic().empty()) {
     _internal_set_goal_topic(from._internal_goal_topic());
   }
-  if (!from.base_reference_frame().empty()) {
+  if (!from._internal_base_reference_frame().empty()) {
     _internal_set_base_reference_frame(from._internal_base_reference_frame());
   }
-}
-
-void ROSLocalization::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:v1.model.ROSLocalization)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ROSLocalization::CopyFrom(const ROSLocalization& from) {
@@ -875,37 +900,34 @@ bool ROSLocalization::IsInitialized() const {
 
 void ROSLocalization::InternalSwap(ROSLocalization* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   point_cloud_topics_.InternalSwap(&other->point_cloud_topics_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &map_topic_, GetArenaForAllocation(),
-      &other->map_topic_, other->GetArenaForAllocation()
+      &map_topic_, lhs_arena,
+      &other->map_topic_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &odom_topic_, GetArenaForAllocation(),
-      &other->odom_topic_, other->GetArenaForAllocation()
+      &odom_topic_, lhs_arena,
+      &other->odom_topic_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &path_topic_, GetArenaForAllocation(),
-      &other->path_topic_, other->GetArenaForAllocation()
+      &path_topic_, lhs_arena,
+      &other->path_topic_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &goal_topic_, GetArenaForAllocation(),
-      &other->goal_topic_, other->GetArenaForAllocation()
+      &goal_topic_, lhs_arena,
+      &other->goal_topic_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &base_reference_frame_, GetArenaForAllocation(),
-      &other->base_reference_frame_, other->GetArenaForAllocation()
+      &base_reference_frame_, lhs_arena,
+      &other->base_reference_frame_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ROSLocalization::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto[1]);
 }
@@ -916,51 +938,54 @@ class ROSTransformTree::_Internal {
  public:
 };
 
-ROSTransformTree::ROSTransformTree(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+ROSTransformTree::ROSTransformTree(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.ROSTransformTree)
 }
 ROSTransformTree::ROSTransformTree(const ROSTransformTree& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  base_reference_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  base_reference_frame_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    base_reference_frame_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_base_reference_frame().empty()) {
-    base_reference_frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_base_reference_frame(), 
+    base_reference_frame_.Set(from._internal_base_reference_frame(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:v1.model.ROSTransformTree)
 }
 
-void ROSTransformTree::SharedCtor() {
-base_reference_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void ROSTransformTree::SharedCtor() {
+base_reference_frame_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  base_reference_frame_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ROSTransformTree::~ROSTransformTree() {
   // @@protoc_insertion_point(destructor:v1.model.ROSTransformTree)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void ROSTransformTree::SharedDtor() {
+inline void ROSTransformTree::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  base_reference_frame_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  base_reference_frame_.Destroy();
 }
 
-void ROSTransformTree::ArenaDtor(void* object) {
-  ROSTransformTree* _this = reinterpret_cast< ROSTransformTree* >(object);
-  (void)_this;
-}
-void ROSTransformTree::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ROSTransformTree::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void ROSTransformTree::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.ROSTransformTree)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -968,52 +993,53 @@ void ROSTransformTree::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ROSTransformTree::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ROSTransformTree::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string base_reference_frame = 1 [json_name = "baseReferenceFrame"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_base_reference_frame();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSTransformTree.base_reference_frame"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSTransformTree.base_reference_frame"));
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ROSTransformTree::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ROSTransformTree::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.ROSTransformTree)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string base_reference_frame = 1 [json_name = "baseReferenceFrame"];
-  if (!this->base_reference_frame().empty()) {
+  if (!this->_internal_base_reference_frame().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_base_reference_frame().data(), static_cast<int>(this->_internal_base_reference_frame().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1023,7 +1049,7 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.ROSTransformTree)
@@ -1034,58 +1060,43 @@ size_t ROSTransformTree::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.ROSTransformTree)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string base_reference_frame = 1 [json_name = "baseReferenceFrame"];
-  if (!this->base_reference_frame().empty()) {
+  if (!this->_internal_base_reference_frame().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_base_reference_frame());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void ROSTransformTree::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:v1.model.ROSTransformTree)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ROSTransformTree* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ROSTransformTree>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.ROSTransformTree)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.ROSTransformTree)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ROSTransformTree::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ROSTransformTree::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ROSTransformTree::GetClassData() const { return &_class_data_; }
+
+void ROSTransformTree::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ROSTransformTree *>(to)->MergeFrom(
+      static_cast<const ROSTransformTree &>(from));
 }
+
 
 void ROSTransformTree::MergeFrom(const ROSTransformTree& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.ROSTransformTree)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from.base_reference_frame().empty()) {
+  if (!from._internal_base_reference_frame().empty()) {
     _internal_set_base_reference_frame(from._internal_base_reference_frame());
   }
-}
-
-void ROSTransformTree::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:v1.model.ROSTransformTree)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ROSTransformTree::CopyFrom(const ROSTransformTree& from) {
@@ -1101,16 +1112,17 @@ bool ROSTransformTree::IsInitialized() const {
 
 void ROSTransformTree::InternalSwap(ROSTransformTree* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &base_reference_frame_, GetArenaForAllocation(),
-      &other->base_reference_frame_, other->GetArenaForAllocation()
+      &base_reference_frame_, lhs_arena,
+      &other->base_reference_frame_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ROSTransformTree::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto[2]);
 }
@@ -1156,8 +1168,7 @@ void ROSMessageToPublish::set_allocated_twist(::v1::model::Twist* twist) {
   clear_data();
   if (twist) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
                 reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(twist));
     if (message_arena != submessage_arena) {
       twist = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
@@ -1181,8 +1192,7 @@ void ROSMessageToPublish::set_allocated_pose(::v1::model::Transform* pose) {
   clear_data();
   if (pose) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
                 reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pose));
     if (message_arena != submessage_arena) {
       pose = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
@@ -1206,8 +1216,7 @@ void ROSMessageToPublish::set_allocated_goalid(::v1::model::GoalID* goalid) {
   clear_data();
   if (goalid) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
                 reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(goalid));
     if (message_arena != submessage_arena) {
       goalid = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
@@ -1231,8 +1240,7 @@ void ROSMessageToPublish::set_allocated_numeric(::v1::model::Numeric* numeric) {
   clear_data();
   if (numeric) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
                 reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(numeric));
     if (message_arena != submessage_arena) {
       numeric = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
@@ -1256,8 +1264,7 @@ void ROSMessageToPublish::set_allocated_pose_with_covariance(::v1::model::PoseWi
   clear_data();
   if (pose_with_covariance) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
                 reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pose_with_covariance));
     if (message_arena != submessage_arena) {
       pose_with_covariance = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
@@ -1281,8 +1288,7 @@ void ROSMessageToPublish::set_allocated_point(::v1::model::Point* point) {
   clear_data();
   if (point) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
                 reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(point));
     if (message_arena != submessage_arena) {
       point = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
@@ -1301,23 +1307,29 @@ void ROSMessageToPublish::clear_point() {
     clear_has_data();
   }
 }
-ROSMessageToPublish::ROSMessageToPublish(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+ROSMessageToPublish::ROSMessageToPublish(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.ROSMessageToPublish)
 }
 ROSMessageToPublish::ROSMessageToPublish(const ROSMessageToPublish& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  stream_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  stream_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    stream_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_stream().empty()) {
-    stream_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_stream(), 
+    stream_.Set(from._internal_stream(), 
       GetArenaForAllocation());
   }
-  frame_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  frame_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    frame_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_frame_id().empty()) {
-    frame_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_frame_id(), 
+    frame_id_.Set(from._internal_frame_id(), 
       GetArenaForAllocation());
   }
   timestamp_ = from.timestamp_;
@@ -1366,34 +1378,37 @@ ROSMessageToPublish::ROSMessageToPublish(const ROSMessageToPublish& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.ROSMessageToPublish)
 }
 
-void ROSMessageToPublish::SharedCtor() {
-stream_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-frame_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void ROSMessageToPublish::SharedCtor() {
+stream_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  stream_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+frame_id_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  frame_id_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 timestamp_ = uint64_t{0u};
 clear_has_data();
 }
 
 ROSMessageToPublish::~ROSMessageToPublish() {
   // @@protoc_insertion_point(destructor:v1.model.ROSMessageToPublish)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void ROSMessageToPublish::SharedDtor() {
+inline void ROSMessageToPublish::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  stream_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  frame_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  stream_.Destroy();
+  frame_id_.Destroy();
   if (has_data()) {
     clear_data();
   }
 }
 
-void ROSMessageToPublish::ArenaDtor(void* object) {
-  ROSMessageToPublish* _this = reinterpret_cast< ROSMessageToPublish* >(object);
-  (void)_this;
-}
-void ROSMessageToPublish::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ROSMessageToPublish::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1412,11 +1427,11 @@ void ROSMessageToPublish::clear_data() {
       break;
     }
     case kCompressedImage: {
-      data_.compressed_image_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+      data_.compressed_image_.Destroy();
       break;
     }
     case kText: {
-      data_.text_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+      data_.text_.Destroy();
       break;
     }
     case kPose: {
@@ -1459,7 +1474,7 @@ void ROSMessageToPublish::clear_data() {
 
 void ROSMessageToPublish::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.ROSMessageToPublish)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1470,134 +1485,146 @@ void ROSMessageToPublish::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ROSMessageToPublish::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ROSMessageToPublish::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string stream = 1 [json_name = "stream"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_stream();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSMessageToPublish.stream"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSMessageToPublish.stream"));
+        } else
+          goto handle_unusual;
         continue;
       // .v1.model.Twist twist = 2 [json_name = "twist"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_twist(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bool bool = 3 [json_name = "bool"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _internal_set_bool_(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes compressed_image = 4 [json_name = "compressedImage"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_compressed_image();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string text = 5 [json_name = "text"];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_text();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSMessageToPublish.text"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSMessageToPublish.text"));
+        } else
+          goto handle_unusual;
         continue;
       // .v1.model.Transform pose = 6 [json_name = "pose"];
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_pose(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string frame_id = 7 [json_name = "frameId"];
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_frame_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSMessageToPublish.frame_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "v1.model.ROSMessageToPublish.frame_id"));
+        } else
+          goto handle_unusual;
         continue;
       // uint64 timestamp = 8 [json_name = "timestamp"];
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .v1.model.GoalID goalID = 9 [json_name = "goalID"];
       case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_goalid(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .v1.model.Numeric numeric = 10 [json_name = "numeric"];
       case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           ptr = ctx->ParseMessage(_internal_mutable_numeric(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .v1.model.PoseWithCovariance pose_with_covariance = 11 [json_name = "poseWithCovariance"];
       case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           ptr = ctx->ParseMessage(_internal_mutable_pose_with_covariance(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .v1.model.Point point = 12 [json_name = "point"];
       case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           ptr = ctx->ParseMessage(_internal_mutable_point(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ROSMessageToPublish::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ROSMessageToPublish::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.ROSMessageToPublish)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string stream = 1 [json_name = "stream"];
-  if (!this->stream().empty()) {
+  if (!this->_internal_stream().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_stream().data(), static_cast<int>(this->_internal_stream().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1608,16 +1635,15 @@ failure:
 
   // .v1.model.Twist twist = 2 [json_name = "twist"];
   if (_internal_has_twist()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::twist(this), target, stream);
+      InternalWriteMessage(2, _Internal::twist(this),
+        _Internal::twist(this).GetCachedSize(), target, stream);
   }
 
   // bool bool = 3 [json_name = "bool"];
   if (_internal_has_bool_()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_bool_(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_bool_(), target);
   }
 
   // bytes compressed_image = 4 [json_name = "compressedImage"];
@@ -1638,14 +1664,13 @@ failure:
 
   // .v1.model.Transform pose = 6 [json_name = "pose"];
   if (_internal_has_pose()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        6, _Internal::pose(this), target, stream);
+      InternalWriteMessage(6, _Internal::pose(this),
+        _Internal::pose(this).GetCachedSize(), target, stream);
   }
 
   // string frame_id = 7 [json_name = "frameId"];
-  if (!this->frame_id().empty()) {
+  if (!this->_internal_frame_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_frame_id().data(), static_cast<int>(this->_internal_frame_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1655,45 +1680,41 @@ failure:
   }
 
   // uint64 timestamp = 8 [json_name = "timestamp"];
-  if (this->timestamp() != 0) {
+  if (this->_internal_timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(8, this->_internal_timestamp(), target);
   }
 
   // .v1.model.GoalID goalID = 9 [json_name = "goalID"];
   if (_internal_has_goalid()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        9, _Internal::goalid(this), target, stream);
+      InternalWriteMessage(9, _Internal::goalid(this),
+        _Internal::goalid(this).GetCachedSize(), target, stream);
   }
 
   // .v1.model.Numeric numeric = 10 [json_name = "numeric"];
   if (_internal_has_numeric()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        10, _Internal::numeric(this), target, stream);
+      InternalWriteMessage(10, _Internal::numeric(this),
+        _Internal::numeric(this).GetCachedSize(), target, stream);
   }
 
   // .v1.model.PoseWithCovariance pose_with_covariance = 11 [json_name = "poseWithCovariance"];
   if (_internal_has_pose_with_covariance()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        11, _Internal::pose_with_covariance(this), target, stream);
+      InternalWriteMessage(11, _Internal::pose_with_covariance(this),
+        _Internal::pose_with_covariance(this).GetCachedSize(), target, stream);
   }
 
   // .v1.model.Point point = 12 [json_name = "point"];
   if (_internal_has_point()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        12, _Internal::point(this), target, stream);
+      InternalWriteMessage(12, _Internal::point(this),
+        _Internal::point(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.ROSMessageToPublish)
@@ -1704,29 +1725,27 @@ size_t ROSMessageToPublish::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.ROSMessageToPublish)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string stream = 1 [json_name = "stream"];
-  if (!this->stream().empty()) {
+  if (!this->_internal_stream().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_stream());
   }
 
   // string frame_id = 7 [json_name = "frameId"];
-  if (!this->frame_id().empty()) {
+  if (!this->_internal_frame_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_frame_id());
   }
 
   // uint64 timestamp = 8 [json_name = "timestamp"];
-  if (this->timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_timestamp());
+  if (this->_internal_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_timestamp());
   }
 
   switch (data_case()) {
@@ -1795,44 +1814,35 @@ size_t ROSMessageToPublish::ByteSizeLong() const {
       break;
     }
   }
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void ROSMessageToPublish::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:v1.model.ROSMessageToPublish)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ROSMessageToPublish* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ROSMessageToPublish>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.ROSMessageToPublish)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.ROSMessageToPublish)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ROSMessageToPublish::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ROSMessageToPublish::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ROSMessageToPublish::GetClassData() const { return &_class_data_; }
+
+void ROSMessageToPublish::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ROSMessageToPublish *>(to)->MergeFrom(
+      static_cast<const ROSMessageToPublish &>(from));
 }
+
 
 void ROSMessageToPublish::MergeFrom(const ROSMessageToPublish& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.ROSMessageToPublish)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from.stream().empty()) {
+  if (!from._internal_stream().empty()) {
     _internal_set_stream(from._internal_stream());
   }
-  if (!from.frame_id().empty()) {
+  if (!from._internal_frame_id().empty()) {
     _internal_set_frame_id(from._internal_frame_id());
   }
-  if (from.timestamp() != 0) {
+  if (from._internal_timestamp() != 0) {
     _internal_set_timestamp(from._internal_timestamp());
   }
   switch (from.data_case()) {
@@ -1876,13 +1886,7 @@ void ROSMessageToPublish::MergeFrom(const ROSMessageToPublish& from) {
       break;
     }
   }
-}
-
-void ROSMessageToPublish::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:v1.model.ROSMessageToPublish)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ROSMessageToPublish::CopyFrom(const ROSMessageToPublish& from) {
@@ -1898,16 +1902,16 @@ bool ROSMessageToPublish::IsInitialized() const {
 
 void ROSMessageToPublish::InternalSwap(ROSMessageToPublish* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &stream_, GetArenaForAllocation(),
-      &other->stream_, other->GetArenaForAllocation()
+      &stream_, lhs_arena,
+      &other->stream_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &frame_id_, GetArenaForAllocation(),
-      &other->frame_id_, other->GetArenaForAllocation()
+      &frame_id_, lhs_arena,
+      &other->frame_id_, rhs_arena
   );
   swap(timestamp_, other->timestamp_);
   swap(data_, other->data_);
@@ -1915,7 +1919,7 @@ void ROSMessageToPublish::InternalSwap(ROSMessageToPublish* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ROSMessageToPublish::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto[3]);
 }
@@ -1924,16 +1928,20 @@ void ROSMessageToPublish::InternalSwap(ROSMessageToPublish* other) {
 }  // namespace model
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::v1::model::ROSTopic* Arena::CreateMaybeMessage< ::v1::model::ROSTopic >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::ROSTopic*
+Arena::CreateMaybeMessage< ::v1::model::ROSTopic >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::ROSTopic >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::ROSLocalization* Arena::CreateMaybeMessage< ::v1::model::ROSLocalization >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::ROSLocalization*
+Arena::CreateMaybeMessage< ::v1::model::ROSLocalization >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::ROSLocalization >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::ROSTransformTree* Arena::CreateMaybeMessage< ::v1::model::ROSTransformTree >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::ROSTransformTree*
+Arena::CreateMaybeMessage< ::v1::model::ROSTransformTree >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::ROSTransformTree >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::ROSMessageToPublish* Arena::CreateMaybeMessage< ::v1::model::ROSMessageToPublish >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::ROSMessageToPublish*
+Arena::CreateMaybeMessage< ::v1::model::ROSMessageToPublish >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::ROSMessageToPublish >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

@@ -16,94 +16,106 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace v1 {
 namespace model {
-constexpr Health::Health(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+PROTOBUF_CONSTEXPR Health::Health(
+    ::_pbi::ConstantInitialized)
   : status_(0)
-{}
+
+  , _oneof_case_{}{}
 struct HealthDefaultTypeInternal {
-  constexpr HealthDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR HealthDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~HealthDefaultTypeInternal() {}
   union {
     Health _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HealthDefaultTypeInternal _Health_default_instance_;
-constexpr Battery::Battery(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HealthDefaultTypeInternal _Health_default_instance_;
+PROTOBUF_CONSTEXPR Battery::Battery(
+    ::_pbi::ConstantInitialized)
   : percentage_(0)
   , voltage_(0)
   , current_(0)
   , charge_(0){}
 struct BatteryDefaultTypeInternal {
-  constexpr BatteryDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BatteryDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BatteryDefaultTypeInternal() {}
   union {
     Battery _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BatteryDefaultTypeInternal _Battery_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatteryDefaultTypeInternal _Battery_default_instance_;
 }  // namespace model
 }  // namespace v1
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto[2];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto[2];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto[1];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fhealth_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_protos_2fmodel_2fv1_2fhealth_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::Health, _internal_metadata_),
   ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
+  PROTOBUF_FIELD_OFFSET(::v1::model::Health, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::Health, status_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::v1::model::Health, clock_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::Battery, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::Battery, percentage_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Battery, voltage_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Battery, current_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Battery, charge_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::v1::model::Health)},
-  { 6, -1, sizeof(::v1::model::Battery)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::v1::model::Health)},
+  { 9, -1, -1, sizeof(::v1::model::Battery)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Health_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Battery_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::v1::model::_Health_default_instance_._instance,
+  &::v1::model::_Battery_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034protos/model/v1/health.proto\022\010v1.model"
-  "\"8\n\006Health\022.\n\006status\030\001 \001(\0162\026.v1.model.He"
-  "althStatusR\006status\"u\n\007Battery\022\036\n\npercent"
-  "age\030\001 \001(\001R\npercentage\022\030\n\007voltage\030\002 \001(\001R\007"
-  "voltage\022\030\n\007current\030\003 \001(\001R\007current\022\026\n\006cha"
-  "rge\030\004 \001(\001R\006charge*`\n\014HealthStatus\022\022\n\016HEA"
-  "LTH_UNKNOWN\020\000\022\026\n\022HEALTH_OPERATIONAL\020\001\022\022\n"
-  "\016HEALTH_OFFLINE\020\002\022\020\n\014HEALTH_ERROR\020\003B+Z)g"
-  "ithub.com/FormantIO/genproto/go/v1/model"
-  "b\006proto3"
+  "\"\\\n\006Health\022.\n\006status\030\001 \001(\0162\026.v1.model.He"
+  "althStatusR\006status\022\031\n\007skew_ms\030\002 \001(\003H\000R\006s"
+  "kewMsB\007\n\005clock\"u\n\007Battery\022\036\n\npercentage\030"
+  "\001 \001(\001R\npercentage\022\030\n\007voltage\030\002 \001(\001R\007volt"
+  "age\022\030\n\007current\030\003 \001(\001R\007current\022\026\n\006charge\030"
+  "\004 \001(\001R\006charge*`\n\014HealthStatus\022\022\n\016HEALTH_"
+  "UNKNOWN\020\000\022\026\n\022HEALTH_OPERATIONAL\020\001\022\022\n\016HEA"
+  "LTH_OFFLINE\020\002\022\020\n\014HEALTH_ERROR\020\003B+Z)githu"
+  "b.com/FormantIO/genproto/go/v1/modelb\006pr"
+  "oto3"
   ;
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto = {
-  false, false, 368, descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto, "protos/model/v1/health.proto", 
-  &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once, nullptr, 0, 2,
-  schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fhealth_2eproto::offsets,
-  file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto,
+static ::_pbi::once_flag descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto = {
+    false, false, 404, descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto,
+    "protos/model/v1/health.proto",
+    &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once, nullptr, 0, 2,
+    schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fhealth_2eproto::offsets,
+    file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto,
+    file_level_service_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_getter() {
   return &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2fhealth_2eproto(&descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2fhealth_2eproto(&descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto);
 namespace v1 {
 namespace model {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* HealthStatus_descriptor() {
@@ -129,105 +141,147 @@ class Health::_Internal {
  public:
 };
 
-Health::Health(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+Health::Health(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.Health)
 }
 Health::Health(const Health& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   status_ = from.status_;
+  clear_has_clock();
+  switch (from.clock_case()) {
+    case kSkewMs: {
+      _internal_set_skew_ms(from._internal_skew_ms());
+      break;
+    }
+    case CLOCK_NOT_SET: {
+      break;
+    }
+  }
   // @@protoc_insertion_point(copy_constructor:v1.model.Health)
 }
 
-void Health::SharedCtor() {
+inline void Health::SharedCtor() {
 status_ = 0;
+clear_has_clock();
 }
 
 Health::~Health() {
   // @@protoc_insertion_point(destructor:v1.model.Health)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Health::SharedDtor() {
+inline void Health::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_clock()) {
+    clear_clock();
+  }
 }
 
-void Health::ArenaDtor(void* object) {
-  Health* _this = reinterpret_cast< Health* >(object);
-  (void)_this;
-}
-void Health::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Health::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
+void Health::clear_clock() {
+// @@protoc_insertion_point(one_of_clear_start:v1.model.Health)
+  switch (clock_case()) {
+    case kSkewMs: {
+      // No need to clear
+      break;
+    }
+    case CLOCK_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = CLOCK_NOT_SET;
+}
+
+
 void Health::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Health)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   status_ = 0;
+  clear_clock();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Health::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Health::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .v1.model.HealthStatus status = 1 [json_name = "status"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::v1::model::HealthStatus>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
+      // int64 skew_ms = 2 [json_name = "skewMs"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _internal_set_skew_ms(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
+        } else
+          goto handle_unusual;
         continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Health::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Health::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.Health)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .v1.model.HealthStatus status = 1 [json_name = "status"];
-  if (this->status() != 0) {
+  if (this->_internal_status() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_status(), target);
   }
 
+  // int64 skew_ms = 2 [json_name = "skewMs"];
+  if (_internal_has_skew_ms()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(2, this->_internal_skew_ms(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Health)
@@ -238,57 +292,61 @@ size_t Health::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.Health)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .v1.model.HealthStatus status = 1 [json_name = "status"];
-  if (this->status() != 0) {
+  if (this->_internal_status() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_status());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
+  switch (clock_case()) {
+    // int64 skew_ms = 2 [json_name = "skewMs"];
+    case kSkewMs: {
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_skew_ms());
+      break;
+    }
+    case CLOCK_NOT_SET: {
+      break;
+    }
   }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void Health::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Health)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Health* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Health>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Health)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Health)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Health::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Health::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Health::GetClassData() const { return &_class_data_; }
+
+void Health::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Health *>(to)->MergeFrom(
+      static_cast<const Health &>(from));
 }
+
 
 void Health::MergeFrom(const Health& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Health)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.status() != 0) {
+  if (from._internal_status() != 0) {
     _internal_set_status(from._internal_status());
   }
-}
-
-void Health::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Health)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  switch (from.clock_case()) {
+    case kSkewMs: {
+      _internal_set_skew_ms(from._internal_skew_ms());
+      break;
+    }
+    case CLOCK_NOT_SET: {
+      break;
+    }
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Health::CopyFrom(const Health& from) {
@@ -306,10 +364,12 @@ void Health::InternalSwap(Health* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(status_, other->status_);
+  swap(clock_, other->clock_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Health::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto[0]);
 }
@@ -320,10 +380,10 @@ class Battery::_Internal {
  public:
 };
 
-Battery::Battery(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+Battery::Battery(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.Battery)
 }
 Battery::Battery(const Battery& from)
@@ -335,7 +395,7 @@ Battery::Battery(const Battery& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.Battery)
 }
 
-void Battery::SharedCtor() {
+inline void Battery::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&percentage_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&charge_) -
@@ -344,27 +404,24 @@ void Battery::SharedCtor() {
 
 Battery::~Battery() {
   // @@protoc_insertion_point(destructor:v1.model.Battery)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Battery::SharedDtor() {
+inline void Battery::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void Battery::ArenaDtor(void* object) {
-  Battery* _this = reinterpret_cast< Battery* >(object);
-  (void)_this;
-}
-void Battery::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Battery::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void Battery::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Battery)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -374,95 +431,115 @@ void Battery::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Battery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Battery::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // double percentage = 1 [json_name = "percentage"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
           percentage_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // double voltage = 2 [json_name = "voltage"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
           voltage_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // double current = 3 [json_name = "current"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
           current_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // double charge = 4 [json_name = "charge"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
           charge_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Battery::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Battery::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.Battery)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // double percentage = 1 [json_name = "percentage"];
-  if (!(this->percentage() <= 0 && this->percentage() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_percentage = this->_internal_percentage();
+  uint64_t raw_percentage;
+  memcpy(&raw_percentage, &tmp_percentage, sizeof(tmp_percentage));
+  if (raw_percentage != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_percentage(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_percentage(), target);
   }
 
   // double voltage = 2 [json_name = "voltage"];
-  if (!(this->voltage() <= 0 && this->voltage() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_voltage = this->_internal_voltage();
+  uint64_t raw_voltage;
+  memcpy(&raw_voltage, &tmp_voltage, sizeof(tmp_voltage));
+  if (raw_voltage != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_voltage(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_voltage(), target);
   }
 
   // double current = 3 [json_name = "current"];
-  if (!(this->current() <= 0 && this->current() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_current = this->_internal_current();
+  uint64_t raw_current;
+  memcpy(&raw_current, &tmp_current, sizeof(tmp_current));
+  if (raw_current != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_current(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_current(), target);
   }
 
   // double charge = 4 [json_name = "charge"];
-  if (!(this->charge() <= 0 && this->charge() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_charge = this->_internal_charge();
+  uint64_t raw_charge;
+  memcpy(&raw_charge, &tmp_charge, sizeof(tmp_charge));
+  if (raw_charge != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->_internal_charge(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_charge(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Battery)
@@ -473,80 +550,97 @@ size_t Battery::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.Battery)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double percentage = 1 [json_name = "percentage"];
-  if (!(this->percentage() <= 0 && this->percentage() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_percentage = this->_internal_percentage();
+  uint64_t raw_percentage;
+  memcpy(&raw_percentage, &tmp_percentage, sizeof(tmp_percentage));
+  if (raw_percentage != 0) {
     total_size += 1 + 8;
   }
 
   // double voltage = 2 [json_name = "voltage"];
-  if (!(this->voltage() <= 0 && this->voltage() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_voltage = this->_internal_voltage();
+  uint64_t raw_voltage;
+  memcpy(&raw_voltage, &tmp_voltage, sizeof(tmp_voltage));
+  if (raw_voltage != 0) {
     total_size += 1 + 8;
   }
 
   // double current = 3 [json_name = "current"];
-  if (!(this->current() <= 0 && this->current() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_current = this->_internal_current();
+  uint64_t raw_current;
+  memcpy(&raw_current, &tmp_current, sizeof(tmp_current));
+  if (raw_current != 0) {
     total_size += 1 + 8;
   }
 
   // double charge = 4 [json_name = "charge"];
-  if (!(this->charge() <= 0 && this->charge() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_charge = this->_internal_charge();
+  uint64_t raw_charge;
+  memcpy(&raw_charge, &tmp_charge, sizeof(tmp_charge));
+  if (raw_charge != 0) {
     total_size += 1 + 8;
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void Battery::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Battery)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Battery* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Battery>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Battery)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Battery)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Battery::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Battery::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Battery::GetClassData() const { return &_class_data_; }
+
+void Battery::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Battery *>(to)->MergeFrom(
+      static_cast<const Battery &>(from));
 }
+
 
 void Battery::MergeFrom(const Battery& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Battery)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!(from.percentage() <= 0 && from.percentage() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_percentage = from._internal_percentage();
+  uint64_t raw_percentage;
+  memcpy(&raw_percentage, &tmp_percentage, sizeof(tmp_percentage));
+  if (raw_percentage != 0) {
     _internal_set_percentage(from._internal_percentage());
   }
-  if (!(from.voltage() <= 0 && from.voltage() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_voltage = from._internal_voltage();
+  uint64_t raw_voltage;
+  memcpy(&raw_voltage, &tmp_voltage, sizeof(tmp_voltage));
+  if (raw_voltage != 0) {
     _internal_set_voltage(from._internal_voltage());
   }
-  if (!(from.current() <= 0 && from.current() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_current = from._internal_current();
+  uint64_t raw_current;
+  memcpy(&raw_current, &tmp_current, sizeof(tmp_current));
+  if (raw_current != 0) {
     _internal_set_current(from._internal_current());
   }
-  if (!(from.charge() <= 0 && from.charge() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_charge = from._internal_charge();
+  uint64_t raw_charge;
+  memcpy(&raw_charge, &tmp_charge, sizeof(tmp_charge));
+  if (raw_charge != 0) {
     _internal_set_charge(from._internal_charge());
   }
-}
-
-void Battery::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Battery)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Battery::CopyFrom(const Battery& from) {
@@ -572,7 +666,7 @@ void Battery::InternalSwap(Battery* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Battery::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto[1]);
 }
@@ -581,10 +675,12 @@ void Battery::InternalSwap(Battery* other) {
 }  // namespace model
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::v1::model::Health* Arena::CreateMaybeMessage< ::v1::model::Health >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::Health*
+Arena::CreateMaybeMessage< ::v1::model::Health >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Health >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::Battery* Arena::CreateMaybeMessage< ::v1::model::Battery >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::Battery*
+Arena::CreateMaybeMessage< ::v1::model::Battery >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Battery >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
