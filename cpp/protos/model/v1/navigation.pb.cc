@@ -16,59 +16,55 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
 namespace v1 {
 namespace model {
-PROTOBUF_CONSTEXPR Location::Location(
-    ::_pbi::ConstantInitialized)
+constexpr Location::Location(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : latitude_(0)
   , longitude_(0)
   , altitude_(0)
   , orientation_(0){}
 struct LocationDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LocationDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr LocationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~LocationDefaultTypeInternal() {}
   union {
     Location _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LocationDefaultTypeInternal _Location_default_instance_;
-PROTOBUF_CONSTEXPR Localization::Localization(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LocationDefaultTypeInternal _Location_default_instance_;
+constexpr Localization::Localization(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : point_clouds_()
   , odometry_(nullptr)
   , map_(nullptr)
   , path_(nullptr)
   , goal_(nullptr){}
 struct LocalizationDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LocalizationDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr LocalizationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~LocalizationDefaultTypeInternal() {}
   union {
     Localization _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LocalizationDefaultTypeInternal _Localization_default_instance_;
-PROTOBUF_CONSTEXPR Odometry::Odometry(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LocalizationDefaultTypeInternal _Localization_default_instance_;
+constexpr Odometry::Odometry(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : pose_(nullptr)
   , twist_(nullptr)
   , world_to_local_(nullptr){}
 struct OdometryDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR OdometryDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr OdometryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~OdometryDefaultTypeInternal() {}
   union {
     Odometry _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OdometryDefaultTypeInternal _Odometry_default_instance_;
-PROTOBUF_CONSTEXPR Map::Map(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OdometryDefaultTypeInternal _Odometry_default_instance_;
+constexpr Map::Map(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : origin_(nullptr)
   , world_to_local_(nullptr)
   , resolution_(0)
@@ -76,119 +72,119 @@ PROTOBUF_CONSTEXPR Map::Map(
   , height_(0u)
   , _oneof_case_{}{}
 struct MapDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR MapDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr MapDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~MapDefaultTypeInternal() {}
   union {
     Map _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MapDefaultTypeInternal _Map_default_instance_;
-PROTOBUF_CONSTEXPR OccupancyGrid::OccupancyGrid(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MapDefaultTypeInternal _Map_default_instance_;
+constexpr OccupancyGrid::OccupancyGrid(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : data_()
-  , _data_cached_byte_size_(0){}
+  , _data_cached_byte_size_(){}
 struct OccupancyGridDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR OccupancyGridDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr OccupancyGridDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~OccupancyGridDefaultTypeInternal() {}
   union {
     OccupancyGrid _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OccupancyGridDefaultTypeInternal _OccupancyGrid_default_instance_;
-PROTOBUF_CONSTEXPR Path::Path(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OccupancyGridDefaultTypeInternal _OccupancyGrid_default_instance_;
+constexpr Path::Path(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : poses_()
   , world_to_local_(nullptr){}
 struct PathDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PathDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr PathDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~PathDefaultTypeInternal() {}
   union {
     Path _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PathDefaultTypeInternal _Path_default_instance_;
-PROTOBUF_CONSTEXPR JointState::JointState(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PathDefaultTypeInternal _Path_default_instance_;
+constexpr JointState::JointState(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_()
   , position_()
   , velocity_()
   , effort_()
   , world_to_local_(nullptr){}
 struct JointStateDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR JointStateDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr JointStateDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~JointStateDefaultTypeInternal() {}
   union {
     JointState _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 JointStateDefaultTypeInternal _JointState_default_instance_;
-PROTOBUF_CONSTEXPR Goal::Goal(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT JointStateDefaultTypeInternal _JointState_default_instance_;
+constexpr Goal::Goal(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : world_to_local_(nullptr)
   , pose_(nullptr){}
 struct GoalDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GoalDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr GoalDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~GoalDefaultTypeInternal() {}
   union {
     Goal _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GoalDefaultTypeInternal _Goal_default_instance_;
-PROTOBUF_CONSTEXPR GoalID::GoalID(
-    ::_pbi::ConstantInitialized)
-  : id_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GoalDefaultTypeInternal _Goal_default_instance_;
+constexpr GoalID::GoalID(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GoalIDDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GoalIDDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr GoalIDDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~GoalIDDefaultTypeInternal() {}
   union {
     GoalID _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GoalIDDefaultTypeInternal _GoalID_default_instance_;
-PROTOBUF_CONSTEXPR PoseWithCovariance::PoseWithCovariance(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GoalIDDefaultTypeInternal _GoalID_default_instance_;
+constexpr PoseWithCovariance::PoseWithCovariance(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : covariance_()
   , pose_(nullptr){}
 struct PoseWithCovarianceDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PoseWithCovarianceDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr PoseWithCovarianceDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~PoseWithCovarianceDefaultTypeInternal() {}
   union {
     PoseWithCovariance _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PoseWithCovarianceDefaultTypeInternal _PoseWithCovariance_default_instance_;
-PROTOBUF_CONSTEXPR ColorRGBA::ColorRGBA(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PoseWithCovarianceDefaultTypeInternal _PoseWithCovariance_default_instance_;
+constexpr ColorRGBA::ColorRGBA(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : r_(0)
   , g_(0)
   , b_(0)
   , a_(0){}
 struct ColorRGBADefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ColorRGBADefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr ColorRGBADefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~ColorRGBADefaultTypeInternal() {}
   union {
     ColorRGBA _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ColorRGBADefaultTypeInternal _ColorRGBA_default_instance_;
-PROTOBUF_CONSTEXPR Marker3D::Marker3D(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ColorRGBADefaultTypeInternal _ColorRGBA_default_instance_;
+constexpr Marker3D::Marker3D(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : points_()
   , colors_()
-  , ns_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , type_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , action_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , text_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , mesh_resource_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , frame_id_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , ns_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , action_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , text_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , mesh_resource_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , frame_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , world_to_local_(nullptr)
   , pose_(nullptr)
   , scale_(nullptr)
@@ -198,39 +194,38 @@ PROTOBUF_CONSTEXPR Marker3D::Marker3D(
   , frame_locked_(false)
   , mesh_use_embedded_materials_(false){}
 struct Marker3DDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Marker3DDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr Marker3DDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~Marker3DDefaultTypeInternal() {}
   union {
     Marker3D _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Marker3DDefaultTypeInternal _Marker3D_default_instance_;
-PROTOBUF_CONSTEXPR Marker3DArray::Marker3DArray(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Marker3DDefaultTypeInternal _Marker3D_default_instance_;
+constexpr Marker3DArray::Marker3DArray(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : markers_(){}
 struct Marker3DArrayDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Marker3DArrayDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr Marker3DArrayDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~Marker3DArrayDefaultTypeInternal() {}
   union {
     Marker3DArray _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Marker3DArrayDefaultTypeInternal _Marker3DArray_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Marker3DArrayDefaultTypeInternal _Marker3DArray_default_instance_;
 }  // namespace model
 }  // namespace v1
-static ::_pb::Metadata file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[13];
-static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto = nullptr;
-static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto = nullptr;
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[13];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto = nullptr;
 
-const uint32_t TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   PROTOBUF_FIELD_OFFSET(::v1::model::Location, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Location, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::Location, latitude_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Location, longitude_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Location, altitude_),
@@ -244,7 +239,6 @@ const uint32_t TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] P
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::Localization, odometry_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Localization, map_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Localization, point_clouds_),
@@ -255,7 +249,6 @@ const uint32_t TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] P
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::Odometry, pose_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Odometry, twist_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Odometry, world_to_local_),
@@ -264,29 +257,26 @@ const uint32_t TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] P
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, resolution_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, width_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, height_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, origin_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, world_to_local_),
-  ::_pbi::kInvalidFieldOffsetTag,
-  ::_pbi::kInvalidFieldOffsetTag,
-  ::_pbi::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, data_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::OccupancyGrid, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::OccupancyGrid, data_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::Path, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::Path, world_to_local_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Path, poses_),
   ~0u,  // no _has_bits_
@@ -294,7 +284,6 @@ const uint32_t TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] P
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::JointState, world_to_local_),
   PROTOBUF_FIELD_OFFSET(::v1::model::JointState, name_),
   PROTOBUF_FIELD_OFFSET(::v1::model::JointState, position_),
@@ -305,7 +294,6 @@ const uint32_t TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] P
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::Goal, world_to_local_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Goal, pose_),
   ~0u,  // no _has_bits_
@@ -313,14 +301,12 @@ const uint32_t TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] P
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::GoalID, id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::PoseWithCovariance, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::PoseWithCovariance, pose_),
   PROTOBUF_FIELD_OFFSET(::v1::model::PoseWithCovariance, covariance_),
   ~0u,  // no _has_bits_
@@ -328,7 +314,6 @@ const uint32_t TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] P
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::ColorRGBA, r_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ColorRGBA, g_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ColorRGBA, b_),
@@ -338,7 +323,6 @@ const uint32_t TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] P
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::Marker3D, world_to_local_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Marker3D, ns_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Marker3D, id_),
@@ -360,39 +344,38 @@ const uint32_t TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets[] P
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::v1::model::Marker3DArray, markers_),
 };
-static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 10, -1, sizeof(::v1::model::Location)},
-  { 14, -1, -1, sizeof(::v1::model::Localization)},
-  { 25, -1, -1, sizeof(::v1::model::Odometry)},
-  { 34, -1, -1, sizeof(::v1::model::Map)},
-  { 49, -1, -1, sizeof(::v1::model::OccupancyGrid)},
-  { 56, -1, -1, sizeof(::v1::model::Path)},
-  { 64, -1, -1, sizeof(::v1::model::JointState)},
-  { 75, -1, -1, sizeof(::v1::model::Goal)},
-  { 83, -1, -1, sizeof(::v1::model::GoalID)},
-  { 90, -1, -1, sizeof(::v1::model::PoseWithCovariance)},
-  { 98, -1, -1, sizeof(::v1::model::ColorRGBA)},
-  { 108, -1, -1, sizeof(::v1::model::Marker3D)},
-  { 130, -1, -1, sizeof(::v1::model::Marker3DArray)},
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 9, sizeof(::v1::model::Location)},
+  { 13, -1, sizeof(::v1::model::Localization)},
+  { 23, -1, sizeof(::v1::model::Odometry)},
+  { 31, -1, sizeof(::v1::model::Map)},
+  { 45, -1, sizeof(::v1::model::OccupancyGrid)},
+  { 51, -1, sizeof(::v1::model::Path)},
+  { 58, -1, sizeof(::v1::model::JointState)},
+  { 68, -1, sizeof(::v1::model::Goal)},
+  { 75, -1, sizeof(::v1::model::GoalID)},
+  { 81, -1, sizeof(::v1::model::PoseWithCovariance)},
+  { 88, -1, sizeof(::v1::model::ColorRGBA)},
+  { 97, -1, sizeof(::v1::model::Marker3D)},
+  { 118, -1, sizeof(::v1::model::Marker3DArray)},
 };
 
-static const ::_pb::Message* const file_default_instances[] = {
-  &::v1::model::_Location_default_instance_._instance,
-  &::v1::model::_Localization_default_instance_._instance,
-  &::v1::model::_Odometry_default_instance_._instance,
-  &::v1::model::_Map_default_instance_._instance,
-  &::v1::model::_OccupancyGrid_default_instance_._instance,
-  &::v1::model::_Path_default_instance_._instance,
-  &::v1::model::_JointState_default_instance_._instance,
-  &::v1::model::_Goal_default_instance_._instance,
-  &::v1::model::_GoalID_default_instance_._instance,
-  &::v1::model::_PoseWithCovariance_default_instance_._instance,
-  &::v1::model::_ColorRGBA_default_instance_._instance,
-  &::v1::model::_Marker3D_default_instance_._instance,
-  &::v1::model::_Marker3DArray_default_instance_._instance,
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Location_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Localization_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Odometry_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Map_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_OccupancyGrid_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Path_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_JointState_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Goal_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_GoalID_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_PoseWithCovariance_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_ColorRGBA_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Marker3D_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Marker3DArray_default_instance_),
 };
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -454,25 +437,23 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto[] 
   "R\007markersB+Z)github.com/FormantIO/genpro"
   "to/go/v1/modelb\006proto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps[2] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto,
 };
-static ::_pbi::once_flag descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto = {
-    false, false, 2262, descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto,
-    "protos/model/v1/navigation.proto",
-    &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps, 2, 13,
-    schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets,
-    file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto,
-    file_level_service_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto,
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto = {
+  false, false, 2262, descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto, "protos/model/v1/navigation.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps, 2, 13,
+  schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets,
+  file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter() {
   return &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2fnavigation_2eproto(&descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_protos_2fmodel_2fv1_2fnavigation_2eproto(&descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto);
 namespace v1 {
 namespace model {
 
@@ -489,10 +470,10 @@ class Location::_Internal {
   }
 };
 
-Location::Location(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+Location::Location(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.Location)
 }
 Location::Location(const Location& from)
@@ -505,7 +486,7 @@ Location::Location(const Location& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.Location)
 }
 
-inline void Location::SharedCtor() {
+void Location::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&latitude_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&orientation_) -
@@ -514,24 +495,27 @@ inline void Location::SharedCtor() {
 
 Location::~Location() {
   // @@protoc_insertion_point(destructor:v1.model.Location)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Location::SharedDtor() {
+void Location::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void Location::ArenaDtor(void* object) {
+  Location* _this = reinterpret_cast< Location* >(object);
+  (void)_this;
+}
+void Location::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Location::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void Location::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Location)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -548,111 +532,99 @@ void Location::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Location::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Location::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // double latitude = 1 [json_name = "latitude"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
           latitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // double longitude = 2 [json_name = "longitude"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           longitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // optional double altitude = 3 [json_name = "altitude"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
           _Internal::set_has_altitude(&has_bits);
           altitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // optional double orientation = 4 [json_name = "orientation"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33)) {
           _Internal::set_has_orientation(&has_bits);
           orientation_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Location::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Location::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.Location)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // double latitude = 1 [json_name = "latitude"];
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_latitude = this->_internal_latitude();
-  uint64_t raw_latitude;
-  memcpy(&raw_latitude, &tmp_latitude, sizeof(tmp_latitude));
-  if (raw_latitude != 0) {
+  if (!(this->latitude() <= 0 && this->latitude() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_latitude(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_latitude(), target);
   }
 
   // double longitude = 2 [json_name = "longitude"];
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_longitude = this->_internal_longitude();
-  uint64_t raw_longitude;
-  memcpy(&raw_longitude, &tmp_longitude, sizeof(tmp_longitude));
-  if (raw_longitude != 0) {
+  if (!(this->longitude() <= 0 && this->longitude() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_longitude(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_longitude(), target);
   }
 
   // optional double altitude = 3 [json_name = "altitude"];
   if (_internal_has_altitude()) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_altitude(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_altitude(), target);
   }
 
   // optional double orientation = 4 [json_name = "orientation"];
   if (_internal_has_orientation()) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_orientation(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->_internal_orientation(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Location)
@@ -663,25 +635,17 @@ size_t Location::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.Location)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double latitude = 1 [json_name = "latitude"];
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_latitude = this->_internal_latitude();
-  uint64_t raw_latitude;
-  memcpy(&raw_latitude, &tmp_latitude, sizeof(tmp_latitude));
-  if (raw_latitude != 0) {
+  if (!(this->latitude() <= 0 && this->latitude() >= 0)) {
     total_size += 1 + 8;
   }
 
   // double longitude = 2 [json_name = "longitude"];
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_longitude = this->_internal_longitude();
-  uint64_t raw_longitude;
-  memcpy(&raw_longitude, &tmp_longitude, sizeof(tmp_longitude));
-  if (raw_longitude != 0) {
+  if (!(this->longitude() <= 0 && this->longitude() >= 0)) {
     total_size += 1 + 8;
   }
 
@@ -698,40 +662,41 @@ size_t Location::ByteSizeLong() const {
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Location::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Location::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Location::GetClassData() const { return &_class_data_; }
-
-void Location::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Location *>(to)->MergeFrom(
-      static_cast<const Location &>(from));
+void Location::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Location)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Location* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Location>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Location)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Location)
+    MergeFrom(*source);
+  }
 }
-
 
 void Location::MergeFrom(const Location& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Location)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_latitude = from._internal_latitude();
-  uint64_t raw_latitude;
-  memcpy(&raw_latitude, &tmp_latitude, sizeof(tmp_latitude));
-  if (raw_latitude != 0) {
+  if (!(from.latitude() <= 0 && from.latitude() >= 0)) {
     _internal_set_latitude(from._internal_latitude());
   }
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_longitude = from._internal_longitude();
-  uint64_t raw_longitude;
-  memcpy(&raw_longitude, &tmp_longitude, sizeof(tmp_longitude));
-  if (raw_longitude != 0) {
+  if (!(from.longitude() <= 0 && from.longitude() >= 0)) {
     _internal_set_longitude(from._internal_longitude());
   }
   cached_has_bits = from._has_bits_[0];
@@ -744,7 +709,13 @@ void Location::MergeFrom(const Location& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Location::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Location)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Location::CopyFrom(const Location& from) {
@@ -771,7 +742,7 @@ void Location::InternalSwap(Location* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Location::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[0]);
 }
@@ -805,11 +776,11 @@ Localization::_Internal::goal(const Localization* msg) {
 void Localization::clear_point_clouds() {
   point_clouds_.Clear();
 }
-Localization::Localization(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+Localization::Localization(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   point_clouds_(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.Localization)
 }
 Localization::Localization(const Localization& from)
@@ -839,7 +810,7 @@ Localization::Localization(const Localization& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.Localization)
 }
 
-inline void Localization::SharedCtor() {
+void Localization::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&odometry_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&goal_) -
@@ -848,14 +819,11 @@ inline void Localization::SharedCtor() {
 
 Localization::~Localization() {
   // @@protoc_insertion_point(destructor:v1.model.Localization)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Localization::SharedDtor() {
+void Localization::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete odometry_;
   if (this != internal_default_instance()) delete map_;
@@ -863,13 +831,19 @@ inline void Localization::SharedDtor() {
   if (this != internal_default_instance()) delete goal_;
 }
 
+void Localization::ArenaDtor(void* object) {
+  Localization* _this = reinterpret_cast< Localization* >(object);
+  (void)_this;
+}
+void Localization::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Localization::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void Localization::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Localization)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -893,31 +867,29 @@ void Localization::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Localization::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Localization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .v1.model.Odometry odometry = 1 [json_name = "odometry"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_odometry(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Map map = 2 [json_name = "map"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_map(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated .v1.model.PointCloud point_clouds = 3 [json_name = "pointClouds"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -925,92 +897,93 @@ const char* Localization::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Path path = 4 [json_name = "path"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_path(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Goal goal = 5 [json_name = "goal"];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_goal(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Localization::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Localization::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.Localization)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .v1.model.Odometry odometry = 1 [json_name = "odometry"];
-  if (this->_internal_has_odometry()) {
+  if (this->has_odometry()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::odometry(this),
-        _Internal::odometry(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        1, _Internal::odometry(this), target, stream);
   }
 
   // .v1.model.Map map = 2 [json_name = "map"];
-  if (this->_internal_has_map()) {
+  if (this->has_map()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::map(this),
-        _Internal::map(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        2, _Internal::map(this), target, stream);
   }
 
   // repeated .v1.model.PointCloud point_clouds = 3 [json_name = "pointClouds"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_point_clouds_size()); i < n; i++) {
-    const auto& repfield = this->_internal_point_clouds(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_point_clouds_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(3, this->_internal_point_clouds(i), target, stream);
   }
 
   // .v1.model.Path path = 4 [json_name = "path"];
-  if (this->_internal_has_path()) {
+  if (this->has_path()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, _Internal::path(this),
-        _Internal::path(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        4, _Internal::path(this), target, stream);
   }
 
   // .v1.model.Goal goal = 5 [json_name = "goal"];
-  if (this->_internal_has_goal()) {
+  if (this->has_goal()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, _Internal::goal(this),
-        _Internal::goal(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        5, _Internal::goal(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Localization)
@@ -1021,7 +994,7 @@ size_t Localization::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.Localization)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1033,69 +1006,84 @@ size_t Localization::ByteSizeLong() const {
   }
 
   // .v1.model.Odometry odometry = 1 [json_name = "odometry"];
-  if (this->_internal_has_odometry()) {
+  if (this->has_odometry()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *odometry_);
   }
 
   // .v1.model.Map map = 2 [json_name = "map"];
-  if (this->_internal_has_map()) {
+  if (this->has_map()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *map_);
   }
 
   // .v1.model.Path path = 4 [json_name = "path"];
-  if (this->_internal_has_path()) {
+  if (this->has_path()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *path_);
   }
 
   // .v1.model.Goal goal = 5 [json_name = "goal"];
-  if (this->_internal_has_goal()) {
+  if (this->has_goal()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *goal_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Localization::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Localization::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Localization::GetClassData() const { return &_class_data_; }
-
-void Localization::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Localization *>(to)->MergeFrom(
-      static_cast<const Localization &>(from));
+void Localization::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Localization)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Localization* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Localization>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Localization)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Localization)
+    MergeFrom(*source);
+  }
 }
-
 
 void Localization::MergeFrom(const Localization& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Localization)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   point_clouds_.MergeFrom(from.point_clouds_);
-  if (from._internal_has_odometry()) {
+  if (from.has_odometry()) {
     _internal_mutable_odometry()->::v1::model::Odometry::MergeFrom(from._internal_odometry());
   }
-  if (from._internal_has_map()) {
+  if (from.has_map()) {
     _internal_mutable_map()->::v1::model::Map::MergeFrom(from._internal_map());
   }
-  if (from._internal_has_path()) {
+  if (from.has_path()) {
     _internal_mutable_path()->::v1::model::Path::MergeFrom(from._internal_path());
   }
-  if (from._internal_has_goal()) {
+  if (from.has_goal()) {
     _internal_mutable_goal()->::v1::model::Goal::MergeFrom(from._internal_goal());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Localization::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Localization)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Localization::CopyFrom(const Localization& from) {
@@ -1122,7 +1110,7 @@ void Localization::InternalSwap(Localization* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Localization::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[1]);
 }
@@ -1166,10 +1154,10 @@ void Odometry::clear_world_to_local() {
   }
   world_to_local_ = nullptr;
 }
-Odometry::Odometry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+Odometry::Odometry(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.Odometry)
 }
 Odometry::Odometry(const Odometry& from)
@@ -1193,7 +1181,7 @@ Odometry::Odometry(const Odometry& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.Odometry)
 }
 
-inline void Odometry::SharedCtor() {
+void Odometry::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&pose_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&world_to_local_) -
@@ -1202,27 +1190,30 @@ inline void Odometry::SharedCtor() {
 
 Odometry::~Odometry() {
   // @@protoc_insertion_point(destructor:v1.model.Odometry)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Odometry::SharedDtor() {
+void Odometry::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete pose_;
   if (this != internal_default_instance()) delete twist_;
   if (this != internal_default_instance()) delete world_to_local_;
 }
 
+void Odometry::ArenaDtor(void* object) {
+  Odometry* _this = reinterpret_cast< Odometry* >(object);
+  (void)_this;
+}
+void Odometry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Odometry::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void Odometry::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Odometry)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1241,88 +1232,88 @@ void Odometry::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Odometry::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Odometry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .v1.model.Transform pose = 1 [json_name = "pose"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_pose(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Twist twist = 2 [json_name = "twist"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_twist(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Transform world_to_local = 3 [json_name = "worldToLocal"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Odometry::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Odometry::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.Odometry)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .v1.model.Transform pose = 1 [json_name = "pose"];
-  if (this->_internal_has_pose()) {
+  if (this->has_pose()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::pose(this),
-        _Internal::pose(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        1, _Internal::pose(this), target, stream);
   }
 
   // .v1.model.Twist twist = 2 [json_name = "twist"];
-  if (this->_internal_has_twist()) {
+  if (this->has_twist()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::twist(this),
-        _Internal::twist(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        2, _Internal::twist(this), target, stream);
   }
 
   // .v1.model.Transform world_to_local = 3 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::world_to_local(this),
-        _Internal::world_to_local(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        3, _Internal::world_to_local(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Odometry)
@@ -1333,63 +1324,78 @@ size_t Odometry::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.Odometry)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .v1.model.Transform pose = 1 [json_name = "pose"];
-  if (this->_internal_has_pose()) {
+  if (this->has_pose()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pose_);
   }
 
   // .v1.model.Twist twist = 2 [json_name = "twist"];
-  if (this->_internal_has_twist()) {
+  if (this->has_twist()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *twist_);
   }
 
   // .v1.model.Transform world_to_local = 3 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *world_to_local_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Odometry::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Odometry::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Odometry::GetClassData() const { return &_class_data_; }
-
-void Odometry::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Odometry *>(to)->MergeFrom(
-      static_cast<const Odometry &>(from));
+void Odometry::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Odometry)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Odometry* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Odometry>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Odometry)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Odometry)
+    MergeFrom(*source);
+  }
 }
-
 
 void Odometry::MergeFrom(const Odometry& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Odometry)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_pose()) {
+  if (from.has_pose()) {
     _internal_mutable_pose()->::v1::model::Transform::MergeFrom(from._internal_pose());
   }
-  if (from._internal_has_twist()) {
+  if (from.has_twist()) {
     _internal_mutable_twist()->::v1::model::Twist::MergeFrom(from._internal_twist());
   }
-  if (from._internal_has_world_to_local()) {
+  if (from.has_world_to_local()) {
     _internal_mutable_world_to_local()->::v1::model::Transform::MergeFrom(from._internal_world_to_local());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Odometry::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Odometry)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Odometry::CopyFrom(const Odometry& from) {
@@ -1415,7 +1421,7 @@ void Odometry::InternalSwap(Odometry* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Odometry::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[2]);
 }
@@ -1458,7 +1464,7 @@ void Map::set_allocated_occupancy_grid(::v1::model::OccupancyGrid* occupancy_gri
   clear_data();
   if (occupancy_grid) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(occupancy_grid);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::v1::model::OccupancyGrid>::GetOwningArena(occupancy_grid);
     if (message_arena != submessage_arena) {
       occupancy_grid = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, occupancy_grid, submessage_arena);
@@ -1468,10 +1474,10 @@ void Map::set_allocated_occupancy_grid(::v1::model::OccupancyGrid* occupancy_gri
   }
   // @@protoc_insertion_point(field_set_allocated:v1.model.Map.occupancy_grid)
 }
-Map::Map(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+Map::Map(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.Map)
 }
 Map::Map(const Map& from)
@@ -1511,7 +1517,7 @@ Map::Map(const Map& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.Map)
 }
 
-inline void Map::SharedCtor() {
+void Map::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&origin_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&height_) -
@@ -1521,14 +1527,11 @@ clear_has_data();
 
 Map::~Map() {
   // @@protoc_insertion_point(destructor:v1.model.Map)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Map::SharedDtor() {
+void Map::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete origin_;
   if (this != internal_default_instance()) delete world_to_local_;
@@ -1537,6 +1540,12 @@ inline void Map::SharedDtor() {
   }
 }
 
+void Map::ArenaDtor(void* object) {
+  Map* _this = reinterpret_cast< Map* >(object);
+  (void)_this;
+}
+void Map::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Map::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1551,11 +1560,11 @@ void Map::clear_data() {
       break;
     }
     case kUrl: {
-      data_.url_.Destroy();
+      data_.url_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case kRaw: {
-      data_.raw_.Destroy();
+      data_.raw_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case DATA_NOT_SET: {
@@ -1568,7 +1577,7 @@ void Map::clear_data() {
 
 void Map::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Map)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1587,149 +1596,140 @@ void Map::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Map::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Map::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // double resolution = 1 [json_name = "resolution"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
           resolution_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint32 width = 2 [json_name = "width"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           width_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint32 height = 3 [json_name = "height"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Transform origin = 4 [json_name = "origin"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_origin(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Transform world_to_local = 5 [json_name = "worldToLocal"];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.OccupancyGrid occupancy_grid = 6 [json_name = "occupancyGrid"];
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_occupancy_grid(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string url = 7 [json_name = "url"];
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_url();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Map.url"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "v1.model.Map.url"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bytes raw = 8 [json_name = "raw"];
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_raw();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Map::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Map::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.Map)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // double resolution = 1 [json_name = "resolution"];
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_resolution = this->_internal_resolution();
-  uint64_t raw_resolution;
-  memcpy(&raw_resolution, &tmp_resolution, sizeof(tmp_resolution));
-  if (raw_resolution != 0) {
+  if (!(this->resolution() <= 0 && this->resolution() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_resolution(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_resolution(), target);
   }
 
   // uint32 width = 2 [json_name = "width"];
-  if (this->_internal_width() != 0) {
+  if (this->width() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_width(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_width(), target);
   }
 
   // uint32 height = 3 [json_name = "height"];
-  if (this->_internal_height() != 0) {
+  if (this->height() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_height(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_height(), target);
   }
 
   // .v1.model.Transform origin = 4 [json_name = "origin"];
-  if (this->_internal_has_origin()) {
+  if (this->has_origin()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, _Internal::origin(this),
-        _Internal::origin(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        4, _Internal::origin(this), target, stream);
   }
 
   // .v1.model.Transform world_to_local = 5 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, _Internal::world_to_local(this),
-        _Internal::world_to_local(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        5, _Internal::world_to_local(this), target, stream);
   }
 
   // .v1.model.OccupancyGrid occupancy_grid = 6 [json_name = "occupancyGrid"];
   if (_internal_has_occupancy_grid()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(6, _Internal::occupancy_grid(this),
-        _Internal::occupancy_grid(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        6, _Internal::occupancy_grid(this), target, stream);
   }
 
   // string url = 7 [json_name = "url"];
@@ -1749,7 +1749,7 @@ uint8_t* Map::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Map)
@@ -1760,41 +1760,41 @@ size_t Map::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.Map)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .v1.model.Transform origin = 4 [json_name = "origin"];
-  if (this->_internal_has_origin()) {
+  if (this->has_origin()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *origin_);
   }
 
   // .v1.model.Transform world_to_local = 5 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *world_to_local_);
   }
 
   // double resolution = 1 [json_name = "resolution"];
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_resolution = this->_internal_resolution();
-  uint64_t raw_resolution;
-  memcpy(&raw_resolution, &tmp_resolution, sizeof(tmp_resolution));
-  if (raw_resolution != 0) {
+  if (!(this->resolution() <= 0 && this->resolution() >= 0)) {
     total_size += 1 + 8;
   }
 
   // uint32 width = 2 [json_name = "width"];
-  if (this->_internal_width() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_width());
+  if (this->width() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_width());
   }
 
   // uint32 height = 3 [json_name = "height"];
-  if (this->_internal_height() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_height());
+  if (this->height() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_height());
   }
 
   switch (data_case()) {
@@ -1823,45 +1823,50 @@ size_t Map::ByteSizeLong() const {
       break;
     }
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Map::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Map::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Map::GetClassData() const { return &_class_data_; }
-
-void Map::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Map *>(to)->MergeFrom(
-      static_cast<const Map &>(from));
+void Map::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Map)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Map* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Map>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Map)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Map)
+    MergeFrom(*source);
+  }
 }
-
 
 void Map::MergeFrom(const Map& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Map)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_origin()) {
+  if (from.has_origin()) {
     _internal_mutable_origin()->::v1::model::Transform::MergeFrom(from._internal_origin());
   }
-  if (from._internal_has_world_to_local()) {
+  if (from.has_world_to_local()) {
     _internal_mutable_world_to_local()->::v1::model::Transform::MergeFrom(from._internal_world_to_local());
   }
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_resolution = from._internal_resolution();
-  uint64_t raw_resolution;
-  memcpy(&raw_resolution, &tmp_resolution, sizeof(tmp_resolution));
-  if (raw_resolution != 0) {
+  if (!(from.resolution() <= 0 && from.resolution() >= 0)) {
     _internal_set_resolution(from._internal_resolution());
   }
-  if (from._internal_width() != 0) {
+  if (from.width() != 0) {
     _internal_set_width(from._internal_width());
   }
-  if (from._internal_height() != 0) {
+  if (from.height() != 0) {
     _internal_set_height(from._internal_height());
   }
   switch (from.data_case()) {
@@ -1881,7 +1886,13 @@ void Map::MergeFrom(const Map& from) {
       break;
     }
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Map::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Map)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Map::CopyFrom(const Map& from) {
@@ -1909,7 +1920,7 @@ void Map::InternalSwap(Map* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Map::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[3]);
 }
@@ -1920,11 +1931,11 @@ class OccupancyGrid::_Internal {
  public:
 };
 
-OccupancyGrid::OccupancyGrid(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+OccupancyGrid::OccupancyGrid(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   data_(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.OccupancyGrid)
 }
 OccupancyGrid::OccupancyGrid(const OccupancyGrid& from)
@@ -1934,29 +1945,32 @@ OccupancyGrid::OccupancyGrid(const OccupancyGrid& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.OccupancyGrid)
 }
 
-inline void OccupancyGrid::SharedCtor() {
+void OccupancyGrid::SharedCtor() {
 }
 
 OccupancyGrid::~OccupancyGrid() {
   // @@protoc_insertion_point(destructor:v1.model.OccupancyGrid)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void OccupancyGrid::SharedDtor() {
+void OccupancyGrid::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void OccupancyGrid::ArenaDtor(void* object) {
+  OccupancyGrid* _this = reinterpret_cast< OccupancyGrid* >(object);
+  (void)_this;
+}
+void OccupancyGrid::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OccupancyGrid::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void OccupancyGrid::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.OccupancyGrid)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1964,50 +1978,49 @@ void OccupancyGrid::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* OccupancyGrid::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* OccupancyGrid::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated int32 data = 1 [json_name = "data"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_data(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 8) {
-          _internal_add_data(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8) {
+          _internal_add_data(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* OccupancyGrid::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* OccupancyGrid::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.OccupancyGrid)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated int32 data = 1 [json_name = "data"];
@@ -2020,7 +2033,7 @@ uint8_t* OccupancyGrid::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.OccupancyGrid)
@@ -2031,48 +2044,64 @@ size_t OccupancyGrid::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.OccupancyGrid)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated int32 data = 1 [json_name = "data"];
   {
-    size_t data_size = ::_pbi::WireFormatLite::
+    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       Int32Size(this->data_);
     if (data_size > 0) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
     }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
     _data_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData OccupancyGrid::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    OccupancyGrid::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*OccupancyGrid::GetClassData() const { return &_class_data_; }
-
-void OccupancyGrid::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<OccupancyGrid *>(to)->MergeFrom(
-      static_cast<const OccupancyGrid &>(from));
+void OccupancyGrid::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.OccupancyGrid)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OccupancyGrid* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OccupancyGrid>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.OccupancyGrid)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.OccupancyGrid)
+    MergeFrom(*source);
+  }
 }
-
 
 void OccupancyGrid::MergeFrom(const OccupancyGrid& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.OccupancyGrid)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   data_.MergeFrom(from.data_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void OccupancyGrid::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.OccupancyGrid)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void OccupancyGrid::CopyFrom(const OccupancyGrid& from) {
@@ -2093,7 +2122,7 @@ void OccupancyGrid::InternalSwap(OccupancyGrid* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OccupancyGrid::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[4]);
 }
@@ -2118,11 +2147,11 @@ void Path::clear_world_to_local() {
 void Path::clear_poses() {
   poses_.Clear();
 }
-Path::Path(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+Path::Path(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   poses_(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.Path)
 }
 Path::Path(const Path& from)
@@ -2137,31 +2166,34 @@ Path::Path(const Path& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.Path)
 }
 
-inline void Path::SharedCtor() {
+void Path::SharedCtor() {
 world_to_local_ = nullptr;
 }
 
 Path::~Path() {
   // @@protoc_insertion_point(destructor:v1.model.Path)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Path::SharedDtor() {
+void Path::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete world_to_local_;
 }
 
+void Path::ArenaDtor(void* object) {
+  Path* _this = reinterpret_cast< Path* >(object);
+  (void)_this;
+}
+void Path::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Path::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void Path::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Path)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2173,23 +2205,22 @@ void Path::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Path::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Path::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated .v1.model.Transform poses = 2 [json_name = "poses"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -2197,55 +2228,55 @@ const char* Path::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Path::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Path::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.Path)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::world_to_local(this),
-        _Internal::world_to_local(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        1, _Internal::world_to_local(this), target, stream);
   }
 
   // repeated .v1.model.Transform poses = 2 [json_name = "poses"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_poses_size()); i < n; i++) {
-    const auto& repfield = this->_internal_poses(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_poses_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(2, this->_internal_poses(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Path)
@@ -2256,7 +2287,7 @@ size_t Path::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.Path)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2268,39 +2299,54 @@ size_t Path::ByteSizeLong() const {
   }
 
   // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *world_to_local_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Path::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Path::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Path::GetClassData() const { return &_class_data_; }
-
-void Path::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Path *>(to)->MergeFrom(
-      static_cast<const Path &>(from));
+void Path::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Path)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Path* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Path>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Path)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Path)
+    MergeFrom(*source);
+  }
 }
-
 
 void Path::MergeFrom(const Path& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Path)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   poses_.MergeFrom(from.poses_);
-  if (from._internal_has_world_to_local()) {
+  if (from.has_world_to_local()) {
     _internal_mutable_world_to_local()->::v1::model::Transform::MergeFrom(from._internal_world_to_local());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Path::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Path)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Path::CopyFrom(const Path& from) {
@@ -2322,7 +2368,7 @@ void Path::InternalSwap(Path* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Path::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[5]);
 }
@@ -2344,14 +2390,14 @@ void JointState::clear_world_to_local() {
   }
   world_to_local_ = nullptr;
 }
-JointState::JointState(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+JointState::JointState(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   name_(arena),
   position_(arena),
   velocity_(arena),
   effort_(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.JointState)
 }
 JointState::JointState(const JointState& from)
@@ -2369,31 +2415,34 @@ JointState::JointState(const JointState& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.JointState)
 }
 
-inline void JointState::SharedCtor() {
+void JointState::SharedCtor() {
 world_to_local_ = nullptr;
 }
 
 JointState::~JointState() {
   // @@protoc_insertion_point(destructor:v1.model.JointState)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void JointState::SharedDtor() {
+void JointState::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete world_to_local_;
 }
 
+void JointState::ArenaDtor(void* object) {
+  JointState* _this = reinterpret_cast< JointState* >(object);
+  (void)_this;
+}
+void JointState::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void JointState::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void JointState::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.JointState)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2408,95 +2457,90 @@ void JointState::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* JointState::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* JointState::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated string name = 1 [json_name = "name"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
             auto str = _internal_add_name();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.JointState.name"));
             CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "v1.model.JointState.name"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated double position = 2 [json_name = "position"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedDoubleParser(_internal_mutable_position(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 17) {
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17) {
           _internal_add_position(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr));
           ptr += sizeof(double);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated double velocity = 3 [json_name = "velocity"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedDoubleParser(_internal_mutable_velocity(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 25) {
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25) {
           _internal_add_velocity(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr));
           ptr += sizeof(double);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated double effort = 4 [json_name = "effort"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedDoubleParser(_internal_mutable_effort(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 33) {
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33) {
           _internal_add_effort(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr));
           ptr += sizeof(double);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Transform world_to_local = 5 [json_name = "worldToLocal"];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* JointState::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* JointState::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.JointState)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated string name = 1 [json_name = "name"];
@@ -2525,14 +2569,15 @@ uint8_t* JointState::_InternalSerialize(
   }
 
   // .v1.model.Transform world_to_local = 5 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, _Internal::world_to_local(this),
-        _Internal::world_to_local(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        5, _Internal::world_to_local(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.JointState)
@@ -2543,7 +2588,7 @@ size_t JointState::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.JointState)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2561,7 +2606,8 @@ size_t JointState::ByteSizeLong() const {
     size_t data_size = 8UL * count;
     if (data_size > 0) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
     }
     total_size += data_size;
   }
@@ -2572,7 +2618,8 @@ size_t JointState::ByteSizeLong() const {
     size_t data_size = 8UL * count;
     if (data_size > 0) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
     }
     total_size += data_size;
   }
@@ -2583,48 +2630,64 @@ size_t JointState::ByteSizeLong() const {
     size_t data_size = 8UL * count;
     if (data_size > 0) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
     }
     total_size += data_size;
   }
 
   // .v1.model.Transform world_to_local = 5 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *world_to_local_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData JointState::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    JointState::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*JointState::GetClassData() const { return &_class_data_; }
-
-void JointState::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<JointState *>(to)->MergeFrom(
-      static_cast<const JointState &>(from));
+void JointState::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.JointState)
+  GOOGLE_DCHECK_NE(&from, this);
+  const JointState* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<JointState>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.JointState)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.JointState)
+    MergeFrom(*source);
+  }
 }
-
 
 void JointState::MergeFrom(const JointState& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.JointState)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   name_.MergeFrom(from.name_);
   position_.MergeFrom(from.position_);
   velocity_.MergeFrom(from.velocity_);
   effort_.MergeFrom(from.effort_);
-  if (from._internal_has_world_to_local()) {
+  if (from.has_world_to_local()) {
     _internal_mutable_world_to_local()->::v1::model::Transform::MergeFrom(from._internal_world_to_local());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void JointState::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.JointState)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void JointState::CopyFrom(const JointState& from) {
@@ -2649,7 +2712,7 @@ void JointState::InternalSwap(JointState* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata JointState::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[6]);
 }
@@ -2682,10 +2745,10 @@ void Goal::clear_pose() {
   }
   pose_ = nullptr;
 }
-Goal::Goal(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+Goal::Goal(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.Goal)
 }
 Goal::Goal(const Goal& from)
@@ -2704,7 +2767,7 @@ Goal::Goal(const Goal& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.Goal)
 }
 
-inline void Goal::SharedCtor() {
+void Goal::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&world_to_local_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&pose_) -
@@ -2713,26 +2776,29 @@ inline void Goal::SharedCtor() {
 
 Goal::~Goal() {
   // @@protoc_insertion_point(destructor:v1.model.Goal)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Goal::SharedDtor() {
+void Goal::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete world_to_local_;
   if (this != internal_default_instance()) delete pose_;
 }
 
+void Goal::ArenaDtor(void* object) {
+  Goal* _this = reinterpret_cast< Goal* >(object);
+  (void)_this;
+}
+void Goal::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Goal::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void Goal::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Goal)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2747,73 +2813,73 @@ void Goal::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Goal::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Goal::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Transform pose = 2 [json_name = "pose"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_pose(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Goal::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Goal::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.Goal)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::world_to_local(this),
-        _Internal::world_to_local(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        1, _Internal::world_to_local(this), target, stream);
   }
 
   // .v1.model.Transform pose = 2 [json_name = "pose"];
-  if (this->_internal_has_pose()) {
+  if (this->has_pose()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::pose(this),
-        _Internal::pose(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        2, _Internal::pose(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Goal)
@@ -2824,53 +2890,68 @@ size_t Goal::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.Goal)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *world_to_local_);
   }
 
   // .v1.model.Transform pose = 2 [json_name = "pose"];
-  if (this->_internal_has_pose()) {
+  if (this->has_pose()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pose_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Goal::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Goal::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Goal::GetClassData() const { return &_class_data_; }
-
-void Goal::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Goal *>(to)->MergeFrom(
-      static_cast<const Goal &>(from));
+void Goal::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Goal)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Goal* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Goal>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Goal)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Goal)
+    MergeFrom(*source);
+  }
 }
-
 
 void Goal::MergeFrom(const Goal& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Goal)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_world_to_local()) {
+  if (from.has_world_to_local()) {
     _internal_mutable_world_to_local()->::v1::model::Transform::MergeFrom(from._internal_world_to_local());
   }
-  if (from._internal_has_pose()) {
+  if (from.has_pose()) {
     _internal_mutable_pose()->::v1::model::Transform::MergeFrom(from._internal_pose());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Goal::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Goal)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Goal::CopyFrom(const Goal& from) {
@@ -2896,7 +2977,7 @@ void Goal::InternalSwap(Goal* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Goal::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[7]);
 }
@@ -2907,54 +2988,51 @@ class GoalID::_Internal {
  public:
 };
 
-GoalID::GoalID(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+GoalID::GoalID(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.GoalID)
 }
 GoalID::GoalID(const GoalID& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.Set(from._internal_id(), 
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:v1.model.GoalID)
 }
 
-inline void GoalID::SharedCtor() {
-id_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void GoalID::SharedCtor() {
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GoalID::~GoalID() {
   // @@protoc_insertion_point(destructor:v1.model.GoalID)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void GoalID::SharedDtor() {
+void GoalID::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.Destroy();
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GoalID::ArenaDtor(void* object) {
+  GoalID* _this = reinterpret_cast< GoalID* >(object);
+  (void)_this;
+}
+void GoalID::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GoalID::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void GoalID::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.GoalID)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2962,53 +3040,52 @@ void GoalID::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GoalID::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GoalID::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string id = 1 [json_name = "id"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_id();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.GoalID.id"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "v1.model.GoalID.id"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* GoalID::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GoalID::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.GoalID)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string id = 1 [json_name = "id"];
-  if (!this->_internal_id().empty()) {
+  if (!this->id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -3018,7 +3095,7 @@ uint8_t* GoalID::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.GoalID)
@@ -3029,43 +3106,58 @@ size_t GoalID::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.GoalID)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string id = 1 [json_name = "id"];
-  if (!this->_internal_id().empty()) {
+  if (!this->id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GoalID::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    GoalID::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GoalID::GetClassData() const { return &_class_data_; }
-
-void GoalID::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<GoalID *>(to)->MergeFrom(
-      static_cast<const GoalID &>(from));
+void GoalID::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.GoalID)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GoalID* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GoalID>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.GoalID)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.GoalID)
+    MergeFrom(*source);
+  }
 }
-
 
 void GoalID::MergeFrom(const GoalID& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.GoalID)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
+  if (!from.id().empty()) {
     _internal_set_id(from._internal_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GoalID::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.GoalID)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void GoalID::CopyFrom(const GoalID& from) {
@@ -3081,17 +3173,16 @@ bool GoalID::IsInitialized() const {
 
 void GoalID::InternalSwap(GoalID* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GoalID::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[8]);
 }
@@ -3113,11 +3204,11 @@ void PoseWithCovariance::clear_pose() {
   }
   pose_ = nullptr;
 }
-PoseWithCovariance::PoseWithCovariance(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+PoseWithCovariance::PoseWithCovariance(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   covariance_(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.PoseWithCovariance)
 }
 PoseWithCovariance::PoseWithCovariance(const PoseWithCovariance& from)
@@ -3132,31 +3223,34 @@ PoseWithCovariance::PoseWithCovariance(const PoseWithCovariance& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.PoseWithCovariance)
 }
 
-inline void PoseWithCovariance::SharedCtor() {
+void PoseWithCovariance::SharedCtor() {
 pose_ = nullptr;
 }
 
 PoseWithCovariance::~PoseWithCovariance() {
   // @@protoc_insertion_point(destructor:v1.model.PoseWithCovariance)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void PoseWithCovariance::SharedDtor() {
+void PoseWithCovariance::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete pose_;
 }
 
+void PoseWithCovariance::ArenaDtor(void* object) {
+  PoseWithCovariance* _this = reinterpret_cast< PoseWithCovariance* >(object);
+  (void)_this;
+}
+void PoseWithCovariance::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PoseWithCovariance::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void PoseWithCovariance::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.PoseWithCovariance)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3168,65 +3262,64 @@ void PoseWithCovariance::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PoseWithCovariance::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* PoseWithCovariance::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .v1.model.Transform pose = 1 [json_name = "pose"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_pose(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated double covariance = 2 [json_name = "covariance"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedDoubleParser(_internal_mutable_covariance(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 17) {
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17) {
           _internal_add_covariance(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr));
           ptr += sizeof(double);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* PoseWithCovariance::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* PoseWithCovariance::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.PoseWithCovariance)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .v1.model.Transform pose = 1 [json_name = "pose"];
-  if (this->_internal_has_pose()) {
+  if (this->has_pose()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::pose(this),
-        _Internal::pose(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        1, _Internal::pose(this), target, stream);
   }
 
   // repeated double covariance = 2 [json_name = "covariance"];
@@ -3235,7 +3328,7 @@ uint8_t* PoseWithCovariance::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.PoseWithCovariance)
@@ -3246,7 +3339,7 @@ size_t PoseWithCovariance::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.PoseWithCovariance)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3256,45 +3349,61 @@ size_t PoseWithCovariance::ByteSizeLong() const {
     size_t data_size = 8UL * count;
     if (data_size > 0) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
     }
     total_size += data_size;
   }
 
   // .v1.model.Transform pose = 1 [json_name = "pose"];
-  if (this->_internal_has_pose()) {
+  if (this->has_pose()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pose_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PoseWithCovariance::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    PoseWithCovariance::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PoseWithCovariance::GetClassData() const { return &_class_data_; }
-
-void PoseWithCovariance::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PoseWithCovariance *>(to)->MergeFrom(
-      static_cast<const PoseWithCovariance &>(from));
+void PoseWithCovariance::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.PoseWithCovariance)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PoseWithCovariance* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PoseWithCovariance>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.PoseWithCovariance)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.PoseWithCovariance)
+    MergeFrom(*source);
+  }
 }
-
 
 void PoseWithCovariance::MergeFrom(const PoseWithCovariance& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.PoseWithCovariance)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   covariance_.MergeFrom(from.covariance_);
-  if (from._internal_has_pose()) {
+  if (from.has_pose()) {
     _internal_mutable_pose()->::v1::model::Transform::MergeFrom(from._internal_pose());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void PoseWithCovariance::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.PoseWithCovariance)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void PoseWithCovariance::CopyFrom(const PoseWithCovariance& from) {
@@ -3316,7 +3425,7 @@ void PoseWithCovariance::InternalSwap(PoseWithCovariance* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PoseWithCovariance::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[9]);
 }
@@ -3327,10 +3436,10 @@ class ColorRGBA::_Internal {
  public:
 };
 
-ColorRGBA::ColorRGBA(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+ColorRGBA::ColorRGBA(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.ColorRGBA)
 }
 ColorRGBA::ColorRGBA(const ColorRGBA& from)
@@ -3342,7 +3451,7 @@ ColorRGBA::ColorRGBA(const ColorRGBA& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.ColorRGBA)
 }
 
-inline void ColorRGBA::SharedCtor() {
+void ColorRGBA::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&r_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&a_) -
@@ -3351,24 +3460,27 @@ inline void ColorRGBA::SharedCtor() {
 
 ColorRGBA::~ColorRGBA() {
   // @@protoc_insertion_point(destructor:v1.model.ColorRGBA)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void ColorRGBA::SharedDtor() {
+void ColorRGBA::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ColorRGBA::ArenaDtor(void* object) {
+  ColorRGBA* _this = reinterpret_cast< ColorRGBA* >(object);
+  (void)_this;
+}
+void ColorRGBA::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ColorRGBA::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void ColorRGBA::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.ColorRGBA)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3378,115 +3490,95 @@ void ColorRGBA::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ColorRGBA::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* ColorRGBA::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // float r = 1 [json_name = "r"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
           r_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // float g = 2 [json_name = "g"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           g_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // float b = 3 [json_name = "b"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           b_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // float a = 4 [json_name = "a"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
           a_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* ColorRGBA::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ColorRGBA::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.ColorRGBA)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // float r = 1 [json_name = "r"];
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_r = this->_internal_r();
-  uint32_t raw_r;
-  memcpy(&raw_r, &tmp_r, sizeof(tmp_r));
-  if (raw_r != 0) {
+  if (!(this->r() <= 0 && this->r() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_r(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_r(), target);
   }
 
   // float g = 2 [json_name = "g"];
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_g = this->_internal_g();
-  uint32_t raw_g;
-  memcpy(&raw_g, &tmp_g, sizeof(tmp_g));
-  if (raw_g != 0) {
+  if (!(this->g() <= 0 && this->g() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_g(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_g(), target);
   }
 
   // float b = 3 [json_name = "b"];
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_b = this->_internal_b();
-  uint32_t raw_b;
-  memcpy(&raw_b, &tmp_b, sizeof(tmp_b));
-  if (raw_b != 0) {
+  if (!(this->b() <= 0 && this->b() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_b(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_b(), target);
   }
 
   // float a = 4 [json_name = "a"];
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_a = this->_internal_a();
-  uint32_t raw_a;
-  memcpy(&raw_a, &tmp_a, sizeof(tmp_a));
-  if (raw_a != 0) {
+  if (!(this->a() <= 0 && this->a() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_a(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_a(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.ColorRGBA)
@@ -3497,97 +3589,80 @@ size_t ColorRGBA::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.ColorRGBA)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // float r = 1 [json_name = "r"];
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_r = this->_internal_r();
-  uint32_t raw_r;
-  memcpy(&raw_r, &tmp_r, sizeof(tmp_r));
-  if (raw_r != 0) {
+  if (!(this->r() <= 0 && this->r() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float g = 2 [json_name = "g"];
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_g = this->_internal_g();
-  uint32_t raw_g;
-  memcpy(&raw_g, &tmp_g, sizeof(tmp_g));
-  if (raw_g != 0) {
+  if (!(this->g() <= 0 && this->g() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float b = 3 [json_name = "b"];
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_b = this->_internal_b();
-  uint32_t raw_b;
-  memcpy(&raw_b, &tmp_b, sizeof(tmp_b));
-  if (raw_b != 0) {
+  if (!(this->b() <= 0 && this->b() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float a = 4 [json_name = "a"];
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_a = this->_internal_a();
-  uint32_t raw_a;
-  memcpy(&raw_a, &tmp_a, sizeof(tmp_a));
-  if (raw_a != 0) {
+  if (!(this->a() <= 0 && this->a() >= 0)) {
     total_size += 1 + 4;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ColorRGBA::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    ColorRGBA::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ColorRGBA::GetClassData() const { return &_class_data_; }
-
-void ColorRGBA::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ColorRGBA *>(to)->MergeFrom(
-      static_cast<const ColorRGBA &>(from));
+void ColorRGBA::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.ColorRGBA)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ColorRGBA* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ColorRGBA>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.ColorRGBA)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.ColorRGBA)
+    MergeFrom(*source);
+  }
 }
-
 
 void ColorRGBA::MergeFrom(const ColorRGBA& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.ColorRGBA)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_r = from._internal_r();
-  uint32_t raw_r;
-  memcpy(&raw_r, &tmp_r, sizeof(tmp_r));
-  if (raw_r != 0) {
+  if (!(from.r() <= 0 && from.r() >= 0)) {
     _internal_set_r(from._internal_r());
   }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_g = from._internal_g();
-  uint32_t raw_g;
-  memcpy(&raw_g, &tmp_g, sizeof(tmp_g));
-  if (raw_g != 0) {
+  if (!(from.g() <= 0 && from.g() >= 0)) {
     _internal_set_g(from._internal_g());
   }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_b = from._internal_b();
-  uint32_t raw_b;
-  memcpy(&raw_b, &tmp_b, sizeof(tmp_b));
-  if (raw_b != 0) {
+  if (!(from.b() <= 0 && from.b() >= 0)) {
     _internal_set_b(from._internal_b());
   }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_a = from._internal_a();
-  uint32_t raw_a;
-  memcpy(&raw_a, &tmp_a, sizeof(tmp_a));
-  if (raw_a != 0) {
+  if (!(from.a() <= 0 && from.a() >= 0)) {
     _internal_set_a(from._internal_a());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ColorRGBA::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.ColorRGBA)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void ColorRGBA::CopyFrom(const ColorRGBA& from) {
@@ -3613,7 +3688,7 @@ void ColorRGBA::InternalSwap(ColorRGBA* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ColorRGBA::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[10]);
 }
@@ -3665,12 +3740,12 @@ void Marker3D::clear_scale() {
 void Marker3D::clear_points() {
   points_.Clear();
 }
-Marker3D::Marker3D(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+Marker3D::Marker3D(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   points_(arena),
   colors_(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.Marker3D)
 }
 Marker3D::Marker3D(const Marker3D& from)
@@ -3678,52 +3753,34 @@ Marker3D::Marker3D(const Marker3D& from)
       points_(from.points_),
       colors_(from.colors_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ns_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ns_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  ns_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ns().empty()) {
-    ns_.Set(from._internal_ns(), 
+    ns_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ns(), 
       GetArenaForAllocation());
   }
-  type_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    type_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_type().empty()) {
-    type_.Set(from._internal_type(), 
+    type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_type(), 
       GetArenaForAllocation());
   }
-  action_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    action_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_action().empty()) {
-    action_.Set(from._internal_action(), 
+    action_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_action(), 
       GetArenaForAllocation());
   }
-  text_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    text_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_text().empty()) {
-    text_.Set(from._internal_text(), 
+    text_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_text(), 
       GetArenaForAllocation());
   }
-  mesh_resource_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    mesh_resource_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  mesh_resource_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_mesh_resource().empty()) {
-    mesh_resource_.Set(from._internal_mesh_resource(), 
+    mesh_resource_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mesh_resource(), 
       GetArenaForAllocation());
   }
-  frame_id_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    frame_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  frame_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_frame_id().empty()) {
-    frame_id_.Set(from._internal_frame_id(), 
+    frame_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_frame_id(), 
       GetArenaForAllocation());
   }
   if (from._internal_has_world_to_local()) {
@@ -3752,31 +3809,13 @@ Marker3D::Marker3D(const Marker3D& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.Marker3D)
 }
 
-inline void Marker3D::SharedCtor() {
-ns_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ns_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-type_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  type_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-action_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  action_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-text_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  text_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-mesh_resource_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  mesh_resource_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-frame_id_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  frame_id_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void Marker3D::SharedCtor() {
+ns_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+mesh_resource_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+frame_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&world_to_local_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&mesh_use_embedded_materials_) -
@@ -3785,34 +3824,37 @@ frame_id_.InitDefault();
 
 Marker3D::~Marker3D() {
   // @@protoc_insertion_point(destructor:v1.model.Marker3D)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Marker3D::SharedDtor() {
+void Marker3D::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  ns_.Destroy();
-  type_.Destroy();
-  action_.Destroy();
-  text_.Destroy();
-  mesh_resource_.Destroy();
-  frame_id_.Destroy();
+  ns_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  action_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  text_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  mesh_resource_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  frame_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete world_to_local_;
   if (this != internal_default_instance()) delete pose_;
   if (this != internal_default_instance()) delete scale_;
   if (this != internal_default_instance()) delete color_;
 }
 
+void Marker3D::ArenaDtor(void* object) {
+  Marker3D* _this = reinterpret_cast< Marker3D* >(object);
+  (void)_this;
+}
+void Marker3D::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Marker3D::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void Marker3D::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Marker3D)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3846,101 +3888,91 @@ void Marker3D::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Marker3D::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Marker3D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string ns = 2 [json_name = "ns"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_ns();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Marker3D.ns"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "v1.model.Marker3D.ns"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // int32 id = 3 [json_name = "id"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string type = 4 [json_name = "type"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_type();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Marker3D.type"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "v1.model.Marker3D.type"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string action = 5 [json_name = "action"];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_action();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Marker3D.action"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "v1.model.Marker3D.action"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Transform pose = 6 [json_name = "pose"];
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_pose(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.Vector3 scale = 7 [json_name = "scale"];
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           ptr = ctx->ParseMessage(_internal_mutable_scale(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .v1.model.ColorRGBA color = 8 [json_name = "color"];
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           ptr = ctx->ParseMessage(_internal_mutable_color(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // double lifetime = 9 [json_name = "lifetime"];
       case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 73)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 73)) {
           lifetime_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bool frame_locked = 10 [json_name = "frameLocked"];
       case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
           frame_locked_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated .v1.model.Vector3 points = 11 [json_name = "points"];
       case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -3948,12 +3980,11 @@ const char* Marker3D::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated .v1.model.ColorRGBA colors = 12 [json_name = "colors"];
       case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -3961,85 +3992,81 @@ const char* Marker3D::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string text = 13 [json_name = "text"];
       case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
           auto str = _internal_mutable_text();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Marker3D.text"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "v1.model.Marker3D.text"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string mesh_resource = 14 [json_name = "meshResource"];
       case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
           auto str = _internal_mutable_mesh_resource();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Marker3D.mesh_resource"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "v1.model.Marker3D.mesh_resource"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bool mesh_use_embedded_materials = 15 [json_name = "meshUseEmbeddedMaterials"];
       case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 120)) {
           mesh_use_embedded_materials_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string frame_id = 16 [json_name = "frameId"];
       case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
           auto str = _internal_mutable_frame_id();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Marker3D.frame_id"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "v1.model.Marker3D.frame_id"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Marker3D::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Marker3D::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.Marker3D)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::world_to_local(this),
-        _Internal::world_to_local(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        1, _Internal::world_to_local(this), target, stream);
   }
 
   // string ns = 2 [json_name = "ns"];
-  if (!this->_internal_ns().empty()) {
+  if (!this->ns().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_ns().data(), static_cast<int>(this->_internal_ns().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -4049,13 +4076,13 @@ uint8_t* Marker3D::_InternalSerialize(
   }
 
   // int32 id = 3 [json_name = "id"];
-  if (this->_internal_id() != 0) {
+  if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_id(), target);
   }
 
   // string type = 4 [json_name = "type"];
-  if (!this->_internal_type().empty()) {
+  if (!this->type().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_type().data(), static_cast<int>(this->_internal_type().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -4065,7 +4092,7 @@ uint8_t* Marker3D::_InternalSerialize(
   }
 
   // string action = 5 [json_name = "action"];
-  if (!this->_internal_action().empty()) {
+  if (!this->action().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_action().data(), static_cast<int>(this->_internal_action().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -4075,60 +4102,59 @@ uint8_t* Marker3D::_InternalSerialize(
   }
 
   // .v1.model.Transform pose = 6 [json_name = "pose"];
-  if (this->_internal_has_pose()) {
+  if (this->has_pose()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(6, _Internal::pose(this),
-        _Internal::pose(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        6, _Internal::pose(this), target, stream);
   }
 
   // .v1.model.Vector3 scale = 7 [json_name = "scale"];
-  if (this->_internal_has_scale()) {
+  if (this->has_scale()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(7, _Internal::scale(this),
-        _Internal::scale(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        7, _Internal::scale(this), target, stream);
   }
 
   // .v1.model.ColorRGBA color = 8 [json_name = "color"];
-  if (this->_internal_has_color()) {
+  if (this->has_color()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(8, _Internal::color(this),
-        _Internal::color(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        8, _Internal::color(this), target, stream);
   }
 
   // double lifetime = 9 [json_name = "lifetime"];
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_lifetime = this->_internal_lifetime();
-  uint64_t raw_lifetime;
-  memcpy(&raw_lifetime, &tmp_lifetime, sizeof(tmp_lifetime));
-  if (raw_lifetime != 0) {
+  if (!(this->lifetime() <= 0 && this->lifetime() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(9, this->_internal_lifetime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(9, this->_internal_lifetime(), target);
   }
 
   // bool frame_locked = 10 [json_name = "frameLocked"];
-  if (this->_internal_frame_locked() != 0) {
+  if (this->frame_locked() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(10, this->_internal_frame_locked(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(10, this->_internal_frame_locked(), target);
   }
 
   // repeated .v1.model.Vector3 points = 11 [json_name = "points"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_points_size()); i < n; i++) {
-    const auto& repfield = this->_internal_points(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_points_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(11, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(11, this->_internal_points(i), target, stream);
   }
 
   // repeated .v1.model.ColorRGBA colors = 12 [json_name = "colors"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_colors_size()); i < n; i++) {
-    const auto& repfield = this->_internal_colors(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_colors_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(12, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(12, this->_internal_colors(i), target, stream);
   }
 
   // string text = 13 [json_name = "text"];
-  if (!this->_internal_text().empty()) {
+  if (!this->text().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_text().data(), static_cast<int>(this->_internal_text().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -4138,7 +4164,7 @@ uint8_t* Marker3D::_InternalSerialize(
   }
 
   // string mesh_resource = 14 [json_name = "meshResource"];
-  if (!this->_internal_mesh_resource().empty()) {
+  if (!this->mesh_resource().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_mesh_resource().data(), static_cast<int>(this->_internal_mesh_resource().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -4148,13 +4174,13 @@ uint8_t* Marker3D::_InternalSerialize(
   }
 
   // bool mesh_use_embedded_materials = 15 [json_name = "meshUseEmbeddedMaterials"];
-  if (this->_internal_mesh_use_embedded_materials() != 0) {
+  if (this->mesh_use_embedded_materials() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(15, this->_internal_mesh_use_embedded_materials(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(15, this->_internal_mesh_use_embedded_materials(), target);
   }
 
   // string frame_id = 16 [json_name = "frameId"];
-  if (!this->_internal_frame_id().empty()) {
+  if (!this->frame_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_frame_id().data(), static_cast<int>(this->_internal_frame_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -4164,7 +4190,7 @@ uint8_t* Marker3D::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Marker3D)
@@ -4175,7 +4201,7 @@ size_t Marker3D::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.Marker3D)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4194,170 +4220,179 @@ size_t Marker3D::ByteSizeLong() const {
   }
 
   // string ns = 2 [json_name = "ns"];
-  if (!this->_internal_ns().empty()) {
+  if (!this->ns().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_ns());
   }
 
   // string type = 4 [json_name = "type"];
-  if (!this->_internal_type().empty()) {
+  if (!this->type().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_type());
   }
 
   // string action = 5 [json_name = "action"];
-  if (!this->_internal_action().empty()) {
+  if (!this->action().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_action());
   }
 
   // string text = 13 [json_name = "text"];
-  if (!this->_internal_text().empty()) {
+  if (!this->text().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_text());
   }
 
   // string mesh_resource = 14 [json_name = "meshResource"];
-  if (!this->_internal_mesh_resource().empty()) {
+  if (!this->mesh_resource().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_mesh_resource());
   }
 
   // string frame_id = 16 [json_name = "frameId"];
-  if (!this->_internal_frame_id().empty()) {
+  if (!this->frame_id().empty()) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_frame_id());
   }
 
   // .v1.model.Transform world_to_local = 1 [json_name = "worldToLocal"];
-  if (this->_internal_has_world_to_local()) {
+  if (this->has_world_to_local()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *world_to_local_);
   }
 
   // .v1.model.Transform pose = 6 [json_name = "pose"];
-  if (this->_internal_has_pose()) {
+  if (this->has_pose()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pose_);
   }
 
   // .v1.model.Vector3 scale = 7 [json_name = "scale"];
-  if (this->_internal_has_scale()) {
+  if (this->has_scale()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *scale_);
   }
 
   // .v1.model.ColorRGBA color = 8 [json_name = "color"];
-  if (this->_internal_has_color()) {
+  if (this->has_color()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *color_);
   }
 
   // double lifetime = 9 [json_name = "lifetime"];
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_lifetime = this->_internal_lifetime();
-  uint64_t raw_lifetime;
-  memcpy(&raw_lifetime, &tmp_lifetime, sizeof(tmp_lifetime));
-  if (raw_lifetime != 0) {
+  if (!(this->lifetime() <= 0 && this->lifetime() >= 0)) {
     total_size += 1 + 8;
   }
 
   // int32 id = 3 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_id());
   }
 
   // bool frame_locked = 10 [json_name = "frameLocked"];
-  if (this->_internal_frame_locked() != 0) {
+  if (this->frame_locked() != 0) {
     total_size += 1 + 1;
   }
 
   // bool mesh_use_embedded_materials = 15 [json_name = "meshUseEmbeddedMaterials"];
-  if (this->_internal_mesh_use_embedded_materials() != 0) {
+  if (this->mesh_use_embedded_materials() != 0) {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Marker3D::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Marker3D::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Marker3D::GetClassData() const { return &_class_data_; }
-
-void Marker3D::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Marker3D *>(to)->MergeFrom(
-      static_cast<const Marker3D &>(from));
+void Marker3D::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Marker3D)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Marker3D* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Marker3D>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Marker3D)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Marker3D)
+    MergeFrom(*source);
+  }
 }
-
 
 void Marker3D::MergeFrom(const Marker3D& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Marker3D)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   points_.MergeFrom(from.points_);
   colors_.MergeFrom(from.colors_);
-  if (!from._internal_ns().empty()) {
+  if (!from.ns().empty()) {
     _internal_set_ns(from._internal_ns());
   }
-  if (!from._internal_type().empty()) {
+  if (!from.type().empty()) {
     _internal_set_type(from._internal_type());
   }
-  if (!from._internal_action().empty()) {
+  if (!from.action().empty()) {
     _internal_set_action(from._internal_action());
   }
-  if (!from._internal_text().empty()) {
+  if (!from.text().empty()) {
     _internal_set_text(from._internal_text());
   }
-  if (!from._internal_mesh_resource().empty()) {
+  if (!from.mesh_resource().empty()) {
     _internal_set_mesh_resource(from._internal_mesh_resource());
   }
-  if (!from._internal_frame_id().empty()) {
+  if (!from.frame_id().empty()) {
     _internal_set_frame_id(from._internal_frame_id());
   }
-  if (from._internal_has_world_to_local()) {
+  if (from.has_world_to_local()) {
     _internal_mutable_world_to_local()->::v1::model::Transform::MergeFrom(from._internal_world_to_local());
   }
-  if (from._internal_has_pose()) {
+  if (from.has_pose()) {
     _internal_mutable_pose()->::v1::model::Transform::MergeFrom(from._internal_pose());
   }
-  if (from._internal_has_scale()) {
+  if (from.has_scale()) {
     _internal_mutable_scale()->::v1::model::Vector3::MergeFrom(from._internal_scale());
   }
-  if (from._internal_has_color()) {
+  if (from.has_color()) {
     _internal_mutable_color()->::v1::model::ColorRGBA::MergeFrom(from._internal_color());
   }
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_lifetime = from._internal_lifetime();
-  uint64_t raw_lifetime;
-  memcpy(&raw_lifetime, &tmp_lifetime, sizeof(tmp_lifetime));
-  if (raw_lifetime != 0) {
+  if (!(from.lifetime() <= 0 && from.lifetime() >= 0)) {
     _internal_set_lifetime(from._internal_lifetime());
   }
-  if (from._internal_id() != 0) {
+  if (from.id() != 0) {
     _internal_set_id(from._internal_id());
   }
-  if (from._internal_frame_locked() != 0) {
+  if (from.frame_locked() != 0) {
     _internal_set_frame_locked(from._internal_frame_locked());
   }
-  if (from._internal_mesh_use_embedded_materials() != 0) {
+  if (from.mesh_use_embedded_materials() != 0) {
     _internal_set_mesh_use_embedded_materials(from._internal_mesh_use_embedded_materials());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Marker3D::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Marker3D)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Marker3D::CopyFrom(const Marker3D& from) {
@@ -4373,34 +4408,38 @@ bool Marker3D::IsInitialized() const {
 
 void Marker3D::InternalSwap(Marker3D* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   points_.InternalSwap(&other->points_);
   colors_.InternalSwap(&other->colors_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &ns_, lhs_arena,
-      &other->ns_, rhs_arena
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ns_, GetArenaForAllocation(),
+      &other->ns_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &type_, lhs_arena,
-      &other->type_, rhs_arena
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &type_, GetArenaForAllocation(),
+      &other->type_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &action_, lhs_arena,
-      &other->action_, rhs_arena
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &action_, GetArenaForAllocation(),
+      &other->action_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &text_, lhs_arena,
-      &other->text_, rhs_arena
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &text_, GetArenaForAllocation(),
+      &other->text_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &mesh_resource_, lhs_arena,
-      &other->mesh_resource_, rhs_arena
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &mesh_resource_, GetArenaForAllocation(),
+      &other->mesh_resource_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &frame_id_, lhs_arena,
-      &other->frame_id_, rhs_arena
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &frame_id_, GetArenaForAllocation(),
+      &other->frame_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Marker3D, mesh_use_embedded_materials_)
@@ -4411,7 +4450,7 @@ void Marker3D::InternalSwap(Marker3D* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Marker3D::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[11]);
 }
@@ -4422,11 +4461,11 @@ class Marker3DArray::_Internal {
  public:
 };
 
-Marker3DArray::Marker3DArray(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+Marker3DArray::Marker3DArray(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   markers_(arena) {
   SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:v1.model.Marker3DArray)
 }
 Marker3DArray::Marker3DArray(const Marker3DArray& from)
@@ -4436,29 +4475,32 @@ Marker3DArray::Marker3DArray(const Marker3DArray& from)
   // @@protoc_insertion_point(copy_constructor:v1.model.Marker3DArray)
 }
 
-inline void Marker3DArray::SharedCtor() {
+void Marker3DArray::SharedCtor() {
 }
 
 Marker3DArray::~Marker3DArray() {
   // @@protoc_insertion_point(destructor:v1.model.Marker3DArray)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Marker3DArray::SharedDtor() {
+void Marker3DArray::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void Marker3DArray::ArenaDtor(void* object) {
+  Marker3DArray* _this = reinterpret_cast< Marker3DArray* >(object);
+  (void)_this;
+}
+void Marker3DArray::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Marker3DArray::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
 void Marker3DArray::Clear() {
 // @@protoc_insertion_point(message_clear_start:v1.model.Marker3DArray)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4466,15 +4508,15 @@ void Marker3DArray::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Marker3DArray::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Marker3DArray::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .v1.model.Marker3D markers = 1 [json_name = "markers"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -4482,48 +4524,47 @@ const char* Marker3DArray::_InternalParse(const char* ptr, ::_pbi::ParseContext*
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Marker3DArray::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Marker3DArray::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:v1.model.Marker3DArray)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .v1.model.Marker3D markers = 1 [json_name = "markers"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_markers_size()); i < n; i++) {
-    const auto& repfield = this->_internal_markers(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_markers_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(1, this->_internal_markers(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:v1.model.Marker3DArray)
@@ -4534,7 +4575,7 @@ size_t Marker3DArray::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:v1.model.Marker3DArray)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4545,30 +4586,45 @@ size_t Marker3DArray::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Marker3DArray::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Marker3DArray::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Marker3DArray::GetClassData() const { return &_class_data_; }
-
-void Marker3DArray::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Marker3DArray *>(to)->MergeFrom(
-      static_cast<const Marker3DArray &>(from));
+void Marker3DArray::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.Marker3DArray)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Marker3DArray* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Marker3DArray>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.Marker3DArray)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.Marker3DArray)
+    MergeFrom(*source);
+  }
 }
-
 
 void Marker3DArray::MergeFrom(const Marker3DArray& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:v1.model.Marker3DArray)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   markers_.MergeFrom(from.markers_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Marker3DArray::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.Marker3DArray)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Marker3DArray::CopyFrom(const Marker3DArray& from) {
@@ -4589,7 +4645,7 @@ void Marker3DArray::InternalSwap(Marker3DArray* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Marker3DArray::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto[12]);
 }
@@ -4598,56 +4654,43 @@ void Marker3DArray::InternalSwap(Marker3DArray* other) {
 }  // namespace model
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::v1::model::Location*
-Arena::CreateMaybeMessage< ::v1::model::Location >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::Location* Arena::CreateMaybeMessage< ::v1::model::Location >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Location >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::Localization*
-Arena::CreateMaybeMessage< ::v1::model::Localization >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::Localization* Arena::CreateMaybeMessage< ::v1::model::Localization >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Localization >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::Odometry*
-Arena::CreateMaybeMessage< ::v1::model::Odometry >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::Odometry* Arena::CreateMaybeMessage< ::v1::model::Odometry >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Odometry >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::Map*
-Arena::CreateMaybeMessage< ::v1::model::Map >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::Map* Arena::CreateMaybeMessage< ::v1::model::Map >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Map >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::OccupancyGrid*
-Arena::CreateMaybeMessage< ::v1::model::OccupancyGrid >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::OccupancyGrid* Arena::CreateMaybeMessage< ::v1::model::OccupancyGrid >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::OccupancyGrid >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::Path*
-Arena::CreateMaybeMessage< ::v1::model::Path >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::Path* Arena::CreateMaybeMessage< ::v1::model::Path >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Path >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::JointState*
-Arena::CreateMaybeMessage< ::v1::model::JointState >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::JointState* Arena::CreateMaybeMessage< ::v1::model::JointState >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::JointState >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::Goal*
-Arena::CreateMaybeMessage< ::v1::model::Goal >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::Goal* Arena::CreateMaybeMessage< ::v1::model::Goal >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Goal >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::GoalID*
-Arena::CreateMaybeMessage< ::v1::model::GoalID >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::GoalID* Arena::CreateMaybeMessage< ::v1::model::GoalID >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::GoalID >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::PoseWithCovariance*
-Arena::CreateMaybeMessage< ::v1::model::PoseWithCovariance >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::PoseWithCovariance* Arena::CreateMaybeMessage< ::v1::model::PoseWithCovariance >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::PoseWithCovariance >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::ColorRGBA*
-Arena::CreateMaybeMessage< ::v1::model::ColorRGBA >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::ColorRGBA* Arena::CreateMaybeMessage< ::v1::model::ColorRGBA >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::ColorRGBA >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::Marker3D*
-Arena::CreateMaybeMessage< ::v1::model::Marker3D >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::Marker3D* Arena::CreateMaybeMessage< ::v1::model::Marker3D >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Marker3D >(arena);
 }
-template<> PROTOBUF_NOINLINE ::v1::model::Marker3DArray*
-Arena::CreateMaybeMessage< ::v1::model::Marker3DArray >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::v1::model::Marker3DArray* Arena::CreateMaybeMessage< ::v1::model::Marker3DArray >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Marker3DArray >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
