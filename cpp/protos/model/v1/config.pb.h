@@ -2858,6 +2858,7 @@ class ResourcesConfiguration final :
   enum : int {
     kDiskFieldNumber = 1,
     kStreamThrottleHzFieldNumber = 2,
+    kLowBandwidthAgentFieldNumber = 3,
   };
   // .v1.model.DiskConfiguration disk = 1 [json_name = "disk"];
   bool has_disk() const;
@@ -2895,6 +2896,15 @@ class ResourcesConfiguration final :
       PROTOBUF_NAMESPACE_ID::DoubleValue* stream_throttle_hz);
   PROTOBUF_NAMESPACE_ID::DoubleValue* unsafe_arena_release_stream_throttle_hz();
 
+  // bool low_bandwidth_agent = 3 [json_name = "lowBandwidthAgent"];
+  void clear_low_bandwidth_agent();
+  bool low_bandwidth_agent() const;
+  void set_low_bandwidth_agent(bool value);
+  private:
+  bool _internal_low_bandwidth_agent() const;
+  void _internal_set_low_bandwidth_agent(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.ResourcesConfiguration)
  private:
   class _Internal;
@@ -2904,6 +2914,7 @@ class ResourcesConfiguration final :
   typedef void DestructorSkippable_;
   ::v1::model::DiskConfiguration* disk_;
   PROTOBUF_NAMESPACE_ID::DoubleValue* stream_throttle_hz_;
+  bool low_bandwidth_agent_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -7749,6 +7760,26 @@ inline void ResourcesConfiguration::set_allocated_stream_throttle_hz(PROTOBUF_NA
   }
   stream_throttle_hz_ = stream_throttle_hz;
   // @@protoc_insertion_point(field_set_allocated:v1.model.ResourcesConfiguration.stream_throttle_hz)
+}
+
+// bool low_bandwidth_agent = 3 [json_name = "lowBandwidthAgent"];
+inline void ResourcesConfiguration::clear_low_bandwidth_agent() {
+  low_bandwidth_agent_ = false;
+}
+inline bool ResourcesConfiguration::_internal_low_bandwidth_agent() const {
+  return low_bandwidth_agent_;
+}
+inline bool ResourcesConfiguration::low_bandwidth_agent() const {
+  // @@protoc_insertion_point(field_get:v1.model.ResourcesConfiguration.low_bandwidth_agent)
+  return _internal_low_bandwidth_agent();
+}
+inline void ResourcesConfiguration::_internal_set_low_bandwidth_agent(bool value) {
+  
+  low_bandwidth_agent_ = value;
+}
+inline void ResourcesConfiguration::set_low_bandwidth_agent(bool value) {
+  _internal_set_low_bandwidth_agent(value);
+  // @@protoc_insertion_point(field_set:v1.model.ResourcesConfiguration.low_bandwidth_agent)
 }
 
 // -------------------------------------------------------------------

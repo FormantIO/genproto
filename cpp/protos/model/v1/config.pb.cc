@@ -242,7 +242,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ApplicationConfigurationDefault
 constexpr ResourcesConfiguration::ResourcesConfiguration(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : disk_(nullptr)
-  , stream_throttle_hz_(nullptr){}
+  , stream_throttle_hz_(nullptr)
+  , low_bandwidth_agent_(false){}
 struct ResourcesConfigurationDefaultTypeInternal {
   constexpr ResourcesConfigurationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -561,6 +562,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fconfig_2
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::v1::model::ResourcesConfiguration, disk_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ResourcesConfiguration, stream_throttle_hz_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::ResourcesConfiguration, low_bandwidth_agent_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::DiskConfiguration, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -675,17 +677,17 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 126, 133, sizeof(::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse)},
   { 135, -1, sizeof(::v1::model::ApplicationConfiguration)},
   { 141, -1, sizeof(::v1::model::ResourcesConfiguration)},
-  { 148, -1, sizeof(::v1::model::DiskConfiguration)},
-  { 155, -1, sizeof(::v1::model::ROSConfiguration)},
-  { 161, 168, sizeof(::v1::model::StreamConfiguration_TagsEntry_DoNotUse)},
-  { 170, -1, sizeof(::v1::model::StreamConfiguration)},
-  { 190, -1, sizeof(::v1::model::StreamTransformConfiguration)},
-  { 196, -1, sizeof(::v1::model::BlobData)},
-  { 202, -1, sizeof(::v1::model::Diagnostics)},
-  { 209, -1, sizeof(::v1::model::Custom)},
-  { 214, -1, sizeof(::v1::model::Hardware)},
-  { 226, -1, sizeof(::v1::model::DirectoryWatch)},
-  { 235, -1, sizeof(::v1::model::FileTail)},
+  { 149, -1, sizeof(::v1::model::DiskConfiguration)},
+  { 156, -1, sizeof(::v1::model::ROSConfiguration)},
+  { 162, 169, sizeof(::v1::model::StreamConfiguration_TagsEntry_DoNotUse)},
+  { 171, -1, sizeof(::v1::model::StreamConfiguration)},
+  { 191, -1, sizeof(::v1::model::StreamTransformConfiguration)},
+  { 197, -1, sizeof(::v1::model::BlobData)},
+  { 203, -1, sizeof(::v1::model::Diagnostics)},
+  { 210, -1, sizeof(::v1::model::Custom)},
+  { 215, -1, sizeof(::v1::model::Hardware)},
+  { 227, -1, sizeof(::v1::model::DirectoryWatch)},
+  { 236, -1, sizeof(::v1::model::FileTail)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -801,65 +803,66 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto[] PROT
   "nConfiguration.ConfigurationMapEntryR\020co"
   "nfigurationMap\032C\n\025ConfigurationMapEntry\022"
   "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:"
-  "\0028\001\"\225\001\n\026ResourcesConfiguration\022/\n\004disk\030\001"
+  "\0028\001\"\305\001\n\026ResourcesConfiguration\022/\n\004disk\030\001"
   " \001(\0132\033.v1.model.DiskConfigurationR\004disk\022"
   "J\n\022stream_throttle_hz\030\002 \001(\0132\034.google.pro"
-  "tobuf.DoubleValueR\020streamThrottleHz\"g\n\021D"
-  "iskConfiguration\022\037\n\013buffer_size\030\001 \001(\003R\nb"
-  "ufferSize\0221\n\025on_demand_buffer_size\030\002 \001(\003"
-  "R\022onDemandBufferSize\"K\n\020ROSConfiguration"
-  "\0227\n\030world_reference_frame_id\030\001 \001(\tR\025worl"
-  "dReferenceFrameId\"\335\006\n\023StreamConfiguratio"
-  "n\022\022\n\004name\030\001 \001(\tR\004name\022;\n\004tags\030\002 \003(\0132\'.v1"
-  ".model.StreamConfiguration.TagsEntryR\004ta"
-  "gs\0221\n\tros_topic\030\003 \001(\0132\022.v1.model.ROSTopi"
-  "cH\000R\010rosTopic\022F\n\020ros_localization\030\004 \001(\0132"
-  "\031.v1.model.ROSLocalizationH\000R\017rosLocaliz"
-  "ation\022C\n\017directory_watch\030\005 \001(\0132\030.v1.mode"
-  "l.DirectoryWatchH\000R\016directoryWatch\0221\n\tfi"
-  "le_tail\030\006 \001(\0132\022.v1.model.FileTailH\000R\010fil"
-  "eTail\022J\n\022ros_transform_tree\030\007 \001(\0132\032.v1.m"
-  "odel.ROSTransformTreeH\000R\020rosTransformTre"
-  "e\022*\n\006custom\030\t \001(\0132\020.v1.model.CustomH\000R\006c"
-  "ustom\0220\n\010hardware\030\n \001(\0132\022.v1.model.Hardw"
-  "areH\000R\010hardware\022=\n\013throttle_hz\030\010 \001(\0132\034.g"
-  "oogle.protobuf.DoubleValueR\nthrottleHz\0226"
-  "\n\010disabled\030\023 \001(\0132\032.google.protobuf.BoolV"
-  "alueR\010disabled\0227\n\ton_demand\030\024 \001(\0132\032.goog"
-  "le.protobuf.BoolValueR\010onDemand\022D\n\ttrans"
-  "form\030\025 \001(\0132&.v1.model.StreamTransformCon"
-  "figurationR\ttransform\022\030\n\007quality\030\026 \001(\tR\007"
-  "quality\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
-  "\n\005value\030\002 \001(\tR\005value:\0028\001B\017\n\rconfiguratio"
-  "n\"p\n\034StreamTransformConfiguration\022P\n\026vid"
-  "eo_encoding_enabled\030\001 \001(\0132\032.google.proto"
-  "buf.BoolValueR\024videoEncodingEnabled\"\036\n\010B"
-  "lobData\022\022\n\004data\030\001 \001(\tR\004data\"\215\001\n\013Diagnost"
-  "ics\022;\n\013report_logs\030\001 \001(\0132\032.google.protob"
-  "uf.BoolValueR\nreportLogs\022A\n\016report_metri"
-  "cs\030\002 \001(\0132\032.google.protobuf.BoolValueR\rre"
-  "portMetrics\"\010\n\006Custom\"\241\002\n\010Hardware\022#\n\rhw"
-  "_descriptor\030\001 \001(\tR\014hwDescriptor\022.\n\023audio"
-  "_hw_descriptor\030\003 \001(\tR\021audioHwDescriptor\022"
-  "#\n\rhardware_type\030\004 \001(\tR\014hardwareType\0220\n\024"
-  "rtsp_encoding_needed\030\005 \001(\010R\022rtspEncoding"
-  "Needed\022\031\n\010is_onvif\030\006 \001(\010R\007isOnvif\022&\n\017ip_"
-  "cam_username\030\007 \001(\tR\ripCamUsername\022&\n\017ip_"
-  "cam_password\030\010 \001(\tR\ripCamPassword\"\240\001\n\016Di"
-  "rectoryWatch\022\034\n\tdirectory\030\001 \001(\tR\tdirecto"
-  "ry\022\034\n\textension\030\002 \001(\tR\textension\022/\n\tfile"
-  "_type\030\003 \001(\0162\022.v1.model.FileTypeR\010fileTyp"
-  "e\022!\n\014remote_agent\030\004 \001(\010R\013remoteAgent\"\257\001\n"
-  "\010FileTail\022\032\n\010filename\030\001 \001(\tR\010filename\0225\n"
-  "\013file_format\030\002 \001(\0162\024.v1.model.FileFormat"
-  "R\nfileFormat\022\031\n\010time_key\030\003 \001(\tR\007timeKey\022"
-  "\037\n\013time_format\030\004 \001(\tR\ntimeFormat\022\024\n\005rege"
-  "x\030\005 \001(\tR\005regex*&\n\nTeleopMode\022\013\n\007COMMAND\020"
-  "\000\022\013\n\007OBSERVE\020\001*&\n\nFileFormat\022\016\n\nPLAIN_TE"
-  "XT\020\000\022\010\n\004JSON\020\001*;\n\010FileType\022\010\n\004FILE\020\000\022\t\n\005"
-  "IMAGE\020\001\022\017\n\013POINT_CLOUD\020\004\022\t\n\005VIDEO\020\005B+Z)g"
-  "ithub.com/FormantIO/genproto/go/v1/model"
-  "b\006proto3"
+  "tobuf.DoubleValueR\020streamThrottleHz\022.\n\023l"
+  "ow_bandwidth_agent\030\003 \001(\010R\021lowBandwidthAg"
+  "ent\"g\n\021DiskConfiguration\022\037\n\013buffer_size\030"
+  "\001 \001(\003R\nbufferSize\0221\n\025on_demand_buffer_si"
+  "ze\030\002 \001(\003R\022onDemandBufferSize\"K\n\020ROSConfi"
+  "guration\0227\n\030world_reference_frame_id\030\001 \001"
+  "(\tR\025worldReferenceFrameId\"\335\006\n\023StreamConf"
+  "iguration\022\022\n\004name\030\001 \001(\tR\004name\022;\n\004tags\030\002 "
+  "\003(\0132\'.v1.model.StreamConfiguration.TagsE"
+  "ntryR\004tags\0221\n\tros_topic\030\003 \001(\0132\022.v1.model"
+  ".ROSTopicH\000R\010rosTopic\022F\n\020ros_localizatio"
+  "n\030\004 \001(\0132\031.v1.model.ROSLocalizationH\000R\017ro"
+  "sLocalization\022C\n\017directory_watch\030\005 \001(\0132\030"
+  ".v1.model.DirectoryWatchH\000R\016directoryWat"
+  "ch\0221\n\tfile_tail\030\006 \001(\0132\022.v1.model.FileTai"
+  "lH\000R\010fileTail\022J\n\022ros_transform_tree\030\007 \001("
+  "\0132\032.v1.model.ROSTransformTreeH\000R\020rosTran"
+  "sformTree\022*\n\006custom\030\t \001(\0132\020.v1.model.Cus"
+  "tomH\000R\006custom\0220\n\010hardware\030\n \001(\0132\022.v1.mod"
+  "el.HardwareH\000R\010hardware\022=\n\013throttle_hz\030\010"
+  " \001(\0132\034.google.protobuf.DoubleValueR\nthro"
+  "ttleHz\0226\n\010disabled\030\023 \001(\0132\032.google.protob"
+  "uf.BoolValueR\010disabled\0227\n\ton_demand\030\024 \001("
+  "\0132\032.google.protobuf.BoolValueR\010onDemand\022"
+  "D\n\ttransform\030\025 \001(\0132&.v1.model.StreamTran"
+  "sformConfigurationR\ttransform\022\030\n\007quality"
+  "\030\026 \001(\tR\007quality\0327\n\tTagsEntry\022\020\n\003key\030\001 \001("
+  "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\017\n\rconf"
+  "iguration\"p\n\034StreamTransformConfiguratio"
+  "n\022P\n\026video_encoding_enabled\030\001 \001(\0132\032.goog"
+  "le.protobuf.BoolValueR\024videoEncodingEnab"
+  "led\"\036\n\010BlobData\022\022\n\004data\030\001 \001(\tR\004data\"\215\001\n\013"
+  "Diagnostics\022;\n\013report_logs\030\001 \001(\0132\032.googl"
+  "e.protobuf.BoolValueR\nreportLogs\022A\n\016repo"
+  "rt_metrics\030\002 \001(\0132\032.google.protobuf.BoolV"
+  "alueR\rreportMetrics\"\010\n\006Custom\"\241\002\n\010Hardwa"
+  "re\022#\n\rhw_descriptor\030\001 \001(\tR\014hwDescriptor\022"
+  ".\n\023audio_hw_descriptor\030\003 \001(\tR\021audioHwDes"
+  "criptor\022#\n\rhardware_type\030\004 \001(\tR\014hardware"
+  "Type\0220\n\024rtsp_encoding_needed\030\005 \001(\010R\022rtsp"
+  "EncodingNeeded\022\031\n\010is_onvif\030\006 \001(\010R\007isOnvi"
+  "f\022&\n\017ip_cam_username\030\007 \001(\tR\ripCamUsernam"
+  "e\022&\n\017ip_cam_password\030\010 \001(\tR\ripCamPasswor"
+  "d\"\240\001\n\016DirectoryWatch\022\034\n\tdirectory\030\001 \001(\tR"
+  "\tdirectory\022\034\n\textension\030\002 \001(\tR\textension"
+  "\022/\n\tfile_type\030\003 \001(\0162\022.v1.model.FileTypeR"
+  "\010fileType\022!\n\014remote_agent\030\004 \001(\010R\013remoteA"
+  "gent\"\257\001\n\010FileTail\022\032\n\010filename\030\001 \001(\tR\010fil"
+  "ename\0225\n\013file_format\030\002 \001(\0162\024.v1.model.Fi"
+  "leFormatR\nfileFormat\022\031\n\010time_key\030\003 \001(\tR\007"
+  "timeKey\022\037\n\013time_format\030\004 \001(\tR\ntimeFormat"
+  "\022\024\n\005regex\030\005 \001(\tR\005regex*&\n\nTeleopMode\022\013\n\007"
+  "COMMAND\020\000\022\013\n\007OBSERVE\020\001*&\n\nFileFormat\022\016\n\n"
+  "PLAIN_TEXT\020\000\022\010\n\004JSON\020\001*;\n\010FileType\022\010\n\004FI"
+  "LE\020\000\022\t\n\005IMAGE\020\001\022\017\n\013POINT_CLOUD\020\004\022\t\n\005VIDE"
+  "O\020\005B+Z)github.com/FormantIO/genproto/go/"
+  "v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fwrappers_2eproto,
@@ -867,7 +870,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto = {
-  false, false, 5648, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 
+  false, false, 5696, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps, 2, 26,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto,
@@ -5275,14 +5278,15 @@ ResourcesConfiguration::ResourcesConfiguration(const ResourcesConfiguration& fro
   } else {
     stream_throttle_hz_ = nullptr;
   }
+  low_bandwidth_agent_ = from.low_bandwidth_agent_;
   // @@protoc_insertion_point(copy_constructor:v1.model.ResourcesConfiguration)
 }
 
 void ResourcesConfiguration::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&disk_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&stream_throttle_hz_) -
-    reinterpret_cast<char*>(&disk_)) + sizeof(stream_throttle_hz_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&low_bandwidth_agent_) -
+    reinterpret_cast<char*>(&disk_)) + sizeof(low_bandwidth_agent_));
 }
 
 ResourcesConfiguration::~ResourcesConfiguration() {
@@ -5321,6 +5325,7 @@ void ResourcesConfiguration::Clear() {
     delete stream_throttle_hz_;
   }
   stream_throttle_hz_ = nullptr;
+  low_bandwidth_agent_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5341,6 +5346,13 @@ const char* ResourcesConfiguration::_InternalParse(const char* ptr, ::PROTOBUF_N
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_stream_throttle_hz(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool low_bandwidth_agent = 3 [json_name = "lowBandwidthAgent"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          low_bandwidth_agent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5389,6 +5401,12 @@ failure:
         2, _Internal::stream_throttle_hz(this), target, stream);
   }
 
+  // bool low_bandwidth_agent = 3 [json_name = "lowBandwidthAgent"];
+  if (this->low_bandwidth_agent() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_low_bandwidth_agent(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5417,6 +5435,11 @@ size_t ResourcesConfiguration::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *stream_throttle_hz_);
+  }
+
+  // bool low_bandwidth_agent = 3 [json_name = "lowBandwidthAgent"];
+  if (this->low_bandwidth_agent() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5456,6 +5479,9 @@ void ResourcesConfiguration::MergeFrom(const ResourcesConfiguration& from) {
   if (from.has_stream_throttle_hz()) {
     _internal_mutable_stream_throttle_hz()->PROTOBUF_NAMESPACE_ID::DoubleValue::MergeFrom(from._internal_stream_throttle_hz());
   }
+  if (from.low_bandwidth_agent() != 0) {
+    _internal_set_low_bandwidth_agent(from._internal_low_bandwidth_agent());
+  }
 }
 
 void ResourcesConfiguration::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -5480,8 +5506,8 @@ void ResourcesConfiguration::InternalSwap(ResourcesConfiguration* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ResourcesConfiguration, stream_throttle_hz_)
-      + sizeof(ResourcesConfiguration::stream_throttle_hz_)
+      PROTOBUF_FIELD_OFFSET(ResourcesConfiguration, low_bandwidth_agent_)
+      + sizeof(ResourcesConfiguration::low_bandwidth_agent_)
       - PROTOBUF_FIELD_OFFSET(ResourcesConfiguration, disk_)>(
           reinterpret_cast<char*>(&disk_),
           reinterpret_cast<char*>(&other->disk_));
