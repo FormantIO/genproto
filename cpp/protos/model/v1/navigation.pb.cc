@@ -65,7 +65,8 @@ struct OdometryDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OdometryDefaultTypeInternal _Odometry_default_instance_;
 constexpr Map::Map(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : origin_(nullptr)
+  : uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , origin_(nullptr)
   , world_to_local_(nullptr)
   , resolution_(0)
   , width_(0u)
@@ -257,6 +258,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fnavigati
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::v1::model::Map, uuid_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, resolution_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, width_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Map, height_),
@@ -351,15 +353,15 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 13, -1, sizeof(::v1::model::Localization)},
   { 23, -1, sizeof(::v1::model::Odometry)},
   { 31, -1, sizeof(::v1::model::Map)},
-  { 45, -1, sizeof(::v1::model::OccupancyGrid)},
-  { 51, -1, sizeof(::v1::model::Path)},
-  { 58, -1, sizeof(::v1::model::JointState)},
-  { 68, -1, sizeof(::v1::model::Goal)},
-  { 75, -1, sizeof(::v1::model::GoalID)},
-  { 81, -1, sizeof(::v1::model::PoseWithCovariance)},
-  { 88, -1, sizeof(::v1::model::ColorRGBA)},
-  { 97, -1, sizeof(::v1::model::Marker3D)},
-  { 118, -1, sizeof(::v1::model::Marker3DArray)},
+  { 46, -1, sizeof(::v1::model::OccupancyGrid)},
+  { 52, -1, sizeof(::v1::model::Path)},
+  { 59, -1, sizeof(::v1::model::JointState)},
+  { 69, -1, sizeof(::v1::model::Goal)},
+  { 76, -1, sizeof(::v1::model::GoalID)},
+  { 82, -1, sizeof(::v1::model::PoseWithCovariance)},
+  { 89, -1, sizeof(::v1::model::ColorRGBA)},
+  { 98, -1, sizeof(::v1::model::Marker3D)},
+  { 119, -1, sizeof(::v1::model::Marker3DArray)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -395,47 +397,48 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto[] 
   "e\030\001 \001(\0132\023.v1.model.TransformR\004pose\022%\n\005tw"
   "ist\030\002 \001(\0132\017.v1.model.TwistR\005twist\0229\n\016wor"
   "ld_to_local\030\003 \001(\0132\023.v1.model.TransformR\014"
-  "worldToLocal\"\255\002\n\003Map\022\036\n\nresolution\030\001 \001(\001"
-  "R\nresolution\022\024\n\005width\030\002 \001(\rR\005width\022\026\n\006he"
-  "ight\030\003 \001(\rR\006height\022+\n\006origin\030\004 \001(\0132\023.v1."
-  "model.TransformR\006origin\0229\n\016world_to_loca"
-  "l\030\005 \001(\0132\023.v1.model.TransformR\014worldToLoc"
-  "al\022@\n\016occupancy_grid\030\006 \001(\0132\027.v1.model.Oc"
-  "cupancyGridH\000R\roccupancyGrid\022\022\n\003url\030\007 \001("
-  "\tH\000R\003url\022\022\n\003raw\030\010 \001(\014H\000R\003rawB\006\n\004data\"#\n\r"
-  "OccupancyGrid\022\022\n\004data\030\001 \003(\005R\004data\"l\n\004Pat"
-  "h\0229\n\016world_to_local\030\001 \001(\0132\023.v1.model.Tra"
-  "nsformR\014worldToLocal\022)\n\005poses\030\002 \003(\0132\023.v1"
-  ".model.TransformR\005poses\"\253\001\n\nJointState\0229"
-  "\n\016world_to_local\030\005 \001(\0132\023.v1.model.Transf"
-  "ormR\014worldToLocal\022\022\n\004name\030\001 \003(\tR\004name\022\032\n"
-  "\010position\030\002 \003(\001R\010position\022\032\n\010velocity\030\003 "
-  "\003(\001R\010velocity\022\026\n\006effort\030\004 \003(\001R\006effort\"j\n"
-  "\004Goal\0229\n\016world_to_local\030\001 \001(\0132\023.v1.model"
-  ".TransformR\014worldToLocal\022\'\n\004pose\030\002 \001(\0132\023"
-  ".v1.model.TransformR\004pose\"\030\n\006GoalID\022\016\n\002i"
-  "d\030\001 \001(\tR\002id\"]\n\022PoseWithCovariance\022\'\n\004pos"
-  "e\030\001 \001(\0132\023.v1.model.TransformR\004pose\022\036\n\nco"
-  "variance\030\002 \003(\001R\ncovariance\"C\n\tColorRGBA\022"
-  "\014\n\001r\030\001 \001(\002R\001r\022\014\n\001g\030\002 \001(\002R\001g\022\014\n\001b\030\003 \001(\002R\001"
-  "b\022\014\n\001a\030\004 \001(\002R\001a\"\270\004\n\010Marker3D\0229\n\016world_to"
-  "_local\030\001 \001(\0132\023.v1.model.TransformR\014world"
-  "ToLocal\022\016\n\002ns\030\002 \001(\tR\002ns\022\016\n\002id\030\003 \001(\005R\002id\022"
-  "\022\n\004type\030\004 \001(\tR\004type\022\026\n\006action\030\005 \001(\tR\006act"
-  "ion\022\'\n\004pose\030\006 \001(\0132\023.v1.model.TransformR\004"
-  "pose\022\'\n\005scale\030\007 \001(\0132\021.v1.model.Vector3R\005"
-  "scale\022)\n\005color\030\010 \001(\0132\023.v1.model.ColorRGB"
-  "AR\005color\022\032\n\010lifetime\030\t \001(\001R\010lifetime\022!\n\014"
-  "frame_locked\030\n \001(\010R\013frameLocked\022)\n\006point"
-  "s\030\013 \003(\0132\021.v1.model.Vector3R\006points\022+\n\006co"
-  "lors\030\014 \003(\0132\023.v1.model.ColorRGBAR\006colors\022"
-  "\022\n\004text\030\r \001(\tR\004text\022#\n\rmesh_resource\030\016 \001"
-  "(\tR\014meshResource\022=\n\033mesh_use_embedded_ma"
-  "terials\030\017 \001(\010R\030meshUseEmbeddedMaterials\022"
-  "\031\n\010frame_id\030\020 \001(\tR\007frameId\"=\n\rMarker3DAr"
-  "ray\022,\n\007markers\030\001 \003(\0132\022.v1.model.Marker3D"
-  "R\007markersB+Z)github.com/FormantIO/genpro"
-  "to/go/v1/modelb\006proto3"
+  "worldToLocal\"\301\002\n\003Map\022\022\n\004uuid\030\t \001(\tR\004uuid"
+  "\022\036\n\nresolution\030\001 \001(\001R\nresolution\022\024\n\005widt"
+  "h\030\002 \001(\rR\005width\022\026\n\006height\030\003 \001(\rR\006height\022+"
+  "\n\006origin\030\004 \001(\0132\023.v1.model.TransformR\006ori"
+  "gin\0229\n\016world_to_local\030\005 \001(\0132\023.v1.model.T"
+  "ransformR\014worldToLocal\022@\n\016occupancy_grid"
+  "\030\006 \001(\0132\027.v1.model.OccupancyGridH\000R\roccup"
+  "ancyGrid\022\022\n\003url\030\007 \001(\tH\000R\003url\022\022\n\003raw\030\010 \001("
+  "\014H\000R\003rawB\006\n\004data\"#\n\rOccupancyGrid\022\022\n\004dat"
+  "a\030\001 \003(\005R\004data\"l\n\004Path\0229\n\016world_to_local\030"
+  "\001 \001(\0132\023.v1.model.TransformR\014worldToLocal"
+  "\022)\n\005poses\030\002 \003(\0132\023.v1.model.TransformR\005po"
+  "ses\"\253\001\n\nJointState\0229\n\016world_to_local\030\005 \001"
+  "(\0132\023.v1.model.TransformR\014worldToLocal\022\022\n"
+  "\004name\030\001 \003(\tR\004name\022\032\n\010position\030\002 \003(\001R\010pos"
+  "ition\022\032\n\010velocity\030\003 \003(\001R\010velocity\022\026\n\006eff"
+  "ort\030\004 \003(\001R\006effort\"j\n\004Goal\0229\n\016world_to_lo"
+  "cal\030\001 \001(\0132\023.v1.model.TransformR\014worldToL"
+  "ocal\022\'\n\004pose\030\002 \001(\0132\023.v1.model.TransformR"
+  "\004pose\"\030\n\006GoalID\022\016\n\002id\030\001 \001(\tR\002id\"]\n\022PoseW"
+  "ithCovariance\022\'\n\004pose\030\001 \001(\0132\023.v1.model.T"
+  "ransformR\004pose\022\036\n\ncovariance\030\002 \003(\001R\ncova"
+  "riance\"C\n\tColorRGBA\022\014\n\001r\030\001 \001(\002R\001r\022\014\n\001g\030\002"
+  " \001(\002R\001g\022\014\n\001b\030\003 \001(\002R\001b\022\014\n\001a\030\004 \001(\002R\001a\"\270\004\n\010"
+  "Marker3D\0229\n\016world_to_local\030\001 \001(\0132\023.v1.mo"
+  "del.TransformR\014worldToLocal\022\016\n\002ns\030\002 \001(\tR"
+  "\002ns\022\016\n\002id\030\003 \001(\005R\002id\022\022\n\004type\030\004 \001(\tR\004type\022"
+  "\026\n\006action\030\005 \001(\tR\006action\022\'\n\004pose\030\006 \001(\0132\023."
+  "v1.model.TransformR\004pose\022\'\n\005scale\030\007 \001(\0132"
+  "\021.v1.model.Vector3R\005scale\022)\n\005color\030\010 \001(\013"
+  "2\023.v1.model.ColorRGBAR\005color\022\032\n\010lifetime"
+  "\030\t \001(\001R\010lifetime\022!\n\014frame_locked\030\n \001(\010R\013"
+  "frameLocked\022)\n\006points\030\013 \003(\0132\021.v1.model.V"
+  "ector3R\006points\022+\n\006colors\030\014 \003(\0132\023.v1.mode"
+  "l.ColorRGBAR\006colors\022\022\n\004text\030\r \001(\tR\004text\022"
+  "#\n\rmesh_resource\030\016 \001(\tR\014meshResource\022=\n\033"
+  "mesh_use_embedded_materials\030\017 \001(\010R\030meshU"
+  "seEmbeddedMaterials\022\031\n\010frame_id\030\020 \001(\tR\007f"
+  "rameId\"=\n\rMarker3DArray\022,\n\007markers\030\001 \003(\013"
+  "2\022.v1.model.Marker3DR\007markersB+Z)github."
+  "com/FormantIO/genproto/go/v1/modelb\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
@@ -443,7 +446,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto = {
-  false, false, 2262, descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto, "protos/model/v1/navigation.proto", 
+  false, false, 2282, descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto, "protos/model/v1/navigation.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps, 2, 13,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto,
@@ -1483,6 +1486,11 @@ Map::Map(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 Map::Map(const Map& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_uuid().empty()) {
+    uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uuid(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_origin()) {
     origin_ = new ::v1::model::Transform(*from.origin_);
   } else {
@@ -1518,6 +1526,7 @@ Map::Map(const Map& from)
 }
 
 void Map::SharedCtor() {
+uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&origin_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&height_) -
@@ -1533,6 +1542,7 @@ Map::~Map() {
 
 void Map::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  uuid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete origin_;
   if (this != internal_default_instance()) delete world_to_local_;
   if (has_data()) {
@@ -1581,6 +1591,7 @@ void Map::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  uuid_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && origin_ != nullptr) {
     delete origin_;
   }
@@ -1658,6 +1669,15 @@ const char* Map::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::intern
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_raw();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string uuid = 9 [json_name = "uuid"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_uuid();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Map.uuid"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1748,6 +1768,16 @@ failure:
         8, this->_internal_raw(), target);
   }
 
+  // string uuid = 9 [json_name = "uuid"];
+  if (!this->uuid().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_uuid().data(), static_cast<int>(this->_internal_uuid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.Map.uuid");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_uuid(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1763,6 +1793,13 @@ size_t Map::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string uuid = 9 [json_name = "uuid"];
+  if (!this->uuid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_uuid());
+  }
 
   // .v1.model.Transform origin = 4 [json_name = "origin"];
   if (this->has_origin()) {
@@ -1854,6 +1891,9 @@ void Map::MergeFrom(const Map& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from.uuid().empty()) {
+    _internal_set_uuid(from._internal_uuid());
+  }
   if (from.has_origin()) {
     _internal_mutable_origin()->::v1::model::Transform::MergeFrom(from._internal_origin());
   }
@@ -1909,6 +1949,11 @@ bool Map::IsInitialized() const {
 void Map::InternalSwap(Map* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &uuid_, GetArenaForAllocation(),
+      &other->uuid_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Map, height_)
       + sizeof(Map::height_)

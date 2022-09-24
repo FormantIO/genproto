@@ -809,6 +809,7 @@ class Map final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kUuidFieldNumber = 9,
     kOriginFieldNumber = 4,
     kWorldToLocalFieldNumber = 5,
     kResolutionFieldNumber = 1,
@@ -818,6 +819,20 @@ class Map final :
     kUrlFieldNumber = 7,
     kRawFieldNumber = 8,
   };
+  // string uuid = 9 [json_name = "uuid"];
+  void clear_uuid();
+  const std::string& uuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
+  private:
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
+  public:
+
   // .v1.model.Transform origin = 4 [json_name = "origin"];
   bool has_origin() const;
   private:
@@ -950,6 +965,7 @@ class Map final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   ::v1::model::Transform* origin_;
   ::v1::model::Transform* world_to_local_;
   double resolution_;
@@ -3386,6 +3402,51 @@ inline void Odometry::set_allocated_world_to_local(::v1::model::Transform* world
 // -------------------------------------------------------------------
 
 // Map
+
+// string uuid = 9 [json_name = "uuid"];
+inline void Map::clear_uuid() {
+  uuid_.ClearToEmpty();
+}
+inline const std::string& Map::uuid() const {
+  // @@protoc_insertion_point(field_get:v1.model.Map.uuid)
+  return _internal_uuid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Map::set_uuid(ArgT0&& arg0, ArgT... args) {
+ 
+ uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Map.uuid)
+}
+inline std::string* Map::mutable_uuid() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Map.uuid)
+  return _internal_mutable_uuid();
+}
+inline const std::string& Map::_internal_uuid() const {
+  return uuid_.Get();
+}
+inline void Map::_internal_set_uuid(const std::string& value) {
+  
+  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Map::_internal_mutable_uuid() {
+  
+  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Map::release_uuid() {
+  // @@protoc_insertion_point(field_release:v1.model.Map.uuid)
+  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Map::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
+    
+  } else {
+    
+  }
+  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Map.uuid)
+}
 
 // double resolution = 1 [json_name = "resolution"];
 inline void Map::clear_resolution() {

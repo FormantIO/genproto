@@ -33,7 +33,8 @@ struct ImageDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ImageDefaultTypeInternal _Image_default_instance_;
 constexpr PointCloud::PointCloud(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : world_to_local_(nullptr)
+  : uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , world_to_local_(nullptr)
   , _oneof_case_{}{}
 struct PointCloudDefaultTypeInternal {
   constexpr PointCloudDefaultTypeInternal()
@@ -132,6 +133,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fmedia_2e
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::v1::model::PointCloud, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::v1::model::PointCloud, uuid_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::PointCloud, world_to_local_),
@@ -181,11 +183,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fmedia_2e
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::v1::model::Image)},
   { 9, -1, sizeof(::v1::model::PointCloud)},
-  { 18, -1, sizeof(::v1::model::RtcPointCloud)},
-  { 25, -1, sizeof(::v1::model::H264VideoFrame)},
-  { 33, -1, sizeof(::v1::model::AudioChunk)},
-  { 41, -1, sizeof(::v1::model::Video)},
-  { 51, -1, sizeof(::v1::model::TransformTree)},
+  { 19, -1, sizeof(::v1::model::RtcPointCloud)},
+  { 26, -1, sizeof(::v1::model::H264VideoFrame)},
+  { 34, -1, sizeof(::v1::model::AudioChunk)},
+  { 42, -1, sizeof(::v1::model::Video)},
+  { 52, -1, sizeof(::v1::model::TransformTree)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -203,29 +205,30 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto[] PROTO
   "\032protos/model/v1/math.proto\"Z\n\005Image\022!\n\014"
   "content_type\030\001 \001(\tR\013contentType\022\022\n\003url\030\002"
   " \001(\tH\000R\003url\022\022\n\003raw\030\003 \001(\014H\000R\003rawB\006\n\004data\""
-  "w\n\nPointCloud\022\022\n\003url\030\001 \001(\tH\000R\003url\022\022\n\003raw"
-  "\030\002 \001(\014H\000R\003raw\0229\n\016world_to_local\030\003 \001(\0132\023."
-  "v1.model.TransformR\014worldToLocalB\006\n\004data"
-  "\"^\n\rRtcPointCloud\022\022\n\004data\030\001 \001(\014R\004data\0229\n"
-  "\016world_to_local\030\002 \001(\0132\023.v1.model.Transfo"
-  "rmR\014worldToLocal\"[\n\016H264VideoFrame\022\024\n\005in"
-  "dex\030\001 \001(\005R\005index\022\024\n\005flags\030\002 \001(\005R\005flags\022\035"
-  "\n\nframe_data\030\003 \001(\014R\tframeData\"Y\n\nAudioCh"
-  "unk\022\024\n\005index\030\001 \001(\005R\005index\022\026\n\006format\030\002 \001("
-  "\tR\006format\022\035\n\nchunk_data\030\003 \001(\014R\tchunkData"
-  "\"p\n\005Video\022\033\n\tmime_type\030\001 \001(\tR\010mimeType\022\032"
-  "\n\010duration\030\002 \001(\003R\010duration\022\022\n\003url\030\003 \001(\tH"
-  "\000R\003url\022\022\n\003raw\030\004 \001(\014H\000R\003rawB\006\n\004data\"\?\n\rTr"
-  "ansformTree\022\022\n\003url\030\001 \001(\tH\000R\003url\022\022\n\003raw\030\002"
-  " \001(\014H\000R\003rawB\006\n\004dataB+Z)github.com/Forman"
-  "tIO/genproto/go/v1/modelb\006proto3"
+  "\213\001\n\nPointCloud\022\022\n\004uuid\030\004 \001(\tR\004uuid\022\022\n\003ur"
+  "l\030\001 \001(\tH\000R\003url\022\022\n\003raw\030\002 \001(\014H\000R\003raw\0229\n\016wo"
+  "rld_to_local\030\003 \001(\0132\023.v1.model.TransformR"
+  "\014worldToLocalB\006\n\004data\"^\n\rRtcPointCloud\022\022"
+  "\n\004data\030\001 \001(\014R\004data\0229\n\016world_to_local\030\002 \001"
+  "(\0132\023.v1.model.TransformR\014worldToLocal\"[\n"
+  "\016H264VideoFrame\022\024\n\005index\030\001 \001(\005R\005index\022\024\n"
+  "\005flags\030\002 \001(\005R\005flags\022\035\n\nframe_data\030\003 \001(\014R"
+  "\tframeData\"Y\n\nAudioChunk\022\024\n\005index\030\001 \001(\005R"
+  "\005index\022\026\n\006format\030\002 \001(\tR\006format\022\035\n\nchunk_"
+  "data\030\003 \001(\014R\tchunkData\"p\n\005Video\022\033\n\tmime_t"
+  "ype\030\001 \001(\tR\010mimeType\022\032\n\010duration\030\002 \001(\003R\010d"
+  "uration\022\022\n\003url\030\003 \001(\tH\000R\003url\022\022\n\003raw\030\004 \001(\014"
+  "H\000R\003rawB\006\n\004data\"\?\n\rTransformTree\022\022\n\003url\030"
+  "\001 \001(\tH\000R\003url\022\022\n\003raw\030\002 \001(\014H\000R\003rawB\006\n\004data"
+  "B+Z)github.com/FormantIO/genproto/go/v1/"
+  "modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps[1] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto = {
-  false, false, 792, descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto, "protos/model/v1/media.proto", 
+  false, false, 813, descriptor_table_protodef_protos_2fmodel_2fv1_2fmedia_2eproto, "protos/model/v1/media.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fmedia_2eproto_deps, 1, 7,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fmedia_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fmedia_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fmedia_2eproto,
@@ -575,6 +578,11 @@ PointCloud::PointCloud(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 PointCloud::PointCloud(const PointCloud& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_uuid().empty()) {
+    uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uuid(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_world_to_local()) {
     world_to_local_ = new ::v1::model::Transform(*from.world_to_local_);
   } else {
@@ -598,6 +606,7 @@ PointCloud::PointCloud(const PointCloud& from)
 }
 
 void PointCloud::SharedCtor() {
+uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 world_to_local_ = nullptr;
 clear_has_data();
 }
@@ -610,6 +619,7 @@ PointCloud::~PointCloud() {
 
 void PointCloud::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  uuid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete world_to_local_;
   if (has_data()) {
     clear_data();
@@ -651,6 +661,7 @@ void PointCloud::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  uuid_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && world_to_local_ != nullptr) {
     delete world_to_local_;
   }
@@ -686,6 +697,15 @@ const char* PointCloud::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_world_to_local(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string uuid = 4 [json_name = "uuid"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_uuid();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.PointCloud.uuid"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -742,6 +762,16 @@ failure:
         3, _Internal::world_to_local(this), target, stream);
   }
 
+  // string uuid = 4 [json_name = "uuid"];
+  if (!this->uuid().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_uuid().data(), static_cast<int>(this->_internal_uuid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.PointCloud.uuid");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_uuid(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -757,6 +787,13 @@ size_t PointCloud::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string uuid = 4 [json_name = "uuid"];
+  if (!this->uuid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_uuid());
+  }
 
   // .v1.model.Transform world_to_local = 3 [json_name = "worldToLocal"];
   if (this->has_world_to_local()) {
@@ -815,6 +852,9 @@ void PointCloud::MergeFrom(const PointCloud& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from.uuid().empty()) {
+    _internal_set_uuid(from._internal_uuid());
+  }
   if (from.has_world_to_local()) {
     _internal_mutable_world_to_local()->::v1::model::Transform::MergeFrom(from._internal_world_to_local());
   }
@@ -854,6 +894,11 @@ bool PointCloud::IsInitialized() const {
 void PointCloud::InternalSwap(PointCloud* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &uuid_, GetArenaForAllocation(),
+      &other->uuid_, other->GetArenaForAllocation()
+  );
   swap(world_to_local_, other->world_to_local_);
   swap(data_, other->data_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
