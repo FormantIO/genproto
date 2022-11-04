@@ -52,7 +52,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[26]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[27]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -115,6 +115,9 @@ extern ROSConfigurationDefaultTypeInternal _ROSConfiguration_default_instance_;
 class ResourcesConfiguration;
 struct ResourcesConfigurationDefaultTypeInternal;
 extern ResourcesConfigurationDefaultTypeInternal _ResourcesConfiguration_default_instance_;
+class RtcInfo;
+struct RtcInfoDefaultTypeInternal;
+extern RtcInfoDefaultTypeInternal _RtcInfo_default_instance_;
 class StreamConfiguration;
 struct StreamConfigurationDefaultTypeInternal;
 extern StreamConfigurationDefaultTypeInternal _StreamConfiguration_default_instance_;
@@ -160,6 +163,7 @@ template<> ::v1::model::Hardware* Arena::CreateMaybeMessage<::v1::model::Hardwar
 template<> ::v1::model::PortForwardingConfiguration* Arena::CreateMaybeMessage<::v1::model::PortForwardingConfiguration>(Arena*);
 template<> ::v1::model::ROSConfiguration* Arena::CreateMaybeMessage<::v1::model::ROSConfiguration>(Arena*);
 template<> ::v1::model::ResourcesConfiguration* Arena::CreateMaybeMessage<::v1::model::ResourcesConfiguration>(Arena*);
+template<> ::v1::model::RtcInfo* Arena::CreateMaybeMessage<::v1::model::RtcInfo>(Arena*);
 template<> ::v1::model::StreamConfiguration* Arena::CreateMaybeMessage<::v1::model::StreamConfiguration>(Arena*);
 template<> ::v1::model::StreamConfiguration_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::StreamConfiguration_TagsEntry_DoNotUse>(Arena*);
 template<> ::v1::model::StreamTransformConfiguration* Arena::CreateMaybeMessage<::v1::model::StreamTransformConfiguration>(Arena*);
@@ -1000,6 +1004,7 @@ class AgentConfigurationDocument final :
     kBlobDataFieldNumber = 8,
     kDiagnosticsFieldNumber = 9,
     kTerminalAccessFieldNumber = 10,
+    kRtcInfoFieldNumber = 12,
     kVersionFieldNumber = 1,
   };
   // map<string, string> tags = 2 [json_name = "tags"];
@@ -1181,6 +1186,24 @@ class AgentConfigurationDocument final :
       PROTOBUF_NAMESPACE_ID::BoolValue* terminal_access);
   PROTOBUF_NAMESPACE_ID::BoolValue* unsafe_arena_release_terminal_access();
 
+  // .v1.model.RtcInfo rtc_info = 12 [json_name = "rtcInfo"];
+  bool has_rtc_info() const;
+  private:
+  bool _internal_has_rtc_info() const;
+  public:
+  void clear_rtc_info();
+  const ::v1::model::RtcInfo& rtc_info() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::RtcInfo* release_rtc_info();
+  ::v1::model::RtcInfo* mutable_rtc_info();
+  void set_allocated_rtc_info(::v1::model::RtcInfo* rtc_info);
+  private:
+  const ::v1::model::RtcInfo& _internal_rtc_info() const;
+  ::v1::model::RtcInfo* _internal_mutable_rtc_info();
+  public:
+  void unsafe_arena_set_allocated_rtc_info(
+      ::v1::model::RtcInfo* rtc_info);
+  ::v1::model::RtcInfo* unsafe_arena_release_rtc_info();
+
   // int64 version = 1 [json_name = "version"];
   void clear_version();
   ::PROTOBUF_NAMESPACE_ID::int64 version() const;
@@ -1211,6 +1234,7 @@ class AgentConfigurationDocument final :
   ::v1::model::BlobData* blob_data_;
   ::v1::model::Diagnostics* diagnostics_;
   PROTOBUF_NAMESPACE_ID::BoolValue* terminal_access_;
+  ::v1::model::RtcInfo* rtc_info_;
   ::PROTOBUF_NAMESPACE_ID::int64 version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
@@ -4803,6 +4827,169 @@ class FileTail final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
+// -------------------------------------------------------------------
+
+class RtcInfo final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.RtcInfo) */ {
+ public:
+  inline RtcInfo() : RtcInfo(nullptr) {}
+  ~RtcInfo() override;
+  explicit constexpr RtcInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RtcInfo(const RtcInfo& from);
+  RtcInfo(RtcInfo&& from) noexcept
+    : RtcInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline RtcInfo& operator=(const RtcInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RtcInfo& operator=(RtcInfo&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RtcInfo& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RtcInfo* internal_default_instance() {
+    return reinterpret_cast<const RtcInfo*>(
+               &_RtcInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  friend void swap(RtcInfo& a, RtcInfo& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RtcInfo* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RtcInfo* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RtcInfo* New() const final {
+    return new RtcInfo();
+  }
+
+  RtcInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RtcInfo>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const RtcInfo& from);
+  void MergeFrom(const RtcInfo& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RtcInfo* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.RtcInfo";
+  }
+  protected:
+  explicit RtcInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRtcIceTransportPoliciesFieldNumber = 1,
+    kRtcIceServerProtocolFieldNumber = 2,
+  };
+  // repeated string rtc_ice_transport_policies = 1 [json_name = "rtcIceTransportPolicies"];
+  int rtc_ice_transport_policies_size() const;
+  private:
+  int _internal_rtc_ice_transport_policies_size() const;
+  public:
+  void clear_rtc_ice_transport_policies();
+  const std::string& rtc_ice_transport_policies(int index) const;
+  std::string* mutable_rtc_ice_transport_policies(int index);
+  void set_rtc_ice_transport_policies(int index, const std::string& value);
+  void set_rtc_ice_transport_policies(int index, std::string&& value);
+  void set_rtc_ice_transport_policies(int index, const char* value);
+  void set_rtc_ice_transport_policies(int index, const char* value, size_t size);
+  std::string* add_rtc_ice_transport_policies();
+  void add_rtc_ice_transport_policies(const std::string& value);
+  void add_rtc_ice_transport_policies(std::string&& value);
+  void add_rtc_ice_transport_policies(const char* value);
+  void add_rtc_ice_transport_policies(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& rtc_ice_transport_policies() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_rtc_ice_transport_policies();
+  private:
+  const std::string& _internal_rtc_ice_transport_policies(int index) const;
+  std::string* _internal_add_rtc_ice_transport_policies();
+  public:
+
+  // string rtc_ice_server_protocol = 2 [json_name = "rtcIceServerProtocol"];
+  void clear_rtc_ice_server_protocol();
+  const std::string& rtc_ice_server_protocol() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rtc_ice_server_protocol(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rtc_ice_server_protocol();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_rtc_ice_server_protocol();
+  void set_allocated_rtc_ice_server_protocol(std::string* rtc_ice_server_protocol);
+  private:
+  const std::string& _internal_rtc_ice_server_protocol() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rtc_ice_server_protocol(const std::string& value);
+  std::string* _internal_mutable_rtc_ice_server_protocol();
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.RtcInfo)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> rtc_ice_transport_policies_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rtc_ice_server_protocol_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
+};
 // ===================================================================
 
 
@@ -6198,6 +6385,89 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::AdapterConf
 AgentConfigurationDocument::adapters() const {
   // @@protoc_insertion_point(field_list:v1.model.AgentConfigurationDocument.adapters)
   return adapters_;
+}
+
+// .v1.model.RtcInfo rtc_info = 12 [json_name = "rtcInfo"];
+inline bool AgentConfigurationDocument::_internal_has_rtc_info() const {
+  return this != internal_default_instance() && rtc_info_ != nullptr;
+}
+inline bool AgentConfigurationDocument::has_rtc_info() const {
+  return _internal_has_rtc_info();
+}
+inline void AgentConfigurationDocument::clear_rtc_info() {
+  if (GetArenaForAllocation() == nullptr && rtc_info_ != nullptr) {
+    delete rtc_info_;
+  }
+  rtc_info_ = nullptr;
+}
+inline const ::v1::model::RtcInfo& AgentConfigurationDocument::_internal_rtc_info() const {
+  const ::v1::model::RtcInfo* p = rtc_info_;
+  return p != nullptr ? *p : reinterpret_cast<const ::v1::model::RtcInfo&>(
+      ::v1::model::_RtcInfo_default_instance_);
+}
+inline const ::v1::model::RtcInfo& AgentConfigurationDocument::rtc_info() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentConfigurationDocument.rtc_info)
+  return _internal_rtc_info();
+}
+inline void AgentConfigurationDocument::unsafe_arena_set_allocated_rtc_info(
+    ::v1::model::RtcInfo* rtc_info) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(rtc_info_);
+  }
+  rtc_info_ = rtc_info;
+  if (rtc_info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.AgentConfigurationDocument.rtc_info)
+}
+inline ::v1::model::RtcInfo* AgentConfigurationDocument::release_rtc_info() {
+  
+  ::v1::model::RtcInfo* temp = rtc_info_;
+  rtc_info_ = nullptr;
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::v1::model::RtcInfo* AgentConfigurationDocument::unsafe_arena_release_rtc_info() {
+  // @@protoc_insertion_point(field_release:v1.model.AgentConfigurationDocument.rtc_info)
+  
+  ::v1::model::RtcInfo* temp = rtc_info_;
+  rtc_info_ = nullptr;
+  return temp;
+}
+inline ::v1::model::RtcInfo* AgentConfigurationDocument::_internal_mutable_rtc_info() {
+  
+  if (rtc_info_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::RtcInfo>(GetArenaForAllocation());
+    rtc_info_ = p;
+  }
+  return rtc_info_;
+}
+inline ::v1::model::RtcInfo* AgentConfigurationDocument::mutable_rtc_info() {
+  // @@protoc_insertion_point(field_mutable:v1.model.AgentConfigurationDocument.rtc_info)
+  return _internal_mutable_rtc_info();
+}
+inline void AgentConfigurationDocument::set_allocated_rtc_info(::v1::model::RtcInfo* rtc_info) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete rtc_info_;
+  }
+  if (rtc_info) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::v1::model::RtcInfo>::GetOwningArena(rtc_info);
+    if (message_arena != submessage_arena) {
+      rtc_info = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, rtc_info, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  rtc_info_ = rtc_info;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationDocument.rtc_info)
 }
 
 // -------------------------------------------------------------------
@@ -9721,9 +9991,134 @@ inline void FileTail::set_allocated_regex(std::string* regex) {
   // @@protoc_insertion_point(field_set_allocated:v1.model.FileTail.regex)
 }
 
+// -------------------------------------------------------------------
+
+// RtcInfo
+
+// repeated string rtc_ice_transport_policies = 1 [json_name = "rtcIceTransportPolicies"];
+inline int RtcInfo::_internal_rtc_ice_transport_policies_size() const {
+  return rtc_ice_transport_policies_.size();
+}
+inline int RtcInfo::rtc_ice_transport_policies_size() const {
+  return _internal_rtc_ice_transport_policies_size();
+}
+inline void RtcInfo::clear_rtc_ice_transport_policies() {
+  rtc_ice_transport_policies_.Clear();
+}
+inline std::string* RtcInfo::add_rtc_ice_transport_policies() {
+  // @@protoc_insertion_point(field_add_mutable:v1.model.RtcInfo.rtc_ice_transport_policies)
+  return _internal_add_rtc_ice_transport_policies();
+}
+inline const std::string& RtcInfo::_internal_rtc_ice_transport_policies(int index) const {
+  return rtc_ice_transport_policies_.Get(index);
+}
+inline const std::string& RtcInfo::rtc_ice_transport_policies(int index) const {
+  // @@protoc_insertion_point(field_get:v1.model.RtcInfo.rtc_ice_transport_policies)
+  return _internal_rtc_ice_transport_policies(index);
+}
+inline std::string* RtcInfo::mutable_rtc_ice_transport_policies(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.model.RtcInfo.rtc_ice_transport_policies)
+  return rtc_ice_transport_policies_.Mutable(index);
+}
+inline void RtcInfo::set_rtc_ice_transport_policies(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:v1.model.RtcInfo.rtc_ice_transport_policies)
+  rtc_ice_transport_policies_.Mutable(index)->assign(value);
+}
+inline void RtcInfo::set_rtc_ice_transport_policies(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:v1.model.RtcInfo.rtc_ice_transport_policies)
+  rtc_ice_transport_policies_.Mutable(index)->assign(std::move(value));
+}
+inline void RtcInfo::set_rtc_ice_transport_policies(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  rtc_ice_transport_policies_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:v1.model.RtcInfo.rtc_ice_transport_policies)
+}
+inline void RtcInfo::set_rtc_ice_transport_policies(int index, const char* value, size_t size) {
+  rtc_ice_transport_policies_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:v1.model.RtcInfo.rtc_ice_transport_policies)
+}
+inline std::string* RtcInfo::_internal_add_rtc_ice_transport_policies() {
+  return rtc_ice_transport_policies_.Add();
+}
+inline void RtcInfo::add_rtc_ice_transport_policies(const std::string& value) {
+  rtc_ice_transport_policies_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:v1.model.RtcInfo.rtc_ice_transport_policies)
+}
+inline void RtcInfo::add_rtc_ice_transport_policies(std::string&& value) {
+  rtc_ice_transport_policies_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:v1.model.RtcInfo.rtc_ice_transport_policies)
+}
+inline void RtcInfo::add_rtc_ice_transport_policies(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  rtc_ice_transport_policies_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:v1.model.RtcInfo.rtc_ice_transport_policies)
+}
+inline void RtcInfo::add_rtc_ice_transport_policies(const char* value, size_t size) {
+  rtc_ice_transport_policies_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:v1.model.RtcInfo.rtc_ice_transport_policies)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+RtcInfo::rtc_ice_transport_policies() const {
+  // @@protoc_insertion_point(field_list:v1.model.RtcInfo.rtc_ice_transport_policies)
+  return rtc_ice_transport_policies_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+RtcInfo::mutable_rtc_ice_transport_policies() {
+  // @@protoc_insertion_point(field_mutable_list:v1.model.RtcInfo.rtc_ice_transport_policies)
+  return &rtc_ice_transport_policies_;
+}
+
+// string rtc_ice_server_protocol = 2 [json_name = "rtcIceServerProtocol"];
+inline void RtcInfo::clear_rtc_ice_server_protocol() {
+  rtc_ice_server_protocol_.ClearToEmpty();
+}
+inline const std::string& RtcInfo::rtc_ice_server_protocol() const {
+  // @@protoc_insertion_point(field_get:v1.model.RtcInfo.rtc_ice_server_protocol)
+  return _internal_rtc_ice_server_protocol();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RtcInfo::set_rtc_ice_server_protocol(ArgT0&& arg0, ArgT... args) {
+ 
+ rtc_ice_server_protocol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.RtcInfo.rtc_ice_server_protocol)
+}
+inline std::string* RtcInfo::mutable_rtc_ice_server_protocol() {
+  // @@protoc_insertion_point(field_mutable:v1.model.RtcInfo.rtc_ice_server_protocol)
+  return _internal_mutable_rtc_ice_server_protocol();
+}
+inline const std::string& RtcInfo::_internal_rtc_ice_server_protocol() const {
+  return rtc_ice_server_protocol_.Get();
+}
+inline void RtcInfo::_internal_set_rtc_ice_server_protocol(const std::string& value) {
+  
+  rtc_ice_server_protocol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RtcInfo::_internal_mutable_rtc_ice_server_protocol() {
+  
+  return rtc_ice_server_protocol_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RtcInfo::release_rtc_ice_server_protocol() {
+  // @@protoc_insertion_point(field_release:v1.model.RtcInfo.rtc_ice_server_protocol)
+  return rtc_ice_server_protocol_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void RtcInfo::set_allocated_rtc_ice_server_protocol(std::string* rtc_ice_server_protocol) {
+  if (rtc_ice_server_protocol != nullptr) {
+    
+  } else {
+    
+  }
+  rtc_ice_server_protocol_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rtc_ice_server_protocol,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.RtcInfo.rtc_ice_server_protocol)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
