@@ -4939,6 +4939,7 @@ class RtcInfo final :
   enum : int {
     kRtcIceTransportPoliciesFieldNumber = 1,
     kRtcIceServerProtocolFieldNumber = 2,
+    kUseAllServersFieldNumber = 3,
   };
   // repeated string rtc_ice_transport_policies = 1 [json_name = "rtcIceTransportPolicies"];
   int rtc_ice_transport_policies_size() const;
@@ -4978,6 +4979,15 @@ class RtcInfo final :
   std::string* _internal_mutable_rtc_ice_server_protocol();
   public:
 
+  // bool use_all_servers = 3 [json_name = "useAllServers"];
+  void clear_use_all_servers();
+  bool use_all_servers() const;
+  void set_use_all_servers(bool value);
+  private:
+  bool _internal_use_all_servers() const;
+  void _internal_set_use_all_servers(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.RtcInfo)
  private:
   class _Internal;
@@ -4987,6 +4997,7 @@ class RtcInfo final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> rtc_ice_transport_policies_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rtc_ice_server_protocol_;
+  bool use_all_servers_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -10112,6 +10123,26 @@ inline void RtcInfo::set_allocated_rtc_ice_server_protocol(std::string* rtc_ice_
   rtc_ice_server_protocol_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rtc_ice_server_protocol,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:v1.model.RtcInfo.rtc_ice_server_protocol)
+}
+
+// bool use_all_servers = 3 [json_name = "useAllServers"];
+inline void RtcInfo::clear_use_all_servers() {
+  use_all_servers_ = false;
+}
+inline bool RtcInfo::_internal_use_all_servers() const {
+  return use_all_servers_;
+}
+inline bool RtcInfo::use_all_servers() const {
+  // @@protoc_insertion_point(field_get:v1.model.RtcInfo.use_all_servers)
+  return _internal_use_all_servers();
+}
+inline void RtcInfo::_internal_set_use_all_servers(bool value) {
+  
+  use_all_servers_ = value;
+}
+inline void RtcInfo::set_use_all_servers(bool value) {
+  _internal_set_use_all_servers(value);
+  // @@protoc_insertion_point(field_set:v1.model.RtcInfo.use_all_servers)
 }
 
 #ifdef __GNUC__

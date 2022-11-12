@@ -411,7 +411,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FileTailDefaultTypeInternal _Fi
 constexpr RtcInfo::RtcInfo(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : rtc_ice_transport_policies_()
-  , rtc_ice_server_protocol_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , rtc_ice_server_protocol_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , use_all_servers_(false){}
 struct RtcInfoDefaultTypeInternal {
   constexpr RtcInfoDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -682,6 +683,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fconfig_2
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::v1::model::RtcInfo, rtc_ice_transport_policies_),
   PROTOBUF_FIELD_OFFSET(::v1::model::RtcInfo, rtc_ice_server_protocol_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::RtcInfo, use_all_servers_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::v1::model::AgentConfigurationStore)},
@@ -882,15 +884,16 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto[] PROT
   "\tR\010filename\0225\n\013file_format\030\002 \001(\0162\024.v1.mo"
   "del.FileFormatR\nfileFormat\022\031\n\010time_key\030\003"
   " \001(\tR\007timeKey\022\037\n\013time_format\030\004 \001(\tR\ntime"
-  "Format\022\024\n\005regex\030\005 \001(\tR\005regex\"}\n\007RtcInfo\022"
-  ";\n\032rtc_ice_transport_policies\030\001 \003(\tR\027rtc"
-  "IceTransportPolicies\0225\n\027rtc_ice_server_p"
-  "rotocol\030\002 \001(\tR\024rtcIceServerProtocol*&\n\nT"
-  "eleopMode\022\013\n\007COMMAND\020\000\022\013\n\007OBSERVE\020\001*&\n\nF"
-  "ileFormat\022\016\n\nPLAIN_TEXT\020\000\022\010\n\004JSON\020\001*;\n\010F"
-  "ileType\022\010\n\004FILE\020\000\022\t\n\005IMAGE\020\001\022\017\n\013POINT_CL"
-  "OUD\020\004\022\t\n\005VIDEO\020\005B+Z)github.com/FormantIO"
-  "/genproto/go/v1/modelb\006proto3"
+  "Format\022\024\n\005regex\030\005 \001(\tR\005regex\"\245\001\n\007RtcInfo"
+  "\022;\n\032rtc_ice_transport_policies\030\001 \003(\tR\027rt"
+  "cIceTransportPolicies\0225\n\027rtc_ice_server_"
+  "protocol\030\002 \001(\tR\024rtcIceServerProtocol\022&\n\017"
+  "use_all_servers\030\003 \001(\010R\ruseAllServers*&\n\n"
+  "TeleopMode\022\013\n\007COMMAND\020\000\022\013\n\007OBSERVE\020\001*&\n\n"
+  "FileFormat\022\016\n\nPLAIN_TEXT\020\000\022\010\n\004JSON\020\001*;\n\010"
+  "FileType\022\010\n\004FILE\020\000\022\t\n\005IMAGE\020\001\022\017\n\013POINT_C"
+  "LOUD\020\004\022\t\n\005VIDEO\020\005B+Z)github.com/FormantI"
+  "O/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fwrappers_2eproto,
@@ -898,7 +901,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto = {
-  false, false, 5869, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 
+  false, false, 5910, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps, 2, 27,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto,
@@ -8962,11 +8965,13 @@ RtcInfo::RtcInfo(const RtcInfo& from)
     rtc_ice_server_protocol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rtc_ice_server_protocol(), 
       GetArenaForAllocation());
   }
+  use_all_servers_ = from.use_all_servers_;
   // @@protoc_insertion_point(copy_constructor:v1.model.RtcInfo)
 }
 
 void RtcInfo::SharedCtor() {
 rtc_ice_server_protocol_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+use_all_servers_ = false;
 }
 
 RtcInfo::~RtcInfo() {
@@ -8998,6 +9003,7 @@ void RtcInfo::Clear() {
 
   rtc_ice_transport_policies_.Clear();
   rtc_ice_server_protocol_.ClearToEmpty();
+  use_all_servers_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -9027,6 +9033,13 @@ const char* RtcInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           auto str = _internal_mutable_rtc_ice_server_protocol();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.RtcInfo.rtc_ice_server_protocol"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool use_all_servers = 3 [json_name = "useAllServers"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          use_all_servers_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -9079,6 +9092,12 @@ failure:
         2, this->_internal_rtc_ice_server_protocol(), target);
   }
 
+  // bool use_all_servers = 3 [json_name = "useAllServers"];
+  if (this->use_all_servers() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_use_all_servers(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -9108,6 +9127,11 @@ size_t RtcInfo::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_rtc_ice_server_protocol());
+  }
+
+  // bool use_all_servers = 3 [json_name = "useAllServers"];
+  if (this->use_all_servers() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -9145,6 +9169,9 @@ void RtcInfo::MergeFrom(const RtcInfo& from) {
   if (!from.rtc_ice_server_protocol().empty()) {
     _internal_set_rtc_ice_server_protocol(from._internal_rtc_ice_server_protocol());
   }
+  if (from.use_all_servers() != 0) {
+    _internal_set_use_all_servers(from._internal_use_all_servers());
+  }
 }
 
 void RtcInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -9174,6 +9201,7 @@ void RtcInfo::InternalSwap(RtcInfo* other) {
       &rtc_ice_server_protocol_, GetArenaForAllocation(),
       &other->rtc_ice_server_protocol_, other->GetArenaForAllocation()
   );
+  swap(use_all_servers_, other->use_all_servers_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RtcInfo::GetMetadata() const {
