@@ -1827,7 +1827,11 @@ class SelectionResponse final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // uint32 value = 1 [json_name = "value"];
+  // optional uint32 value = 1 [json_name = "value"];
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
   void clear_value();
   ::PROTOBUF_NAMESPACE_ID::uint32 value() const;
   void set_value(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -1843,8 +1847,9 @@ class SelectionResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 value_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fintervention_2eproto;
 };
 // -------------------------------------------------------------------
@@ -3688,9 +3693,17 @@ inline SelectionRequest::DataCase SelectionRequest::data_case() const {
 
 // SelectionResponse
 
-// uint32 value = 1 [json_name = "value"];
+// optional uint32 value = 1 [json_name = "value"];
+inline bool SelectionResponse::_internal_has_value() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool SelectionResponse::has_value() const {
+  return _internal_has_value();
+}
 inline void SelectionResponse::clear_value() {
   value_ = 0u;
+  _has_bits_[0] &= ~0x00000001u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 SelectionResponse::_internal_value() const {
   return value_;
@@ -3700,7 +3713,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 SelectionResponse::value() const {
   return _internal_value();
 }
 inline void SelectionResponse::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
+  _has_bits_[0] |= 0x00000001u;
   value_ = value;
 }
 inline void SelectionResponse::set_value(::PROTOBUF_NAMESPACE_ID::uint32 value) {
