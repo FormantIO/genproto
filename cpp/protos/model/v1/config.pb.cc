@@ -108,7 +108,8 @@ constexpr AdapterConfiguration::AdapterConfiguration(
   : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , file_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , exec_command_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , exec_command_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , configuration_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct AdapterConfigurationDefaultTypeInternal {
   constexpr AdapterConfigurationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -497,6 +498,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fconfig_2
   PROTOBUF_FIELD_OFFSET(::v1::model::AdapterConfiguration, name_),
   PROTOBUF_FIELD_OFFSET(::v1::model::AdapterConfiguration, file_id_),
   PROTOBUF_FIELD_OFFSET(::v1::model::AdapterConfiguration, exec_command_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::AdapterConfiguration, configuration_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopConfiguration, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -692,27 +694,27 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 33, 40, sizeof(::v1::model::AgentConfigurationDocument_TagsEntry_DoNotUse)},
   { 42, -1, sizeof(::v1::model::AgentConfigurationDocument)},
   { 59, -1, sizeof(::v1::model::AdapterConfiguration)},
-  { 68, -1, sizeof(::v1::model::TeleopConfiguration)},
-  { 76, -1, sizeof(::v1::model::PortForwardingConfiguration)},
-  { 82, -1, sizeof(::v1::model::TeleopRosStreamConfiguration)},
-  { 95, -1, sizeof(::v1::model::TeleopHardwareStreamConfiguration)},
-  { 110, -1, sizeof(::v1::model::TeleopCustomStreamConfiguration)},
-  { 120, -1, sizeof(::v1::model::TelemetryConfiguration)},
-  { 127, 134, sizeof(::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse)},
-  { 136, -1, sizeof(::v1::model::ApplicationConfiguration)},
-  { 142, -1, sizeof(::v1::model::ResourcesConfiguration)},
-  { 150, -1, sizeof(::v1::model::DiskConfiguration)},
-  { 157, -1, sizeof(::v1::model::ROSConfiguration)},
-  { 163, 170, sizeof(::v1::model::StreamConfiguration_TagsEntry_DoNotUse)},
-  { 172, -1, sizeof(::v1::model::StreamConfiguration)},
-  { 192, -1, sizeof(::v1::model::StreamTransformConfiguration)},
-  { 198, -1, sizeof(::v1::model::BlobData)},
-  { 204, -1, sizeof(::v1::model::Diagnostics)},
-  { 211, -1, sizeof(::v1::model::Custom)},
-  { 216, -1, sizeof(::v1::model::Hardware)},
-  { 228, -1, sizeof(::v1::model::DirectoryWatch)},
-  { 237, -1, sizeof(::v1::model::FileTail)},
-  { 247, -1, sizeof(::v1::model::RtcInfo)},
+  { 69, -1, sizeof(::v1::model::TeleopConfiguration)},
+  { 77, -1, sizeof(::v1::model::PortForwardingConfiguration)},
+  { 83, -1, sizeof(::v1::model::TeleopRosStreamConfiguration)},
+  { 96, -1, sizeof(::v1::model::TeleopHardwareStreamConfiguration)},
+  { 111, -1, sizeof(::v1::model::TeleopCustomStreamConfiguration)},
+  { 121, -1, sizeof(::v1::model::TelemetryConfiguration)},
+  { 128, 135, sizeof(::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse)},
+  { 137, -1, sizeof(::v1::model::ApplicationConfiguration)},
+  { 143, -1, sizeof(::v1::model::ResourcesConfiguration)},
+  { 151, -1, sizeof(::v1::model::DiskConfiguration)},
+  { 158, -1, sizeof(::v1::model::ROSConfiguration)},
+  { 164, 171, sizeof(::v1::model::StreamConfiguration_TagsEntry_DoNotUse)},
+  { 173, -1, sizeof(::v1::model::StreamConfiguration)},
+  { 193, -1, sizeof(::v1::model::StreamTransformConfiguration)},
+  { 199, -1, sizeof(::v1::model::BlobData)},
+  { 205, -1, sizeof(::v1::model::Diagnostics)},
+  { 212, -1, sizeof(::v1::model::Custom)},
+  { 217, -1, sizeof(::v1::model::Hardware)},
+  { 229, -1, sizeof(::v1::model::DirectoryWatch)},
+  { 238, -1, sizeof(::v1::model::FileTail)},
+  { 248, -1, sizeof(::v1::model::RtcInfo)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -786,114 +788,115 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto[] PROT
   "rs\030\013 \003(\0132\036.v1.model.AdapterConfiguration"
   "R\010adapters\022,\n\010rtc_info\030\014 \001(\0132\021.v1.model."
   "RtcInfoR\007rtcInfo\0327\n\tTagsEntry\022\020\n\003key\030\001 \001"
-  "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"v\n\024Ada"
-  "pterConfiguration\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004nam"
-  "e\030\002 \001(\tR\004name\022\027\n\007file_id\030\003 \001(\tR\006fileId\022!"
-  "\n\014exec_command\030\004 \001(\tR\013execCommand\"\210\002\n\023Te"
-  "leopConfiguration\022G\n\013ros_streams\030\001 \003(\0132&"
-  ".v1.model.TeleopRosStreamConfigurationR\n"
-  "rosStreams\022P\n\016custom_streams\030\002 \003(\0132).v1."
-  "model.TeleopCustomStreamConfigurationR\rc"
-  "ustomStreams\022V\n\020hardware_streams\030\003 \003(\0132+"
-  ".v1.model.TeleopHardwareStreamConfigurat"
-  "ionR\017hardwareStreams\"S\n\033PortForwardingCo"
-  "nfiguration\0224\n\007enabled\030\001 \001(\0132\032.google.pr"
-  "otobuf.BoolValueR\007enabled\"\317\002\n\034TeleopRosS"
-  "treamConfiguration\022\035\n\ntopic_name\030\001 \001(\tR\t"
-  "topicName\0225\n\ntopic_type\030\002 \001(\0162\026.v1.model"
-  ".ROSTopicTypeR\ttopicType\022(\n\004mode\030\003 \001(\0162\024"
-  ".v1.model.TeleopModeR\004mode\022!\n\014encode_vid"
-  "eo\030\004 \001(\010R\013encodeVideo\022\037\n\013audio_codec\030\005 \001"
-  "(\tR\naudioCodec\022\030\n\007quality\030\006 \001(\tR\007quality"
-  "\0220\n\024base_reference_frame\030\007 \001(\tR\022baseRefe"
-  "renceFrame\022\037\n\013local_frame\030\010 \001(\tR\nlocalFr"
-  "ame\"\212\003\n!TeleopHardwareStreamConfiguratio"
-  "n\022\022\n\004name\030\001 \001(\tR\004name\022&\n\017rtc_stream_type"
-  "\030\002 \001(\tR\rrtcStreamType\022(\n\004mode\030\003 \001(\0162\024.v1"
-  ".model.TeleopModeR\004mode\022#\n\rhw_descriptor"
-  "\030\004 \001(\tR\014hwDescriptor\022\030\n\007quality\030\005 \001(\tR\007q"
-  "uality\022#\n\rhardware_type\030\006 \001(\tR\014hardwareT"
-  "ype\0220\n\024rtsp_encoding_needed\030\007 \001(\010R\022rtspE"
-  "ncodingNeeded\022\031\n\010is_onvif\030\010 \001(\010R\007isOnvif"
-  "\022&\n\017ip_cam_username\030\t \001(\tR\ripCamUsername"
-  "\022&\n\017ip_cam_password\030\n \001(\tR\ripCamPassword"
-  "\"\304\001\n\037TeleopCustomStreamConfiguration\022\022\n\004"
-  "name\030\001 \001(\tR\004name\022&\n\017rtc_stream_type\030\002 \001("
-  "\tR\rrtcStreamType\022(\n\004mode\030\003 \001(\0162\024.v1.mode"
-  "l.TeleopModeR\004mode\022!\n\014encode_video\030\004 \001(\010"
-  "R\013encodeVideo\022\030\n\007quality\030\005 \001(\tR\007quality\""
-  "\177\n\026TelemetryConfiguration\0227\n\007streams\030\001 \003"
-  "(\0132\035.v1.model.StreamConfigurationR\007strea"
-  "ms\022,\n\003ros\030\002 \001(\0132\032.v1.model.ROSConfigurat"
-  "ionR\003ros\"\306\001\n\030ApplicationConfiguration\022e\n"
-  "\021configuration_map\030\001 \003(\01328.v1.model.Appl"
-  "icationConfiguration.ConfigurationMapEnt"
-  "ryR\020configurationMap\032C\n\025ConfigurationMap"
-  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005"
-  "value:\0028\001\"\305\001\n\026ResourcesConfiguration\022/\n\004"
-  "disk\030\001 \001(\0132\033.v1.model.DiskConfigurationR"
-  "\004disk\022J\n\022stream_throttle_hz\030\002 \001(\0132\034.goog"
-  "le.protobuf.DoubleValueR\020streamThrottleH"
-  "z\022.\n\023low_bandwidth_agent\030\003 \001(\010R\021lowBandw"
-  "idthAgent\"g\n\021DiskConfiguration\022\037\n\013buffer"
-  "_size\030\001 \001(\003R\nbufferSize\0221\n\025on_demand_buf"
-  "fer_size\030\002 \001(\003R\022onDemandBufferSize\"K\n\020RO"
-  "SConfiguration\0227\n\030world_reference_frame_"
-  "id\030\001 \001(\tR\025worldReferenceFrameId\"\335\006\n\023Stre"
-  "amConfiguration\022\022\n\004name\030\001 \001(\tR\004name\022;\n\004t"
-  "ags\030\002 \003(\0132\'.v1.model.StreamConfiguration"
-  ".TagsEntryR\004tags\0221\n\tros_topic\030\003 \001(\0132\022.v1"
-  ".model.ROSTopicH\000R\010rosTopic\022F\n\020ros_local"
-  "ization\030\004 \001(\0132\031.v1.model.ROSLocalization"
-  "H\000R\017rosLocalization\022C\n\017directory_watch\030\005"
-  " \001(\0132\030.v1.model.DirectoryWatchH\000R\016direct"
-  "oryWatch\0221\n\tfile_tail\030\006 \001(\0132\022.v1.model.F"
-  "ileTailH\000R\010fileTail\022J\n\022ros_transform_tre"
-  "e\030\007 \001(\0132\032.v1.model.ROSTransformTreeH\000R\020r"
-  "osTransformTree\022*\n\006custom\030\t \001(\0132\020.v1.mod"
-  "el.CustomH\000R\006custom\0220\n\010hardware\030\n \001(\0132\022."
-  "v1.model.HardwareH\000R\010hardware\022=\n\013throttl"
-  "e_hz\030\010 \001(\0132\034.google.protobuf.DoubleValue"
-  "R\nthrottleHz\0226\n\010disabled\030\023 \001(\0132\032.google."
-  "protobuf.BoolValueR\010disabled\0227\n\ton_deman"
-  "d\030\024 \001(\0132\032.google.protobuf.BoolValueR\010onD"
-  "emand\022D\n\ttransform\030\025 \001(\0132&.v1.model.Stre"
-  "amTransformConfigurationR\ttransform\022\030\n\007q"
-  "uality\030\026 \001(\tR\007quality\0327\n\tTagsEntry\022\020\n\003ke"
-  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\017"
-  "\n\rconfiguration\"p\n\034StreamTransformConfig"
-  "uration\022P\n\026video_encoding_enabled\030\001 \001(\0132"
-  "\032.google.protobuf.BoolValueR\024videoEncodi"
-  "ngEnabled\"\036\n\010BlobData\022\022\n\004data\030\001 \001(\tR\004dat"
-  "a\"\215\001\n\013Diagnostics\022;\n\013report_logs\030\001 \001(\0132\032"
-  ".google.protobuf.BoolValueR\nreportLogs\022A"
-  "\n\016report_metrics\030\002 \001(\0132\032.google.protobuf"
-  ".BoolValueR\rreportMetrics\"\010\n\006Custom\"\241\002\n\010"
-  "Hardware\022#\n\rhw_descriptor\030\001 \001(\tR\014hwDescr"
-  "iptor\022.\n\023audio_hw_descriptor\030\003 \001(\tR\021audi"
-  "oHwDescriptor\022#\n\rhardware_type\030\004 \001(\tR\014ha"
-  "rdwareType\0220\n\024rtsp_encoding_needed\030\005 \001(\010"
-  "R\022rtspEncodingNeeded\022\031\n\010is_onvif\030\006 \001(\010R\007"
-  "isOnvif\022&\n\017ip_cam_username\030\007 \001(\tR\ripCamU"
-  "sername\022&\n\017ip_cam_password\030\010 \001(\tR\ripCamP"
-  "assword\"\240\001\n\016DirectoryWatch\022\034\n\tdirectory\030"
-  "\001 \001(\tR\tdirectory\022\034\n\textension\030\002 \001(\tR\text"
-  "ension\022/\n\tfile_type\030\003 \001(\0162\022.v1.model.Fil"
-  "eTypeR\010fileType\022!\n\014remote_agent\030\004 \001(\010R\013r"
-  "emoteAgent\"\257\001\n\010FileTail\022\032\n\010filename\030\001 \001("
-  "\tR\010filename\0225\n\013file_format\030\002 \001(\0162\024.v1.mo"
-  "del.FileFormatR\nfileFormat\022\031\n\010time_key\030\003"
-  " \001(\tR\007timeKey\022\037\n\013time_format\030\004 \001(\tR\ntime"
-  "Format\022\024\n\005regex\030\005 \001(\tR\005regex\"\245\001\n\007RtcInfo"
-  "\022;\n\032rtc_ice_transport_policies\030\001 \003(\tR\027rt"
-  "cIceTransportPolicies\0225\n\027rtc_ice_server_"
-  "protocol\030\002 \001(\tR\024rtcIceServerProtocol\022&\n\017"
-  "use_all_servers\030\003 \001(\010R\ruseAllServers*&\n\n"
-  "TeleopMode\022\013\n\007COMMAND\020\000\022\013\n\007OBSERVE\020\001*&\n\n"
-  "FileFormat\022\016\n\nPLAIN_TEXT\020\000\022\010\n\004JSON\020\001*;\n\010"
-  "FileType\022\010\n\004FILE\020\000\022\t\n\005IMAGE\020\001\022\017\n\013POINT_C"
-  "LOUD\020\004\022\t\n\005VIDEO\020\005B+Z)github.com/FormantI"
-  "O/genproto/go/v1/modelb\006proto3"
+  "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\234\001\n\024Ad"
+  "apterConfiguration\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004na"
+  "me\030\002 \001(\tR\004name\022\027\n\007file_id\030\003 \001(\tR\006fileId\022"
+  "!\n\014exec_command\030\004 \001(\tR\013execCommand\022$\n\rco"
+  "nfiguration\030\005 \001(\tR\rconfiguration\"\210\002\n\023Tel"
+  "eopConfiguration\022G\n\013ros_streams\030\001 \003(\0132&."
+  "v1.model.TeleopRosStreamConfigurationR\nr"
+  "osStreams\022P\n\016custom_streams\030\002 \003(\0132).v1.m"
+  "odel.TeleopCustomStreamConfigurationR\rcu"
+  "stomStreams\022V\n\020hardware_streams\030\003 \003(\0132+."
+  "v1.model.TeleopHardwareStreamConfigurati"
+  "onR\017hardwareStreams\"S\n\033PortForwardingCon"
+  "figuration\0224\n\007enabled\030\001 \001(\0132\032.google.pro"
+  "tobuf.BoolValueR\007enabled\"\317\002\n\034TeleopRosSt"
+  "reamConfiguration\022\035\n\ntopic_name\030\001 \001(\tR\tt"
+  "opicName\0225\n\ntopic_type\030\002 \001(\0162\026.v1.model."
+  "ROSTopicTypeR\ttopicType\022(\n\004mode\030\003 \001(\0162\024."
+  "v1.model.TeleopModeR\004mode\022!\n\014encode_vide"
+  "o\030\004 \001(\010R\013encodeVideo\022\037\n\013audio_codec\030\005 \001("
+  "\tR\naudioCodec\022\030\n\007quality\030\006 \001(\tR\007quality\022"
+  "0\n\024base_reference_frame\030\007 \001(\tR\022baseRefer"
+  "enceFrame\022\037\n\013local_frame\030\010 \001(\tR\nlocalFra"
+  "me\"\212\003\n!TeleopHardwareStreamConfiguration"
+  "\022\022\n\004name\030\001 \001(\tR\004name\022&\n\017rtc_stream_type\030"
+  "\002 \001(\tR\rrtcStreamType\022(\n\004mode\030\003 \001(\0162\024.v1."
+  "model.TeleopModeR\004mode\022#\n\rhw_descriptor\030"
+  "\004 \001(\tR\014hwDescriptor\022\030\n\007quality\030\005 \001(\tR\007qu"
+  "ality\022#\n\rhardware_type\030\006 \001(\tR\014hardwareTy"
+  "pe\0220\n\024rtsp_encoding_needed\030\007 \001(\010R\022rtspEn"
+  "codingNeeded\022\031\n\010is_onvif\030\010 \001(\010R\007isOnvif\022"
+  "&\n\017ip_cam_username\030\t \001(\tR\ripCamUsername\022"
+  "&\n\017ip_cam_password\030\n \001(\tR\ripCamPassword\""
+  "\304\001\n\037TeleopCustomStreamConfiguration\022\022\n\004n"
+  "ame\030\001 \001(\tR\004name\022&\n\017rtc_stream_type\030\002 \001(\t"
+  "R\rrtcStreamType\022(\n\004mode\030\003 \001(\0162\024.v1.model"
+  ".TeleopModeR\004mode\022!\n\014encode_video\030\004 \001(\010R"
+  "\013encodeVideo\022\030\n\007quality\030\005 \001(\tR\007quality\"\177"
+  "\n\026TelemetryConfiguration\0227\n\007streams\030\001 \003("
+  "\0132\035.v1.model.StreamConfigurationR\007stream"
+  "s\022,\n\003ros\030\002 \001(\0132\032.v1.model.ROSConfigurati"
+  "onR\003ros\"\306\001\n\030ApplicationConfiguration\022e\n\021"
+  "configuration_map\030\001 \003(\01328.v1.model.Appli"
+  "cationConfiguration.ConfigurationMapEntr"
+  "yR\020configurationMap\032C\n\025ConfigurationMapE"
+  "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v"
+  "alue:\0028\001\"\305\001\n\026ResourcesConfiguration\022/\n\004d"
+  "isk\030\001 \001(\0132\033.v1.model.DiskConfigurationR\004"
+  "disk\022J\n\022stream_throttle_hz\030\002 \001(\0132\034.googl"
+  "e.protobuf.DoubleValueR\020streamThrottleHz"
+  "\022.\n\023low_bandwidth_agent\030\003 \001(\010R\021lowBandwi"
+  "dthAgent\"g\n\021DiskConfiguration\022\037\n\013buffer_"
+  "size\030\001 \001(\003R\nbufferSize\0221\n\025on_demand_buff"
+  "er_size\030\002 \001(\003R\022onDemandBufferSize\"K\n\020ROS"
+  "Configuration\0227\n\030world_reference_frame_i"
+  "d\030\001 \001(\tR\025worldReferenceFrameId\"\335\006\n\023Strea"
+  "mConfiguration\022\022\n\004name\030\001 \001(\tR\004name\022;\n\004ta"
+  "gs\030\002 \003(\0132\'.v1.model.StreamConfiguration."
+  "TagsEntryR\004tags\0221\n\tros_topic\030\003 \001(\0132\022.v1."
+  "model.ROSTopicH\000R\010rosTopic\022F\n\020ros_locali"
+  "zation\030\004 \001(\0132\031.v1.model.ROSLocalizationH"
+  "\000R\017rosLocalization\022C\n\017directory_watch\030\005 "
+  "\001(\0132\030.v1.model.DirectoryWatchH\000R\016directo"
+  "ryWatch\0221\n\tfile_tail\030\006 \001(\0132\022.v1.model.Fi"
+  "leTailH\000R\010fileTail\022J\n\022ros_transform_tree"
+  "\030\007 \001(\0132\032.v1.model.ROSTransformTreeH\000R\020ro"
+  "sTransformTree\022*\n\006custom\030\t \001(\0132\020.v1.mode"
+  "l.CustomH\000R\006custom\0220\n\010hardware\030\n \001(\0132\022.v"
+  "1.model.HardwareH\000R\010hardware\022=\n\013throttle"
+  "_hz\030\010 \001(\0132\034.google.protobuf.DoubleValueR"
+  "\nthrottleHz\0226\n\010disabled\030\023 \001(\0132\032.google.p"
+  "rotobuf.BoolValueR\010disabled\0227\n\ton_demand"
+  "\030\024 \001(\0132\032.google.protobuf.BoolValueR\010onDe"
+  "mand\022D\n\ttransform\030\025 \001(\0132&.v1.model.Strea"
+  "mTransformConfigurationR\ttransform\022\030\n\007qu"
+  "ality\030\026 \001(\tR\007quality\0327\n\tTagsEntry\022\020\n\003key"
+  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\017\n"
+  "\rconfiguration\"p\n\034StreamTransformConfigu"
+  "ration\022P\n\026video_encoding_enabled\030\001 \001(\0132\032"
+  ".google.protobuf.BoolValueR\024videoEncodin"
+  "gEnabled\"\036\n\010BlobData\022\022\n\004data\030\001 \001(\tR\004data"
+  "\"\215\001\n\013Diagnostics\022;\n\013report_logs\030\001 \001(\0132\032."
+  "google.protobuf.BoolValueR\nreportLogs\022A\n"
+  "\016report_metrics\030\002 \001(\0132\032.google.protobuf."
+  "BoolValueR\rreportMetrics\"\010\n\006Custom\"\241\002\n\010H"
+  "ardware\022#\n\rhw_descriptor\030\001 \001(\tR\014hwDescri"
+  "ptor\022.\n\023audio_hw_descriptor\030\003 \001(\tR\021audio"
+  "HwDescriptor\022#\n\rhardware_type\030\004 \001(\tR\014har"
+  "dwareType\0220\n\024rtsp_encoding_needed\030\005 \001(\010R"
+  "\022rtspEncodingNeeded\022\031\n\010is_onvif\030\006 \001(\010R\007i"
+  "sOnvif\022&\n\017ip_cam_username\030\007 \001(\tR\ripCamUs"
+  "ername\022&\n\017ip_cam_password\030\010 \001(\tR\ripCamPa"
+  "ssword\"\240\001\n\016DirectoryWatch\022\034\n\tdirectory\030\001"
+  " \001(\tR\tdirectory\022\034\n\textension\030\002 \001(\tR\texte"
+  "nsion\022/\n\tfile_type\030\003 \001(\0162\022.v1.model.File"
+  "TypeR\010fileType\022!\n\014remote_agent\030\004 \001(\010R\013re"
+  "moteAgent\"\257\001\n\010FileTail\022\032\n\010filename\030\001 \001(\t"
+  "R\010filename\0225\n\013file_format\030\002 \001(\0162\024.v1.mod"
+  "el.FileFormatR\nfileFormat\022\031\n\010time_key\030\003 "
+  "\001(\tR\007timeKey\022\037\n\013time_format\030\004 \001(\tR\ntimeF"
+  "ormat\022\024\n\005regex\030\005 \001(\tR\005regex\"\245\001\n\007RtcInfo\022"
+  ";\n\032rtc_ice_transport_policies\030\001 \003(\tR\027rtc"
+  "IceTransportPolicies\0225\n\027rtc_ice_server_p"
+  "rotocol\030\002 \001(\tR\024rtcIceServerProtocol\022&\n\017u"
+  "se_all_servers\030\003 \001(\010R\ruseAllServers*&\n\nT"
+  "eleopMode\022\013\n\007COMMAND\020\000\022\013\n\007OBSERVE\020\001*&\n\nF"
+  "ileFormat\022\016\n\nPLAIN_TEXT\020\000\022\010\n\004JSON\020\001*;\n\010F"
+  "ileType\022\010\n\004FILE\020\000\022\t\n\005IMAGE\020\001\022\017\n\013POINT_CL"
+  "OUD\020\004\022\t\n\005VIDEO\020\005B+Z)github.com/FormantIO"
+  "/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fwrappers_2eproto,
@@ -901,7 +904,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto = {
-  false, false, 5910, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 
+  false, false, 5949, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps, 2, 27,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto,
@@ -2700,6 +2703,11 @@ AdapterConfiguration::AdapterConfiguration(const AdapterConfiguration& from)
     exec_command_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_exec_command(), 
       GetArenaForAllocation());
   }
+  configuration_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_configuration().empty()) {
+    configuration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_configuration(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:v1.model.AdapterConfiguration)
 }
 
@@ -2708,6 +2716,7 @@ id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyIn
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 file_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 exec_command_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+configuration_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 AdapterConfiguration::~AdapterConfiguration() {
@@ -2722,6 +2731,7 @@ void AdapterConfiguration::SharedDtor() {
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   file_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   exec_command_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  configuration_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void AdapterConfiguration::ArenaDtor(void* object) {
@@ -2744,6 +2754,7 @@ void AdapterConfiguration::Clear() {
   name_.ClearToEmpty();
   file_id_.ClearToEmpty();
   exec_command_.ClearToEmpty();
+  configuration_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2786,6 +2797,15 @@ const char* AdapterConfiguration::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           auto str = _internal_mutable_exec_command();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.AdapterConfiguration.exec_command"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string configuration = 5 [json_name = "configuration"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_configuration();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.AdapterConfiguration.configuration"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2858,6 +2878,16 @@ failure:
         4, this->_internal_exec_command(), target);
   }
 
+  // string configuration = 5 [json_name = "configuration"];
+  if (!this->configuration().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_configuration().data(), static_cast<int>(this->_internal_configuration().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.AdapterConfiguration.configuration");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_configuration(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2900,6 +2930,13 @@ size_t AdapterConfiguration::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_exec_command());
+  }
+
+  // string configuration = 5 [json_name = "configuration"];
+  if (!this->configuration().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_configuration());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2945,6 +2982,9 @@ void AdapterConfiguration::MergeFrom(const AdapterConfiguration& from) {
   if (!from.exec_command().empty()) {
     _internal_set_exec_command(from._internal_exec_command());
   }
+  if (!from.configuration().empty()) {
+    _internal_set_configuration(from._internal_configuration());
+  }
 }
 
 void AdapterConfiguration::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -2987,6 +3027,11 @@ void AdapterConfiguration::InternalSwap(AdapterConfiguration* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &exec_command_, GetArenaForAllocation(),
       &other->exec_command_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &configuration_, GetArenaForAllocation(),
+      &other->configuration_, other->GetArenaForAllocation()
   );
 }
 

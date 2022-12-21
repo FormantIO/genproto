@@ -1353,6 +1353,7 @@ class AdapterConfiguration final :
     kNameFieldNumber = 2,
     kFileIdFieldNumber = 3,
     kExecCommandFieldNumber = 4,
+    kConfigurationFieldNumber = 5,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1410,6 +1411,20 @@ class AdapterConfiguration final :
   std::string* _internal_mutable_exec_command();
   public:
 
+  // string configuration = 5 [json_name = "configuration"];
+  void clear_configuration();
+  const std::string& configuration() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_configuration(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_configuration();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_configuration();
+  void set_allocated_configuration(std::string* configuration);
+  private:
+  const std::string& _internal_configuration() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_configuration(const std::string& value);
+  std::string* _internal_mutable_configuration();
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.AdapterConfiguration)
  private:
   class _Internal;
@@ -1421,6 +1436,7 @@ class AdapterConfiguration final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr file_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr exec_command_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr configuration_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -6663,6 +6679,51 @@ inline void AdapterConfiguration::set_allocated_exec_command(std::string* exec_c
   exec_command_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), exec_command,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:v1.model.AdapterConfiguration.exec_command)
+}
+
+// string configuration = 5 [json_name = "configuration"];
+inline void AdapterConfiguration::clear_configuration() {
+  configuration_.ClearToEmpty();
+}
+inline const std::string& AdapterConfiguration::configuration() const {
+  // @@protoc_insertion_point(field_get:v1.model.AdapterConfiguration.configuration)
+  return _internal_configuration();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AdapterConfiguration::set_configuration(ArgT0&& arg0, ArgT... args) {
+ 
+ configuration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.AdapterConfiguration.configuration)
+}
+inline std::string* AdapterConfiguration::mutable_configuration() {
+  // @@protoc_insertion_point(field_mutable:v1.model.AdapterConfiguration.configuration)
+  return _internal_mutable_configuration();
+}
+inline const std::string& AdapterConfiguration::_internal_configuration() const {
+  return configuration_.Get();
+}
+inline void AdapterConfiguration::_internal_set_configuration(const std::string& value) {
+  
+  configuration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AdapterConfiguration::_internal_mutable_configuration() {
+  
+  return configuration_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AdapterConfiguration::release_configuration() {
+  // @@protoc_insertion_point(field_release:v1.model.AdapterConfiguration.configuration)
+  return configuration_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AdapterConfiguration::set_allocated_configuration(std::string* configuration) {
+  if (configuration != nullptr) {
+    
+  } else {
+    
+  }
+  configuration_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), configuration,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.AdapterConfiguration.configuration)
 }
 
 // -------------------------------------------------------------------
