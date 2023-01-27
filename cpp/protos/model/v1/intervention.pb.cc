@@ -272,13 +272,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2finterven
   PROTOBUF_FIELD_OFFSET(::v1::model::SelectionRequest, options_),
   PROTOBUF_FIELD_OFFSET(::v1::model::SelectionRequest, hint_),
   PROTOBUF_FIELD_OFFSET(::v1::model::SelectionRequest, data_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::SelectionResponse, _has_bits_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::SelectionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::v1::model::SelectionResponse, value_),
-  0,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -303,9 +302,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 56, -1, sizeof(::v1::model::LabelingRequest)},
   { 66, -1, sizeof(::v1::model::LabelingResponse)},
   { 72, -1, sizeof(::v1::model::SelectionRequest)},
-  { 83, 89, sizeof(::v1::model::SelectionResponse)},
-  { 90, -1, sizeof(::v1::model::TeleopRequest)},
-  { 96, -1, sizeof(::v1::model::TeleopResponse)},
+  { 83, -1, sizeof(::v1::model::SelectionResponse)},
+  { 89, -1, sizeof(::v1::model::TeleopRequest)},
+  { 95, -1, sizeof(::v1::model::TeleopResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -363,13 +362,12 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fintervention_2eproto[
   "\n\005title\030\001 \001(\tR\005title\022\'\n\005image\030\002 \001(\0132\017.v1"
   ".model.ImageH\000R\005image\022 \n\013instruction\030\003 \001"
   "(\tR\013instruction\022\030\n\007options\030\004 \003(\tR\007option"
-  "s\022\022\n\004hint\030\005 \001(\rR\004hintB\006\n\004data\"8\n\021Selecti"
-  "onResponse\022\031\n\005value\030\001 \001(\rH\000R\005value\210\001\001B\010\n"
-  "\006_value\"1\n\rTeleopRequest\022 \n\013instruction\030"
-  "\001 \001(\tR\013instruction\"<\n\016TeleopResponse\022\024\n\005"
-  "state\030\001 \001(\tR\005state\022\024\n\005notes\030\002 \001(\tR\005notes"
-  "B+Z)github.com/FormantIO/genproto/go/v1/"
-  "modelb\006proto3"
+  "s\022\022\n\004hint\030\005 \001(\rR\004hintB\006\n\004data\")\n\021Selecti"
+  "onResponse\022\024\n\005value\030\001 \001(\rR\005value\"1\n\rTele"
+  "opRequest\022 \n\013instruction\030\001 \001(\tR\013instruct"
+  "ion\"<\n\016TeleopResponse\022\024\n\005state\030\001 \001(\tR\005st"
+  "ate\022\024\n\005notes\030\002 \001(\tR\005notesB+Z)github.com/"
+  "FormantIO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto,
@@ -377,7 +375,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto = {
-  false, false, 1813, descriptor_table_protodef_protos_2fmodel_2fv1_2fintervention_2eproto, "protos/model/v1/intervention.proto", 
+  false, false, 1798, descriptor_table_protodef_protos_2fmodel_2fv1_2fintervention_2eproto, "protos/model/v1/intervention.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto_deps, 2, 12,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fintervention_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fintervention_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fintervention_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fintervention_2eproto,
@@ -3133,10 +3131,6 @@ void SelectionRequest::InternalSwap(SelectionRequest* other) {
 
 class SelectionResponse::_Internal {
  public:
-  using HasBits = decltype(std::declval<SelectionResponse>()._has_bits_);
-  static void set_has_value(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
 SelectionResponse::SelectionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
@@ -3146,8 +3140,7 @@ SelectionResponse::SelectionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   // @@protoc_insertion_point(arena_constructor:v1.model.SelectionResponse)
 }
 SelectionResponse::SelectionResponse(const SelectionResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _has_bits_(from._has_bits_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   value_ = from.value_;
   // @@protoc_insertion_point(copy_constructor:v1.model.SelectionResponse)
@@ -3184,21 +3177,18 @@ void SelectionResponse::Clear() {
   (void) cached_has_bits;
 
   value_ = 0u;
-  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* SelectionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // optional uint32 value = 1 [json_name = "value"];
+      // uint32 value = 1 [json_name = "value"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          _Internal::set_has_value(&has_bits);
           value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -3219,7 +3209,6 @@ const char* SelectionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     }  // switch
   }  // while
 success:
-  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -3233,8 +3222,8 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // optional uint32 value = 1 [json_name = "value"];
-  if (_internal_has_value()) {
+  // uint32 value = 1 [json_name = "value"];
+  if (this->value() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_value(), target);
   }
@@ -3255,9 +3244,8 @@ size_t SelectionResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // optional uint32 value = 1 [json_name = "value"];
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  // uint32 value = 1 [json_name = "value"];
+  if (this->value() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_value());
@@ -3294,7 +3282,7 @@ void SelectionResponse::MergeFrom(const SelectionResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_value()) {
+  if (from.value() != 0) {
     _internal_set_value(from._internal_value());
   }
 }
@@ -3320,7 +3308,6 @@ bool SelectionResponse::IsInitialized() const {
 void SelectionResponse::InternalSwap(SelectionResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
   swap(value_, other->value_);
 }
 
