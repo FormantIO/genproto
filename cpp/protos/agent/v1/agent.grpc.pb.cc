@@ -6,19 +6,19 @@
 #include "protos/agent/v1/agent.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
-#include <grpcpp/impl/codegen/channel_interface.h>
-#include <grpcpp/impl/codegen/client_unary_call.h>
-#include <grpcpp/impl/codegen/client_callback.h>
-#include <grpcpp/impl/codegen/message_allocator.h>
-#include <grpcpp/impl/codegen/method_handler.h>
-#include <grpcpp/impl/codegen/rpc_service_method.h>
-#include <grpcpp/impl/codegen/server_callback.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/channel_interface.h>
+#include <grpcpp/impl/client_unary_call.h>
+#include <grpcpp/support/client_callback.h>
+#include <grpcpp/support/message_allocator.h>
+#include <grpcpp/support/method_handler.h>
+#include <grpcpp/impl/rpc_service_method.h>
+#include <grpcpp/support/server_callback.h>
 #include <grpcpp/impl/codegen/server_callback_handlers.h>
-#include <grpcpp/impl/codegen/server_context.h>
-#include <grpcpp/impl/codegen/service_type.h>
-#include <grpcpp/impl/codegen/sync_stream.h>
+#include <grpcpp/server_context.h>
+#include <grpcpp/impl/service_type.h>
+#include <grpcpp/support/sync_stream.h>
 namespace v1 {
 namespace agent {
 
@@ -52,664 +52,569 @@ static const char* Agent_method_names[] = {
 
 std::unique_ptr< Agent::Stub> Agent::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< Agent::Stub> stub(new Agent::Stub(channel));
+  std::unique_ptr< Agent::Stub> stub(new Agent::Stub(channel, options));
   return stub;
 }
 
-Agent::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_StreamData_(Agent_method_names[0], ::grpc::internal::RpcMethod::CLIENT_STREAMING, channel)
-  , rpcmethod_PostData_(Agent_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostDataMulti_(Agent_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetTeleopControlDataStream_(Agent_method_names[3], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_GetTeleopHeartbeatStream_(Agent_method_names[4], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_GetTelemetryListenerStream_(Agent_method_names[5], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_GetCustomDataChannelMessageStream_(Agent_method_names[6], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_CreateEvent_(Agent_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateInterventionRequest_(Agent_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetInterventionRequest_(Agent_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetInterventionResponse_(Agent_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetStreamsConfiguration_(Agent_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetApplicationConfiguration_(Agent_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetConfigBlobData_(Agent_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAgentConfiguration_(Agent_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Health_(Agent_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCommandRequest_(Agent_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCommandRequestStream_(Agent_method_names[17], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_SendCommandResponse_(Agent_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostTransformFrame_(Agent_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetBaseFrameID_(Agent_method_names[20], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ClearTransformTree_(Agent_method_names[21], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetTeleopInfo_(Agent_method_names[22], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostLanRtcOffer_(Agent_method_names[23], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendOnCustomDataChannel_(Agent_method_names[24], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+Agent::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_StreamData_(Agent_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::CLIENT_STREAMING, channel)
+  , rpcmethod_PostData_(Agent_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PostDataMulti_(Agent_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTeleopControlDataStream_(Agent_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetTeleopHeartbeatStream_(Agent_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetTelemetryListenerStream_(Agent_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetCustomDataChannelMessageStream_(Agent_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_CreateEvent_(Agent_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateInterventionRequest_(Agent_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetInterventionRequest_(Agent_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetInterventionResponse_(Agent_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetStreamsConfiguration_(Agent_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetApplicationConfiguration_(Agent_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetConfigBlobData_(Agent_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAgentConfiguration_(Agent_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Health_(Agent_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCommandRequest_(Agent_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCommandRequestStream_(Agent_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_SendCommandResponse_(Agent_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PostTransformFrame_(Agent_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetBaseFrameID_(Agent_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ClearTransformTree_(Agent_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTeleopInfo_(Agent_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PostLanRtcOffer_(Agent_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendOnCustomDataChannel_(Agent_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientWriter< ::v1::model::Datapoint>* Agent::Stub::StreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response) {
-  return ::grpc_impl::internal::ClientWriterFactory< ::v1::model::Datapoint>::Create(channel_.get(), rpcmethod_StreamData_, context, response);
+  return ::grpc::internal::ClientWriterFactory< ::v1::model::Datapoint>::Create(channel_.get(), rpcmethod_StreamData_, context, response);
 }
 
-void Agent::Stub::experimental_async::StreamData(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::experimental::ClientWriteReactor< ::v1::model::Datapoint>* reactor) {
-  ::grpc_impl::internal::ClientCallbackWriterFactory< ::v1::model::Datapoint>::Create(stub_->channel_.get(), stub_->rpcmethod_StreamData_, context, response, reactor);
+void Agent::Stub::async::StreamData(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::ClientWriteReactor< ::v1::model::Datapoint>* reactor) {
+  ::grpc::internal::ClientCallbackWriterFactory< ::v1::model::Datapoint>::Create(stub_->channel_.get(), stub_->rpcmethod_StreamData_, context, response, reactor);
 }
 
 ::grpc::ClientAsyncWriter< ::v1::model::Datapoint>* Agent::Stub::AsyncStreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncWriterFactory< ::v1::model::Datapoint>::Create(channel_.get(), cq, rpcmethod_StreamData_, context, response, true, tag);
+  return ::grpc::internal::ClientAsyncWriterFactory< ::v1::model::Datapoint>::Create(channel_.get(), cq, rpcmethod_StreamData_, context, response, true, tag);
 }
 
 ::grpc::ClientAsyncWriter< ::v1::model::Datapoint>* Agent::Stub::PrepareAsyncStreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncWriterFactory< ::v1::model::Datapoint>::Create(channel_.get(), cq, rpcmethod_StreamData_, context, response, false, nullptr);
+  return ::grpc::internal::ClientAsyncWriterFactory< ::v1::model::Datapoint>::Create(channel_.get(), cq, rpcmethod_StreamData_, context, response, false, nullptr);
 }
 
 ::grpc::Status Agent::Stub::PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint& request, ::v1::agent::PostDataResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_PostData_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::model::Datapoint, ::v1::agent::PostDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PostData_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PostData_, context, request, response, std::move(f));
+void Agent::Stub::async::PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::model::Datapoint, ::v1::agent::PostDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostData_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::PostData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PostData_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PostData_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::PostData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PostData_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::PostDataResponse>* Agent::Stub::AsyncPostDataRaw(::grpc::ClientContext* context, const ::v1::model::Datapoint& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::PostDataResponse>::Create(channel_.get(), cq, rpcmethod_PostData_, context, request, true);
+void Agent::Stub::async::PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostData_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::PostDataResponse>* Agent::Stub::PrepareAsyncPostDataRaw(::grpc::ClientContext* context, const ::v1::model::Datapoint& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::PostDataResponse>::Create(channel_.get(), cq, rpcmethod_PostData_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::PostDataResponse, ::v1::model::Datapoint, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PostData_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::PostDataResponse>* Agent::Stub::AsyncPostDataRaw(::grpc::ClientContext* context, const ::v1::model::Datapoint& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncPostDataRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest& request, ::v1::agent::PostDataMultiResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_PostDataMulti_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PostDataMulti_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PostDataMulti_, context, request, response, std::move(f));
+void Agent::Stub::async::PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostDataMulti_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::PostDataMulti(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataMultiResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PostDataMulti_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PostDataMulti_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::PostDataMulti(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PostDataMulti_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::PostDataMultiResponse>* Agent::Stub::AsyncPostDataMultiRaw(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::PostDataMultiResponse>::Create(channel_.get(), cq, rpcmethod_PostDataMulti_, context, request, true);
+void Agent::Stub::async::PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostDataMulti_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::PostDataMultiResponse>* Agent::Stub::PrepareAsyncPostDataMultiRaw(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::PostDataMultiResponse>::Create(channel_.get(), cq, rpcmethod_PostDataMulti_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::PostDataMultiResponse, ::v1::agent::PostDataMultiRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PostDataMulti_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::PostDataMultiResponse>* Agent::Stub::AsyncPostDataMultiRaw(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncPostDataMultiRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::ClientReader< ::v1::agent::GetTeleopControlDataStreamResponse>* Agent::Stub::GetTeleopControlDataStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopControlDataStreamRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::v1::agent::GetTeleopControlDataStreamResponse>::Create(channel_.get(), rpcmethod_GetTeleopControlDataStream_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::v1::agent::GetTeleopControlDataStreamResponse>::Create(channel_.get(), rpcmethod_GetTeleopControlDataStream_, context, request);
 }
 
-void Agent::Stub::experimental_async::GetTeleopControlDataStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopControlDataStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetTeleopControlDataStreamResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::v1::agent::GetTeleopControlDataStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetTeleopControlDataStream_, context, request, reactor);
+void Agent::Stub::async::GetTeleopControlDataStream(::grpc::ClientContext* context, const ::v1::agent::GetTeleopControlDataStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTeleopControlDataStreamResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::v1::agent::GetTeleopControlDataStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetTeleopControlDataStream_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetTeleopControlDataStreamResponse>* Agent::Stub::AsyncGetTeleopControlDataStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopControlDataStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopControlDataStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopControlDataStream_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopControlDataStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopControlDataStream_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetTeleopControlDataStreamResponse>* Agent::Stub::PrepareAsyncGetTeleopControlDataStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopControlDataStreamRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopControlDataStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopControlDataStream_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopControlDataStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopControlDataStream_, context, request, false, nullptr);
 }
 
 ::grpc::ClientReader< ::v1::agent::GetTeleopHeartbeatStreamResponse>* Agent::Stub::GetTeleopHeartbeatStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(channel_.get(), rpcmethod_GetTeleopHeartbeatStream_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(channel_.get(), rpcmethod_GetTeleopHeartbeatStream_, context, request);
 }
 
-void Agent::Stub::experimental_async::GetTeleopHeartbeatStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopHeartbeatStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetTeleopHeartbeatStream_, context, request, reactor);
+void Agent::Stub::async::GetTeleopHeartbeatStream(::grpc::ClientContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetTeleopHeartbeatStream_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetTeleopHeartbeatStreamResponse>* Agent::Stub::AsyncGetTeleopHeartbeatStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopHeartbeatStream_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopHeartbeatStream_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetTeleopHeartbeatStreamResponse>* Agent::Stub::PrepareAsyncGetTeleopHeartbeatStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopHeartbeatStream_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::v1::agent::GetTeleopHeartbeatStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopHeartbeatStream_, context, request, false, nullptr);
 }
 
 ::grpc::ClientReader< ::v1::agent::GetTelemetryListenerStreamResponse>* Agent::Stub::GetTelemetryListenerStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTelemetryListenerStreamRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::v1::agent::GetTelemetryListenerStreamResponse>::Create(channel_.get(), rpcmethod_GetTelemetryListenerStream_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::v1::agent::GetTelemetryListenerStreamResponse>::Create(channel_.get(), rpcmethod_GetTelemetryListenerStream_, context, request);
 }
 
-void Agent::Stub::experimental_async::GetTelemetryListenerStream(::grpc::ClientContext* context, ::v1::agent::GetTelemetryListenerStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetTelemetryListenerStreamResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::v1::agent::GetTelemetryListenerStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetTelemetryListenerStream_, context, request, reactor);
+void Agent::Stub::async::GetTelemetryListenerStream(::grpc::ClientContext* context, const ::v1::agent::GetTelemetryListenerStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTelemetryListenerStreamResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::v1::agent::GetTelemetryListenerStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetTelemetryListenerStream_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetTelemetryListenerStreamResponse>* Agent::Stub::AsyncGetTelemetryListenerStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTelemetryListenerStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetTelemetryListenerStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTelemetryListenerStream_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::v1::agent::GetTelemetryListenerStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTelemetryListenerStream_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetTelemetryListenerStreamResponse>* Agent::Stub::PrepareAsyncGetTelemetryListenerStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetTelemetryListenerStreamRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetTelemetryListenerStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTelemetryListenerStream_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::v1::agent::GetTelemetryListenerStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetTelemetryListenerStream_, context, request, false, nullptr);
 }
 
 ::grpc::ClientReader< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* Agent::Stub::GetCustomDataChannelMessageStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetCustomDataChannelMessageStreamRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::v1::agent::GetCustomDataChannelMessageStreamResponse>::Create(channel_.get(), rpcmethod_GetCustomDataChannelMessageStream_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::v1::agent::GetCustomDataChannelMessageStreamResponse>::Create(channel_.get(), rpcmethod_GetCustomDataChannelMessageStream_, context, request);
 }
 
-void Agent::Stub::experimental_async::GetCustomDataChannelMessageStream(::grpc::ClientContext* context, ::v1::agent::GetCustomDataChannelMessageStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::v1::agent::GetCustomDataChannelMessageStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetCustomDataChannelMessageStream_, context, request, reactor);
+void Agent::Stub::async::GetCustomDataChannelMessageStream(::grpc::ClientContext* context, const ::v1::agent::GetCustomDataChannelMessageStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::v1::agent::GetCustomDataChannelMessageStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetCustomDataChannelMessageStream_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* Agent::Stub::AsyncGetCustomDataChannelMessageStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetCustomDataChannelMessageStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetCustomDataChannelMessageStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetCustomDataChannelMessageStream_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::v1::agent::GetCustomDataChannelMessageStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetCustomDataChannelMessageStream_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* Agent::Stub::PrepareAsyncGetCustomDataChannelMessageStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetCustomDataChannelMessageStreamRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetCustomDataChannelMessageStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetCustomDataChannelMessageStream_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::v1::agent::GetCustomDataChannelMessageStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetCustomDataChannelMessageStream_, context, request, false, nullptr);
 }
 
 ::grpc::Status Agent::Stub::CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest& request, ::v1::agent::CreateEventResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateEvent_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateEvent_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateEvent_, context, request, response, std::move(f));
+void Agent::Stub::async::CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateEvent_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::CreateEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::CreateEventResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateEvent_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateEvent_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::CreateEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::CreateEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateEvent_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::CreateEventResponse>* Agent::Stub::AsyncCreateEventRaw(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::CreateEventResponse>::Create(channel_.get(), cq, rpcmethod_CreateEvent_, context, request, true);
+void Agent::Stub::async::CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateEvent_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::CreateEventResponse>* Agent::Stub::PrepareAsyncCreateEventRaw(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::CreateEventResponse>::Create(channel_.get(), cq, rpcmethod_CreateEvent_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::CreateEventResponse, ::v1::agent::CreateEventRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateEvent_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::CreateEventResponse>* Agent::Stub::AsyncCreateEventRaw(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateEventRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest& request, ::v1::model::InterventionRequest* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateInterventionRequest_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::model::InterventionRequest, ::v1::model::InterventionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateInterventionRequest_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateInterventionRequest_, context, request, response, std::move(f));
+void Agent::Stub::async::CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::model::InterventionRequest, ::v1::model::InterventionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateInterventionRequest_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::CreateInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateInterventionRequest_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateInterventionRequest_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::CreateInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateInterventionRequest_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::model::InterventionRequest>* Agent::Stub::AsyncCreateInterventionRequestRaw(::grpc::ClientContext* context, const ::v1::model::InterventionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::model::InterventionRequest>::Create(channel_.get(), cq, rpcmethod_CreateInterventionRequest_, context, request, true);
+void Agent::Stub::async::CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateInterventionRequest_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::model::InterventionRequest>* Agent::Stub::PrepareAsyncCreateInterventionRequestRaw(::grpc::ClientContext* context, const ::v1::model::InterventionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::model::InterventionRequest>::Create(channel_.get(), cq, rpcmethod_CreateInterventionRequest_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::model::InterventionRequest, ::v1::model::InterventionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateInterventionRequest_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::model::InterventionRequest>* Agent::Stub::AsyncCreateInterventionRequestRaw(::grpc::ClientContext* context, const ::v1::model::InterventionRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateInterventionRequestRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest& request, ::v1::model::InterventionRequest* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetInterventionRequest_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetInterventionRequest_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetInterventionRequest_, context, request, response, std::move(f));
+void Agent::Stub::async::GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInterventionRequest_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::GetInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetInterventionRequest_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetInterventionRequest_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::GetInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetInterventionRequest_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::model::InterventionRequest>* Agent::Stub::AsyncGetInterventionRequestRaw(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::model::InterventionRequest>::Create(channel_.get(), cq, rpcmethod_GetInterventionRequest_, context, request, true);
+void Agent::Stub::async::GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInterventionRequest_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::model::InterventionRequest>* Agent::Stub::PrepareAsyncGetInterventionRequestRaw(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::model::InterventionRequest>::Create(channel_.get(), cq, rpcmethod_GetInterventionRequest_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::model::InterventionRequest, ::v1::agent::GetInterventionRequestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetInterventionRequest_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::model::InterventionRequest>* Agent::Stub::AsyncGetInterventionRequestRaw(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetInterventionRequestRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest& request, ::v1::model::InterventionResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetInterventionResponse_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetInterventionResponse_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetInterventionResponse_, context, request, response, std::move(f));
+void Agent::Stub::async::GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInterventionResponse_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::GetInterventionResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetInterventionResponse_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetInterventionResponse_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::GetInterventionResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetInterventionResponse_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::model::InterventionResponse>* Agent::Stub::AsyncGetInterventionResponseRaw(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::model::InterventionResponse>::Create(channel_.get(), cq, rpcmethod_GetInterventionResponse_, context, request, true);
+void Agent::Stub::async::GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInterventionResponse_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::model::InterventionResponse>* Agent::Stub::PrepareAsyncGetInterventionResponseRaw(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::model::InterventionResponse>::Create(channel_.get(), cq, rpcmethod_GetInterventionResponse_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::model::InterventionResponse, ::v1::agent::GetInterventionResponseRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetInterventionResponse_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::model::InterventionResponse>* Agent::Stub::AsyncGetInterventionResponseRaw(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetInterventionResponseRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest& request, ::v1::agent::GetStreamsConfigurationResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetStreamsConfiguration_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetStreamsConfiguration_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetStreamsConfiguration_, context, request, response, std::move(f));
+void Agent::Stub::async::GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetStreamsConfiguration_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::GetStreamsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetStreamsConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetStreamsConfiguration_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetStreamsConfiguration_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::GetStreamsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetStreamsConfiguration_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::GetStreamsConfigurationResponse>* Agent::Stub::AsyncGetStreamsConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetStreamsConfigurationResponse>::Create(channel_.get(), cq, rpcmethod_GetStreamsConfiguration_, context, request, true);
+void Agent::Stub::async::GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetStreamsConfiguration_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::GetStreamsConfigurationResponse>* Agent::Stub::PrepareAsyncGetStreamsConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetStreamsConfigurationResponse>::Create(channel_.get(), cq, rpcmethod_GetStreamsConfiguration_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::GetStreamsConfigurationResponse, ::v1::agent::GetStreamsConfigurationRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetStreamsConfiguration_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::GetStreamsConfigurationResponse>* Agent::Stub::AsyncGetStreamsConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetStreamsConfigurationRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest& request, ::v1::agent::GetApplicationConfigurationResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetApplicationConfiguration_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetApplicationConfiguration_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetApplicationConfiguration_, context, request, response, std::move(f));
+void Agent::Stub::async::GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetApplicationConfiguration_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::GetApplicationConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetApplicationConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetApplicationConfiguration_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetApplicationConfiguration_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::GetApplicationConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetApplicationConfiguration_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::GetApplicationConfigurationResponse>* Agent::Stub::AsyncGetApplicationConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetApplicationConfigurationResponse>::Create(channel_.get(), cq, rpcmethod_GetApplicationConfiguration_, context, request, true);
+void Agent::Stub::async::GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetApplicationConfiguration_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::GetApplicationConfigurationResponse>* Agent::Stub::PrepareAsyncGetApplicationConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetApplicationConfigurationResponse>::Create(channel_.get(), cq, rpcmethod_GetApplicationConfiguration_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::GetApplicationConfigurationResponse, ::v1::agent::GetApplicationConfigurationRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetApplicationConfiguration_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::GetApplicationConfigurationResponse>* Agent::Stub::AsyncGetApplicationConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetApplicationConfigurationRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest& request, ::v1::agent::GetConfigBlobDataResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetConfigBlobData_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetConfigBlobData_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetConfigBlobData_, context, request, response, std::move(f));
+void Agent::Stub::async::GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetConfigBlobData_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::GetConfigBlobData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetConfigBlobDataResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetConfigBlobData_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetConfigBlobData_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::GetConfigBlobData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetConfigBlobData_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::GetConfigBlobDataResponse>* Agent::Stub::AsyncGetConfigBlobDataRaw(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetConfigBlobDataResponse>::Create(channel_.get(), cq, rpcmethod_GetConfigBlobData_, context, request, true);
+void Agent::Stub::async::GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetConfigBlobData_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::GetConfigBlobDataResponse>* Agent::Stub::PrepareAsyncGetConfigBlobDataRaw(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetConfigBlobDataResponse>::Create(channel_.get(), cq, rpcmethod_GetConfigBlobData_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::GetConfigBlobDataResponse, ::v1::agent::GetConfigBlobDataRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetConfigBlobData_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::GetConfigBlobDataResponse>* Agent::Stub::AsyncGetConfigBlobDataRaw(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetConfigBlobDataRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest& request, ::v1::agent::GetAgentConfigurationResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetAgentConfiguration_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetAgentConfiguration_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAgentConfiguration_, context, request, response, std::move(f));
+void Agent::Stub::async::GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAgentConfiguration_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::GetAgentConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetAgentConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAgentConfiguration_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAgentConfiguration_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::GetAgentConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAgentConfiguration_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::GetAgentConfigurationResponse>* Agent::Stub::AsyncGetAgentConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetAgentConfigurationResponse>::Create(channel_.get(), cq, rpcmethod_GetAgentConfiguration_, context, request, true);
+void Agent::Stub::async::GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAgentConfiguration_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::GetAgentConfigurationResponse>* Agent::Stub::PrepareAsyncGetAgentConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetAgentConfigurationResponse>::Create(channel_.get(), cq, rpcmethod_GetAgentConfiguration_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::GetAgentConfigurationResponse, ::v1::agent::GetAgentConfigurationRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetAgentConfiguration_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::GetAgentConfigurationResponse>* Agent::Stub::AsyncGetAgentConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetAgentConfigurationRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::v1::agent::HealthResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_Health_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Health_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Health_, context, request, response, std::move(f));
+void Agent::Stub::async::Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Health_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::Health(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::HealthResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Health_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Health_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::Health(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::HealthResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Health_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::HealthResponse>* Agent::Stub::AsyncHealthRaw(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::HealthResponse>::Create(channel_.get(), cq, rpcmethod_Health_, context, request, true);
+void Agent::Stub::async::Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Health_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::HealthResponse>* Agent::Stub::PrepareAsyncHealthRaw(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::HealthResponse>::Create(channel_.get(), cq, rpcmethod_Health_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::HealthResponse, ::v1::agent::HealthRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Health_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::HealthResponse>* Agent::Stub::AsyncHealthRaw(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncHealthRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest& request, ::v1::agent::GetCommandRequestResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetCommandRequest_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetCommandRequest_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetCommandRequest_, context, request, response, std::move(f));
+void Agent::Stub::async::GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetCommandRequest_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::GetCommandRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetCommandRequestResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetCommandRequest_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetCommandRequest_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::GetCommandRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetCommandRequest_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::GetCommandRequestResponse>* Agent::Stub::AsyncGetCommandRequestRaw(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetCommandRequestResponse>::Create(channel_.get(), cq, rpcmethod_GetCommandRequest_, context, request, true);
+void Agent::Stub::async::GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetCommandRequest_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::GetCommandRequestResponse>* Agent::Stub::PrepareAsyncGetCommandRequestRaw(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetCommandRequestResponse>::Create(channel_.get(), cq, rpcmethod_GetCommandRequest_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::GetCommandRequestResponse, ::v1::agent::GetCommandRequestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetCommandRequest_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::GetCommandRequestResponse>* Agent::Stub::AsyncGetCommandRequestRaw(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetCommandRequestRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::ClientReader< ::v1::agent::GetCommandRequestStreamResponse>* Agent::Stub::GetCommandRequestStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestStreamRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::v1::agent::GetCommandRequestStreamResponse>::Create(channel_.get(), rpcmethod_GetCommandRequestStream_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::v1::agent::GetCommandRequestStreamResponse>::Create(channel_.get(), rpcmethod_GetCommandRequestStream_, context, request);
 }
 
-void Agent::Stub::experimental_async::GetCommandRequestStream(::grpc::ClientContext* context, ::v1::agent::GetCommandRequestStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetCommandRequestStreamResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::v1::agent::GetCommandRequestStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetCommandRequestStream_, context, request, reactor);
+void Agent::Stub::async::GetCommandRequestStream(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetCommandRequestStreamResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::v1::agent::GetCommandRequestStreamResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetCommandRequestStream_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetCommandRequestStreamResponse>* Agent::Stub::AsyncGetCommandRequestStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetCommandRequestStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetCommandRequestStream_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::v1::agent::GetCommandRequestStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetCommandRequestStream_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::v1::agent::GetCommandRequestStreamResponse>* Agent::Stub::PrepareAsyncGetCommandRequestStreamRaw(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestStreamRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::v1::agent::GetCommandRequestStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetCommandRequestStream_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::v1::agent::GetCommandRequestStreamResponse>::Create(channel_.get(), cq, rpcmethod_GetCommandRequestStream_, context, request, false, nullptr);
 }
 
 ::grpc::Status Agent::Stub::SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest& request, ::v1::agent::SendCommandResponseResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SendCommandResponse_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SendCommandResponse_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SendCommandResponse_, context, request, response, std::move(f));
+void Agent::Stub::async::SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendCommandResponse_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::SendCommandResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendCommandResponseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SendCommandResponse_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SendCommandResponse_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::SendCommandResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SendCommandResponse_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::SendCommandResponseResponse>* Agent::Stub::AsyncSendCommandResponseRaw(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::SendCommandResponseResponse>::Create(channel_.get(), cq, rpcmethod_SendCommandResponse_, context, request, true);
+void Agent::Stub::async::SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendCommandResponse_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::SendCommandResponseResponse>* Agent::Stub::PrepareAsyncSendCommandResponseRaw(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::SendCommandResponseResponse>::Create(channel_.get(), cq, rpcmethod_SendCommandResponse_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::SendCommandResponseResponse, ::v1::agent::SendCommandResponseRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SendCommandResponse_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::SendCommandResponseResponse>* Agent::Stub::AsyncSendCommandResponseRaw(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSendCommandResponseRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame& request, ::v1::agent::PostTransformFrameResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_PostTransformFrame_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PostTransformFrame_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PostTransformFrame_, context, request, response, std::move(f));
+void Agent::Stub::async::PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostTransformFrame_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::PostTransformFrame(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostTransformFrameResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PostTransformFrame_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PostTransformFrame_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::PostTransformFrame(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PostTransformFrame_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::PostTransformFrameResponse>* Agent::Stub::AsyncPostTransformFrameRaw(::grpc::ClientContext* context, const ::v1::model::TransformFrame& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::PostTransformFrameResponse>::Create(channel_.get(), cq, rpcmethod_PostTransformFrame_, context, request, true);
+void Agent::Stub::async::PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostTransformFrame_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::PostTransformFrameResponse>* Agent::Stub::PrepareAsyncPostTransformFrameRaw(::grpc::ClientContext* context, const ::v1::model::TransformFrame& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::PostTransformFrameResponse>::Create(channel_.get(), cq, rpcmethod_PostTransformFrame_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::PostTransformFrameResponse, ::v1::model::TransformFrame, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PostTransformFrame_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::PostTransformFrameResponse>* Agent::Stub::AsyncPostTransformFrameRaw(::grpc::ClientContext* context, const ::v1::model::TransformFrame& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncPostTransformFrameRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest& request, ::v1::agent::SetBaseFrameIDResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetBaseFrameID_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetBaseFrameID_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetBaseFrameID_, context, request, response, std::move(f));
+void Agent::Stub::async::SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetBaseFrameID_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::SetBaseFrameID(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SetBaseFrameIDResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetBaseFrameID_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetBaseFrameID_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::SetBaseFrameID(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetBaseFrameID_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::SetBaseFrameIDResponse>* Agent::Stub::AsyncSetBaseFrameIDRaw(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::SetBaseFrameIDResponse>::Create(channel_.get(), cq, rpcmethod_SetBaseFrameID_, context, request, true);
+void Agent::Stub::async::SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetBaseFrameID_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::SetBaseFrameIDResponse>* Agent::Stub::PrepareAsyncSetBaseFrameIDRaw(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::SetBaseFrameIDResponse>::Create(channel_.get(), cq, rpcmethod_SetBaseFrameID_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::SetBaseFrameIDResponse, ::v1::agent::SetBaseFrameIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetBaseFrameID_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::SetBaseFrameIDResponse>* Agent::Stub::AsyncSetBaseFrameIDRaw(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSetBaseFrameIDRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::v1::agent::ClearTransformTreeResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ClearTransformTree_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ClearTransformTree_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ClearTransformTree_, context, request, response, std::move(f));
+void Agent::Stub::async::ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ClearTransformTree_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::ClearTransformTree(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::ClearTransformTreeResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ClearTransformTree_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ClearTransformTree_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::ClearTransformTree(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ClearTransformTree_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::ClearTransformTreeResponse>* Agent::Stub::AsyncClearTransformTreeRaw(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::ClearTransformTreeResponse>::Create(channel_.get(), cq, rpcmethod_ClearTransformTree_, context, request, true);
+void Agent::Stub::async::ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ClearTransformTree_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::ClearTransformTreeResponse>* Agent::Stub::PrepareAsyncClearTransformTreeRaw(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::ClearTransformTreeResponse>::Create(channel_.get(), cq, rpcmethod_ClearTransformTree_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::ClearTransformTreeResponse, ::v1::agent::ClearTransformTreeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ClearTransformTree_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::ClearTransformTreeResponse>* Agent::Stub::AsyncClearTransformTreeRaw(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncClearTransformTreeRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::v1::agent::GetTeleopInfoResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTeleopInfo_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetTeleopInfo_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTeleopInfo_, context, request, response, std::move(f));
+void Agent::Stub::async::GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetTeleopInfo_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTeleopInfo_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTeleopInfo_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTeleopInfo_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>* Agent::Stub::AsyncGetTeleopInfoRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetTeleopInfoResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopInfo_, context, request, true);
+void Agent::Stub::async::GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetTeleopInfo_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>* Agent::Stub::PrepareAsyncGetTeleopInfoRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::GetTeleopInfoResponse>::Create(channel_.get(), cq, rpcmethod_GetTeleopInfo_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::GetTeleopInfoResponse, ::v1::agent::GetTeleopInfoRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetTeleopInfo_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::GetTeleopInfoResponse>* Agent::Stub::AsyncGetTeleopInfoRaw(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetTeleopInfoRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest& request, ::v1::agent::PostLanRtcOfferResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_PostLanRtcOffer_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PostLanRtcOffer_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PostLanRtcOffer_, context, request, response, std::move(f));
+void Agent::Stub::async::PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostLanRtcOffer_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::PostLanRtcOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostLanRtcOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PostLanRtcOffer_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PostLanRtcOffer_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::PostLanRtcOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PostLanRtcOffer_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::PostLanRtcOfferResponse>* Agent::Stub::AsyncPostLanRtcOfferRaw(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::PostLanRtcOfferResponse>::Create(channel_.get(), cq, rpcmethod_PostLanRtcOffer_, context, request, true);
+void Agent::Stub::async::PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostLanRtcOffer_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::PostLanRtcOfferResponse>* Agent::Stub::PrepareAsyncPostLanRtcOfferRaw(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::PostLanRtcOfferResponse>::Create(channel_.get(), cq, rpcmethod_PostLanRtcOffer_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::PostLanRtcOfferResponse, ::v1::agent::PostLanRtcOfferRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PostLanRtcOffer_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::PostLanRtcOfferResponse>* Agent::Stub::AsyncPostLanRtcOfferRaw(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncPostLanRtcOfferRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status Agent::Stub::SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest& request, ::v1::agent::SendOnCustomDataChannelResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SendOnCustomDataChannel_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SendOnCustomDataChannel_, context, request, response);
 }
 
-void Agent::Stub::experimental_async::SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SendOnCustomDataChannel_, context, request, response, std::move(f));
+void Agent::Stub::async::SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendOnCustomDataChannel_, context, request, response, std::move(f));
 }
 
-void Agent::Stub::experimental_async::SendOnCustomDataChannel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendOnCustomDataChannelResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SendOnCustomDataChannel_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::experimental_async::SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SendOnCustomDataChannel_, context, request, response, reactor);
-}
-
-void Agent::Stub::experimental_async::SendOnCustomDataChannel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SendOnCustomDataChannel_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::SendOnCustomDataChannelResponse>* Agent::Stub::AsyncSendOnCustomDataChannelRaw(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::SendOnCustomDataChannelResponse>::Create(channel_.get(), cq, rpcmethod_SendOnCustomDataChannel_, context, request, true);
+void Agent::Stub::async::SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendOnCustomDataChannel_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::v1::agent::SendOnCustomDataChannelResponse>* Agent::Stub::PrepareAsyncSendOnCustomDataChannelRaw(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::v1::agent::SendOnCustomDataChannelResponse>::Create(channel_.get(), cq, rpcmethod_SendOnCustomDataChannel_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::SendOnCustomDataChannelResponse, ::v1::agent::SendOnCustomDataChannelRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SendOnCustomDataChannel_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::SendOnCustomDataChannelResponse>* Agent::Stub::AsyncSendOnCustomDataChannelRaw(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSendOnCustomDataChannelRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 Agent::Service::Service() {
@@ -718,17 +623,17 @@ Agent::Service::Service() {
       ::grpc::internal::RpcMethod::CLIENT_STREAMING,
       new ::grpc::internal::ClientStreamingHandler< Agent::Service, ::v1::model::Datapoint, ::v1::agent::StreamDataResponse>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             ::grpc_impl::ServerReader<::v1::model::Datapoint>* reader,
+             ::grpc::ServerContext* ctx,
+             ::grpc::ServerReader<::v1::model::Datapoint>* reader,
              ::v1::agent::StreamDataResponse* resp) {
                return service->StreamData(ctx, reader, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::Datapoint, ::v1::agent::PostDataResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::Datapoint, ::v1::agent::PostDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::model::Datapoint* req,
              ::v1::agent::PostDataResponse* resp) {
                return service->PostData(ctx, req, resp);
@@ -736,9 +641,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::PostDataMultiRequest* req,
              ::v1::agent::PostDataMultiResponse* resp) {
                return service->PostDataMulti(ctx, req, resp);
@@ -748,9 +653,9 @@ Agent::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Agent::Service, ::v1::agent::GetTeleopControlDataStreamRequest, ::v1::agent::GetTeleopControlDataStreamResponse>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetTeleopControlDataStreamRequest* req,
-             ::grpc_impl::ServerWriter<::v1::agent::GetTeleopControlDataStreamResponse>* writer) {
+             ::grpc::ServerWriter<::v1::agent::GetTeleopControlDataStreamResponse>* writer) {
                return service->GetTeleopControlDataStream(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -758,9 +663,9 @@ Agent::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Agent::Service, ::v1::agent::GetTeleopHeartbeatStreamRequest, ::v1::agent::GetTeleopHeartbeatStreamResponse>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetTeleopHeartbeatStreamRequest* req,
-             ::grpc_impl::ServerWriter<::v1::agent::GetTeleopHeartbeatStreamResponse>* writer) {
+             ::grpc::ServerWriter<::v1::agent::GetTeleopHeartbeatStreamResponse>* writer) {
                return service->GetTeleopHeartbeatStream(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -768,9 +673,9 @@ Agent::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Agent::Service, ::v1::agent::GetTelemetryListenerStreamRequest, ::v1::agent::GetTelemetryListenerStreamResponse>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetTelemetryListenerStreamRequest* req,
-             ::grpc_impl::ServerWriter<::v1::agent::GetTelemetryListenerStreamResponse>* writer) {
+             ::grpc::ServerWriter<::v1::agent::GetTelemetryListenerStreamResponse>* writer) {
                return service->GetTelemetryListenerStream(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -778,17 +683,17 @@ Agent::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Agent::Service, ::v1::agent::GetCustomDataChannelMessageStreamRequest, ::v1::agent::GetCustomDataChannelMessageStreamResponse>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetCustomDataChannelMessageStreamRequest* req,
-             ::grpc_impl::ServerWriter<::v1::agent::GetCustomDataChannelMessageStreamResponse>* writer) {
+             ::grpc::ServerWriter<::v1::agent::GetCustomDataChannelMessageStreamResponse>* writer) {
                return service->GetCustomDataChannelMessageStream(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::CreateEventRequest* req,
              ::v1::agent::CreateEventResponse* resp) {
                return service->CreateEvent(ctx, req, resp);
@@ -796,9 +701,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::InterventionRequest, ::v1::model::InterventionRequest>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::InterventionRequest, ::v1::model::InterventionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::model::InterventionRequest* req,
              ::v1::model::InterventionRequest* resp) {
                return service->CreateInterventionRequest(ctx, req, resp);
@@ -806,9 +711,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetInterventionRequestRequest* req,
              ::v1::model::InterventionRequest* resp) {
                return service->GetInterventionRequest(ctx, req, resp);
@@ -816,9 +721,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetInterventionResponseRequest* req,
              ::v1::model::InterventionResponse* resp) {
                return service->GetInterventionResponse(ctx, req, resp);
@@ -826,9 +731,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetStreamsConfigurationRequest* req,
              ::v1::agent::GetStreamsConfigurationResponse* resp) {
                return service->GetStreamsConfiguration(ctx, req, resp);
@@ -836,9 +741,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetApplicationConfigurationRequest* req,
              ::v1::agent::GetApplicationConfigurationResponse* resp) {
                return service->GetApplicationConfiguration(ctx, req, resp);
@@ -846,9 +751,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetConfigBlobDataRequest* req,
              ::v1::agent::GetConfigBlobDataResponse* resp) {
                return service->GetConfigBlobData(ctx, req, resp);
@@ -856,9 +761,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetAgentConfigurationRequest* req,
              ::v1::agent::GetAgentConfigurationResponse* resp) {
                return service->GetAgentConfiguration(ctx, req, resp);
@@ -866,9 +771,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::HealthRequest, ::v1::agent::HealthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::HealthRequest* req,
              ::v1::agent::HealthResponse* resp) {
                return service->Health(ctx, req, resp);
@@ -876,9 +781,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetCommandRequestRequest* req,
              ::v1::agent::GetCommandRequestResponse* resp) {
                return service->GetCommandRequest(ctx, req, resp);
@@ -888,17 +793,17 @@ Agent::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Agent::Service, ::v1::agent::GetCommandRequestStreamRequest, ::v1::agent::GetCommandRequestStreamResponse>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetCommandRequestStreamRequest* req,
-             ::grpc_impl::ServerWriter<::v1::agent::GetCommandRequestStreamResponse>* writer) {
+             ::grpc::ServerWriter<::v1::agent::GetCommandRequestStreamResponse>* writer) {
                return service->GetCommandRequestStream(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::SendCommandResponseRequest* req,
              ::v1::agent::SendCommandResponseResponse* resp) {
                return service->SendCommandResponse(ctx, req, resp);
@@ -906,9 +811,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::model::TransformFrame* req,
              ::v1::agent::PostTransformFrameResponse* resp) {
                return service->PostTransformFrame(ctx, req, resp);
@@ -916,9 +821,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::SetBaseFrameIDRequest* req,
              ::v1::agent::SetBaseFrameIDResponse* resp) {
                return service->SetBaseFrameID(ctx, req, resp);
@@ -926,9 +831,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::ClearTransformTreeRequest* req,
              ::v1::agent::ClearTransformTreeResponse* resp) {
                return service->ClearTransformTree(ctx, req, resp);
@@ -936,9 +841,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[22],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::GetTeleopInfoRequest* req,
              ::v1::agent::GetTeleopInfoResponse* resp) {
                return service->GetTeleopInfo(ctx, req, resp);
@@ -946,9 +851,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::PostLanRtcOfferRequest* req,
              ::v1::agent::PostLanRtcOfferResponse* resp) {
                return service->PostLanRtcOffer(ctx, req, resp);
@@ -956,9 +861,9 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[24],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>(
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::v1::agent::SendOnCustomDataChannelRequest* req,
              ::v1::agent::SendOnCustomDataChannelResponse* resp) {
                return service->SendOnCustomDataChannel(ctx, req, resp);

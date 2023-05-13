@@ -7,24 +7,23 @@
 #include "protos/agent/v1/agent.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
-#include <grpcpp/impl/codegen/client_callback.h>
-#include <grpcpp/impl/codegen/client_context.h>
-#include <grpcpp/impl/codegen/completion_queue.h>
-#include <grpcpp/impl/codegen/message_allocator.h>
-#include <grpcpp/impl/codegen/method_handler.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/support/client_callback.h>
+#include <grpcpp/client_context.h>
+#include <grpcpp/completion_queue.h>
+#include <grpcpp/support/message_allocator.h>
+#include <grpcpp/support/method_handler.h>
 #include <grpcpp/impl/codegen/proto_utils.h>
-#include <grpcpp/impl/codegen/rpc_method.h>
-#include <grpcpp/impl/codegen/server_callback.h>
+#include <grpcpp/impl/rpc_method.h>
+#include <grpcpp/support/server_callback.h>
 #include <grpcpp/impl/codegen/server_callback_handlers.h>
-#include <grpcpp/impl/codegen/server_context.h>
-#include <grpcpp/impl/codegen/service_type.h>
+#include <grpcpp/server_context.h>
+#include <grpcpp/impl/service_type.h>
 #include <grpcpp/impl/codegen/status.h>
-#include <grpcpp/impl/codegen/stub_options.h>
-#include <grpcpp/impl/codegen/sync_stream.h>
+#include <grpcpp/support/stub_options.h>
+#include <grpcpp/support/sync_stream.h>
 
 namespace v1 {
 namespace agent {
@@ -224,276 +223,58 @@ class Agent final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::SendOnCustomDataChannelResponse>> PrepareAsyncSendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::SendOnCustomDataChannelResponse>>(PrepareAsyncSendOnCustomDataChannelRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual ~async_interface() {}
       virtual void StreamData(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::ClientWriteReactor< ::v1::model::Datapoint>* reactor) = 0;
-      #else
-      virtual void StreamData(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::experimental::ClientWriteReactor< ::v1::model::Datapoint>* reactor) = 0;
-      #endif
       virtual void PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void PostData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void PostData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void PostData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void PostDataMulti(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataMultiResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void PostDataMulti(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void PostDataMulti(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetTeleopControlDataStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopControlDataStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTeleopControlDataStreamResponse>* reactor) = 0;
-      #else
-      virtual void GetTeleopControlDataStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopControlDataStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetTeleopControlDataStreamResponse>* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetTeleopHeartbeatStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopHeartbeatStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* reactor) = 0;
-      #else
-      virtual void GetTeleopHeartbeatStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopHeartbeatStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetTelemetryListenerStream(::grpc::ClientContext* context, ::v1::agent::GetTelemetryListenerStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTelemetryListenerStreamResponse>* reactor) = 0;
-      #else
-      virtual void GetTelemetryListenerStream(::grpc::ClientContext* context, ::v1::agent::GetTelemetryListenerStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetTelemetryListenerStreamResponse>* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetCustomDataChannelMessageStream(::grpc::ClientContext* context, ::v1::agent::GetCustomDataChannelMessageStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* reactor) = 0;
-      #else
-      virtual void GetCustomDataChannelMessageStream(::grpc::ClientContext* context, ::v1::agent::GetCustomDataChannelMessageStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* reactor) = 0;
-      #endif
+      virtual void GetTeleopControlDataStream(::grpc::ClientContext* context, const ::v1::agent::GetTeleopControlDataStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTeleopControlDataStreamResponse>* reactor) = 0;
+      virtual void GetTeleopHeartbeatStream(::grpc::ClientContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* reactor) = 0;
+      virtual void GetTelemetryListenerStream(::grpc::ClientContext* context, const ::v1::agent::GetTelemetryListenerStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTelemetryListenerStreamResponse>* reactor) = 0;
+      virtual void GetCustomDataChannelMessageStream(::grpc::ClientContext* context, const ::v1::agent::GetCustomDataChannelMessageStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* reactor) = 0;
       virtual void CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::CreateEventResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::CreateEventResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::CreateEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetInterventionResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetInterventionResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetInterventionResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetStreamsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetStreamsConfigurationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetStreamsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetStreamsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetApplicationConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetApplicationConfigurationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetApplicationConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetApplicationConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetConfigBlobData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetConfigBlobDataResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetConfigBlobData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetConfigBlobData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetAgentConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetAgentConfigurationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetAgentConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetAgentConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Health(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::HealthResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Health(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::HealthResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void Health(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::HealthResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetCommandRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetCommandRequestResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetCommandRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetCommandRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetCommandRequestStream(::grpc::ClientContext* context, ::v1::agent::GetCommandRequestStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetCommandRequestStreamResponse>* reactor) = 0;
-      #else
-      virtual void GetCommandRequestStream(::grpc::ClientContext* context, ::v1::agent::GetCommandRequestStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetCommandRequestStreamResponse>* reactor) = 0;
-      #endif
+      virtual void GetCommandRequestStream(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetCommandRequestStreamResponse>* reactor) = 0;
       virtual void SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SendCommandResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendCommandResponseResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void SendCommandResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void SendCommandResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void PostTransformFrame(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostTransformFrameResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void PostTransformFrame(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void PostTransformFrame(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SetBaseFrameID(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SetBaseFrameIDResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void SetBaseFrameID(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void SetBaseFrameID(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ClearTransformTree(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::ClearTransformTreeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void ClearTransformTree(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void ClearTransformTree(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void PostLanRtcOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostLanRtcOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void PostLanRtcOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void PostLanRtcOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendOnCustomDataChannelResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientWriterInterface< ::v1::model::Datapoint>* StreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response) = 0;
     virtual ::grpc::ClientAsyncWriterInterface< ::v1::model::Datapoint>* AsyncStreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncWriterInterface< ::v1::model::Datapoint>* PrepareAsyncStreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::CompletionQueue* cq) = 0;
@@ -553,7 +334,7 @@ class Agent final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     std::unique_ptr< ::grpc::ClientWriter< ::v1::model::Datapoint>> StreamData(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response) {
       return std::unique_ptr< ::grpc::ClientWriter< ::v1::model::Datapoint>>(StreamDataRaw(context, response));
     }
@@ -741,278 +522,64 @@ class Agent final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::SendOnCustomDataChannelResponse>> PrepareAsyncSendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::SendOnCustomDataChannelResponse>>(PrepareAsyncSendOnCustomDataChannelRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void StreamData(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::ClientWriteReactor< ::v1::model::Datapoint>* reactor) override;
-      #else
-      void StreamData(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::experimental::ClientWriteReactor< ::v1::model::Datapoint>* reactor) override;
-      #endif
       void PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response, std::function<void(::grpc::Status)>) override;
-      void PostData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void PostData(::grpc::ClientContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void PostData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void PostData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response, std::function<void(::grpc::Status)>) override;
-      void PostDataMulti(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataMultiResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void PostDataMulti(::grpc::ClientContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void PostDataMulti(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void PostDataMulti(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostDataMultiResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetTeleopControlDataStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopControlDataStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTeleopControlDataStreamResponse>* reactor) override;
-      #else
-      void GetTeleopControlDataStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopControlDataStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetTeleopControlDataStreamResponse>* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetTeleopHeartbeatStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopHeartbeatStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* reactor) override;
-      #else
-      void GetTeleopHeartbeatStream(::grpc::ClientContext* context, ::v1::agent::GetTeleopHeartbeatStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetTelemetryListenerStream(::grpc::ClientContext* context, ::v1::agent::GetTelemetryListenerStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTelemetryListenerStreamResponse>* reactor) override;
-      #else
-      void GetTelemetryListenerStream(::grpc::ClientContext* context, ::v1::agent::GetTelemetryListenerStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetTelemetryListenerStreamResponse>* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetCustomDataChannelMessageStream(::grpc::ClientContext* context, ::v1::agent::GetCustomDataChannelMessageStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* reactor) override;
-      #else
-      void GetCustomDataChannelMessageStream(::grpc::ClientContext* context, ::v1::agent::GetCustomDataChannelMessageStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* reactor) override;
-      #endif
+      void GetTeleopControlDataStream(::grpc::ClientContext* context, const ::v1::agent::GetTeleopControlDataStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTeleopControlDataStreamResponse>* reactor) override;
+      void GetTeleopHeartbeatStream(::grpc::ClientContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* reactor) override;
+      void GetTelemetryListenerStream(::grpc::ClientContext* context, const ::v1::agent::GetTelemetryListenerStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetTelemetryListenerStreamResponse>* reactor) override;
+      void GetCustomDataChannelMessageStream(::grpc::ClientContext* context, const ::v1::agent::GetCustomDataChannelMessageStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* reactor) override;
       void CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::CreateEventResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateEvent(::grpc::ClientContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::CreateEventResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::CreateEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)>) override;
-      void CreateInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateInterventionRequest(::grpc::ClientContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)>) override;
-      void GetInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetInterventionRequest(::grpc::ClientContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetInterventionRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetInterventionResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetInterventionResponse(::grpc::ClientContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetInterventionResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetInterventionResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::model::InterventionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetStreamsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetStreamsConfigurationResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetStreamsConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetStreamsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetStreamsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetStreamsConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetApplicationConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetApplicationConfigurationResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetApplicationConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetApplicationConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetApplicationConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetApplicationConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetConfigBlobData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetConfigBlobDataResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetConfigBlobData(::grpc::ClientContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetConfigBlobData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetConfigBlobData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetConfigBlobDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetAgentConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetAgentConfigurationResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetAgentConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetAgentConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, std::function<void(::grpc::Status)>) override;
-      void Health(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::HealthResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Health(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::HealthResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Health(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::HealthResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetCommandRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetCommandRequestResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetCommandRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetCommandRequest(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetCommandRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetCommandRequestStream(::grpc::ClientContext* context, ::v1::agent::GetCommandRequestStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetCommandRequestStreamResponse>* reactor) override;
-      #else
-      void GetCommandRequestStream(::grpc::ClientContext* context, ::v1::agent::GetCommandRequestStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::v1::agent::GetCommandRequestStreamResponse>* reactor) override;
-      #endif
+      void GetCommandRequestStream(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestStreamRequest* request, ::grpc::ClientReadReactor< ::v1::agent::GetCommandRequestStreamResponse>* reactor) override;
       void SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response, std::function<void(::grpc::Status)>) override;
-      void SendCommandResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendCommandResponseResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void SendCommandResponse(::grpc::ClientContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void SendCommandResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void SendCommandResponse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendCommandResponseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response, std::function<void(::grpc::Status)>) override;
-      void PostTransformFrame(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostTransformFrameResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void PostTransformFrame(::grpc::ClientContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void PostTransformFrame(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void PostTransformFrame(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostTransformFrameResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response, std::function<void(::grpc::Status)>) override;
-      void SetBaseFrameID(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SetBaseFrameIDResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void SetBaseFrameID(::grpc::ClientContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void SetBaseFrameID(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void SetBaseFrameID(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SetBaseFrameIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response, std::function<void(::grpc::Status)>) override;
-      void ClearTransformTree(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::ClearTransformTreeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void ClearTransformTree(::grpc::ClientContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void ClearTransformTree(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void ClearTransformTree(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::ClearTransformTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetTeleopInfo(::grpc::ClientContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetTeleopInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::GetTeleopInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response, std::function<void(::grpc::Status)>) override;
-      void PostLanRtcOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostLanRtcOfferResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void PostLanRtcOffer(::grpc::ClientContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void PostLanRtcOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void PostLanRtcOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::PostLanRtcOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response, std::function<void(::grpc::Status)>) override;
-      void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendOnCustomDataChannelResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void SendOnCustomDataChannel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::v1::agent::SendOnCustomDataChannelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientWriter< ::v1::model::Datapoint>* StreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response) override;
     ::grpc::ClientAsyncWriter< ::v1::model::Datapoint>* AsyncStreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::CompletionQueue* cq, void* tag) override;
     ::grpc::ClientAsyncWriter< ::v1::model::Datapoint>* PrepareAsyncStreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response, ::grpc::CompletionQueue* cq) override;
@@ -1629,27 +1196,17 @@ class Agent final {
   };
   typedef WithAsyncMethod_StreamData<WithAsyncMethod_PostData<WithAsyncMethod_PostDataMulti<WithAsyncMethod_GetTeleopControlDataStream<WithAsyncMethod_GetTeleopHeartbeatStream<WithAsyncMethod_GetTelemetryListenerStream<WithAsyncMethod_GetCustomDataChannelMessageStream<WithAsyncMethod_CreateEvent<WithAsyncMethod_CreateInterventionRequest<WithAsyncMethod_GetInterventionRequest<WithAsyncMethod_GetInterventionResponse<WithAsyncMethod_GetStreamsConfiguration<WithAsyncMethod_GetApplicationConfiguration<WithAsyncMethod_GetConfigBlobData<WithAsyncMethod_GetAgentConfiguration<WithAsyncMethod_Health<WithAsyncMethod_GetCommandRequest<WithAsyncMethod_GetCommandRequestStream<WithAsyncMethod_SendCommandResponse<WithAsyncMethod_PostTransformFrame<WithAsyncMethod_SetBaseFrameID<WithAsyncMethod_ClearTransformTree<WithAsyncMethod_GetTeleopInfo<WithAsyncMethod_PostLanRtcOffer<WithAsyncMethod_SendOnCustomDataChannel<Service > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_StreamData : public BaseClass {
+  class WithCallbackMethod_StreamData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_StreamData() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackClientStreamingHandler< ::v1::model::Datapoint, ::v1::agent::StreamDataResponse>(
+    WithCallbackMethod_StreamData() {
+      ::grpc::Service::MarkMethodCallback(0,
+          new ::grpc::internal::CallbackClientStreamingHandler< ::v1::model::Datapoint, ::v1::agent::StreamDataResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, ::v1::agent::StreamDataResponse* response) { return this->StreamData(context, response); }));
+                   ::grpc::CallbackServerContext* context, ::v1::agent::StreamDataResponse* response) { return this->StreamData(context, response); }));
     }
-    ~ExperimentalWithCallbackMethod_StreamData() override {
+    ~WithCallbackMethod_StreamData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1657,46 +1214,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerReadReactor< ::v1::model::Datapoint>* StreamData(
-      ::grpc::CallbackServerContext* /*context*/, ::v1::agent::StreamDataResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerReadReactor< ::v1::model::Datapoint>* StreamData(
-      ::grpc::experimental::CallbackServerContext* /*context*/, ::v1::agent::StreamDataResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, ::v1::agent::StreamDataResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_PostData : public BaseClass {
+  class WithCallbackMethod_PostData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_PostData() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::model::Datapoint, ::v1::agent::PostDataResponse>(
+    WithCallbackMethod_PostData() {
+      ::grpc::Service::MarkMethodCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::model::Datapoint, ::v1::agent::PostDataResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response) { return this->PostData(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::model::Datapoint* request, ::v1::agent::PostDataResponse* response) { return this->PostData(context, request, response); }));}
     void SetMessageAllocatorFor_PostData(
-        ::grpc::experimental::MessageAllocator< ::v1::model::Datapoint, ::v1::agent::PostDataResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::model::Datapoint, ::v1::agent::PostDataResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::model::Datapoint, ::v1::agent::PostDataResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::model::Datapoint, ::v1::agent::PostDataResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_PostData() override {
+    ~WithCallbackMethod_PostData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1704,46 +1241,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* PostData(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::model::Datapoint* /*request*/, ::v1::agent::PostDataResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* PostData(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::model::Datapoint* /*request*/, ::v1::agent::PostDataResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::model::Datapoint* /*request*/, ::v1::agent::PostDataResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_PostDataMulti : public BaseClass {
+  class WithCallbackMethod_PostDataMulti : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_PostDataMulti() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse>(
+    WithCallbackMethod_PostDataMulti() {
+      ::grpc::Service::MarkMethodCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response) { return this->PostDataMulti(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::PostDataMultiRequest* request, ::v1::agent::PostDataMultiResponse* response) { return this->PostDataMulti(context, request, response); }));}
     void SetMessageAllocatorFor_PostDataMulti(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_PostDataMulti() override {
+    ~WithCallbackMethod_PostDataMulti() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1751,37 +1268,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* PostDataMulti(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::PostDataMultiRequest* /*request*/, ::v1::agent::PostDataMultiResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* PostDataMulti(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::PostDataMultiRequest* /*request*/, ::v1::agent::PostDataMultiResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::PostDataMultiRequest* /*request*/, ::v1::agent::PostDataMultiResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetTeleopControlDataStream : public BaseClass {
+  class WithCallbackMethod_GetTeleopControlDataStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetTeleopControlDataStream() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::v1::agent::GetTeleopControlDataStreamRequest, ::v1::agent::GetTeleopControlDataStreamResponse>(
+    WithCallbackMethod_GetTeleopControlDataStream() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::v1::agent::GetTeleopControlDataStreamRequest, ::v1::agent::GetTeleopControlDataStreamResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetTeleopControlDataStreamRequest* request) { return this->GetTeleopControlDataStream(context, request); }));
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetTeleopControlDataStreamRequest* request) { return this->GetTeleopControlDataStream(context, request); }));
     }
-    ~ExperimentalWithCallbackMethod_GetTeleopControlDataStream() override {
+    ~WithCallbackMethod_GetTeleopControlDataStream() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1789,37 +1290,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerWriteReactor< ::v1::agent::GetTeleopControlDataStreamResponse>* GetTeleopControlDataStream(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopControlDataStreamRequest* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::v1::agent::GetTeleopControlDataStreamResponse>* GetTeleopControlDataStream(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopControlDataStreamRequest* /*request*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopControlDataStreamRequest* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetTeleopHeartbeatStream : public BaseClass {
+  class WithCallbackMethod_GetTeleopHeartbeatStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetTeleopHeartbeatStream() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::v1::agent::GetTeleopHeartbeatStreamRequest, ::v1::agent::GetTeleopHeartbeatStreamResponse>(
+    WithCallbackMethod_GetTeleopHeartbeatStream() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::v1::agent::GetTeleopHeartbeatStreamRequest, ::v1::agent::GetTeleopHeartbeatStreamResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetTeleopHeartbeatStreamRequest* request) { return this->GetTeleopHeartbeatStream(context, request); }));
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetTeleopHeartbeatStreamRequest* request) { return this->GetTeleopHeartbeatStream(context, request); }));
     }
-    ~ExperimentalWithCallbackMethod_GetTeleopHeartbeatStream() override {
+    ~WithCallbackMethod_GetTeleopHeartbeatStream() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1827,37 +1312,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerWriteReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* GetTeleopHeartbeatStream(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopHeartbeatStreamRequest* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::v1::agent::GetTeleopHeartbeatStreamResponse>* GetTeleopHeartbeatStream(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopHeartbeatStreamRequest* /*request*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopHeartbeatStreamRequest* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetTelemetryListenerStream : public BaseClass {
+  class WithCallbackMethod_GetTelemetryListenerStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetTelemetryListenerStream() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::v1::agent::GetTelemetryListenerStreamRequest, ::v1::agent::GetTelemetryListenerStreamResponse>(
+    WithCallbackMethod_GetTelemetryListenerStream() {
+      ::grpc::Service::MarkMethodCallback(5,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::v1::agent::GetTelemetryListenerStreamRequest, ::v1::agent::GetTelemetryListenerStreamResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetTelemetryListenerStreamRequest* request) { return this->GetTelemetryListenerStream(context, request); }));
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetTelemetryListenerStreamRequest* request) { return this->GetTelemetryListenerStream(context, request); }));
     }
-    ~ExperimentalWithCallbackMethod_GetTelemetryListenerStream() override {
+    ~WithCallbackMethod_GetTelemetryListenerStream() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1865,37 +1334,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerWriteReactor< ::v1::agent::GetTelemetryListenerStreamResponse>* GetTelemetryListenerStream(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetTelemetryListenerStreamRequest* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::v1::agent::GetTelemetryListenerStreamResponse>* GetTelemetryListenerStream(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetTelemetryListenerStreamRequest* /*request*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetTelemetryListenerStreamRequest* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetCustomDataChannelMessageStream : public BaseClass {
+  class WithCallbackMethod_GetCustomDataChannelMessageStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetCustomDataChannelMessageStream() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::v1::agent::GetCustomDataChannelMessageStreamRequest, ::v1::agent::GetCustomDataChannelMessageStreamResponse>(
+    WithCallbackMethod_GetCustomDataChannelMessageStream() {
+      ::grpc::Service::MarkMethodCallback(6,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::v1::agent::GetCustomDataChannelMessageStreamRequest, ::v1::agent::GetCustomDataChannelMessageStreamResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetCustomDataChannelMessageStreamRequest* request) { return this->GetCustomDataChannelMessageStream(context, request); }));
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetCustomDataChannelMessageStreamRequest* request) { return this->GetCustomDataChannelMessageStream(context, request); }));
     }
-    ~ExperimentalWithCallbackMethod_GetCustomDataChannelMessageStream() override {
+    ~WithCallbackMethod_GetCustomDataChannelMessageStream() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1903,46 +1356,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerWriteReactor< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* GetCustomDataChannelMessageStream(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetCustomDataChannelMessageStreamRequest* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::v1::agent::GetCustomDataChannelMessageStreamResponse>* GetCustomDataChannelMessageStream(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetCustomDataChannelMessageStreamRequest* /*request*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetCustomDataChannelMessageStreamRequest* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_CreateEvent : public BaseClass {
+  class WithCallbackMethod_CreateEvent : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_CreateEvent() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse>(
+    WithCallbackMethod_CreateEvent() {
+      ::grpc::Service::MarkMethodCallback(7,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response) { return this->CreateEvent(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::CreateEventRequest* request, ::v1::agent::CreateEventResponse* response) { return this->CreateEvent(context, request, response); }));}
     void SetMessageAllocatorFor_CreateEvent(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_CreateEvent() override {
+    ~WithCallbackMethod_CreateEvent() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1950,46 +1383,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* CreateEvent(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::CreateEventRequest* /*request*/, ::v1::agent::CreateEventResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateEvent(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::CreateEventRequest* /*request*/, ::v1::agent::CreateEventResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::CreateEventRequest* /*request*/, ::v1::agent::CreateEventResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_CreateInterventionRequest : public BaseClass {
+  class WithCallbackMethod_CreateInterventionRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_CreateInterventionRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::model::InterventionRequest, ::v1::model::InterventionRequest>(
+    WithCallbackMethod_CreateInterventionRequest() {
+      ::grpc::Service::MarkMethodCallback(8,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::model::InterventionRequest, ::v1::model::InterventionRequest>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response) { return this->CreateInterventionRequest(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::model::InterventionRequest* request, ::v1::model::InterventionRequest* response) { return this->CreateInterventionRequest(context, request, response); }));}
     void SetMessageAllocatorFor_CreateInterventionRequest(
-        ::grpc::experimental::MessageAllocator< ::v1::model::InterventionRequest, ::v1::model::InterventionRequest>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::model::InterventionRequest, ::v1::model::InterventionRequest>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::model::InterventionRequest, ::v1::model::InterventionRequest>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::model::InterventionRequest, ::v1::model::InterventionRequest>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_CreateInterventionRequest() override {
+    ~WithCallbackMethod_CreateInterventionRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1997,46 +1410,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* CreateInterventionRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::model::InterventionRequest* /*request*/, ::v1::model::InterventionRequest* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateInterventionRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::model::InterventionRequest* /*request*/, ::v1::model::InterventionRequest* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::model::InterventionRequest* /*request*/, ::v1::model::InterventionRequest* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetInterventionRequest : public BaseClass {
+  class WithCallbackMethod_GetInterventionRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetInterventionRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(9,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest>(
+    WithCallbackMethod_GetInterventionRequest() {
+      ::grpc::Service::MarkMethodCallback(9,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response) { return this->GetInterventionRequest(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetInterventionRequestRequest* request, ::v1::model::InterventionRequest* response) { return this->GetInterventionRequest(context, request, response); }));}
     void SetMessageAllocatorFor_GetInterventionRequest(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetInterventionRequest() override {
+    ~WithCallbackMethod_GetInterventionRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2044,46 +1437,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetInterventionRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetInterventionRequestRequest* /*request*/, ::v1::model::InterventionRequest* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetInterventionRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetInterventionRequestRequest* /*request*/, ::v1::model::InterventionRequest* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetInterventionRequestRequest* /*request*/, ::v1::model::InterventionRequest* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetInterventionResponse : public BaseClass {
+  class WithCallbackMethod_GetInterventionResponse : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetInterventionResponse() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(10,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse>(
+    WithCallbackMethod_GetInterventionResponse() {
+      ::grpc::Service::MarkMethodCallback(10,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response) { return this->GetInterventionResponse(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetInterventionResponseRequest* request, ::v1::model::InterventionResponse* response) { return this->GetInterventionResponse(context, request, response); }));}
     void SetMessageAllocatorFor_GetInterventionResponse(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetInterventionResponse() override {
+    ~WithCallbackMethod_GetInterventionResponse() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2091,46 +1464,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetInterventionResponse(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetInterventionResponseRequest* /*request*/, ::v1::model::InterventionResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetInterventionResponse(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetInterventionResponseRequest* /*request*/, ::v1::model::InterventionResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetInterventionResponseRequest* /*request*/, ::v1::model::InterventionResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetStreamsConfiguration : public BaseClass {
+  class WithCallbackMethod_GetStreamsConfiguration : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetStreamsConfiguration() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(11,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse>(
+    WithCallbackMethod_GetStreamsConfiguration() {
+      ::grpc::Service::MarkMethodCallback(11,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response) { return this->GetStreamsConfiguration(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetStreamsConfigurationRequest* request, ::v1::agent::GetStreamsConfigurationResponse* response) { return this->GetStreamsConfiguration(context, request, response); }));}
     void SetMessageAllocatorFor_GetStreamsConfiguration(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetStreamsConfiguration() override {
+    ~WithCallbackMethod_GetStreamsConfiguration() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2138,46 +1491,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetStreamsConfiguration(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetStreamsConfigurationRequest* /*request*/, ::v1::agent::GetStreamsConfigurationResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetStreamsConfiguration(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetStreamsConfigurationRequest* /*request*/, ::v1::agent::GetStreamsConfigurationResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetStreamsConfigurationRequest* /*request*/, ::v1::agent::GetStreamsConfigurationResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetApplicationConfiguration : public BaseClass {
+  class WithCallbackMethod_GetApplicationConfiguration : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetApplicationConfiguration() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(12,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse>(
+    WithCallbackMethod_GetApplicationConfiguration() {
+      ::grpc::Service::MarkMethodCallback(12,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response) { return this->GetApplicationConfiguration(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetApplicationConfigurationRequest* request, ::v1::agent::GetApplicationConfigurationResponse* response) { return this->GetApplicationConfiguration(context, request, response); }));}
     void SetMessageAllocatorFor_GetApplicationConfiguration(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(12);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetApplicationConfiguration() override {
+    ~WithCallbackMethod_GetApplicationConfiguration() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2185,46 +1518,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetApplicationConfiguration(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetApplicationConfigurationRequest* /*request*/, ::v1::agent::GetApplicationConfigurationResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetApplicationConfiguration(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetApplicationConfigurationRequest* /*request*/, ::v1::agent::GetApplicationConfigurationResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetApplicationConfigurationRequest* /*request*/, ::v1::agent::GetApplicationConfigurationResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetConfigBlobData : public BaseClass {
+  class WithCallbackMethod_GetConfigBlobData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetConfigBlobData() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(13,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>(
+    WithCallbackMethod_GetConfigBlobData() {
+      ::grpc::Service::MarkMethodCallback(13,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response) { return this->GetConfigBlobData(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response) { return this->GetConfigBlobData(context, request, response); }));}
     void SetMessageAllocatorFor_GetConfigBlobData(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetConfigBlobData() override {
+    ~WithCallbackMethod_GetConfigBlobData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2232,46 +1545,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetConfigBlobData(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetConfigBlobDataRequest* /*request*/, ::v1::agent::GetConfigBlobDataResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetConfigBlobData(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetConfigBlobDataRequest* /*request*/, ::v1::agent::GetConfigBlobDataResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetConfigBlobDataRequest* /*request*/, ::v1::agent::GetConfigBlobDataResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetAgentConfiguration : public BaseClass {
+  class WithCallbackMethod_GetAgentConfiguration : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetAgentConfiguration() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(14,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>(
+    WithCallbackMethod_GetAgentConfiguration() {
+      ::grpc::Service::MarkMethodCallback(14,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response) { return this->GetAgentConfiguration(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response) { return this->GetAgentConfiguration(context, request, response); }));}
     void SetMessageAllocatorFor_GetAgentConfiguration(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetAgentConfiguration() override {
+    ~WithCallbackMethod_GetAgentConfiguration() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2279,46 +1572,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetAgentConfiguration(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetAgentConfigurationRequest* /*request*/, ::v1::agent::GetAgentConfigurationResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetAgentConfiguration(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetAgentConfigurationRequest* /*request*/, ::v1::agent::GetAgentConfigurationResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetAgentConfigurationRequest* /*request*/, ::v1::agent::GetAgentConfigurationResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_Health : public BaseClass {
+  class WithCallbackMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_Health() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(15,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>(
+    WithCallbackMethod_Health() {
+      ::grpc::Service::MarkMethodCallback(15,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response) { return this->Health(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response) { return this->Health(context, request, response); }));}
     void SetMessageAllocatorFor_Health(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_Health() override {
+    ~WithCallbackMethod_Health() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2326,46 +1599,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* Health(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::HealthRequest* /*request*/, ::v1::agent::HealthResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* Health(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::HealthRequest* /*request*/, ::v1::agent::HealthResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::HealthRequest* /*request*/, ::v1::agent::HealthResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetCommandRequest : public BaseClass {
+  class WithCallbackMethod_GetCommandRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetCommandRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(16,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>(
+    WithCallbackMethod_GetCommandRequest() {
+      ::grpc::Service::MarkMethodCallback(16,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response) { return this->GetCommandRequest(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response) { return this->GetCommandRequest(context, request, response); }));}
     void SetMessageAllocatorFor_GetCommandRequest(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetCommandRequest() override {
+    ~WithCallbackMethod_GetCommandRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2373,37 +1626,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetCommandRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetCommandRequestRequest* /*request*/, ::v1::agent::GetCommandRequestResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetCommandRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetCommandRequestRequest* /*request*/, ::v1::agent::GetCommandRequestResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetCommandRequestRequest* /*request*/, ::v1::agent::GetCommandRequestResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetCommandRequestStream : public BaseClass {
+  class WithCallbackMethod_GetCommandRequestStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetCommandRequestStream() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(17,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::v1::agent::GetCommandRequestStreamRequest, ::v1::agent::GetCommandRequestStreamResponse>(
+    WithCallbackMethod_GetCommandRequestStream() {
+      ::grpc::Service::MarkMethodCallback(17,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::v1::agent::GetCommandRequestStreamRequest, ::v1::agent::GetCommandRequestStreamResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetCommandRequestStreamRequest* request) { return this->GetCommandRequestStream(context, request); }));
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetCommandRequestStreamRequest* request) { return this->GetCommandRequestStream(context, request); }));
     }
-    ~ExperimentalWithCallbackMethod_GetCommandRequestStream() override {
+    ~WithCallbackMethod_GetCommandRequestStream() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2411,46 +1648,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerWriteReactor< ::v1::agent::GetCommandRequestStreamResponse>* GetCommandRequestStream(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetCommandRequestStreamRequest* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::v1::agent::GetCommandRequestStreamResponse>* GetCommandRequestStream(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetCommandRequestStreamRequest* /*request*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetCommandRequestStreamRequest* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_SendCommandResponse : public BaseClass {
+  class WithCallbackMethod_SendCommandResponse : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_SendCommandResponse() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(18,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>(
+    WithCallbackMethod_SendCommandResponse() {
+      ::grpc::Service::MarkMethodCallback(18,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response) { return this->SendCommandResponse(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response) { return this->SendCommandResponse(context, request, response); }));}
     void SetMessageAllocatorFor_SendCommandResponse(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(18);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_SendCommandResponse() override {
+    ~WithCallbackMethod_SendCommandResponse() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2458,46 +1675,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* SendCommandResponse(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::SendCommandResponseRequest* /*request*/, ::v1::agent::SendCommandResponseResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* SendCommandResponse(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::SendCommandResponseRequest* /*request*/, ::v1::agent::SendCommandResponseResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::SendCommandResponseRequest* /*request*/, ::v1::agent::SendCommandResponseResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_PostTransformFrame : public BaseClass {
+  class WithCallbackMethod_PostTransformFrame : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_PostTransformFrame() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(19,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>(
+    WithCallbackMethod_PostTransformFrame() {
+      ::grpc::Service::MarkMethodCallback(19,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response) { return this->PostTransformFrame(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response) { return this->PostTransformFrame(context, request, response); }));}
     void SetMessageAllocatorFor_PostTransformFrame(
-        ::grpc::experimental::MessageAllocator< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(19);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_PostTransformFrame() override {
+    ~WithCallbackMethod_PostTransformFrame() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2505,46 +1702,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* PostTransformFrame(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::model::TransformFrame* /*request*/, ::v1::agent::PostTransformFrameResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* PostTransformFrame(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::model::TransformFrame* /*request*/, ::v1::agent::PostTransformFrameResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::model::TransformFrame* /*request*/, ::v1::agent::PostTransformFrameResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_SetBaseFrameID : public BaseClass {
+  class WithCallbackMethod_SetBaseFrameID : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_SetBaseFrameID() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(20,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>(
+    WithCallbackMethod_SetBaseFrameID() {
+      ::grpc::Service::MarkMethodCallback(20,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response) { return this->SetBaseFrameID(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response) { return this->SetBaseFrameID(context, request, response); }));}
     void SetMessageAllocatorFor_SetBaseFrameID(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(20);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_SetBaseFrameID() override {
+    ~WithCallbackMethod_SetBaseFrameID() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2552,46 +1729,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* SetBaseFrameID(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::SetBaseFrameIDRequest* /*request*/, ::v1::agent::SetBaseFrameIDResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* SetBaseFrameID(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::SetBaseFrameIDRequest* /*request*/, ::v1::agent::SetBaseFrameIDResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::SetBaseFrameIDRequest* /*request*/, ::v1::agent::SetBaseFrameIDResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_ClearTransformTree : public BaseClass {
+  class WithCallbackMethod_ClearTransformTree : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_ClearTransformTree() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(21,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>(
+    WithCallbackMethod_ClearTransformTree() {
+      ::grpc::Service::MarkMethodCallback(21,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response) { return this->ClearTransformTree(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response) { return this->ClearTransformTree(context, request, response); }));}
     void SetMessageAllocatorFor_ClearTransformTree(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(21);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_ClearTransformTree() override {
+    ~WithCallbackMethod_ClearTransformTree() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2599,46 +1756,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* ClearTransformTree(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::ClearTransformTreeRequest* /*request*/, ::v1::agent::ClearTransformTreeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* ClearTransformTree(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::ClearTransformTreeRequest* /*request*/, ::v1::agent::ClearTransformTreeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::ClearTransformTreeRequest* /*request*/, ::v1::agent::ClearTransformTreeResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetTeleopInfo : public BaseClass {
+  class WithCallbackMethod_GetTeleopInfo : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetTeleopInfo() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(22,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>(
+    WithCallbackMethod_GetTeleopInfo() {
+      ::grpc::Service::MarkMethodCallback(22,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response) { return this->GetTeleopInfo(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response) { return this->GetTeleopInfo(context, request, response); }));}
     void SetMessageAllocatorFor_GetTeleopInfo(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(22);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetTeleopInfo() override {
+    ~WithCallbackMethod_GetTeleopInfo() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2646,46 +1783,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetTeleopInfo(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetTeleopInfo(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetTeleopInfoRequest* /*request*/, ::v1::agent::GetTeleopInfoResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_PostLanRtcOffer : public BaseClass {
+  class WithCallbackMethod_PostLanRtcOffer : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_PostLanRtcOffer() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(23,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>(
+    WithCallbackMethod_PostLanRtcOffer() {
+      ::grpc::Service::MarkMethodCallback(23,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response) { return this->PostLanRtcOffer(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response) { return this->PostLanRtcOffer(context, request, response); }));}
     void SetMessageAllocatorFor_PostLanRtcOffer(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(23);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_PostLanRtcOffer() override {
+    ~WithCallbackMethod_PostLanRtcOffer() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2693,46 +1810,26 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* PostLanRtcOffer(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::PostLanRtcOfferRequest* /*request*/, ::v1::agent::PostLanRtcOfferResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* PostLanRtcOffer(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::PostLanRtcOfferRequest* /*request*/, ::v1::agent::PostLanRtcOfferResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::PostLanRtcOfferRequest* /*request*/, ::v1::agent::PostLanRtcOfferResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_SendOnCustomDataChannel : public BaseClass {
+  class WithCallbackMethod_SendOnCustomDataChannel : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_SendOnCustomDataChannel() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(24,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>(
+    WithCallbackMethod_SendOnCustomDataChannel() {
+      ::grpc::Service::MarkMethodCallback(24,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response) { return this->SendOnCustomDataChannel(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response) { return this->SendOnCustomDataChannel(context, request, response); }));}
     void SetMessageAllocatorFor_SendOnCustomDataChannel(
-        ::grpc::experimental::MessageAllocator< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(24);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_SendOnCustomDataChannel() override {
+    ~WithCallbackMethod_SendOnCustomDataChannel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2740,20 +1837,11 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* SendOnCustomDataChannel(
-      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::SendOnCustomDataChannelRequest* /*request*/, ::v1::agent::SendOnCustomDataChannelResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* SendOnCustomDataChannel(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::v1::agent::SendOnCustomDataChannelRequest* /*request*/, ::v1::agent::SendOnCustomDataChannelResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::SendOnCustomDataChannelRequest* /*request*/, ::v1::agent::SendOnCustomDataChannelResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_StreamData<ExperimentalWithCallbackMethod_PostData<ExperimentalWithCallbackMethod_PostDataMulti<ExperimentalWithCallbackMethod_GetTeleopControlDataStream<ExperimentalWithCallbackMethod_GetTeleopHeartbeatStream<ExperimentalWithCallbackMethod_GetTelemetryListenerStream<ExperimentalWithCallbackMethod_GetCustomDataChannelMessageStream<ExperimentalWithCallbackMethod_CreateEvent<ExperimentalWithCallbackMethod_CreateInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionResponse<ExperimentalWithCallbackMethod_GetStreamsConfiguration<ExperimentalWithCallbackMethod_GetApplicationConfiguration<ExperimentalWithCallbackMethod_GetConfigBlobData<ExperimentalWithCallbackMethod_GetAgentConfiguration<ExperimentalWithCallbackMethod_Health<ExperimentalWithCallbackMethod_GetCommandRequest<ExperimentalWithCallbackMethod_GetCommandRequestStream<ExperimentalWithCallbackMethod_SendCommandResponse<ExperimentalWithCallbackMethod_PostTransformFrame<ExperimentalWithCallbackMethod_SetBaseFrameID<ExperimentalWithCallbackMethod_ClearTransformTree<ExperimentalWithCallbackMethod_GetTeleopInfo<ExperimentalWithCallbackMethod_PostLanRtcOffer<ExperimentalWithCallbackMethod_SendOnCustomDataChannel<Service > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_StreamData<ExperimentalWithCallbackMethod_PostData<ExperimentalWithCallbackMethod_PostDataMulti<ExperimentalWithCallbackMethod_GetTeleopControlDataStream<ExperimentalWithCallbackMethod_GetTeleopHeartbeatStream<ExperimentalWithCallbackMethod_GetTelemetryListenerStream<ExperimentalWithCallbackMethod_GetCustomDataChannelMessageStream<ExperimentalWithCallbackMethod_CreateEvent<ExperimentalWithCallbackMethod_CreateInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionRequest<ExperimentalWithCallbackMethod_GetInterventionResponse<ExperimentalWithCallbackMethod_GetStreamsConfiguration<ExperimentalWithCallbackMethod_GetApplicationConfiguration<ExperimentalWithCallbackMethod_GetConfigBlobData<ExperimentalWithCallbackMethod_GetAgentConfiguration<ExperimentalWithCallbackMethod_Health<ExperimentalWithCallbackMethod_GetCommandRequest<ExperimentalWithCallbackMethod_GetCommandRequestStream<ExperimentalWithCallbackMethod_SendCommandResponse<ExperimentalWithCallbackMethod_PostTransformFrame<ExperimentalWithCallbackMethod_SetBaseFrameID<ExperimentalWithCallbackMethod_ClearTransformTree<ExperimentalWithCallbackMethod_GetTeleopInfo<ExperimentalWithCallbackMethod_PostLanRtcOffer<ExperimentalWithCallbackMethod_SendOnCustomDataChannel<Service > > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_StreamData<WithCallbackMethod_PostData<WithCallbackMethod_PostDataMulti<WithCallbackMethod_GetTeleopControlDataStream<WithCallbackMethod_GetTeleopHeartbeatStream<WithCallbackMethod_GetTelemetryListenerStream<WithCallbackMethod_GetCustomDataChannelMessageStream<WithCallbackMethod_CreateEvent<WithCallbackMethod_CreateInterventionRequest<WithCallbackMethod_GetInterventionRequest<WithCallbackMethod_GetInterventionResponse<WithCallbackMethod_GetStreamsConfiguration<WithCallbackMethod_GetApplicationConfiguration<WithCallbackMethod_GetConfigBlobData<WithCallbackMethod_GetAgentConfiguration<WithCallbackMethod_Health<WithCallbackMethod_GetCommandRequest<WithCallbackMethod_GetCommandRequestStream<WithCallbackMethod_SendCommandResponse<WithCallbackMethod_PostTransformFrame<WithCallbackMethod_SetBaseFrameID<WithCallbackMethod_ClearTransformTree<WithCallbackMethod_GetTeleopInfo<WithCallbackMethod_PostLanRtcOffer<WithCallbackMethod_SendOnCustomDataChannel<Service > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_StreamData : public BaseClass {
    private:
@@ -3680,27 +2768,17 @@ class Agent final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_StreamData : public BaseClass {
+  class WithRawCallbackMethod_StreamData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_StreamData() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackClientStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_StreamData() {
+      ::grpc::Service::MarkMethodRawCallback(0,
+          new ::grpc::internal::CallbackClientStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, ::grpc::ByteBuffer* response) { return this->StreamData(context, response); }));
+                   ::grpc::CallbackServerContext* context, ::grpc::ByteBuffer* response) { return this->StreamData(context, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_StreamData() override {
+    ~WithRawCallbackMethod_StreamData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3708,37 +2786,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerReadReactor< ::grpc::ByteBuffer>* StreamData(
-      ::grpc::CallbackServerContext* /*context*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerReadReactor< ::grpc::ByteBuffer>* StreamData(
-      ::grpc::experimental::CallbackServerContext* /*context*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_PostData : public BaseClass {
+  class WithRawCallbackMethod_PostData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_PostData() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_PostData() {
+      ::grpc::Service::MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostData(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostData(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_PostData() override {
+    ~WithRawCallbackMethod_PostData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3746,37 +2808,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* PostData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* PostData(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_PostDataMulti : public BaseClass {
+  class WithRawCallbackMethod_PostDataMulti : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_PostDataMulti() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_PostDataMulti() {
+      ::grpc::Service::MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostDataMulti(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostDataMulti(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_PostDataMulti() override {
+    ~WithRawCallbackMethod_PostDataMulti() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3784,37 +2830,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* PostDataMulti(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* PostDataMulti(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetTeleopControlDataStream : public BaseClass {
+  class WithRawCallbackMethod_GetTeleopControlDataStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetTeleopControlDataStream() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetTeleopControlDataStream() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const::grpc::ByteBuffer* request) { return this->GetTeleopControlDataStream(context, request); }));
+                   ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->GetTeleopControlDataStream(context, request); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetTeleopControlDataStream() override {
+    ~WithRawCallbackMethod_GetTeleopControlDataStream() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3822,37 +2852,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* GetTeleopControlDataStream(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* GetTeleopControlDataStream(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetTeleopHeartbeatStream : public BaseClass {
+  class WithRawCallbackMethod_GetTeleopHeartbeatStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetTeleopHeartbeatStream() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetTeleopHeartbeatStream() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const::grpc::ByteBuffer* request) { return this->GetTeleopHeartbeatStream(context, request); }));
+                   ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->GetTeleopHeartbeatStream(context, request); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetTeleopHeartbeatStream() override {
+    ~WithRawCallbackMethod_GetTeleopHeartbeatStream() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3860,37 +2874,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* GetTeleopHeartbeatStream(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* GetTeleopHeartbeatStream(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetTelemetryListenerStream : public BaseClass {
+  class WithRawCallbackMethod_GetTelemetryListenerStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetTelemetryListenerStream() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(5,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetTelemetryListenerStream() {
+      ::grpc::Service::MarkMethodRawCallback(5,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const::grpc::ByteBuffer* request) { return this->GetTelemetryListenerStream(context, request); }));
+                   ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->GetTelemetryListenerStream(context, request); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetTelemetryListenerStream() override {
+    ~WithRawCallbackMethod_GetTelemetryListenerStream() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3898,37 +2896,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* GetTelemetryListenerStream(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* GetTelemetryListenerStream(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetCustomDataChannelMessageStream : public BaseClass {
+  class WithRawCallbackMethod_GetCustomDataChannelMessageStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetCustomDataChannelMessageStream() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(6,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetCustomDataChannelMessageStream() {
+      ::grpc::Service::MarkMethodRawCallback(6,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const::grpc::ByteBuffer* request) { return this->GetCustomDataChannelMessageStream(context, request); }));
+                   ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->GetCustomDataChannelMessageStream(context, request); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetCustomDataChannelMessageStream() override {
+    ~WithRawCallbackMethod_GetCustomDataChannelMessageStream() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3936,37 +2918,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* GetCustomDataChannelMessageStream(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* GetCustomDataChannelMessageStream(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_CreateEvent : public BaseClass {
+  class WithRawCallbackMethod_CreateEvent : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_CreateEvent() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_CreateEvent() {
+      ::grpc::Service::MarkMethodRawCallback(7,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateEvent(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateEvent(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_CreateEvent() override {
+    ~WithRawCallbackMethod_CreateEvent() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3974,37 +2940,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* CreateEvent(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateEvent(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_CreateInterventionRequest : public BaseClass {
+  class WithRawCallbackMethod_CreateInterventionRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_CreateInterventionRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_CreateInterventionRequest() {
+      ::grpc::Service::MarkMethodRawCallback(8,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateInterventionRequest(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateInterventionRequest(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_CreateInterventionRequest() override {
+    ~WithRawCallbackMethod_CreateInterventionRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4012,37 +2962,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* CreateInterventionRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateInterventionRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetInterventionRequest : public BaseClass {
+  class WithRawCallbackMethod_GetInterventionRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetInterventionRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(9,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetInterventionRequest() {
+      ::grpc::Service::MarkMethodRawCallback(9,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetInterventionRequest(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetInterventionRequest(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetInterventionRequest() override {
+    ~WithRawCallbackMethod_GetInterventionRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4050,37 +2984,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetInterventionRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetInterventionRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetInterventionResponse : public BaseClass {
+  class WithRawCallbackMethod_GetInterventionResponse : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetInterventionResponse() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(10,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetInterventionResponse() {
+      ::grpc::Service::MarkMethodRawCallback(10,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetInterventionResponse(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetInterventionResponse(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetInterventionResponse() override {
+    ~WithRawCallbackMethod_GetInterventionResponse() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4088,37 +3006,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetInterventionResponse(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetInterventionResponse(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetStreamsConfiguration : public BaseClass {
+  class WithRawCallbackMethod_GetStreamsConfiguration : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetStreamsConfiguration() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(11,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetStreamsConfiguration() {
+      ::grpc::Service::MarkMethodRawCallback(11,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetStreamsConfiguration(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetStreamsConfiguration(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetStreamsConfiguration() override {
+    ~WithRawCallbackMethod_GetStreamsConfiguration() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4126,37 +3028,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetStreamsConfiguration(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetStreamsConfiguration(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetApplicationConfiguration : public BaseClass {
+  class WithRawCallbackMethod_GetApplicationConfiguration : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetApplicationConfiguration() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(12,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetApplicationConfiguration() {
+      ::grpc::Service::MarkMethodRawCallback(12,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetApplicationConfiguration(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetApplicationConfiguration(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetApplicationConfiguration() override {
+    ~WithRawCallbackMethod_GetApplicationConfiguration() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4164,37 +3050,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetApplicationConfiguration(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetApplicationConfiguration(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetConfigBlobData : public BaseClass {
+  class WithRawCallbackMethod_GetConfigBlobData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetConfigBlobData() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(13,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetConfigBlobData() {
+      ::grpc::Service::MarkMethodRawCallback(13,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetConfigBlobData(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetConfigBlobData(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetConfigBlobData() override {
+    ~WithRawCallbackMethod_GetConfigBlobData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4202,37 +3072,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetConfigBlobData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetConfigBlobData(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetAgentConfiguration : public BaseClass {
+  class WithRawCallbackMethod_GetAgentConfiguration : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetAgentConfiguration() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(14,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetAgentConfiguration() {
+      ::grpc::Service::MarkMethodRawCallback(14,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAgentConfiguration(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAgentConfiguration(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetAgentConfiguration() override {
+    ~WithRawCallbackMethod_GetAgentConfiguration() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4240,37 +3094,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetAgentConfiguration(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetAgentConfiguration(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_Health : public BaseClass {
+  class WithRawCallbackMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_Health() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(15,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_Health() {
+      ::grpc::Service::MarkMethodRawCallback(15,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Health(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Health(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_Health() override {
+    ~WithRawCallbackMethod_Health() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4278,37 +3116,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* Health(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* Health(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetCommandRequest : public BaseClass {
+  class WithRawCallbackMethod_GetCommandRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetCommandRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(16,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetCommandRequest() {
+      ::grpc::Service::MarkMethodRawCallback(16,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetCommandRequest(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetCommandRequest(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetCommandRequest() override {
+    ~WithRawCallbackMethod_GetCommandRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4316,37 +3138,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetCommandRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetCommandRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetCommandRequestStream : public BaseClass {
+  class WithRawCallbackMethod_GetCommandRequestStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetCommandRequestStream() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(17,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetCommandRequestStream() {
+      ::grpc::Service::MarkMethodRawCallback(17,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const::grpc::ByteBuffer* request) { return this->GetCommandRequestStream(context, request); }));
+                   ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->GetCommandRequestStream(context, request); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetCommandRequestStream() override {
+    ~WithRawCallbackMethod_GetCommandRequestStream() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4354,37 +3160,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* GetCommandRequestStream(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* GetCommandRequestStream(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_SendCommandResponse : public BaseClass {
+  class WithRawCallbackMethod_SendCommandResponse : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_SendCommandResponse() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(18,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_SendCommandResponse() {
+      ::grpc::Service::MarkMethodRawCallback(18,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SendCommandResponse(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SendCommandResponse(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_SendCommandResponse() override {
+    ~WithRawCallbackMethod_SendCommandResponse() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4392,37 +3182,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* SendCommandResponse(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* SendCommandResponse(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_PostTransformFrame : public BaseClass {
+  class WithRawCallbackMethod_PostTransformFrame : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_PostTransformFrame() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(19,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_PostTransformFrame() {
+      ::grpc::Service::MarkMethodRawCallback(19,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostTransformFrame(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostTransformFrame(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_PostTransformFrame() override {
+    ~WithRawCallbackMethod_PostTransformFrame() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4430,37 +3204,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* PostTransformFrame(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* PostTransformFrame(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_SetBaseFrameID : public BaseClass {
+  class WithRawCallbackMethod_SetBaseFrameID : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_SetBaseFrameID() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(20,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_SetBaseFrameID() {
+      ::grpc::Service::MarkMethodRawCallback(20,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetBaseFrameID(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetBaseFrameID(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_SetBaseFrameID() override {
+    ~WithRawCallbackMethod_SetBaseFrameID() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4468,37 +3226,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* SetBaseFrameID(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* SetBaseFrameID(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_ClearTransformTree : public BaseClass {
+  class WithRawCallbackMethod_ClearTransformTree : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_ClearTransformTree() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(21,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_ClearTransformTree() {
+      ::grpc::Service::MarkMethodRawCallback(21,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ClearTransformTree(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ClearTransformTree(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_ClearTransformTree() override {
+    ~WithRawCallbackMethod_ClearTransformTree() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4506,37 +3248,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* ClearTransformTree(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* ClearTransformTree(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetTeleopInfo : public BaseClass {
+  class WithRawCallbackMethod_GetTeleopInfo : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetTeleopInfo() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(22,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_GetTeleopInfo() {
+      ::grpc::Service::MarkMethodRawCallback(22,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetTeleopInfo(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetTeleopInfo(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetTeleopInfo() override {
+    ~WithRawCallbackMethod_GetTeleopInfo() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4544,37 +3270,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetTeleopInfo(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetTeleopInfo(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_PostLanRtcOffer : public BaseClass {
+  class WithRawCallbackMethod_PostLanRtcOffer : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_PostLanRtcOffer() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(23,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_PostLanRtcOffer() {
+      ::grpc::Service::MarkMethodRawCallback(23,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostLanRtcOffer(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostLanRtcOffer(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_PostLanRtcOffer() override {
+    ~WithRawCallbackMethod_PostLanRtcOffer() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4582,37 +3292,21 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* PostLanRtcOffer(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* PostLanRtcOffer(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_SendOnCustomDataChannel : public BaseClass {
+  class WithRawCallbackMethod_SendOnCustomDataChannel : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_SendOnCustomDataChannel() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(24,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+    WithRawCallbackMethod_SendOnCustomDataChannel() {
+      ::grpc::Service::MarkMethodRawCallback(24,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SendOnCustomDataChannel(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SendOnCustomDataChannel(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_SendOnCustomDataChannel() override {
+    ~WithRawCallbackMethod_SendOnCustomDataChannel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -4620,14 +3314,8 @@ class Agent final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* SendOnCustomDataChannel(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* SendOnCustomDataChannel(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_PostData : public BaseClass {
@@ -4638,8 +3326,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::model::Datapoint, ::v1::agent::PostDataResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::model::Datapoint, ::v1::agent::PostDataResponse>* streamer) {
                        return this->StreamedPostData(context,
                          streamer);
@@ -4665,8 +3353,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::PostDataMultiRequest, ::v1::agent::PostDataMultiResponse>* streamer) {
                        return this->StreamedPostDataMulti(context,
                          streamer);
@@ -4692,8 +3380,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::CreateEventRequest, ::v1::agent::CreateEventResponse>* streamer) {
                        return this->StreamedCreateEvent(context,
                          streamer);
@@ -4719,8 +3407,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::model::InterventionRequest, ::v1::model::InterventionRequest>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::model::InterventionRequest, ::v1::model::InterventionRequest>* streamer) {
                        return this->StreamedCreateInterventionRequest(context,
                          streamer);
@@ -4746,8 +3434,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::GetInterventionRequestRequest, ::v1::model::InterventionRequest>* streamer) {
                        return this->StreamedGetInterventionRequest(context,
                          streamer);
@@ -4773,8 +3461,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::GetInterventionResponseRequest, ::v1::model::InterventionResponse>* streamer) {
                        return this->StreamedGetInterventionResponse(context,
                          streamer);
@@ -4800,8 +3488,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::GetStreamsConfigurationRequest, ::v1::agent::GetStreamsConfigurationResponse>* streamer) {
                        return this->StreamedGetStreamsConfiguration(context,
                          streamer);
@@ -4827,8 +3515,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::GetApplicationConfigurationRequest, ::v1::agent::GetApplicationConfigurationResponse>* streamer) {
                        return this->StreamedGetApplicationConfiguration(context,
                          streamer);
@@ -4854,8 +3542,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::GetConfigBlobDataRequest, ::v1::agent::GetConfigBlobDataResponse>* streamer) {
                        return this->StreamedGetConfigBlobData(context,
                          streamer);
@@ -4881,8 +3569,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::GetAgentConfigurationRequest, ::v1::agent::GetAgentConfigurationResponse>* streamer) {
                        return this->StreamedGetAgentConfiguration(context,
                          streamer);
@@ -4908,8 +3596,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>* streamer) {
                        return this->StreamedHealth(context,
                          streamer);
@@ -4935,8 +3623,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>* streamer) {
                        return this->StreamedGetCommandRequest(context,
                          streamer);
@@ -4962,8 +3650,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>* streamer) {
                        return this->StreamedSendCommandResponse(context,
                          streamer);
@@ -4989,8 +3677,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(19,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>* streamer) {
                        return this->StreamedPostTransformFrame(context,
                          streamer);
@@ -5016,8 +3704,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>* streamer) {
                        return this->StreamedSetBaseFrameID(context,
                          streamer);
@@ -5043,8 +3731,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>* streamer) {
                        return this->StreamedClearTransformTree(context,
                          streamer);
@@ -5070,8 +3758,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(22,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>* streamer) {
                        return this->StreamedGetTeleopInfo(context,
                          streamer);
@@ -5097,8 +3785,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(23,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>* streamer) {
                        return this->StreamedPostLanRtcOffer(context,
                          streamer);
@@ -5124,8 +3812,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(24,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>* streamer) {
                        return this->StreamedSendOnCustomDataChannel(context,
                          streamer);
@@ -5152,8 +3840,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::v1::agent::GetTeleopControlDataStreamRequest, ::v1::agent::GetTeleopControlDataStreamResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::v1::agent::GetTeleopControlDataStreamRequest, ::v1::agent::GetTeleopControlDataStreamResponse>* streamer) {
                        return this->StreamedGetTeleopControlDataStream(context,
                          streamer);
@@ -5179,8 +3867,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::v1::agent::GetTeleopHeartbeatStreamRequest, ::v1::agent::GetTeleopHeartbeatStreamResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::v1::agent::GetTeleopHeartbeatStreamRequest, ::v1::agent::GetTeleopHeartbeatStreamResponse>* streamer) {
                        return this->StreamedGetTeleopHeartbeatStream(context,
                          streamer);
@@ -5206,8 +3894,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::v1::agent::GetTelemetryListenerStreamRequest, ::v1::agent::GetTelemetryListenerStreamResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::v1::agent::GetTelemetryListenerStreamRequest, ::v1::agent::GetTelemetryListenerStreamResponse>* streamer) {
                        return this->StreamedGetTelemetryListenerStream(context,
                          streamer);
@@ -5233,8 +3921,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::v1::agent::GetCustomDataChannelMessageStreamRequest, ::v1::agent::GetCustomDataChannelMessageStreamResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::v1::agent::GetCustomDataChannelMessageStreamRequest, ::v1::agent::GetCustomDataChannelMessageStreamResponse>* streamer) {
                        return this->StreamedGetCustomDataChannelMessageStream(context,
                          streamer);
@@ -5260,8 +3948,8 @@ class Agent final {
       ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::v1::agent::GetCommandRequestStreamRequest, ::v1::agent::GetCommandRequestStreamResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::v1::agent::GetCommandRequestStreamRequest, ::v1::agent::GetCommandRequestStreamResponse>* streamer) {
                        return this->StreamedGetCommandRequestStream(context,
                          streamer);
