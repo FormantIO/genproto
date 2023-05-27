@@ -3967,6 +3967,7 @@ class GetTeleopHeartbeatStreamResponse final :
 
   enum : int {
     kPeerIdFieldNumber = 1,
+    kSessionTypeFieldNumber = 3,
     kIsDisconnectFieldNumber = 2,
   };
   // string peer_id = 1 [json_name = "peerId"];
@@ -3981,6 +3982,20 @@ class GetTeleopHeartbeatStreamResponse final :
   const std::string& _internal_peer_id() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_peer_id(const std::string& value);
   std::string* _internal_mutable_peer_id();
+  public:
+
+  // string session_type = 3 [json_name = "sessionType"];
+  void clear_session_type();
+  const std::string& session_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_session_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_session_type();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_session_type();
+  void set_allocated_session_type(std::string* session_type);
+  private:
+  const std::string& _internal_session_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_session_type(const std::string& value);
+  std::string* _internal_mutable_session_type();
   public:
 
   // bool is_disconnect = 2 [json_name = "isDisconnect"];
@@ -4000,6 +4015,7 @@ class GetTeleopHeartbeatStreamResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr peer_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr session_type_;
   bool is_disconnect_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
@@ -7673,6 +7689,51 @@ inline void GetTeleopHeartbeatStreamResponse::_internal_set_is_disconnect(bool v
 inline void GetTeleopHeartbeatStreamResponse::set_is_disconnect(bool value) {
   _internal_set_is_disconnect(value);
   // @@protoc_insertion_point(field_set:v1.agent.GetTeleopHeartbeatStreamResponse.is_disconnect)
+}
+
+// string session_type = 3 [json_name = "sessionType"];
+inline void GetTeleopHeartbeatStreamResponse::clear_session_type() {
+  session_type_.ClearToEmpty();
+}
+inline const std::string& GetTeleopHeartbeatStreamResponse::session_type() const {
+  // @@protoc_insertion_point(field_get:v1.agent.GetTeleopHeartbeatStreamResponse.session_type)
+  return _internal_session_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTeleopHeartbeatStreamResponse::set_session_type(ArgT0&& arg0, ArgT... args) {
+ 
+ session_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.agent.GetTeleopHeartbeatStreamResponse.session_type)
+}
+inline std::string* GetTeleopHeartbeatStreamResponse::mutable_session_type() {
+  // @@protoc_insertion_point(field_mutable:v1.agent.GetTeleopHeartbeatStreamResponse.session_type)
+  return _internal_mutable_session_type();
+}
+inline const std::string& GetTeleopHeartbeatStreamResponse::_internal_session_type() const {
+  return session_type_.Get();
+}
+inline void GetTeleopHeartbeatStreamResponse::_internal_set_session_type(const std::string& value) {
+  
+  session_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTeleopHeartbeatStreamResponse::_internal_mutable_session_type() {
+  
+  return session_type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTeleopHeartbeatStreamResponse::release_session_type() {
+  // @@protoc_insertion_point(field_release:v1.agent.GetTeleopHeartbeatStreamResponse.session_type)
+  return session_type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTeleopHeartbeatStreamResponse::set_allocated_session_type(std::string* session_type) {
+  if (session_type != nullptr) {
+    
+  } else {
+    
+  }
+  session_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), session_type,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.agent.GetTeleopHeartbeatStreamResponse.session_type)
 }
 
 // -------------------------------------------------------------------

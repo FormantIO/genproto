@@ -337,6 +337,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTeleopHeartbeatStreamRequest
 constexpr GetTeleopHeartbeatStreamResponse::GetTeleopHeartbeatStreamResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : peer_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , session_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , is_disconnect_(false){}
 struct GetTeleopHeartbeatStreamResponseDefaultTypeInternal {
   constexpr GetTeleopHeartbeatStreamResponseDefaultTypeInternal()
@@ -727,6 +728,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fagent_2fv1_2fagent_2e
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::v1::agent::GetTeleopHeartbeatStreamResponse, peer_id_),
   PROTOBUF_FIELD_OFFSET(::v1::agent::GetTeleopHeartbeatStreamResponse, is_disconnect_),
+  PROTOBUF_FIELD_OFFSET(::v1::agent::GetTeleopHeartbeatStreamResponse, session_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::agent::GetTelemetryListenerStreamRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -861,24 +863,24 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 143, -1, sizeof(::v1::agent::GetTeleopControlDataStreamResponse)},
   { 149, -1, sizeof(::v1::agent::GetTeleopHeartbeatStreamRequest)},
   { 154, -1, sizeof(::v1::agent::GetTeleopHeartbeatStreamResponse)},
-  { 161, -1, sizeof(::v1::agent::GetTelemetryListenerStreamRequest)},
-  { 167, -1, sizeof(::v1::agent::GetTelemetryListenerStreamResponse)},
-  { 173, -1, sizeof(::v1::agent::PostTransformFrameResponse)},
-  { 178, -1, sizeof(::v1::agent::SetBaseFrameIDRequest)},
-  { 184, -1, sizeof(::v1::agent::SetBaseFrameIDResponse)},
-  { 189, -1, sizeof(::v1::agent::ClearTransformTreeRequest)},
-  { 194, -1, sizeof(::v1::agent::ClearTransformTreeResponse)},
-  { 199, -1, sizeof(::v1::agent::CreateEventRequest)},
-  { 205, -1, sizeof(::v1::agent::CreateEventResponse)},
-  { 210, -1, sizeof(::v1::agent::CreateEventError)},
-  { 216, -1, sizeof(::v1::agent::GetTeleopInfoRequest)},
-  { 221, -1, sizeof(::v1::agent::GetTeleopInfoResponse)},
-  { 227, -1, sizeof(::v1::agent::PostLanRtcOfferRequest)},
-  { 233, -1, sizeof(::v1::agent::PostLanRtcOfferResponse)},
-  { 239, -1, sizeof(::v1::agent::SendOnCustomDataChannelRequest)},
-  { 246, -1, sizeof(::v1::agent::SendOnCustomDataChannelResponse)},
-  { 251, -1, sizeof(::v1::agent::GetCustomDataChannelMessageStreamRequest)},
-  { 257, -1, sizeof(::v1::agent::GetCustomDataChannelMessageStreamResponse)},
+  { 162, -1, sizeof(::v1::agent::GetTelemetryListenerStreamRequest)},
+  { 168, -1, sizeof(::v1::agent::GetTelemetryListenerStreamResponse)},
+  { 174, -1, sizeof(::v1::agent::PostTransformFrameResponse)},
+  { 179, -1, sizeof(::v1::agent::SetBaseFrameIDRequest)},
+  { 185, -1, sizeof(::v1::agent::SetBaseFrameIDResponse)},
+  { 190, -1, sizeof(::v1::agent::ClearTransformTreeRequest)},
+  { 195, -1, sizeof(::v1::agent::ClearTransformTreeResponse)},
+  { 200, -1, sizeof(::v1::agent::CreateEventRequest)},
+  { 206, -1, sizeof(::v1::agent::CreateEventResponse)},
+  { 211, -1, sizeof(::v1::agent::CreateEventError)},
+  { 217, -1, sizeof(::v1::agent::GetTeleopInfoRequest)},
+  { 222, -1, sizeof(::v1::agent::GetTeleopInfoResponse)},
+  { 228, -1, sizeof(::v1::agent::PostLanRtcOfferRequest)},
+  { 234, -1, sizeof(::v1::agent::PostLanRtcOfferResponse)},
+  { 240, -1, sizeof(::v1::agent::SendOnCustomDataChannelRequest)},
+  { 247, -1, sizeof(::v1::agent::SendOnCustomDataChannelResponse)},
+  { 252, -1, sizeof(::v1::agent::GetCustomDataChannelMessageStreamRequest)},
+  { 258, -1, sizeof(::v1::agent::GetCustomDataChannelMessageStreamResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -977,98 +979,99 @@ const char descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto[] PROTO
   "\"m\n\"GetTeleopControlDataStreamResponse\022G"
   "\n\021control_datapoint\030\001 \001(\0132\032.v1.model.Con"
   "trolDatapointR\020controlDatapoint\"!\n\037GetTe"
-  "leopHeartbeatStreamRequest\"`\n GetTeleopH"
-  "eartbeatStreamResponse\022\027\n\007peer_id\030\001 \001(\tR"
-  "\006peerId\022#\n\ris_disconnect\030\002 \001(\010R\014isDiscon"
-  "nect\"H\n!GetTelemetryListenerStreamReques"
-  "t\022#\n\rstream_filter\030\001 \003(\tR\014streamFilter\"W"
-  "\n\"GetTelemetryListenerStreamResponse\0221\n\t"
-  "datapoint\030\001 \001(\0132\023.v1.model.DatapointR\tda"
-  "tapoint\"\034\n\032PostTransformFrameResponse\"\'\n"
-  "\025SetBaseFrameIDRequest\022\016\n\002id\030\001 \001(\tR\002id\"\030"
-  "\n\026SetBaseFrameIDResponse\"\033\n\031ClearTransfo"
-  "rmTreeRequest\"\034\n\032ClearTransformTreeRespo"
-  "nse\";\n\022CreateEventRequest\022%\n\005event\030\001 \001(\013"
-  "2\017.v1.model.EventR\005event\"\025\n\023CreateEventR"
-  "esponse\"0\n\020CreateEventError\022\034\n\tretryable"
-  "\030\001 \001(\010R\tretryable\"\026\n\024GetTeleopInfoReques"
-  "t\"B\n\025GetTeleopInfoResponse\022)\n\020connection"
-  "_count\030\001 \001(\rR\017connectionCount\".\n\026PostLan"
-  "RtcOfferRequest\022\024\n\005offer\030\001 \001(\tR\005offer\"1\n"
-  "\027PostLanRtcOfferResponse\022\026\n\006answer\030\001 \001(\t"
-  "R\006answer\"]\n\036SendOnCustomDataChannelReque"
-  "st\022!\n\014channel_name\030\001 \001(\tR\013channelName\022\030\n"
-  "\007payload\030\002 \001(\014R\007payload\"!\n\037SendOnCustomD"
-  "ataChannelResponse\"Z\n(GetCustomDataChann"
-  "elMessageStreamRequest\022.\n\023channel_name_f"
-  "ilter\030\001 \003(\tR\021channelNameFilter\"\201\001\n)GetCu"
-  "stomDataChannelMessageStreamResponse\022\027\n\007"
-  "peer_id\030\001 \001(\tR\006peerId\022!\n\014channel_name\030\002 "
-  "\001(\tR\013channelName\022\030\n\007payload\030\003 \001(\014R\007paylo"
-  "ad2\300\023\n\005Agent\022C\n\nStreamData\022\023.v1.model.Da"
-  "tapoint\032\034.v1.agent.StreamDataResponse\"\000("
-  "\001\022=\n\010PostData\022\023.v1.model.Datapoint\032\032.v1."
-  "agent.PostDataResponse\"\000\022R\n\rPostDataMult"
-  "i\022\036.v1.agent.PostDataMultiRequest\032\037.v1.a"
-  "gent.PostDataMultiResponse\"\000\022{\n\032GetTeleo"
-  "pControlDataStream\022+.v1.agent.GetTeleopC"
-  "ontrolDataStreamRequest\032,.v1.agent.GetTe"
-  "leopControlDataStreamResponse\"\0000\001\022u\n\030Get"
-  "TeleopHeartbeatStream\022).v1.agent.GetTele"
-  "opHeartbeatStreamRequest\032*.v1.agent.GetT"
-  "eleopHeartbeatStreamResponse\"\0000\001\022{\n\032GetT"
-  "elemetryListenerStream\022+.v1.agent.GetTel"
-  "emetryListenerStreamRequest\032,.v1.agent.G"
-  "etTelemetryListenerStreamResponse\"\0000\001\022\220\001"
-  "\n!GetCustomDataChannelMessageStream\0222.v1"
-  ".agent.GetCustomDataChannelMessageStream"
-  "Request\0323.v1.agent.GetCustomDataChannelM"
-  "essageStreamResponse\"\0000\001\022L\n\013CreateEvent\022"
-  "\034.v1.agent.CreateEventRequest\032\035.v1.agent"
-  ".CreateEventResponse\"\000\022[\n\031CreateInterven"
-  "tionRequest\022\035.v1.model.InterventionReque"
-  "st\032\035.v1.model.InterventionRequest\"\000\022b\n\026G"
-  "etInterventionRequest\022\'.v1.agent.GetInte"
-  "rventionRequestRequest\032\035.v1.model.Interv"
-  "entionRequest\"\000\022e\n\027GetInterventionRespon"
-  "se\022(.v1.agent.GetInterventionResponseReq"
-  "uest\032\036.v1.model.InterventionResponse\"\000\022p"
-  "\n\027GetStreamsConfiguration\022(.v1.agent.Get"
-  "StreamsConfigurationRequest\032).v1.agent.G"
-  "etStreamsConfigurationResponse\"\000\022|\n\033GetA"
-  "pplicationConfiguration\022,.v1.agent.GetAp"
-  "plicationConfigurationRequest\032-.v1.agent"
-  ".GetApplicationConfigurationResponse\"\000\022^"
-  "\n\021GetConfigBlobData\022\".v1.agent.GetConfig"
-  "BlobDataRequest\032#.v1.agent.GetConfigBlob"
-  "DataResponse\"\000\022j\n\025GetAgentConfiguration\022"
-  "&.v1.agent.GetAgentConfigurationRequest\032"
-  "\'.v1.agent.GetAgentConfigurationResponse"
-  "\"\000\022=\n\006Health\022\027.v1.agent.HealthRequest\032\030."
-  "v1.agent.HealthResponse\"\000\022^\n\021GetCommandR"
-  "equest\022\".v1.agent.GetCommandRequestReque"
-  "st\032#.v1.agent.GetCommandRequestResponse\""
-  "\000\022r\n\027GetCommandRequestStream\022(.v1.agent."
-  "GetCommandRequestStreamRequest\032).v1.agen"
-  "t.GetCommandRequestStreamResponse\"\0000\001\022d\n"
-  "\023SendCommandResponse\022$.v1.agent.SendComm"
-  "andResponseRequest\032%.v1.agent.SendComman"
-  "dResponseResponse\"\000\022V\n\022PostTransformFram"
-  "e\022\030.v1.model.TransformFrame\032$.v1.agent.P"
-  "ostTransformFrameResponse\"\000\022U\n\016SetBaseFr"
-  "ameID\022\037.v1.agent.SetBaseFrameIDRequest\032 "
-  ".v1.agent.SetBaseFrameIDResponse\"\000\022a\n\022Cl"
-  "earTransformTree\022#.v1.agent.ClearTransfo"
-  "rmTreeRequest\032$.v1.agent.ClearTransformT"
-  "reeResponse\"\000\022R\n\rGetTeleopInfo\022\036.v1.agen"
-  "t.GetTeleopInfoRequest\032\037.v1.agent.GetTel"
-  "eopInfoResponse\"\000\022X\n\017PostLanRtcOffer\022 .v"
-  "1.agent.PostLanRtcOfferRequest\032!.v1.agen"
-  "t.PostLanRtcOfferResponse\"\000\022p\n\027SendOnCus"
-  "tomDataChannel\022(.v1.agent.SendOnCustomDa"
-  "taChannelRequest\032).v1.agent.SendOnCustom"
-  "DataChannelResponse\"\000B+Z)github.com/Form"
-  "antIO/genproto/go/v1/agentb\006proto3"
+  "leopHeartbeatStreamRequest\"\203\001\n GetTeleop"
+  "HeartbeatStreamResponse\022\027\n\007peer_id\030\001 \001(\t"
+  "R\006peerId\022#\n\ris_disconnect\030\002 \001(\010R\014isDisco"
+  "nnect\022!\n\014session_type\030\003 \001(\tR\013sessionType"
+  "\"H\n!GetTelemetryListenerStreamRequest\022#\n"
+  "\rstream_filter\030\001 \003(\tR\014streamFilter\"W\n\"Ge"
+  "tTelemetryListenerStreamResponse\0221\n\tdata"
+  "point\030\001 \001(\0132\023.v1.model.DatapointR\tdatapo"
+  "int\"\034\n\032PostTransformFrameResponse\"\'\n\025Set"
+  "BaseFrameIDRequest\022\016\n\002id\030\001 \001(\tR\002id\"\030\n\026Se"
+  "tBaseFrameIDResponse\"\033\n\031ClearTransformTr"
+  "eeRequest\"\034\n\032ClearTransformTreeResponse\""
+  ";\n\022CreateEventRequest\022%\n\005event\030\001 \001(\0132\017.v"
+  "1.model.EventR\005event\"\025\n\023CreateEventRespo"
+  "nse\"0\n\020CreateEventError\022\034\n\tretryable\030\001 \001"
+  "(\010R\tretryable\"\026\n\024GetTeleopInfoRequest\"B\n"
+  "\025GetTeleopInfoResponse\022)\n\020connection_cou"
+  "nt\030\001 \001(\rR\017connectionCount\".\n\026PostLanRtcO"
+  "fferRequest\022\024\n\005offer\030\001 \001(\tR\005offer\"1\n\027Pos"
+  "tLanRtcOfferResponse\022\026\n\006answer\030\001 \001(\tR\006an"
+  "swer\"]\n\036SendOnCustomDataChannelRequest\022!"
+  "\n\014channel_name\030\001 \001(\tR\013channelName\022\030\n\007pay"
+  "load\030\002 \001(\014R\007payload\"!\n\037SendOnCustomDataC"
+  "hannelResponse\"Z\n(GetCustomDataChannelMe"
+  "ssageStreamRequest\022.\n\023channel_name_filte"
+  "r\030\001 \003(\tR\021channelNameFilter\"\201\001\n)GetCustom"
+  "DataChannelMessageStreamResponse\022\027\n\007peer"
+  "_id\030\001 \001(\tR\006peerId\022!\n\014channel_name\030\002 \001(\tR"
+  "\013channelName\022\030\n\007payload\030\003 \001(\014R\007payload2\300"
+  "\023\n\005Agent\022C\n\nStreamData\022\023.v1.model.Datapo"
+  "int\032\034.v1.agent.StreamDataResponse\"\000(\001\022=\n"
+  "\010PostData\022\023.v1.model.Datapoint\032\032.v1.agen"
+  "t.PostDataResponse\"\000\022R\n\rPostDataMulti\022\036."
+  "v1.agent.PostDataMultiRequest\032\037.v1.agent"
+  ".PostDataMultiResponse\"\000\022{\n\032GetTeleopCon"
+  "trolDataStream\022+.v1.agent.GetTeleopContr"
+  "olDataStreamRequest\032,.v1.agent.GetTeleop"
+  "ControlDataStreamResponse\"\0000\001\022u\n\030GetTele"
+  "opHeartbeatStream\022).v1.agent.GetTeleopHe"
+  "artbeatStreamRequest\032*.v1.agent.GetTeleo"
+  "pHeartbeatStreamResponse\"\0000\001\022{\n\032GetTelem"
+  "etryListenerStream\022+.v1.agent.GetTelemet"
+  "ryListenerStreamRequest\032,.v1.agent.GetTe"
+  "lemetryListenerStreamResponse\"\0000\001\022\220\001\n!Ge"
+  "tCustomDataChannelMessageStream\0222.v1.age"
+  "nt.GetCustomDataChannelMessageStreamRequ"
+  "est\0323.v1.agent.GetCustomDataChannelMessa"
+  "geStreamResponse\"\0000\001\022L\n\013CreateEvent\022\034.v1"
+  ".agent.CreateEventRequest\032\035.v1.agent.Cre"
+  "ateEventResponse\"\000\022[\n\031CreateIntervention"
+  "Request\022\035.v1.model.InterventionRequest\032\035"
+  ".v1.model.InterventionRequest\"\000\022b\n\026GetIn"
+  "terventionRequest\022\'.v1.agent.GetInterven"
+  "tionRequestRequest\032\035.v1.model.Interventi"
+  "onRequest\"\000\022e\n\027GetInterventionResponse\022("
+  ".v1.agent.GetInterventionResponseRequest"
+  "\032\036.v1.model.InterventionResponse\"\000\022p\n\027Ge"
+  "tStreamsConfiguration\022(.v1.agent.GetStre"
+  "amsConfigurationRequest\032).v1.agent.GetSt"
+  "reamsConfigurationResponse\"\000\022|\n\033GetAppli"
+  "cationConfiguration\022,.v1.agent.GetApplic"
+  "ationConfigurationRequest\032-.v1.agent.Get"
+  "ApplicationConfigurationResponse\"\000\022^\n\021Ge"
+  "tConfigBlobData\022\".v1.agent.GetConfigBlob"
+  "DataRequest\032#.v1.agent.GetConfigBlobData"
+  "Response\"\000\022j\n\025GetAgentConfiguration\022&.v1"
+  ".agent.GetAgentConfigurationRequest\032\'.v1"
+  ".agent.GetAgentConfigurationResponse\"\000\022="
+  "\n\006Health\022\027.v1.agent.HealthRequest\032\030.v1.a"
+  "gent.HealthResponse\"\000\022^\n\021GetCommandReque"
+  "st\022\".v1.agent.GetCommandRequestRequest\032#"
+  ".v1.agent.GetCommandRequestResponse\"\000\022r\n"
+  "\027GetCommandRequestStream\022(.v1.agent.GetC"
+  "ommandRequestStreamRequest\032).v1.agent.Ge"
+  "tCommandRequestStreamResponse\"\0000\001\022d\n\023Sen"
+  "dCommandResponse\022$.v1.agent.SendCommandR"
+  "esponseRequest\032%.v1.agent.SendCommandRes"
+  "ponseResponse\"\000\022V\n\022PostTransformFrame\022\030."
+  "v1.model.TransformFrame\032$.v1.agent.PostT"
+  "ransformFrameResponse\"\000\022U\n\016SetBaseFrameI"
+  "D\022\037.v1.agent.SetBaseFrameIDRequest\032 .v1."
+  "agent.SetBaseFrameIDResponse\"\000\022a\n\022ClearT"
+  "ransformTree\022#.v1.agent.ClearTransformTr"
+  "eeRequest\032$.v1.agent.ClearTransformTreeR"
+  "esponse\"\000\022R\n\rGetTeleopInfo\022\036.v1.agent.Ge"
+  "tTeleopInfoRequest\032\037.v1.agent.GetTeleopI"
+  "nfoResponse\"\000\022X\n\017PostLanRtcOffer\022 .v1.ag"
+  "ent.PostLanRtcOfferRequest\032!.v1.agent.Po"
+  "stLanRtcOfferResponse\"\000\022p\n\027SendOnCustomD"
+  "ataChannel\022(.v1.agent.SendOnCustomDataCh"
+  "annelRequest\032).v1.agent.SendOnCustomData"
+  "ChannelResponse\"\000B+Z)github.com/FormantI"
+  "O/genproto/go/v1/agentb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps[6] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fcommands_2eproto,
@@ -1080,7 +1083,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fagent_2fv1_2fagent_2eproto = {
-  false, false, 5514, descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto, "protos/agent/v1/agent.proto", 
+  false, false, 5550, descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto, "protos/agent/v1/agent.proto", 
   &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once, descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps, 6, 46,
   schemas, file_default_instances, TableStruct_protos_2fagent_2fv1_2fagent_2eproto::offsets,
   file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto, file_level_enum_descriptors_protos_2fagent_2fv1_2fagent_2eproto, file_level_service_descriptors_protos_2fagent_2fv1_2fagent_2eproto,
@@ -6218,12 +6221,18 @@ GetTeleopHeartbeatStreamResponse::GetTeleopHeartbeatStreamResponse(const GetTele
     peer_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_peer_id(), 
       GetArenaForAllocation());
   }
+  session_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_session_type().empty()) {
+    session_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_session_type(), 
+      GetArenaForAllocation());
+  }
   is_disconnect_ = from.is_disconnect_;
   // @@protoc_insertion_point(copy_constructor:v1.agent.GetTeleopHeartbeatStreamResponse)
 }
 
 void GetTeleopHeartbeatStreamResponse::SharedCtor() {
 peer_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+session_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 is_disconnect_ = false;
 }
 
@@ -6236,6 +6245,7 @@ GetTeleopHeartbeatStreamResponse::~GetTeleopHeartbeatStreamResponse() {
 void GetTeleopHeartbeatStreamResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   peer_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  session_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetTeleopHeartbeatStreamResponse::ArenaDtor(void* object) {
@@ -6255,6 +6265,7 @@ void GetTeleopHeartbeatStreamResponse::Clear() {
   (void) cached_has_bits;
 
   peer_id_.ClearToEmpty();
+  session_type_.ClearToEmpty();
   is_disconnect_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -6278,6 +6289,15 @@ const char* GetTeleopHeartbeatStreamResponse::_InternalParse(const char* ptr, ::
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           is_disconnect_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string session_type = 3 [json_name = "sessionType"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_session_type();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.agent.GetTeleopHeartbeatStreamResponse.session_type"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6326,6 +6346,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_is_disconnect(), target);
   }
 
+  // string session_type = 3 [json_name = "sessionType"];
+  if (!this->session_type().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_session_type().data(), static_cast<int>(this->_internal_session_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.agent.GetTeleopHeartbeatStreamResponse.session_type");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_session_type(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6347,6 +6377,13 @@ size_t GetTeleopHeartbeatStreamResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_peer_id());
+  }
+
+  // string session_type = 3 [json_name = "sessionType"];
+  if (!this->session_type().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_session_type());
   }
 
   // bool is_disconnect = 2 [json_name = "isDisconnect"];
@@ -6388,6 +6425,9 @@ void GetTeleopHeartbeatStreamResponse::MergeFrom(const GetTeleopHeartbeatStreamR
   if (!from.peer_id().empty()) {
     _internal_set_peer_id(from._internal_peer_id());
   }
+  if (!from.session_type().empty()) {
+    _internal_set_session_type(from._internal_session_type());
+  }
   if (from.is_disconnect() != 0) {
     _internal_set_is_disconnect(from._internal_is_disconnect());
   }
@@ -6418,6 +6458,11 @@ void GetTeleopHeartbeatStreamResponse::InternalSwap(GetTeleopHeartbeatStreamResp
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &peer_id_, GetArenaForAllocation(),
       &other->peer_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &session_type_, GetArenaForAllocation(),
+      &other->session_type_, other->GetArenaForAllocation()
   );
   swap(is_disconnect_, other->is_disconnect_);
 }
