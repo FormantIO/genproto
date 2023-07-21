@@ -48,8 +48,6 @@ type AgentClient interface {
 	GetTeleopInfo(ctx context.Context, in *GetTeleopInfoRequest, opts ...grpc.CallOption) (*GetTeleopInfoResponse, error)
 	PostLanRtcOffer(ctx context.Context, in *PostLanRtcOfferRequest, opts ...grpc.CallOption) (*PostLanRtcOfferResponse, error)
 	SendOnCustomDataChannel(ctx context.Context, in *SendOnCustomDataChannelRequest, opts ...grpc.CallOption) (*SendOnCustomDataChannelResponse, error)
-	PostGenericAPIRequest(ctx context.Context, in *model.GenericAPIDatapoint, opts ...grpc.CallOption) (*PostGenericAPIRequestResponse, error)
-	PostGenericAPIUnbufferedRequest(ctx context.Context, in *model.GenericAPIDatapoint, opts ...grpc.CallOption) (*PostGenericAPIUnbufferedRequestResponse, error)
 }
 
 type agentClient struct {
@@ -425,24 +423,6 @@ func (c *agentClient) SendOnCustomDataChannel(ctx context.Context, in *SendOnCus
 	return out, nil
 }
 
-func (c *agentClient) PostGenericAPIRequest(ctx context.Context, in *model.GenericAPIDatapoint, opts ...grpc.CallOption) (*PostGenericAPIRequestResponse, error) {
-	out := new(PostGenericAPIRequestResponse)
-	err := c.cc.Invoke(ctx, "/v1.agent.Agent/PostGenericAPIRequest", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *agentClient) PostGenericAPIUnbufferedRequest(ctx context.Context, in *model.GenericAPIDatapoint, opts ...grpc.CallOption) (*PostGenericAPIUnbufferedRequestResponse, error) {
-	out := new(PostGenericAPIUnbufferedRequestResponse)
-	err := c.cc.Invoke(ctx, "/v1.agent.Agent/PostGenericAPIUnbufferedRequest", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // AgentServer is the server API for Agent service.
 // All implementations must embed UnimplementedAgentServer
 // for forward compatibility
@@ -472,8 +452,6 @@ type AgentServer interface {
 	GetTeleopInfo(context.Context, *GetTeleopInfoRequest) (*GetTeleopInfoResponse, error)
 	PostLanRtcOffer(context.Context, *PostLanRtcOfferRequest) (*PostLanRtcOfferResponse, error)
 	SendOnCustomDataChannel(context.Context, *SendOnCustomDataChannelRequest) (*SendOnCustomDataChannelResponse, error)
-	PostGenericAPIRequest(context.Context, *model.GenericAPIDatapoint) (*PostGenericAPIRequestResponse, error)
-	PostGenericAPIUnbufferedRequest(context.Context, *model.GenericAPIDatapoint) (*PostGenericAPIUnbufferedRequestResponse, error)
 	mustEmbedUnimplementedAgentServer()
 }
 
@@ -555,12 +533,6 @@ func (UnimplementedAgentServer) PostLanRtcOffer(context.Context, *PostLanRtcOffe
 }
 func (UnimplementedAgentServer) SendOnCustomDataChannel(context.Context, *SendOnCustomDataChannelRequest) (*SendOnCustomDataChannelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendOnCustomDataChannel not implemented")
-}
-func (UnimplementedAgentServer) PostGenericAPIRequest(context.Context, *model.GenericAPIDatapoint) (*PostGenericAPIRequestResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PostGenericAPIRequest not implemented")
-}
-func (UnimplementedAgentServer) PostGenericAPIUnbufferedRequest(context.Context, *model.GenericAPIDatapoint) (*PostGenericAPIUnbufferedRequestResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PostGenericAPIUnbufferedRequest not implemented")
 }
 func (UnimplementedAgentServer) mustEmbedUnimplementedAgentServer() {}
 
@@ -1048,42 +1020,6 @@ func _Agent_SendOnCustomDataChannel_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Agent_PostGenericAPIRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(model.GenericAPIDatapoint)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AgentServer).PostGenericAPIRequest(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/v1.agent.Agent/PostGenericAPIRequest",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AgentServer).PostGenericAPIRequest(ctx, req.(*model.GenericAPIDatapoint))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Agent_PostGenericAPIUnbufferedRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(model.GenericAPIDatapoint)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AgentServer).PostGenericAPIUnbufferedRequest(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/v1.agent.Agent/PostGenericAPIUnbufferedRequest",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AgentServer).PostGenericAPIUnbufferedRequest(ctx, req.(*model.GenericAPIDatapoint))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Agent_ServiceDesc is the grpc.ServiceDesc for Agent service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1166,14 +1102,6 @@ var Agent_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SendOnCustomDataChannel",
 			Handler:    _Agent_SendOnCustomDataChannel_Handler,
-		},
-		{
-			MethodName: "PostGenericAPIRequest",
-			Handler:    _Agent_PostGenericAPIRequest_Handler,
-		},
-		{
-			MethodName: "PostGenericAPIUnbufferedRequest",
-			Handler:    _Agent_PostGenericAPIUnbufferedRequest_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

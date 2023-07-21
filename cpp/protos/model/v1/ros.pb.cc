@@ -166,7 +166,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBU
   "odel.NumericH\000R\007numeric\022P\n\024pose_with_cov"
   "ariance\030\013 \001(\0132\034.v1.model.PoseWithCovaria"
   "nceH\000R\022poseWithCovariance\022\'\n\005point\030\014 \001(\013"
-  "2\017.v1.model.PointH\000R\005pointB\006\n\004data*\302\003\n\014R"
+  "2\017.v1.model.PointH\000R\005pointB\006\n\004data*\253\003\n\014R"
   "OSTopicType\022\013\n\007UNKNOWN\020\000\022\021\n\rSTD_MSGS_BOO"
   "L\020\001\022 \n\034SENSOR_MSGS_COMPRESSED_IMAGE\020\002\022\023\n"
   "\017STD_MSGS_STRING\020\003\022\026\n\022GEOMETRY_MSGS_POSE"
@@ -177,9 +177,8 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBU
   "S_POSE_WITH_COVARIANCE\020\013\022\034\n\030SENSOR_MSGS_"
   "POINT_CLOUD2\020\014\022\032\n\026SENSOR_MSGS_LASER_SCAN"
   "\020\r\022\027\n\023GEOMETRY_MSGS_POINT\020\016\022#\n\037VISUALIZA"
-  "TION_MSGS_MARKER_ARRAY\020\017\022\025\n\021NAV_MSGS_ODO"
-  "METRY\020\020B+Z)github.com/FormantIO/genproto"
-  "/go/v1/modelb\006proto3"
+  "TION_MSGS_MARKER_ARRAY\020\017B+Z)github.com/F"
+  "ormantIO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
@@ -187,7 +186,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fros_2eproto = {
-  false, false, 1500, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 
+  false, false, 1477, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps, 2, 4,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fros_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fros_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fros_2eproto,
@@ -222,7 +221,6 @@ bool ROSTopicType_IsValid(int value) {
     case 13:
     case 14:
     case 15:
-    case 16:
       return true;
     default:
       return false;

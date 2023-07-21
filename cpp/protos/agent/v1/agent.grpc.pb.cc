@@ -48,8 +48,6 @@ static const char* Agent_method_names[] = {
   "/v1.agent.Agent/GetTeleopInfo",
   "/v1.agent.Agent/PostLanRtcOffer",
   "/v1.agent.Agent/SendOnCustomDataChannel",
-  "/v1.agent.Agent/PostGenericAPIRequest",
-  "/v1.agent.Agent/PostGenericAPIUnbufferedRequest",
 };
 
 std::unique_ptr< Agent::Stub> Agent::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -84,8 +82,6 @@ Agent::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, con
   , rpcmethod_GetTeleopInfo_(Agent_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_PostLanRtcOffer_(Agent_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SendOnCustomDataChannel_(Agent_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostGenericAPIRequest_(Agent_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostGenericAPIUnbufferedRequest_(Agent_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientWriter< ::v1::model::Datapoint>* Agent::Stub::StreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response) {
@@ -621,52 +617,6 @@ void Agent::Stub::async::SendOnCustomDataChannel(::grpc::ClientContext* context,
   return result;
 }
 
-::grpc::Status Agent::Stub::PostGenericAPIRequest(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::v1::agent::PostGenericAPIRequestResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PostGenericAPIRequest_, context, request, response);
-}
-
-void Agent::Stub::async::PostGenericAPIRequest(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint* request, ::v1::agent::PostGenericAPIRequestResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostGenericAPIRequest_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::async::PostGenericAPIRequest(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint* request, ::v1::agent::PostGenericAPIRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostGenericAPIRequest_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::PostGenericAPIRequestResponse>* Agent::Stub::PrepareAsyncPostGenericAPIRequestRaw(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::PostGenericAPIRequestResponse, ::v1::model::GenericAPIDatapoint, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PostGenericAPIRequest_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::PostGenericAPIRequestResponse>* Agent::Stub::AsyncPostGenericAPIRequestRaw(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncPostGenericAPIRequestRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status Agent::Stub::PostGenericAPIUnbufferedRequest(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::v1::agent::PostGenericAPIUnbufferedRequestResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIUnbufferedRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PostGenericAPIUnbufferedRequest_, context, request, response);
-}
-
-void Agent::Stub::async::PostGenericAPIUnbufferedRequest(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint* request, ::v1::agent::PostGenericAPIUnbufferedRequestResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIUnbufferedRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostGenericAPIUnbufferedRequest_, context, request, response, std::move(f));
-}
-
-void Agent::Stub::async::PostGenericAPIUnbufferedRequest(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint* request, ::v1::agent::PostGenericAPIUnbufferedRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostGenericAPIUnbufferedRequest_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::PostGenericAPIUnbufferedRequestResponse>* Agent::Stub::PrepareAsyncPostGenericAPIUnbufferedRequestRaw(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::PostGenericAPIUnbufferedRequestResponse, ::v1::model::GenericAPIDatapoint, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PostGenericAPIUnbufferedRequest_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::v1::agent::PostGenericAPIUnbufferedRequestResponse>* Agent::Stub::AsyncPostGenericAPIUnbufferedRequestRaw(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncPostGenericAPIUnbufferedRequestRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
 Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[0],
@@ -918,26 +868,6 @@ Agent::Service::Service() {
              ::v1::agent::SendOnCustomDataChannelResponse* resp) {
                return service->SendOnCustomDataChannel(ctx, req, resp);
              }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[25],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](Agent::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::v1::model::GenericAPIDatapoint* req,
-             ::v1::agent::PostGenericAPIRequestResponse* resp) {
-               return service->PostGenericAPIRequest(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[26],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIUnbufferedRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](Agent::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::v1::model::GenericAPIDatapoint* req,
-             ::v1::agent::PostGenericAPIUnbufferedRequestResponse* resp) {
-               return service->PostGenericAPIUnbufferedRequest(ctx, req, resp);
-             }, this)));
 }
 
 Agent::Service::~Service() {
@@ -1112,20 +1042,6 @@ Agent::Service::~Service() {
 }
 
 ::grpc::Status Agent::Service::SendOnCustomDataChannel(::grpc::ServerContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status Agent::Service::PostGenericAPIRequest(::grpc::ServerContext* context, const ::v1::model::GenericAPIDatapoint* request, ::v1::agent::PostGenericAPIRequestResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status Agent::Service::PostGenericAPIUnbufferedRequest(::grpc::ServerContext* context, const ::v1::model::GenericAPIDatapoint* request, ::v1::agent::PostGenericAPIUnbufferedRequestResponse* response) {
   (void) context;
   (void) request;
   (void) response;
