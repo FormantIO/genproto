@@ -58,39 +58,9 @@ struct ControlDatapointDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ControlDatapointDefaultTypeInternal _ControlDatapoint_default_instance_;
-constexpr GenericAPIDatapoint_HeadersEntry_DoNotUse::GenericAPIDatapoint_HeadersEntry_DoNotUse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct GenericAPIDatapoint_HeadersEntry_DoNotUseDefaultTypeInternal {
-  constexpr GenericAPIDatapoint_HeadersEntry_DoNotUseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~GenericAPIDatapoint_HeadersEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    GenericAPIDatapoint_HeadersEntry_DoNotUse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GenericAPIDatapoint_HeadersEntry_DoNotUseDefaultTypeInternal _GenericAPIDatapoint_HeadersEntry_DoNotUse_default_instance_;
-constexpr GenericAPIDatapoint::GenericAPIDatapoint(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : headers_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
-  , retryablestatuscodes_()
-  , _retryablestatuscodes_cached_byte_size_()
-  , method_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , endpoint_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , body_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , isretryable_(false)
-  , requireformantauth_(false){}
-struct GenericAPIDatapointDefaultTypeInternal {
-  constexpr GenericAPIDatapointDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~GenericAPIDatapointDefaultTypeInternal() {}
-  union {
-    GenericAPIDatapoint _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GenericAPIDatapointDefaultTypeInternal _GenericAPIDatapoint_default_instance_;
 }  // namespace model
 }  // namespace v1
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto[5];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto[3];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto = nullptr;
 
@@ -126,7 +96,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::Datapoint, data_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::ControlDatapoint, _internal_metadata_),
@@ -142,42 +111,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::ControlDatapoint, data_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse, value_),
-  0,
-  1,
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint, method_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint, endpoint_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint, headers_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint, body_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint, isretryable_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint, requireformantauth_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint, retryablestatuscodes_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::v1::model::Datapoint_TagsEntry_DoNotUse)},
   { 9, -1, sizeof(::v1::model::Datapoint)},
-  { 33, -1, sizeof(::v1::model::ControlDatapoint)},
-  { 47, 54, sizeof(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse)},
-  { 56, -1, sizeof(::v1::model::GenericAPIDatapoint)},
+  { 32, -1, sizeof(::v1::model::ControlDatapoint)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Datapoint_TagsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Datapoint_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_ControlDatapoint_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_GenericAPIDatapoint_HeadersEntry_DoNotUse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_GenericAPIDatapoint_default_instance_),
 };
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -186,7 +130,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "model/v1/health.proto\032\032protos/model/v1/m"
   "ath.proto\032 protos/model/v1/navigation.pr"
   "oto\032\032protos/model/v1/text.proto\032\033protos/"
-  "model/v1/media.proto\"\213\007\n\tDatapoint\022\026\n\006st"
+  "model/v1/media.proto\"\331\006\n\tDatapoint\022\026\n\006st"
   "ream\030\001 \001(\tR\006stream\022\034\n\ttimestamp\030\002 \001(\003R\tt"
   "imestamp\0221\n\004tags\030\003 \003(\0132\035.v1.model.Datapo"
   "int.TagsEntryR\004tags\022$\n\004text\030\004 \001(\0132\016.v1.m"
@@ -206,30 +150,19 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "del.BatteryH\000R\007battery\022\'\n\005video\030\020 \001(\0132\017."
   "v1.model.VideoH\000R\005video\022@\n\016transform_tre"
   "e\030\022 \001(\0132\027.v1.model.TransformTreeH\000R\rtran"
-  "sformTree\0220\n\010odometry\030\023 \001(\0132\022.v1.model.O"
-  "dometryH\000R\010odometry\0327\n\tTagsEntry\022\020\n\003key\030"
-  "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\006\n\004"
-  "dataJ\004\010\006\020\007\"\372\002\n\020ControlDatapoint\022\026\n\006strea"
-  "m\030\001 \001(\tR\006stream\022\034\n\ttimestamp\030\002 \001(\003R\ttime"
-  "stamp\022*\n\006bitset\030\003 \001(\0132\020.v1.model.BitsetH"
-  "\000R\006bitset\022\'\n\005twist\030\004 \001(\0132\017.v1.model.Twis"
-  "tH\000R\005twist\022)\n\004pose\030\005 \001(\0132\023.v1.model.Tran"
-  "sformH\000R\004pose\022-\n\007numeric\030\006 \001(\0132\021.v1.mode"
-  "l.NumericH\000R\007numeric\022P\n\024pose_with_covari"
-  "ance\030\007 \001(\0132\034.v1.model.PoseWithCovariance"
-  "H\000R\022poseWithCovariance\022\'\n\005point\030\010 \001(\0132\017."
-  "v1.model.PointH\000R\005pointB\006\n\004data\"\345\002\n\023Gene"
-  "ricAPIDatapoint\022\026\n\006Method\030\001 \001(\tR\006Method\022"
-  "\032\n\010Endpoint\030\002 \001(\tR\010Endpoint\022D\n\007Headers\030\003"
-  " \003(\0132*.v1.model.GenericAPIDatapoint.Head"
-  "ersEntryR\007Headers\022\022\n\004Body\030\004 \001(\tR\004Body\022 \n"
-  "\013IsRetryable\030\005 \001(\010R\013IsRetryable\022.\n\022Requi"
-  "reFormantAuth\030\006 \001(\010R\022RequireFormantAuth\022"
-  "2\n\024RetryableStatusCodes\030\007 \003(\003R\024Retryable"
-  "StatusCodes\032:\n\014HeadersEntry\022\020\n\003key\030\001 \001(\t"
-  "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B+Z)githu"
-  "b.com/FormantIO/genproto/go/v1/modelb\006pr"
-  "oto3"
+  "sformTree\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key"
+  "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\006\n\004dataJ\004\010\006\020\007"
+  "\"\372\002\n\020ControlDatapoint\022\026\n\006stream\030\001 \001(\tR\006s"
+  "tream\022\034\n\ttimestamp\030\002 \001(\003R\ttimestamp\022*\n\006b"
+  "itset\030\003 \001(\0132\020.v1.model.BitsetH\000R\006bitset\022"
+  "\'\n\005twist\030\004 \001(\0132\017.v1.model.TwistH\000R\005twist"
+  "\022)\n\004pose\030\005 \001(\0132\023.v1.model.TransformH\000R\004p"
+  "ose\022-\n\007numeric\030\006 \001(\0132\021.v1.model.NumericH"
+  "\000R\007numeric\022P\n\024pose_with_covariance\030\007 \001(\013"
+  "2\034.v1.model.PoseWithCovarianceH\000R\022poseWi"
+  "thCovariance\022\'\n\005point\030\010 \001(\0132\017.v1.model.P"
+  "ointH\000R\005pointB\006\n\004dataB+Z)github.com/Form"
+  "antIO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps[6] = {
   &::descriptor_table_protos_2fmodel_2fv1_2ffile_2eproto,
@@ -241,8 +174,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto = {
-  false, false, 1924, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 
-  &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps, 6, 5,
+  false, false, 1514, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps, 6, 3,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto,
 };
@@ -292,7 +225,6 @@ class Datapoint::_Internal {
   static const ::v1::model::Battery& battery(const Datapoint* msg);
   static const ::v1::model::Video& video(const Datapoint* msg);
   static const ::v1::model::TransformTree& transform_tree(const Datapoint* msg);
-  static const ::v1::model::Odometry& odometry(const Datapoint* msg);
 };
 
 const ::v1::model::Text&
@@ -350,10 +282,6 @@ Datapoint::_Internal::video(const Datapoint* msg) {
 const ::v1::model::TransformTree&
 Datapoint::_Internal::transform_tree(const Datapoint* msg) {
   return *msg->data_.transform_tree_;
-}
-const ::v1::model::Odometry&
-Datapoint::_Internal::odometry(const Datapoint* msg) {
-  return *msg->data_.odometry_;
 }
 void Datapoint::set_allocated_text(::v1::model::Text* text) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -705,31 +633,6 @@ void Datapoint::clear_transform_tree() {
     clear_has_data();
   }
 }
-void Datapoint::set_allocated_odometry(::v1::model::Odometry* odometry) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_data();
-  if (odometry) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(odometry));
-    if (message_arena != submessage_arena) {
-      odometry = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, odometry, submessage_arena);
-    }
-    set_has_odometry();
-    data_.odometry_ = odometry;
-  }
-  // @@protoc_insertion_point(field_set_allocated:v1.model.Datapoint.odometry)
-}
-void Datapoint::clear_odometry() {
-  if (_internal_has_odometry()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete data_.odometry_;
-    }
-    clear_has_data();
-  }
-}
 Datapoint::Datapoint(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   tags_(arena) {
@@ -803,10 +706,6 @@ Datapoint::Datapoint(const Datapoint& from)
     }
     case kTransformTree: {
       _internal_mutable_transform_tree()->::v1::model::TransformTree::MergeFrom(from._internal_transform_tree());
-      break;
-    }
-    case kOdometry: {
-      _internal_mutable_odometry()->::v1::model::Odometry::MergeFrom(from._internal_odometry());
       break;
     }
     case DATA_NOT_SET: {
@@ -934,12 +833,6 @@ void Datapoint::clear_data() {
     case kTransformTree: {
       if (GetArenaForAllocation() == nullptr) {
         delete data_.transform_tree_;
-      }
-      break;
-    }
-    case kOdometry: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete data_.odometry_;
       }
       break;
     }
@@ -1093,13 +986,6 @@ const char* Datapoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 18:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
           ptr = ctx->ParseMessage(_internal_mutable_transform_tree(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .v1.model.Odometry odometry = 19 [json_name = "odometry"];
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
-          ptr = ctx->ParseMessage(_internal_mutable_odometry(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1306,14 +1192,6 @@ failure:
         18, _Internal::transform_tree(this), target, stream);
   }
 
-  // .v1.model.Odometry odometry = 19 [json_name = "odometry"];
-  if (_internal_has_odometry()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        19, _Internal::odometry(this), target, stream);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1452,13 +1330,6 @@ size_t Datapoint::ByteSizeLong() const {
           *data_.transform_tree_);
       break;
     }
-    // .v1.model.Odometry odometry = 19 [json_name = "odometry"];
-    case kOdometry: {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *data_.odometry_);
-      break;
-    }
     case DATA_NOT_SET: {
       break;
     }
@@ -1556,10 +1427,6 @@ void Datapoint::MergeFrom(const Datapoint& from) {
     }
     case kTransformTree: {
       _internal_mutable_transform_tree()->::v1::model::TransformTree::MergeFrom(from._internal_transform_tree());
-      break;
-    }
-    case kOdometry: {
-      _internal_mutable_odometry()->::v1::model::Odometry::MergeFrom(from._internal_odometry());
       break;
     }
     case DATA_NOT_SET: {
@@ -2268,487 +2135,6 @@ void ControlDatapoint::InternalSwap(ControlDatapoint* other) {
       file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto[2]);
 }
 
-// ===================================================================
-
-GenericAPIDatapoint_HeadersEntry_DoNotUse::GenericAPIDatapoint_HeadersEntry_DoNotUse() {}
-GenericAPIDatapoint_HeadersEntry_DoNotUse::GenericAPIDatapoint_HeadersEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void GenericAPIDatapoint_HeadersEntry_DoNotUse::MergeFrom(const GenericAPIDatapoint_HeadersEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::PROTOBUF_NAMESPACE_ID::Metadata GenericAPIDatapoint_HeadersEntry_DoNotUse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto[3]);
-}
-void GenericAPIDatapoint_HeadersEntry_DoNotUse::MergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
-  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
-}
-
-
-// ===================================================================
-
-class GenericAPIDatapoint::_Internal {
- public:
-};
-
-GenericAPIDatapoint::GenericAPIDatapoint(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  headers_(arena),
-  retryablestatuscodes_(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:v1.model.GenericAPIDatapoint)
-}
-GenericAPIDatapoint::GenericAPIDatapoint(const GenericAPIDatapoint& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      retryablestatuscodes_(from.retryablestatuscodes_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  headers_.MergeFrom(from.headers_);
-  method_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_method().empty()) {
-    method_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_method(), 
-      GetArenaForAllocation());
-  }
-  endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_endpoint().empty()) {
-    endpoint_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_endpoint(), 
-      GetArenaForAllocation());
-  }
-  body_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_body().empty()) {
-    body_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_body(), 
-      GetArenaForAllocation());
-  }
-  ::memcpy(&isretryable_, &from.isretryable_,
-    static_cast<size_t>(reinterpret_cast<char*>(&requireformantauth_) -
-    reinterpret_cast<char*>(&isretryable_)) + sizeof(requireformantauth_));
-  // @@protoc_insertion_point(copy_constructor:v1.model.GenericAPIDatapoint)
-}
-
-void GenericAPIDatapoint::SharedCtor() {
-method_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-body_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&isretryable_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&requireformantauth_) -
-    reinterpret_cast<char*>(&isretryable_)) + sizeof(requireformantauth_));
-}
-
-GenericAPIDatapoint::~GenericAPIDatapoint() {
-  // @@protoc_insertion_point(destructor:v1.model.GenericAPIDatapoint)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void GenericAPIDatapoint::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  method_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  endpoint_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  body_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void GenericAPIDatapoint::ArenaDtor(void* object) {
-  GenericAPIDatapoint* _this = reinterpret_cast< GenericAPIDatapoint* >(object);
-  (void)_this;
-  _this->headers_. ~MapField();
-}
-inline void GenericAPIDatapoint::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
-  if (arena != nullptr) {
-    arena->OwnCustomDestructor(this, &GenericAPIDatapoint::ArenaDtor);
-  }
-}
-void GenericAPIDatapoint::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void GenericAPIDatapoint::Clear() {
-// @@protoc_insertion_point(message_clear_start:v1.model.GenericAPIDatapoint)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  headers_.Clear();
-  retryablestatuscodes_.Clear();
-  method_.ClearToEmpty();
-  endpoint_.ClearToEmpty();
-  body_.ClearToEmpty();
-  ::memset(&isretryable_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&requireformantauth_) -
-      reinterpret_cast<char*>(&isretryable_)) + sizeof(requireformantauth_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* GenericAPIDatapoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string Method = 1 [json_name = "Method"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_method();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.GenericAPIDatapoint.Method"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string Endpoint = 2 [json_name = "Endpoint"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_endpoint();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.GenericAPIDatapoint.Endpoint"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // map<string, string> Headers = 3 [json_name = "Headers"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(&headers_, ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // string Body = 4 [json_name = "Body"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_body();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.GenericAPIDatapoint.Body"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool IsRetryable = 5 [json_name = "IsRetryable"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          isretryable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool RequireFormantAuth = 6 [json_name = "RequireFormantAuth"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          requireformantauth_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated int64 RetryableStatusCodes = 7 [json_name = "RetryableStatusCodes"];
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt64Parser(_internal_mutable_retryablestatuscodes(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56) {
-          _internal_add_retryablestatuscodes(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* GenericAPIDatapoint::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:v1.model.GenericAPIDatapoint)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string Method = 1 [json_name = "Method"];
-  if (!this->method().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_method().data(), static_cast<int>(this->_internal_method().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "v1.model.GenericAPIDatapoint.Method");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_method(), target);
-  }
-
-  // string Endpoint = 2 [json_name = "Endpoint"];
-  if (!this->endpoint().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_endpoint().data(), static_cast<int>(this->_internal_endpoint().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "v1.model.GenericAPIDatapoint.Endpoint");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_endpoint(), target);
-  }
-
-  // map<string, string> Headers = 3 [json_name = "Headers"];
-  if (!this->_internal_headers().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        (void)p;
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "v1.model.GenericAPIDatapoint.HeadersEntry.key");
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "v1.model.GenericAPIDatapoint.HeadersEntry.value");
-      }
-    };
-
-    if (stream->IsSerializationDeterministic() &&
-        this->_internal_headers().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->_internal_headers().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
-      size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-          it = this->_internal_headers().begin();
-          it != this->_internal_headers().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      for (size_type i = 0; i < n; i++) {
-        target = GenericAPIDatapoint_HeadersEntry_DoNotUse::Funcs::InternalSerialize(3, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-          it = this->_internal_headers().begin();
-          it != this->_internal_headers().end(); ++it) {
-        target = GenericAPIDatapoint_HeadersEntry_DoNotUse::Funcs::InternalSerialize(3, it->first, it->second, target, stream);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  // string Body = 4 [json_name = "Body"];
-  if (!this->body().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_body().data(), static_cast<int>(this->_internal_body().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "v1.model.GenericAPIDatapoint.Body");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_body(), target);
-  }
-
-  // bool IsRetryable = 5 [json_name = "IsRetryable"];
-  if (this->isretryable() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_isretryable(), target);
-  }
-
-  // bool RequireFormantAuth = 6 [json_name = "RequireFormantAuth"];
-  if (this->requireformantauth() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_requireformantauth(), target);
-  }
-
-  // repeated int64 RetryableStatusCodes = 7 [json_name = "RetryableStatusCodes"];
-  {
-    int byte_size = _retryablestatuscodes_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteInt64Packed(
-          7, _internal_retryablestatuscodes(), byte_size, target);
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:v1.model.GenericAPIDatapoint)
-  return target;
-}
-
-size_t GenericAPIDatapoint::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:v1.model.GenericAPIDatapoint)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // map<string, string> Headers = 3 [json_name = "Headers"];
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_headers_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-      it = this->_internal_headers().begin();
-      it != this->_internal_headers().end(); ++it) {
-    total_size += GenericAPIDatapoint_HeadersEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
-  }
-
-  // repeated int64 RetryableStatusCodes = 7 [json_name = "RetryableStatusCodes"];
-  {
-    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      Int64Size(this->retryablestatuscodes_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
-    }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _retryablestatuscodes_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
-  // string Method = 1 [json_name = "Method"];
-  if (!this->method().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_method());
-  }
-
-  // string Endpoint = 2 [json_name = "Endpoint"];
-  if (!this->endpoint().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_endpoint());
-  }
-
-  // string Body = 4 [json_name = "Body"];
-  if (!this->body().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_body());
-  }
-
-  // bool IsRetryable = 5 [json_name = "IsRetryable"];
-  if (this->isretryable() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // bool RequireFormantAuth = 6 [json_name = "RequireFormantAuth"];
-  if (this->requireformantauth() != 0) {
-    total_size += 1 + 1;
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void GenericAPIDatapoint::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:v1.model.GenericAPIDatapoint)
-  GOOGLE_DCHECK_NE(&from, this);
-  const GenericAPIDatapoint* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GenericAPIDatapoint>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.GenericAPIDatapoint)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.GenericAPIDatapoint)
-    MergeFrom(*source);
-  }
-}
-
-void GenericAPIDatapoint::MergeFrom(const GenericAPIDatapoint& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.GenericAPIDatapoint)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  headers_.MergeFrom(from.headers_);
-  retryablestatuscodes_.MergeFrom(from.retryablestatuscodes_);
-  if (!from.method().empty()) {
-    _internal_set_method(from._internal_method());
-  }
-  if (!from.endpoint().empty()) {
-    _internal_set_endpoint(from._internal_endpoint());
-  }
-  if (!from.body().empty()) {
-    _internal_set_body(from._internal_body());
-  }
-  if (from.isretryable() != 0) {
-    _internal_set_isretryable(from._internal_isretryable());
-  }
-  if (from.requireformantauth() != 0) {
-    _internal_set_requireformantauth(from._internal_requireformantauth());
-  }
-}
-
-void GenericAPIDatapoint::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:v1.model.GenericAPIDatapoint)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void GenericAPIDatapoint::CopyFrom(const GenericAPIDatapoint& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.GenericAPIDatapoint)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool GenericAPIDatapoint::IsInitialized() const {
-  return true;
-}
-
-void GenericAPIDatapoint::InternalSwap(GenericAPIDatapoint* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  headers_.InternalSwap(&other->headers_);
-  retryablestatuscodes_.InternalSwap(&other->retryablestatuscodes_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &method_, GetArenaForAllocation(),
-      &other->method_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &endpoint_, GetArenaForAllocation(),
-      &other->endpoint_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &body_, GetArenaForAllocation(),
-      &other->body_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GenericAPIDatapoint, requireformantauth_)
-      + sizeof(GenericAPIDatapoint::requireformantauth_)
-      - PROTOBUF_FIELD_OFFSET(GenericAPIDatapoint, isretryable_)>(
-          reinterpret_cast<char*>(&isretryable_),
-          reinterpret_cast<char*>(&other->isretryable_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata GenericAPIDatapoint::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto[4]);
-}
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace model
 }  // namespace v1
@@ -2761,12 +2147,6 @@ template<> PROTOBUF_NOINLINE ::v1::model::Datapoint* Arena::CreateMaybeMessage< 
 }
 template<> PROTOBUF_NOINLINE ::v1::model::ControlDatapoint* Arena::CreateMaybeMessage< ::v1::model::ControlDatapoint >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::ControlDatapoint >(arena);
-}
-template<> PROTOBUF_NOINLINE ::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse* Arena::CreateMaybeMessage< ::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::v1::model::GenericAPIDatapoint* Arena::CreateMaybeMessage< ::v1::model::GenericAPIDatapoint >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::v1::model::GenericAPIDatapoint >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

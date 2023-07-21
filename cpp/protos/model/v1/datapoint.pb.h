@@ -55,7 +55,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -73,20 +73,12 @@ extern DatapointDefaultTypeInternal _Datapoint_default_instance_;
 class Datapoint_TagsEntry_DoNotUse;
 struct Datapoint_TagsEntry_DoNotUseDefaultTypeInternal;
 extern Datapoint_TagsEntry_DoNotUseDefaultTypeInternal _Datapoint_TagsEntry_DoNotUse_default_instance_;
-class GenericAPIDatapoint;
-struct GenericAPIDatapointDefaultTypeInternal;
-extern GenericAPIDatapointDefaultTypeInternal _GenericAPIDatapoint_default_instance_;
-class GenericAPIDatapoint_HeadersEntry_DoNotUse;
-struct GenericAPIDatapoint_HeadersEntry_DoNotUseDefaultTypeInternal;
-extern GenericAPIDatapoint_HeadersEntry_DoNotUseDefaultTypeInternal _GenericAPIDatapoint_HeadersEntry_DoNotUse_default_instance_;
 }  // namespace model
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
 template<> ::v1::model::ControlDatapoint* Arena::CreateMaybeMessage<::v1::model::ControlDatapoint>(Arena*);
 template<> ::v1::model::Datapoint* Arena::CreateMaybeMessage<::v1::model::Datapoint>(Arena*);
 template<> ::v1::model::Datapoint_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::Datapoint_TagsEntry_DoNotUse>(Arena*);
-template<> ::v1::model::GenericAPIDatapoint* Arena::CreateMaybeMessage<::v1::model::GenericAPIDatapoint>(Arena*);
-template<> ::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace v1 {
 namespace model {
@@ -174,7 +166,6 @@ class Datapoint final :
     kBattery = 15,
     kVideo = 16,
     kTransformTree = 18,
-    kOdometry = 19,
     DATA_NOT_SET = 0,
   };
 
@@ -265,7 +256,6 @@ class Datapoint final :
     kBatteryFieldNumber = 15,
     kVideoFieldNumber = 16,
     kTransformTreeFieldNumber = 18,
-    kOdometryFieldNumber = 19,
   };
   // map<string, string> tags = 3 [json_name = "tags"];
   int tags_size() const;
@@ -559,24 +549,6 @@ class Datapoint final :
       ::v1::model::TransformTree* transform_tree);
   ::v1::model::TransformTree* unsafe_arena_release_transform_tree();
 
-  // .v1.model.Odometry odometry = 19 [json_name = "odometry"];
-  bool has_odometry() const;
-  private:
-  bool _internal_has_odometry() const;
-  public:
-  void clear_odometry();
-  const ::v1::model::Odometry& odometry() const;
-  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::Odometry* release_odometry();
-  ::v1::model::Odometry* mutable_odometry();
-  void set_allocated_odometry(::v1::model::Odometry* odometry);
-  private:
-  const ::v1::model::Odometry& _internal_odometry() const;
-  ::v1::model::Odometry* _internal_mutable_odometry();
-  public:
-  void unsafe_arena_set_allocated_odometry(
-      ::v1::model::Odometry* odometry);
-  ::v1::model::Odometry* unsafe_arena_release_odometry();
-
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.Datapoint)
@@ -596,7 +568,6 @@ class Datapoint final :
   void set_has_battery();
   void set_has_video();
   void set_has_transform_tree();
-  void set_has_odometry();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -628,7 +599,6 @@ class Datapoint final :
     ::v1::model::Battery* battery_;
     ::v1::model::Video* video_;
     ::v1::model::TransformTree* transform_tree_;
-    ::v1::model::Odometry* odometry_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -928,273 +898,6 @@ class ControlDatapoint final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
 
-  friend struct ::TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto;
-};
-// -------------------------------------------------------------------
-
-class GenericAPIDatapoint_HeadersEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<GenericAPIDatapoint_HeadersEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<GenericAPIDatapoint_HeadersEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
-  GenericAPIDatapoint_HeadersEntry_DoNotUse();
-  explicit constexpr GenericAPIDatapoint_HeadersEntry_DoNotUse(
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit GenericAPIDatapoint_HeadersEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const GenericAPIDatapoint_HeadersEntry_DoNotUse& other);
-  static const GenericAPIDatapoint_HeadersEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const GenericAPIDatapoint_HeadersEntry_DoNotUse*>(&_GenericAPIDatapoint_HeadersEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "v1.model.GenericAPIDatapoint.HeadersEntry.key");
- }
-  static bool ValidateValue(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "v1.model.GenericAPIDatapoint.HeadersEntry.value");
- }
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-};
-
-// -------------------------------------------------------------------
-
-class GenericAPIDatapoint final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.GenericAPIDatapoint) */ {
- public:
-  inline GenericAPIDatapoint() : GenericAPIDatapoint(nullptr) {}
-  ~GenericAPIDatapoint() override;
-  explicit constexpr GenericAPIDatapoint(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  GenericAPIDatapoint(const GenericAPIDatapoint& from);
-  GenericAPIDatapoint(GenericAPIDatapoint&& from) noexcept
-    : GenericAPIDatapoint() {
-    *this = ::std::move(from);
-  }
-
-  inline GenericAPIDatapoint& operator=(const GenericAPIDatapoint& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline GenericAPIDatapoint& operator=(GenericAPIDatapoint&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const GenericAPIDatapoint& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const GenericAPIDatapoint* internal_default_instance() {
-    return reinterpret_cast<const GenericAPIDatapoint*>(
-               &_GenericAPIDatapoint_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  friend void swap(GenericAPIDatapoint& a, GenericAPIDatapoint& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(GenericAPIDatapoint* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(GenericAPIDatapoint* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline GenericAPIDatapoint* New() const final {
-    return new GenericAPIDatapoint();
-  }
-
-  GenericAPIDatapoint* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GenericAPIDatapoint>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const GenericAPIDatapoint& from);
-  void MergeFrom(const GenericAPIDatapoint& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(GenericAPIDatapoint* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "v1.model.GenericAPIDatapoint";
-  }
-  protected:
-  explicit GenericAPIDatapoint(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kHeadersFieldNumber = 3,
-    kRetryableStatusCodesFieldNumber = 7,
-    kMethodFieldNumber = 1,
-    kEndpointFieldNumber = 2,
-    kBodyFieldNumber = 4,
-    kIsRetryableFieldNumber = 5,
-    kRequireFormantAuthFieldNumber = 6,
-  };
-  // map<string, string> Headers = 3 [json_name = "Headers"];
-  int headers_size() const;
-  private:
-  int _internal_headers_size() const;
-  public:
-  void clear_headers();
-  private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      _internal_headers() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      _internal_mutable_headers();
-  public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      headers() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      mutable_headers();
-
-  // repeated int64 RetryableStatusCodes = 7 [json_name = "RetryableStatusCodes"];
-  int retryablestatuscodes_size() const;
-  private:
-  int _internal_retryablestatuscodes_size() const;
-  public:
-  void clear_retryablestatuscodes();
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_retryablestatuscodes(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >&
-      _internal_retryablestatuscodes() const;
-  void _internal_add_retryablestatuscodes(::PROTOBUF_NAMESPACE_ID::int64 value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >*
-      _internal_mutable_retryablestatuscodes();
-  public:
-  ::PROTOBUF_NAMESPACE_ID::int64 retryablestatuscodes(int index) const;
-  void set_retryablestatuscodes(int index, ::PROTOBUF_NAMESPACE_ID::int64 value);
-  void add_retryablestatuscodes(::PROTOBUF_NAMESPACE_ID::int64 value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >&
-      retryablestatuscodes() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >*
-      mutable_retryablestatuscodes();
-
-  // string Method = 1 [json_name = "Method"];
-  void clear_method();
-  const std::string& method() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_method(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_method();
-  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_method();
-  void set_allocated_method(std::string* method);
-  private:
-  const std::string& _internal_method() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_method(const std::string& value);
-  std::string* _internal_mutable_method();
-  public:
-
-  // string Endpoint = 2 [json_name = "Endpoint"];
-  void clear_endpoint();
-  const std::string& endpoint() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_endpoint(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_endpoint();
-  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_endpoint();
-  void set_allocated_endpoint(std::string* endpoint);
-  private:
-  const std::string& _internal_endpoint() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_endpoint(const std::string& value);
-  std::string* _internal_mutable_endpoint();
-  public:
-
-  // string Body = 4 [json_name = "Body"];
-  void clear_body();
-  const std::string& body() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_body(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_body();
-  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_body();
-  void set_allocated_body(std::string* body);
-  private:
-  const std::string& _internal_body() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_body(const std::string& value);
-  std::string* _internal_mutable_body();
-  public:
-
-  // bool IsRetryable = 5 [json_name = "IsRetryable"];
-  void clear_isretryable();
-  bool isretryable() const;
-  void set_isretryable(bool value);
-  private:
-  bool _internal_isretryable() const;
-  void _internal_set_isretryable(bool value);
-  public:
-
-  // bool RequireFormantAuth = 6 [json_name = "RequireFormantAuth"];
-  void clear_requireformantauth();
-  bool requireformantauth() const;
-  void set_requireformantauth(bool value);
-  private:
-  bool _internal_requireformantauth() const;
-  void _internal_set_requireformantauth(bool value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:v1.model.GenericAPIDatapoint)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      GenericAPIDatapoint_HeadersEntry_DoNotUse,
-      std::string, std::string,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> headers_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 > retryablestatuscodes_;
-  mutable std::atomic<int> _retryablestatuscodes_cached_byte_size_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr method_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr endpoint_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr body_;
-  bool isretryable_;
-  bool requireformantauth_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto;
 };
 // ===================================================================
@@ -2214,71 +1917,6 @@ inline ::v1::model::TransformTree* Datapoint::mutable_transform_tree() {
   return _internal_mutable_transform_tree();
 }
 
-// .v1.model.Odometry odometry = 19 [json_name = "odometry"];
-inline bool Datapoint::_internal_has_odometry() const {
-  return data_case() == kOdometry;
-}
-inline bool Datapoint::has_odometry() const {
-  return _internal_has_odometry();
-}
-inline void Datapoint::set_has_odometry() {
-  _oneof_case_[0] = kOdometry;
-}
-inline ::v1::model::Odometry* Datapoint::release_odometry() {
-  // @@protoc_insertion_point(field_release:v1.model.Datapoint.odometry)
-  if (_internal_has_odometry()) {
-    clear_has_data();
-      ::v1::model::Odometry* temp = data_.odometry_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    data_.odometry_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::v1::model::Odometry& Datapoint::_internal_odometry() const {
-  return _internal_has_odometry()
-      ? *data_.odometry_
-      : reinterpret_cast< ::v1::model::Odometry&>(::v1::model::_Odometry_default_instance_);
-}
-inline const ::v1::model::Odometry& Datapoint::odometry() const {
-  // @@protoc_insertion_point(field_get:v1.model.Datapoint.odometry)
-  return _internal_odometry();
-}
-inline ::v1::model::Odometry* Datapoint::unsafe_arena_release_odometry() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.Datapoint.odometry)
-  if (_internal_has_odometry()) {
-    clear_has_data();
-    ::v1::model::Odometry* temp = data_.odometry_;
-    data_.odometry_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void Datapoint::unsafe_arena_set_allocated_odometry(::v1::model::Odometry* odometry) {
-  clear_data();
-  if (odometry) {
-    set_has_odometry();
-    data_.odometry_ = odometry;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.Datapoint.odometry)
-}
-inline ::v1::model::Odometry* Datapoint::_internal_mutable_odometry() {
-  if (!_internal_has_odometry()) {
-    clear_data();
-    set_has_odometry();
-    data_.odometry_ = CreateMaybeMessage< ::v1::model::Odometry >(GetArenaForAllocation());
-  }
-  return data_.odometry_;
-}
-inline ::v1::model::Odometry* Datapoint::mutable_odometry() {
-  // @@protoc_insertion_point(field_mutable:v1.model.Datapoint.odometry)
-  return _internal_mutable_odometry();
-}
-
 inline bool Datapoint::has_data() const {
   return data_case() != DATA_NOT_SET;
 }
@@ -2756,270 +2394,9 @@ inline void ControlDatapoint::clear_has_data() {
 inline ControlDatapoint::DataCase ControlDatapoint::data_case() const {
   return ControlDatapoint::DataCase(_oneof_case_[0]);
 }
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// GenericAPIDatapoint
-
-// string Method = 1 [json_name = "Method"];
-inline void GenericAPIDatapoint::clear_method() {
-  method_.ClearToEmpty();
-}
-inline const std::string& GenericAPIDatapoint::method() const {
-  // @@protoc_insertion_point(field_get:v1.model.GenericAPIDatapoint.Method)
-  return _internal_method();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void GenericAPIDatapoint::set_method(ArgT0&& arg0, ArgT... args) {
- 
- method_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:v1.model.GenericAPIDatapoint.Method)
-}
-inline std::string* GenericAPIDatapoint::mutable_method() {
-  // @@protoc_insertion_point(field_mutable:v1.model.GenericAPIDatapoint.Method)
-  return _internal_mutable_method();
-}
-inline const std::string& GenericAPIDatapoint::_internal_method() const {
-  return method_.Get();
-}
-inline void GenericAPIDatapoint::_internal_set_method(const std::string& value) {
-  
-  method_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* GenericAPIDatapoint::_internal_mutable_method() {
-  
-  return method_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* GenericAPIDatapoint::release_method() {
-  // @@protoc_insertion_point(field_release:v1.model.GenericAPIDatapoint.Method)
-  return method_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void GenericAPIDatapoint::set_allocated_method(std::string* method) {
-  if (method != nullptr) {
-    
-  } else {
-    
-  }
-  method_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), method,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:v1.model.GenericAPIDatapoint.Method)
-}
-
-// string Endpoint = 2 [json_name = "Endpoint"];
-inline void GenericAPIDatapoint::clear_endpoint() {
-  endpoint_.ClearToEmpty();
-}
-inline const std::string& GenericAPIDatapoint::endpoint() const {
-  // @@protoc_insertion_point(field_get:v1.model.GenericAPIDatapoint.Endpoint)
-  return _internal_endpoint();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void GenericAPIDatapoint::set_endpoint(ArgT0&& arg0, ArgT... args) {
- 
- endpoint_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:v1.model.GenericAPIDatapoint.Endpoint)
-}
-inline std::string* GenericAPIDatapoint::mutable_endpoint() {
-  // @@protoc_insertion_point(field_mutable:v1.model.GenericAPIDatapoint.Endpoint)
-  return _internal_mutable_endpoint();
-}
-inline const std::string& GenericAPIDatapoint::_internal_endpoint() const {
-  return endpoint_.Get();
-}
-inline void GenericAPIDatapoint::_internal_set_endpoint(const std::string& value) {
-  
-  endpoint_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* GenericAPIDatapoint::_internal_mutable_endpoint() {
-  
-  return endpoint_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* GenericAPIDatapoint::release_endpoint() {
-  // @@protoc_insertion_point(field_release:v1.model.GenericAPIDatapoint.Endpoint)
-  return endpoint_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void GenericAPIDatapoint::set_allocated_endpoint(std::string* endpoint) {
-  if (endpoint != nullptr) {
-    
-  } else {
-    
-  }
-  endpoint_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), endpoint,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:v1.model.GenericAPIDatapoint.Endpoint)
-}
-
-// map<string, string> Headers = 3 [json_name = "Headers"];
-inline int GenericAPIDatapoint::_internal_headers_size() const {
-  return headers_.size();
-}
-inline int GenericAPIDatapoint::headers_size() const {
-  return _internal_headers_size();
-}
-inline void GenericAPIDatapoint::clear_headers() {
-  headers_.Clear();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-GenericAPIDatapoint::_internal_headers() const {
-  return headers_.GetMap();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-GenericAPIDatapoint::headers() const {
-  // @@protoc_insertion_point(field_map:v1.model.GenericAPIDatapoint.Headers)
-  return _internal_headers();
-}
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-GenericAPIDatapoint::_internal_mutable_headers() {
-  return headers_.MutableMap();
-}
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-GenericAPIDatapoint::mutable_headers() {
-  // @@protoc_insertion_point(field_mutable_map:v1.model.GenericAPIDatapoint.Headers)
-  return _internal_mutable_headers();
-}
-
-// string Body = 4 [json_name = "Body"];
-inline void GenericAPIDatapoint::clear_body() {
-  body_.ClearToEmpty();
-}
-inline const std::string& GenericAPIDatapoint::body() const {
-  // @@protoc_insertion_point(field_get:v1.model.GenericAPIDatapoint.Body)
-  return _internal_body();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void GenericAPIDatapoint::set_body(ArgT0&& arg0, ArgT... args) {
- 
- body_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:v1.model.GenericAPIDatapoint.Body)
-}
-inline std::string* GenericAPIDatapoint::mutable_body() {
-  // @@protoc_insertion_point(field_mutable:v1.model.GenericAPIDatapoint.Body)
-  return _internal_mutable_body();
-}
-inline const std::string& GenericAPIDatapoint::_internal_body() const {
-  return body_.Get();
-}
-inline void GenericAPIDatapoint::_internal_set_body(const std::string& value) {
-  
-  body_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* GenericAPIDatapoint::_internal_mutable_body() {
-  
-  return body_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* GenericAPIDatapoint::release_body() {
-  // @@protoc_insertion_point(field_release:v1.model.GenericAPIDatapoint.Body)
-  return body_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void GenericAPIDatapoint::set_allocated_body(std::string* body) {
-  if (body != nullptr) {
-    
-  } else {
-    
-  }
-  body_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), body,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:v1.model.GenericAPIDatapoint.Body)
-}
-
-// bool IsRetryable = 5 [json_name = "IsRetryable"];
-inline void GenericAPIDatapoint::clear_isretryable() {
-  isretryable_ = false;
-}
-inline bool GenericAPIDatapoint::_internal_isretryable() const {
-  return isretryable_;
-}
-inline bool GenericAPIDatapoint::isretryable() const {
-  // @@protoc_insertion_point(field_get:v1.model.GenericAPIDatapoint.IsRetryable)
-  return _internal_isretryable();
-}
-inline void GenericAPIDatapoint::_internal_set_isretryable(bool value) {
-  
-  isretryable_ = value;
-}
-inline void GenericAPIDatapoint::set_isretryable(bool value) {
-  _internal_set_isretryable(value);
-  // @@protoc_insertion_point(field_set:v1.model.GenericAPIDatapoint.IsRetryable)
-}
-
-// bool RequireFormantAuth = 6 [json_name = "RequireFormantAuth"];
-inline void GenericAPIDatapoint::clear_requireformantauth() {
-  requireformantauth_ = false;
-}
-inline bool GenericAPIDatapoint::_internal_requireformantauth() const {
-  return requireformantauth_;
-}
-inline bool GenericAPIDatapoint::requireformantauth() const {
-  // @@protoc_insertion_point(field_get:v1.model.GenericAPIDatapoint.RequireFormantAuth)
-  return _internal_requireformantauth();
-}
-inline void GenericAPIDatapoint::_internal_set_requireformantauth(bool value) {
-  
-  requireformantauth_ = value;
-}
-inline void GenericAPIDatapoint::set_requireformantauth(bool value) {
-  _internal_set_requireformantauth(value);
-  // @@protoc_insertion_point(field_set:v1.model.GenericAPIDatapoint.RequireFormantAuth)
-}
-
-// repeated int64 RetryableStatusCodes = 7 [json_name = "RetryableStatusCodes"];
-inline int GenericAPIDatapoint::_internal_retryablestatuscodes_size() const {
-  return retryablestatuscodes_.size();
-}
-inline int GenericAPIDatapoint::retryablestatuscodes_size() const {
-  return _internal_retryablestatuscodes_size();
-}
-inline void GenericAPIDatapoint::clear_retryablestatuscodes() {
-  retryablestatuscodes_.Clear();
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 GenericAPIDatapoint::_internal_retryablestatuscodes(int index) const {
-  return retryablestatuscodes_.Get(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 GenericAPIDatapoint::retryablestatuscodes(int index) const {
-  // @@protoc_insertion_point(field_get:v1.model.GenericAPIDatapoint.RetryableStatusCodes)
-  return _internal_retryablestatuscodes(index);
-}
-inline void GenericAPIDatapoint::set_retryablestatuscodes(int index, ::PROTOBUF_NAMESPACE_ID::int64 value) {
-  retryablestatuscodes_.Set(index, value);
-  // @@protoc_insertion_point(field_set:v1.model.GenericAPIDatapoint.RetryableStatusCodes)
-}
-inline void GenericAPIDatapoint::_internal_add_retryablestatuscodes(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  retryablestatuscodes_.Add(value);
-}
-inline void GenericAPIDatapoint::add_retryablestatuscodes(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_add_retryablestatuscodes(value);
-  // @@protoc_insertion_point(field_add:v1.model.GenericAPIDatapoint.RetryableStatusCodes)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >&
-GenericAPIDatapoint::_internal_retryablestatuscodes() const {
-  return retryablestatuscodes_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >&
-GenericAPIDatapoint::retryablestatuscodes() const {
-  // @@protoc_insertion_point(field_list:v1.model.GenericAPIDatapoint.RetryableStatusCodes)
-  return _internal_retryablestatuscodes();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >*
-GenericAPIDatapoint::_internal_mutable_retryablestatuscodes() {
-  return &retryablestatuscodes_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >*
-GenericAPIDatapoint::mutable_retryablestatuscodes() {
-  // @@protoc_insertion_point(field_mutable_list:v1.model.GenericAPIDatapoint.RetryableStatusCodes)
-  return _internal_mutable_retryablestatuscodes();
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

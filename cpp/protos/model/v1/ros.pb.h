@@ -98,13 +98,12 @@ enum ROSTopicType : int {
   SENSOR_MSGS_LASER_SCAN = 13,
   GEOMETRY_MSGS_POINT = 14,
   VISUALIZATION_MSGS_MARKER_ARRAY = 15,
-  NAV_MSGS_ODOMETRY = 16,
   ROSTopicType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ROSTopicType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool ROSTopicType_IsValid(int value);
 constexpr ROSTopicType ROSTopicType_MIN = UNKNOWN;
-constexpr ROSTopicType ROSTopicType_MAX = NAV_MSGS_ODOMETRY;
+constexpr ROSTopicType ROSTopicType_MAX = VISUALIZATION_MSGS_MARKER_ARRAY;
 constexpr int ROSTopicType_ARRAYSIZE = ROSTopicType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ROSTopicType_descriptor();

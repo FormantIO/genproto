@@ -21,99 +21,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type PostGenericAPIUnbufferedRequestResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	StatusCode   uint32 `protobuf:"varint,1,opt,name=statusCode,proto3" json:"statusCode,omitempty"`
-	ResponseBody string `protobuf:"bytes,2,opt,name=responseBody,proto3" json:"responseBody,omitempty"`
-}
-
-func (x *PostGenericAPIUnbufferedRequestResponse) Reset() {
-	*x = PostGenericAPIUnbufferedRequestResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *PostGenericAPIUnbufferedRequestResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PostGenericAPIUnbufferedRequestResponse) ProtoMessage() {}
-
-func (x *PostGenericAPIUnbufferedRequestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PostGenericAPIUnbufferedRequestResponse.ProtoReflect.Descriptor instead.
-func (*PostGenericAPIUnbufferedRequestResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *PostGenericAPIUnbufferedRequestResponse) GetStatusCode() uint32 {
-	if x != nil {
-		return x.StatusCode
-	}
-	return 0
-}
-
-func (x *PostGenericAPIUnbufferedRequestResponse) GetResponseBody() string {
-	if x != nil {
-		return x.ResponseBody
-	}
-	return ""
-}
-
-type PostGenericAPIRequestResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-}
-
-func (x *PostGenericAPIRequestResponse) Reset() {
-	*x = PostGenericAPIRequestResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *PostGenericAPIRequestResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PostGenericAPIRequestResponse) ProtoMessage() {}
-
-func (x *PostGenericAPIRequestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PostGenericAPIRequestResponse.ProtoReflect.Descriptor instead.
-func (*PostGenericAPIRequestResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{1}
-}
-
 type StreamDataResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -123,7 +30,7 @@ type StreamDataResponse struct {
 func (x *StreamDataResponse) Reset() {
 	*x = StreamDataResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[2]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -136,7 +43,7 @@ func (x *StreamDataResponse) String() string {
 func (*StreamDataResponse) ProtoMessage() {}
 
 func (x *StreamDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[2]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -149,7 +56,7 @@ func (x *StreamDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamDataResponse.ProtoReflect.Descriptor instead.
 func (*StreamDataResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{2}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{0}
 }
 
 type PostDataResponse struct {
@@ -161,7 +68,7 @@ type PostDataResponse struct {
 func (x *PostDataResponse) Reset() {
 	*x = PostDataResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[3]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -174,7 +81,7 @@ func (x *PostDataResponse) String() string {
 func (*PostDataResponse) ProtoMessage() {}
 
 func (x *PostDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[3]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -187,7 +94,7 @@ func (x *PostDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostDataResponse.ProtoReflect.Descriptor instead.
 func (*PostDataResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{3}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{1}
 }
 
 type PostDataError struct {
@@ -204,7 +111,7 @@ type PostDataError struct {
 func (x *PostDataError) Reset() {
 	*x = PostDataError{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[4]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -217,7 +124,7 @@ func (x *PostDataError) String() string {
 func (*PostDataError) ProtoMessage() {}
 
 func (x *PostDataError) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[4]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -230,7 +137,7 @@ func (x *PostDataError) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostDataError.ProtoReflect.Descriptor instead.
 func (*PostDataError) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{4}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *PostDataError) GetIndex() uint32 {
@@ -272,7 +179,7 @@ type PostDataMultiRequest struct {
 func (x *PostDataMultiRequest) Reset() {
 	*x = PostDataMultiRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[5]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -285,7 +192,7 @@ func (x *PostDataMultiRequest) String() string {
 func (*PostDataMultiRequest) ProtoMessage() {}
 
 func (x *PostDataMultiRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[5]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -298,7 +205,7 @@ func (x *PostDataMultiRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostDataMultiRequest.ProtoReflect.Descriptor instead.
 func (*PostDataMultiRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{5}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *PostDataMultiRequest) GetDatapoints() []*model.Datapoint {
@@ -317,7 +224,7 @@ type PostDataMultiResponse struct {
 func (x *PostDataMultiResponse) Reset() {
 	*x = PostDataMultiResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[6]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -330,7 +237,7 @@ func (x *PostDataMultiResponse) String() string {
 func (*PostDataMultiResponse) ProtoMessage() {}
 
 func (x *PostDataMultiResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[6]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -343,7 +250,7 @@ func (x *PostDataMultiResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostDataMultiResponse.ProtoReflect.Descriptor instead.
 func (*PostDataMultiResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{6}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{4}
 }
 
 type PostDataMultiError struct {
@@ -357,7 +264,7 @@ type PostDataMultiError struct {
 func (x *PostDataMultiError) Reset() {
 	*x = PostDataMultiError{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[7]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -370,7 +277,7 @@ func (x *PostDataMultiError) String() string {
 func (*PostDataMultiError) ProtoMessage() {}
 
 func (x *PostDataMultiError) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[7]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -383,7 +290,7 @@ func (x *PostDataMultiError) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostDataMultiError.ProtoReflect.Descriptor instead.
 func (*PostDataMultiError) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{7}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *PostDataMultiError) GetErrors() []*PostDataError {
@@ -404,7 +311,7 @@ type GetInterventionRequestRequest struct {
 func (x *GetInterventionRequestRequest) Reset() {
 	*x = GetInterventionRequestRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[8]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -417,7 +324,7 @@ func (x *GetInterventionRequestRequest) String() string {
 func (*GetInterventionRequestRequest) ProtoMessage() {}
 
 func (x *GetInterventionRequestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[8]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -430,7 +337,7 @@ func (x *GetInterventionRequestRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetInterventionRequestRequest.ProtoReflect.Descriptor instead.
 func (*GetInterventionRequestRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{8}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetInterventionRequestRequest) GetId() string {
@@ -451,7 +358,7 @@ type GetInterventionResponseRequest struct {
 func (x *GetInterventionResponseRequest) Reset() {
 	*x = GetInterventionResponseRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[9]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -464,7 +371,7 @@ func (x *GetInterventionResponseRequest) String() string {
 func (*GetInterventionResponseRequest) ProtoMessage() {}
 
 func (x *GetInterventionResponseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[9]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -477,7 +384,7 @@ func (x *GetInterventionResponseRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetInterventionResponseRequest.ProtoReflect.Descriptor instead.
 func (*GetInterventionResponseRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{9}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetInterventionResponseRequest) GetRequestId() string {
@@ -496,7 +403,7 @@ type GetStreamsConfigurationRequest struct {
 func (x *GetStreamsConfigurationRequest) Reset() {
 	*x = GetStreamsConfigurationRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[10]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -509,7 +416,7 @@ func (x *GetStreamsConfigurationRequest) String() string {
 func (*GetStreamsConfigurationRequest) ProtoMessage() {}
 
 func (x *GetStreamsConfigurationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[10]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -522,7 +429,7 @@ func (x *GetStreamsConfigurationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetStreamsConfigurationRequest.ProtoReflect.Descriptor instead.
 func (*GetStreamsConfigurationRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{10}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{8}
 }
 
 type GetStreamsConfigurationResponse struct {
@@ -536,7 +443,7 @@ type GetStreamsConfigurationResponse struct {
 func (x *GetStreamsConfigurationResponse) Reset() {
 	*x = GetStreamsConfigurationResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[11]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -549,7 +456,7 @@ func (x *GetStreamsConfigurationResponse) String() string {
 func (*GetStreamsConfigurationResponse) ProtoMessage() {}
 
 func (x *GetStreamsConfigurationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[11]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -562,7 +469,7 @@ func (x *GetStreamsConfigurationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetStreamsConfigurationResponse.ProtoReflect.Descriptor instead.
 func (*GetStreamsConfigurationResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{11}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetStreamsConfigurationResponse) GetStreams() []*model.StreamConfiguration {
@@ -581,7 +488,7 @@ type GetApplicationConfigurationRequest struct {
 func (x *GetApplicationConfigurationRequest) Reset() {
 	*x = GetApplicationConfigurationRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[12]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -594,7 +501,7 @@ func (x *GetApplicationConfigurationRequest) String() string {
 func (*GetApplicationConfigurationRequest) ProtoMessage() {}
 
 func (x *GetApplicationConfigurationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[12]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -607,7 +514,7 @@ func (x *GetApplicationConfigurationRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use GetApplicationConfigurationRequest.ProtoReflect.Descriptor instead.
 func (*GetApplicationConfigurationRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{12}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{10}
 }
 
 type GetApplicationConfigurationResponse struct {
@@ -621,7 +528,7 @@ type GetApplicationConfigurationResponse struct {
 func (x *GetApplicationConfigurationResponse) Reset() {
 	*x = GetApplicationConfigurationResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[13]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -634,7 +541,7 @@ func (x *GetApplicationConfigurationResponse) String() string {
 func (*GetApplicationConfigurationResponse) ProtoMessage() {}
 
 func (x *GetApplicationConfigurationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[13]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -647,7 +554,7 @@ func (x *GetApplicationConfigurationResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use GetApplicationConfigurationResponse.ProtoReflect.Descriptor instead.
 func (*GetApplicationConfigurationResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{13}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetApplicationConfigurationResponse) GetConfiguration() *model.ApplicationConfiguration {
@@ -666,7 +573,7 @@ type GetConfigBlobDataRequest struct {
 func (x *GetConfigBlobDataRequest) Reset() {
 	*x = GetConfigBlobDataRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[14]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -679,7 +586,7 @@ func (x *GetConfigBlobDataRequest) String() string {
 func (*GetConfigBlobDataRequest) ProtoMessage() {}
 
 func (x *GetConfigBlobDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[14]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -692,7 +599,7 @@ func (x *GetConfigBlobDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetConfigBlobDataRequest.ProtoReflect.Descriptor instead.
 func (*GetConfigBlobDataRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{14}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{12}
 }
 
 type GetConfigBlobDataResponse struct {
@@ -706,7 +613,7 @@ type GetConfigBlobDataResponse struct {
 func (x *GetConfigBlobDataResponse) Reset() {
 	*x = GetConfigBlobDataResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[15]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -719,7 +626,7 @@ func (x *GetConfigBlobDataResponse) String() string {
 func (*GetConfigBlobDataResponse) ProtoMessage() {}
 
 func (x *GetConfigBlobDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[15]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -732,7 +639,7 @@ func (x *GetConfigBlobDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetConfigBlobDataResponse.ProtoReflect.Descriptor instead.
 func (*GetConfigBlobDataResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{15}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetConfigBlobDataResponse) GetBlobData() *model.BlobData {
@@ -751,7 +658,7 @@ type GetAgentConfigurationRequest struct {
 func (x *GetAgentConfigurationRequest) Reset() {
 	*x = GetAgentConfigurationRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[16]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -764,7 +671,7 @@ func (x *GetAgentConfigurationRequest) String() string {
 func (*GetAgentConfigurationRequest) ProtoMessage() {}
 
 func (x *GetAgentConfigurationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[16]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -777,7 +684,7 @@ func (x *GetAgentConfigurationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAgentConfigurationRequest.ProtoReflect.Descriptor instead.
 func (*GetAgentConfigurationRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{16}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{14}
 }
 
 type GetAgentConfigurationResponse struct {
@@ -791,7 +698,7 @@ type GetAgentConfigurationResponse struct {
 func (x *GetAgentConfigurationResponse) Reset() {
 	*x = GetAgentConfigurationResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[17]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -804,7 +711,7 @@ func (x *GetAgentConfigurationResponse) String() string {
 func (*GetAgentConfigurationResponse) ProtoMessage() {}
 
 func (x *GetAgentConfigurationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[17]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -817,7 +724,7 @@ func (x *GetAgentConfigurationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAgentConfigurationResponse.ProtoReflect.Descriptor instead.
 func (*GetAgentConfigurationResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{17}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *GetAgentConfigurationResponse) GetConfiguration() *model.AgentConfiguration {
@@ -836,7 +743,7 @@ type HealthRequest struct {
 func (x *HealthRequest) Reset() {
 	*x = HealthRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[18]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -849,7 +756,7 @@ func (x *HealthRequest) String() string {
 func (*HealthRequest) ProtoMessage() {}
 
 func (x *HealthRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[18]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -862,7 +769,7 @@ func (x *HealthRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HealthRequest.ProtoReflect.Descriptor instead.
 func (*HealthRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{18}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{16}
 }
 
 type HealthResponse struct {
@@ -874,7 +781,7 @@ type HealthResponse struct {
 func (x *HealthResponse) Reset() {
 	*x = HealthResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[19]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -887,7 +794,7 @@ func (x *HealthResponse) String() string {
 func (*HealthResponse) ProtoMessage() {}
 
 func (x *HealthResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[19]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -900,7 +807,7 @@ func (x *HealthResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HealthResponse.ProtoReflect.Descriptor instead.
 func (*HealthResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{19}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{17}
 }
 
 type GetCommandRequestRequest struct {
@@ -914,7 +821,7 @@ type GetCommandRequestRequest struct {
 func (x *GetCommandRequestRequest) Reset() {
 	*x = GetCommandRequestRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[20]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -927,7 +834,7 @@ func (x *GetCommandRequestRequest) String() string {
 func (*GetCommandRequestRequest) ProtoMessage() {}
 
 func (x *GetCommandRequestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[20]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -940,7 +847,7 @@ func (x *GetCommandRequestRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommandRequestRequest.ProtoReflect.Descriptor instead.
 func (*GetCommandRequestRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{20}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GetCommandRequestRequest) GetCommandFilter() []string {
@@ -961,7 +868,7 @@ type GetCommandRequestResponse struct {
 func (x *GetCommandRequestResponse) Reset() {
 	*x = GetCommandRequestResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[21]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -974,7 +881,7 @@ func (x *GetCommandRequestResponse) String() string {
 func (*GetCommandRequestResponse) ProtoMessage() {}
 
 func (x *GetCommandRequestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[21]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -987,7 +894,7 @@ func (x *GetCommandRequestResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommandRequestResponse.ProtoReflect.Descriptor instead.
 func (*GetCommandRequestResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{21}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *GetCommandRequestResponse) GetRequest() *model.CommandRequest {
@@ -1008,7 +915,7 @@ type SendCommandResponseRequest struct {
 func (x *SendCommandResponseRequest) Reset() {
 	*x = SendCommandResponseRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[22]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1021,7 +928,7 @@ func (x *SendCommandResponseRequest) String() string {
 func (*SendCommandResponseRequest) ProtoMessage() {}
 
 func (x *SendCommandResponseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[22]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1034,7 +941,7 @@ func (x *SendCommandResponseRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendCommandResponseRequest.ProtoReflect.Descriptor instead.
 func (*SendCommandResponseRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{22}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *SendCommandResponseRequest) GetResponse() *model.CommandResponse {
@@ -1053,7 +960,7 @@ type SendCommandResponseResponse struct {
 func (x *SendCommandResponseResponse) Reset() {
 	*x = SendCommandResponseResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[23]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1066,7 +973,7 @@ func (x *SendCommandResponseResponse) String() string {
 func (*SendCommandResponseResponse) ProtoMessage() {}
 
 func (x *SendCommandResponseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[23]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1079,7 +986,7 @@ func (x *SendCommandResponseResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendCommandResponseResponse.ProtoReflect.Descriptor instead.
 func (*SendCommandResponseResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{23}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{21}
 }
 
 type GetCommandRequestStreamRequest struct {
@@ -1093,7 +1000,7 @@ type GetCommandRequestStreamRequest struct {
 func (x *GetCommandRequestStreamRequest) Reset() {
 	*x = GetCommandRequestStreamRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[24]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1106,7 +1013,7 @@ func (x *GetCommandRequestStreamRequest) String() string {
 func (*GetCommandRequestStreamRequest) ProtoMessage() {}
 
 func (x *GetCommandRequestStreamRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[24]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1119,7 +1026,7 @@ func (x *GetCommandRequestStreamRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommandRequestStreamRequest.ProtoReflect.Descriptor instead.
 func (*GetCommandRequestStreamRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{24}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *GetCommandRequestStreamRequest) GetCommandFilter() []string {
@@ -1140,7 +1047,7 @@ type GetCommandRequestStreamResponse struct {
 func (x *GetCommandRequestStreamResponse) Reset() {
 	*x = GetCommandRequestStreamResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[25]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1153,7 +1060,7 @@ func (x *GetCommandRequestStreamResponse) String() string {
 func (*GetCommandRequestStreamResponse) ProtoMessage() {}
 
 func (x *GetCommandRequestStreamResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[25]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1166,7 +1073,7 @@ func (x *GetCommandRequestStreamResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommandRequestStreamResponse.ProtoReflect.Descriptor instead.
 func (*GetCommandRequestStreamResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{25}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *GetCommandRequestStreamResponse) GetRequest() *model.CommandRequest {
@@ -1187,7 +1094,7 @@ type GetTeleopControlDataStreamRequest struct {
 func (x *GetTeleopControlDataStreamRequest) Reset() {
 	*x = GetTeleopControlDataStreamRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[26]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1200,7 +1107,7 @@ func (x *GetTeleopControlDataStreamRequest) String() string {
 func (*GetTeleopControlDataStreamRequest) ProtoMessage() {}
 
 func (x *GetTeleopControlDataStreamRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[26]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1213,7 +1120,7 @@ func (x *GetTeleopControlDataStreamRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetTeleopControlDataStreamRequest.ProtoReflect.Descriptor instead.
 func (*GetTeleopControlDataStreamRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{26}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *GetTeleopControlDataStreamRequest) GetStreamFilter() []string {
@@ -1234,7 +1141,7 @@ type GetTeleopControlDataStreamResponse struct {
 func (x *GetTeleopControlDataStreamResponse) Reset() {
 	*x = GetTeleopControlDataStreamResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[27]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1247,7 +1154,7 @@ func (x *GetTeleopControlDataStreamResponse) String() string {
 func (*GetTeleopControlDataStreamResponse) ProtoMessage() {}
 
 func (x *GetTeleopControlDataStreamResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[27]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1260,7 +1167,7 @@ func (x *GetTeleopControlDataStreamResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use GetTeleopControlDataStreamResponse.ProtoReflect.Descriptor instead.
 func (*GetTeleopControlDataStreamResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{27}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *GetTeleopControlDataStreamResponse) GetControlDatapoint() *model.ControlDatapoint {
@@ -1279,7 +1186,7 @@ type GetTeleopHeartbeatStreamRequest struct {
 func (x *GetTeleopHeartbeatStreamRequest) Reset() {
 	*x = GetTeleopHeartbeatStreamRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[28]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1292,7 +1199,7 @@ func (x *GetTeleopHeartbeatStreamRequest) String() string {
 func (*GetTeleopHeartbeatStreamRequest) ProtoMessage() {}
 
 func (x *GetTeleopHeartbeatStreamRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[28]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1305,7 +1212,7 @@ func (x *GetTeleopHeartbeatStreamRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTeleopHeartbeatStreamRequest.ProtoReflect.Descriptor instead.
 func (*GetTeleopHeartbeatStreamRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{28}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{26}
 }
 
 type GetTeleopHeartbeatStreamResponse struct {
@@ -1321,7 +1228,7 @@ type GetTeleopHeartbeatStreamResponse struct {
 func (x *GetTeleopHeartbeatStreamResponse) Reset() {
 	*x = GetTeleopHeartbeatStreamResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[29]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1334,7 +1241,7 @@ func (x *GetTeleopHeartbeatStreamResponse) String() string {
 func (*GetTeleopHeartbeatStreamResponse) ProtoMessage() {}
 
 func (x *GetTeleopHeartbeatStreamResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[29]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1347,7 +1254,7 @@ func (x *GetTeleopHeartbeatStreamResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTeleopHeartbeatStreamResponse.ProtoReflect.Descriptor instead.
 func (*GetTeleopHeartbeatStreamResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{29}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *GetTeleopHeartbeatStreamResponse) GetPeerId() string {
@@ -1382,7 +1289,7 @@ type GetTelemetryListenerStreamRequest struct {
 func (x *GetTelemetryListenerStreamRequest) Reset() {
 	*x = GetTelemetryListenerStreamRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[30]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1395,7 +1302,7 @@ func (x *GetTelemetryListenerStreamRequest) String() string {
 func (*GetTelemetryListenerStreamRequest) ProtoMessage() {}
 
 func (x *GetTelemetryListenerStreamRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[30]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1408,7 +1315,7 @@ func (x *GetTelemetryListenerStreamRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetTelemetryListenerStreamRequest.ProtoReflect.Descriptor instead.
 func (*GetTelemetryListenerStreamRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{30}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *GetTelemetryListenerStreamRequest) GetStreamFilter() []string {
@@ -1429,7 +1336,7 @@ type GetTelemetryListenerStreamResponse struct {
 func (x *GetTelemetryListenerStreamResponse) Reset() {
 	*x = GetTelemetryListenerStreamResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[31]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1442,7 +1349,7 @@ func (x *GetTelemetryListenerStreamResponse) String() string {
 func (*GetTelemetryListenerStreamResponse) ProtoMessage() {}
 
 func (x *GetTelemetryListenerStreamResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[31]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1455,7 +1362,7 @@ func (x *GetTelemetryListenerStreamResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use GetTelemetryListenerStreamResponse.ProtoReflect.Descriptor instead.
 func (*GetTelemetryListenerStreamResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{31}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *GetTelemetryListenerStreamResponse) GetDatapoint() *model.Datapoint {
@@ -1474,7 +1381,7 @@ type PostTransformFrameResponse struct {
 func (x *PostTransformFrameResponse) Reset() {
 	*x = PostTransformFrameResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[32]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1487,7 +1394,7 @@ func (x *PostTransformFrameResponse) String() string {
 func (*PostTransformFrameResponse) ProtoMessage() {}
 
 func (x *PostTransformFrameResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[32]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1500,7 +1407,7 @@ func (x *PostTransformFrameResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostTransformFrameResponse.ProtoReflect.Descriptor instead.
 func (*PostTransformFrameResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{32}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{30}
 }
 
 type SetBaseFrameIDRequest struct {
@@ -1514,7 +1421,7 @@ type SetBaseFrameIDRequest struct {
 func (x *SetBaseFrameIDRequest) Reset() {
 	*x = SetBaseFrameIDRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[33]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1527,7 +1434,7 @@ func (x *SetBaseFrameIDRequest) String() string {
 func (*SetBaseFrameIDRequest) ProtoMessage() {}
 
 func (x *SetBaseFrameIDRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[33]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1540,7 +1447,7 @@ func (x *SetBaseFrameIDRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetBaseFrameIDRequest.ProtoReflect.Descriptor instead.
 func (*SetBaseFrameIDRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{33}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *SetBaseFrameIDRequest) GetId() string {
@@ -1559,7 +1466,7 @@ type SetBaseFrameIDResponse struct {
 func (x *SetBaseFrameIDResponse) Reset() {
 	*x = SetBaseFrameIDResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[34]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1572,7 +1479,7 @@ func (x *SetBaseFrameIDResponse) String() string {
 func (*SetBaseFrameIDResponse) ProtoMessage() {}
 
 func (x *SetBaseFrameIDResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[34]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1585,7 +1492,7 @@ func (x *SetBaseFrameIDResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetBaseFrameIDResponse.ProtoReflect.Descriptor instead.
 func (*SetBaseFrameIDResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{34}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{32}
 }
 
 type ClearTransformTreeRequest struct {
@@ -1597,7 +1504,7 @@ type ClearTransformTreeRequest struct {
 func (x *ClearTransformTreeRequest) Reset() {
 	*x = ClearTransformTreeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[35]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1610,7 +1517,7 @@ func (x *ClearTransformTreeRequest) String() string {
 func (*ClearTransformTreeRequest) ProtoMessage() {}
 
 func (x *ClearTransformTreeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[35]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1623,7 +1530,7 @@ func (x *ClearTransformTreeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClearTransformTreeRequest.ProtoReflect.Descriptor instead.
 func (*ClearTransformTreeRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{35}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{33}
 }
 
 type ClearTransformTreeResponse struct {
@@ -1635,7 +1542,7 @@ type ClearTransformTreeResponse struct {
 func (x *ClearTransformTreeResponse) Reset() {
 	*x = ClearTransformTreeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[36]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1648,7 +1555,7 @@ func (x *ClearTransformTreeResponse) String() string {
 func (*ClearTransformTreeResponse) ProtoMessage() {}
 
 func (x *ClearTransformTreeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[36]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1661,7 +1568,7 @@ func (x *ClearTransformTreeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClearTransformTreeResponse.ProtoReflect.Descriptor instead.
 func (*ClearTransformTreeResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{36}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{34}
 }
 
 type CreateEventRequest struct {
@@ -1675,7 +1582,7 @@ type CreateEventRequest struct {
 func (x *CreateEventRequest) Reset() {
 	*x = CreateEventRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[37]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1688,7 +1595,7 @@ func (x *CreateEventRequest) String() string {
 func (*CreateEventRequest) ProtoMessage() {}
 
 func (x *CreateEventRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[37]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1701,7 +1608,7 @@ func (x *CreateEventRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateEventRequest.ProtoReflect.Descriptor instead.
 func (*CreateEventRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{37}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *CreateEventRequest) GetEvent() *model.Event {
@@ -1720,7 +1627,7 @@ type CreateEventResponse struct {
 func (x *CreateEventResponse) Reset() {
 	*x = CreateEventResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[38]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1733,7 +1640,7 @@ func (x *CreateEventResponse) String() string {
 func (*CreateEventResponse) ProtoMessage() {}
 
 func (x *CreateEventResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[38]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1746,7 +1653,7 @@ func (x *CreateEventResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateEventResponse.ProtoReflect.Descriptor instead.
 func (*CreateEventResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{38}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{36}
 }
 
 type CreateEventError struct {
@@ -1760,7 +1667,7 @@ type CreateEventError struct {
 func (x *CreateEventError) Reset() {
 	*x = CreateEventError{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[39]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1773,7 +1680,7 @@ func (x *CreateEventError) String() string {
 func (*CreateEventError) ProtoMessage() {}
 
 func (x *CreateEventError) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[39]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1786,7 +1693,7 @@ func (x *CreateEventError) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateEventError.ProtoReflect.Descriptor instead.
 func (*CreateEventError) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{39}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *CreateEventError) GetRetryable() bool {
@@ -1805,7 +1712,7 @@ type GetTeleopInfoRequest struct {
 func (x *GetTeleopInfoRequest) Reset() {
 	*x = GetTeleopInfoRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[40]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1818,7 +1725,7 @@ func (x *GetTeleopInfoRequest) String() string {
 func (*GetTeleopInfoRequest) ProtoMessage() {}
 
 func (x *GetTeleopInfoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[40]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1831,7 +1738,7 @@ func (x *GetTeleopInfoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTeleopInfoRequest.ProtoReflect.Descriptor instead.
 func (*GetTeleopInfoRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{40}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{38}
 }
 
 type GetTeleopInfoResponse struct {
@@ -1845,7 +1752,7 @@ type GetTeleopInfoResponse struct {
 func (x *GetTeleopInfoResponse) Reset() {
 	*x = GetTeleopInfoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[41]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1858,7 +1765,7 @@ func (x *GetTeleopInfoResponse) String() string {
 func (*GetTeleopInfoResponse) ProtoMessage() {}
 
 func (x *GetTeleopInfoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[41]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1871,7 +1778,7 @@ func (x *GetTeleopInfoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTeleopInfoResponse.ProtoReflect.Descriptor instead.
 func (*GetTeleopInfoResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{41}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *GetTeleopInfoResponse) GetConnectionCount() uint32 {
@@ -1892,7 +1799,7 @@ type PostLanRtcOfferRequest struct {
 func (x *PostLanRtcOfferRequest) Reset() {
 	*x = PostLanRtcOfferRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[42]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1905,7 +1812,7 @@ func (x *PostLanRtcOfferRequest) String() string {
 func (*PostLanRtcOfferRequest) ProtoMessage() {}
 
 func (x *PostLanRtcOfferRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[42]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1918,7 +1825,7 @@ func (x *PostLanRtcOfferRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostLanRtcOfferRequest.ProtoReflect.Descriptor instead.
 func (*PostLanRtcOfferRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{42}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *PostLanRtcOfferRequest) GetOffer() string {
@@ -1939,7 +1846,7 @@ type PostLanRtcOfferResponse struct {
 func (x *PostLanRtcOfferResponse) Reset() {
 	*x = PostLanRtcOfferResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[43]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1952,7 +1859,7 @@ func (x *PostLanRtcOfferResponse) String() string {
 func (*PostLanRtcOfferResponse) ProtoMessage() {}
 
 func (x *PostLanRtcOfferResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[43]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1965,7 +1872,7 @@ func (x *PostLanRtcOfferResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostLanRtcOfferResponse.ProtoReflect.Descriptor instead.
 func (*PostLanRtcOfferResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{43}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *PostLanRtcOfferResponse) GetAnswer() string {
@@ -1987,7 +1894,7 @@ type SendOnCustomDataChannelRequest struct {
 func (x *SendOnCustomDataChannelRequest) Reset() {
 	*x = SendOnCustomDataChannelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[44]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2000,7 +1907,7 @@ func (x *SendOnCustomDataChannelRequest) String() string {
 func (*SendOnCustomDataChannelRequest) ProtoMessage() {}
 
 func (x *SendOnCustomDataChannelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[44]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2013,7 +1920,7 @@ func (x *SendOnCustomDataChannelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendOnCustomDataChannelRequest.ProtoReflect.Descriptor instead.
 func (*SendOnCustomDataChannelRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{44}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *SendOnCustomDataChannelRequest) GetChannelName() string {
@@ -2039,7 +1946,7 @@ type SendOnCustomDataChannelResponse struct {
 func (x *SendOnCustomDataChannelResponse) Reset() {
 	*x = SendOnCustomDataChannelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[45]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[43]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2052,7 +1959,7 @@ func (x *SendOnCustomDataChannelResponse) String() string {
 func (*SendOnCustomDataChannelResponse) ProtoMessage() {}
 
 func (x *SendOnCustomDataChannelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[45]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[43]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2065,7 +1972,7 @@ func (x *SendOnCustomDataChannelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendOnCustomDataChannelResponse.ProtoReflect.Descriptor instead.
 func (*SendOnCustomDataChannelResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{45}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{43}
 }
 
 type GetCustomDataChannelMessageStreamRequest struct {
@@ -2079,7 +1986,7 @@ type GetCustomDataChannelMessageStreamRequest struct {
 func (x *GetCustomDataChannelMessageStreamRequest) Reset() {
 	*x = GetCustomDataChannelMessageStreamRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[46]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[44]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2092,7 +1999,7 @@ func (x *GetCustomDataChannelMessageStreamRequest) String() string {
 func (*GetCustomDataChannelMessageStreamRequest) ProtoMessage() {}
 
 func (x *GetCustomDataChannelMessageStreamRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[46]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[44]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2105,7 +2012,7 @@ func (x *GetCustomDataChannelMessageStreamRequest) ProtoReflect() protoreflect.M
 
 // Deprecated: Use GetCustomDataChannelMessageStreamRequest.ProtoReflect.Descriptor instead.
 func (*GetCustomDataChannelMessageStreamRequest) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{46}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *GetCustomDataChannelMessageStreamRequest) GetChannelNameFilter() []string {
@@ -2128,7 +2035,7 @@ type GetCustomDataChannelMessageStreamResponse struct {
 func (x *GetCustomDataChannelMessageStreamResponse) Reset() {
 	*x = GetCustomDataChannelMessageStreamResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_agent_v1_agent_proto_msgTypes[47]
+		mi := &file_protos_agent_v1_agent_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2141,7 +2048,7 @@ func (x *GetCustomDataChannelMessageStreamResponse) String() string {
 func (*GetCustomDataChannelMessageStreamResponse) ProtoMessage() {}
 
 func (x *GetCustomDataChannelMessageStreamResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_agent_v1_agent_proto_msgTypes[47]
+	mi := &file_protos_agent_v1_agent_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2154,7 +2061,7 @@ func (x *GetCustomDataChannelMessageStreamResponse) ProtoReflect() protoreflect.
 
 // Deprecated: Use GetCustomDataChannelMessageStreamResponse.ProtoReflect.Descriptor instead.
 func (*GetCustomDataChannelMessageStreamResponse) Descriptor() ([]byte, []int) {
-	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{47}
+	return file_protos_agent_v1_agent_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *GetCustomDataChannelMessageStreamResponse) GetPeerId() string {
@@ -2195,16 +2102,7 @@ var file_protos_agent_v1_agent_proto_rawDesc = []byte{
 	0x6f, 0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x61, 0x74, 0x68,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1b, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x2f, 0x76, 0x31, 0x2f, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x22, 0x6d, 0x0a, 0x27, 0x50, 0x6f, 0x73, 0x74, 0x47, 0x65, 0x6e, 0x65, 0x72,
-	0x69, 0x63, 0x41, 0x50, 0x49, 0x55, 0x6e, 0x62, 0x75, 0x66, 0x66, 0x65, 0x72, 0x65, 0x64, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1e,
-	0x0a, 0x0a, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x43, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x0d, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x22,
-	0x0a, 0x0c, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x6f, 0x64, 0x79, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x6f,
-	0x64, 0x79, 0x22, 0x1f, 0x0a, 0x1d, 0x50, 0x6f, 0x73, 0x74, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69,
-	0x63, 0x41, 0x50, 0x49, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x14, 0x0a, 0x12, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x44, 0x61, 0x74,
+	0x6f, 0x74, 0x6f, 0x22, 0x14, 0x0a, 0x12, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x44, 0x61, 0x74,
 	0x61, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x12, 0x0a, 0x10, 0x50, 0x6f, 0x73,
 	0x74, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x71, 0x0a,
 	0x0d, 0x50, 0x6f, 0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x14,
@@ -2377,7 +2275,7 @@ var file_protos_agent_v1_agent_proto_rawDesc = []byte{
 	0x6e, 0x6e, 0x65, 0x6c, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x0b, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x18, 0x0a, 0x07,
 	0x70, 0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x07, 0x70,
-	0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x32, 0x9a, 0x15, 0x0a, 0x05, 0x41, 0x67, 0x65, 0x6e, 0x74,
+	0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x32, 0xc0, 0x13, 0x0a, 0x05, 0x41, 0x67, 0x65, 0x6e, 0x74,
 	0x12, 0x43, 0x0a, 0x0a, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x44, 0x61, 0x74, 0x61, 0x12, 0x13,
 	0x2e, 0x76, 0x31, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x70, 0x6f,
 	0x69, 0x6e, 0x74, 0x1a, 0x1c, 0x2e, 0x76, 0x31, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x2e, 0x53,
@@ -2533,24 +2431,10 @@ var file_protos_agent_v1_agent_proto_rawDesc = []byte{
 	0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x29, 0x2e, 0x76,
 	0x31, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x2e, 0x53, 0x65, 0x6e, 0x64, 0x4f, 0x6e, 0x43, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x44, 0x61, 0x74, 0x61, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x61, 0x0a, 0x15, 0x50, 0x6f, 0x73,
-	0x74, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x41, 0x50, 0x49, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x12, 0x1d, 0x2e, 0x76, 0x31, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x47, 0x65,
-	0x6e, 0x65, 0x72, 0x69, 0x63, 0x41, 0x50, 0x49, 0x44, 0x61, 0x74, 0x61, 0x70, 0x6f, 0x69, 0x6e,
-	0x74, 0x1a, 0x27, 0x2e, 0x76, 0x31, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x2e, 0x50, 0x6f, 0x73,
-	0x74, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x41, 0x50, 0x49, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x75, 0x0a, 0x1f,
-	0x50, 0x6f, 0x73, 0x74, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x41, 0x50, 0x49, 0x55, 0x6e,
-	0x62, 0x75, 0x66, 0x66, 0x65, 0x72, 0x65, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x1d, 0x2e, 0x76, 0x31, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72,
-	0x69, 0x63, 0x41, 0x50, 0x49, 0x44, 0x61, 0x74, 0x61, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x1a, 0x31,
-	0x2e, 0x76, 0x31, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x2e, 0x50, 0x6f, 0x73, 0x74, 0x47, 0x65,
-	0x6e, 0x65, 0x72, 0x69, 0x63, 0x41, 0x50, 0x49, 0x55, 0x6e, 0x62, 0x75, 0x66, 0x66, 0x65, 0x72,
-	0x65, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x42, 0x2b, 0x5a, 0x29, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x6e, 0x74, 0x49, 0x4f, 0x2f, 0x67, 0x65, 0x6e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x67, 0x65, 0x6e, 0x74,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x2b, 0x5a, 0x29, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x6e, 0x74, 0x49,
+	0x4f, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x2f, 0x76, 0x31,
+	0x2f, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2565,139 +2449,132 @@ func file_protos_agent_v1_agent_proto_rawDescGZIP() []byte {
 	return file_protos_agent_v1_agent_proto_rawDescData
 }
 
-var file_protos_agent_v1_agent_proto_msgTypes = make([]protoimpl.MessageInfo, 48)
+var file_protos_agent_v1_agent_proto_msgTypes = make([]protoimpl.MessageInfo, 46)
 var file_protos_agent_v1_agent_proto_goTypes = []interface{}{
-	(*PostGenericAPIUnbufferedRequestResponse)(nil),   // 0: v1.agent.PostGenericAPIUnbufferedRequestResponse
-	(*PostGenericAPIRequestResponse)(nil),             // 1: v1.agent.PostGenericAPIRequestResponse
-	(*StreamDataResponse)(nil),                        // 2: v1.agent.StreamDataResponse
-	(*PostDataResponse)(nil),                          // 3: v1.agent.PostDataResponse
-	(*PostDataError)(nil),                             // 4: v1.agent.PostDataError
-	(*PostDataMultiRequest)(nil),                      // 5: v1.agent.PostDataMultiRequest
-	(*PostDataMultiResponse)(nil),                     // 6: v1.agent.PostDataMultiResponse
-	(*PostDataMultiError)(nil),                        // 7: v1.agent.PostDataMultiError
-	(*GetInterventionRequestRequest)(nil),             // 8: v1.agent.GetInterventionRequestRequest
-	(*GetInterventionResponseRequest)(nil),            // 9: v1.agent.GetInterventionResponseRequest
-	(*GetStreamsConfigurationRequest)(nil),            // 10: v1.agent.GetStreamsConfigurationRequest
-	(*GetStreamsConfigurationResponse)(nil),           // 11: v1.agent.GetStreamsConfigurationResponse
-	(*GetApplicationConfigurationRequest)(nil),        // 12: v1.agent.GetApplicationConfigurationRequest
-	(*GetApplicationConfigurationResponse)(nil),       // 13: v1.agent.GetApplicationConfigurationResponse
-	(*GetConfigBlobDataRequest)(nil),                  // 14: v1.agent.GetConfigBlobDataRequest
-	(*GetConfigBlobDataResponse)(nil),                 // 15: v1.agent.GetConfigBlobDataResponse
-	(*GetAgentConfigurationRequest)(nil),              // 16: v1.agent.GetAgentConfigurationRequest
-	(*GetAgentConfigurationResponse)(nil),             // 17: v1.agent.GetAgentConfigurationResponse
-	(*HealthRequest)(nil),                             // 18: v1.agent.HealthRequest
-	(*HealthResponse)(nil),                            // 19: v1.agent.HealthResponse
-	(*GetCommandRequestRequest)(nil),                  // 20: v1.agent.GetCommandRequestRequest
-	(*GetCommandRequestResponse)(nil),                 // 21: v1.agent.GetCommandRequestResponse
-	(*SendCommandResponseRequest)(nil),                // 22: v1.agent.SendCommandResponseRequest
-	(*SendCommandResponseResponse)(nil),               // 23: v1.agent.SendCommandResponseResponse
-	(*GetCommandRequestStreamRequest)(nil),            // 24: v1.agent.GetCommandRequestStreamRequest
-	(*GetCommandRequestStreamResponse)(nil),           // 25: v1.agent.GetCommandRequestStreamResponse
-	(*GetTeleopControlDataStreamRequest)(nil),         // 26: v1.agent.GetTeleopControlDataStreamRequest
-	(*GetTeleopControlDataStreamResponse)(nil),        // 27: v1.agent.GetTeleopControlDataStreamResponse
-	(*GetTeleopHeartbeatStreamRequest)(nil),           // 28: v1.agent.GetTeleopHeartbeatStreamRequest
-	(*GetTeleopHeartbeatStreamResponse)(nil),          // 29: v1.agent.GetTeleopHeartbeatStreamResponse
-	(*GetTelemetryListenerStreamRequest)(nil),         // 30: v1.agent.GetTelemetryListenerStreamRequest
-	(*GetTelemetryListenerStreamResponse)(nil),        // 31: v1.agent.GetTelemetryListenerStreamResponse
-	(*PostTransformFrameResponse)(nil),                // 32: v1.agent.PostTransformFrameResponse
-	(*SetBaseFrameIDRequest)(nil),                     // 33: v1.agent.SetBaseFrameIDRequest
-	(*SetBaseFrameIDResponse)(nil),                    // 34: v1.agent.SetBaseFrameIDResponse
-	(*ClearTransformTreeRequest)(nil),                 // 35: v1.agent.ClearTransformTreeRequest
-	(*ClearTransformTreeResponse)(nil),                // 36: v1.agent.ClearTransformTreeResponse
-	(*CreateEventRequest)(nil),                        // 37: v1.agent.CreateEventRequest
-	(*CreateEventResponse)(nil),                       // 38: v1.agent.CreateEventResponse
-	(*CreateEventError)(nil),                          // 39: v1.agent.CreateEventError
-	(*GetTeleopInfoRequest)(nil),                      // 40: v1.agent.GetTeleopInfoRequest
-	(*GetTeleopInfoResponse)(nil),                     // 41: v1.agent.GetTeleopInfoResponse
-	(*PostLanRtcOfferRequest)(nil),                    // 42: v1.agent.PostLanRtcOfferRequest
-	(*PostLanRtcOfferResponse)(nil),                   // 43: v1.agent.PostLanRtcOfferResponse
-	(*SendOnCustomDataChannelRequest)(nil),            // 44: v1.agent.SendOnCustomDataChannelRequest
-	(*SendOnCustomDataChannelResponse)(nil),           // 45: v1.agent.SendOnCustomDataChannelResponse
-	(*GetCustomDataChannelMessageStreamRequest)(nil),  // 46: v1.agent.GetCustomDataChannelMessageStreamRequest
-	(*GetCustomDataChannelMessageStreamResponse)(nil), // 47: v1.agent.GetCustomDataChannelMessageStreamResponse
-	(*model.Datapoint)(nil),                           // 48: v1.model.Datapoint
-	(*model.StreamConfiguration)(nil),                 // 49: v1.model.StreamConfiguration
-	(*model.ApplicationConfiguration)(nil),            // 50: v1.model.ApplicationConfiguration
-	(*model.BlobData)(nil),                            // 51: v1.model.BlobData
-	(*model.AgentConfiguration)(nil),                  // 52: v1.model.AgentConfiguration
-	(*model.CommandRequest)(nil),                      // 53: v1.model.CommandRequest
-	(*model.CommandResponse)(nil),                     // 54: v1.model.CommandResponse
-	(*model.ControlDatapoint)(nil),                    // 55: v1.model.ControlDatapoint
-	(*model.Event)(nil),                               // 56: v1.model.Event
-	(*model.InterventionRequest)(nil),                 // 57: v1.model.InterventionRequest
-	(*model.TransformFrame)(nil),                      // 58: v1.model.TransformFrame
-	(*model.GenericAPIDatapoint)(nil),                 // 59: v1.model.GenericAPIDatapoint
-	(*model.InterventionResponse)(nil),                // 60: v1.model.InterventionResponse
+	(*StreamDataResponse)(nil),                        // 0: v1.agent.StreamDataResponse
+	(*PostDataResponse)(nil),                          // 1: v1.agent.PostDataResponse
+	(*PostDataError)(nil),                             // 2: v1.agent.PostDataError
+	(*PostDataMultiRequest)(nil),                      // 3: v1.agent.PostDataMultiRequest
+	(*PostDataMultiResponse)(nil),                     // 4: v1.agent.PostDataMultiResponse
+	(*PostDataMultiError)(nil),                        // 5: v1.agent.PostDataMultiError
+	(*GetInterventionRequestRequest)(nil),             // 6: v1.agent.GetInterventionRequestRequest
+	(*GetInterventionResponseRequest)(nil),            // 7: v1.agent.GetInterventionResponseRequest
+	(*GetStreamsConfigurationRequest)(nil),            // 8: v1.agent.GetStreamsConfigurationRequest
+	(*GetStreamsConfigurationResponse)(nil),           // 9: v1.agent.GetStreamsConfigurationResponse
+	(*GetApplicationConfigurationRequest)(nil),        // 10: v1.agent.GetApplicationConfigurationRequest
+	(*GetApplicationConfigurationResponse)(nil),       // 11: v1.agent.GetApplicationConfigurationResponse
+	(*GetConfigBlobDataRequest)(nil),                  // 12: v1.agent.GetConfigBlobDataRequest
+	(*GetConfigBlobDataResponse)(nil),                 // 13: v1.agent.GetConfigBlobDataResponse
+	(*GetAgentConfigurationRequest)(nil),              // 14: v1.agent.GetAgentConfigurationRequest
+	(*GetAgentConfigurationResponse)(nil),             // 15: v1.agent.GetAgentConfigurationResponse
+	(*HealthRequest)(nil),                             // 16: v1.agent.HealthRequest
+	(*HealthResponse)(nil),                            // 17: v1.agent.HealthResponse
+	(*GetCommandRequestRequest)(nil),                  // 18: v1.agent.GetCommandRequestRequest
+	(*GetCommandRequestResponse)(nil),                 // 19: v1.agent.GetCommandRequestResponse
+	(*SendCommandResponseRequest)(nil),                // 20: v1.agent.SendCommandResponseRequest
+	(*SendCommandResponseResponse)(nil),               // 21: v1.agent.SendCommandResponseResponse
+	(*GetCommandRequestStreamRequest)(nil),            // 22: v1.agent.GetCommandRequestStreamRequest
+	(*GetCommandRequestStreamResponse)(nil),           // 23: v1.agent.GetCommandRequestStreamResponse
+	(*GetTeleopControlDataStreamRequest)(nil),         // 24: v1.agent.GetTeleopControlDataStreamRequest
+	(*GetTeleopControlDataStreamResponse)(nil),        // 25: v1.agent.GetTeleopControlDataStreamResponse
+	(*GetTeleopHeartbeatStreamRequest)(nil),           // 26: v1.agent.GetTeleopHeartbeatStreamRequest
+	(*GetTeleopHeartbeatStreamResponse)(nil),          // 27: v1.agent.GetTeleopHeartbeatStreamResponse
+	(*GetTelemetryListenerStreamRequest)(nil),         // 28: v1.agent.GetTelemetryListenerStreamRequest
+	(*GetTelemetryListenerStreamResponse)(nil),        // 29: v1.agent.GetTelemetryListenerStreamResponse
+	(*PostTransformFrameResponse)(nil),                // 30: v1.agent.PostTransformFrameResponse
+	(*SetBaseFrameIDRequest)(nil),                     // 31: v1.agent.SetBaseFrameIDRequest
+	(*SetBaseFrameIDResponse)(nil),                    // 32: v1.agent.SetBaseFrameIDResponse
+	(*ClearTransformTreeRequest)(nil),                 // 33: v1.agent.ClearTransformTreeRequest
+	(*ClearTransformTreeResponse)(nil),                // 34: v1.agent.ClearTransformTreeResponse
+	(*CreateEventRequest)(nil),                        // 35: v1.agent.CreateEventRequest
+	(*CreateEventResponse)(nil),                       // 36: v1.agent.CreateEventResponse
+	(*CreateEventError)(nil),                          // 37: v1.agent.CreateEventError
+	(*GetTeleopInfoRequest)(nil),                      // 38: v1.agent.GetTeleopInfoRequest
+	(*GetTeleopInfoResponse)(nil),                     // 39: v1.agent.GetTeleopInfoResponse
+	(*PostLanRtcOfferRequest)(nil),                    // 40: v1.agent.PostLanRtcOfferRequest
+	(*PostLanRtcOfferResponse)(nil),                   // 41: v1.agent.PostLanRtcOfferResponse
+	(*SendOnCustomDataChannelRequest)(nil),            // 42: v1.agent.SendOnCustomDataChannelRequest
+	(*SendOnCustomDataChannelResponse)(nil),           // 43: v1.agent.SendOnCustomDataChannelResponse
+	(*GetCustomDataChannelMessageStreamRequest)(nil),  // 44: v1.agent.GetCustomDataChannelMessageStreamRequest
+	(*GetCustomDataChannelMessageStreamResponse)(nil), // 45: v1.agent.GetCustomDataChannelMessageStreamResponse
+	(*model.Datapoint)(nil),                           // 46: v1.model.Datapoint
+	(*model.StreamConfiguration)(nil),                 // 47: v1.model.StreamConfiguration
+	(*model.ApplicationConfiguration)(nil),            // 48: v1.model.ApplicationConfiguration
+	(*model.BlobData)(nil),                            // 49: v1.model.BlobData
+	(*model.AgentConfiguration)(nil),                  // 50: v1.model.AgentConfiguration
+	(*model.CommandRequest)(nil),                      // 51: v1.model.CommandRequest
+	(*model.CommandResponse)(nil),                     // 52: v1.model.CommandResponse
+	(*model.ControlDatapoint)(nil),                    // 53: v1.model.ControlDatapoint
+	(*model.Event)(nil),                               // 54: v1.model.Event
+	(*model.InterventionRequest)(nil),                 // 55: v1.model.InterventionRequest
+	(*model.TransformFrame)(nil),                      // 56: v1.model.TransformFrame
+	(*model.InterventionResponse)(nil),                // 57: v1.model.InterventionResponse
 }
 var file_protos_agent_v1_agent_proto_depIdxs = []int32{
-	48, // 0: v1.agent.PostDataMultiRequest.datapoints:type_name -> v1.model.Datapoint
-	4,  // 1: v1.agent.PostDataMultiError.errors:type_name -> v1.agent.PostDataError
-	49, // 2: v1.agent.GetStreamsConfigurationResponse.streams:type_name -> v1.model.StreamConfiguration
-	50, // 3: v1.agent.GetApplicationConfigurationResponse.configuration:type_name -> v1.model.ApplicationConfiguration
-	51, // 4: v1.agent.GetConfigBlobDataResponse.blob_data:type_name -> v1.model.BlobData
-	52, // 5: v1.agent.GetAgentConfigurationResponse.configuration:type_name -> v1.model.AgentConfiguration
-	53, // 6: v1.agent.GetCommandRequestResponse.request:type_name -> v1.model.CommandRequest
-	54, // 7: v1.agent.SendCommandResponseRequest.response:type_name -> v1.model.CommandResponse
-	53, // 8: v1.agent.GetCommandRequestStreamResponse.request:type_name -> v1.model.CommandRequest
-	55, // 9: v1.agent.GetTeleopControlDataStreamResponse.control_datapoint:type_name -> v1.model.ControlDatapoint
-	48, // 10: v1.agent.GetTelemetryListenerStreamResponse.datapoint:type_name -> v1.model.Datapoint
-	56, // 11: v1.agent.CreateEventRequest.event:type_name -> v1.model.Event
-	48, // 12: v1.agent.Agent.StreamData:input_type -> v1.model.Datapoint
-	48, // 13: v1.agent.Agent.PostData:input_type -> v1.model.Datapoint
-	5,  // 14: v1.agent.Agent.PostDataMulti:input_type -> v1.agent.PostDataMultiRequest
-	26, // 15: v1.agent.Agent.GetTeleopControlDataStream:input_type -> v1.agent.GetTeleopControlDataStreamRequest
-	28, // 16: v1.agent.Agent.GetTeleopHeartbeatStream:input_type -> v1.agent.GetTeleopHeartbeatStreamRequest
-	30, // 17: v1.agent.Agent.GetTelemetryListenerStream:input_type -> v1.agent.GetTelemetryListenerStreamRequest
-	46, // 18: v1.agent.Agent.GetCustomDataChannelMessageStream:input_type -> v1.agent.GetCustomDataChannelMessageStreamRequest
-	37, // 19: v1.agent.Agent.CreateEvent:input_type -> v1.agent.CreateEventRequest
-	57, // 20: v1.agent.Agent.CreateInterventionRequest:input_type -> v1.model.InterventionRequest
-	8,  // 21: v1.agent.Agent.GetInterventionRequest:input_type -> v1.agent.GetInterventionRequestRequest
-	9,  // 22: v1.agent.Agent.GetInterventionResponse:input_type -> v1.agent.GetInterventionResponseRequest
-	10, // 23: v1.agent.Agent.GetStreamsConfiguration:input_type -> v1.agent.GetStreamsConfigurationRequest
-	12, // 24: v1.agent.Agent.GetApplicationConfiguration:input_type -> v1.agent.GetApplicationConfigurationRequest
-	14, // 25: v1.agent.Agent.GetConfigBlobData:input_type -> v1.agent.GetConfigBlobDataRequest
-	16, // 26: v1.agent.Agent.GetAgentConfiguration:input_type -> v1.agent.GetAgentConfigurationRequest
-	18, // 27: v1.agent.Agent.Health:input_type -> v1.agent.HealthRequest
-	20, // 28: v1.agent.Agent.GetCommandRequest:input_type -> v1.agent.GetCommandRequestRequest
-	24, // 29: v1.agent.Agent.GetCommandRequestStream:input_type -> v1.agent.GetCommandRequestStreamRequest
-	22, // 30: v1.agent.Agent.SendCommandResponse:input_type -> v1.agent.SendCommandResponseRequest
-	58, // 31: v1.agent.Agent.PostTransformFrame:input_type -> v1.model.TransformFrame
-	33, // 32: v1.agent.Agent.SetBaseFrameID:input_type -> v1.agent.SetBaseFrameIDRequest
-	35, // 33: v1.agent.Agent.ClearTransformTree:input_type -> v1.agent.ClearTransformTreeRequest
-	40, // 34: v1.agent.Agent.GetTeleopInfo:input_type -> v1.agent.GetTeleopInfoRequest
-	42, // 35: v1.agent.Agent.PostLanRtcOffer:input_type -> v1.agent.PostLanRtcOfferRequest
-	44, // 36: v1.agent.Agent.SendOnCustomDataChannel:input_type -> v1.agent.SendOnCustomDataChannelRequest
-	59, // 37: v1.agent.Agent.PostGenericAPIRequest:input_type -> v1.model.GenericAPIDatapoint
-	59, // 38: v1.agent.Agent.PostGenericAPIUnbufferedRequest:input_type -> v1.model.GenericAPIDatapoint
-	2,  // 39: v1.agent.Agent.StreamData:output_type -> v1.agent.StreamDataResponse
-	3,  // 40: v1.agent.Agent.PostData:output_type -> v1.agent.PostDataResponse
-	6,  // 41: v1.agent.Agent.PostDataMulti:output_type -> v1.agent.PostDataMultiResponse
-	27, // 42: v1.agent.Agent.GetTeleopControlDataStream:output_type -> v1.agent.GetTeleopControlDataStreamResponse
-	29, // 43: v1.agent.Agent.GetTeleopHeartbeatStream:output_type -> v1.agent.GetTeleopHeartbeatStreamResponse
-	31, // 44: v1.agent.Agent.GetTelemetryListenerStream:output_type -> v1.agent.GetTelemetryListenerStreamResponse
-	47, // 45: v1.agent.Agent.GetCustomDataChannelMessageStream:output_type -> v1.agent.GetCustomDataChannelMessageStreamResponse
-	38, // 46: v1.agent.Agent.CreateEvent:output_type -> v1.agent.CreateEventResponse
-	57, // 47: v1.agent.Agent.CreateInterventionRequest:output_type -> v1.model.InterventionRequest
-	57, // 48: v1.agent.Agent.GetInterventionRequest:output_type -> v1.model.InterventionRequest
-	60, // 49: v1.agent.Agent.GetInterventionResponse:output_type -> v1.model.InterventionResponse
-	11, // 50: v1.agent.Agent.GetStreamsConfiguration:output_type -> v1.agent.GetStreamsConfigurationResponse
-	13, // 51: v1.agent.Agent.GetApplicationConfiguration:output_type -> v1.agent.GetApplicationConfigurationResponse
-	15, // 52: v1.agent.Agent.GetConfigBlobData:output_type -> v1.agent.GetConfigBlobDataResponse
-	17, // 53: v1.agent.Agent.GetAgentConfiguration:output_type -> v1.agent.GetAgentConfigurationResponse
-	19, // 54: v1.agent.Agent.Health:output_type -> v1.agent.HealthResponse
-	21, // 55: v1.agent.Agent.GetCommandRequest:output_type -> v1.agent.GetCommandRequestResponse
-	25, // 56: v1.agent.Agent.GetCommandRequestStream:output_type -> v1.agent.GetCommandRequestStreamResponse
-	23, // 57: v1.agent.Agent.SendCommandResponse:output_type -> v1.agent.SendCommandResponseResponse
-	32, // 58: v1.agent.Agent.PostTransformFrame:output_type -> v1.agent.PostTransformFrameResponse
-	34, // 59: v1.agent.Agent.SetBaseFrameID:output_type -> v1.agent.SetBaseFrameIDResponse
-	36, // 60: v1.agent.Agent.ClearTransformTree:output_type -> v1.agent.ClearTransformTreeResponse
-	41, // 61: v1.agent.Agent.GetTeleopInfo:output_type -> v1.agent.GetTeleopInfoResponse
-	43, // 62: v1.agent.Agent.PostLanRtcOffer:output_type -> v1.agent.PostLanRtcOfferResponse
-	45, // 63: v1.agent.Agent.SendOnCustomDataChannel:output_type -> v1.agent.SendOnCustomDataChannelResponse
-	1,  // 64: v1.agent.Agent.PostGenericAPIRequest:output_type -> v1.agent.PostGenericAPIRequestResponse
-	0,  // 65: v1.agent.Agent.PostGenericAPIUnbufferedRequest:output_type -> v1.agent.PostGenericAPIUnbufferedRequestResponse
-	39, // [39:66] is the sub-list for method output_type
-	12, // [12:39] is the sub-list for method input_type
+	46, // 0: v1.agent.PostDataMultiRequest.datapoints:type_name -> v1.model.Datapoint
+	2,  // 1: v1.agent.PostDataMultiError.errors:type_name -> v1.agent.PostDataError
+	47, // 2: v1.agent.GetStreamsConfigurationResponse.streams:type_name -> v1.model.StreamConfiguration
+	48, // 3: v1.agent.GetApplicationConfigurationResponse.configuration:type_name -> v1.model.ApplicationConfiguration
+	49, // 4: v1.agent.GetConfigBlobDataResponse.blob_data:type_name -> v1.model.BlobData
+	50, // 5: v1.agent.GetAgentConfigurationResponse.configuration:type_name -> v1.model.AgentConfiguration
+	51, // 6: v1.agent.GetCommandRequestResponse.request:type_name -> v1.model.CommandRequest
+	52, // 7: v1.agent.SendCommandResponseRequest.response:type_name -> v1.model.CommandResponse
+	51, // 8: v1.agent.GetCommandRequestStreamResponse.request:type_name -> v1.model.CommandRequest
+	53, // 9: v1.agent.GetTeleopControlDataStreamResponse.control_datapoint:type_name -> v1.model.ControlDatapoint
+	46, // 10: v1.agent.GetTelemetryListenerStreamResponse.datapoint:type_name -> v1.model.Datapoint
+	54, // 11: v1.agent.CreateEventRequest.event:type_name -> v1.model.Event
+	46, // 12: v1.agent.Agent.StreamData:input_type -> v1.model.Datapoint
+	46, // 13: v1.agent.Agent.PostData:input_type -> v1.model.Datapoint
+	3,  // 14: v1.agent.Agent.PostDataMulti:input_type -> v1.agent.PostDataMultiRequest
+	24, // 15: v1.agent.Agent.GetTeleopControlDataStream:input_type -> v1.agent.GetTeleopControlDataStreamRequest
+	26, // 16: v1.agent.Agent.GetTeleopHeartbeatStream:input_type -> v1.agent.GetTeleopHeartbeatStreamRequest
+	28, // 17: v1.agent.Agent.GetTelemetryListenerStream:input_type -> v1.agent.GetTelemetryListenerStreamRequest
+	44, // 18: v1.agent.Agent.GetCustomDataChannelMessageStream:input_type -> v1.agent.GetCustomDataChannelMessageStreamRequest
+	35, // 19: v1.agent.Agent.CreateEvent:input_type -> v1.agent.CreateEventRequest
+	55, // 20: v1.agent.Agent.CreateInterventionRequest:input_type -> v1.model.InterventionRequest
+	6,  // 21: v1.agent.Agent.GetInterventionRequest:input_type -> v1.agent.GetInterventionRequestRequest
+	7,  // 22: v1.agent.Agent.GetInterventionResponse:input_type -> v1.agent.GetInterventionResponseRequest
+	8,  // 23: v1.agent.Agent.GetStreamsConfiguration:input_type -> v1.agent.GetStreamsConfigurationRequest
+	10, // 24: v1.agent.Agent.GetApplicationConfiguration:input_type -> v1.agent.GetApplicationConfigurationRequest
+	12, // 25: v1.agent.Agent.GetConfigBlobData:input_type -> v1.agent.GetConfigBlobDataRequest
+	14, // 26: v1.agent.Agent.GetAgentConfiguration:input_type -> v1.agent.GetAgentConfigurationRequest
+	16, // 27: v1.agent.Agent.Health:input_type -> v1.agent.HealthRequest
+	18, // 28: v1.agent.Agent.GetCommandRequest:input_type -> v1.agent.GetCommandRequestRequest
+	22, // 29: v1.agent.Agent.GetCommandRequestStream:input_type -> v1.agent.GetCommandRequestStreamRequest
+	20, // 30: v1.agent.Agent.SendCommandResponse:input_type -> v1.agent.SendCommandResponseRequest
+	56, // 31: v1.agent.Agent.PostTransformFrame:input_type -> v1.model.TransformFrame
+	31, // 32: v1.agent.Agent.SetBaseFrameID:input_type -> v1.agent.SetBaseFrameIDRequest
+	33, // 33: v1.agent.Agent.ClearTransformTree:input_type -> v1.agent.ClearTransformTreeRequest
+	38, // 34: v1.agent.Agent.GetTeleopInfo:input_type -> v1.agent.GetTeleopInfoRequest
+	40, // 35: v1.agent.Agent.PostLanRtcOffer:input_type -> v1.agent.PostLanRtcOfferRequest
+	42, // 36: v1.agent.Agent.SendOnCustomDataChannel:input_type -> v1.agent.SendOnCustomDataChannelRequest
+	0,  // 37: v1.agent.Agent.StreamData:output_type -> v1.agent.StreamDataResponse
+	1,  // 38: v1.agent.Agent.PostData:output_type -> v1.agent.PostDataResponse
+	4,  // 39: v1.agent.Agent.PostDataMulti:output_type -> v1.agent.PostDataMultiResponse
+	25, // 40: v1.agent.Agent.GetTeleopControlDataStream:output_type -> v1.agent.GetTeleopControlDataStreamResponse
+	27, // 41: v1.agent.Agent.GetTeleopHeartbeatStream:output_type -> v1.agent.GetTeleopHeartbeatStreamResponse
+	29, // 42: v1.agent.Agent.GetTelemetryListenerStream:output_type -> v1.agent.GetTelemetryListenerStreamResponse
+	45, // 43: v1.agent.Agent.GetCustomDataChannelMessageStream:output_type -> v1.agent.GetCustomDataChannelMessageStreamResponse
+	36, // 44: v1.agent.Agent.CreateEvent:output_type -> v1.agent.CreateEventResponse
+	55, // 45: v1.agent.Agent.CreateInterventionRequest:output_type -> v1.model.InterventionRequest
+	55, // 46: v1.agent.Agent.GetInterventionRequest:output_type -> v1.model.InterventionRequest
+	57, // 47: v1.agent.Agent.GetInterventionResponse:output_type -> v1.model.InterventionResponse
+	9,  // 48: v1.agent.Agent.GetStreamsConfiguration:output_type -> v1.agent.GetStreamsConfigurationResponse
+	11, // 49: v1.agent.Agent.GetApplicationConfiguration:output_type -> v1.agent.GetApplicationConfigurationResponse
+	13, // 50: v1.agent.Agent.GetConfigBlobData:output_type -> v1.agent.GetConfigBlobDataResponse
+	15, // 51: v1.agent.Agent.GetAgentConfiguration:output_type -> v1.agent.GetAgentConfigurationResponse
+	17, // 52: v1.agent.Agent.Health:output_type -> v1.agent.HealthResponse
+	19, // 53: v1.agent.Agent.GetCommandRequest:output_type -> v1.agent.GetCommandRequestResponse
+	23, // 54: v1.agent.Agent.GetCommandRequestStream:output_type -> v1.agent.GetCommandRequestStreamResponse
+	21, // 55: v1.agent.Agent.SendCommandResponse:output_type -> v1.agent.SendCommandResponseResponse
+	30, // 56: v1.agent.Agent.PostTransformFrame:output_type -> v1.agent.PostTransformFrameResponse
+	32, // 57: v1.agent.Agent.SetBaseFrameID:output_type -> v1.agent.SetBaseFrameIDResponse
+	34, // 58: v1.agent.Agent.ClearTransformTree:output_type -> v1.agent.ClearTransformTreeResponse
+	39, // 59: v1.agent.Agent.GetTeleopInfo:output_type -> v1.agent.GetTeleopInfoResponse
+	41, // 60: v1.agent.Agent.PostLanRtcOffer:output_type -> v1.agent.PostLanRtcOfferResponse
+	43, // 61: v1.agent.Agent.SendOnCustomDataChannel:output_type -> v1.agent.SendOnCustomDataChannelResponse
+	37, // [37:62] is the sub-list for method output_type
+	12, // [12:37] is the sub-list for method input_type
 	12, // [12:12] is the sub-list for extension type_name
 	12, // [12:12] is the sub-list for extension extendee
 	0,  // [0:12] is the sub-list for field type_name
@@ -2710,30 +2587,6 @@ func file_protos_agent_v1_agent_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_protos_agent_v1_agent_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PostGenericAPIUnbufferedRequestResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_protos_agent_v1_agent_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PostGenericAPIRequestResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_protos_agent_v1_agent_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StreamDataResponse); i {
 			case 0:
 				return &v.state
@@ -2745,7 +2598,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PostDataResponse); i {
 			case 0:
 				return &v.state
@@ -2757,7 +2610,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PostDataError); i {
 			case 0:
 				return &v.state
@@ -2769,7 +2622,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PostDataMultiRequest); i {
 			case 0:
 				return &v.state
@@ -2781,7 +2634,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PostDataMultiResponse); i {
 			case 0:
 				return &v.state
@@ -2793,7 +2646,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PostDataMultiError); i {
 			case 0:
 				return &v.state
@@ -2805,7 +2658,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetInterventionRequestRequest); i {
 			case 0:
 				return &v.state
@@ -2817,7 +2670,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetInterventionResponseRequest); i {
 			case 0:
 				return &v.state
@@ -2829,7 +2682,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetStreamsConfigurationRequest); i {
 			case 0:
 				return &v.state
@@ -2841,7 +2694,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetStreamsConfigurationResponse); i {
 			case 0:
 				return &v.state
@@ -2853,7 +2706,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetApplicationConfigurationRequest); i {
 			case 0:
 				return &v.state
@@ -2865,7 +2718,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetApplicationConfigurationResponse); i {
 			case 0:
 				return &v.state
@@ -2877,7 +2730,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetConfigBlobDataRequest); i {
 			case 0:
 				return &v.state
@@ -2889,7 +2742,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetConfigBlobDataResponse); i {
 			case 0:
 				return &v.state
@@ -2901,7 +2754,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAgentConfigurationRequest); i {
 			case 0:
 				return &v.state
@@ -2913,7 +2766,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAgentConfigurationResponse); i {
 			case 0:
 				return &v.state
@@ -2925,7 +2778,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HealthRequest); i {
 			case 0:
 				return &v.state
@@ -2937,7 +2790,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HealthResponse); i {
 			case 0:
 				return &v.state
@@ -2949,7 +2802,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommandRequestRequest); i {
 			case 0:
 				return &v.state
@@ -2961,7 +2814,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommandRequestResponse); i {
 			case 0:
 				return &v.state
@@ -2973,7 +2826,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SendCommandResponseRequest); i {
 			case 0:
 				return &v.state
@@ -2985,7 +2838,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SendCommandResponseResponse); i {
 			case 0:
 				return &v.state
@@ -2997,7 +2850,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommandRequestStreamRequest); i {
 			case 0:
 				return &v.state
@@ -3009,7 +2862,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommandRequestStreamResponse); i {
 			case 0:
 				return &v.state
@@ -3021,7 +2874,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTeleopControlDataStreamRequest); i {
 			case 0:
 				return &v.state
@@ -3033,7 +2886,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTeleopControlDataStreamResponse); i {
 			case 0:
 				return &v.state
@@ -3045,7 +2898,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTeleopHeartbeatStreamRequest); i {
 			case 0:
 				return &v.state
@@ -3057,7 +2910,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTeleopHeartbeatStreamResponse); i {
 			case 0:
 				return &v.state
@@ -3069,7 +2922,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTelemetryListenerStreamRequest); i {
 			case 0:
 				return &v.state
@@ -3081,7 +2934,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTelemetryListenerStreamResponse); i {
 			case 0:
 				return &v.state
@@ -3093,7 +2946,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PostTransformFrameResponse); i {
 			case 0:
 				return &v.state
@@ -3105,7 +2958,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SetBaseFrameIDRequest); i {
 			case 0:
 				return &v.state
@@ -3117,7 +2970,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SetBaseFrameIDResponse); i {
 			case 0:
 				return &v.state
@@ -3129,7 +2982,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ClearTransformTreeRequest); i {
 			case 0:
 				return &v.state
@@ -3141,7 +2994,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ClearTransformTreeResponse); i {
 			case 0:
 				return &v.state
@@ -3153,7 +3006,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateEventRequest); i {
 			case 0:
 				return &v.state
@@ -3165,7 +3018,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateEventResponse); i {
 			case 0:
 				return &v.state
@@ -3177,7 +3030,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateEventError); i {
 			case 0:
 				return &v.state
@@ -3189,7 +3042,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTeleopInfoRequest); i {
 			case 0:
 				return &v.state
@@ -3201,7 +3054,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTeleopInfoResponse); i {
 			case 0:
 				return &v.state
@@ -3213,7 +3066,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PostLanRtcOfferRequest); i {
 			case 0:
 				return &v.state
@@ -3225,7 +3078,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PostLanRtcOfferResponse); i {
 			case 0:
 				return &v.state
@@ -3237,7 +3090,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SendOnCustomDataChannelRequest); i {
 			case 0:
 				return &v.state
@@ -3249,7 +3102,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SendOnCustomDataChannelResponse); i {
 			case 0:
 				return &v.state
@@ -3261,7 +3114,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCustomDataChannelMessageStreamRequest); i {
 			case 0:
 				return &v.state
@@ -3273,7 +3126,7 @@ func file_protos_agent_v1_agent_proto_init() {
 				return nil
 			}
 		}
-		file_protos_agent_v1_agent_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_agent_v1_agent_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCustomDataChannelMessageStreamResponse); i {
 			case 0:
 				return &v.state
@@ -3292,7 +3145,7 @@ func file_protos_agent_v1_agent_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_protos_agent_v1_agent_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   48,
+			NumMessages:   46,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
