@@ -52,7 +52,7 @@ struct TableStruct_protos_2fagent_2fv1_2fagent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[46]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[48]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -169,6 +169,12 @@ extern PostDataMultiResponseDefaultTypeInternal _PostDataMultiResponse_default_i
 class PostDataResponse;
 struct PostDataResponseDefaultTypeInternal;
 extern PostDataResponseDefaultTypeInternal _PostDataResponse_default_instance_;
+class PostGenericAPIRequestResponse;
+struct PostGenericAPIRequestResponseDefaultTypeInternal;
+extern PostGenericAPIRequestResponseDefaultTypeInternal _PostGenericAPIRequestResponse_default_instance_;
+class PostGenericAPIUnbufferedRequestResponse;
+struct PostGenericAPIUnbufferedRequestResponseDefaultTypeInternal;
+extern PostGenericAPIUnbufferedRequestResponseDefaultTypeInternal _PostGenericAPIUnbufferedRequestResponse_default_instance_;
 class PostLanRtcOfferRequest;
 struct PostLanRtcOfferRequestDefaultTypeInternal;
 extern PostLanRtcOfferRequestDefaultTypeInternal _PostLanRtcOfferRequest_default_instance_;
@@ -238,6 +244,8 @@ template<> ::v1::agent::PostDataMultiError* Arena::CreateMaybeMessage<::v1::agen
 template<> ::v1::agent::PostDataMultiRequest* Arena::CreateMaybeMessage<::v1::agent::PostDataMultiRequest>(Arena*);
 template<> ::v1::agent::PostDataMultiResponse* Arena::CreateMaybeMessage<::v1::agent::PostDataMultiResponse>(Arena*);
 template<> ::v1::agent::PostDataResponse* Arena::CreateMaybeMessage<::v1::agent::PostDataResponse>(Arena*);
+template<> ::v1::agent::PostGenericAPIRequestResponse* Arena::CreateMaybeMessage<::v1::agent::PostGenericAPIRequestResponse>(Arena*);
+template<> ::v1::agent::PostGenericAPIUnbufferedRequestResponse* Arena::CreateMaybeMessage<::v1::agent::PostGenericAPIUnbufferedRequestResponse>(Arena*);
 template<> ::v1::agent::PostLanRtcOfferRequest* Arena::CreateMaybeMessage<::v1::agent::PostLanRtcOfferRequest>(Arena*);
 template<> ::v1::agent::PostLanRtcOfferResponse* Arena::CreateMaybeMessage<::v1::agent::PostLanRtcOfferResponse>(Arena*);
 template<> ::v1::agent::PostTransformFrameResponse* Arena::CreateMaybeMessage<::v1::agent::PostTransformFrameResponse>(Arena*);
@@ -253,6 +261,273 @@ namespace v1 {
 namespace agent {
 
 // ===================================================================
+
+class PostGenericAPIUnbufferedRequestResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.PostGenericAPIUnbufferedRequestResponse) */ {
+ public:
+  inline PostGenericAPIUnbufferedRequestResponse() : PostGenericAPIUnbufferedRequestResponse(nullptr) {}
+  ~PostGenericAPIUnbufferedRequestResponse() override;
+  explicit constexpr PostGenericAPIUnbufferedRequestResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  PostGenericAPIUnbufferedRequestResponse(const PostGenericAPIUnbufferedRequestResponse& from);
+  PostGenericAPIUnbufferedRequestResponse(PostGenericAPIUnbufferedRequestResponse&& from) noexcept
+    : PostGenericAPIUnbufferedRequestResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline PostGenericAPIUnbufferedRequestResponse& operator=(const PostGenericAPIUnbufferedRequestResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PostGenericAPIUnbufferedRequestResponse& operator=(PostGenericAPIUnbufferedRequestResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const PostGenericAPIUnbufferedRequestResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const PostGenericAPIUnbufferedRequestResponse* internal_default_instance() {
+    return reinterpret_cast<const PostGenericAPIUnbufferedRequestResponse*>(
+               &_PostGenericAPIUnbufferedRequestResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(PostGenericAPIUnbufferedRequestResponse& a, PostGenericAPIUnbufferedRequestResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PostGenericAPIUnbufferedRequestResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PostGenericAPIUnbufferedRequestResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PostGenericAPIUnbufferedRequestResponse* New() const final {
+    return new PostGenericAPIUnbufferedRequestResponse();
+  }
+
+  PostGenericAPIUnbufferedRequestResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PostGenericAPIUnbufferedRequestResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PostGenericAPIUnbufferedRequestResponse& from);
+  void MergeFrom(const PostGenericAPIUnbufferedRequestResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PostGenericAPIUnbufferedRequestResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.PostGenericAPIUnbufferedRequestResponse";
+  }
+  protected:
+  explicit PostGenericAPIUnbufferedRequestResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kResponseBodyFieldNumber = 2,
+    kStatusCodeFieldNumber = 1,
+  };
+  // string responseBody = 2 [json_name = "responseBody"];
+  void clear_responsebody();
+  const std::string& responsebody() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_responsebody(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_responsebody();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_responsebody();
+  void set_allocated_responsebody(std::string* responsebody);
+  private:
+  const std::string& _internal_responsebody() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_responsebody(const std::string& value);
+  std::string* _internal_mutable_responsebody();
+  public:
+
+  // uint32 statusCode = 1 [json_name = "statusCode"];
+  void clear_statuscode();
+  ::PROTOBUF_NAMESPACE_ID::uint32 statuscode() const;
+  void set_statuscode(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_statuscode() const;
+  void _internal_set_statuscode(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.agent.PostGenericAPIUnbufferedRequestResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr responsebody_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 statuscode_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PostGenericAPIRequestResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.PostGenericAPIRequestResponse) */ {
+ public:
+  inline PostGenericAPIRequestResponse() : PostGenericAPIRequestResponse(nullptr) {}
+  ~PostGenericAPIRequestResponse() override;
+  explicit constexpr PostGenericAPIRequestResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  PostGenericAPIRequestResponse(const PostGenericAPIRequestResponse& from);
+  PostGenericAPIRequestResponse(PostGenericAPIRequestResponse&& from) noexcept
+    : PostGenericAPIRequestResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline PostGenericAPIRequestResponse& operator=(const PostGenericAPIRequestResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PostGenericAPIRequestResponse& operator=(PostGenericAPIRequestResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const PostGenericAPIRequestResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const PostGenericAPIRequestResponse* internal_default_instance() {
+    return reinterpret_cast<const PostGenericAPIRequestResponse*>(
+               &_PostGenericAPIRequestResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(PostGenericAPIRequestResponse& a, PostGenericAPIRequestResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PostGenericAPIRequestResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PostGenericAPIRequestResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PostGenericAPIRequestResponse* New() const final {
+    return new PostGenericAPIRequestResponse();
+  }
+
+  PostGenericAPIRequestResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PostGenericAPIRequestResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PostGenericAPIRequestResponse& from);
+  void MergeFrom(const PostGenericAPIRequestResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PostGenericAPIRequestResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.PostGenericAPIRequestResponse";
+  }
+  protected:
+  explicit PostGenericAPIRequestResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:v1.agent.PostGenericAPIRequestResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
 
 class StreamDataResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.StreamDataResponse) */ {
@@ -298,7 +573,7 @@ class StreamDataResponse final :
                &_StreamDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(StreamDataResponse& a, StreamDataResponse& b) {
     a.Swap(&b);
@@ -417,7 +692,7 @@ class PostDataResponse final :
                &_PostDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(PostDataResponse& a, PostDataResponse& b) {
     a.Swap(&b);
@@ -536,7 +811,7 @@ class PostDataError final :
                &_PostDataError_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(PostDataError& a, PostDataError& b) {
     a.Swap(&b);
@@ -706,7 +981,7 @@ class PostDataMultiRequest final :
                &_PostDataMultiRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(PostDataMultiRequest& a, PostDataMultiRequest& b) {
     a.Swap(&b);
@@ -847,7 +1122,7 @@ class PostDataMultiResponse final :
                &_PostDataMultiResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(PostDataMultiResponse& a, PostDataMultiResponse& b) {
     a.Swap(&b);
@@ -966,7 +1241,7 @@ class PostDataMultiError final :
                &_PostDataMultiError_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(PostDataMultiError& a, PostDataMultiError& b) {
     a.Swap(&b);
@@ -1107,7 +1382,7 @@ class GetInterventionRequestRequest final :
                &_GetInterventionRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(GetInterventionRequestRequest& a, GetInterventionRequestRequest& b) {
     a.Swap(&b);
@@ -1244,7 +1519,7 @@ class GetInterventionResponseRequest final :
                &_GetInterventionResponseRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(GetInterventionResponseRequest& a, GetInterventionResponseRequest& b) {
     a.Swap(&b);
@@ -1381,7 +1656,7 @@ class GetStreamsConfigurationRequest final :
                &_GetStreamsConfigurationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(GetStreamsConfigurationRequest& a, GetStreamsConfigurationRequest& b) {
     a.Swap(&b);
@@ -1500,7 +1775,7 @@ class GetStreamsConfigurationResponse final :
                &_GetStreamsConfigurationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(GetStreamsConfigurationResponse& a, GetStreamsConfigurationResponse& b) {
     a.Swap(&b);
@@ -1641,7 +1916,7 @@ class GetApplicationConfigurationRequest final :
                &_GetApplicationConfigurationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(GetApplicationConfigurationRequest& a, GetApplicationConfigurationRequest& b) {
     a.Swap(&b);
@@ -1760,7 +2035,7 @@ class GetApplicationConfigurationResponse final :
                &_GetApplicationConfigurationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(GetApplicationConfigurationResponse& a, GetApplicationConfigurationResponse& b) {
     a.Swap(&b);
@@ -1901,7 +2176,7 @@ class GetConfigBlobDataRequest final :
                &_GetConfigBlobDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(GetConfigBlobDataRequest& a, GetConfigBlobDataRequest& b) {
     a.Swap(&b);
@@ -2020,7 +2295,7 @@ class GetConfigBlobDataResponse final :
                &_GetConfigBlobDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(GetConfigBlobDataResponse& a, GetConfigBlobDataResponse& b) {
     a.Swap(&b);
@@ -2161,7 +2436,7 @@ class GetAgentConfigurationRequest final :
                &_GetAgentConfigurationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(GetAgentConfigurationRequest& a, GetAgentConfigurationRequest& b) {
     a.Swap(&b);
@@ -2280,7 +2555,7 @@ class GetAgentConfigurationResponse final :
                &_GetAgentConfigurationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(GetAgentConfigurationResponse& a, GetAgentConfigurationResponse& b) {
     a.Swap(&b);
@@ -2421,7 +2696,7 @@ class HealthRequest final :
                &_HealthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(HealthRequest& a, HealthRequest& b) {
     a.Swap(&b);
@@ -2540,7 +2815,7 @@ class HealthResponse final :
                &_HealthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(HealthResponse& a, HealthResponse& b) {
     a.Swap(&b);
@@ -2659,7 +2934,7 @@ class GetCommandRequestRequest final :
                &_GetCommandRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(GetCommandRequestRequest& a, GetCommandRequestRequest& b) {
     a.Swap(&b);
@@ -2806,7 +3081,7 @@ class GetCommandRequestResponse final :
                &_GetCommandRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(GetCommandRequestResponse& a, GetCommandRequestResponse& b) {
     a.Swap(&b);
@@ -2947,7 +3222,7 @@ class SendCommandResponseRequest final :
                &_SendCommandResponseRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(SendCommandResponseRequest& a, SendCommandResponseRequest& b) {
     a.Swap(&b);
@@ -3088,7 +3363,7 @@ class SendCommandResponseResponse final :
                &_SendCommandResponseResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(SendCommandResponseResponse& a, SendCommandResponseResponse& b) {
     a.Swap(&b);
@@ -3207,7 +3482,7 @@ class GetCommandRequestStreamRequest final :
                &_GetCommandRequestStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(GetCommandRequestStreamRequest& a, GetCommandRequestStreamRequest& b) {
     a.Swap(&b);
@@ -3354,7 +3629,7 @@ class GetCommandRequestStreamResponse final :
                &_GetCommandRequestStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(GetCommandRequestStreamResponse& a, GetCommandRequestStreamResponse& b) {
     a.Swap(&b);
@@ -3495,7 +3770,7 @@ class GetTeleopControlDataStreamRequest final :
                &_GetTeleopControlDataStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(GetTeleopControlDataStreamRequest& a, GetTeleopControlDataStreamRequest& b) {
     a.Swap(&b);
@@ -3642,7 +3917,7 @@ class GetTeleopControlDataStreamResponse final :
                &_GetTeleopControlDataStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(GetTeleopControlDataStreamResponse& a, GetTeleopControlDataStreamResponse& b) {
     a.Swap(&b);
@@ -3783,7 +4058,7 @@ class GetTeleopHeartbeatStreamRequest final :
                &_GetTeleopHeartbeatStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(GetTeleopHeartbeatStreamRequest& a, GetTeleopHeartbeatStreamRequest& b) {
     a.Swap(&b);
@@ -3902,7 +4177,7 @@ class GetTeleopHeartbeatStreamResponse final :
                &_GetTeleopHeartbeatStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(GetTeleopHeartbeatStreamResponse& a, GetTeleopHeartbeatStreamResponse& b) {
     a.Swap(&b);
@@ -4066,7 +4341,7 @@ class GetTelemetryListenerStreamRequest final :
                &_GetTelemetryListenerStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(GetTelemetryListenerStreamRequest& a, GetTelemetryListenerStreamRequest& b) {
     a.Swap(&b);
@@ -4213,7 +4488,7 @@ class GetTelemetryListenerStreamResponse final :
                &_GetTelemetryListenerStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(GetTelemetryListenerStreamResponse& a, GetTelemetryListenerStreamResponse& b) {
     a.Swap(&b);
@@ -4354,7 +4629,7 @@ class PostTransformFrameResponse final :
                &_PostTransformFrameResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(PostTransformFrameResponse& a, PostTransformFrameResponse& b) {
     a.Swap(&b);
@@ -4473,7 +4748,7 @@ class SetBaseFrameIDRequest final :
                &_SetBaseFrameIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(SetBaseFrameIDRequest& a, SetBaseFrameIDRequest& b) {
     a.Swap(&b);
@@ -4610,7 +4885,7 @@ class SetBaseFrameIDResponse final :
                &_SetBaseFrameIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(SetBaseFrameIDResponse& a, SetBaseFrameIDResponse& b) {
     a.Swap(&b);
@@ -4729,7 +5004,7 @@ class ClearTransformTreeRequest final :
                &_ClearTransformTreeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(ClearTransformTreeRequest& a, ClearTransformTreeRequest& b) {
     a.Swap(&b);
@@ -4848,7 +5123,7 @@ class ClearTransformTreeResponse final :
                &_ClearTransformTreeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(ClearTransformTreeResponse& a, ClearTransformTreeResponse& b) {
     a.Swap(&b);
@@ -4967,7 +5242,7 @@ class CreateEventRequest final :
                &_CreateEventRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(CreateEventRequest& a, CreateEventRequest& b) {
     a.Swap(&b);
@@ -5108,7 +5383,7 @@ class CreateEventResponse final :
                &_CreateEventResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(CreateEventResponse& a, CreateEventResponse& b) {
     a.Swap(&b);
@@ -5227,7 +5502,7 @@ class CreateEventError final :
                &_CreateEventError_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(CreateEventError& a, CreateEventError& b) {
     a.Swap(&b);
@@ -5359,7 +5634,7 @@ class GetTeleopInfoRequest final :
                &_GetTeleopInfoRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(GetTeleopInfoRequest& a, GetTeleopInfoRequest& b) {
     a.Swap(&b);
@@ -5478,7 +5753,7 @@ class GetTeleopInfoResponse final :
                &_GetTeleopInfoResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(GetTeleopInfoResponse& a, GetTeleopInfoResponse& b) {
     a.Swap(&b);
@@ -5610,7 +5885,7 @@ class PostLanRtcOfferRequest final :
                &_PostLanRtcOfferRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(PostLanRtcOfferRequest& a, PostLanRtcOfferRequest& b) {
     a.Swap(&b);
@@ -5747,7 +6022,7 @@ class PostLanRtcOfferResponse final :
                &_PostLanRtcOfferResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(PostLanRtcOfferResponse& a, PostLanRtcOfferResponse& b) {
     a.Swap(&b);
@@ -5884,7 +6159,7 @@ class SendOnCustomDataChannelRequest final :
                &_SendOnCustomDataChannelRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   friend void swap(SendOnCustomDataChannelRequest& a, SendOnCustomDataChannelRequest& b) {
     a.Swap(&b);
@@ -6037,7 +6312,7 @@ class SendOnCustomDataChannelResponse final :
                &_SendOnCustomDataChannelResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   friend void swap(SendOnCustomDataChannelResponse& a, SendOnCustomDataChannelResponse& b) {
     a.Swap(&b);
@@ -6156,7 +6431,7 @@ class GetCustomDataChannelMessageStreamRequest final :
                &_GetCustomDataChannelMessageStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   friend void swap(GetCustomDataChannelMessageStreamRequest& a, GetCustomDataChannelMessageStreamRequest& b) {
     a.Swap(&b);
@@ -6303,7 +6578,7 @@ class GetCustomDataChannelMessageStreamResponse final :
                &_GetCustomDataChannelMessageStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   friend void swap(GetCustomDataChannelMessageStreamResponse& a, GetCustomDataChannelMessageStreamResponse& b) {
     a.Swap(&b);
@@ -6435,6 +6710,79 @@ class GetCustomDataChannelMessageStreamResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// PostGenericAPIUnbufferedRequestResponse
+
+// uint32 statusCode = 1 [json_name = "statusCode"];
+inline void PostGenericAPIUnbufferedRequestResponse::clear_statuscode() {
+  statuscode_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 PostGenericAPIUnbufferedRequestResponse::_internal_statuscode() const {
+  return statuscode_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 PostGenericAPIUnbufferedRequestResponse::statuscode() const {
+  // @@protoc_insertion_point(field_get:v1.agent.PostGenericAPIUnbufferedRequestResponse.statusCode)
+  return _internal_statuscode();
+}
+inline void PostGenericAPIUnbufferedRequestResponse::_internal_set_statuscode(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  statuscode_ = value;
+}
+inline void PostGenericAPIUnbufferedRequestResponse::set_statuscode(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_statuscode(value);
+  // @@protoc_insertion_point(field_set:v1.agent.PostGenericAPIUnbufferedRequestResponse.statusCode)
+}
+
+// string responseBody = 2 [json_name = "responseBody"];
+inline void PostGenericAPIUnbufferedRequestResponse::clear_responsebody() {
+  responsebody_.ClearToEmpty();
+}
+inline const std::string& PostGenericAPIUnbufferedRequestResponse::responsebody() const {
+  // @@protoc_insertion_point(field_get:v1.agent.PostGenericAPIUnbufferedRequestResponse.responseBody)
+  return _internal_responsebody();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void PostGenericAPIUnbufferedRequestResponse::set_responsebody(ArgT0&& arg0, ArgT... args) {
+ 
+ responsebody_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.agent.PostGenericAPIUnbufferedRequestResponse.responseBody)
+}
+inline std::string* PostGenericAPIUnbufferedRequestResponse::mutable_responsebody() {
+  // @@protoc_insertion_point(field_mutable:v1.agent.PostGenericAPIUnbufferedRequestResponse.responseBody)
+  return _internal_mutable_responsebody();
+}
+inline const std::string& PostGenericAPIUnbufferedRequestResponse::_internal_responsebody() const {
+  return responsebody_.Get();
+}
+inline void PostGenericAPIUnbufferedRequestResponse::_internal_set_responsebody(const std::string& value) {
+  
+  responsebody_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* PostGenericAPIUnbufferedRequestResponse::_internal_mutable_responsebody() {
+  
+  return responsebody_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* PostGenericAPIUnbufferedRequestResponse::release_responsebody() {
+  // @@protoc_insertion_point(field_release:v1.agent.PostGenericAPIUnbufferedRequestResponse.responseBody)
+  return responsebody_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void PostGenericAPIUnbufferedRequestResponse::set_allocated_responsebody(std::string* responsebody) {
+  if (responsebody != nullptr) {
+    
+  } else {
+    
+  }
+  responsebody_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), responsebody,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.agent.PostGenericAPIUnbufferedRequestResponse.responseBody)
+}
+
+// -------------------------------------------------------------------
+
+// PostGenericAPIRequestResponse
+
+// -------------------------------------------------------------------
+
 // StreamDataResponse
 
 // -------------------------------------------------------------------
@@ -8517,6 +8865,10 @@ inline void GetCustomDataChannelMessageStreamResponse::set_allocated_payload(std
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -88,6 +88,12 @@ class MockAgentStub : public Agent::StubInterface {
   MOCK_METHOD3(SendOnCustomDataChannel, ::grpc::Status(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest& request, ::v1::agent::SendOnCustomDataChannelResponse* response));
   MOCK_METHOD3(AsyncSendOnCustomDataChannelRaw, ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::SendOnCustomDataChannelResponse>*(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest& request, ::grpc::CompletionQueue* cq));
   MOCK_METHOD3(PrepareAsyncSendOnCustomDataChannelRaw, ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::SendOnCustomDataChannelResponse>*(::grpc::ClientContext* context, const ::v1::agent::SendOnCustomDataChannelRequest& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(PostGenericAPIRequest, ::grpc::Status(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::v1::agent::PostGenericAPIRequestResponse* response));
+  MOCK_METHOD3(AsyncPostGenericAPIRequestRaw, ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::PostGenericAPIRequestResponse>*(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(PrepareAsyncPostGenericAPIRequestRaw, ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::PostGenericAPIRequestResponse>*(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(PostGenericAPIUnbufferedRequest, ::grpc::Status(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::v1::agent::PostGenericAPIUnbufferedRequestResponse* response));
+  MOCK_METHOD3(AsyncPostGenericAPIUnbufferedRequestRaw, ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::PostGenericAPIUnbufferedRequestResponse>*(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(PrepareAsyncPostGenericAPIUnbufferedRequestRaw, ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::PostGenericAPIUnbufferedRequestResponse>*(::grpc::ClientContext* context, const ::v1::model::GenericAPIDatapoint& request, ::grpc::CompletionQueue* cq));
 };
 
 } // namespace v1
