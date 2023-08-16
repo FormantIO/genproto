@@ -245,6 +245,10 @@ constexpr ResourcesConfiguration::ResourcesConfiguration(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : disk_(nullptr)
   , stream_throttle_hz_(nullptr)
+  , datapoint_batch_size_(uint64_t{0u})
+  , datapoint_batchlifetime_ms_(uint64_t{0u})
+  , asset_batch_size_(uint64_t{0u})
+  , asset_batch_lifetime_ms_(uint64_t{0u})
   , low_bandwidth_agent_(false){}
 struct ResourcesConfigurationDefaultTypeInternal {
   constexpr ResourcesConfigurationDefaultTypeInternal()
@@ -581,6 +585,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fconfig_2
   PROTOBUF_FIELD_OFFSET(::v1::model::ResourcesConfiguration, disk_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ResourcesConfiguration, stream_throttle_hz_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ResourcesConfiguration, low_bandwidth_agent_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::ResourcesConfiguration, datapoint_batch_size_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::ResourcesConfiguration, datapoint_batchlifetime_ms_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::ResourcesConfiguration, asset_batch_size_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::ResourcesConfiguration, asset_batch_lifetime_ms_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::DiskConfiguration, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -703,18 +711,18 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 128, 135, sizeof(::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse)},
   { 137, -1, sizeof(::v1::model::ApplicationConfiguration)},
   { 143, -1, sizeof(::v1::model::ResourcesConfiguration)},
-  { 151, -1, sizeof(::v1::model::DiskConfiguration)},
-  { 158, -1, sizeof(::v1::model::ROSConfiguration)},
-  { 164, 171, sizeof(::v1::model::StreamConfiguration_TagsEntry_DoNotUse)},
-  { 173, -1, sizeof(::v1::model::StreamConfiguration)},
-  { 193, -1, sizeof(::v1::model::StreamTransformConfiguration)},
-  { 199, -1, sizeof(::v1::model::BlobData)},
-  { 205, -1, sizeof(::v1::model::Diagnostics)},
-  { 212, -1, sizeof(::v1::model::Custom)},
-  { 217, -1, sizeof(::v1::model::Hardware)},
-  { 229, -1, sizeof(::v1::model::DirectoryWatch)},
-  { 238, -1, sizeof(::v1::model::FileTail)},
-  { 248, -1, sizeof(::v1::model::RtcInfo)},
+  { 155, -1, sizeof(::v1::model::DiskConfiguration)},
+  { 162, -1, sizeof(::v1::model::ROSConfiguration)},
+  { 168, 175, sizeof(::v1::model::StreamConfiguration_TagsEntry_DoNotUse)},
+  { 177, -1, sizeof(::v1::model::StreamConfiguration)},
+  { 197, -1, sizeof(::v1::model::StreamTransformConfiguration)},
+  { 203, -1, sizeof(::v1::model::BlobData)},
+  { 209, -1, sizeof(::v1::model::Diagnostics)},
+  { 216, -1, sizeof(::v1::model::Custom)},
+  { 221, -1, sizeof(::v1::model::Hardware)},
+  { 233, -1, sizeof(::v1::model::DirectoryWatch)},
+  { 242, -1, sizeof(::v1::model::FileTail)},
+  { 252, -1, sizeof(::v1::model::RtcInfo)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -833,70 +841,75 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto[] PROT
   "cationConfiguration.ConfigurationMapEntr"
   "yR\020configurationMap\032C\n\025ConfigurationMapE"
   "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v"
-  "alue:\0028\001\"\305\001\n\026ResourcesConfiguration\022/\n\004d"
+  "alue:\0028\001\"\226\003\n\026ResourcesConfiguration\022/\n\004d"
   "isk\030\001 \001(\0132\033.v1.model.DiskConfigurationR\004"
   "disk\022J\n\022stream_throttle_hz\030\002 \001(\0132\034.googl"
   "e.protobuf.DoubleValueR\020streamThrottleHz"
   "\022.\n\023low_bandwidth_agent\030\003 \001(\010R\021lowBandwi"
-  "dthAgent\"g\n\021DiskConfiguration\022\037\n\013buffer_"
-  "size\030\001 \001(\003R\nbufferSize\0221\n\025on_demand_buff"
-  "er_size\030\002 \001(\003R\022onDemandBufferSize\"K\n\020ROS"
-  "Configuration\0227\n\030world_reference_frame_i"
-  "d\030\001 \001(\tR\025worldReferenceFrameId\"\335\006\n\023Strea"
-  "mConfiguration\022\022\n\004name\030\001 \001(\tR\004name\022;\n\004ta"
-  "gs\030\002 \003(\0132\'.v1.model.StreamConfiguration."
-  "TagsEntryR\004tags\0221\n\tros_topic\030\003 \001(\0132\022.v1."
-  "model.ROSTopicH\000R\010rosTopic\022F\n\020ros_locali"
-  "zation\030\004 \001(\0132\031.v1.model.ROSLocalizationH"
-  "\000R\017rosLocalization\022C\n\017directory_watch\030\005 "
-  "\001(\0132\030.v1.model.DirectoryWatchH\000R\016directo"
-  "ryWatch\0221\n\tfile_tail\030\006 \001(\0132\022.v1.model.Fi"
-  "leTailH\000R\010fileTail\022J\n\022ros_transform_tree"
-  "\030\007 \001(\0132\032.v1.model.ROSTransformTreeH\000R\020ro"
-  "sTransformTree\022*\n\006custom\030\t \001(\0132\020.v1.mode"
-  "l.CustomH\000R\006custom\0220\n\010hardware\030\n \001(\0132\022.v"
-  "1.model.HardwareH\000R\010hardware\022=\n\013throttle"
-  "_hz\030\010 \001(\0132\034.google.protobuf.DoubleValueR"
-  "\nthrottleHz\0226\n\010disabled\030\023 \001(\0132\032.google.p"
-  "rotobuf.BoolValueR\010disabled\0227\n\ton_demand"
-  "\030\024 \001(\0132\032.google.protobuf.BoolValueR\010onDe"
-  "mand\022D\n\ttransform\030\025 \001(\0132&.v1.model.Strea"
-  "mTransformConfigurationR\ttransform\022\030\n\007qu"
-  "ality\030\026 \001(\tR\007quality\0327\n\tTagsEntry\022\020\n\003key"
-  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\017\n"
-  "\rconfiguration\"p\n\034StreamTransformConfigu"
-  "ration\022P\n\026video_encoding_enabled\030\001 \001(\0132\032"
-  ".google.protobuf.BoolValueR\024videoEncodin"
-  "gEnabled\"\036\n\010BlobData\022\022\n\004data\030\001 \001(\tR\004data"
-  "\"\215\001\n\013Diagnostics\022;\n\013report_logs\030\001 \001(\0132\032."
-  "google.protobuf.BoolValueR\nreportLogs\022A\n"
-  "\016report_metrics\030\002 \001(\0132\032.google.protobuf."
-  "BoolValueR\rreportMetrics\"\010\n\006Custom\"\241\002\n\010H"
-  "ardware\022#\n\rhw_descriptor\030\001 \001(\tR\014hwDescri"
-  "ptor\022.\n\023audio_hw_descriptor\030\003 \001(\tR\021audio"
-  "HwDescriptor\022#\n\rhardware_type\030\004 \001(\tR\014har"
-  "dwareType\0220\n\024rtsp_encoding_needed\030\005 \001(\010R"
-  "\022rtspEncodingNeeded\022\031\n\010is_onvif\030\006 \001(\010R\007i"
-  "sOnvif\022&\n\017ip_cam_username\030\007 \001(\tR\ripCamUs"
-  "ername\022&\n\017ip_cam_password\030\010 \001(\tR\ripCamPa"
-  "ssword\"\240\001\n\016DirectoryWatch\022\034\n\tdirectory\030\001"
-  " \001(\tR\tdirectory\022\034\n\textension\030\002 \001(\tR\texte"
-  "nsion\022/\n\tfile_type\030\003 \001(\0162\022.v1.model.File"
-  "TypeR\010fileType\022!\n\014remote_agent\030\004 \001(\010R\013re"
-  "moteAgent\"\257\001\n\010FileTail\022\032\n\010filename\030\001 \001(\t"
-  "R\010filename\0225\n\013file_format\030\002 \001(\0162\024.v1.mod"
-  "el.FileFormatR\nfileFormat\022\031\n\010time_key\030\003 "
-  "\001(\tR\007timeKey\022\037\n\013time_format\030\004 \001(\tR\ntimeF"
-  "ormat\022\024\n\005regex\030\005 \001(\tR\005regex\"\245\001\n\007RtcInfo\022"
-  ";\n\032rtc_ice_transport_policies\030\001 \003(\tR\027rtc"
-  "IceTransportPolicies\0225\n\027rtc_ice_server_p"
-  "rotocol\030\002 \001(\tR\024rtcIceServerProtocol\022&\n\017u"
-  "se_all_servers\030\003 \001(\010R\ruseAllServers*&\n\nT"
-  "eleopMode\022\013\n\007COMMAND\020\000\022\013\n\007OBSERVE\020\001*&\n\nF"
-  "ileFormat\022\016\n\nPLAIN_TEXT\020\000\022\010\n\004JSON\020\001*;\n\010F"
-  "ileType\022\010\n\004FILE\020\000\022\t\n\005IMAGE\020\001\022\017\n\013POINT_CL"
-  "OUD\020\004\022\t\n\005VIDEO\020\005B+Z)github.com/FormantIO"
-  "/genproto/go/v1/modelb\006proto3"
+  "dthAgent\0220\n\024datapoint_batch_size\030\004 \001(\004R\022"
+  "datapointBatchSize\022<\n\032datapoint_batchLif"
+  "etime_ms\030\005 \001(\004R\030datapointBatchLifetimeMs"
+  "\022(\n\020asset_batch_size\030\006 \001(\004R\016assetBatchSi"
+  "ze\0225\n\027asset_batch_lifetime_ms\030\007 \001(\004R\024ass"
+  "etBatchLifetimeMs\"g\n\021DiskConfiguration\022\037"
+  "\n\013buffer_size\030\001 \001(\003R\nbufferSize\0221\n\025on_de"
+  "mand_buffer_size\030\002 \001(\003R\022onDemandBufferSi"
+  "ze\"K\n\020ROSConfiguration\0227\n\030world_referenc"
+  "e_frame_id\030\001 \001(\tR\025worldReferenceFrameId\""
+  "\335\006\n\023StreamConfiguration\022\022\n\004name\030\001 \001(\tR\004n"
+  "ame\022;\n\004tags\030\002 \003(\0132\'.v1.model.StreamConfi"
+  "guration.TagsEntryR\004tags\0221\n\tros_topic\030\003 "
+  "\001(\0132\022.v1.model.ROSTopicH\000R\010rosTopic\022F\n\020r"
+  "os_localization\030\004 \001(\0132\031.v1.model.ROSLoca"
+  "lizationH\000R\017rosLocalization\022C\n\017directory"
+  "_watch\030\005 \001(\0132\030.v1.model.DirectoryWatchH\000"
+  "R\016directoryWatch\0221\n\tfile_tail\030\006 \001(\0132\022.v1"
+  ".model.FileTailH\000R\010fileTail\022J\n\022ros_trans"
+  "form_tree\030\007 \001(\0132\032.v1.model.ROSTransformT"
+  "reeH\000R\020rosTransformTree\022*\n\006custom\030\t \001(\0132"
+  "\020.v1.model.CustomH\000R\006custom\0220\n\010hardware\030"
+  "\n \001(\0132\022.v1.model.HardwareH\000R\010hardware\022=\n"
+  "\013throttle_hz\030\010 \001(\0132\034.google.protobuf.Dou"
+  "bleValueR\nthrottleHz\0226\n\010disabled\030\023 \001(\0132\032"
+  ".google.protobuf.BoolValueR\010disabled\0227\n\t"
+  "on_demand\030\024 \001(\0132\032.google.protobuf.BoolVa"
+  "lueR\010onDemand\022D\n\ttransform\030\025 \001(\0132&.v1.mo"
+  "del.StreamTransformConfigurationR\ttransf"
+  "orm\022\030\n\007quality\030\026 \001(\tR\007quality\0327\n\tTagsEnt"
+  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
+  "ue:\0028\001B\017\n\rconfiguration\"p\n\034StreamTransfo"
+  "rmConfiguration\022P\n\026video_encoding_enable"
+  "d\030\001 \001(\0132\032.google.protobuf.BoolValueR\024vid"
+  "eoEncodingEnabled\"\036\n\010BlobData\022\022\n\004data\030\001 "
+  "\001(\tR\004data\"\215\001\n\013Diagnostics\022;\n\013report_logs"
+  "\030\001 \001(\0132\032.google.protobuf.BoolValueR\nrepo"
+  "rtLogs\022A\n\016report_metrics\030\002 \001(\0132\032.google."
+  "protobuf.BoolValueR\rreportMetrics\"\010\n\006Cus"
+  "tom\"\241\002\n\010Hardware\022#\n\rhw_descriptor\030\001 \001(\tR"
+  "\014hwDescriptor\022.\n\023audio_hw_descriptor\030\003 \001"
+  "(\tR\021audioHwDescriptor\022#\n\rhardware_type\030\004"
+  " \001(\tR\014hardwareType\0220\n\024rtsp_encoding_need"
+  "ed\030\005 \001(\010R\022rtspEncodingNeeded\022\031\n\010is_onvif"
+  "\030\006 \001(\010R\007isOnvif\022&\n\017ip_cam_username\030\007 \001(\t"
+  "R\ripCamUsername\022&\n\017ip_cam_password\030\010 \001(\t"
+  "R\ripCamPassword\"\240\001\n\016DirectoryWatch\022\034\n\tdi"
+  "rectory\030\001 \001(\tR\tdirectory\022\034\n\textension\030\002 "
+  "\001(\tR\textension\022/\n\tfile_type\030\003 \001(\0162\022.v1.m"
+  "odel.FileTypeR\010fileType\022!\n\014remote_agent\030"
+  "\004 \001(\010R\013remoteAgent\"\257\001\n\010FileTail\022\032\n\010filen"
+  "ame\030\001 \001(\tR\010filename\0225\n\013file_format\030\002 \001(\016"
+  "2\024.v1.model.FileFormatR\nfileFormat\022\031\n\010ti"
+  "me_key\030\003 \001(\tR\007timeKey\022\037\n\013time_format\030\004 \001"
+  "(\tR\ntimeFormat\022\024\n\005regex\030\005 \001(\tR\005regex\"\245\001\n"
+  "\007RtcInfo\022;\n\032rtc_ice_transport_policies\030\001"
+  " \003(\tR\027rtcIceTransportPolicies\0225\n\027rtc_ice"
+  "_server_protocol\030\002 \001(\tR\024rtcIceServerProt"
+  "ocol\022&\n\017use_all_servers\030\003 \001(\010R\ruseAllSer"
+  "vers*&\n\nTeleopMode\022\013\n\007COMMAND\020\000\022\013\n\007OBSER"
+  "VE\020\001*&\n\nFileFormat\022\016\n\nPLAIN_TEXT\020\000\022\010\n\004JS"
+  "ON\020\001*;\n\010FileType\022\010\n\004FILE\020\000\022\t\n\005IMAGE\020\001\022\017\n"
+  "\013POINT_CLOUD\020\004\022\t\n\005VIDEO\020\005B+Z)github.com/"
+  "FormantIO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fwrappers_2eproto,
@@ -904,7 +917,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto = {
-  false, false, 5949, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 
+  false, false, 6158, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps, 2, 27,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto,
@@ -5394,7 +5407,9 @@ ResourcesConfiguration::ResourcesConfiguration(const ResourcesConfiguration& fro
   } else {
     stream_throttle_hz_ = nullptr;
   }
-  low_bandwidth_agent_ = from.low_bandwidth_agent_;
+  ::memcpy(&datapoint_batch_size_, &from.datapoint_batch_size_,
+    static_cast<size_t>(reinterpret_cast<char*>(&low_bandwidth_agent_) -
+    reinterpret_cast<char*>(&datapoint_batch_size_)) + sizeof(low_bandwidth_agent_));
   // @@protoc_insertion_point(copy_constructor:v1.model.ResourcesConfiguration)
 }
 
@@ -5441,7 +5456,9 @@ void ResourcesConfiguration::Clear() {
     delete stream_throttle_hz_;
   }
   stream_throttle_hz_ = nullptr;
-  low_bandwidth_agent_ = false;
+  ::memset(&datapoint_batch_size_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&low_bandwidth_agent_) -
+      reinterpret_cast<char*>(&datapoint_batch_size_)) + sizeof(low_bandwidth_agent_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5469,6 +5486,34 @@ const char* ResourcesConfiguration::_InternalParse(const char* ptr, ::PROTOBUF_N
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           low_bandwidth_agent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 datapoint_batch_size = 4 [json_name = "datapointBatchSize"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          datapoint_batch_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 datapoint_batchLifetime_ms = 5 [json_name = "datapointBatchLifetimeMs"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          datapoint_batchlifetime_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 asset_batch_size = 6 [json_name = "assetBatchSize"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          asset_batch_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 asset_batch_lifetime_ms = 7 [json_name = "assetBatchLifetimeMs"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          asset_batch_lifetime_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5523,6 +5568,30 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_low_bandwidth_agent(), target);
   }
 
+  // uint64 datapoint_batch_size = 4 [json_name = "datapointBatchSize"];
+  if (this->datapoint_batch_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_datapoint_batch_size(), target);
+  }
+
+  // uint64 datapoint_batchLifetime_ms = 5 [json_name = "datapointBatchLifetimeMs"];
+  if (this->datapoint_batchlifetime_ms() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_datapoint_batchlifetime_ms(), target);
+  }
+
+  // uint64 asset_batch_size = 6 [json_name = "assetBatchSize"];
+  if (this->asset_batch_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_asset_batch_size(), target);
+  }
+
+  // uint64 asset_batch_lifetime_ms = 7 [json_name = "assetBatchLifetimeMs"];
+  if (this->asset_batch_lifetime_ms() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_asset_batch_lifetime_ms(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5551,6 +5620,34 @@ size_t ResourcesConfiguration::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *stream_throttle_hz_);
+  }
+
+  // uint64 datapoint_batch_size = 4 [json_name = "datapointBatchSize"];
+  if (this->datapoint_batch_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_datapoint_batch_size());
+  }
+
+  // uint64 datapoint_batchLifetime_ms = 5 [json_name = "datapointBatchLifetimeMs"];
+  if (this->datapoint_batchlifetime_ms() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_datapoint_batchlifetime_ms());
+  }
+
+  // uint64 asset_batch_size = 6 [json_name = "assetBatchSize"];
+  if (this->asset_batch_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_asset_batch_size());
+  }
+
+  // uint64 asset_batch_lifetime_ms = 7 [json_name = "assetBatchLifetimeMs"];
+  if (this->asset_batch_lifetime_ms() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_asset_batch_lifetime_ms());
   }
 
   // bool low_bandwidth_agent = 3 [json_name = "lowBandwidthAgent"];
@@ -5594,6 +5691,18 @@ void ResourcesConfiguration::MergeFrom(const ResourcesConfiguration& from) {
   }
   if (from.has_stream_throttle_hz()) {
     _internal_mutable_stream_throttle_hz()->PROTOBUF_NAMESPACE_ID::DoubleValue::MergeFrom(from._internal_stream_throttle_hz());
+  }
+  if (from.datapoint_batch_size() != 0) {
+    _internal_set_datapoint_batch_size(from._internal_datapoint_batch_size());
+  }
+  if (from.datapoint_batchlifetime_ms() != 0) {
+    _internal_set_datapoint_batchlifetime_ms(from._internal_datapoint_batchlifetime_ms());
+  }
+  if (from.asset_batch_size() != 0) {
+    _internal_set_asset_batch_size(from._internal_asset_batch_size());
+  }
+  if (from.asset_batch_lifetime_ms() != 0) {
+    _internal_set_asset_batch_lifetime_ms(from._internal_asset_batch_lifetime_ms());
   }
   if (from.low_bandwidth_agent() != 0) {
     _internal_set_low_bandwidth_agent(from._internal_low_bandwidth_agent());

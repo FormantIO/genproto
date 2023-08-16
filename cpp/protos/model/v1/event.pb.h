@@ -50,7 +50,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fevent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[15]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -86,6 +86,9 @@ extern EventDefaultTypeInternal _Event_default_instance_;
 class Event_TagsEntry_DoNotUse;
 struct Event_TagsEntry_DoNotUseDefaultTypeInternal;
 extern Event_TagsEntry_DoNotUseDefaultTypeInternal _Event_TagsEntry_DoNotUse_default_instance_;
+class JsonEventTriggerCondition;
+struct JsonEventTriggerConditionDefaultTypeInternal;
+extern JsonEventTriggerConditionDefaultTypeInternal _JsonEventTriggerCondition_default_instance_;
 class NumericCondition;
 struct NumericConditionDefaultTypeInternal;
 extern NumericConditionDefaultTypeInternal _NumericCondition_default_instance_;
@@ -116,6 +119,7 @@ template<> ::v1::model::BitsetEventTriggerCondition* Arena::CreateMaybeMessage<:
 template<> ::v1::model::Condition* Arena::CreateMaybeMessage<::v1::model::Condition>(Arena*);
 template<> ::v1::model::Event* Arena::CreateMaybeMessage<::v1::model::Event>(Arena*);
 template<> ::v1::model::Event_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::Event_TagsEntry_DoNotUse>(Arena*);
+template<> ::v1::model::JsonEventTriggerCondition* Arena::CreateMaybeMessage<::v1::model::JsonEventTriggerCondition>(Arena*);
 template<> ::v1::model::NumericCondition* Arena::CreateMaybeMessage<::v1::model::NumericCondition>(Arena*);
 template<> ::v1::model::NumericSetEventTriggerCondition* Arena::CreateMaybeMessage<::v1::model::NumericSetEventTriggerCondition>(Arena*);
 template<> ::v1::model::PresenceEventTriggerCondition* Arena::CreateMaybeMessage<::v1::model::PresenceEventTriggerCondition>(Arena*);
@@ -1012,6 +1016,7 @@ class Condition final :
     kBitset = 5,
     kBattery = 6,
     kNumeric = 7,
+    kJson = 8,
     CONDITION_NOT_SET = 0,
   };
 
@@ -1091,6 +1096,7 @@ class Condition final :
     kBitsetFieldNumber = 5,
     kBatteryFieldNumber = 6,
     kNumericFieldNumber = 7,
+    kJsonFieldNumber = 8,
   };
   // string stream = 1 [json_name = "stream"];
   void clear_stream();
@@ -1214,6 +1220,24 @@ class Condition final :
       ::v1::model::NumericSetEventTriggerCondition* numeric);
   ::v1::model::NumericSetEventTriggerCondition* unsafe_arena_release_numeric();
 
+  // .v1.model.JsonEventTriggerCondition json = 8 [json_name = "json"];
+  bool has_json() const;
+  private:
+  bool _internal_has_json() const;
+  public:
+  void clear_json();
+  const ::v1::model::JsonEventTriggerCondition& json() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::JsonEventTriggerCondition* release_json();
+  ::v1::model::JsonEventTriggerCondition* mutable_json();
+  void set_allocated_json(::v1::model::JsonEventTriggerCondition* json);
+  private:
+  const ::v1::model::JsonEventTriggerCondition& _internal_json() const;
+  ::v1::model::JsonEventTriggerCondition* _internal_mutable_json();
+  public:
+  void unsafe_arena_set_allocated_json(
+      ::v1::model::JsonEventTriggerCondition* json);
+  ::v1::model::JsonEventTriggerCondition* unsafe_arena_release_json();
+
   void clear_condition();
   ConditionCase condition_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.Condition)
@@ -1225,6 +1249,7 @@ class Condition final :
   void set_has_bitset();
   void set_has_battery();
   void set_has_numeric();
+  void set_has_json();
 
   inline bool has_condition() const;
   inline void clear_has_condition();
@@ -1242,6 +1267,7 @@ class Condition final :
     ::v1::model::BitsetEventTriggerCondition* bitset_;
     ::v1::model::BatteryEventTriggerCondition* battery_;
     ::v1::model::NumericSetEventTriggerCondition* numeric_;
+    ::v1::model::JsonEventTriggerCondition* json_;
   } condition_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2584,6 +2610,143 @@ class BitsetCondition final :
 };
 // -------------------------------------------------------------------
 
+class JsonEventTriggerCondition final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.JsonEventTriggerCondition) */ {
+ public:
+  inline JsonEventTriggerCondition() : JsonEventTriggerCondition(nullptr) {}
+  ~JsonEventTriggerCondition() override;
+  explicit constexpr JsonEventTriggerCondition(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  JsonEventTriggerCondition(const JsonEventTriggerCondition& from);
+  JsonEventTriggerCondition(JsonEventTriggerCondition&& from) noexcept
+    : JsonEventTriggerCondition() {
+    *this = ::std::move(from);
+  }
+
+  inline JsonEventTriggerCondition& operator=(const JsonEventTriggerCondition& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline JsonEventTriggerCondition& operator=(JsonEventTriggerCondition&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const JsonEventTriggerCondition& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const JsonEventTriggerCondition* internal_default_instance() {
+    return reinterpret_cast<const JsonEventTriggerCondition*>(
+               &_JsonEventTriggerCondition_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(JsonEventTriggerCondition& a, JsonEventTriggerCondition& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(JsonEventTriggerCondition* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(JsonEventTriggerCondition* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline JsonEventTriggerCondition* New() const final {
+    return new JsonEventTriggerCondition();
+  }
+
+  JsonEventTriggerCondition* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<JsonEventTriggerCondition>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const JsonEventTriggerCondition& from);
+  void MergeFrom(const JsonEventTriggerCondition& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(JsonEventTriggerCondition* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.JsonEventTriggerCondition";
+  }
+  protected:
+  explicit JsonEventTriggerCondition(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kJqQueryFieldNumber = 1,
+  };
+  // string jqQuery = 1 [json_name = "jqQuery"];
+  void clear_jqquery();
+  const std::string& jqquery() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_jqquery(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_jqquery();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_jqquery();
+  void set_allocated_jqquery(std::string* jqquery);
+  private:
+  const std::string& _internal_jqquery() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_jqquery(const std::string& value);
+  std::string* _internal_mutable_jqquery();
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.JsonEventTriggerCondition)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr jqquery_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fevent_2eproto;
+};
+// -------------------------------------------------------------------
+
 class StatefulTriggerConfiguration final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.StatefulTriggerConfiguration) */ {
  public:
@@ -2628,7 +2791,7 @@ class StatefulTriggerConfiguration final :
                &_StatefulTriggerConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(StatefulTriggerConfiguration& a, StatefulTriggerConfiguration& b) {
     a.Swap(&b);
@@ -4109,6 +4272,79 @@ inline ::v1::model::NumericSetEventTriggerCondition* Condition::mutable_numeric(
   return _internal_mutable_numeric();
 }
 
+// .v1.model.JsonEventTriggerCondition json = 8 [json_name = "json"];
+inline bool Condition::_internal_has_json() const {
+  return condition_case() == kJson;
+}
+inline bool Condition::has_json() const {
+  return _internal_has_json();
+}
+inline void Condition::set_has_json() {
+  _oneof_case_[0] = kJson;
+}
+inline void Condition::clear_json() {
+  if (_internal_has_json()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete condition_.json_;
+    }
+    clear_has_condition();
+  }
+}
+inline ::v1::model::JsonEventTriggerCondition* Condition::release_json() {
+  // @@protoc_insertion_point(field_release:v1.model.Condition.json)
+  if (_internal_has_json()) {
+    clear_has_condition();
+      ::v1::model::JsonEventTriggerCondition* temp = condition_.json_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    condition_.json_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::JsonEventTriggerCondition& Condition::_internal_json() const {
+  return _internal_has_json()
+      ? *condition_.json_
+      : reinterpret_cast< ::v1::model::JsonEventTriggerCondition&>(::v1::model::_JsonEventTriggerCondition_default_instance_);
+}
+inline const ::v1::model::JsonEventTriggerCondition& Condition::json() const {
+  // @@protoc_insertion_point(field_get:v1.model.Condition.json)
+  return _internal_json();
+}
+inline ::v1::model::JsonEventTriggerCondition* Condition::unsafe_arena_release_json() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.Condition.json)
+  if (_internal_has_json()) {
+    clear_has_condition();
+    ::v1::model::JsonEventTriggerCondition* temp = condition_.json_;
+    condition_.json_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Condition::unsafe_arena_set_allocated_json(::v1::model::JsonEventTriggerCondition* json) {
+  clear_condition();
+  if (json) {
+    set_has_json();
+    condition_.json_ = json;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.Condition.json)
+}
+inline ::v1::model::JsonEventTriggerCondition* Condition::_internal_mutable_json() {
+  if (!_internal_has_json()) {
+    clear_condition();
+    set_has_json();
+    condition_.json_ = CreateMaybeMessage< ::v1::model::JsonEventTriggerCondition >(GetArenaForAllocation());
+  }
+  return condition_.json_;
+}
+inline ::v1::model::JsonEventTriggerCondition* Condition::mutable_json() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Condition.json)
+  return _internal_mutable_json();
+}
+
 inline bool Condition::has_condition() const {
   return condition_case() != CONDITION_NOT_SET;
 }
@@ -4754,6 +4990,55 @@ inline void BitsetCondition::set_false_(bool value) {
 
 // -------------------------------------------------------------------
 
+// JsonEventTriggerCondition
+
+// string jqQuery = 1 [json_name = "jqQuery"];
+inline void JsonEventTriggerCondition::clear_jqquery() {
+  jqquery_.ClearToEmpty();
+}
+inline const std::string& JsonEventTriggerCondition::jqquery() const {
+  // @@protoc_insertion_point(field_get:v1.model.JsonEventTriggerCondition.jqQuery)
+  return _internal_jqquery();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void JsonEventTriggerCondition::set_jqquery(ArgT0&& arg0, ArgT... args) {
+ 
+ jqquery_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.JsonEventTriggerCondition.jqQuery)
+}
+inline std::string* JsonEventTriggerCondition::mutable_jqquery() {
+  // @@protoc_insertion_point(field_mutable:v1.model.JsonEventTriggerCondition.jqQuery)
+  return _internal_mutable_jqquery();
+}
+inline const std::string& JsonEventTriggerCondition::_internal_jqquery() const {
+  return jqquery_.Get();
+}
+inline void JsonEventTriggerCondition::_internal_set_jqquery(const std::string& value) {
+  
+  jqquery_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* JsonEventTriggerCondition::_internal_mutable_jqquery() {
+  
+  return jqquery_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* JsonEventTriggerCondition::release_jqquery() {
+  // @@protoc_insertion_point(field_release:v1.model.JsonEventTriggerCondition.jqQuery)
+  return jqquery_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void JsonEventTriggerCondition::set_allocated_jqquery(std::string* jqquery) {
+  if (jqquery != nullptr) {
+    
+  } else {
+    
+  }
+  jqquery_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), jqquery,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.JsonEventTriggerCondition.jqQuery)
+}
+
+// -------------------------------------------------------------------
+
 // StatefulTriggerConfiguration
 
 // bool emitOnEnteringState = 1 [json_name = "emitOnEnteringState"];
@@ -4799,6 +5084,8 @@ inline void StatefulTriggerConfiguration::set_emitonleavingstate(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -2898,6 +2898,10 @@ class ResourcesConfiguration final :
   enum : int {
     kDiskFieldNumber = 1,
     kStreamThrottleHzFieldNumber = 2,
+    kDatapointBatchSizeFieldNumber = 4,
+    kDatapointBatchLifetimeMsFieldNumber = 5,
+    kAssetBatchSizeFieldNumber = 6,
+    kAssetBatchLifetimeMsFieldNumber = 7,
     kLowBandwidthAgentFieldNumber = 3,
   };
   // .v1.model.DiskConfiguration disk = 1 [json_name = "disk"];
@@ -2936,6 +2940,42 @@ class ResourcesConfiguration final :
       PROTOBUF_NAMESPACE_ID::DoubleValue* stream_throttle_hz);
   PROTOBUF_NAMESPACE_ID::DoubleValue* unsafe_arena_release_stream_throttle_hz();
 
+  // uint64 datapoint_batch_size = 4 [json_name = "datapointBatchSize"];
+  void clear_datapoint_batch_size();
+  ::PROTOBUF_NAMESPACE_ID::uint64 datapoint_batch_size() const;
+  void set_datapoint_batch_size(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_datapoint_batch_size() const;
+  void _internal_set_datapoint_batch_size(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 datapoint_batchLifetime_ms = 5 [json_name = "datapointBatchLifetimeMs"];
+  void clear_datapoint_batchlifetime_ms();
+  ::PROTOBUF_NAMESPACE_ID::uint64 datapoint_batchlifetime_ms() const;
+  void set_datapoint_batchlifetime_ms(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_datapoint_batchlifetime_ms() const;
+  void _internal_set_datapoint_batchlifetime_ms(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 asset_batch_size = 6 [json_name = "assetBatchSize"];
+  void clear_asset_batch_size();
+  ::PROTOBUF_NAMESPACE_ID::uint64 asset_batch_size() const;
+  void set_asset_batch_size(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_asset_batch_size() const;
+  void _internal_set_asset_batch_size(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 asset_batch_lifetime_ms = 7 [json_name = "assetBatchLifetimeMs"];
+  void clear_asset_batch_lifetime_ms();
+  ::PROTOBUF_NAMESPACE_ID::uint64 asset_batch_lifetime_ms() const;
+  void set_asset_batch_lifetime_ms(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_asset_batch_lifetime_ms() const;
+  void _internal_set_asset_batch_lifetime_ms(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
   // bool low_bandwidth_agent = 3 [json_name = "lowBandwidthAgent"];
   void clear_low_bandwidth_agent();
   bool low_bandwidth_agent() const;
@@ -2954,6 +2994,10 @@ class ResourcesConfiguration final :
   typedef void DestructorSkippable_;
   ::v1::model::DiskConfiguration* disk_;
   PROTOBUF_NAMESPACE_ID::DoubleValue* stream_throttle_hz_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 datapoint_batch_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 datapoint_batchlifetime_ms_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 asset_batch_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 asset_batch_lifetime_ms_;
   bool low_bandwidth_agent_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
@@ -8122,6 +8166,86 @@ inline void ResourcesConfiguration::_internal_set_low_bandwidth_agent(bool value
 inline void ResourcesConfiguration::set_low_bandwidth_agent(bool value) {
   _internal_set_low_bandwidth_agent(value);
   // @@protoc_insertion_point(field_set:v1.model.ResourcesConfiguration.low_bandwidth_agent)
+}
+
+// uint64 datapoint_batch_size = 4 [json_name = "datapointBatchSize"];
+inline void ResourcesConfiguration::clear_datapoint_batch_size() {
+  datapoint_batch_size_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ResourcesConfiguration::_internal_datapoint_batch_size() const {
+  return datapoint_batch_size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ResourcesConfiguration::datapoint_batch_size() const {
+  // @@protoc_insertion_point(field_get:v1.model.ResourcesConfiguration.datapoint_batch_size)
+  return _internal_datapoint_batch_size();
+}
+inline void ResourcesConfiguration::_internal_set_datapoint_batch_size(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  datapoint_batch_size_ = value;
+}
+inline void ResourcesConfiguration::set_datapoint_batch_size(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_datapoint_batch_size(value);
+  // @@protoc_insertion_point(field_set:v1.model.ResourcesConfiguration.datapoint_batch_size)
+}
+
+// uint64 datapoint_batchLifetime_ms = 5 [json_name = "datapointBatchLifetimeMs"];
+inline void ResourcesConfiguration::clear_datapoint_batchlifetime_ms() {
+  datapoint_batchlifetime_ms_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ResourcesConfiguration::_internal_datapoint_batchlifetime_ms() const {
+  return datapoint_batchlifetime_ms_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ResourcesConfiguration::datapoint_batchlifetime_ms() const {
+  // @@protoc_insertion_point(field_get:v1.model.ResourcesConfiguration.datapoint_batchLifetime_ms)
+  return _internal_datapoint_batchlifetime_ms();
+}
+inline void ResourcesConfiguration::_internal_set_datapoint_batchlifetime_ms(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  datapoint_batchlifetime_ms_ = value;
+}
+inline void ResourcesConfiguration::set_datapoint_batchlifetime_ms(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_datapoint_batchlifetime_ms(value);
+  // @@protoc_insertion_point(field_set:v1.model.ResourcesConfiguration.datapoint_batchLifetime_ms)
+}
+
+// uint64 asset_batch_size = 6 [json_name = "assetBatchSize"];
+inline void ResourcesConfiguration::clear_asset_batch_size() {
+  asset_batch_size_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ResourcesConfiguration::_internal_asset_batch_size() const {
+  return asset_batch_size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ResourcesConfiguration::asset_batch_size() const {
+  // @@protoc_insertion_point(field_get:v1.model.ResourcesConfiguration.asset_batch_size)
+  return _internal_asset_batch_size();
+}
+inline void ResourcesConfiguration::_internal_set_asset_batch_size(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  asset_batch_size_ = value;
+}
+inline void ResourcesConfiguration::set_asset_batch_size(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_asset_batch_size(value);
+  // @@protoc_insertion_point(field_set:v1.model.ResourcesConfiguration.asset_batch_size)
+}
+
+// uint64 asset_batch_lifetime_ms = 7 [json_name = "assetBatchLifetimeMs"];
+inline void ResourcesConfiguration::clear_asset_batch_lifetime_ms() {
+  asset_batch_lifetime_ms_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ResourcesConfiguration::_internal_asset_batch_lifetime_ms() const {
+  return asset_batch_lifetime_ms_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ResourcesConfiguration::asset_batch_lifetime_ms() const {
+  // @@protoc_insertion_point(field_get:v1.model.ResourcesConfiguration.asset_batch_lifetime_ms)
+  return _internal_asset_batch_lifetime_ms();
+}
+inline void ResourcesConfiguration::_internal_set_asset_batch_lifetime_ms(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  asset_batch_lifetime_ms_ = value;
+}
+inline void ResourcesConfiguration::set_asset_batch_lifetime_ms(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_asset_batch_lifetime_ms(value);
+  // @@protoc_insertion_point(field_set:v1.model.ResourcesConfiguration.asset_batch_lifetime_ms)
 }
 
 // -------------------------------------------------------------------
