@@ -109,6 +109,17 @@ struct PresenceEventTriggerConditionDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PresenceEventTriggerConditionDefaultTypeInternal _PresenceEventTriggerCondition_default_instance_;
+constexpr AutoresolveEventTriggerCondition::AutoresolveEventTriggerCondition(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct AutoresolveEventTriggerConditionDefaultTypeInternal {
+  constexpr AutoresolveEventTriggerConditionDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AutoresolveEventTriggerConditionDefaultTypeInternal() {}
+  union {
+    AutoresolveEventTriggerCondition _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AutoresolveEventTriggerConditionDefaultTypeInternal _AutoresolveEventTriggerCondition_default_instance_;
 constexpr ThresholdEventTriggerCondition::ThresholdEventTriggerCondition(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : value_(0)
@@ -247,7 +258,7 @@ struct StatefulTriggerConfigurationDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StatefulTriggerConfigurationDefaultTypeInternal _StatefulTriggerConfiguration_default_instance_;
 }  // namespace model
 }  // namespace v1
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[16];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[17];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fevent_2eproto = nullptr;
 
@@ -311,9 +322,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fevent_2e
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::Condition, condition_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::PresenceEventTriggerCondition, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::model::AutoresolveEventTriggerCondition, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
@@ -394,17 +411,18 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 22, -1, sizeof(::v1::model::AgentEventConfiguration)},
   { 30, -1, sizeof(::v1::model::AgentEventTrigger)},
   { 46, -1, sizeof(::v1::model::Condition)},
-  { 60, -1, sizeof(::v1::model::PresenceEventTriggerCondition)},
-  { 65, -1, sizeof(::v1::model::ThresholdEventTriggerCondition)},
-  { 72, -1, sizeof(::v1::model::NumericCondition)},
-  { 79, -1, sizeof(::v1::model::NumericSetEventTriggerCondition)},
-  { 86, -1, sizeof(::v1::model::BatteryCondition)},
-  { 94, -1, sizeof(::v1::model::BatteryEventTriggerCondition)},
-  { 101, -1, sizeof(::v1::model::RegexEventTriggerCondition)},
-  { 107, -1, sizeof(::v1::model::BitsetEventTriggerCondition)},
-  { 114, -1, sizeof(::v1::model::BitsetCondition)},
-  { 122, -1, sizeof(::v1::model::JsonEventTriggerCondition)},
-  { 128, -1, sizeof(::v1::model::StatefulTriggerConfiguration)},
+  { 61, -1, sizeof(::v1::model::PresenceEventTriggerCondition)},
+  { 66, -1, sizeof(::v1::model::AutoresolveEventTriggerCondition)},
+  { 71, -1, sizeof(::v1::model::ThresholdEventTriggerCondition)},
+  { 78, -1, sizeof(::v1::model::NumericCondition)},
+  { 85, -1, sizeof(::v1::model::NumericSetEventTriggerCondition)},
+  { 92, -1, sizeof(::v1::model::BatteryCondition)},
+  { 100, -1, sizeof(::v1::model::BatteryEventTriggerCondition)},
+  { 107, -1, sizeof(::v1::model::RegexEventTriggerCondition)},
+  { 113, -1, sizeof(::v1::model::BitsetEventTriggerCondition)},
+  { 120, -1, sizeof(::v1::model::BitsetCondition)},
+  { 128, -1, sizeof(::v1::model::JsonEventTriggerCondition)},
+  { 134, -1, sizeof(::v1::model::StatefulTriggerConfiguration)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -414,6 +432,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_AgentEventTrigger_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Condition_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_PresenceEventTriggerCondition_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_AutoresolveEventTriggerCondition_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_ThresholdEventTriggerCondition_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_NumericCondition_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_NumericSetEventTriggerCondition_default_instance_),
@@ -455,7 +474,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto[] PROTO
   " \001(\tR\007message\022$\n\rmessageFormat\030\013 \001(\tR\rme"
   "ssageFormat\022\032\n\010severity\030\t \001(\tR\010severity\022"
   "1\n\024notification_enabled\030\n \001(\010R\023notificat"
-  "ionEnabled\"\206\004\n\tCondition\022\026\n\006stream\030\001 \001(\t"
+  "ionEnabled\"\326\004\n\tCondition\022\026\n\006stream\030\001 \001(\t"
   "R\006stream\022E\n\010presence\030\002 \001(\0132\'.v1.model.Pr"
   "esenceEventTriggerConditionH\000R\010presence\022"
   "H\n\tthreshold\030\003 \001(\0132(.v1.model.ThresholdE"
@@ -467,51 +486,54 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto[] PROTO
   "tTriggerConditionH\000R\007battery\022E\n\007numeric\030"
   "\007 \001(\0132).v1.model.NumericSetEventTriggerC"
   "onditionH\000R\007numeric\0229\n\004json\030\010 \001(\0132#.v1.m"
-  "odel.JsonEventTriggerConditionH\000R\004jsonB\013"
+  "odel.JsonEventTriggerConditionH\000R\004json\022N"
+  "\n\013autoresolve\030\t \001(\0132*.v1.model.Autoresol"
+  "veEventTriggerConditionH\000R\013autoresolveB\013"
   "\n\tcondition\"\037\n\035PresenceEventTriggerCondi"
-  "tion\"o\n\036ThresholdEventTriggerCondition\022\024"
-  "\n\005value\030\001 \001(\001R\005value\0227\n\010operator\030\002 \001(\0162\033"
-  ".v1.model.ThresholdOperatorR\010operator\"p\n"
-  "\020NumericCondition\022\024\n\005label\030\001 \001(\tR\005label\022"
-  "F\n\tcondition\030\002 \001(\0132(.v1.model.ThresholdE"
-  "ventTriggerConditionR\tcondition\"\226\001\n\037Nume"
-  "ricSetEventTriggerCondition\022:\n\ncondition"
-  "s\030\001 \003(\0132\032.v1.model.NumericConditionR\ncon"
-  "ditions\0227\n\010operator\030\002 \001(\0162\033.v1.model.Con"
-  "ditionOperatorR\010operator\"\301\001\n\020BatteryCond"
-  "ition\022,\n\005field\030\001 \001(\0162\026.v1.model.BatteryF"
-  "ieldR\005field\022F\n\tcondition\030\002 \001(\0132(.v1.mode"
-  "l.ThresholdEventTriggerConditionR\tcondit"
-  "ion\0227\n\010operator\030\003 \001(\0162\033.v1.model.Conditi"
-  "onOperatorR\010operator\"\223\001\n\034BatteryEventTri"
-  "ggerCondition\022:\n\nconditions\030\001 \003(\0132\032.v1.m"
-  "odel.BatteryConditionR\nconditions\0227\n\010ope"
-  "rator\030\002 \001(\0162\033.v1.model.ConditionOperator"
-  "R\010operator\"2\n\032RegexEventTriggerCondition"
-  "\022\024\n\005value\030\001 \001(\tR\005value\"\230\001\n\033BitsetEventTr"
-  "iggerCondition\022@\n\016bit_conditions\030\001 \003(\0132\031"
-  ".v1.model.BitsetConditionR\rbitConditions"
-  "\0227\n\010operator\030\002 \001(\0162\033.v1.model.ConditionO"
-  "peratorR\010operator\"M\n\017BitsetCondition\022\020\n\003"
-  "key\030\001 \001(\tR\003key\022\022\n\004true\030\002 \001(\010R\004true\022\024\n\005fa"
-  "lse\030\003 \001(\010R\005false\"5\n\031JsonEventTriggerCond"
-  "ition\022\030\n\007jqQuery\030\001 \001(\tR\007jqQuery\"\200\001\n\034Stat"
-  "efulTriggerConfiguration\0220\n\023emitOnEnteri"
-  "ngState\030\001 \001(\010R\023emitOnEnteringState\022.\n\022em"
-  "itOnLeavingState\030\002 \001(\010R\022emitOnLeavingSta"
-  "te*:\n\010Severity\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\t\n"
-  "\005ERROR\020\002\022\014\n\010CRITICAL\020\003*D\n\014BatteryField\022\n"
-  "\n\006Charge\020\000\022\013\n\007Current\020\001\022\016\n\nPercentage\020\002\022"
-  "\013\n\007Voltage\020\003*F\n\021ThresholdOperator\022\006\n\002LT\020"
-  "\000\022\007\n\003LTE\020\001\022\006\n\002GT\020\002\022\007\n\003GTE\020\003\022\006\n\002EQ\020\004\022\007\n\003N"
-  "EQ\020\005*%\n\021ConditionOperator\022\007\n\003ANY\020\000\022\007\n\003AL"
-  "L\020\001B+Z)github.com/FormantIO/genproto/go/"
-  "v1/modelb\006proto3"
+  "tion\"\"\n AutoresolveEventTriggerCondition"
+  "\"o\n\036ThresholdEventTriggerCondition\022\024\n\005va"
+  "lue\030\001 \001(\001R\005value\0227\n\010operator\030\002 \001(\0162\033.v1."
+  "model.ThresholdOperatorR\010operator\"p\n\020Num"
+  "ericCondition\022\024\n\005label\030\001 \001(\tR\005label\022F\n\tc"
+  "ondition\030\002 \001(\0132(.v1.model.ThresholdEvent"
+  "TriggerConditionR\tcondition\"\226\001\n\037NumericS"
+  "etEventTriggerCondition\022:\n\nconditions\030\001 "
+  "\003(\0132\032.v1.model.NumericConditionR\nconditi"
+  "ons\0227\n\010operator\030\002 \001(\0162\033.v1.model.Conditi"
+  "onOperatorR\010operator\"\301\001\n\020BatteryConditio"
+  "n\022,\n\005field\030\001 \001(\0162\026.v1.model.BatteryField"
+  "R\005field\022F\n\tcondition\030\002 \001(\0132(.v1.model.Th"
+  "resholdEventTriggerConditionR\tcondition\022"
+  "7\n\010operator\030\003 \001(\0162\033.v1.model.ConditionOp"
+  "eratorR\010operator\"\223\001\n\034BatteryEventTrigger"
+  "Condition\022:\n\nconditions\030\001 \003(\0132\032.v1.model"
+  ".BatteryConditionR\nconditions\0227\n\010operato"
+  "r\030\002 \001(\0162\033.v1.model.ConditionOperatorR\010op"
+  "erator\"2\n\032RegexEventTriggerCondition\022\024\n\005"
+  "value\030\001 \001(\tR\005value\"\230\001\n\033BitsetEventTrigge"
+  "rCondition\022@\n\016bit_conditions\030\001 \003(\0132\031.v1."
+  "model.BitsetConditionR\rbitConditions\0227\n\010"
+  "operator\030\002 \001(\0162\033.v1.model.ConditionOpera"
+  "torR\010operator\"M\n\017BitsetCondition\022\020\n\003key\030"
+  "\001 \001(\tR\003key\022\022\n\004true\030\002 \001(\010R\004true\022\024\n\005false\030"
+  "\003 \001(\010R\005false\"5\n\031JsonEventTriggerConditio"
+  "n\022\030\n\007jqQuery\030\001 \001(\tR\007jqQuery\"\200\001\n\034Stateful"
+  "TriggerConfiguration\0220\n\023emitOnEnteringSt"
+  "ate\030\001 \001(\010R\023emitOnEnteringState\022.\n\022emitOn"
+  "LeavingState\030\002 \001(\010R\022emitOnLeavingState*:"
+  "\n\010Severity\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\t\n\005ERR"
+  "OR\020\002\022\014\n\010CRITICAL\020\003*D\n\014BatteryField\022\n\n\006Ch"
+  "arge\020\000\022\013\n\007Current\020\001\022\016\n\nPercentage\020\002\022\013\n\007V"
+  "oltage\020\003*F\n\021ThresholdOperator\022\006\n\002LT\020\000\022\007\n"
+  "\003LTE\020\001\022\006\n\002GT\020\002\022\007\n\003GTE\020\003\022\006\n\002EQ\020\004\022\007\n\003NEQ\020\005"
+  "*%\n\021ConditionOperator\022\007\n\003ANY\020\000\022\007\n\003ALL\020\001B"
+  "+Z)github.com/FormantIO/genproto/go/v1/m"
+  "odelb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto = {
-  false, false, 3176, descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto, "protos/model/v1/event.proto", 
-  &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once, nullptr, 0, 16,
+  false, false, 3292, descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto, "protos/model/v1/event.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once, nullptr, 0, 17,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fevent_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fevent_2eproto,
 };
@@ -1918,6 +1940,7 @@ class Condition::_Internal {
   static const ::v1::model::BatteryEventTriggerCondition& battery(const Condition* msg);
   static const ::v1::model::NumericSetEventTriggerCondition& numeric(const Condition* msg);
   static const ::v1::model::JsonEventTriggerCondition& json(const Condition* msg);
+  static const ::v1::model::AutoresolveEventTriggerCondition& autoresolve(const Condition* msg);
 };
 
 const ::v1::model::PresenceEventTriggerCondition&
@@ -1947,6 +1970,10 @@ Condition::_Internal::numeric(const Condition* msg) {
 const ::v1::model::JsonEventTriggerCondition&
 Condition::_Internal::json(const Condition* msg) {
   return *msg->condition_.json_;
+}
+const ::v1::model::AutoresolveEventTriggerCondition&
+Condition::_Internal::autoresolve(const Condition* msg) {
+  return *msg->condition_.autoresolve_;
 }
 void Condition::set_allocated_presence(::v1::model::PresenceEventTriggerCondition* presence) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -2053,6 +2080,21 @@ void Condition::set_allocated_json(::v1::model::JsonEventTriggerCondition* json)
   }
   // @@protoc_insertion_point(field_set_allocated:v1.model.Condition.json)
 }
+void Condition::set_allocated_autoresolve(::v1::model::AutoresolveEventTriggerCondition* autoresolve) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_condition();
+  if (autoresolve) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::v1::model::AutoresolveEventTriggerCondition>::GetOwningArena(autoresolve);
+    if (message_arena != submessage_arena) {
+      autoresolve = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, autoresolve, submessage_arena);
+    }
+    set_has_autoresolve();
+    condition_.autoresolve_ = autoresolve;
+  }
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Condition.autoresolve)
+}
 Condition::Condition(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -2095,6 +2137,10 @@ Condition::Condition(const Condition& from)
     }
     case kJson: {
       _internal_mutable_json()->::v1::model::JsonEventTriggerCondition::MergeFrom(from._internal_json());
+      break;
+    }
+    case kAutoresolve: {
+      _internal_mutable_autoresolve()->::v1::model::AutoresolveEventTriggerCondition::MergeFrom(from._internal_autoresolve());
       break;
     }
     case CONDITION_NOT_SET: {
@@ -2178,6 +2224,12 @@ void Condition::clear_condition() {
       }
       break;
     }
+    case kAutoresolve: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete condition_.autoresolve_;
+      }
+      break;
+    }
     case CONDITION_NOT_SET: {
       break;
     }
@@ -2258,6 +2310,13 @@ const char* Condition::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           ptr = ctx->ParseMessage(_internal_mutable_json(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.AutoresolveEventTriggerCondition autoresolve = 9 [json_name = "autoresolve"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          ptr = ctx->ParseMessage(_internal_mutable_autoresolve(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2356,6 +2415,14 @@ failure:
         8, _Internal::json(this), target, stream);
   }
 
+  // .v1.model.AutoresolveEventTriggerCondition autoresolve = 9 [json_name = "autoresolve"];
+  if (_internal_has_autoresolve()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        9, _Internal::autoresolve(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2429,6 +2496,13 @@ size_t Condition::ByteSizeLong() const {
           *condition_.json_);
       break;
     }
+    // .v1.model.AutoresolveEventTriggerCondition autoresolve = 9 [json_name = "autoresolve"];
+    case kAutoresolve: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *condition_.autoresolve_);
+      break;
+    }
     case CONDITION_NOT_SET: {
       break;
     }
@@ -2494,6 +2568,10 @@ void Condition::MergeFrom(const Condition& from) {
     }
     case kJson: {
       _internal_mutable_json()->::v1::model::JsonEventTriggerCondition::MergeFrom(from._internal_json());
+      break;
+    }
+    case kAutoresolve: {
+      _internal_mutable_autoresolve()->::v1::model::AutoresolveEventTriggerCondition::MergeFrom(from._internal_autoresolve());
       break;
     }
     case CONDITION_NOT_SET: {
@@ -2694,6 +2772,164 @@ void PresenceEventTriggerCondition::InternalSwap(PresenceEventTriggerCondition* 
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
       file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[5]);
+}
+
+// ===================================================================
+
+class AutoresolveEventTriggerCondition::_Internal {
+ public:
+};
+
+AutoresolveEventTriggerCondition::AutoresolveEventTriggerCondition(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:v1.model.AutoresolveEventTriggerCondition)
+}
+AutoresolveEventTriggerCondition::AutoresolveEventTriggerCondition(const AutoresolveEventTriggerCondition& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:v1.model.AutoresolveEventTriggerCondition)
+}
+
+void AutoresolveEventTriggerCondition::SharedCtor() {
+}
+
+AutoresolveEventTriggerCondition::~AutoresolveEventTriggerCondition() {
+  // @@protoc_insertion_point(destructor:v1.model.AutoresolveEventTriggerCondition)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void AutoresolveEventTriggerCondition::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void AutoresolveEventTriggerCondition::ArenaDtor(void* object) {
+  AutoresolveEventTriggerCondition* _this = reinterpret_cast< AutoresolveEventTriggerCondition* >(object);
+  (void)_this;
+}
+void AutoresolveEventTriggerCondition::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AutoresolveEventTriggerCondition::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void AutoresolveEventTriggerCondition::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.model.AutoresolveEventTriggerCondition)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AutoresolveEventTriggerCondition::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AutoresolveEventTriggerCondition::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.model.AutoresolveEventTriggerCondition)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.model.AutoresolveEventTriggerCondition)
+  return target;
+}
+
+size_t AutoresolveEventTriggerCondition::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.model.AutoresolveEventTriggerCondition)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AutoresolveEventTriggerCondition::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.AutoresolveEventTriggerCondition)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AutoresolveEventTriggerCondition* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AutoresolveEventTriggerCondition>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.AutoresolveEventTriggerCondition)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.AutoresolveEventTriggerCondition)
+    MergeFrom(*source);
+  }
+}
+
+void AutoresolveEventTriggerCondition::MergeFrom(const AutoresolveEventTriggerCondition& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.AutoresolveEventTriggerCondition)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void AutoresolveEventTriggerCondition::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.AutoresolveEventTriggerCondition)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AutoresolveEventTriggerCondition::CopyFrom(const AutoresolveEventTriggerCondition& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.AutoresolveEventTriggerCondition)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AutoresolveEventTriggerCondition::IsInitialized() const {
+  return true;
+}
+
+void AutoresolveEventTriggerCondition::InternalSwap(AutoresolveEventTriggerCondition* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AutoresolveEventTriggerCondition::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[6]);
 }
 
 // ===================================================================
@@ -2917,7 +3153,7 @@ void ThresholdEventTriggerCondition::InternalSwap(ThresholdEventTriggerCondition
 ::PROTOBUF_NAMESPACE_ID::Metadata ThresholdEventTriggerCondition::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[6]);
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[7]);
 }
 
 // ===================================================================
@@ -3164,7 +3400,7 @@ void NumericCondition::InternalSwap(NumericCondition* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata NumericCondition::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[7]);
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[8]);
 }
 
 // ===================================================================
@@ -3387,7 +3623,7 @@ void NumericSetEventTriggerCondition::InternalSwap(NumericSetEventTriggerConditi
 ::PROTOBUF_NAMESPACE_ID::Metadata NumericSetEventTriggerCondition::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[8]);
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[9]);
 }
 
 // ===================================================================
@@ -3654,7 +3890,7 @@ void BatteryCondition::InternalSwap(BatteryCondition* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata BatteryCondition::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[9]);
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[10]);
 }
 
 // ===================================================================
@@ -3877,7 +4113,7 @@ void BatteryEventTriggerCondition::InternalSwap(BatteryEventTriggerCondition* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata BatteryEventTriggerCondition::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[10]);
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[11]);
 }
 
 // ===================================================================
@@ -4082,7 +4318,7 @@ void RegexEventTriggerCondition::InternalSwap(RegexEventTriggerCondition* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata RegexEventTriggerCondition::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[11]);
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[12]);
 }
 
 // ===================================================================
@@ -4305,7 +4541,7 @@ void BitsetEventTriggerCondition::InternalSwap(BitsetEventTriggerCondition* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata BitsetEventTriggerCondition::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[12]);
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[13]);
 }
 
 // ===================================================================
@@ -4568,7 +4804,7 @@ void BitsetCondition::InternalSwap(BitsetCondition* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata BitsetCondition::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[13]);
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[14]);
 }
 
 // ===================================================================
@@ -4773,7 +5009,7 @@ void JsonEventTriggerCondition::InternalSwap(JsonEventTriggerCondition* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata JsonEventTriggerCondition::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[14]);
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[15]);
 }
 
 // ===================================================================
@@ -4994,7 +5230,7 @@ void StatefulTriggerConfiguration::InternalSwap(StatefulTriggerConfiguration* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata StatefulTriggerConfiguration::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once,
-      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[15]);
+      file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto[16]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -5018,6 +5254,9 @@ template<> PROTOBUF_NOINLINE ::v1::model::Condition* Arena::CreateMaybeMessage< 
 }
 template<> PROTOBUF_NOINLINE ::v1::model::PresenceEventTriggerCondition* Arena::CreateMaybeMessage< ::v1::model::PresenceEventTriggerCondition >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::PresenceEventTriggerCondition >(arena);
+}
+template<> PROTOBUF_NOINLINE ::v1::model::AutoresolveEventTriggerCondition* Arena::CreateMaybeMessage< ::v1::model::AutoresolveEventTriggerCondition >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::v1::model::AutoresolveEventTriggerCondition >(arena);
 }
 template<> PROTOBUF_NOINLINE ::v1::model::ThresholdEventTriggerCondition* Arena::CreateMaybeMessage< ::v1::model::ThresholdEventTriggerCondition >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::ThresholdEventTriggerCondition >(arena);

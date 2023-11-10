@@ -50,7 +50,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fevent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[17]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -65,6 +65,9 @@ extern AgentEventConfigurationDefaultTypeInternal _AgentEventConfiguration_defau
 class AgentEventTrigger;
 struct AgentEventTriggerDefaultTypeInternal;
 extern AgentEventTriggerDefaultTypeInternal _AgentEventTrigger_default_instance_;
+class AutoresolveEventTriggerCondition;
+struct AutoresolveEventTriggerConditionDefaultTypeInternal;
+extern AutoresolveEventTriggerConditionDefaultTypeInternal _AutoresolveEventTriggerCondition_default_instance_;
 class BatteryCondition;
 struct BatteryConditionDefaultTypeInternal;
 extern BatteryConditionDefaultTypeInternal _BatteryCondition_default_instance_;
@@ -112,6 +115,7 @@ extern ThresholdEventTriggerConditionDefaultTypeInternal _ThresholdEventTriggerC
 PROTOBUF_NAMESPACE_OPEN
 template<> ::v1::model::AgentEventConfiguration* Arena::CreateMaybeMessage<::v1::model::AgentEventConfiguration>(Arena*);
 template<> ::v1::model::AgentEventTrigger* Arena::CreateMaybeMessage<::v1::model::AgentEventTrigger>(Arena*);
+template<> ::v1::model::AutoresolveEventTriggerCondition* Arena::CreateMaybeMessage<::v1::model::AutoresolveEventTriggerCondition>(Arena*);
 template<> ::v1::model::BatteryCondition* Arena::CreateMaybeMessage<::v1::model::BatteryCondition>(Arena*);
 template<> ::v1::model::BatteryEventTriggerCondition* Arena::CreateMaybeMessage<::v1::model::BatteryEventTriggerCondition>(Arena*);
 template<> ::v1::model::BitsetCondition* Arena::CreateMaybeMessage<::v1::model::BitsetCondition>(Arena*);
@@ -1017,6 +1021,7 @@ class Condition final :
     kBattery = 6,
     kNumeric = 7,
     kJson = 8,
+    kAutoresolve = 9,
     CONDITION_NOT_SET = 0,
   };
 
@@ -1097,6 +1102,7 @@ class Condition final :
     kBatteryFieldNumber = 6,
     kNumericFieldNumber = 7,
     kJsonFieldNumber = 8,
+    kAutoresolveFieldNumber = 9,
   };
   // string stream = 1 [json_name = "stream"];
   void clear_stream();
@@ -1238,6 +1244,24 @@ class Condition final :
       ::v1::model::JsonEventTriggerCondition* json);
   ::v1::model::JsonEventTriggerCondition* unsafe_arena_release_json();
 
+  // .v1.model.AutoresolveEventTriggerCondition autoresolve = 9 [json_name = "autoresolve"];
+  bool has_autoresolve() const;
+  private:
+  bool _internal_has_autoresolve() const;
+  public:
+  void clear_autoresolve();
+  const ::v1::model::AutoresolveEventTriggerCondition& autoresolve() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::AutoresolveEventTriggerCondition* release_autoresolve();
+  ::v1::model::AutoresolveEventTriggerCondition* mutable_autoresolve();
+  void set_allocated_autoresolve(::v1::model::AutoresolveEventTriggerCondition* autoresolve);
+  private:
+  const ::v1::model::AutoresolveEventTriggerCondition& _internal_autoresolve() const;
+  ::v1::model::AutoresolveEventTriggerCondition* _internal_mutable_autoresolve();
+  public:
+  void unsafe_arena_set_allocated_autoresolve(
+      ::v1::model::AutoresolveEventTriggerCondition* autoresolve);
+  ::v1::model::AutoresolveEventTriggerCondition* unsafe_arena_release_autoresolve();
+
   void clear_condition();
   ConditionCase condition_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.Condition)
@@ -1250,6 +1274,7 @@ class Condition final :
   void set_has_battery();
   void set_has_numeric();
   void set_has_json();
+  void set_has_autoresolve();
 
   inline bool has_condition() const;
   inline void clear_has_condition();
@@ -1268,6 +1293,7 @@ class Condition final :
     ::v1::model::BatteryEventTriggerCondition* battery_;
     ::v1::model::NumericSetEventTriggerCondition* numeric_;
     ::v1::model::JsonEventTriggerCondition* json_;
+    ::v1::model::AutoresolveEventTriggerCondition* autoresolve_;
   } condition_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1395,6 +1421,125 @@ class PresenceEventTriggerCondition final :
 };
 // -------------------------------------------------------------------
 
+class AutoresolveEventTriggerCondition final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.AutoresolveEventTriggerCondition) */ {
+ public:
+  inline AutoresolveEventTriggerCondition() : AutoresolveEventTriggerCondition(nullptr) {}
+  ~AutoresolveEventTriggerCondition() override;
+  explicit constexpr AutoresolveEventTriggerCondition(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AutoresolveEventTriggerCondition(const AutoresolveEventTriggerCondition& from);
+  AutoresolveEventTriggerCondition(AutoresolveEventTriggerCondition&& from) noexcept
+    : AutoresolveEventTriggerCondition() {
+    *this = ::std::move(from);
+  }
+
+  inline AutoresolveEventTriggerCondition& operator=(const AutoresolveEventTriggerCondition& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AutoresolveEventTriggerCondition& operator=(AutoresolveEventTriggerCondition&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AutoresolveEventTriggerCondition& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AutoresolveEventTriggerCondition* internal_default_instance() {
+    return reinterpret_cast<const AutoresolveEventTriggerCondition*>(
+               &_AutoresolveEventTriggerCondition_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(AutoresolveEventTriggerCondition& a, AutoresolveEventTriggerCondition& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AutoresolveEventTriggerCondition* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AutoresolveEventTriggerCondition* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AutoresolveEventTriggerCondition* New() const final {
+    return new AutoresolveEventTriggerCondition();
+  }
+
+  AutoresolveEventTriggerCondition* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AutoresolveEventTriggerCondition>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const AutoresolveEventTriggerCondition& from);
+  void MergeFrom(const AutoresolveEventTriggerCondition& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AutoresolveEventTriggerCondition* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.AutoresolveEventTriggerCondition";
+  }
+  protected:
+  explicit AutoresolveEventTriggerCondition(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:v1.model.AutoresolveEventTriggerCondition)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fevent_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ThresholdEventTriggerCondition final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.ThresholdEventTriggerCondition) */ {
  public:
@@ -1439,7 +1584,7 @@ class ThresholdEventTriggerCondition final :
                &_ThresholdEventTriggerCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(ThresholdEventTriggerCondition& a, ThresholdEventTriggerCondition& b) {
     a.Swap(&b);
@@ -1582,7 +1727,7 @@ class NumericCondition final :
                &_NumericCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(NumericCondition& a, NumericCondition& b) {
     a.Swap(&b);
@@ -1739,7 +1884,7 @@ class NumericSetEventTriggerCondition final :
                &_NumericSetEventTriggerCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(NumericSetEventTriggerCondition& a, NumericSetEventTriggerCondition& b) {
     a.Swap(&b);
@@ -1891,7 +2036,7 @@ class BatteryCondition final :
                &_BatteryCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(BatteryCondition& a, BatteryCondition& b) {
     a.Swap(&b);
@@ -2054,7 +2199,7 @@ class BatteryEventTriggerCondition final :
                &_BatteryEventTriggerCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(BatteryEventTriggerCondition& a, BatteryEventTriggerCondition& b) {
     a.Swap(&b);
@@ -2206,7 +2351,7 @@ class RegexEventTriggerCondition final :
                &_RegexEventTriggerCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(RegexEventTriggerCondition& a, RegexEventTriggerCondition& b) {
     a.Swap(&b);
@@ -2343,7 +2488,7 @@ class BitsetEventTriggerCondition final :
                &_BitsetEventTriggerCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(BitsetEventTriggerCondition& a, BitsetEventTriggerCondition& b) {
     a.Swap(&b);
@@ -2495,7 +2640,7 @@ class BitsetCondition final :
                &_BitsetCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(BitsetCondition& a, BitsetCondition& b) {
     a.Swap(&b);
@@ -2654,7 +2799,7 @@ class JsonEventTriggerCondition final :
                &_JsonEventTriggerCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(JsonEventTriggerCondition& a, JsonEventTriggerCondition& b) {
     a.Swap(&b);
@@ -2791,7 +2936,7 @@ class StatefulTriggerConfiguration final :
                &_StatefulTriggerConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(StatefulTriggerConfiguration& a, StatefulTriggerConfiguration& b) {
     a.Swap(&b);
@@ -4345,6 +4490,79 @@ inline ::v1::model::JsonEventTriggerCondition* Condition::mutable_json() {
   return _internal_mutable_json();
 }
 
+// .v1.model.AutoresolveEventTriggerCondition autoresolve = 9 [json_name = "autoresolve"];
+inline bool Condition::_internal_has_autoresolve() const {
+  return condition_case() == kAutoresolve;
+}
+inline bool Condition::has_autoresolve() const {
+  return _internal_has_autoresolve();
+}
+inline void Condition::set_has_autoresolve() {
+  _oneof_case_[0] = kAutoresolve;
+}
+inline void Condition::clear_autoresolve() {
+  if (_internal_has_autoresolve()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete condition_.autoresolve_;
+    }
+    clear_has_condition();
+  }
+}
+inline ::v1::model::AutoresolveEventTriggerCondition* Condition::release_autoresolve() {
+  // @@protoc_insertion_point(field_release:v1.model.Condition.autoresolve)
+  if (_internal_has_autoresolve()) {
+    clear_has_condition();
+      ::v1::model::AutoresolveEventTriggerCondition* temp = condition_.autoresolve_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    condition_.autoresolve_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::AutoresolveEventTriggerCondition& Condition::_internal_autoresolve() const {
+  return _internal_has_autoresolve()
+      ? *condition_.autoresolve_
+      : reinterpret_cast< ::v1::model::AutoresolveEventTriggerCondition&>(::v1::model::_AutoresolveEventTriggerCondition_default_instance_);
+}
+inline const ::v1::model::AutoresolveEventTriggerCondition& Condition::autoresolve() const {
+  // @@protoc_insertion_point(field_get:v1.model.Condition.autoresolve)
+  return _internal_autoresolve();
+}
+inline ::v1::model::AutoresolveEventTriggerCondition* Condition::unsafe_arena_release_autoresolve() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.Condition.autoresolve)
+  if (_internal_has_autoresolve()) {
+    clear_has_condition();
+    ::v1::model::AutoresolveEventTriggerCondition* temp = condition_.autoresolve_;
+    condition_.autoresolve_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Condition::unsafe_arena_set_allocated_autoresolve(::v1::model::AutoresolveEventTriggerCondition* autoresolve) {
+  clear_condition();
+  if (autoresolve) {
+    set_has_autoresolve();
+    condition_.autoresolve_ = autoresolve;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.Condition.autoresolve)
+}
+inline ::v1::model::AutoresolveEventTriggerCondition* Condition::_internal_mutable_autoresolve() {
+  if (!_internal_has_autoresolve()) {
+    clear_condition();
+    set_has_autoresolve();
+    condition_.autoresolve_ = CreateMaybeMessage< ::v1::model::AutoresolveEventTriggerCondition >(GetArenaForAllocation());
+  }
+  return condition_.autoresolve_;
+}
+inline ::v1::model::AutoresolveEventTriggerCondition* Condition::mutable_autoresolve() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Condition.autoresolve)
+  return _internal_mutable_autoresolve();
+}
+
 inline bool Condition::has_condition() const {
   return condition_case() != CONDITION_NOT_SET;
 }
@@ -4357,6 +4575,10 @@ inline Condition::ConditionCase Condition::condition_case() const {
 // -------------------------------------------------------------------
 
 // PresenceEventTriggerCondition
+
+// -------------------------------------------------------------------
+
+// AutoresolveEventTriggerCondition
 
 // -------------------------------------------------------------------
 
@@ -5084,6 +5306,8 @@ inline void StatefulTriggerConfiguration::set_emitonleavingstate(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
