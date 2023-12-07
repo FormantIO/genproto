@@ -1880,6 +1880,7 @@ class TeleopRosStreamConfiguration final :
     kTopicTypeFieldNumber = 2,
     kModeFieldNumber = 3,
     kEncodeVideoFieldNumber = 4,
+    kOverlayClockFieldNumber = 9,
   };
   // string topic_name = 1 [json_name = "topicName"];
   void clear_topic_name();
@@ -1978,6 +1979,15 @@ class TeleopRosStreamConfiguration final :
   void _internal_set_encode_video(bool value);
   public:
 
+  // bool overlay_clock = 9 [json_name = "overlayClock"];
+  void clear_overlay_clock();
+  bool overlay_clock() const;
+  void set_overlay_clock(bool value);
+  private:
+  bool _internal_overlay_clock() const;
+  void _internal_set_overlay_clock(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.TeleopRosStreamConfiguration)
  private:
   class _Internal;
@@ -1993,6 +2003,7 @@ class TeleopRosStreamConfiguration final :
   int topic_type_;
   int mode_;
   bool encode_video_;
+  bool overlay_clock_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -2116,6 +2127,7 @@ class TeleopHardwareStreamConfiguration final :
     kModeFieldNumber = 3,
     kRtspEncodingNeededFieldNumber = 7,
     kIsOnvifFieldNumber = 8,
+    kOverlayClockFieldNumber = 11,
   };
   // string name = 1 [json_name = "name"];
   void clear_name();
@@ -2242,6 +2254,15 @@ class TeleopHardwareStreamConfiguration final :
   void _internal_set_is_onvif(bool value);
   public:
 
+  // bool overlay_clock = 11 [json_name = "overlayClock"];
+  void clear_overlay_clock();
+  bool overlay_clock() const;
+  void set_overlay_clock(bool value);
+  private:
+  bool _internal_overlay_clock() const;
+  void _internal_set_overlay_clock(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.TeleopHardwareStreamConfiguration)
  private:
   class _Internal;
@@ -2259,6 +2280,7 @@ class TeleopHardwareStreamConfiguration final :
   int mode_;
   bool rtsp_encoding_needed_;
   bool is_onvif_;
+  bool overlay_clock_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -2377,6 +2399,7 @@ class TeleopCustomStreamConfiguration final :
     kQualityFieldNumber = 5,
     kModeFieldNumber = 3,
     kEncodeVideoFieldNumber = 4,
+    kOverlayClockFieldNumber = 6,
   };
   // string name = 1 [json_name = "name"];
   void clear_name();
@@ -2438,6 +2461,15 @@ class TeleopCustomStreamConfiguration final :
   void _internal_set_encode_video(bool value);
   public:
 
+  // bool overlay_clock = 6 [json_name = "overlayClock"];
+  void clear_overlay_clock();
+  bool overlay_clock() const;
+  void set_overlay_clock(bool value);
+  private:
+  bool _internal_overlay_clock() const;
+  void _internal_set_overlay_clock(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.TeleopCustomStreamConfiguration)
  private:
   class _Internal;
@@ -2450,6 +2482,7 @@ class TeleopCustomStreamConfiguration final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quality_;
   int mode_;
   bool encode_video_;
+  bool overlay_clock_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -4410,6 +4443,7 @@ class Hardware final :
     kIpCamPasswordFieldNumber = 8,
     kRtspEncodingNeededFieldNumber = 5,
     kIsOnvifFieldNumber = 6,
+    kOverlayClockFieldNumber = 9,
   };
   // string hw_descriptor = 1 [json_name = "hwDescriptor"];
   void clear_hw_descriptor();
@@ -4499,6 +4533,15 @@ class Hardware final :
   void _internal_set_is_onvif(bool value);
   public:
 
+  // bool overlay_clock = 9 [json_name = "overlayClock"];
+  void clear_overlay_clock();
+  bool overlay_clock() const;
+  void set_overlay_clock(bool value);
+  private:
+  bool _internal_overlay_clock() const;
+  void _internal_set_overlay_clock(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.Hardware)
  private:
   class _Internal;
@@ -4513,6 +4556,7 @@ class Hardware final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_cam_password_;
   bool rtsp_encoding_needed_;
   bool is_onvif_;
+  bool overlay_clock_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -7263,6 +7307,26 @@ inline void TeleopRosStreamConfiguration::set_allocated_local_frame(std::string*
   // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopRosStreamConfiguration.local_frame)
 }
 
+// bool overlay_clock = 9 [json_name = "overlayClock"];
+inline void TeleopRosStreamConfiguration::clear_overlay_clock() {
+  overlay_clock_ = false;
+}
+inline bool TeleopRosStreamConfiguration::_internal_overlay_clock() const {
+  return overlay_clock_;
+}
+inline bool TeleopRosStreamConfiguration::overlay_clock() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopRosStreamConfiguration.overlay_clock)
+  return _internal_overlay_clock();
+}
+inline void TeleopRosStreamConfiguration::_internal_set_overlay_clock(bool value) {
+  
+  overlay_clock_ = value;
+}
+inline void TeleopRosStreamConfiguration::set_overlay_clock(bool value) {
+  _internal_set_overlay_clock(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.overlay_clock)
+}
+
 // -------------------------------------------------------------------
 
 // TeleopHardwareStreamConfiguration
@@ -7642,6 +7706,26 @@ inline void TeleopHardwareStreamConfiguration::set_allocated_ip_cam_password(std
   // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopHardwareStreamConfiguration.ip_cam_password)
 }
 
+// bool overlay_clock = 11 [json_name = "overlayClock"];
+inline void TeleopHardwareStreamConfiguration::clear_overlay_clock() {
+  overlay_clock_ = false;
+}
+inline bool TeleopHardwareStreamConfiguration::_internal_overlay_clock() const {
+  return overlay_clock_;
+}
+inline bool TeleopHardwareStreamConfiguration::overlay_clock() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopHardwareStreamConfiguration.overlay_clock)
+  return _internal_overlay_clock();
+}
+inline void TeleopHardwareStreamConfiguration::_internal_set_overlay_clock(bool value) {
+  
+  overlay_clock_ = value;
+}
+inline void TeleopHardwareStreamConfiguration::set_overlay_clock(bool value) {
+  _internal_set_overlay_clock(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopHardwareStreamConfiguration.overlay_clock)
+}
+
 // -------------------------------------------------------------------
 
 // TeleopCustomStreamConfiguration
@@ -7819,6 +7903,26 @@ inline void TeleopCustomStreamConfiguration::set_allocated_quality(std::string* 
   quality_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), quality,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopCustomStreamConfiguration.quality)
+}
+
+// bool overlay_clock = 6 [json_name = "overlayClock"];
+inline void TeleopCustomStreamConfiguration::clear_overlay_clock() {
+  overlay_clock_ = false;
+}
+inline bool TeleopCustomStreamConfiguration::_internal_overlay_clock() const {
+  return overlay_clock_;
+}
+inline bool TeleopCustomStreamConfiguration::overlay_clock() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopCustomStreamConfiguration.overlay_clock)
+  return _internal_overlay_clock();
+}
+inline void TeleopCustomStreamConfiguration::_internal_set_overlay_clock(bool value) {
+  
+  overlay_clock_ = value;
+}
+inline void TeleopCustomStreamConfiguration::set_overlay_clock(bool value) {
+  _internal_set_overlay_clock(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopCustomStreamConfiguration.overlay_clock)
 }
 
 // -------------------------------------------------------------------
@@ -9847,6 +9951,26 @@ inline void Hardware::set_allocated_ip_cam_password(std::string* ip_cam_password
   ip_cam_password_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ip_cam_password,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:v1.model.Hardware.ip_cam_password)
+}
+
+// bool overlay_clock = 9 [json_name = "overlayClock"];
+inline void Hardware::clear_overlay_clock() {
+  overlay_clock_ = false;
+}
+inline bool Hardware::_internal_overlay_clock() const {
+  return overlay_clock_;
+}
+inline bool Hardware::overlay_clock() const {
+  // @@protoc_insertion_point(field_get:v1.model.Hardware.overlay_clock)
+  return _internal_overlay_clock();
+}
+inline void Hardware::_internal_set_overlay_clock(bool value) {
+  
+  overlay_clock_ = value;
+}
+inline void Hardware::set_overlay_clock(bool value) {
+  _internal_set_overlay_clock(value);
+  // @@protoc_insertion_point(field_set:v1.model.Hardware.overlay_clock)
 }
 
 // -------------------------------------------------------------------
