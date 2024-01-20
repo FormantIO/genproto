@@ -1879,8 +1879,10 @@ class TeleopRosStreamConfiguration final :
     kLocalFrameFieldNumber = 8,
     kTopicTypeFieldNumber = 2,
     kModeFieldNumber = 3,
+    kBitrateFieldNumber = 10,
     kEncodeVideoFieldNumber = 4,
     kOverlayClockFieldNumber = 9,
+    kDisableAdaptiveQualityFieldNumber = 11,
   };
   // string topic_name = 1 [json_name = "topicName"];
   void clear_topic_name();
@@ -1970,6 +1972,15 @@ class TeleopRosStreamConfiguration final :
   void _internal_set_mode(::v1::model::TeleopMode value);
   public:
 
+  // int64 bitrate = 10 [json_name = "bitrate"];
+  void clear_bitrate();
+  ::PROTOBUF_NAMESPACE_ID::int64 bitrate() const;
+  void set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_bitrate() const;
+  void _internal_set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
   // bool encode_video = 4 [json_name = "encodeVideo"];
   void clear_encode_video();
   bool encode_video() const;
@@ -1988,6 +1999,15 @@ class TeleopRosStreamConfiguration final :
   void _internal_set_overlay_clock(bool value);
   public:
 
+  // bool disable_adaptive_quality = 11 [json_name = "disableAdaptiveQuality"];
+  void clear_disable_adaptive_quality();
+  bool disable_adaptive_quality() const;
+  void set_disable_adaptive_quality(bool value);
+  private:
+  bool _internal_disable_adaptive_quality() const;
+  void _internal_set_disable_adaptive_quality(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.TeleopRosStreamConfiguration)
  private:
   class _Internal;
@@ -2002,8 +2022,10 @@ class TeleopRosStreamConfiguration final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr local_frame_;
   int topic_type_;
   int mode_;
+  ::PROTOBUF_NAMESPACE_ID::int64 bitrate_;
   bool encode_video_;
   bool overlay_clock_;
+  bool disable_adaptive_quality_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -2128,6 +2150,8 @@ class TeleopHardwareStreamConfiguration final :
     kRtspEncodingNeededFieldNumber = 7,
     kIsOnvifFieldNumber = 8,
     kOverlayClockFieldNumber = 11,
+    kDisableAdaptiveQualityFieldNumber = 13,
+    kBitrateFieldNumber = 12,
   };
   // string name = 1 [json_name = "name"];
   void clear_name();
@@ -2263,6 +2287,24 @@ class TeleopHardwareStreamConfiguration final :
   void _internal_set_overlay_clock(bool value);
   public:
 
+  // bool disable_adaptive_quality = 13 [json_name = "disableAdaptiveQuality"];
+  void clear_disable_adaptive_quality();
+  bool disable_adaptive_quality() const;
+  void set_disable_adaptive_quality(bool value);
+  private:
+  bool _internal_disable_adaptive_quality() const;
+  void _internal_set_disable_adaptive_quality(bool value);
+  public:
+
+  // int64 bitrate = 12 [json_name = "bitrate"];
+  void clear_bitrate();
+  ::PROTOBUF_NAMESPACE_ID::int64 bitrate() const;
+  void set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_bitrate() const;
+  void _internal_set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.TeleopHardwareStreamConfiguration)
  private:
   class _Internal;
@@ -2281,6 +2323,8 @@ class TeleopHardwareStreamConfiguration final :
   bool rtsp_encoding_needed_;
   bool is_onvif_;
   bool overlay_clock_;
+  bool disable_adaptive_quality_;
+  ::PROTOBUF_NAMESPACE_ID::int64 bitrate_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -2400,6 +2444,8 @@ class TeleopCustomStreamConfiguration final :
     kModeFieldNumber = 3,
     kEncodeVideoFieldNumber = 4,
     kOverlayClockFieldNumber = 6,
+    kDisableAdaptiveQualityFieldNumber = 8,
+    kBitrateFieldNumber = 7,
   };
   // string name = 1 [json_name = "name"];
   void clear_name();
@@ -2470,6 +2516,24 @@ class TeleopCustomStreamConfiguration final :
   void _internal_set_overlay_clock(bool value);
   public:
 
+  // bool disable_adaptive_quality = 8 [json_name = "disableAdaptiveQuality"];
+  void clear_disable_adaptive_quality();
+  bool disable_adaptive_quality() const;
+  void set_disable_adaptive_quality(bool value);
+  private:
+  bool _internal_disable_adaptive_quality() const;
+  void _internal_set_disable_adaptive_quality(bool value);
+  public:
+
+  // int64 bitrate = 7 [json_name = "bitrate"];
+  void clear_bitrate();
+  ::PROTOBUF_NAMESPACE_ID::int64 bitrate() const;
+  void set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_bitrate() const;
+  void _internal_set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.TeleopCustomStreamConfiguration)
  private:
   class _Internal;
@@ -2483,6 +2547,8 @@ class TeleopCustomStreamConfiguration final :
   int mode_;
   bool encode_video_;
   bool overlay_clock_;
+  bool disable_adaptive_quality_;
+  ::PROTOBUF_NAMESPACE_ID::int64 bitrate_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -4441,9 +4507,11 @@ class Hardware final :
     kHardwareTypeFieldNumber = 4,
     kIpCamUsernameFieldNumber = 7,
     kIpCamPasswordFieldNumber = 8,
+    kBitrateFieldNumber = 10,
     kRtspEncodingNeededFieldNumber = 5,
     kIsOnvifFieldNumber = 6,
     kOverlayClockFieldNumber = 9,
+    kDisableAdaptiveQualityFieldNumber = 11,
   };
   // string hw_descriptor = 1 [json_name = "hwDescriptor"];
   void clear_hw_descriptor();
@@ -4515,6 +4583,15 @@ class Hardware final :
   std::string* _internal_mutable_ip_cam_password();
   public:
 
+  // int64 bitrate = 10 [json_name = "bitrate"];
+  void clear_bitrate();
+  ::PROTOBUF_NAMESPACE_ID::int64 bitrate() const;
+  void set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_bitrate() const;
+  void _internal_set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
   // bool rtsp_encoding_needed = 5 [json_name = "rtspEncodingNeeded"];
   void clear_rtsp_encoding_needed();
   bool rtsp_encoding_needed() const;
@@ -4542,6 +4619,15 @@ class Hardware final :
   void _internal_set_overlay_clock(bool value);
   public:
 
+  // bool disable_adaptive_quality = 11 [json_name = "disableAdaptiveQuality"];
+  void clear_disable_adaptive_quality();
+  bool disable_adaptive_quality() const;
+  void set_disable_adaptive_quality(bool value);
+  private:
+  bool _internal_disable_adaptive_quality() const;
+  void _internal_set_disable_adaptive_quality(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.Hardware)
  private:
   class _Internal;
@@ -4554,9 +4640,11 @@ class Hardware final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hardware_type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_cam_username_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_cam_password_;
+  ::PROTOBUF_NAMESPACE_ID::int64 bitrate_;
   bool rtsp_encoding_needed_;
   bool is_onvif_;
   bool overlay_clock_;
+  bool disable_adaptive_quality_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -7327,6 +7415,46 @@ inline void TeleopRosStreamConfiguration::set_overlay_clock(bool value) {
   // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.overlay_clock)
 }
 
+// int64 bitrate = 10 [json_name = "bitrate"];
+inline void TeleopRosStreamConfiguration::clear_bitrate() {
+  bitrate_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeleopRosStreamConfiguration::_internal_bitrate() const {
+  return bitrate_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeleopRosStreamConfiguration::bitrate() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopRosStreamConfiguration.bitrate)
+  return _internal_bitrate();
+}
+inline void TeleopRosStreamConfiguration::_internal_set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  bitrate_ = value;
+}
+inline void TeleopRosStreamConfiguration::set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_bitrate(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.bitrate)
+}
+
+// bool disable_adaptive_quality = 11 [json_name = "disableAdaptiveQuality"];
+inline void TeleopRosStreamConfiguration::clear_disable_adaptive_quality() {
+  disable_adaptive_quality_ = false;
+}
+inline bool TeleopRosStreamConfiguration::_internal_disable_adaptive_quality() const {
+  return disable_adaptive_quality_;
+}
+inline bool TeleopRosStreamConfiguration::disable_adaptive_quality() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopRosStreamConfiguration.disable_adaptive_quality)
+  return _internal_disable_adaptive_quality();
+}
+inline void TeleopRosStreamConfiguration::_internal_set_disable_adaptive_quality(bool value) {
+  
+  disable_adaptive_quality_ = value;
+}
+inline void TeleopRosStreamConfiguration::set_disable_adaptive_quality(bool value) {
+  _internal_set_disable_adaptive_quality(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.disable_adaptive_quality)
+}
+
 // -------------------------------------------------------------------
 
 // TeleopHardwareStreamConfiguration
@@ -7726,6 +7854,46 @@ inline void TeleopHardwareStreamConfiguration::set_overlay_clock(bool value) {
   // @@protoc_insertion_point(field_set:v1.model.TeleopHardwareStreamConfiguration.overlay_clock)
 }
 
+// int64 bitrate = 12 [json_name = "bitrate"];
+inline void TeleopHardwareStreamConfiguration::clear_bitrate() {
+  bitrate_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeleopHardwareStreamConfiguration::_internal_bitrate() const {
+  return bitrate_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeleopHardwareStreamConfiguration::bitrate() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopHardwareStreamConfiguration.bitrate)
+  return _internal_bitrate();
+}
+inline void TeleopHardwareStreamConfiguration::_internal_set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  bitrate_ = value;
+}
+inline void TeleopHardwareStreamConfiguration::set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_bitrate(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopHardwareStreamConfiguration.bitrate)
+}
+
+// bool disable_adaptive_quality = 13 [json_name = "disableAdaptiveQuality"];
+inline void TeleopHardwareStreamConfiguration::clear_disable_adaptive_quality() {
+  disable_adaptive_quality_ = false;
+}
+inline bool TeleopHardwareStreamConfiguration::_internal_disable_adaptive_quality() const {
+  return disable_adaptive_quality_;
+}
+inline bool TeleopHardwareStreamConfiguration::disable_adaptive_quality() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopHardwareStreamConfiguration.disable_adaptive_quality)
+  return _internal_disable_adaptive_quality();
+}
+inline void TeleopHardwareStreamConfiguration::_internal_set_disable_adaptive_quality(bool value) {
+  
+  disable_adaptive_quality_ = value;
+}
+inline void TeleopHardwareStreamConfiguration::set_disable_adaptive_quality(bool value) {
+  _internal_set_disable_adaptive_quality(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopHardwareStreamConfiguration.disable_adaptive_quality)
+}
+
 // -------------------------------------------------------------------
 
 // TeleopCustomStreamConfiguration
@@ -7923,6 +8091,46 @@ inline void TeleopCustomStreamConfiguration::_internal_set_overlay_clock(bool va
 inline void TeleopCustomStreamConfiguration::set_overlay_clock(bool value) {
   _internal_set_overlay_clock(value);
   // @@protoc_insertion_point(field_set:v1.model.TeleopCustomStreamConfiguration.overlay_clock)
+}
+
+// int64 bitrate = 7 [json_name = "bitrate"];
+inline void TeleopCustomStreamConfiguration::clear_bitrate() {
+  bitrate_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeleopCustomStreamConfiguration::_internal_bitrate() const {
+  return bitrate_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeleopCustomStreamConfiguration::bitrate() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopCustomStreamConfiguration.bitrate)
+  return _internal_bitrate();
+}
+inline void TeleopCustomStreamConfiguration::_internal_set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  bitrate_ = value;
+}
+inline void TeleopCustomStreamConfiguration::set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_bitrate(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopCustomStreamConfiguration.bitrate)
+}
+
+// bool disable_adaptive_quality = 8 [json_name = "disableAdaptiveQuality"];
+inline void TeleopCustomStreamConfiguration::clear_disable_adaptive_quality() {
+  disable_adaptive_quality_ = false;
+}
+inline bool TeleopCustomStreamConfiguration::_internal_disable_adaptive_quality() const {
+  return disable_adaptive_quality_;
+}
+inline bool TeleopCustomStreamConfiguration::disable_adaptive_quality() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopCustomStreamConfiguration.disable_adaptive_quality)
+  return _internal_disable_adaptive_quality();
+}
+inline void TeleopCustomStreamConfiguration::_internal_set_disable_adaptive_quality(bool value) {
+  
+  disable_adaptive_quality_ = value;
+}
+inline void TeleopCustomStreamConfiguration::set_disable_adaptive_quality(bool value) {
+  _internal_set_disable_adaptive_quality(value);
+  // @@protoc_insertion_point(field_set:v1.model.TeleopCustomStreamConfiguration.disable_adaptive_quality)
 }
 
 // -------------------------------------------------------------------
@@ -9971,6 +10179,46 @@ inline void Hardware::_internal_set_overlay_clock(bool value) {
 inline void Hardware::set_overlay_clock(bool value) {
   _internal_set_overlay_clock(value);
   // @@protoc_insertion_point(field_set:v1.model.Hardware.overlay_clock)
+}
+
+// int64 bitrate = 10 [json_name = "bitrate"];
+inline void Hardware::clear_bitrate() {
+  bitrate_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 Hardware::_internal_bitrate() const {
+  return bitrate_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 Hardware::bitrate() const {
+  // @@protoc_insertion_point(field_get:v1.model.Hardware.bitrate)
+  return _internal_bitrate();
+}
+inline void Hardware::_internal_set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  bitrate_ = value;
+}
+inline void Hardware::set_bitrate(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_bitrate(value);
+  // @@protoc_insertion_point(field_set:v1.model.Hardware.bitrate)
+}
+
+// bool disable_adaptive_quality = 11 [json_name = "disableAdaptiveQuality"];
+inline void Hardware::clear_disable_adaptive_quality() {
+  disable_adaptive_quality_ = false;
+}
+inline bool Hardware::_internal_disable_adaptive_quality() const {
+  return disable_adaptive_quality_;
+}
+inline bool Hardware::disable_adaptive_quality() const {
+  // @@protoc_insertion_point(field_get:v1.model.Hardware.disable_adaptive_quality)
+  return _internal_disable_adaptive_quality();
+}
+inline void Hardware::_internal_set_disable_adaptive_quality(bool value) {
+  
+  disable_adaptive_quality_ = value;
+}
+inline void Hardware::set_disable_adaptive_quality(bool value) {
+  _internal_set_disable_adaptive_quality(value);
+  // @@protoc_insertion_point(field_set:v1.model.Hardware.disable_adaptive_quality)
 }
 
 // -------------------------------------------------------------------

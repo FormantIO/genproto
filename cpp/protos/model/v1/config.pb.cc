@@ -156,8 +156,10 @@ constexpr TeleopRosStreamConfiguration::TeleopRosStreamConfiguration(
 
   , mode_(0)
 
+  , bitrate_(int64_t{0})
   , encode_video_(false)
-  , overlay_clock_(false){}
+  , overlay_clock_(false)
+  , disable_adaptive_quality_(false){}
 struct TeleopRosStreamConfigurationDefaultTypeInternal {
   constexpr TeleopRosStreamConfigurationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -180,7 +182,9 @@ constexpr TeleopHardwareStreamConfiguration::TeleopHardwareStreamConfiguration(
 
   , rtsp_encoding_needed_(false)
   , is_onvif_(false)
-  , overlay_clock_(false){}
+  , overlay_clock_(false)
+  , disable_adaptive_quality_(false)
+  , bitrate_(int64_t{0}){}
 struct TeleopHardwareStreamConfigurationDefaultTypeInternal {
   constexpr TeleopHardwareStreamConfigurationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -198,7 +202,9 @@ constexpr TeleopCustomStreamConfiguration::TeleopCustomStreamConfiguration(
   , mode_(0)
 
   , encode_video_(false)
-  , overlay_clock_(false){}
+  , overlay_clock_(false)
+  , disable_adaptive_quality_(false)
+  , bitrate_(int64_t{0}){}
 struct TeleopCustomStreamConfigurationDefaultTypeInternal {
   constexpr TeleopCustomStreamConfigurationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -372,9 +378,11 @@ constexpr Hardware::Hardware(
   , hardware_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , ip_cam_username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , ip_cam_password_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , bitrate_(int64_t{0})
   , rtsp_encoding_needed_(false)
   , is_onvif_(false)
-  , overlay_clock_(false){}
+  , overlay_clock_(false)
+  , disable_adaptive_quality_(false){}
 struct HardwareDefaultTypeInternal {
   constexpr HardwareDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -535,6 +543,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fconfig_2
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopRosStreamConfiguration, base_reference_frame_),
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopRosStreamConfiguration, local_frame_),
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopRosStreamConfiguration, overlay_clock_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::TeleopRosStreamConfiguration, bitrate_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::TeleopRosStreamConfiguration, disable_adaptive_quality_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopHardwareStreamConfiguration, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -551,6 +561,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fconfig_2
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopHardwareStreamConfiguration, ip_cam_username_),
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopHardwareStreamConfiguration, ip_cam_password_),
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopHardwareStreamConfiguration, overlay_clock_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::TeleopHardwareStreamConfiguration, bitrate_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::TeleopHardwareStreamConfiguration, disable_adaptive_quality_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopCustomStreamConfiguration, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -562,6 +574,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fconfig_2
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopCustomStreamConfiguration, encode_video_),
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopCustomStreamConfiguration, quality_),
   PROTOBUF_FIELD_OFFSET(::v1::model::TeleopCustomStreamConfiguration, overlay_clock_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::TeleopCustomStreamConfiguration, bitrate_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::TeleopCustomStreamConfiguration, disable_adaptive_quality_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::TelemetryConfiguration, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -675,6 +689,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fconfig_2
   PROTOBUF_FIELD_OFFSET(::v1::model::Hardware, ip_cam_username_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Hardware, ip_cam_password_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Hardware, overlay_clock_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Hardware, bitrate_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Hardware, disable_adaptive_quality_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::DirectoryWatch, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -713,24 +729,24 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 69, -1, sizeof(::v1::model::TeleopConfiguration)},
   { 77, -1, sizeof(::v1::model::PortForwardingConfiguration)},
   { 83, -1, sizeof(::v1::model::TeleopRosStreamConfiguration)},
-  { 97, -1, sizeof(::v1::model::TeleopHardwareStreamConfiguration)},
-  { 113, -1, sizeof(::v1::model::TeleopCustomStreamConfiguration)},
-  { 124, -1, sizeof(::v1::model::TelemetryConfiguration)},
-  { 131, 138, sizeof(::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse)},
-  { 140, -1, sizeof(::v1::model::ApplicationConfiguration)},
-  { 146, -1, sizeof(::v1::model::ResourcesConfiguration)},
-  { 158, -1, sizeof(::v1::model::DiskConfiguration)},
-  { 165, -1, sizeof(::v1::model::ROSConfiguration)},
-  { 171, 178, sizeof(::v1::model::StreamConfiguration_TagsEntry_DoNotUse)},
-  { 180, -1, sizeof(::v1::model::StreamConfiguration)},
-  { 200, -1, sizeof(::v1::model::StreamTransformConfiguration)},
-  { 206, -1, sizeof(::v1::model::BlobData)},
-  { 212, -1, sizeof(::v1::model::Diagnostics)},
-  { 219, -1, sizeof(::v1::model::Custom)},
-  { 224, -1, sizeof(::v1::model::Hardware)},
-  { 237, -1, sizeof(::v1::model::DirectoryWatch)},
-  { 246, -1, sizeof(::v1::model::FileTail)},
-  { 256, -1, sizeof(::v1::model::RtcInfo)},
+  { 99, -1, sizeof(::v1::model::TeleopHardwareStreamConfiguration)},
+  { 117, -1, sizeof(::v1::model::TeleopCustomStreamConfiguration)},
+  { 130, -1, sizeof(::v1::model::TelemetryConfiguration)},
+  { 137, 144, sizeof(::v1::model::ApplicationConfiguration_ConfigurationMapEntry_DoNotUse)},
+  { 146, -1, sizeof(::v1::model::ApplicationConfiguration)},
+  { 152, -1, sizeof(::v1::model::ResourcesConfiguration)},
+  { 164, -1, sizeof(::v1::model::DiskConfiguration)},
+  { 171, -1, sizeof(::v1::model::ROSConfiguration)},
+  { 177, 184, sizeof(::v1::model::StreamConfiguration_TagsEntry_DoNotUse)},
+  { 186, -1, sizeof(::v1::model::StreamConfiguration)},
+  { 206, -1, sizeof(::v1::model::StreamTransformConfiguration)},
+  { 212, -1, sizeof(::v1::model::BlobData)},
+  { 218, -1, sizeof(::v1::model::Diagnostics)},
+  { 225, -1, sizeof(::v1::model::Custom)},
+  { 230, -1, sizeof(::v1::model::Hardware)},
+  { 245, -1, sizeof(::v1::model::DirectoryWatch)},
+  { 254, -1, sizeof(::v1::model::FileTail)},
+  { 264, -1, sizeof(::v1::model::RtcInfo)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -817,7 +833,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto[] PROT
   "v1.model.TeleopHardwareStreamConfigurati"
   "onR\017hardwareStreams\"S\n\033PortForwardingCon"
   "figuration\0224\n\007enabled\030\001 \001(\0132\032.google.pro"
-  "tobuf.BoolValueR\007enabled\"\364\002\n\034TeleopRosSt"
+  "tobuf.BoolValueR\007enabled\"\310\003\n\034TeleopRosSt"
   "reamConfiguration\022\035\n\ntopic_name\030\001 \001(\tR\tt"
   "opicName\0225\n\ntopic_type\030\002 \001(\0162\026.v1.model."
   "ROSTopicTypeR\ttopicType\022(\n\004mode\030\003 \001(\0162\024."
@@ -826,102 +842,111 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto[] PROT
   "\tR\naudioCodec\022\030\n\007quality\030\006 \001(\tR\007quality\022"
   "0\n\024base_reference_frame\030\007 \001(\tR\022baseRefer"
   "enceFrame\022\037\n\013local_frame\030\010 \001(\tR\nlocalFra"
-  "me\022#\n\roverlay_clock\030\t \001(\010R\014overlayClock\""
-  "\257\003\n!TeleopHardwareStreamConfiguration\022\022\n"
+  "me\022#\n\roverlay_clock\030\t \001(\010R\014overlayClock\022"
+  "\030\n\007bitrate\030\n \001(\003R\007bitrate\0228\n\030disable_ada"
+  "ptive_quality\030\013 \001(\010R\026disableAdaptiveQual"
+  "ity\"\203\004\n!TeleopHardwareStreamConfiguratio"
+  "n\022\022\n\004name\030\001 \001(\tR\004name\022&\n\017rtc_stream_type"
+  "\030\002 \001(\tR\rrtcStreamType\022(\n\004mode\030\003 \001(\0162\024.v1"
+  ".model.TeleopModeR\004mode\022#\n\rhw_descriptor"
+  "\030\004 \001(\tR\014hwDescriptor\022\030\n\007quality\030\005 \001(\tR\007q"
+  "uality\022#\n\rhardware_type\030\006 \001(\tR\014hardwareT"
+  "ype\0220\n\024rtsp_encoding_needed\030\007 \001(\010R\022rtspE"
+  "ncodingNeeded\022\031\n\010is_onvif\030\010 \001(\010R\007isOnvif"
+  "\022&\n\017ip_cam_username\030\t \001(\tR\ripCamUsername"
+  "\022&\n\017ip_cam_password\030\n \001(\tR\ripCamPassword"
+  "\022#\n\roverlay_clock\030\013 \001(\010R\014overlayClock\022\030\n"
+  "\007bitrate\030\014 \001(\003R\007bitrate\0228\n\030disable_adapt"
+  "ive_quality\030\r \001(\010R\026disableAdaptiveQualit"
+  "y\"\275\002\n\037TeleopCustomStreamConfiguration\022\022\n"
   "\004name\030\001 \001(\tR\004name\022&\n\017rtc_stream_type\030\002 \001"
   "(\tR\rrtcStreamType\022(\n\004mode\030\003 \001(\0162\024.v1.mod"
-  "el.TeleopModeR\004mode\022#\n\rhw_descriptor\030\004 \001"
-  "(\tR\014hwDescriptor\022\030\n\007quality\030\005 \001(\tR\007quali"
-  "ty\022#\n\rhardware_type\030\006 \001(\tR\014hardwareType\022"
-  "0\n\024rtsp_encoding_needed\030\007 \001(\010R\022rtspEncod"
-  "ingNeeded\022\031\n\010is_onvif\030\010 \001(\010R\007isOnvif\022&\n\017"
-  "ip_cam_username\030\t \001(\tR\ripCamUsername\022&\n\017"
-  "ip_cam_password\030\n \001(\tR\ripCamPassword\022#\n\r"
-  "overlay_clock\030\013 \001(\010R\014overlayClock\"\351\001\n\037Te"
-  "leopCustomStreamConfiguration\022\022\n\004name\030\001 "
-  "\001(\tR\004name\022&\n\017rtc_stream_type\030\002 \001(\tR\rrtcS"
-  "treamType\022(\n\004mode\030\003 \001(\0162\024.v1.model.Teleo"
-  "pModeR\004mode\022!\n\014encode_video\030\004 \001(\010R\013encod"
-  "eVideo\022\030\n\007quality\030\005 \001(\tR\007quality\022#\n\rover"
-  "lay_clock\030\006 \001(\010R\014overlayClock\"\177\n\026Telemet"
-  "ryConfiguration\0227\n\007streams\030\001 \003(\0132\035.v1.mo"
-  "del.StreamConfigurationR\007streams\022,\n\003ros\030"
-  "\002 \001(\0132\032.v1.model.ROSConfigurationR\003ros\"\306"
-  "\001\n\030ApplicationConfiguration\022e\n\021configura"
-  "tion_map\030\001 \003(\01328.v1.model.ApplicationCon"
-  "figuration.ConfigurationMapEntryR\020config"
-  "urationMap\032C\n\025ConfigurationMapEntry\022\020\n\003k"
-  "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\""
-  "\226\003\n\026ResourcesConfiguration\022/\n\004disk\030\001 \001(\013"
-  "2\033.v1.model.DiskConfigurationR\004disk\022J\n\022s"
-  "tream_throttle_hz\030\002 \001(\0132\034.google.protobu"
-  "f.DoubleValueR\020streamThrottleHz\022.\n\023low_b"
-  "andwidth_agent\030\003 \001(\010R\021lowBandwidthAgent\022"
-  "0\n\024datapoint_batch_size\030\004 \001(\004R\022datapoint"
-  "BatchSize\022<\n\032datapoint_batchLifetime_ms\030"
-  "\005 \001(\004R\030datapointBatchLifetimeMs\022(\n\020asset"
-  "_batch_size\030\006 \001(\004R\016assetBatchSize\0225\n\027ass"
-  "et_batch_lifetime_ms\030\007 \001(\004R\024assetBatchLi"
-  "fetimeMs\"g\n\021DiskConfiguration\022\037\n\013buffer_"
-  "size\030\001 \001(\003R\nbufferSize\0221\n\025on_demand_buff"
-  "er_size\030\002 \001(\003R\022onDemandBufferSize\"K\n\020ROS"
-  "Configuration\0227\n\030world_reference_frame_i"
-  "d\030\001 \001(\tR\025worldReferenceFrameId\"\335\006\n\023Strea"
-  "mConfiguration\022\022\n\004name\030\001 \001(\tR\004name\022;\n\004ta"
-  "gs\030\002 \003(\0132\'.v1.model.StreamConfiguration."
-  "TagsEntryR\004tags\0221\n\tros_topic\030\003 \001(\0132\022.v1."
-  "model.ROSTopicH\000R\010rosTopic\022F\n\020ros_locali"
-  "zation\030\004 \001(\0132\031.v1.model.ROSLocalizationH"
-  "\000R\017rosLocalization\022C\n\017directory_watch\030\005 "
-  "\001(\0132\030.v1.model.DirectoryWatchH\000R\016directo"
-  "ryWatch\0221\n\tfile_tail\030\006 \001(\0132\022.v1.model.Fi"
-  "leTailH\000R\010fileTail\022J\n\022ros_transform_tree"
-  "\030\007 \001(\0132\032.v1.model.ROSTransformTreeH\000R\020ro"
-  "sTransformTree\022*\n\006custom\030\t \001(\0132\020.v1.mode"
-  "l.CustomH\000R\006custom\0220\n\010hardware\030\n \001(\0132\022.v"
-  "1.model.HardwareH\000R\010hardware\022=\n\013throttle"
-  "_hz\030\010 \001(\0132\034.google.protobuf.DoubleValueR"
-  "\nthrottleHz\0226\n\010disabled\030\023 \001(\0132\032.google.p"
-  "rotobuf.BoolValueR\010disabled\0227\n\ton_demand"
-  "\030\024 \001(\0132\032.google.protobuf.BoolValueR\010onDe"
-  "mand\022D\n\ttransform\030\025 \001(\0132&.v1.model.Strea"
-  "mTransformConfigurationR\ttransform\022\030\n\007qu"
-  "ality\030\026 \001(\tR\007quality\0327\n\tTagsEntry\022\020\n\003key"
-  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\017\n"
-  "\rconfiguration\"p\n\034StreamTransformConfigu"
-  "ration\022P\n\026video_encoding_enabled\030\001 \001(\0132\032"
-  ".google.protobuf.BoolValueR\024videoEncodin"
-  "gEnabled\"\036\n\010BlobData\022\022\n\004data\030\001 \001(\tR\004data"
-  "\"\215\001\n\013Diagnostics\022;\n\013report_logs\030\001 \001(\0132\032."
-  "google.protobuf.BoolValueR\nreportLogs\022A\n"
-  "\016report_metrics\030\002 \001(\0132\032.google.protobuf."
-  "BoolValueR\rreportMetrics\"\010\n\006Custom\"\306\002\n\010H"
-  "ardware\022#\n\rhw_descriptor\030\001 \001(\tR\014hwDescri"
-  "ptor\022.\n\023audio_hw_descriptor\030\003 \001(\tR\021audio"
-  "HwDescriptor\022#\n\rhardware_type\030\004 \001(\tR\014har"
-  "dwareType\0220\n\024rtsp_encoding_needed\030\005 \001(\010R"
-  "\022rtspEncodingNeeded\022\031\n\010is_onvif\030\006 \001(\010R\007i"
-  "sOnvif\022&\n\017ip_cam_username\030\007 \001(\tR\ripCamUs"
-  "ername\022&\n\017ip_cam_password\030\010 \001(\tR\ripCamPa"
-  "ssword\022#\n\roverlay_clock\030\t \001(\010R\014overlayCl"
-  "ock\"\240\001\n\016DirectoryWatch\022\034\n\tdirectory\030\001 \001("
-  "\tR\tdirectory\022\034\n\textension\030\002 \001(\tR\textensi"
-  "on\022/\n\tfile_type\030\003 \001(\0162\022.v1.model.FileTyp"
-  "eR\010fileType\022!\n\014remote_agent\030\004 \001(\010R\013remot"
-  "eAgent\"\257\001\n\010FileTail\022\032\n\010filename\030\001 \001(\tR\010f"
-  "ilename\0225\n\013file_format\030\002 \001(\0162\024.v1.model."
-  "FileFormatR\nfileFormat\022\031\n\010time_key\030\003 \001(\t"
-  "R\007timeKey\022\037\n\013time_format\030\004 \001(\tR\ntimeForm"
-  "at\022\024\n\005regex\030\005 \001(\tR\005regex\"\245\001\n\007RtcInfo\022;\n\032"
-  "rtc_ice_transport_policies\030\001 \003(\tR\027rtcIce"
-  "TransportPolicies\0225\n\027rtc_ice_server_prot"
-  "ocol\030\002 \001(\tR\024rtcIceServerProtocol\022&\n\017use_"
-  "all_servers\030\003 \001(\010R\ruseAllServers*&\n\nTele"
-  "opMode\022\013\n\007COMMAND\020\000\022\013\n\007OBSERVE\020\001*&\n\nFile"
-  "Format\022\016\n\nPLAIN_TEXT\020\000\022\010\n\004JSON\020\001*;\n\010File"
-  "Type\022\010\n\004FILE\020\000\022\t\n\005IMAGE\020\001\022\017\n\013POINT_CLOUD"
-  "\020\004\022\t\n\005VIDEO\020\005B+Z)github.com/FormantIO/ge"
-  "nproto/go/v1/modelb\006proto3"
+  "el.TeleopModeR\004mode\022!\n\014encode_video\030\004 \001("
+  "\010R\013encodeVideo\022\030\n\007quality\030\005 \001(\tR\007quality"
+  "\022#\n\roverlay_clock\030\006 \001(\010R\014overlayClock\022\030\n"
+  "\007bitrate\030\007 \001(\003R\007bitrate\0228\n\030disable_adapt"
+  "ive_quality\030\010 \001(\010R\026disableAdaptiveQualit"
+  "y\"\177\n\026TelemetryConfiguration\0227\n\007streams\030\001"
+  " \003(\0132\035.v1.model.StreamConfigurationR\007str"
+  "eams\022,\n\003ros\030\002 \001(\0132\032.v1.model.ROSConfigur"
+  "ationR\003ros\"\306\001\n\030ApplicationConfiguration\022"
+  "e\n\021configuration_map\030\001 \003(\01328.v1.model.Ap"
+  "plicationConfiguration.ConfigurationMapE"
+  "ntryR\020configurationMap\032C\n\025ConfigurationM"
+  "apEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t"
+  "R\005value:\0028\001\"\226\003\n\026ResourcesConfiguration\022/"
+  "\n\004disk\030\001 \001(\0132\033.v1.model.DiskConfiguratio"
+  "nR\004disk\022J\n\022stream_throttle_hz\030\002 \001(\0132\034.go"
+  "ogle.protobuf.DoubleValueR\020streamThrottl"
+  "eHz\022.\n\023low_bandwidth_agent\030\003 \001(\010R\021lowBan"
+  "dwidthAgent\0220\n\024datapoint_batch_size\030\004 \001("
+  "\004R\022datapointBatchSize\022<\n\032datapoint_batch"
+  "Lifetime_ms\030\005 \001(\004R\030datapointBatchLifetim"
+  "eMs\022(\n\020asset_batch_size\030\006 \001(\004R\016assetBatc"
+  "hSize\0225\n\027asset_batch_lifetime_ms\030\007 \001(\004R\024"
+  "assetBatchLifetimeMs\"g\n\021DiskConfiguratio"
+  "n\022\037\n\013buffer_size\030\001 \001(\003R\nbufferSize\0221\n\025on"
+  "_demand_buffer_size\030\002 \001(\003R\022onDemandBuffe"
+  "rSize\"K\n\020ROSConfiguration\0227\n\030world_refer"
+  "ence_frame_id\030\001 \001(\tR\025worldReferenceFrame"
+  "Id\"\335\006\n\023StreamConfiguration\022\022\n\004name\030\001 \001(\t"
+  "R\004name\022;\n\004tags\030\002 \003(\0132\'.v1.model.StreamCo"
+  "nfiguration.TagsEntryR\004tags\0221\n\tros_topic"
+  "\030\003 \001(\0132\022.v1.model.ROSTopicH\000R\010rosTopic\022F"
+  "\n\020ros_localization\030\004 \001(\0132\031.v1.model.ROSL"
+  "ocalizationH\000R\017rosLocalization\022C\n\017direct"
+  "ory_watch\030\005 \001(\0132\030.v1.model.DirectoryWatc"
+  "hH\000R\016directoryWatch\0221\n\tfile_tail\030\006 \001(\0132\022"
+  ".v1.model.FileTailH\000R\010fileTail\022J\n\022ros_tr"
+  "ansform_tree\030\007 \001(\0132\032.v1.model.ROSTransfo"
+  "rmTreeH\000R\020rosTransformTree\022*\n\006custom\030\t \001"
+  "(\0132\020.v1.model.CustomH\000R\006custom\0220\n\010hardwa"
+  "re\030\n \001(\0132\022.v1.model.HardwareH\000R\010hardware"
+  "\022=\n\013throttle_hz\030\010 \001(\0132\034.google.protobuf."
+  "DoubleValueR\nthrottleHz\0226\n\010disabled\030\023 \001("
+  "\0132\032.google.protobuf.BoolValueR\010disabled\022"
+  "7\n\ton_demand\030\024 \001(\0132\032.google.protobuf.Boo"
+  "lValueR\010onDemand\022D\n\ttransform\030\025 \001(\0132&.v1"
+  ".model.StreamTransformConfigurationR\ttra"
+  "nsform\022\030\n\007quality\030\026 \001(\tR\007quality\0327\n\tTags"
+  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005"
+  "value:\0028\001B\017\n\rconfiguration\"p\n\034StreamTran"
+  "sformConfiguration\022P\n\026video_encoding_ena"
+  "bled\030\001 \001(\0132\032.google.protobuf.BoolValueR\024"
+  "videoEncodingEnabled\"\036\n\010BlobData\022\022\n\004data"
+  "\030\001 \001(\tR\004data\"\215\001\n\013Diagnostics\022;\n\013report_l"
+  "ogs\030\001 \001(\0132\032.google.protobuf.BoolValueR\nr"
+  "eportLogs\022A\n\016report_metrics\030\002 \001(\0132\032.goog"
+  "le.protobuf.BoolValueR\rreportMetrics\"\010\n\006"
+  "Custom\"\232\003\n\010Hardware\022#\n\rhw_descriptor\030\001 \001"
+  "(\tR\014hwDescriptor\022.\n\023audio_hw_descriptor\030"
+  "\003 \001(\tR\021audioHwDescriptor\022#\n\rhardware_typ"
+  "e\030\004 \001(\tR\014hardwareType\0220\n\024rtsp_encoding_n"
+  "eeded\030\005 \001(\010R\022rtspEncodingNeeded\022\031\n\010is_on"
+  "vif\030\006 \001(\010R\007isOnvif\022&\n\017ip_cam_username\030\007 "
+  "\001(\tR\ripCamUsername\022&\n\017ip_cam_password\030\010 "
+  "\001(\tR\ripCamPassword\022#\n\roverlay_clock\030\t \001("
+  "\010R\014overlayClock\022\030\n\007bitrate\030\n \001(\003R\007bitrat"
+  "e\0228\n\030disable_adaptive_quality\030\013 \001(\010R\026dis"
+  "ableAdaptiveQuality\"\240\001\n\016DirectoryWatch\022\034"
+  "\n\tdirectory\030\001 \001(\tR\tdirectory\022\034\n\textensio"
+  "n\030\002 \001(\tR\textension\022/\n\tfile_type\030\003 \001(\0162\022."
+  "v1.model.FileTypeR\010fileType\022!\n\014remote_ag"
+  "ent\030\004 \001(\010R\013remoteAgent\"\257\001\n\010FileTail\022\032\n\010f"
+  "ilename\030\001 \001(\tR\010filename\0225\n\013file_format\030\002"
+  " \001(\0162\024.v1.model.FileFormatR\nfileFormat\022\031"
+  "\n\010time_key\030\003 \001(\tR\007timeKey\022\037\n\013time_format"
+  "\030\004 \001(\tR\ntimeFormat\022\024\n\005regex\030\005 \001(\tR\005regex"
+  "\"\245\001\n\007RtcInfo\022;\n\032rtc_ice_transport_polici"
+  "es\030\001 \003(\tR\027rtcIceTransportPolicies\0225\n\027rtc"
+  "_ice_server_protocol\030\002 \001(\tR\024rtcIceServer"
+  "Protocol\022&\n\017use_all_servers\030\003 \001(\010R\ruseAl"
+  "lServers*&\n\nTeleopMode\022\013\n\007COMMAND\020\000\022\013\n\007O"
+  "BSERVE\020\001*&\n\nFileFormat\022\016\n\nPLAIN_TEXT\020\000\022\010"
+  "\n\004JSON\020\001*;\n\010FileType\022\010\n\004FILE\020\000\022\t\n\005IMAGE\020"
+  "\001\022\017\n\013POINT_CLOUD\020\004\022\t\n\005VIDEO\020\005B+Z)github."
+  "com/FormantIO/genproto/go/v1/modelb\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fwrappers_2eproto,
@@ -929,7 +954,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto = {
-  false, false, 6306, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 
+  false, false, 6642, descriptor_table_protodef_protos_2fmodel_2fv1_2fconfig_2eproto, "protos/model/v1/config.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto_deps, 2, 27,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fconfig_2eproto,
@@ -3577,8 +3602,8 @@ TeleopRosStreamConfiguration::TeleopRosStreamConfiguration(const TeleopRosStream
       GetArenaForAllocation());
   }
   ::memcpy(&topic_type_, &from.topic_type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&overlay_clock_) -
-    reinterpret_cast<char*>(&topic_type_)) + sizeof(overlay_clock_));
+    static_cast<size_t>(reinterpret_cast<char*>(&disable_adaptive_quality_) -
+    reinterpret_cast<char*>(&topic_type_)) + sizeof(disable_adaptive_quality_));
   // @@protoc_insertion_point(copy_constructor:v1.model.TeleopRosStreamConfiguration)
 }
 
@@ -3590,8 +3615,8 @@ base_reference_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEm
 local_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&topic_type_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&overlay_clock_) -
-    reinterpret_cast<char*>(&topic_type_)) + sizeof(overlay_clock_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&disable_adaptive_quality_) -
+    reinterpret_cast<char*>(&topic_type_)) + sizeof(disable_adaptive_quality_));
 }
 
 TeleopRosStreamConfiguration::~TeleopRosStreamConfiguration() {
@@ -3631,8 +3656,8 @@ void TeleopRosStreamConfiguration::Clear() {
   base_reference_frame_.ClearToEmpty();
   local_frame_.ClearToEmpty();
   ::memset(&topic_type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&overlay_clock_) -
-      reinterpret_cast<char*>(&topic_type_)) + sizeof(overlay_clock_));
+      reinterpret_cast<char*>(&disable_adaptive_quality_) -
+      reinterpret_cast<char*>(&topic_type_)) + sizeof(disable_adaptive_quality_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3714,6 +3739,20 @@ const char* TeleopRosStreamConfiguration::_InternalParse(const char* ptr, ::PROT
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
           overlay_clock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 bitrate = 10 [json_name = "bitrate"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
+          bitrate_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool disable_adaptive_quality = 11 [json_name = "disableAdaptiveQuality"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
+          disable_adaptive_quality_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3822,6 +3861,18 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(9, this->_internal_overlay_clock(), target);
   }
 
+  // int64 bitrate = 10 [json_name = "bitrate"];
+  if (this->bitrate() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(10, this->_internal_bitrate(), target);
+  }
+
+  // bool disable_adaptive_quality = 11 [json_name = "disableAdaptiveQuality"];
+  if (this->disable_adaptive_quality() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_disable_adaptive_quality(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3885,6 +3936,13 @@ size_t TeleopRosStreamConfiguration::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_mode());
   }
 
+  // int64 bitrate = 10 [json_name = "bitrate"];
+  if (this->bitrate() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_bitrate());
+  }
+
   // bool encode_video = 4 [json_name = "encodeVideo"];
   if (this->encode_video() != 0) {
     total_size += 1 + 1;
@@ -3892,6 +3950,11 @@ size_t TeleopRosStreamConfiguration::ByteSizeLong() const {
 
   // bool overlay_clock = 9 [json_name = "overlayClock"];
   if (this->overlay_clock() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool disable_adaptive_quality = 11 [json_name = "disableAdaptiveQuality"];
+  if (this->disable_adaptive_quality() != 0) {
     total_size += 1 + 1;
   }
 
@@ -3947,11 +4010,17 @@ void TeleopRosStreamConfiguration::MergeFrom(const TeleopRosStreamConfiguration&
   if (from.mode() != 0) {
     _internal_set_mode(from._internal_mode());
   }
+  if (from.bitrate() != 0) {
+    _internal_set_bitrate(from._internal_bitrate());
+  }
   if (from.encode_video() != 0) {
     _internal_set_encode_video(from._internal_encode_video());
   }
   if (from.overlay_clock() != 0) {
     _internal_set_overlay_clock(from._internal_overlay_clock());
+  }
+  if (from.disable_adaptive_quality() != 0) {
+    _internal_set_disable_adaptive_quality(from._internal_disable_adaptive_quality());
   }
 }
 
@@ -4002,8 +4071,8 @@ void TeleopRosStreamConfiguration::InternalSwap(TeleopRosStreamConfiguration* ot
       &other->local_frame_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TeleopRosStreamConfiguration, overlay_clock_)
-      + sizeof(TeleopRosStreamConfiguration::overlay_clock_)
+      PROTOBUF_FIELD_OFFSET(TeleopRosStreamConfiguration, disable_adaptive_quality_)
+      + sizeof(TeleopRosStreamConfiguration::disable_adaptive_quality_)
       - PROTOBUF_FIELD_OFFSET(TeleopRosStreamConfiguration, topic_type_)>(
           reinterpret_cast<char*>(&topic_type_),
           reinterpret_cast<char*>(&other->topic_type_));
@@ -4066,8 +4135,8 @@ TeleopHardwareStreamConfiguration::TeleopHardwareStreamConfiguration(const Teleo
       GetArenaForAllocation());
   }
   ::memcpy(&mode_, &from.mode_,
-    static_cast<size_t>(reinterpret_cast<char*>(&overlay_clock_) -
-    reinterpret_cast<char*>(&mode_)) + sizeof(overlay_clock_));
+    static_cast<size_t>(reinterpret_cast<char*>(&bitrate_) -
+    reinterpret_cast<char*>(&mode_)) + sizeof(bitrate_));
   // @@protoc_insertion_point(copy_constructor:v1.model.TeleopHardwareStreamConfiguration)
 }
 
@@ -4081,8 +4150,8 @@ ip_cam_username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptySt
 ip_cam_password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&mode_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&overlay_clock_) -
-    reinterpret_cast<char*>(&mode_)) + sizeof(overlay_clock_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&bitrate_) -
+    reinterpret_cast<char*>(&mode_)) + sizeof(bitrate_));
 }
 
 TeleopHardwareStreamConfiguration::~TeleopHardwareStreamConfiguration() {
@@ -4126,8 +4195,8 @@ void TeleopHardwareStreamConfiguration::Clear() {
   ip_cam_username_.ClearToEmpty();
   ip_cam_password_.ClearToEmpty();
   ::memset(&mode_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&overlay_clock_) -
-      reinterpret_cast<char*>(&mode_)) + sizeof(overlay_clock_));
+      reinterpret_cast<char*>(&bitrate_) -
+      reinterpret_cast<char*>(&mode_)) + sizeof(bitrate_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4226,6 +4295,20 @@ const char* TeleopHardwareStreamConfiguration::_InternalParse(const char* ptr, :
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
           overlay_clock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 bitrate = 12 [json_name = "bitrate"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
+          bitrate_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool disable_adaptive_quality = 13 [json_name = "disableAdaptiveQuality"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 104)) {
+          disable_adaptive_quality_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4353,6 +4436,18 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_overlay_clock(), target);
   }
 
+  // int64 bitrate = 12 [json_name = "bitrate"];
+  if (this->bitrate() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(12, this->_internal_bitrate(), target);
+  }
+
+  // bool disable_adaptive_quality = 13 [json_name = "disableAdaptiveQuality"];
+  if (this->disable_adaptive_quality() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(13, this->_internal_disable_adaptive_quality(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4439,6 +4534,18 @@ size_t TeleopHardwareStreamConfiguration::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
+  // bool disable_adaptive_quality = 13 [json_name = "disableAdaptiveQuality"];
+  if (this->disable_adaptive_quality() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // int64 bitrate = 12 [json_name = "bitrate"];
+  if (this->bitrate() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_bitrate());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -4503,6 +4610,12 @@ void TeleopHardwareStreamConfiguration::MergeFrom(const TeleopHardwareStreamConf
   if (from.overlay_clock() != 0) {
     _internal_set_overlay_clock(from._internal_overlay_clock());
   }
+  if (from.disable_adaptive_quality() != 0) {
+    _internal_set_disable_adaptive_quality(from._internal_disable_adaptive_quality());
+  }
+  if (from.bitrate() != 0) {
+    _internal_set_bitrate(from._internal_bitrate());
+  }
 }
 
 void TeleopHardwareStreamConfiguration::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -4562,8 +4675,8 @@ void TeleopHardwareStreamConfiguration::InternalSwap(TeleopHardwareStreamConfigu
       &other->ip_cam_password_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TeleopHardwareStreamConfiguration, overlay_clock_)
-      + sizeof(TeleopHardwareStreamConfiguration::overlay_clock_)
+      PROTOBUF_FIELD_OFFSET(TeleopHardwareStreamConfiguration, bitrate_)
+      + sizeof(TeleopHardwareStreamConfiguration::bitrate_)
       - PROTOBUF_FIELD_OFFSET(TeleopHardwareStreamConfiguration, mode_)>(
           reinterpret_cast<char*>(&mode_),
           reinterpret_cast<char*>(&other->mode_));
@@ -4606,8 +4719,8 @@ TeleopCustomStreamConfiguration::TeleopCustomStreamConfiguration(const TeleopCus
       GetArenaForAllocation());
   }
   ::memcpy(&mode_, &from.mode_,
-    static_cast<size_t>(reinterpret_cast<char*>(&overlay_clock_) -
-    reinterpret_cast<char*>(&mode_)) + sizeof(overlay_clock_));
+    static_cast<size_t>(reinterpret_cast<char*>(&bitrate_) -
+    reinterpret_cast<char*>(&mode_)) + sizeof(bitrate_));
   // @@protoc_insertion_point(copy_constructor:v1.model.TeleopCustomStreamConfiguration)
 }
 
@@ -4617,8 +4730,8 @@ rtc_stream_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptySt
 quality_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&mode_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&overlay_clock_) -
-    reinterpret_cast<char*>(&mode_)) + sizeof(overlay_clock_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&bitrate_) -
+    reinterpret_cast<char*>(&mode_)) + sizeof(bitrate_));
 }
 
 TeleopCustomStreamConfiguration::~TeleopCustomStreamConfiguration() {
@@ -4654,8 +4767,8 @@ void TeleopCustomStreamConfiguration::Clear() {
   rtc_stream_type_.ClearToEmpty();
   quality_.ClearToEmpty();
   ::memset(&mode_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&overlay_clock_) -
-      reinterpret_cast<char*>(&mode_)) + sizeof(overlay_clock_));
+      reinterpret_cast<char*>(&bitrate_) -
+      reinterpret_cast<char*>(&mode_)) + sizeof(bitrate_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4711,6 +4824,20 @@ const char* TeleopCustomStreamConfiguration::_InternalParse(const char* ptr, ::P
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           overlay_clock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 bitrate = 7 [json_name = "bitrate"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          bitrate_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool disable_adaptive_quality = 8 [json_name = "disableAdaptiveQuality"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          disable_adaptive_quality_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4792,6 +4919,18 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_overlay_clock(), target);
   }
 
+  // int64 bitrate = 7 [json_name = "bitrate"];
+  if (this->bitrate() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(7, this->_internal_bitrate(), target);
+  }
+
+  // bool disable_adaptive_quality = 8 [json_name = "disableAdaptiveQuality"];
+  if (this->disable_adaptive_quality() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(8, this->_internal_disable_adaptive_quality(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4845,6 +4984,18 @@ size_t TeleopCustomStreamConfiguration::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
+  // bool disable_adaptive_quality = 8 [json_name = "disableAdaptiveQuality"];
+  if (this->disable_adaptive_quality() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // int64 bitrate = 7 [json_name = "bitrate"];
+  if (this->bitrate() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_bitrate());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -4894,6 +5045,12 @@ void TeleopCustomStreamConfiguration::MergeFrom(const TeleopCustomStreamConfigur
   if (from.overlay_clock() != 0) {
     _internal_set_overlay_clock(from._internal_overlay_clock());
   }
+  if (from.disable_adaptive_quality() != 0) {
+    _internal_set_disable_adaptive_quality(from._internal_disable_adaptive_quality());
+  }
+  if (from.bitrate() != 0) {
+    _internal_set_bitrate(from._internal_bitrate());
+  }
 }
 
 void TeleopCustomStreamConfiguration::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -4933,8 +5090,8 @@ void TeleopCustomStreamConfiguration::InternalSwap(TeleopCustomStreamConfigurati
       &other->quality_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TeleopCustomStreamConfiguration, overlay_clock_)
-      + sizeof(TeleopCustomStreamConfiguration::overlay_clock_)
+      PROTOBUF_FIELD_OFFSET(TeleopCustomStreamConfiguration, bitrate_)
+      + sizeof(TeleopCustomStreamConfiguration::bitrate_)
       - PROTOBUF_FIELD_OFFSET(TeleopCustomStreamConfiguration, mode_)>(
           reinterpret_cast<char*>(&mode_),
           reinterpret_cast<char*>(&other->mode_));
@@ -8114,9 +8271,9 @@ Hardware::Hardware(const Hardware& from)
     ip_cam_password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ip_cam_password(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&rtsp_encoding_needed_, &from.rtsp_encoding_needed_,
-    static_cast<size_t>(reinterpret_cast<char*>(&overlay_clock_) -
-    reinterpret_cast<char*>(&rtsp_encoding_needed_)) + sizeof(overlay_clock_));
+  ::memcpy(&bitrate_, &from.bitrate_,
+    static_cast<size_t>(reinterpret_cast<char*>(&disable_adaptive_quality_) -
+    reinterpret_cast<char*>(&bitrate_)) + sizeof(disable_adaptive_quality_));
   // @@protoc_insertion_point(copy_constructor:v1.model.Hardware)
 }
 
@@ -8127,9 +8284,9 @@ hardware_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStri
 ip_cam_username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ip_cam_password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&rtsp_encoding_needed_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&overlay_clock_) -
-    reinterpret_cast<char*>(&rtsp_encoding_needed_)) + sizeof(overlay_clock_));
+    reinterpret_cast<char*>(&bitrate_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&disable_adaptive_quality_) -
+    reinterpret_cast<char*>(&bitrate_)) + sizeof(disable_adaptive_quality_));
 }
 
 Hardware::~Hardware() {
@@ -8168,9 +8325,9 @@ void Hardware::Clear() {
   hardware_type_.ClearToEmpty();
   ip_cam_username_.ClearToEmpty();
   ip_cam_password_.ClearToEmpty();
-  ::memset(&rtsp_encoding_needed_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&overlay_clock_) -
-      reinterpret_cast<char*>(&rtsp_encoding_needed_)) + sizeof(overlay_clock_));
+  ::memset(&bitrate_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&disable_adaptive_quality_) -
+      reinterpret_cast<char*>(&bitrate_)) + sizeof(disable_adaptive_quality_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8243,6 +8400,20 @@ const char* Hardware::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
           overlay_clock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 bitrate = 10 [json_name = "bitrate"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
+          bitrate_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool disable_adaptive_quality = 11 [json_name = "disableAdaptiveQuality"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
+          disable_adaptive_quality_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8343,6 +8514,18 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(9, this->_internal_overlay_clock(), target);
   }
 
+  // int64 bitrate = 10 [json_name = "bitrate"];
+  if (this->bitrate() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(10, this->_internal_bitrate(), target);
+  }
+
+  // bool disable_adaptive_quality = 11 [json_name = "disableAdaptiveQuality"];
+  if (this->disable_adaptive_quality() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_disable_adaptive_quality(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -8394,6 +8577,13 @@ size_t Hardware::ByteSizeLong() const {
         this->_internal_ip_cam_password());
   }
 
+  // int64 bitrate = 10 [json_name = "bitrate"];
+  if (this->bitrate() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_bitrate());
+  }
+
   // bool rtsp_encoding_needed = 5 [json_name = "rtspEncodingNeeded"];
   if (this->rtsp_encoding_needed() != 0) {
     total_size += 1 + 1;
@@ -8406,6 +8596,11 @@ size_t Hardware::ByteSizeLong() const {
 
   // bool overlay_clock = 9 [json_name = "overlayClock"];
   if (this->overlay_clock() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool disable_adaptive_quality = 11 [json_name = "disableAdaptiveQuality"];
+  if (this->disable_adaptive_quality() != 0) {
     total_size += 1 + 1;
   }
 
@@ -8455,6 +8650,9 @@ void Hardware::MergeFrom(const Hardware& from) {
   if (!from.ip_cam_password().empty()) {
     _internal_set_ip_cam_password(from._internal_ip_cam_password());
   }
+  if (from.bitrate() != 0) {
+    _internal_set_bitrate(from._internal_bitrate());
+  }
   if (from.rtsp_encoding_needed() != 0) {
     _internal_set_rtsp_encoding_needed(from._internal_rtsp_encoding_needed());
   }
@@ -8463,6 +8661,9 @@ void Hardware::MergeFrom(const Hardware& from) {
   }
   if (from.overlay_clock() != 0) {
     _internal_set_overlay_clock(from._internal_overlay_clock());
+  }
+  if (from.disable_adaptive_quality() != 0) {
+    _internal_set_disable_adaptive_quality(from._internal_disable_adaptive_quality());
   }
 }
 
@@ -8513,11 +8714,11 @@ void Hardware::InternalSwap(Hardware* other) {
       &other->ip_cam_password_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Hardware, overlay_clock_)
-      + sizeof(Hardware::overlay_clock_)
-      - PROTOBUF_FIELD_OFFSET(Hardware, rtsp_encoding_needed_)>(
-          reinterpret_cast<char*>(&rtsp_encoding_needed_),
-          reinterpret_cast<char*>(&other->rtsp_encoding_needed_));
+      PROTOBUF_FIELD_OFFSET(Hardware, disable_adaptive_quality_)
+      + sizeof(Hardware::disable_adaptive_quality_)
+      - PROTOBUF_FIELD_OFFSET(Hardware, bitrate_)>(
+          reinterpret_cast<char*>(&bitrate_),
+          reinterpret_cast<char*>(&other->bitrate_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Hardware::GetMetadata() const {
