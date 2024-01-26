@@ -35,6 +35,7 @@
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "protos/model/v1/commands.pb.h"
 #include "protos/model/v1/ros.pb.h"
 #include <google/protobuf/wrappers.pb.h>
 // @@protoc_insertion_point(includes)
@@ -366,6 +367,7 @@ class AgentConfigurationStore final :
     kAgentVersionFieldNumber = 1,
     kConfigurationFieldNumber = 2,
     kFeatureSetFieldNumber = 3,
+    kCommandsFieldNumber = 4,
   };
   // string agent_version = 1 [json_name = "agentVersion"];
   void clear_agent_version();
@@ -417,6 +419,24 @@ class AgentConfigurationStore final :
       ::v1::model::AgentFeatureSet* feature_set);
   ::v1::model::AgentFeatureSet* unsafe_arena_release_feature_set();
 
+  // .v1.model.CommandsMetadata commands = 4 [json_name = "commands"];
+  bool has_commands() const;
+  private:
+  bool _internal_has_commands() const;
+  public:
+  void clear_commands();
+  const ::v1::model::CommandsMetadata& commands() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::CommandsMetadata* release_commands();
+  ::v1::model::CommandsMetadata* mutable_commands();
+  void set_allocated_commands(::v1::model::CommandsMetadata* commands);
+  private:
+  const ::v1::model::CommandsMetadata& _internal_commands() const;
+  ::v1::model::CommandsMetadata* _internal_mutable_commands();
+  public:
+  void unsafe_arena_set_allocated_commands(
+      ::v1::model::CommandsMetadata* commands);
+  ::v1::model::CommandsMetadata* unsafe_arena_release_commands();
+
   // @@protoc_insertion_point(class_scope:v1.model.AgentConfigurationStore)
  private:
   class _Internal;
@@ -427,6 +447,7 @@ class AgentConfigurationStore final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr agent_version_;
   ::v1::model::AgentConfiguration* configuration_;
   ::v1::model::AgentFeatureSet* feature_set_;
+  ::v1::model::CommandsMetadata* commands_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fconfig_2eproto;
 };
@@ -5413,6 +5434,85 @@ inline void AgentConfigurationStore::set_allocated_feature_set(::v1::model::Agen
   }
   feature_set_ = feature_set;
   // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationStore.feature_set)
+}
+
+// .v1.model.CommandsMetadata commands = 4 [json_name = "commands"];
+inline bool AgentConfigurationStore::_internal_has_commands() const {
+  return this != internal_default_instance() && commands_ != nullptr;
+}
+inline bool AgentConfigurationStore::has_commands() const {
+  return _internal_has_commands();
+}
+inline const ::v1::model::CommandsMetadata& AgentConfigurationStore::_internal_commands() const {
+  const ::v1::model::CommandsMetadata* p = commands_;
+  return p != nullptr ? *p : reinterpret_cast<const ::v1::model::CommandsMetadata&>(
+      ::v1::model::_CommandsMetadata_default_instance_);
+}
+inline const ::v1::model::CommandsMetadata& AgentConfigurationStore::commands() const {
+  // @@protoc_insertion_point(field_get:v1.model.AgentConfigurationStore.commands)
+  return _internal_commands();
+}
+inline void AgentConfigurationStore::unsafe_arena_set_allocated_commands(
+    ::v1::model::CommandsMetadata* commands) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(commands_);
+  }
+  commands_ = commands;
+  if (commands) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.AgentConfigurationStore.commands)
+}
+inline ::v1::model::CommandsMetadata* AgentConfigurationStore::release_commands() {
+  
+  ::v1::model::CommandsMetadata* temp = commands_;
+  commands_ = nullptr;
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::v1::model::CommandsMetadata* AgentConfigurationStore::unsafe_arena_release_commands() {
+  // @@protoc_insertion_point(field_release:v1.model.AgentConfigurationStore.commands)
+  
+  ::v1::model::CommandsMetadata* temp = commands_;
+  commands_ = nullptr;
+  return temp;
+}
+inline ::v1::model::CommandsMetadata* AgentConfigurationStore::_internal_mutable_commands() {
+  
+  if (commands_ == nullptr) {
+    auto* p = CreateMaybeMessage<::v1::model::CommandsMetadata>(GetArenaForAllocation());
+    commands_ = p;
+  }
+  return commands_;
+}
+inline ::v1::model::CommandsMetadata* AgentConfigurationStore::mutable_commands() {
+  // @@protoc_insertion_point(field_mutable:v1.model.AgentConfigurationStore.commands)
+  return _internal_mutable_commands();
+}
+inline void AgentConfigurationStore::set_allocated_commands(::v1::model::CommandsMetadata* commands) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(commands_);
+  }
+  if (commands) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(commands));
+    if (message_arena != submessage_arena) {
+      commands = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, commands, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  commands_ = commands;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.AgentConfigurationStore.commands)
 }
 
 // -------------------------------------------------------------------

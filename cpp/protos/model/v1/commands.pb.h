@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/timestamp.pb.h>
 #include "protos/model/v1/datapoint.pb.h"
@@ -48,7 +51,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fcommands_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -57,20 +60,36 @@ struct TableStruct_protos_2fmodel_2fv1_2fcommands_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fcommands_2eproto;
 namespace v1 {
 namespace model {
+class CommandMetadata;
+struct CommandMetadataDefaultTypeInternal;
+extern CommandMetadataDefaultTypeInternal _CommandMetadata_default_instance_;
+class CommandMetadata_ParameterMetaEntry_DoNotUse;
+struct CommandMetadata_ParameterMetaEntry_DoNotUseDefaultTypeInternal;
+extern CommandMetadata_ParameterMetaEntry_DoNotUseDefaultTypeInternal _CommandMetadata_ParameterMetaEntry_DoNotUse_default_instance_;
+class CommandMetadata_TagsEntry_DoNotUse;
+struct CommandMetadata_TagsEntry_DoNotUseDefaultTypeInternal;
+extern CommandMetadata_TagsEntry_DoNotUseDefaultTypeInternal _CommandMetadata_TagsEntry_DoNotUse_default_instance_;
 class CommandRequest;
 struct CommandRequestDefaultTypeInternal;
 extern CommandRequestDefaultTypeInternal _CommandRequest_default_instance_;
 class CommandResponse;
 struct CommandResponseDefaultTypeInternal;
 extern CommandResponseDefaultTypeInternal _CommandResponse_default_instance_;
+class CommandsMetadata;
+struct CommandsMetadataDefaultTypeInternal;
+extern CommandsMetadataDefaultTypeInternal _CommandsMetadata_default_instance_;
 class FileInfo;
 struct FileInfoDefaultTypeInternal;
 extern FileInfoDefaultTypeInternal _FileInfo_default_instance_;
 }  // namespace model
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
+template<> ::v1::model::CommandMetadata* Arena::CreateMaybeMessage<::v1::model::CommandMetadata>(Arena*);
+template<> ::v1::model::CommandMetadata_ParameterMetaEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::CommandMetadata_ParameterMetaEntry_DoNotUse>(Arena*);
+template<> ::v1::model::CommandMetadata_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::v1::model::CommandMetadata_TagsEntry_DoNotUse>(Arena*);
 template<> ::v1::model::CommandRequest* Arena::CreateMaybeMessage<::v1::model::CommandRequest>(Arena*);
 template<> ::v1::model::CommandResponse* Arena::CreateMaybeMessage<::v1::model::CommandResponse>(Arena*);
+template<> ::v1::model::CommandsMetadata* Arena::CreateMaybeMessage<::v1::model::CommandsMetadata>(Arena*);
 template<> ::v1::model::FileInfo* Arena::CreateMaybeMessage<::v1::model::FileInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace v1 {
@@ -657,6 +676,471 @@ class FileInfo final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr url_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fcommands_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CommandsMetadata final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.CommandsMetadata) */ {
+ public:
+  inline CommandsMetadata() : CommandsMetadata(nullptr) {}
+  ~CommandsMetadata() override;
+  explicit constexpr CommandsMetadata(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CommandsMetadata(const CommandsMetadata& from);
+  CommandsMetadata(CommandsMetadata&& from) noexcept
+    : CommandsMetadata() {
+    *this = ::std::move(from);
+  }
+
+  inline CommandsMetadata& operator=(const CommandsMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CommandsMetadata& operator=(CommandsMetadata&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CommandsMetadata& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CommandsMetadata* internal_default_instance() {
+    return reinterpret_cast<const CommandsMetadata*>(
+               &_CommandsMetadata_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(CommandsMetadata& a, CommandsMetadata& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CommandsMetadata* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CommandsMetadata* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CommandsMetadata* New() const final {
+    return new CommandsMetadata();
+  }
+
+  CommandsMetadata* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CommandsMetadata>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CommandsMetadata& from);
+  void MergeFrom(const CommandsMetadata& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CommandsMetadata* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.CommandsMetadata";
+  }
+  protected:
+  explicit CommandsMetadata(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCommandsFieldNumber = 1,
+  };
+  // repeated .v1.model.CommandMetadata commands = 1 [json_name = "commands"];
+  int commands_size() const;
+  private:
+  int _internal_commands_size() const;
+  public:
+  void clear_commands();
+  ::v1::model::CommandMetadata* mutable_commands(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::CommandMetadata >*
+      mutable_commands();
+  private:
+  const ::v1::model::CommandMetadata& _internal_commands(int index) const;
+  ::v1::model::CommandMetadata* _internal_add_commands();
+  public:
+  const ::v1::model::CommandMetadata& commands(int index) const;
+  ::v1::model::CommandMetadata* add_commands();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::CommandMetadata >&
+      commands() const;
+
+  // @@protoc_insertion_point(class_scope:v1.model.CommandsMetadata)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::CommandMetadata > commands_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fcommands_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CommandMetadata_ParameterMetaEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CommandMetadata_ParameterMetaEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CommandMetadata_ParameterMetaEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  CommandMetadata_ParameterMetaEntry_DoNotUse();
+  explicit constexpr CommandMetadata_ParameterMetaEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit CommandMetadata_ParameterMetaEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const CommandMetadata_ParameterMetaEntry_DoNotUse& other);
+  static const CommandMetadata_ParameterMetaEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const CommandMetadata_ParameterMetaEntry_DoNotUse*>(&_CommandMetadata_ParameterMetaEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "v1.model.CommandMetadata.ParameterMetaEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "v1.model.CommandMetadata.ParameterMetaEntry.value");
+ }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
+class CommandMetadata_TagsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CommandMetadata_TagsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CommandMetadata_TagsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  CommandMetadata_TagsEntry_DoNotUse();
+  explicit constexpr CommandMetadata_TagsEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit CommandMetadata_TagsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const CommandMetadata_TagsEntry_DoNotUse& other);
+  static const CommandMetadata_TagsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const CommandMetadata_TagsEntry_DoNotUse*>(&_CommandMetadata_TagsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "v1.model.CommandMetadata.TagsEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "v1.model.CommandMetadata.TagsEntry.value");
+ }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
+class CommandMetadata final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.CommandMetadata) */ {
+ public:
+  inline CommandMetadata() : CommandMetadata(nullptr) {}
+  ~CommandMetadata() override;
+  explicit constexpr CommandMetadata(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CommandMetadata(const CommandMetadata& from);
+  CommandMetadata(CommandMetadata&& from) noexcept
+    : CommandMetadata() {
+    *this = ::std::move(from);
+  }
+
+  inline CommandMetadata& operator=(const CommandMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CommandMetadata& operator=(CommandMetadata&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CommandMetadata& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CommandMetadata* internal_default_instance() {
+    return reinterpret_cast<const CommandMetadata*>(
+               &_CommandMetadata_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(CommandMetadata& a, CommandMetadata& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CommandMetadata* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CommandMetadata* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CommandMetadata* New() const final {
+    return new CommandMetadata();
+  }
+
+  CommandMetadata* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CommandMetadata>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CommandMetadata& from);
+  void MergeFrom(const CommandMetadata& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CommandMetadata* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.CommandMetadata";
+  }
+  protected:
+  explicit CommandMetadata(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kParameterMetaFieldNumber = 6,
+    kTagsFieldNumber = 9,
+    kNameFieldNumber = 1,
+    kCommandFieldNumber = 2,
+    kDescriptionFieldNumber = 3,
+    kParameterValueFieldNumber = 5,
+    kIdFieldNumber = 8,
+    kParameterEnabledFieldNumber = 4,
+    kEnabledFieldNumber = 7,
+  };
+  // map<string, string> parameter_meta = 6 [json_name = "parameterMeta"];
+  int parameter_meta_size() const;
+  private:
+  int _internal_parameter_meta_size() const;
+  public:
+  void clear_parameter_meta();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_parameter_meta() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_parameter_meta();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      parameter_meta() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_parameter_meta();
+
+  // map<string, string> tags = 9 [json_name = "tags"];
+  int tags_size() const;
+  private:
+  int _internal_tags_size() const;
+  public:
+  void clear_tags();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_tags() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_tags();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      tags() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_tags();
+
+  // string name = 1 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string command = 2 [json_name = "command"];
+  void clear_command();
+  const std::string& command() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_command(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_command();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_command();
+  void set_allocated_command(std::string* command);
+  private:
+  const std::string& _internal_command() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_command(const std::string& value);
+  std::string* _internal_mutable_command();
+  public:
+
+  // string description = 3 [json_name = "description"];
+  void clear_description();
+  const std::string& description() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_description(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_description();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_description();
+  void set_allocated_description(std::string* description);
+  private:
+  const std::string& _internal_description() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_description(const std::string& value);
+  std::string* _internal_mutable_description();
+  public:
+
+  // string parameter_value = 5 [json_name = "parameterValue"];
+  void clear_parameter_value();
+  const std::string& parameter_value() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_parameter_value(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_parameter_value();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_parameter_value();
+  void set_allocated_parameter_value(std::string* parameter_value);
+  private:
+  const std::string& _internal_parameter_value() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parameter_value(const std::string& value);
+  std::string* _internal_mutable_parameter_value();
+  public:
+
+  // string id = 8 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // bool parameter_enabled = 4 [json_name = "parameterEnabled"];
+  void clear_parameter_enabled();
+  bool parameter_enabled() const;
+  void set_parameter_enabled(bool value);
+  private:
+  bool _internal_parameter_enabled() const;
+  void _internal_set_parameter_enabled(bool value);
+  public:
+
+  // bool enabled = 7 [json_name = "enabled"];
+  void clear_enabled();
+  bool enabled() const;
+  void set_enabled(bool value);
+  private:
+  bool _internal_enabled() const;
+  void _internal_set_enabled(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.CommandMetadata)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      CommandMetadata_ParameterMetaEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> parameter_meta_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      CommandMetadata_TagsEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> tags_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr command_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parameter_value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool parameter_enabled_;
+  bool enabled_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fcommands_2eproto;
 };
@@ -1251,9 +1735,391 @@ inline void FileInfo::set_allocated_url(std::string* url) {
   // @@protoc_insertion_point(field_set_allocated:v1.model.FileInfo.url)
 }
 
+// -------------------------------------------------------------------
+
+// CommandsMetadata
+
+// repeated .v1.model.CommandMetadata commands = 1 [json_name = "commands"];
+inline int CommandsMetadata::_internal_commands_size() const {
+  return commands_.size();
+}
+inline int CommandsMetadata::commands_size() const {
+  return _internal_commands_size();
+}
+inline void CommandsMetadata::clear_commands() {
+  commands_.Clear();
+}
+inline ::v1::model::CommandMetadata* CommandsMetadata::mutable_commands(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.model.CommandsMetadata.commands)
+  return commands_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::CommandMetadata >*
+CommandsMetadata::mutable_commands() {
+  // @@protoc_insertion_point(field_mutable_list:v1.model.CommandsMetadata.commands)
+  return &commands_;
+}
+inline const ::v1::model::CommandMetadata& CommandsMetadata::_internal_commands(int index) const {
+  return commands_.Get(index);
+}
+inline const ::v1::model::CommandMetadata& CommandsMetadata::commands(int index) const {
+  // @@protoc_insertion_point(field_get:v1.model.CommandsMetadata.commands)
+  return _internal_commands(index);
+}
+inline ::v1::model::CommandMetadata* CommandsMetadata::_internal_add_commands() {
+  return commands_.Add();
+}
+inline ::v1::model::CommandMetadata* CommandsMetadata::add_commands() {
+  // @@protoc_insertion_point(field_add:v1.model.CommandsMetadata.commands)
+  return _internal_add_commands();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::CommandMetadata >&
+CommandsMetadata::commands() const {
+  // @@protoc_insertion_point(field_list:v1.model.CommandsMetadata.commands)
+  return commands_;
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// CommandMetadata
+
+// string name = 1 [json_name = "name"];
+inline void CommandMetadata::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& CommandMetadata::name() const {
+  // @@protoc_insertion_point(field_get:v1.model.CommandMetadata.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CommandMetadata::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.CommandMetadata.name)
+}
+inline std::string* CommandMetadata::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:v1.model.CommandMetadata.name)
+  return _internal_mutable_name();
+}
+inline const std::string& CommandMetadata::_internal_name() const {
+  return name_.Get();
+}
+inline void CommandMetadata::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CommandMetadata::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CommandMetadata::release_name() {
+  // @@protoc_insertion_point(field_release:v1.model.CommandMetadata.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CommandMetadata::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.CommandMetadata.name)
+}
+
+// string command = 2 [json_name = "command"];
+inline void CommandMetadata::clear_command() {
+  command_.ClearToEmpty();
+}
+inline const std::string& CommandMetadata::command() const {
+  // @@protoc_insertion_point(field_get:v1.model.CommandMetadata.command)
+  return _internal_command();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CommandMetadata::set_command(ArgT0&& arg0, ArgT... args) {
+ 
+ command_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.CommandMetadata.command)
+}
+inline std::string* CommandMetadata::mutable_command() {
+  // @@protoc_insertion_point(field_mutable:v1.model.CommandMetadata.command)
+  return _internal_mutable_command();
+}
+inline const std::string& CommandMetadata::_internal_command() const {
+  return command_.Get();
+}
+inline void CommandMetadata::_internal_set_command(const std::string& value) {
+  
+  command_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CommandMetadata::_internal_mutable_command() {
+  
+  return command_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CommandMetadata::release_command() {
+  // @@protoc_insertion_point(field_release:v1.model.CommandMetadata.command)
+  return command_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CommandMetadata::set_allocated_command(std::string* command) {
+  if (command != nullptr) {
+    
+  } else {
+    
+  }
+  command_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), command,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.CommandMetadata.command)
+}
+
+// string description = 3 [json_name = "description"];
+inline void CommandMetadata::clear_description() {
+  description_.ClearToEmpty();
+}
+inline const std::string& CommandMetadata::description() const {
+  // @@protoc_insertion_point(field_get:v1.model.CommandMetadata.description)
+  return _internal_description();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CommandMetadata::set_description(ArgT0&& arg0, ArgT... args) {
+ 
+ description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.CommandMetadata.description)
+}
+inline std::string* CommandMetadata::mutable_description() {
+  // @@protoc_insertion_point(field_mutable:v1.model.CommandMetadata.description)
+  return _internal_mutable_description();
+}
+inline const std::string& CommandMetadata::_internal_description() const {
+  return description_.Get();
+}
+inline void CommandMetadata::_internal_set_description(const std::string& value) {
+  
+  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CommandMetadata::_internal_mutable_description() {
+  
+  return description_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CommandMetadata::release_description() {
+  // @@protoc_insertion_point(field_release:v1.model.CommandMetadata.description)
+  return description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CommandMetadata::set_allocated_description(std::string* description) {
+  if (description != nullptr) {
+    
+  } else {
+    
+  }
+  description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.CommandMetadata.description)
+}
+
+// bool parameter_enabled = 4 [json_name = "parameterEnabled"];
+inline void CommandMetadata::clear_parameter_enabled() {
+  parameter_enabled_ = false;
+}
+inline bool CommandMetadata::_internal_parameter_enabled() const {
+  return parameter_enabled_;
+}
+inline bool CommandMetadata::parameter_enabled() const {
+  // @@protoc_insertion_point(field_get:v1.model.CommandMetadata.parameter_enabled)
+  return _internal_parameter_enabled();
+}
+inline void CommandMetadata::_internal_set_parameter_enabled(bool value) {
+  
+  parameter_enabled_ = value;
+}
+inline void CommandMetadata::set_parameter_enabled(bool value) {
+  _internal_set_parameter_enabled(value);
+  // @@protoc_insertion_point(field_set:v1.model.CommandMetadata.parameter_enabled)
+}
+
+// string parameter_value = 5 [json_name = "parameterValue"];
+inline void CommandMetadata::clear_parameter_value() {
+  parameter_value_.ClearToEmpty();
+}
+inline const std::string& CommandMetadata::parameter_value() const {
+  // @@protoc_insertion_point(field_get:v1.model.CommandMetadata.parameter_value)
+  return _internal_parameter_value();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CommandMetadata::set_parameter_value(ArgT0&& arg0, ArgT... args) {
+ 
+ parameter_value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.CommandMetadata.parameter_value)
+}
+inline std::string* CommandMetadata::mutable_parameter_value() {
+  // @@protoc_insertion_point(field_mutable:v1.model.CommandMetadata.parameter_value)
+  return _internal_mutable_parameter_value();
+}
+inline const std::string& CommandMetadata::_internal_parameter_value() const {
+  return parameter_value_.Get();
+}
+inline void CommandMetadata::_internal_set_parameter_value(const std::string& value) {
+  
+  parameter_value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CommandMetadata::_internal_mutable_parameter_value() {
+  
+  return parameter_value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CommandMetadata::release_parameter_value() {
+  // @@protoc_insertion_point(field_release:v1.model.CommandMetadata.parameter_value)
+  return parameter_value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CommandMetadata::set_allocated_parameter_value(std::string* parameter_value) {
+  if (parameter_value != nullptr) {
+    
+  } else {
+    
+  }
+  parameter_value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), parameter_value,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.CommandMetadata.parameter_value)
+}
+
+// map<string, string> parameter_meta = 6 [json_name = "parameterMeta"];
+inline int CommandMetadata::_internal_parameter_meta_size() const {
+  return parameter_meta_.size();
+}
+inline int CommandMetadata::parameter_meta_size() const {
+  return _internal_parameter_meta_size();
+}
+inline void CommandMetadata::clear_parameter_meta() {
+  parameter_meta_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+CommandMetadata::_internal_parameter_meta() const {
+  return parameter_meta_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+CommandMetadata::parameter_meta() const {
+  // @@protoc_insertion_point(field_map:v1.model.CommandMetadata.parameter_meta)
+  return _internal_parameter_meta();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+CommandMetadata::_internal_mutable_parameter_meta() {
+  return parameter_meta_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+CommandMetadata::mutable_parameter_meta() {
+  // @@protoc_insertion_point(field_mutable_map:v1.model.CommandMetadata.parameter_meta)
+  return _internal_mutable_parameter_meta();
+}
+
+// bool enabled = 7 [json_name = "enabled"];
+inline void CommandMetadata::clear_enabled() {
+  enabled_ = false;
+}
+inline bool CommandMetadata::_internal_enabled() const {
+  return enabled_;
+}
+inline bool CommandMetadata::enabled() const {
+  // @@protoc_insertion_point(field_get:v1.model.CommandMetadata.enabled)
+  return _internal_enabled();
+}
+inline void CommandMetadata::_internal_set_enabled(bool value) {
+  
+  enabled_ = value;
+}
+inline void CommandMetadata::set_enabled(bool value) {
+  _internal_set_enabled(value);
+  // @@protoc_insertion_point(field_set:v1.model.CommandMetadata.enabled)
+}
+
+// string id = 8 [json_name = "id"];
+inline void CommandMetadata::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& CommandMetadata::id() const {
+  // @@protoc_insertion_point(field_get:v1.model.CommandMetadata.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CommandMetadata::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.CommandMetadata.id)
+}
+inline std::string* CommandMetadata::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:v1.model.CommandMetadata.id)
+  return _internal_mutable_id();
+}
+inline const std::string& CommandMetadata::_internal_id() const {
+  return id_.Get();
+}
+inline void CommandMetadata::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CommandMetadata::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CommandMetadata::release_id() {
+  // @@protoc_insertion_point(field_release:v1.model.CommandMetadata.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CommandMetadata::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.CommandMetadata.id)
+}
+
+// map<string, string> tags = 9 [json_name = "tags"];
+inline int CommandMetadata::_internal_tags_size() const {
+  return tags_.size();
+}
+inline int CommandMetadata::tags_size() const {
+  return _internal_tags_size();
+}
+inline void CommandMetadata::clear_tags() {
+  tags_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+CommandMetadata::_internal_tags() const {
+  return tags_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+CommandMetadata::tags() const {
+  // @@protoc_insertion_point(field_map:v1.model.CommandMetadata.tags)
+  return _internal_tags();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+CommandMetadata::_internal_mutable_tags() {
+  return tags_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+CommandMetadata::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_map:v1.model.CommandMetadata.tags)
+  return _internal_mutable_tags();
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
