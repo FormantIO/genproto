@@ -47,7 +47,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fhealth_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,6 +59,9 @@ namespace model {
 class Battery;
 struct BatteryDefaultTypeInternal;
 extern BatteryDefaultTypeInternal _Battery_default_instance_;
+class BufferMetadata;
+struct BufferMetadataDefaultTypeInternal;
+extern BufferMetadataDefaultTypeInternal _BufferMetadata_default_instance_;
 class Health;
 struct HealthDefaultTypeInternal;
 extern HealthDefaultTypeInternal _Health_default_instance_;
@@ -66,6 +69,7 @@ extern HealthDefaultTypeInternal _Health_default_instance_;
 }  // namespace v1
 PROTOBUF_NAMESPACE_OPEN
 template<> ::v1::model::Battery* Arena::CreateMaybeMessage<::v1::model::Battery>(Arena*);
+template<> ::v1::model::BufferMetadata* Arena::CreateMaybeMessage<::v1::model::BufferMetadata>(Arena*);
 template<> ::v1::model::Health* Arena::CreateMaybeMessage<::v1::model::Health>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace v1 {
@@ -427,6 +431,187 @@ class Battery final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fhealth_2eproto;
 };
+// -------------------------------------------------------------------
+
+class BufferMetadata final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.BufferMetadata) */ {
+ public:
+  inline BufferMetadata() : BufferMetadata(nullptr) {}
+  ~BufferMetadata() override;
+  explicit constexpr BufferMetadata(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BufferMetadata(const BufferMetadata& from);
+  BufferMetadata(BufferMetadata&& from) noexcept
+    : BufferMetadata() {
+    *this = ::std::move(from);
+  }
+
+  inline BufferMetadata& operator=(const BufferMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BufferMetadata& operator=(BufferMetadata&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BufferMetadata& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BufferMetadata* internal_default_instance() {
+    return reinterpret_cast<const BufferMetadata*>(
+               &_BufferMetadata_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(BufferMetadata& a, BufferMetadata& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BufferMetadata* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BufferMetadata* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline BufferMetadata* New() const final {
+    return new BufferMetadata();
+  }
+
+  BufferMetadata* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<BufferMetadata>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const BufferMetadata& from);
+  void MergeFrom(const BufferMetadata& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BufferMetadata* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.BufferMetadata";
+  }
+  protected:
+  explicit BufferMetadata(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSessionIdFieldNumber = 1,
+    kLatestTtlStreamChannelBufferedBytesFieldNumber = 2,
+    kReliableStreamChannelBufferedBytesFieldNumber = 3,
+    kLatestReliableStreamChannelBufferedBytesFieldNumber = 4,
+    kLatestTryOnceStreamChannelBufferedBytesFieldNumber = 5,
+  };
+  // string session_id = 1 [json_name = "sessionId"];
+  void clear_session_id();
+  const std::string& session_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_session_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_session_id();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_session_id();
+  void set_allocated_session_id(std::string* session_id);
+  private:
+  const std::string& _internal_session_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_session_id(const std::string& value);
+  std::string* _internal_mutable_session_id();
+  public:
+
+  // uint64 latest_ttl_stream_channel_buffered_bytes = 2 [json_name = "latestTtlStreamChannelBufferedBytes"];
+  void clear_latest_ttl_stream_channel_buffered_bytes();
+  ::PROTOBUF_NAMESPACE_ID::uint64 latest_ttl_stream_channel_buffered_bytes() const;
+  void set_latest_ttl_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_latest_ttl_stream_channel_buffered_bytes() const;
+  void _internal_set_latest_ttl_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 reliable_stream_channel_buffered_bytes = 3 [json_name = "reliableStreamChannelBufferedBytes"];
+  void clear_reliable_stream_channel_buffered_bytes();
+  ::PROTOBUF_NAMESPACE_ID::uint64 reliable_stream_channel_buffered_bytes() const;
+  void set_reliable_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_reliable_stream_channel_buffered_bytes() const;
+  void _internal_set_reliable_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 latest_reliable_stream_channel_buffered_bytes = 4 [json_name = "latestReliableStreamChannelBufferedBytes"];
+  void clear_latest_reliable_stream_channel_buffered_bytes();
+  ::PROTOBUF_NAMESPACE_ID::uint64 latest_reliable_stream_channel_buffered_bytes() const;
+  void set_latest_reliable_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_latest_reliable_stream_channel_buffered_bytes() const;
+  void _internal_set_latest_reliable_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 latest_try_once_stream_channel_buffered_bytes = 5 [json_name = "latestTryOnceStreamChannelBufferedBytes"];
+  void clear_latest_try_once_stream_channel_buffered_bytes();
+  ::PROTOBUF_NAMESPACE_ID::uint64 latest_try_once_stream_channel_buffered_bytes() const;
+  void set_latest_try_once_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_latest_try_once_stream_channel_buffered_bytes() const;
+  void _internal_set_latest_try_once_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.model.BufferMetadata)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr session_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 latest_ttl_stream_channel_buffered_bytes_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 reliable_stream_channel_buffered_bytes_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 latest_reliable_stream_channel_buffered_bytes_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 latest_try_once_stream_channel_buffered_bytes_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fhealth_2eproto;
+};
 // ===================================================================
 
 
@@ -589,9 +774,140 @@ inline void Battery::set_charge(double value) {
   // @@protoc_insertion_point(field_set:v1.model.Battery.charge)
 }
 
+// -------------------------------------------------------------------
+
+// BufferMetadata
+
+// string session_id = 1 [json_name = "sessionId"];
+inline void BufferMetadata::clear_session_id() {
+  session_id_.ClearToEmpty();
+}
+inline const std::string& BufferMetadata::session_id() const {
+  // @@protoc_insertion_point(field_get:v1.model.BufferMetadata.session_id)
+  return _internal_session_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void BufferMetadata::set_session_id(ArgT0&& arg0, ArgT... args) {
+ 
+ session_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.BufferMetadata.session_id)
+}
+inline std::string* BufferMetadata::mutable_session_id() {
+  // @@protoc_insertion_point(field_mutable:v1.model.BufferMetadata.session_id)
+  return _internal_mutable_session_id();
+}
+inline const std::string& BufferMetadata::_internal_session_id() const {
+  return session_id_.Get();
+}
+inline void BufferMetadata::_internal_set_session_id(const std::string& value) {
+  
+  session_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* BufferMetadata::_internal_mutable_session_id() {
+  
+  return session_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* BufferMetadata::release_session_id() {
+  // @@protoc_insertion_point(field_release:v1.model.BufferMetadata.session_id)
+  return session_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void BufferMetadata::set_allocated_session_id(std::string* session_id) {
+  if (session_id != nullptr) {
+    
+  } else {
+    
+  }
+  session_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), session_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.BufferMetadata.session_id)
+}
+
+// uint64 latest_ttl_stream_channel_buffered_bytes = 2 [json_name = "latestTtlStreamChannelBufferedBytes"];
+inline void BufferMetadata::clear_latest_ttl_stream_channel_buffered_bytes() {
+  latest_ttl_stream_channel_buffered_bytes_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 BufferMetadata::_internal_latest_ttl_stream_channel_buffered_bytes() const {
+  return latest_ttl_stream_channel_buffered_bytes_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 BufferMetadata::latest_ttl_stream_channel_buffered_bytes() const {
+  // @@protoc_insertion_point(field_get:v1.model.BufferMetadata.latest_ttl_stream_channel_buffered_bytes)
+  return _internal_latest_ttl_stream_channel_buffered_bytes();
+}
+inline void BufferMetadata::_internal_set_latest_ttl_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  latest_ttl_stream_channel_buffered_bytes_ = value;
+}
+inline void BufferMetadata::set_latest_ttl_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_latest_ttl_stream_channel_buffered_bytes(value);
+  // @@protoc_insertion_point(field_set:v1.model.BufferMetadata.latest_ttl_stream_channel_buffered_bytes)
+}
+
+// uint64 reliable_stream_channel_buffered_bytes = 3 [json_name = "reliableStreamChannelBufferedBytes"];
+inline void BufferMetadata::clear_reliable_stream_channel_buffered_bytes() {
+  reliable_stream_channel_buffered_bytes_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 BufferMetadata::_internal_reliable_stream_channel_buffered_bytes() const {
+  return reliable_stream_channel_buffered_bytes_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 BufferMetadata::reliable_stream_channel_buffered_bytes() const {
+  // @@protoc_insertion_point(field_get:v1.model.BufferMetadata.reliable_stream_channel_buffered_bytes)
+  return _internal_reliable_stream_channel_buffered_bytes();
+}
+inline void BufferMetadata::_internal_set_reliable_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  reliable_stream_channel_buffered_bytes_ = value;
+}
+inline void BufferMetadata::set_reliable_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_reliable_stream_channel_buffered_bytes(value);
+  // @@protoc_insertion_point(field_set:v1.model.BufferMetadata.reliable_stream_channel_buffered_bytes)
+}
+
+// uint64 latest_reliable_stream_channel_buffered_bytes = 4 [json_name = "latestReliableStreamChannelBufferedBytes"];
+inline void BufferMetadata::clear_latest_reliable_stream_channel_buffered_bytes() {
+  latest_reliable_stream_channel_buffered_bytes_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 BufferMetadata::_internal_latest_reliable_stream_channel_buffered_bytes() const {
+  return latest_reliable_stream_channel_buffered_bytes_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 BufferMetadata::latest_reliable_stream_channel_buffered_bytes() const {
+  // @@protoc_insertion_point(field_get:v1.model.BufferMetadata.latest_reliable_stream_channel_buffered_bytes)
+  return _internal_latest_reliable_stream_channel_buffered_bytes();
+}
+inline void BufferMetadata::_internal_set_latest_reliable_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  latest_reliable_stream_channel_buffered_bytes_ = value;
+}
+inline void BufferMetadata::set_latest_reliable_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_latest_reliable_stream_channel_buffered_bytes(value);
+  // @@protoc_insertion_point(field_set:v1.model.BufferMetadata.latest_reliable_stream_channel_buffered_bytes)
+}
+
+// uint64 latest_try_once_stream_channel_buffered_bytes = 5 [json_name = "latestTryOnceStreamChannelBufferedBytes"];
+inline void BufferMetadata::clear_latest_try_once_stream_channel_buffered_bytes() {
+  latest_try_once_stream_channel_buffered_bytes_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 BufferMetadata::_internal_latest_try_once_stream_channel_buffered_bytes() const {
+  return latest_try_once_stream_channel_buffered_bytes_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 BufferMetadata::latest_try_once_stream_channel_buffered_bytes() const {
+  // @@protoc_insertion_point(field_get:v1.model.BufferMetadata.latest_try_once_stream_channel_buffered_bytes)
+  return _internal_latest_try_once_stream_channel_buffered_bytes();
+}
+inline void BufferMetadata::_internal_set_latest_try_once_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  latest_try_once_stream_channel_buffered_bytes_ = value;
+}
+inline void BufferMetadata::set_latest_try_once_stream_channel_buffered_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_latest_try_once_stream_channel_buffered_bytes(value);
+  // @@protoc_insertion_point(field_set:v1.model.BufferMetadata.latest_try_once_stream_channel_buffered_bytes)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

@@ -47,9 +47,25 @@ struct BatteryDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BatteryDefaultTypeInternal _Battery_default_instance_;
+constexpr BufferMetadata::BufferMetadata(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : session_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , latest_ttl_stream_channel_buffered_bytes_(uint64_t{0u})
+  , reliable_stream_channel_buffered_bytes_(uint64_t{0u})
+  , latest_reliable_stream_channel_buffered_bytes_(uint64_t{0u})
+  , latest_try_once_stream_channel_buffered_bytes_(uint64_t{0u}){}
+struct BufferMetadataDefaultTypeInternal {
+  constexpr BufferMetadataDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BufferMetadataDefaultTypeInternal() {}
+  union {
+    BufferMetadata _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BufferMetadataDefaultTypeInternal _BufferMetadata_default_instance_;
 }  // namespace model
 }  // namespace v1
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto[2];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto[3];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto = nullptr;
 
@@ -71,15 +87,27 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fhealth_2
   PROTOBUF_FIELD_OFFSET(::v1::model::Battery, voltage_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Battery, current_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Battery, charge_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::model::BufferMetadata, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::v1::model::BufferMetadata, session_id_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::BufferMetadata, latest_ttl_stream_channel_buffered_bytes_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::BufferMetadata, reliable_stream_channel_buffered_bytes_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::BufferMetadata, latest_reliable_stream_channel_buffered_bytes_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::BufferMetadata, latest_try_once_stream_channel_buffered_bytes_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::v1::model::Health)},
   { 8, -1, sizeof(::v1::model::Battery)},
+  { 17, -1, sizeof(::v1::model::BufferMetadata)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Health_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_Battery_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::model::_BufferMetadata_default_instance_),
 };
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -89,16 +117,26 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto[] PROT
   "kewMsB\007\n\005clock\"u\n\007Battery\022\036\n\npercentage\030"
   "\001 \001(\001R\npercentage\022\030\n\007voltage\030\002 \001(\001R\007volt"
   "age\022\030\n\007current\030\003 \001(\001R\007current\022\026\n\006charge\030"
-  "\004 \001(\001R\006charge*`\n\014HealthStatus\022\022\n\016HEALTH_"
-  "UNKNOWN\020\000\022\026\n\022HEALTH_OPERATIONAL\020\001\022\022\n\016HEA"
-  "LTH_OFFLINE\020\002\022\020\n\014HEALTH_ERROR\020\003B+Z)githu"
-  "b.com/FormantIO/genproto/go/v1/modelb\006pr"
-  "oto3"
+  "\004 \001(\001R\006charge\"\233\003\n\016BufferMetadata\022\035\n\nsess"
+  "ion_id\030\001 \001(\tR\tsessionId\022U\n(latest_ttl_st"
+  "ream_channel_buffered_bytes\030\002 \001(\004R#lates"
+  "tTtlStreamChannelBufferedBytes\022R\n&reliab"
+  "le_stream_channel_buffered_bytes\030\003 \001(\004R\""
+  "reliableStreamChannelBufferedBytes\022_\n-la"
+  "test_reliable_stream_channel_buffered_by"
+  "tes\030\004 \001(\004R(latestReliableStreamChannelBu"
+  "fferedBytes\022^\n-latest_try_once_stream_ch"
+  "annel_buffered_bytes\030\005 \001(\004R\'latestTryOnc"
+  "eStreamChannelBufferedBytes*`\n\014HealthSta"
+  "tus\022\022\n\016HEALTH_UNKNOWN\020\000\022\026\n\022HEALTH_OPERAT"
+  "IONAL\020\001\022\022\n\016HEALTH_OFFLINE\020\002\022\020\n\014HEALTH_ER"
+  "ROR\020\003B+Z)github.com/FormantIO/genproto/g"
+  "o/v1/modelb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto = {
-  false, false, 404, descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto, "protos/model/v1/health.proto", 
-  &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once, nullptr, 0, 2,
+  false, false, 818, descriptor_table_protodef_protos_2fmodel_2fv1_2fhealth_2eproto, "protos/model/v1/health.proto", 
+  &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once, nullptr, 0, 3,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fhealth_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fhealth_2eproto,
 };
@@ -647,6 +685,319 @@ void Battery::InternalSwap(Battery* other) {
       file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto[1]);
 }
 
+// ===================================================================
+
+class BufferMetadata::_Internal {
+ public:
+};
+
+BufferMetadata::BufferMetadata(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:v1.model.BufferMetadata)
+}
+BufferMetadata::BufferMetadata(const BufferMetadata& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  session_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_session_id().empty()) {
+    session_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_session_id(), 
+      GetArenaForAllocation());
+  }
+  ::memcpy(&latest_ttl_stream_channel_buffered_bytes_, &from.latest_ttl_stream_channel_buffered_bytes_,
+    static_cast<size_t>(reinterpret_cast<char*>(&latest_try_once_stream_channel_buffered_bytes_) -
+    reinterpret_cast<char*>(&latest_ttl_stream_channel_buffered_bytes_)) + sizeof(latest_try_once_stream_channel_buffered_bytes_));
+  // @@protoc_insertion_point(copy_constructor:v1.model.BufferMetadata)
+}
+
+void BufferMetadata::SharedCtor() {
+session_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&latest_ttl_stream_channel_buffered_bytes_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&latest_try_once_stream_channel_buffered_bytes_) -
+    reinterpret_cast<char*>(&latest_ttl_stream_channel_buffered_bytes_)) + sizeof(latest_try_once_stream_channel_buffered_bytes_));
+}
+
+BufferMetadata::~BufferMetadata() {
+  // @@protoc_insertion_point(destructor:v1.model.BufferMetadata)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void BufferMetadata::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  session_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void BufferMetadata::ArenaDtor(void* object) {
+  BufferMetadata* _this = reinterpret_cast< BufferMetadata* >(object);
+  (void)_this;
+}
+void BufferMetadata::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BufferMetadata::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BufferMetadata::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.model.BufferMetadata)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  session_id_.ClearToEmpty();
+  ::memset(&latest_ttl_stream_channel_buffered_bytes_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&latest_try_once_stream_channel_buffered_bytes_) -
+      reinterpret_cast<char*>(&latest_ttl_stream_channel_buffered_bytes_)) + sizeof(latest_try_once_stream_channel_buffered_bytes_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BufferMetadata::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string session_id = 1 [json_name = "sessionId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_session_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.BufferMetadata.session_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 latest_ttl_stream_channel_buffered_bytes = 2 [json_name = "latestTtlStreamChannelBufferedBytes"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          latest_ttl_stream_channel_buffered_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 reliable_stream_channel_buffered_bytes = 3 [json_name = "reliableStreamChannelBufferedBytes"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          reliable_stream_channel_buffered_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 latest_reliable_stream_channel_buffered_bytes = 4 [json_name = "latestReliableStreamChannelBufferedBytes"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          latest_reliable_stream_channel_buffered_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 latest_try_once_stream_channel_buffered_bytes = 5 [json_name = "latestTryOnceStreamChannelBufferedBytes"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          latest_try_once_stream_channel_buffered_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BufferMetadata::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.model.BufferMetadata)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string session_id = 1 [json_name = "sessionId"];
+  if (!this->session_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_session_id().data(), static_cast<int>(this->_internal_session_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.BufferMetadata.session_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_session_id(), target);
+  }
+
+  // uint64 latest_ttl_stream_channel_buffered_bytes = 2 [json_name = "latestTtlStreamChannelBufferedBytes"];
+  if (this->latest_ttl_stream_channel_buffered_bytes() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_latest_ttl_stream_channel_buffered_bytes(), target);
+  }
+
+  // uint64 reliable_stream_channel_buffered_bytes = 3 [json_name = "reliableStreamChannelBufferedBytes"];
+  if (this->reliable_stream_channel_buffered_bytes() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_reliable_stream_channel_buffered_bytes(), target);
+  }
+
+  // uint64 latest_reliable_stream_channel_buffered_bytes = 4 [json_name = "latestReliableStreamChannelBufferedBytes"];
+  if (this->latest_reliable_stream_channel_buffered_bytes() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_latest_reliable_stream_channel_buffered_bytes(), target);
+  }
+
+  // uint64 latest_try_once_stream_channel_buffered_bytes = 5 [json_name = "latestTryOnceStreamChannelBufferedBytes"];
+  if (this->latest_try_once_stream_channel_buffered_bytes() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_latest_try_once_stream_channel_buffered_bytes(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.model.BufferMetadata)
+  return target;
+}
+
+size_t BufferMetadata::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.model.BufferMetadata)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string session_id = 1 [json_name = "sessionId"];
+  if (!this->session_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_session_id());
+  }
+
+  // uint64 latest_ttl_stream_channel_buffered_bytes = 2 [json_name = "latestTtlStreamChannelBufferedBytes"];
+  if (this->latest_ttl_stream_channel_buffered_bytes() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_latest_ttl_stream_channel_buffered_bytes());
+  }
+
+  // uint64 reliable_stream_channel_buffered_bytes = 3 [json_name = "reliableStreamChannelBufferedBytes"];
+  if (this->reliable_stream_channel_buffered_bytes() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_reliable_stream_channel_buffered_bytes());
+  }
+
+  // uint64 latest_reliable_stream_channel_buffered_bytes = 4 [json_name = "latestReliableStreamChannelBufferedBytes"];
+  if (this->latest_reliable_stream_channel_buffered_bytes() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_latest_reliable_stream_channel_buffered_bytes());
+  }
+
+  // uint64 latest_try_once_stream_channel_buffered_bytes = 5 [json_name = "latestTryOnceStreamChannelBufferedBytes"];
+  if (this->latest_try_once_stream_channel_buffered_bytes() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_latest_try_once_stream_channel_buffered_bytes());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BufferMetadata::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.model.BufferMetadata)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BufferMetadata* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BufferMetadata>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.model.BufferMetadata)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.model.BufferMetadata)
+    MergeFrom(*source);
+  }
+}
+
+void BufferMetadata::MergeFrom(const BufferMetadata& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.model.BufferMetadata)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from.session_id().empty()) {
+    _internal_set_session_id(from._internal_session_id());
+  }
+  if (from.latest_ttl_stream_channel_buffered_bytes() != 0) {
+    _internal_set_latest_ttl_stream_channel_buffered_bytes(from._internal_latest_ttl_stream_channel_buffered_bytes());
+  }
+  if (from.reliable_stream_channel_buffered_bytes() != 0) {
+    _internal_set_reliable_stream_channel_buffered_bytes(from._internal_reliable_stream_channel_buffered_bytes());
+  }
+  if (from.latest_reliable_stream_channel_buffered_bytes() != 0) {
+    _internal_set_latest_reliable_stream_channel_buffered_bytes(from._internal_latest_reliable_stream_channel_buffered_bytes());
+  }
+  if (from.latest_try_once_stream_channel_buffered_bytes() != 0) {
+    _internal_set_latest_try_once_stream_channel_buffered_bytes(from._internal_latest_try_once_stream_channel_buffered_bytes());
+  }
+}
+
+void BufferMetadata::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.model.BufferMetadata)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BufferMetadata::CopyFrom(const BufferMetadata& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.model.BufferMetadata)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BufferMetadata::IsInitialized() const {
+  return true;
+}
+
+void BufferMetadata::InternalSwap(BufferMetadata* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &session_id_, GetArenaForAllocation(),
+      &other->session_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BufferMetadata, latest_try_once_stream_channel_buffered_bytes_)
+      + sizeof(BufferMetadata::latest_try_once_stream_channel_buffered_bytes_)
+      - PROTOBUF_FIELD_OFFSET(BufferMetadata, latest_ttl_stream_channel_buffered_bytes_)>(
+          reinterpret_cast<char*>(&latest_ttl_stream_channel_buffered_bytes_),
+          reinterpret_cast<char*>(&other->latest_ttl_stream_channel_buffered_bytes_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BufferMetadata::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_getter, &descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto_once,
+      file_level_metadata_protos_2fmodel_2fv1_2fhealth_2eproto[2]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace model
 }  // namespace v1
@@ -656,6 +1007,9 @@ template<> PROTOBUF_NOINLINE ::v1::model::Health* Arena::CreateMaybeMessage< ::v
 }
 template<> PROTOBUF_NOINLINE ::v1::model::Battery* Arena::CreateMaybeMessage< ::v1::model::Battery >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::model::Battery >(arena);
+}
+template<> PROTOBUF_NOINLINE ::v1::model::BufferMetadata* Arena::CreateMaybeMessage< ::v1::model::BufferMetadata >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::v1::model::BufferMetadata >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
