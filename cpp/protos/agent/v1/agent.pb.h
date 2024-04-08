@@ -37,6 +37,7 @@
 #include "protos/model/v1/config.pb.h"
 #include "protos/model/v1/math.pb.h"
 #include "protos/model/v1/event.pb.h"
+#include "protos/model/v1/health.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_protos_2fagent_2fv1_2fagent_2eproto
@@ -52,7 +53,7 @@ struct TableStruct_protos_2fagent_2fv1_2fagent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[48]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[50]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -88,6 +89,12 @@ extern GetApplicationConfigurationRequestDefaultTypeInternal _GetApplicationConf
 class GetApplicationConfigurationResponse;
 struct GetApplicationConfigurationResponseDefaultTypeInternal;
 extern GetApplicationConfigurationResponseDefaultTypeInternal _GetApplicationConfigurationResponse_default_instance_;
+class GetBufferMetadataRequest;
+struct GetBufferMetadataRequestDefaultTypeInternal;
+extern GetBufferMetadataRequestDefaultTypeInternal _GetBufferMetadataRequest_default_instance_;
+class GetBufferMetadataResponse;
+struct GetBufferMetadataResponseDefaultTypeInternal;
+extern GetBufferMetadataResponseDefaultTypeInternal _GetBufferMetadataResponse_default_instance_;
 class GetCommandRequestRequest;
 struct GetCommandRequestRequestDefaultTypeInternal;
 extern GetCommandRequestRequestDefaultTypeInternal _GetCommandRequestRequest_default_instance_;
@@ -217,6 +224,8 @@ template<> ::v1::agent::GetAgentConfigurationRequest* Arena::CreateMaybeMessage<
 template<> ::v1::agent::GetAgentConfigurationResponse* Arena::CreateMaybeMessage<::v1::agent::GetAgentConfigurationResponse>(Arena*);
 template<> ::v1::agent::GetApplicationConfigurationRequest* Arena::CreateMaybeMessage<::v1::agent::GetApplicationConfigurationRequest>(Arena*);
 template<> ::v1::agent::GetApplicationConfigurationResponse* Arena::CreateMaybeMessage<::v1::agent::GetApplicationConfigurationResponse>(Arena*);
+template<> ::v1::agent::GetBufferMetadataRequest* Arena::CreateMaybeMessage<::v1::agent::GetBufferMetadataRequest>(Arena*);
+template<> ::v1::agent::GetBufferMetadataResponse* Arena::CreateMaybeMessage<::v1::agent::GetBufferMetadataResponse>(Arena*);
 template<> ::v1::agent::GetCommandRequestRequest* Arena::CreateMaybeMessage<::v1::agent::GetCommandRequestRequest>(Arena*);
 template<> ::v1::agent::GetCommandRequestResponse* Arena::CreateMaybeMessage<::v1::agent::GetCommandRequestResponse>(Arena*);
 template<> ::v1::agent::GetCommandRequestStreamRequest* Arena::CreateMaybeMessage<::v1::agent::GetCommandRequestStreamRequest>(Arena*);
@@ -2652,6 +2661,266 @@ class GetAgentConfigurationResponse final :
 };
 // -------------------------------------------------------------------
 
+class GetBufferMetadataRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.GetBufferMetadataRequest) */ {
+ public:
+  inline GetBufferMetadataRequest() : GetBufferMetadataRequest(nullptr) {}
+  ~GetBufferMetadataRequest() override;
+  explicit constexpr GetBufferMetadataRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetBufferMetadataRequest(const GetBufferMetadataRequest& from);
+  GetBufferMetadataRequest(GetBufferMetadataRequest&& from) noexcept
+    : GetBufferMetadataRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetBufferMetadataRequest& operator=(const GetBufferMetadataRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetBufferMetadataRequest& operator=(GetBufferMetadataRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetBufferMetadataRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetBufferMetadataRequest* internal_default_instance() {
+    return reinterpret_cast<const GetBufferMetadataRequest*>(
+               &_GetBufferMetadataRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(GetBufferMetadataRequest& a, GetBufferMetadataRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetBufferMetadataRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetBufferMetadataRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetBufferMetadataRequest* New() const final {
+    return new GetBufferMetadataRequest();
+  }
+
+  GetBufferMetadataRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetBufferMetadataRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetBufferMetadataRequest& from);
+  void MergeFrom(const GetBufferMetadataRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetBufferMetadataRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.GetBufferMetadataRequest";
+  }
+  protected:
+  explicit GetBufferMetadataRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:v1.agent.GetBufferMetadataRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetBufferMetadataResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.GetBufferMetadataResponse) */ {
+ public:
+  inline GetBufferMetadataResponse() : GetBufferMetadataResponse(nullptr) {}
+  ~GetBufferMetadataResponse() override;
+  explicit constexpr GetBufferMetadataResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetBufferMetadataResponse(const GetBufferMetadataResponse& from);
+  GetBufferMetadataResponse(GetBufferMetadataResponse&& from) noexcept
+    : GetBufferMetadataResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetBufferMetadataResponse& operator=(const GetBufferMetadataResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetBufferMetadataResponse& operator=(GetBufferMetadataResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetBufferMetadataResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetBufferMetadataResponse* internal_default_instance() {
+    return reinterpret_cast<const GetBufferMetadataResponse*>(
+               &_GetBufferMetadataResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(GetBufferMetadataResponse& a, GetBufferMetadataResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetBufferMetadataResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetBufferMetadataResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetBufferMetadataResponse* New() const final {
+    return new GetBufferMetadataResponse();
+  }
+
+  GetBufferMetadataResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetBufferMetadataResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetBufferMetadataResponse& from);
+  void MergeFrom(const GetBufferMetadataResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetBufferMetadataResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.GetBufferMetadataResponse";
+  }
+  protected:
+  explicit GetBufferMetadataResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kConnectionsFieldNumber = 1,
+  };
+  // repeated .v1.model.BufferMetadata connections = 1 [json_name = "connections"];
+  int connections_size() const;
+  private:
+  int _internal_connections_size() const;
+  public:
+  void clear_connections();
+  ::v1::model::BufferMetadata* mutable_connections(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::BufferMetadata >*
+      mutable_connections();
+  private:
+  const ::v1::model::BufferMetadata& _internal_connections(int index) const;
+  ::v1::model::BufferMetadata* _internal_add_connections();
+  public:
+  const ::v1::model::BufferMetadata& connections(int index) const;
+  ::v1::model::BufferMetadata* add_connections();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::BufferMetadata >&
+      connections() const;
+
+  // @@protoc_insertion_point(class_scope:v1.agent.GetBufferMetadataResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::BufferMetadata > connections_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
 class HealthRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.HealthRequest) */ {
  public:
@@ -2696,7 +2965,7 @@ class HealthRequest final :
                &_HealthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(HealthRequest& a, HealthRequest& b) {
     a.Swap(&b);
@@ -2815,7 +3084,7 @@ class HealthResponse final :
                &_HealthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(HealthResponse& a, HealthResponse& b) {
     a.Swap(&b);
@@ -2934,7 +3203,7 @@ class GetCommandRequestRequest final :
                &_GetCommandRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(GetCommandRequestRequest& a, GetCommandRequestRequest& b) {
     a.Swap(&b);
@@ -3081,7 +3350,7 @@ class GetCommandRequestResponse final :
                &_GetCommandRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(GetCommandRequestResponse& a, GetCommandRequestResponse& b) {
     a.Swap(&b);
@@ -3222,7 +3491,7 @@ class SendCommandResponseRequest final :
                &_SendCommandResponseRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(SendCommandResponseRequest& a, SendCommandResponseRequest& b) {
     a.Swap(&b);
@@ -3363,7 +3632,7 @@ class SendCommandResponseResponse final :
                &_SendCommandResponseResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(SendCommandResponseResponse& a, SendCommandResponseResponse& b) {
     a.Swap(&b);
@@ -3482,7 +3751,7 @@ class GetCommandRequestStreamRequest final :
                &_GetCommandRequestStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(GetCommandRequestStreamRequest& a, GetCommandRequestStreamRequest& b) {
     a.Swap(&b);
@@ -3629,7 +3898,7 @@ class GetCommandRequestStreamResponse final :
                &_GetCommandRequestStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(GetCommandRequestStreamResponse& a, GetCommandRequestStreamResponse& b) {
     a.Swap(&b);
@@ -3770,7 +4039,7 @@ class GetTeleopControlDataStreamRequest final :
                &_GetTeleopControlDataStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(GetTeleopControlDataStreamRequest& a, GetTeleopControlDataStreamRequest& b) {
     a.Swap(&b);
@@ -3917,7 +4186,7 @@ class GetTeleopControlDataStreamResponse final :
                &_GetTeleopControlDataStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(GetTeleopControlDataStreamResponse& a, GetTeleopControlDataStreamResponse& b) {
     a.Swap(&b);
@@ -4058,7 +4327,7 @@ class GetTeleopHeartbeatStreamRequest final :
                &_GetTeleopHeartbeatStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(GetTeleopHeartbeatStreamRequest& a, GetTeleopHeartbeatStreamRequest& b) {
     a.Swap(&b);
@@ -4177,7 +4446,7 @@ class GetTeleopHeartbeatStreamResponse final :
                &_GetTeleopHeartbeatStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(GetTeleopHeartbeatStreamResponse& a, GetTeleopHeartbeatStreamResponse& b) {
     a.Swap(&b);
@@ -4341,7 +4610,7 @@ class GetTelemetryListenerStreamRequest final :
                &_GetTelemetryListenerStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(GetTelemetryListenerStreamRequest& a, GetTelemetryListenerStreamRequest& b) {
     a.Swap(&b);
@@ -4488,7 +4757,7 @@ class GetTelemetryListenerStreamResponse final :
                &_GetTelemetryListenerStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(GetTelemetryListenerStreamResponse& a, GetTelemetryListenerStreamResponse& b) {
     a.Swap(&b);
@@ -4629,7 +4898,7 @@ class PostTransformFrameResponse final :
                &_PostTransformFrameResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(PostTransformFrameResponse& a, PostTransformFrameResponse& b) {
     a.Swap(&b);
@@ -4748,7 +5017,7 @@ class SetBaseFrameIDRequest final :
                &_SetBaseFrameIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(SetBaseFrameIDRequest& a, SetBaseFrameIDRequest& b) {
     a.Swap(&b);
@@ -4885,7 +5154,7 @@ class SetBaseFrameIDResponse final :
                &_SetBaseFrameIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(SetBaseFrameIDResponse& a, SetBaseFrameIDResponse& b) {
     a.Swap(&b);
@@ -5004,7 +5273,7 @@ class ClearTransformTreeRequest final :
                &_ClearTransformTreeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(ClearTransformTreeRequest& a, ClearTransformTreeRequest& b) {
     a.Swap(&b);
@@ -5123,7 +5392,7 @@ class ClearTransformTreeResponse final :
                &_ClearTransformTreeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(ClearTransformTreeResponse& a, ClearTransformTreeResponse& b) {
     a.Swap(&b);
@@ -5242,7 +5511,7 @@ class CreateEventRequest final :
                &_CreateEventRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(CreateEventRequest& a, CreateEventRequest& b) {
     a.Swap(&b);
@@ -5383,7 +5652,7 @@ class CreateEventResponse final :
                &_CreateEventResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(CreateEventResponse& a, CreateEventResponse& b) {
     a.Swap(&b);
@@ -5502,7 +5771,7 @@ class CreateEventError final :
                &_CreateEventError_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(CreateEventError& a, CreateEventError& b) {
     a.Swap(&b);
@@ -5634,7 +5903,7 @@ class GetTeleopInfoRequest final :
                &_GetTeleopInfoRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(GetTeleopInfoRequest& a, GetTeleopInfoRequest& b) {
     a.Swap(&b);
@@ -5753,7 +6022,7 @@ class GetTeleopInfoResponse final :
                &_GetTeleopInfoResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(GetTeleopInfoResponse& a, GetTeleopInfoResponse& b) {
     a.Swap(&b);
@@ -5885,7 +6154,7 @@ class PostLanRtcOfferRequest final :
                &_PostLanRtcOfferRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   friend void swap(PostLanRtcOfferRequest& a, PostLanRtcOfferRequest& b) {
     a.Swap(&b);
@@ -6022,7 +6291,7 @@ class PostLanRtcOfferResponse final :
                &_PostLanRtcOfferResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   friend void swap(PostLanRtcOfferResponse& a, PostLanRtcOfferResponse& b) {
     a.Swap(&b);
@@ -6159,7 +6428,7 @@ class SendOnCustomDataChannelRequest final :
                &_SendOnCustomDataChannelRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   friend void swap(SendOnCustomDataChannelRequest& a, SendOnCustomDataChannelRequest& b) {
     a.Swap(&b);
@@ -6312,7 +6581,7 @@ class SendOnCustomDataChannelResponse final :
                &_SendOnCustomDataChannelResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   friend void swap(SendOnCustomDataChannelResponse& a, SendOnCustomDataChannelResponse& b) {
     a.Swap(&b);
@@ -6431,7 +6700,7 @@ class GetCustomDataChannelMessageStreamRequest final :
                &_GetCustomDataChannelMessageStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    48;
 
   friend void swap(GetCustomDataChannelMessageStreamRequest& a, GetCustomDataChannelMessageStreamRequest& b) {
     a.Swap(&b);
@@ -6578,7 +6847,7 @@ class GetCustomDataChannelMessageStreamResponse final :
                &_GetCustomDataChannelMessageStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   friend void swap(GetCustomDataChannelMessageStreamResponse& a, GetCustomDataChannelMessageStreamResponse& b) {
     a.Swap(&b);
@@ -7386,6 +7655,50 @@ inline void GetAgentConfigurationResponse::set_allocated_configuration(::v1::mod
   }
   configuration_ = configuration;
   // @@protoc_insertion_point(field_set_allocated:v1.agent.GetAgentConfigurationResponse.configuration)
+}
+
+// -------------------------------------------------------------------
+
+// GetBufferMetadataRequest
+
+// -------------------------------------------------------------------
+
+// GetBufferMetadataResponse
+
+// repeated .v1.model.BufferMetadata connections = 1 [json_name = "connections"];
+inline int GetBufferMetadataResponse::_internal_connections_size() const {
+  return connections_.size();
+}
+inline int GetBufferMetadataResponse::connections_size() const {
+  return _internal_connections_size();
+}
+inline ::v1::model::BufferMetadata* GetBufferMetadataResponse::mutable_connections(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.agent.GetBufferMetadataResponse.connections)
+  return connections_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::BufferMetadata >*
+GetBufferMetadataResponse::mutable_connections() {
+  // @@protoc_insertion_point(field_mutable_list:v1.agent.GetBufferMetadataResponse.connections)
+  return &connections_;
+}
+inline const ::v1::model::BufferMetadata& GetBufferMetadataResponse::_internal_connections(int index) const {
+  return connections_.Get(index);
+}
+inline const ::v1::model::BufferMetadata& GetBufferMetadataResponse::connections(int index) const {
+  // @@protoc_insertion_point(field_get:v1.agent.GetBufferMetadataResponse.connections)
+  return _internal_connections(index);
+}
+inline ::v1::model::BufferMetadata* GetBufferMetadataResponse::_internal_add_connections() {
+  return connections_.Add();
+}
+inline ::v1::model::BufferMetadata* GetBufferMetadataResponse::add_connections() {
+  // @@protoc_insertion_point(field_add:v1.agent.GetBufferMetadataResponse.connections)
+  return _internal_add_connections();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::BufferMetadata >&
+GetBufferMetadataResponse::connections() const {
+  // @@protoc_insertion_point(field_list:v1.agent.GetBufferMetadataResponse.connections)
+  return connections_;
 }
 
 // -------------------------------------------------------------------
@@ -8865,6 +9178,10 @@ inline void GetCustomDataChannelMessageStreamResponse::set_allocated_payload(std
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -230,6 +230,29 @@ struct GetAgentConfigurationResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetAgentConfigurationResponseDefaultTypeInternal _GetAgentConfigurationResponse_default_instance_;
+constexpr GetBufferMetadataRequest::GetBufferMetadataRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct GetBufferMetadataRequestDefaultTypeInternal {
+  constexpr GetBufferMetadataRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetBufferMetadataRequestDefaultTypeInternal() {}
+  union {
+    GetBufferMetadataRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetBufferMetadataRequestDefaultTypeInternal _GetBufferMetadataRequest_default_instance_;
+constexpr GetBufferMetadataResponse::GetBufferMetadataResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : connections_(){}
+struct GetBufferMetadataResponseDefaultTypeInternal {
+  constexpr GetBufferMetadataResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetBufferMetadataResponseDefaultTypeInternal() {}
+  union {
+    GetBufferMetadataResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetBufferMetadataResponseDefaultTypeInternal _GetBufferMetadataResponse_default_instance_;
 constexpr HealthRequest::HealthRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
 struct HealthRequestDefaultTypeInternal {
@@ -586,7 +609,7 @@ struct GetCustomDataChannelMessageStreamResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetCustomDataChannelMessageStreamResponseDefaultTypeInternal _GetCustomDataChannelMessageStreamResponse_default_instance_;
 }  // namespace agent
 }  // namespace v1
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[48];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[50];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_protos_2fagent_2fv1_2fagent_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_protos_2fagent_2fv1_2fagent_2eproto = nullptr;
 
@@ -695,6 +718,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fagent_2fv1_2fagent_2e
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::v1::agent::GetAgentConfigurationResponse, configuration_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::agent::GetBufferMetadataRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::v1::agent::GetBufferMetadataResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::v1::agent::GetBufferMetadataResponse, connections_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::agent::HealthRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -889,36 +923,38 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 87, -1, sizeof(::v1::agent::GetConfigBlobDataResponse)},
   { 93, -1, sizeof(::v1::agent::GetAgentConfigurationRequest)},
   { 98, -1, sizeof(::v1::agent::GetAgentConfigurationResponse)},
-  { 104, -1, sizeof(::v1::agent::HealthRequest)},
-  { 109, -1, sizeof(::v1::agent::HealthResponse)},
-  { 114, -1, sizeof(::v1::agent::GetCommandRequestRequest)},
-  { 120, -1, sizeof(::v1::agent::GetCommandRequestResponse)},
-  { 126, -1, sizeof(::v1::agent::SendCommandResponseRequest)},
-  { 132, -1, sizeof(::v1::agent::SendCommandResponseResponse)},
-  { 137, -1, sizeof(::v1::agent::GetCommandRequestStreamRequest)},
-  { 143, -1, sizeof(::v1::agent::GetCommandRequestStreamResponse)},
-  { 149, -1, sizeof(::v1::agent::GetTeleopControlDataStreamRequest)},
-  { 155, -1, sizeof(::v1::agent::GetTeleopControlDataStreamResponse)},
-  { 161, -1, sizeof(::v1::agent::GetTeleopHeartbeatStreamRequest)},
-  { 166, -1, sizeof(::v1::agent::GetTeleopHeartbeatStreamResponse)},
-  { 174, -1, sizeof(::v1::agent::GetTelemetryListenerStreamRequest)},
-  { 180, -1, sizeof(::v1::agent::GetTelemetryListenerStreamResponse)},
-  { 186, -1, sizeof(::v1::agent::PostTransformFrameResponse)},
-  { 191, -1, sizeof(::v1::agent::SetBaseFrameIDRequest)},
-  { 197, -1, sizeof(::v1::agent::SetBaseFrameIDResponse)},
-  { 202, -1, sizeof(::v1::agent::ClearTransformTreeRequest)},
-  { 207, -1, sizeof(::v1::agent::ClearTransformTreeResponse)},
-  { 212, -1, sizeof(::v1::agent::CreateEventRequest)},
-  { 218, -1, sizeof(::v1::agent::CreateEventResponse)},
-  { 223, -1, sizeof(::v1::agent::CreateEventError)},
-  { 229, -1, sizeof(::v1::agent::GetTeleopInfoRequest)},
-  { 234, -1, sizeof(::v1::agent::GetTeleopInfoResponse)},
-  { 240, -1, sizeof(::v1::agent::PostLanRtcOfferRequest)},
-  { 246, -1, sizeof(::v1::agent::PostLanRtcOfferResponse)},
-  { 252, -1, sizeof(::v1::agent::SendOnCustomDataChannelRequest)},
-  { 259, -1, sizeof(::v1::agent::SendOnCustomDataChannelResponse)},
-  { 264, -1, sizeof(::v1::agent::GetCustomDataChannelMessageStreamRequest)},
-  { 270, -1, sizeof(::v1::agent::GetCustomDataChannelMessageStreamResponse)},
+  { 104, -1, sizeof(::v1::agent::GetBufferMetadataRequest)},
+  { 109, -1, sizeof(::v1::agent::GetBufferMetadataResponse)},
+  { 115, -1, sizeof(::v1::agent::HealthRequest)},
+  { 120, -1, sizeof(::v1::agent::HealthResponse)},
+  { 125, -1, sizeof(::v1::agent::GetCommandRequestRequest)},
+  { 131, -1, sizeof(::v1::agent::GetCommandRequestResponse)},
+  { 137, -1, sizeof(::v1::agent::SendCommandResponseRequest)},
+  { 143, -1, sizeof(::v1::agent::SendCommandResponseResponse)},
+  { 148, -1, sizeof(::v1::agent::GetCommandRequestStreamRequest)},
+  { 154, -1, sizeof(::v1::agent::GetCommandRequestStreamResponse)},
+  { 160, -1, sizeof(::v1::agent::GetTeleopControlDataStreamRequest)},
+  { 166, -1, sizeof(::v1::agent::GetTeleopControlDataStreamResponse)},
+  { 172, -1, sizeof(::v1::agent::GetTeleopHeartbeatStreamRequest)},
+  { 177, -1, sizeof(::v1::agent::GetTeleopHeartbeatStreamResponse)},
+  { 185, -1, sizeof(::v1::agent::GetTelemetryListenerStreamRequest)},
+  { 191, -1, sizeof(::v1::agent::GetTelemetryListenerStreamResponse)},
+  { 197, -1, sizeof(::v1::agent::PostTransformFrameResponse)},
+  { 202, -1, sizeof(::v1::agent::SetBaseFrameIDRequest)},
+  { 208, -1, sizeof(::v1::agent::SetBaseFrameIDResponse)},
+  { 213, -1, sizeof(::v1::agent::ClearTransformTreeRequest)},
+  { 218, -1, sizeof(::v1::agent::ClearTransformTreeResponse)},
+  { 223, -1, sizeof(::v1::agent::CreateEventRequest)},
+  { 229, -1, sizeof(::v1::agent::CreateEventResponse)},
+  { 234, -1, sizeof(::v1::agent::CreateEventError)},
+  { 240, -1, sizeof(::v1::agent::GetTeleopInfoRequest)},
+  { 245, -1, sizeof(::v1::agent::GetTeleopInfoResponse)},
+  { 251, -1, sizeof(::v1::agent::PostLanRtcOfferRequest)},
+  { 257, -1, sizeof(::v1::agent::PostLanRtcOfferResponse)},
+  { 263, -1, sizeof(::v1::agent::SendOnCustomDataChannelRequest)},
+  { 270, -1, sizeof(::v1::agent::SendOnCustomDataChannelResponse)},
+  { 275, -1, sizeof(::v1::agent::GetCustomDataChannelMessageStreamRequest)},
+  { 281, -1, sizeof(::v1::agent::GetCustomDataChannelMessageStreamResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -940,6 +976,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetConfigBlobDataResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetAgentConfigurationRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetAgentConfigurationResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetBufferMetadataRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetBufferMetadataResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_HealthRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_HealthResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::v1::agent::_GetCommandRequestRequest_default_instance_),
@@ -978,162 +1016,169 @@ const char descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto[] PROTO
   "/model/v1/intervention.proto\032\036protos/mod"
   "el/v1/commands.proto\032\034protos/model/v1/co"
   "nfig.proto\032\032protos/model/v1/math.proto\032\033"
-  "protos/model/v1/event.proto\"m\n\'PostGener"
-  "icAPIUnbufferedRequestResponse\022\036\n\nstatus"
-  "Code\030\001 \001(\rR\nstatusCode\022\"\n\014responseBody\030\002"
-  " \001(\tR\014responseBody\"\037\n\035PostGenericAPIRequ"
-  "estResponse\"\024\n\022StreamDataResponse\"\022\n\020Pos"
-  "tDataResponse\"q\n\rPostDataError\022\024\n\005index\030"
-  "\001 \001(\rR\005index\022\022\n\004code\030\002 \001(\rR\004code\022\034\n\tretr"
-  "yable\030\003 \001(\010R\tretryable\022\030\n\007message\030\004 \001(\tR"
-  "\007message\"K\n\024PostDataMultiRequest\0223\n\ndata"
-  "points\030\001 \003(\0132\023.v1.model.DatapointR\ndatap"
-  "oints\"\027\n\025PostDataMultiResponse\"E\n\022PostDa"
-  "taMultiError\022/\n\006errors\030\001 \003(\0132\027.v1.agent."
-  "PostDataErrorR\006errors\"/\n\035GetIntervention"
-  "RequestRequest\022\016\n\002id\030\001 \001(\tR\002id\"\?\n\036GetInt"
-  "erventionResponseRequest\022\035\n\nrequest_id\030\001"
-  " \001(\tR\trequestId\" \n\036GetStreamsConfigurati"
-  "onRequest\"Z\n\037GetStreamsConfigurationResp"
-  "onse\0227\n\007streams\030\001 \003(\0132\035.v1.model.StreamC"
-  "onfigurationR\007streams\"$\n\"GetApplicationC"
-  "onfigurationRequest\"o\n#GetApplicationCon"
-  "figurationResponse\022H\n\rconfiguration\030\001 \001("
-  "\0132\".v1.model.ApplicationConfigurationR\rc"
-  "onfiguration\"\032\n\030GetConfigBlobDataRequest"
-  "\"L\n\031GetConfigBlobDataResponse\022/\n\tblob_da"
-  "ta\030\001 \001(\0132\022.v1.model.BlobDataR\010blobData\"\036"
-  "\n\034GetAgentConfigurationRequest\"c\n\035GetAge"
-  "ntConfigurationResponse\022B\n\rconfiguration"
-  "\030\001 \001(\0132\034.v1.model.AgentConfigurationR\rco"
-  "nfiguration\"\017\n\rHealthRequest\"\020\n\016HealthRe"
-  "sponse\"A\n\030GetCommandRequestRequest\022%\n\016co"
-  "mmand_filter\030\001 \003(\tR\rcommandFilter\"O\n\031Get"
-  "CommandRequestResponse\0222\n\007request\030\001 \001(\0132"
-  "\030.v1.model.CommandRequestR\007request\"S\n\032Se"
-  "ndCommandResponseRequest\0225\n\010response\030\001 \001"
-  "(\0132\031.v1.model.CommandResponseR\010response\""
-  "\035\n\033SendCommandResponseResponse\"G\n\036GetCom"
-  "mandRequestStreamRequest\022%\n\016command_filt"
-  "er\030\001 \003(\tR\rcommandFilter\"U\n\037GetCommandReq"
-  "uestStreamResponse\0222\n\007request\030\001 \001(\0132\030.v1"
-  ".model.CommandRequestR\007request\"H\n!GetTel"
-  "eopControlDataStreamRequest\022#\n\rstream_fi"
-  "lter\030\001 \003(\tR\014streamFilter\"m\n\"GetTeleopCon"
-  "trolDataStreamResponse\022G\n\021control_datapo"
-  "int\030\001 \001(\0132\032.v1.model.ControlDatapointR\020c"
-  "ontrolDatapoint\"!\n\037GetTeleopHeartbeatStr"
-  "eamRequest\"\203\001\n GetTeleopHeartbeatStreamR"
-  "esponse\022\027\n\007peer_id\030\001 \001(\tR\006peerId\022#\n\ris_d"
-  "isconnect\030\002 \001(\010R\014isDisconnect\022!\n\014session"
-  "_type\030\003 \001(\tR\013sessionType\"H\n!GetTelemetry"
-  "ListenerStreamRequest\022#\n\rstream_filter\030\001"
-  " \003(\tR\014streamFilter\"W\n\"GetTelemetryListen"
-  "erStreamResponse\0221\n\tdatapoint\030\001 \001(\0132\023.v1"
-  ".model.DatapointR\tdatapoint\"\034\n\032PostTrans"
-  "formFrameResponse\"\'\n\025SetBaseFrameIDReque"
-  "st\022\016\n\002id\030\001 \001(\tR\002id\"\030\n\026SetBaseFrameIDResp"
-  "onse\"\033\n\031ClearTransformTreeRequest\"\034\n\032Cle"
-  "arTransformTreeResponse\";\n\022CreateEventRe"
-  "quest\022%\n\005event\030\001 \001(\0132\017.v1.model.EventR\005e"
-  "vent\"\025\n\023CreateEventResponse\"0\n\020CreateEve"
-  "ntError\022\034\n\tretryable\030\001 \001(\010R\tretryable\"\026\n"
-  "\024GetTeleopInfoRequest\"B\n\025GetTeleopInfoRe"
-  "sponse\022)\n\020connection_count\030\001 \001(\rR\017connec"
-  "tionCount\".\n\026PostLanRtcOfferRequest\022\024\n\005o"
-  "ffer\030\001 \001(\tR\005offer\"1\n\027PostLanRtcOfferResp"
-  "onse\022\026\n\006answer\030\001 \001(\tR\006answer\"]\n\036SendOnCu"
-  "stomDataChannelRequest\022!\n\014channel_name\030\001"
-  " \001(\tR\013channelName\022\030\n\007payload\030\002 \001(\014R\007payl"
-  "oad\"!\n\037SendOnCustomDataChannelResponse\"Z"
-  "\n(GetCustomDataChannelMessageStreamReque"
-  "st\022.\n\023channel_name_filter\030\001 \003(\tR\021channel"
-  "NameFilter\"\201\001\n)GetCustomDataChannelMessa"
-  "geStreamResponse\022\027\n\007peer_id\030\001 \001(\tR\006peerI"
-  "d\022!\n\014channel_name\030\002 \001(\tR\013channelName\022\030\n\007"
-  "payload\030\003 \001(\014R\007payload2\232\025\n\005Agent\022C\n\nStre"
-  "amData\022\023.v1.model.Datapoint\032\034.v1.agent.S"
-  "treamDataResponse\"\000(\001\022=\n\010PostData\022\023.v1.m"
-  "odel.Datapoint\032\032.v1.agent.PostDataRespon"
-  "se\"\000\022R\n\rPostDataMulti\022\036.v1.agent.PostDat"
-  "aMultiRequest\032\037.v1.agent.PostDataMultiRe"
-  "sponse\"\000\022{\n\032GetTeleopControlDataStream\022+"
-  ".v1.agent.GetTeleopControlDataStreamRequ"
-  "est\032,.v1.agent.GetTeleopControlDataStrea"
-  "mResponse\"\0000\001\022u\n\030GetTeleopHeartbeatStrea"
-  "m\022).v1.agent.GetTeleopHeartbeatStreamReq"
-  "uest\032*.v1.agent.GetTeleopHeartbeatStream"
-  "Response\"\0000\001\022{\n\032GetTelemetryListenerStre"
-  "am\022+.v1.agent.GetTelemetryListenerStream"
-  "Request\032,.v1.agent.GetTelemetryListenerS"
-  "treamResponse\"\0000\001\022\220\001\n!GetCustomDataChann"
-  "elMessageStream\0222.v1.agent.GetCustomData"
-  "ChannelMessageStreamRequest\0323.v1.agent.G"
-  "etCustomDataChannelMessageStreamResponse"
-  "\"\0000\001\022L\n\013CreateEvent\022\034.v1.agent.CreateEve"
-  "ntRequest\032\035.v1.agent.CreateEventResponse"
-  "\"\000\022[\n\031CreateInterventionRequest\022\035.v1.mod"
-  "el.InterventionRequest\032\035.v1.model.Interv"
-  "entionRequest\"\000\022b\n\026GetInterventionReques"
-  "t\022\'.v1.agent.GetInterventionRequestReque"
-  "st\032\035.v1.model.InterventionRequest\"\000\022e\n\027G"
-  "etInterventionResponse\022(.v1.agent.GetInt"
-  "erventionResponseRequest\032\036.v1.model.Inte"
-  "rventionResponse\"\000\022p\n\027GetStreamsConfigur"
-  "ation\022(.v1.agent.GetStreamsConfiguration"
-  "Request\032).v1.agent.GetStreamsConfigurati"
-  "onResponse\"\000\022|\n\033GetApplicationConfigurat"
-  "ion\022,.v1.agent.GetApplicationConfigurati"
-  "onRequest\032-.v1.agent.GetApplicationConfi"
-  "gurationResponse\"\000\022^\n\021GetConfigBlobData\022"
-  "\".v1.agent.GetConfigBlobDataRequest\032#.v1"
-  ".agent.GetConfigBlobDataResponse\"\000\022j\n\025Ge"
-  "tAgentConfiguration\022&.v1.agent.GetAgentC"
-  "onfigurationRequest\032\'.v1.agent.GetAgentC"
-  "onfigurationResponse\"\000\022=\n\006Health\022\027.v1.ag"
-  "ent.HealthRequest\032\030.v1.agent.HealthRespo"
-  "nse\"\000\022^\n\021GetCommandRequest\022\".v1.agent.Ge"
-  "tCommandRequestRequest\032#.v1.agent.GetCom"
-  "mandRequestResponse\"\000\022r\n\027GetCommandReque"
-  "stStream\022(.v1.agent.GetCommandRequestStr"
-  "eamRequest\032).v1.agent.GetCommandRequestS"
-  "treamResponse\"\0000\001\022d\n\023SendCommandResponse"
-  "\022$.v1.agent.SendCommandResponseRequest\032%"
-  ".v1.agent.SendCommandResponseResponse\"\000\022"
-  "V\n\022PostTransformFrame\022\030.v1.model.Transfo"
-  "rmFrame\032$.v1.agent.PostTransformFrameRes"
-  "ponse\"\000\022U\n\016SetBaseFrameID\022\037.v1.agent.Set"
-  "BaseFrameIDRequest\032 .v1.agent.SetBaseFra"
-  "meIDResponse\"\000\022a\n\022ClearTransformTree\022#.v"
-  "1.agent.ClearTransformTreeRequest\032$.v1.a"
-  "gent.ClearTransformTreeResponse\"\000\022R\n\rGet"
-  "TeleopInfo\022\036.v1.agent.GetTeleopInfoReque"
-  "st\032\037.v1.agent.GetTeleopInfoResponse\"\000\022X\n"
-  "\017PostLanRtcOffer\022 .v1.agent.PostLanRtcOf"
-  "ferRequest\032!.v1.agent.PostLanRtcOfferRes"
-  "ponse\"\000\022p\n\027SendOnCustomDataChannel\022(.v1."
-  "agent.SendOnCustomDataChannelRequest\032).v"
-  "1.agent.SendOnCustomDataChannelResponse\""
-  "\000\022a\n\025PostGenericAPIRequest\022\035.v1.model.Ge"
-  "nericAPIDatapoint\032\'.v1.agent.PostGeneric"
-  "APIRequestResponse\"\000\022u\n\037PostGenericAPIUn"
-  "bufferedRequest\022\035.v1.model.GenericAPIDat"
-  "apoint\0321.v1.agent.PostGenericAPIUnbuffer"
-  "edRequestResponse\"\000B+Z)github.com/Forman"
-  "tIO/genproto/go/v1/agentb\006proto3"
+  "protos/model/v1/event.proto\032\034protos/mode"
+  "l/v1/health.proto\"m\n\'PostGenericAPIUnbuf"
+  "feredRequestResponse\022\036\n\nstatusCode\030\001 \001(\r"
+  "R\nstatusCode\022\"\n\014responseBody\030\002 \001(\tR\014resp"
+  "onseBody\"\037\n\035PostGenericAPIRequestRespons"
+  "e\"\024\n\022StreamDataResponse\"\022\n\020PostDataRespo"
+  "nse\"q\n\rPostDataError\022\024\n\005index\030\001 \001(\rR\005ind"
+  "ex\022\022\n\004code\030\002 \001(\rR\004code\022\034\n\tretryable\030\003 \001("
+  "\010R\tretryable\022\030\n\007message\030\004 \001(\tR\007message\"K"
+  "\n\024PostDataMultiRequest\0223\n\ndatapoints\030\001 \003"
+  "(\0132\023.v1.model.DatapointR\ndatapoints\"\027\n\025P"
+  "ostDataMultiResponse\"E\n\022PostDataMultiErr"
+  "or\022/\n\006errors\030\001 \003(\0132\027.v1.agent.PostDataEr"
+  "rorR\006errors\"/\n\035GetInterventionRequestReq"
+  "uest\022\016\n\002id\030\001 \001(\tR\002id\"\?\n\036GetInterventionR"
+  "esponseRequest\022\035\n\nrequest_id\030\001 \001(\tR\trequ"
+  "estId\" \n\036GetStreamsConfigurationRequest\""
+  "Z\n\037GetStreamsConfigurationResponse\0227\n\007st"
+  "reams\030\001 \003(\0132\035.v1.model.StreamConfigurati"
+  "onR\007streams\"$\n\"GetApplicationConfigurati"
+  "onRequest\"o\n#GetApplicationConfiguration"
+  "Response\022H\n\rconfiguration\030\001 \001(\0132\".v1.mod"
+  "el.ApplicationConfigurationR\rconfigurati"
+  "on\"\032\n\030GetConfigBlobDataRequest\"L\n\031GetCon"
+  "figBlobDataResponse\022/\n\tblob_data\030\001 \001(\0132\022"
+  ".v1.model.BlobDataR\010blobData\"\036\n\034GetAgent"
+  "ConfigurationRequest\"c\n\035GetAgentConfigur"
+  "ationResponse\022B\n\rconfiguration\030\001 \001(\0132\034.v"
+  "1.model.AgentConfigurationR\rconfiguratio"
+  "n\"\032\n\030GetBufferMetadataRequest\"W\n\031GetBuff"
+  "erMetadataResponse\022:\n\013connections\030\001 \003(\0132"
+  "\030.v1.model.BufferMetadataR\013connections\"\017"
+  "\n\rHealthRequest\"\020\n\016HealthResponse\"A\n\030Get"
+  "CommandRequestRequest\022%\n\016command_filter\030"
+  "\001 \003(\tR\rcommandFilter\"O\n\031GetCommandReques"
+  "tResponse\0222\n\007request\030\001 \001(\0132\030.v1.model.Co"
+  "mmandRequestR\007request\"S\n\032SendCommandResp"
+  "onseRequest\0225\n\010response\030\001 \001(\0132\031.v1.model"
+  ".CommandResponseR\010response\"\035\n\033SendComman"
+  "dResponseResponse\"G\n\036GetCommandRequestSt"
+  "reamRequest\022%\n\016command_filter\030\001 \003(\tR\rcom"
+  "mandFilter\"U\n\037GetCommandRequestStreamRes"
+  "ponse\0222\n\007request\030\001 \001(\0132\030.v1.model.Comman"
+  "dRequestR\007request\"H\n!GetTeleopControlDat"
+  "aStreamRequest\022#\n\rstream_filter\030\001 \003(\tR\014s"
+  "treamFilter\"m\n\"GetTeleopControlDataStrea"
+  "mResponse\022G\n\021control_datapoint\030\001 \001(\0132\032.v"
+  "1.model.ControlDatapointR\020controlDatapoi"
+  "nt\"!\n\037GetTeleopHeartbeatStreamRequest\"\203\001"
+  "\n GetTeleopHeartbeatStreamResponse\022\027\n\007pe"
+  "er_id\030\001 \001(\tR\006peerId\022#\n\ris_disconnect\030\002 \001"
+  "(\010R\014isDisconnect\022!\n\014session_type\030\003 \001(\tR\013"
+  "sessionType\"H\n!GetTelemetryListenerStrea"
+  "mRequest\022#\n\rstream_filter\030\001 \003(\tR\014streamF"
+  "ilter\"W\n\"GetTelemetryListenerStreamRespo"
+  "nse\0221\n\tdatapoint\030\001 \001(\0132\023.v1.model.Datapo"
+  "intR\tdatapoint\"\034\n\032PostTransformFrameResp"
+  "onse\"\'\n\025SetBaseFrameIDRequest\022\016\n\002id\030\001 \001("
+  "\tR\002id\"\030\n\026SetBaseFrameIDResponse\"\033\n\031Clear"
+  "TransformTreeRequest\"\034\n\032ClearTransformTr"
+  "eeResponse\";\n\022CreateEventRequest\022%\n\005even"
+  "t\030\001 \001(\0132\017.v1.model.EventR\005event\"\025\n\023Creat"
+  "eEventResponse\"0\n\020CreateEventError\022\034\n\tre"
+  "tryable\030\001 \001(\010R\tretryable\"\026\n\024GetTeleopInf"
+  "oRequest\"B\n\025GetTeleopInfoResponse\022)\n\020con"
+  "nection_count\030\001 \001(\rR\017connectionCount\".\n\026"
+  "PostLanRtcOfferRequest\022\024\n\005offer\030\001 \001(\tR\005o"
+  "ffer\"1\n\027PostLanRtcOfferResponse\022\026\n\006answe"
+  "r\030\001 \001(\tR\006answer\"]\n\036SendOnCustomDataChann"
+  "elRequest\022!\n\014channel_name\030\001 \001(\tR\013channel"
+  "Name\022\030\n\007payload\030\002 \001(\014R\007payload\"!\n\037SendOn"
+  "CustomDataChannelResponse\"Z\n(GetCustomDa"
+  "taChannelMessageStreamRequest\022.\n\023channel"
+  "_name_filter\030\001 \003(\tR\021channelNameFilter\"\201\001"
+  "\n)GetCustomDataChannelMessageStreamRespo"
+  "nse\022\027\n\007peer_id\030\001 \001(\tR\006peerId\022!\n\014channel_"
+  "name\030\002 \001(\tR\013channelName\022\030\n\007payload\030\003 \001(\014"
+  "R\007payload2\372\025\n\005Agent\022C\n\nStreamData\022\023.v1.m"
+  "odel.Datapoint\032\034.v1.agent.StreamDataResp"
+  "onse\"\000(\001\022=\n\010PostData\022\023.v1.model.Datapoin"
+  "t\032\032.v1.agent.PostDataResponse\"\000\022R\n\rPostD"
+  "ataMulti\022\036.v1.agent.PostDataMultiRequest"
+  "\032\037.v1.agent.PostDataMultiResponse\"\000\022{\n\032G"
+  "etTeleopControlDataStream\022+.v1.agent.Get"
+  "TeleopControlDataStreamRequest\032,.v1.agen"
+  "t.GetTeleopControlDataStreamResponse\"\0000\001"
+  "\022u\n\030GetTeleopHeartbeatStream\022).v1.agent."
+  "GetTeleopHeartbeatStreamRequest\032*.v1.age"
+  "nt.GetTeleopHeartbeatStreamResponse\"\0000\001\022"
+  "{\n\032GetTelemetryListenerStream\022+.v1.agent"
+  ".GetTelemetryListenerStreamRequest\032,.v1."
+  "agent.GetTelemetryListenerStreamResponse"
+  "\"\0000\001\022\220\001\n!GetCustomDataChannelMessageStre"
+  "am\0222.v1.agent.GetCustomDataChannelMessag"
+  "eStreamRequest\0323.v1.agent.GetCustomDataC"
+  "hannelMessageStreamResponse\"\0000\001\022L\n\013Creat"
+  "eEvent\022\034.v1.agent.CreateEventRequest\032\035.v"
+  "1.agent.CreateEventResponse\"\000\022[\n\031CreateI"
+  "nterventionRequest\022\035.v1.model.Interventi"
+  "onRequest\032\035.v1.model.InterventionRequest"
+  "\"\000\022b\n\026GetInterventionRequest\022\'.v1.agent."
+  "GetInterventionRequestRequest\032\035.v1.model"
+  ".InterventionRequest\"\000\022e\n\027GetInterventio"
+  "nResponse\022(.v1.agent.GetInterventionResp"
+  "onseRequest\032\036.v1.model.InterventionRespo"
+  "nse\"\000\022p\n\027GetStreamsConfiguration\022(.v1.ag"
+  "ent.GetStreamsConfigurationRequest\032).v1."
+  "agent.GetStreamsConfigurationResponse\"\000\022"
+  "|\n\033GetApplicationConfiguration\022,.v1.agen"
+  "t.GetApplicationConfigurationRequest\032-.v"
+  "1.agent.GetApplicationConfigurationRespo"
+  "nse\"\000\022^\n\021GetConfigBlobData\022\".v1.agent.Ge"
+  "tConfigBlobDataRequest\032#.v1.agent.GetCon"
+  "figBlobDataResponse\"\000\022j\n\025GetAgentConfigu"
+  "ration\022&.v1.agent.GetAgentConfigurationR"
+  "equest\032\'.v1.agent.GetAgentConfigurationR"
+  "esponse\"\000\022^\n\021GetBufferMetadata\022\".v1.agen"
+  "t.GetBufferMetadataRequest\032#.v1.agent.Ge"
+  "tBufferMetadataResponse\"\000\022=\n\006Health\022\027.v1"
+  ".agent.HealthRequest\032\030.v1.agent.HealthRe"
+  "sponse\"\000\022^\n\021GetCommandRequest\022\".v1.agent"
+  ".GetCommandRequestRequest\032#.v1.agent.Get"
+  "CommandRequestResponse\"\000\022r\n\027GetCommandRe"
+  "questStream\022(.v1.agent.GetCommandRequest"
+  "StreamRequest\032).v1.agent.GetCommandReque"
+  "stStreamResponse\"\0000\001\022d\n\023SendCommandRespo"
+  "nse\022$.v1.agent.SendCommandResponseReques"
+  "t\032%.v1.agent.SendCommandResponseResponse"
+  "\"\000\022V\n\022PostTransformFrame\022\030.v1.model.Tran"
+  "sformFrame\032$.v1.agent.PostTransformFrame"
+  "Response\"\000\022U\n\016SetBaseFrameID\022\037.v1.agent."
+  "SetBaseFrameIDRequest\032 .v1.agent.SetBase"
+  "FrameIDResponse\"\000\022a\n\022ClearTransformTree\022"
+  "#.v1.agent.ClearTransformTreeRequest\032$.v"
+  "1.agent.ClearTransformTreeResponse\"\000\022R\n\r"
+  "GetTeleopInfo\022\036.v1.agent.GetTeleopInfoRe"
+  "quest\032\037.v1.agent.GetTeleopInfoResponse\"\000"
+  "\022X\n\017PostLanRtcOffer\022 .v1.agent.PostLanRt"
+  "cOfferRequest\032!.v1.agent.PostLanRtcOffer"
+  "Response\"\000\022p\n\027SendOnCustomDataChannel\022(."
+  "v1.agent.SendOnCustomDataChannelRequest\032"
+  ").v1.agent.SendOnCustomDataChannelRespon"
+  "se\"\000\022a\n\025PostGenericAPIRequest\022\035.v1.model"
+  ".GenericAPIDatapoint\032\'.v1.agent.PostGene"
+  "ricAPIRequestResponse\"\000\022u\n\037PostGenericAP"
+  "IUnbufferedRequest\022\035.v1.model.GenericAPI"
+  "Datapoint\0321.v1.agent.PostGenericAPIUnbuf"
+  "feredRequestResponse\"\000B+Z)github.com/For"
+  "mantIO/genproto/go/v1/agentb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps[6] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps[7] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fcommands_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fconfig_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto,
+  &::descriptor_table_protos_2fmodel_2fv1_2fhealth_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fintervention_2eproto,
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fagent_2fv1_2fagent_2eproto = {
-  false, false, 5912, descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto, "protos/agent/v1/agent.proto", 
-  &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once, descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps, 6, 48,
+  false, false, 6155, descriptor_table_protodef_protos_2fagent_2fv1_2fagent_2eproto, "protos/agent/v1/agent.proto", 
+  &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once, descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_deps, 7, 50,
   schemas, file_default_instances, TableStruct_protos_2fagent_2fv1_2fagent_2eproto::offsets,
   file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto, file_level_enum_descriptors_protos_2fagent_2fv1_2fagent_2eproto, file_level_service_descriptors_protos_2fagent_2fv1_2fagent_2eproto,
 };
@@ -4566,6 +4611,362 @@ void GetAgentConfigurationResponse::InternalSwap(GetAgentConfigurationResponse* 
 
 // ===================================================================
 
+class GetBufferMetadataRequest::_Internal {
+ public:
+};
+
+GetBufferMetadataRequest::GetBufferMetadataRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:v1.agent.GetBufferMetadataRequest)
+}
+GetBufferMetadataRequest::GetBufferMetadataRequest(const GetBufferMetadataRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:v1.agent.GetBufferMetadataRequest)
+}
+
+void GetBufferMetadataRequest::SharedCtor() {
+}
+
+GetBufferMetadataRequest::~GetBufferMetadataRequest() {
+  // @@protoc_insertion_point(destructor:v1.agent.GetBufferMetadataRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void GetBufferMetadataRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetBufferMetadataRequest::ArenaDtor(void* object) {
+  GetBufferMetadataRequest* _this = reinterpret_cast< GetBufferMetadataRequest* >(object);
+  (void)_this;
+}
+void GetBufferMetadataRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetBufferMetadataRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetBufferMetadataRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.agent.GetBufferMetadataRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetBufferMetadataRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetBufferMetadataRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.agent.GetBufferMetadataRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.agent.GetBufferMetadataRequest)
+  return target;
+}
+
+size_t GetBufferMetadataRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.agent.GetBufferMetadataRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetBufferMetadataRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.agent.GetBufferMetadataRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetBufferMetadataRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetBufferMetadataRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.agent.GetBufferMetadataRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.agent.GetBufferMetadataRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetBufferMetadataRequest::MergeFrom(const GetBufferMetadataRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.agent.GetBufferMetadataRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void GetBufferMetadataRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.agent.GetBufferMetadataRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetBufferMetadataRequest::CopyFrom(const GetBufferMetadataRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.agent.GetBufferMetadataRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetBufferMetadataRequest::IsInitialized() const {
+  return true;
+}
+
+void GetBufferMetadataRequest::InternalSwap(GetBufferMetadataRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetBufferMetadataRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[18]);
+}
+
+// ===================================================================
+
+class GetBufferMetadataResponse::_Internal {
+ public:
+};
+
+void GetBufferMetadataResponse::clear_connections() {
+  connections_.Clear();
+}
+GetBufferMetadataResponse::GetBufferMetadataResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  connections_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:v1.agent.GetBufferMetadataResponse)
+}
+GetBufferMetadataResponse::GetBufferMetadataResponse(const GetBufferMetadataResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      connections_(from.connections_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:v1.agent.GetBufferMetadataResponse)
+}
+
+void GetBufferMetadataResponse::SharedCtor() {
+}
+
+GetBufferMetadataResponse::~GetBufferMetadataResponse() {
+  // @@protoc_insertion_point(destructor:v1.agent.GetBufferMetadataResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void GetBufferMetadataResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetBufferMetadataResponse::ArenaDtor(void* object) {
+  GetBufferMetadataResponse* _this = reinterpret_cast< GetBufferMetadataResponse* >(object);
+  (void)_this;
+}
+void GetBufferMetadataResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetBufferMetadataResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetBufferMetadataResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:v1.agent.GetBufferMetadataResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  connections_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetBufferMetadataResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .v1.model.BufferMetadata connections = 1 [json_name = "connections"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_connections(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetBufferMetadataResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:v1.agent.GetBufferMetadataResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .v1.model.BufferMetadata connections = 1 [json_name = "connections"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_connections_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_connections(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:v1.agent.GetBufferMetadataResponse)
+  return target;
+}
+
+size_t GetBufferMetadataResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:v1.agent.GetBufferMetadataResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .v1.model.BufferMetadata connections = 1 [json_name = "connections"];
+  total_size += 1UL * this->_internal_connections_size();
+  for (const auto& msg : this->connections_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetBufferMetadataResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:v1.agent.GetBufferMetadataResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetBufferMetadataResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetBufferMetadataResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:v1.agent.GetBufferMetadataResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:v1.agent.GetBufferMetadataResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetBufferMetadataResponse::MergeFrom(const GetBufferMetadataResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:v1.agent.GetBufferMetadataResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  connections_.MergeFrom(from.connections_);
+}
+
+void GetBufferMetadataResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:v1.agent.GetBufferMetadataResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetBufferMetadataResponse::CopyFrom(const GetBufferMetadataResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:v1.agent.GetBufferMetadataResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetBufferMetadataResponse::IsInitialized() const {
+  return true;
+}
+
+void GetBufferMetadataResponse::InternalSwap(GetBufferMetadataResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  connections_.InternalSwap(&other->connections_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetBufferMetadataResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[19]);
+}
+
+// ===================================================================
+
 class HealthRequest::_Internal {
  public:
 };
@@ -4719,7 +5120,7 @@ void HealthRequest::InternalSwap(HealthRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HealthRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[18]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[20]);
 }
 
 // ===================================================================
@@ -4877,7 +5278,7 @@ void HealthResponse::InternalSwap(HealthResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HealthResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[19]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[21]);
 }
 
 // ===================================================================
@@ -5077,7 +5478,7 @@ void GetCommandRequestRequest::InternalSwap(GetCommandRequestRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetCommandRequestRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[20]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[22]);
 }
 
 // ===================================================================
@@ -5288,7 +5689,7 @@ void GetCommandRequestResponse::InternalSwap(GetCommandRequestResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetCommandRequestResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[21]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[23]);
 }
 
 // ===================================================================
@@ -5499,7 +5900,7 @@ void SendCommandResponseRequest::InternalSwap(SendCommandResponseRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata SendCommandResponseRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[22]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[24]);
 }
 
 // ===================================================================
@@ -5657,7 +6058,7 @@ void SendCommandResponseResponse::InternalSwap(SendCommandResponseResponse* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata SendCommandResponseResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[23]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[25]);
 }
 
 // ===================================================================
@@ -5857,7 +6258,7 @@ void GetCommandRequestStreamRequest::InternalSwap(GetCommandRequestStreamRequest
 ::PROTOBUF_NAMESPACE_ID::Metadata GetCommandRequestStreamRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[24]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[26]);
 }
 
 // ===================================================================
@@ -6068,7 +6469,7 @@ void GetCommandRequestStreamResponse::InternalSwap(GetCommandRequestStreamRespon
 ::PROTOBUF_NAMESPACE_ID::Metadata GetCommandRequestStreamResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[25]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[27]);
 }
 
 // ===================================================================
@@ -6268,7 +6669,7 @@ void GetTeleopControlDataStreamRequest::InternalSwap(GetTeleopControlDataStreamR
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTeleopControlDataStreamRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[26]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[28]);
 }
 
 // ===================================================================
@@ -6479,7 +6880,7 @@ void GetTeleopControlDataStreamResponse::InternalSwap(GetTeleopControlDataStream
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTeleopControlDataStreamResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[27]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[29]);
 }
 
 // ===================================================================
@@ -6637,7 +7038,7 @@ void GetTeleopHeartbeatStreamRequest::InternalSwap(GetTeleopHeartbeatStreamReque
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTeleopHeartbeatStreamRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[28]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[30]);
 }
 
 // ===================================================================
@@ -6909,7 +7310,7 @@ void GetTeleopHeartbeatStreamResponse::InternalSwap(GetTeleopHeartbeatStreamResp
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTeleopHeartbeatStreamResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[29]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[31]);
 }
 
 // ===================================================================
@@ -7109,7 +7510,7 @@ void GetTelemetryListenerStreamRequest::InternalSwap(GetTelemetryListenerStreamR
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTelemetryListenerStreamRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[30]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[32]);
 }
 
 // ===================================================================
@@ -7320,7 +7721,7 @@ void GetTelemetryListenerStreamResponse::InternalSwap(GetTelemetryListenerStream
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTelemetryListenerStreamResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[31]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[33]);
 }
 
 // ===================================================================
@@ -7478,7 +7879,7 @@ void PostTransformFrameResponse::InternalSwap(PostTransformFrameResponse* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata PostTransformFrameResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[32]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[34]);
 }
 
 // ===================================================================
@@ -7683,7 +8084,7 @@ void SetBaseFrameIDRequest::InternalSwap(SetBaseFrameIDRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SetBaseFrameIDRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[33]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[35]);
 }
 
 // ===================================================================
@@ -7841,7 +8242,7 @@ void SetBaseFrameIDResponse::InternalSwap(SetBaseFrameIDResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SetBaseFrameIDResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[34]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[36]);
 }
 
 // ===================================================================
@@ -7999,7 +8400,7 @@ void ClearTransformTreeRequest::InternalSwap(ClearTransformTreeRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ClearTransformTreeRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[35]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[37]);
 }
 
 // ===================================================================
@@ -8157,7 +8558,7 @@ void ClearTransformTreeResponse::InternalSwap(ClearTransformTreeResponse* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata ClearTransformTreeResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[36]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[38]);
 }
 
 // ===================================================================
@@ -8368,7 +8769,7 @@ void CreateEventRequest::InternalSwap(CreateEventRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateEventRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[37]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[39]);
 }
 
 // ===================================================================
@@ -8526,7 +8927,7 @@ void CreateEventResponse::InternalSwap(CreateEventResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateEventResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[38]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[40]);
 }
 
 // ===================================================================
@@ -8714,7 +9115,7 @@ void CreateEventError::InternalSwap(CreateEventError* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateEventError::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[39]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[41]);
 }
 
 // ===================================================================
@@ -8872,7 +9273,7 @@ void GetTeleopInfoRequest::InternalSwap(GetTeleopInfoRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTeleopInfoRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[40]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[42]);
 }
 
 // ===================================================================
@@ -9062,7 +9463,7 @@ void GetTeleopInfoResponse::InternalSwap(GetTeleopInfoResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTeleopInfoResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[41]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[43]);
 }
 
 // ===================================================================
@@ -9267,7 +9668,7 @@ void PostLanRtcOfferRequest::InternalSwap(PostLanRtcOfferRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PostLanRtcOfferRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[42]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[44]);
 }
 
 // ===================================================================
@@ -9472,7 +9873,7 @@ void PostLanRtcOfferResponse::InternalSwap(PostLanRtcOfferResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PostLanRtcOfferResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[43]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[45]);
 }
 
 // ===================================================================
@@ -9714,7 +10115,7 @@ void SendOnCustomDataChannelRequest::InternalSwap(SendOnCustomDataChannelRequest
 ::PROTOBUF_NAMESPACE_ID::Metadata SendOnCustomDataChannelRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[44]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[46]);
 }
 
 // ===================================================================
@@ -9872,7 +10273,7 @@ void SendOnCustomDataChannelResponse::InternalSwap(SendOnCustomDataChannelRespon
 ::PROTOBUF_NAMESPACE_ID::Metadata SendOnCustomDataChannelResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[45]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[47]);
 }
 
 // ===================================================================
@@ -10072,7 +10473,7 @@ void GetCustomDataChannelMessageStreamRequest::InternalSwap(GetCustomDataChannel
 ::PROTOBUF_NAMESPACE_ID::Metadata GetCustomDataChannelMessageStreamRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[46]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[48]);
 }
 
 // ===================================================================
@@ -10356,7 +10757,7 @@ void GetCustomDataChannelMessageStreamResponse::InternalSwap(GetCustomDataChanne
 ::PROTOBUF_NAMESPACE_ID::Metadata GetCustomDataChannelMessageStreamResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_getter, &descriptor_table_protos_2fagent_2fv1_2fagent_2eproto_once,
-      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[47]);
+      file_level_metadata_protos_2fagent_2fv1_2fagent_2eproto[49]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -10416,6 +10817,12 @@ template<> PROTOBUF_NOINLINE ::v1::agent::GetAgentConfigurationRequest* Arena::C
 }
 template<> PROTOBUF_NOINLINE ::v1::agent::GetAgentConfigurationResponse* Arena::CreateMaybeMessage< ::v1::agent::GetAgentConfigurationResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::agent::GetAgentConfigurationResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::v1::agent::GetBufferMetadataRequest* Arena::CreateMaybeMessage< ::v1::agent::GetBufferMetadataRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::v1::agent::GetBufferMetadataRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::v1::agent::GetBufferMetadataResponse* Arena::CreateMaybeMessage< ::v1::agent::GetBufferMetadataResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::v1::agent::GetBufferMetadataResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::v1::agent::HealthRequest* Arena::CreateMaybeMessage< ::v1::agent::HealthRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::v1::agent::HealthRequest >(arena);

@@ -38,6 +38,7 @@ type AgentClient interface {
 	GetApplicationConfiguration(ctx context.Context, in *GetApplicationConfigurationRequest, opts ...grpc.CallOption) (*GetApplicationConfigurationResponse, error)
 	GetConfigBlobData(ctx context.Context, in *GetConfigBlobDataRequest, opts ...grpc.CallOption) (*GetConfigBlobDataResponse, error)
 	GetAgentConfiguration(ctx context.Context, in *GetAgentConfigurationRequest, opts ...grpc.CallOption) (*GetAgentConfigurationResponse, error)
+	GetBufferMetadata(ctx context.Context, in *GetBufferMetadataRequest, opts ...grpc.CallOption) (*GetBufferMetadataResponse, error)
 	Health(ctx context.Context, in *HealthRequest, opts ...grpc.CallOption) (*HealthResponse, error)
 	GetCommandRequest(ctx context.Context, in *GetCommandRequestRequest, opts ...grpc.CallOption) (*GetCommandRequestResponse, error)
 	GetCommandRequestStream(ctx context.Context, in *GetCommandRequestStreamRequest, opts ...grpc.CallOption) (Agent_GetCommandRequestStreamClient, error)
@@ -312,6 +313,15 @@ func (c *agentClient) GetAgentConfiguration(ctx context.Context, in *GetAgentCon
 	return out, nil
 }
 
+func (c *agentClient) GetBufferMetadata(ctx context.Context, in *GetBufferMetadataRequest, opts ...grpc.CallOption) (*GetBufferMetadataResponse, error) {
+	out := new(GetBufferMetadataResponse)
+	err := c.cc.Invoke(ctx, "/v1.agent.Agent/GetBufferMetadata", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *agentClient) Health(ctx context.Context, in *HealthRequest, opts ...grpc.CallOption) (*HealthResponse, error) {
 	out := new(HealthResponse)
 	err := c.cc.Invoke(ctx, "/v1.agent.Agent/Health", in, out, opts...)
@@ -462,6 +472,7 @@ type AgentServer interface {
 	GetApplicationConfiguration(context.Context, *GetApplicationConfigurationRequest) (*GetApplicationConfigurationResponse, error)
 	GetConfigBlobData(context.Context, *GetConfigBlobDataRequest) (*GetConfigBlobDataResponse, error)
 	GetAgentConfiguration(context.Context, *GetAgentConfigurationRequest) (*GetAgentConfigurationResponse, error)
+	GetBufferMetadata(context.Context, *GetBufferMetadataRequest) (*GetBufferMetadataResponse, error)
 	Health(context.Context, *HealthRequest) (*HealthResponse, error)
 	GetCommandRequest(context.Context, *GetCommandRequestRequest) (*GetCommandRequestResponse, error)
 	GetCommandRequestStream(*GetCommandRequestStreamRequest, Agent_GetCommandRequestStreamServer) error
@@ -525,6 +536,9 @@ func (UnimplementedAgentServer) GetConfigBlobData(context.Context, *GetConfigBlo
 }
 func (UnimplementedAgentServer) GetAgentConfiguration(context.Context, *GetAgentConfigurationRequest) (*GetAgentConfigurationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAgentConfiguration not implemented")
+}
+func (UnimplementedAgentServer) GetBufferMetadata(context.Context, *GetBufferMetadataRequest) (*GetBufferMetadataResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBufferMetadata not implemented")
 }
 func (UnimplementedAgentServer) Health(context.Context, *HealthRequest) (*HealthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Health not implemented")
@@ -865,6 +879,24 @@ func _Agent_GetAgentConfiguration_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Agent_GetBufferMetadata_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBufferMetadataRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AgentServer).GetBufferMetadata(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/v1.agent.Agent/GetBufferMetadata",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AgentServer).GetBufferMetadata(ctx, req.(*GetBufferMetadataRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Agent_Health_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HealthRequest)
 	if err := dec(in); err != nil {
@@ -1130,6 +1162,10 @@ var Agent_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAgentConfiguration",
 			Handler:    _Agent_GetAgentConfiguration_Handler,
+		},
+		{
+			MethodName: "GetBufferMetadata",
+			Handler:    _Agent_GetBufferMetadata_Handler,
 		},
 		{
 			MethodName: "Health",
