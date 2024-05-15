@@ -53,7 +53,7 @@ struct TableStruct_protos_2fagent_2fv1_2fagent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[50]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[54]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -191,6 +191,18 @@ extern PostLanRtcOfferResponseDefaultTypeInternal _PostLanRtcOfferResponse_defau
 class PostTransformFrameResponse;
 struct PostTransformFrameResponseDefaultTypeInternal;
 extern PostTransformFrameResponseDefaultTypeInternal _PostTransformFrameResponse_default_instance_;
+class QueryDatapointsRequest;
+struct QueryDatapointsRequestDefaultTypeInternal;
+extern QueryDatapointsRequestDefaultTypeInternal _QueryDatapointsRequest_default_instance_;
+class QueryDatapointsResponse;
+struct QueryDatapointsResponseDefaultTypeInternal;
+extern QueryDatapointsResponseDefaultTypeInternal _QueryDatapointsResponse_default_instance_;
+class QueryEventsRequest;
+struct QueryEventsRequestDefaultTypeInternal;
+extern QueryEventsRequestDefaultTypeInternal _QueryEventsRequest_default_instance_;
+class QueryEventsResponse;
+struct QueryEventsResponseDefaultTypeInternal;
+extern QueryEventsResponseDefaultTypeInternal _QueryEventsResponse_default_instance_;
 class SendCommandResponseRequest;
 struct SendCommandResponseRequestDefaultTypeInternal;
 extern SendCommandResponseRequestDefaultTypeInternal _SendCommandResponseRequest_default_instance_;
@@ -258,6 +270,10 @@ template<> ::v1::agent::PostGenericAPIUnbufferedRequestResponse* Arena::CreateMa
 template<> ::v1::agent::PostLanRtcOfferRequest* Arena::CreateMaybeMessage<::v1::agent::PostLanRtcOfferRequest>(Arena*);
 template<> ::v1::agent::PostLanRtcOfferResponse* Arena::CreateMaybeMessage<::v1::agent::PostLanRtcOfferResponse>(Arena*);
 template<> ::v1::agent::PostTransformFrameResponse* Arena::CreateMaybeMessage<::v1::agent::PostTransformFrameResponse>(Arena*);
+template<> ::v1::agent::QueryDatapointsRequest* Arena::CreateMaybeMessage<::v1::agent::QueryDatapointsRequest>(Arena*);
+template<> ::v1::agent::QueryDatapointsResponse* Arena::CreateMaybeMessage<::v1::agent::QueryDatapointsResponse>(Arena*);
+template<> ::v1::agent::QueryEventsRequest* Arena::CreateMaybeMessage<::v1::agent::QueryEventsRequest>(Arena*);
+template<> ::v1::agent::QueryEventsResponse* Arena::CreateMaybeMessage<::v1::agent::QueryEventsResponse>(Arena*);
 template<> ::v1::agent::SendCommandResponseRequest* Arena::CreateMaybeMessage<::v1::agent::SendCommandResponseRequest>(Arena*);
 template<> ::v1::agent::SendCommandResponseResponse* Arena::CreateMaybeMessage<::v1::agent::SendCommandResponseResponse>(Arena*);
 template<> ::v1::agent::SendOnCustomDataChannelRequest* Arena::CreateMaybeMessage<::v1::agent::SendOnCustomDataChannelRequest>(Arena*);
@@ -2780,6 +2796,654 @@ class GetBufferMetadataRequest final :
 };
 // -------------------------------------------------------------------
 
+class QueryDatapointsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.QueryDatapointsRequest) */ {
+ public:
+  inline QueryDatapointsRequest() : QueryDatapointsRequest(nullptr) {}
+  ~QueryDatapointsRequest() override;
+  explicit constexpr QueryDatapointsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  QueryDatapointsRequest(const QueryDatapointsRequest& from);
+  QueryDatapointsRequest(QueryDatapointsRequest&& from) noexcept
+    : QueryDatapointsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline QueryDatapointsRequest& operator=(const QueryDatapointsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline QueryDatapointsRequest& operator=(QueryDatapointsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const QueryDatapointsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const QueryDatapointsRequest* internal_default_instance() {
+    return reinterpret_cast<const QueryDatapointsRequest*>(
+               &_QueryDatapointsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(QueryDatapointsRequest& a, QueryDatapointsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(QueryDatapointsRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(QueryDatapointsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline QueryDatapointsRequest* New() const final {
+    return new QueryDatapointsRequest();
+  }
+
+  QueryDatapointsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<QueryDatapointsRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const QueryDatapointsRequest& from);
+  void MergeFrom(const QueryDatapointsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(QueryDatapointsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.QueryDatapointsRequest";
+  }
+  protected:
+  explicit QueryDatapointsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStreamNameFieldNumber = 1,
+    kStartFieldNumber = 2,
+    kEndFieldNumber = 3,
+    kLimitFieldNumber = 4,
+    kOffsetFieldNumber = 5,
+  };
+  // string stream_name = 1 [json_name = "streamName"];
+  void clear_stream_name();
+  const std::string& stream_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_stream_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_stream_name();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_stream_name();
+  void set_allocated_stream_name(std::string* stream_name);
+  private:
+  const std::string& _internal_stream_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_stream_name(const std::string& value);
+  std::string* _internal_mutable_stream_name();
+  public:
+
+  // string start = 2 [json_name = "start"];
+  void clear_start();
+  const std::string& start() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_start(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_start();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_start();
+  void set_allocated_start(std::string* start);
+  private:
+  const std::string& _internal_start() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_start(const std::string& value);
+  std::string* _internal_mutable_start();
+  public:
+
+  // string end = 3 [json_name = "end"];
+  void clear_end();
+  const std::string& end() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_end(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_end();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_end();
+  void set_allocated_end(std::string* end);
+  private:
+  const std::string& _internal_end() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_end(const std::string& value);
+  std::string* _internal_mutable_end();
+  public:
+
+  // uint32 limit = 4 [json_name = "limit"];
+  void clear_limit();
+  ::PROTOBUF_NAMESPACE_ID::uint32 limit() const;
+  void set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_limit() const;
+  void _internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 offset = 5 [json_name = "offset"];
+  void clear_offset();
+  ::PROTOBUF_NAMESPACE_ID::uint32 offset() const;
+  void set_offset(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_offset() const;
+  void _internal_set_offset(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.agent.QueryDatapointsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stream_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr start_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr end_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 limit_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 offset_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class QueryDatapointsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.QueryDatapointsResponse) */ {
+ public:
+  inline QueryDatapointsResponse() : QueryDatapointsResponse(nullptr) {}
+  ~QueryDatapointsResponse() override;
+  explicit constexpr QueryDatapointsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  QueryDatapointsResponse(const QueryDatapointsResponse& from);
+  QueryDatapointsResponse(QueryDatapointsResponse&& from) noexcept
+    : QueryDatapointsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline QueryDatapointsResponse& operator=(const QueryDatapointsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline QueryDatapointsResponse& operator=(QueryDatapointsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const QueryDatapointsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const QueryDatapointsResponse* internal_default_instance() {
+    return reinterpret_cast<const QueryDatapointsResponse*>(
+               &_QueryDatapointsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(QueryDatapointsResponse& a, QueryDatapointsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(QueryDatapointsResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(QueryDatapointsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline QueryDatapointsResponse* New() const final {
+    return new QueryDatapointsResponse();
+  }
+
+  QueryDatapointsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<QueryDatapointsResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const QueryDatapointsResponse& from);
+  void MergeFrom(const QueryDatapointsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(QueryDatapointsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.QueryDatapointsResponse";
+  }
+  protected:
+  explicit QueryDatapointsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kResultsFieldNumber = 1,
+  };
+  // repeated .v1.model.Datapoint results = 1 [json_name = "results"];
+  int results_size() const;
+  private:
+  int _internal_results_size() const;
+  public:
+  void clear_results();
+  ::v1::model::Datapoint* mutable_results(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Datapoint >*
+      mutable_results();
+  private:
+  const ::v1::model::Datapoint& _internal_results(int index) const;
+  ::v1::model::Datapoint* _internal_add_results();
+  public:
+  const ::v1::model::Datapoint& results(int index) const;
+  ::v1::model::Datapoint* add_results();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Datapoint >&
+      results() const;
+
+  // @@protoc_insertion_point(class_scope:v1.agent.QueryDatapointsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Datapoint > results_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class QueryEventsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.QueryEventsRequest) */ {
+ public:
+  inline QueryEventsRequest() : QueryEventsRequest(nullptr) {}
+  ~QueryEventsRequest() override;
+  explicit constexpr QueryEventsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  QueryEventsRequest(const QueryEventsRequest& from);
+  QueryEventsRequest(QueryEventsRequest&& from) noexcept
+    : QueryEventsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline QueryEventsRequest& operator=(const QueryEventsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline QueryEventsRequest& operator=(QueryEventsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const QueryEventsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const QueryEventsRequest* internal_default_instance() {
+    return reinterpret_cast<const QueryEventsRequest*>(
+               &_QueryEventsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(QueryEventsRequest& a, QueryEventsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(QueryEventsRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(QueryEventsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline QueryEventsRequest* New() const final {
+    return new QueryEventsRequest();
+  }
+
+  QueryEventsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<QueryEventsRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const QueryEventsRequest& from);
+  void MergeFrom(const QueryEventsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(QueryEventsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.QueryEventsRequest";
+  }
+  protected:
+  explicit QueryEventsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStartFieldNumber = 1,
+    kEndFieldNumber = 2,
+    kLimitFieldNumber = 3,
+    kOffsetFieldNumber = 4,
+  };
+  // string start = 1 [json_name = "start"];
+  void clear_start();
+  const std::string& start() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_start(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_start();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_start();
+  void set_allocated_start(std::string* start);
+  private:
+  const std::string& _internal_start() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_start(const std::string& value);
+  std::string* _internal_mutable_start();
+  public:
+
+  // string end = 2 [json_name = "end"];
+  void clear_end();
+  const std::string& end() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_end(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_end();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_end();
+  void set_allocated_end(std::string* end);
+  private:
+  const std::string& _internal_end() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_end(const std::string& value);
+  std::string* _internal_mutable_end();
+  public:
+
+  // uint32 limit = 3 [json_name = "limit"];
+  void clear_limit();
+  ::PROTOBUF_NAMESPACE_ID::uint32 limit() const;
+  void set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_limit() const;
+  void _internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 offset = 4 [json_name = "offset"];
+  void clear_offset();
+  ::PROTOBUF_NAMESPACE_ID::uint32 offset() const;
+  void set_offset(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_offset() const;
+  void _internal_set_offset(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:v1.agent.QueryEventsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr start_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr end_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 limit_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 offset_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class QueryEventsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.QueryEventsResponse) */ {
+ public:
+  inline QueryEventsResponse() : QueryEventsResponse(nullptr) {}
+  ~QueryEventsResponse() override;
+  explicit constexpr QueryEventsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  QueryEventsResponse(const QueryEventsResponse& from);
+  QueryEventsResponse(QueryEventsResponse&& from) noexcept
+    : QueryEventsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline QueryEventsResponse& operator=(const QueryEventsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline QueryEventsResponse& operator=(QueryEventsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const QueryEventsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const QueryEventsResponse* internal_default_instance() {
+    return reinterpret_cast<const QueryEventsResponse*>(
+               &_QueryEventsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(QueryEventsResponse& a, QueryEventsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(QueryEventsResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(QueryEventsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline QueryEventsResponse* New() const final {
+    return new QueryEventsResponse();
+  }
+
+  QueryEventsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<QueryEventsResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const QueryEventsResponse& from);
+  void MergeFrom(const QueryEventsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(QueryEventsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.agent.QueryEventsResponse";
+  }
+  protected:
+  explicit QueryEventsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kResultsFieldNumber = 1,
+  };
+  // repeated .v1.model.Event results = 1 [json_name = "results"];
+  int results_size() const;
+  private:
+  int _internal_results_size() const;
+  public:
+  void clear_results();
+  ::v1::model::Event* mutable_results(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Event >*
+      mutable_results();
+  private:
+  const ::v1::model::Event& _internal_results(int index) const;
+  ::v1::model::Event* _internal_add_results();
+  public:
+  const ::v1::model::Event& results(int index) const;
+  ::v1::model::Event* add_results();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Event >&
+      results() const;
+
+  // @@protoc_insertion_point(class_scope:v1.agent.QueryEventsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Event > results_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fagent_2fv1_2fagent_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetBufferMetadataResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.agent.GetBufferMetadataResponse) */ {
  public:
@@ -2824,7 +3488,7 @@ class GetBufferMetadataResponse final :
                &_GetBufferMetadataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    23;
 
   friend void swap(GetBufferMetadataResponse& a, GetBufferMetadataResponse& b) {
     a.Swap(&b);
@@ -2965,7 +3629,7 @@ class HealthRequest final :
                &_HealthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    24;
 
   friend void swap(HealthRequest& a, HealthRequest& b) {
     a.Swap(&b);
@@ -3084,7 +3748,7 @@ class HealthResponse final :
                &_HealthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    25;
 
   friend void swap(HealthResponse& a, HealthResponse& b) {
     a.Swap(&b);
@@ -3203,7 +3867,7 @@ class GetCommandRequestRequest final :
                &_GetCommandRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    26;
 
   friend void swap(GetCommandRequestRequest& a, GetCommandRequestRequest& b) {
     a.Swap(&b);
@@ -3350,7 +4014,7 @@ class GetCommandRequestResponse final :
                &_GetCommandRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    27;
 
   friend void swap(GetCommandRequestResponse& a, GetCommandRequestResponse& b) {
     a.Swap(&b);
@@ -3491,7 +4155,7 @@ class SendCommandResponseRequest final :
                &_SendCommandResponseRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    28;
 
   friend void swap(SendCommandResponseRequest& a, SendCommandResponseRequest& b) {
     a.Swap(&b);
@@ -3632,7 +4296,7 @@ class SendCommandResponseResponse final :
                &_SendCommandResponseResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    29;
 
   friend void swap(SendCommandResponseResponse& a, SendCommandResponseResponse& b) {
     a.Swap(&b);
@@ -3751,7 +4415,7 @@ class GetCommandRequestStreamRequest final :
                &_GetCommandRequestStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    30;
 
   friend void swap(GetCommandRequestStreamRequest& a, GetCommandRequestStreamRequest& b) {
     a.Swap(&b);
@@ -3898,7 +4562,7 @@ class GetCommandRequestStreamResponse final :
                &_GetCommandRequestStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    31;
 
   friend void swap(GetCommandRequestStreamResponse& a, GetCommandRequestStreamResponse& b) {
     a.Swap(&b);
@@ -4039,7 +4703,7 @@ class GetTeleopControlDataStreamRequest final :
                &_GetTeleopControlDataStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    32;
 
   friend void swap(GetTeleopControlDataStreamRequest& a, GetTeleopControlDataStreamRequest& b) {
     a.Swap(&b);
@@ -4186,7 +4850,7 @@ class GetTeleopControlDataStreamResponse final :
                &_GetTeleopControlDataStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    33;
 
   friend void swap(GetTeleopControlDataStreamResponse& a, GetTeleopControlDataStreamResponse& b) {
     a.Swap(&b);
@@ -4327,7 +4991,7 @@ class GetTeleopHeartbeatStreamRequest final :
                &_GetTeleopHeartbeatStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    34;
 
   friend void swap(GetTeleopHeartbeatStreamRequest& a, GetTeleopHeartbeatStreamRequest& b) {
     a.Swap(&b);
@@ -4446,7 +5110,7 @@ class GetTeleopHeartbeatStreamResponse final :
                &_GetTeleopHeartbeatStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    35;
 
   friend void swap(GetTeleopHeartbeatStreamResponse& a, GetTeleopHeartbeatStreamResponse& b) {
     a.Swap(&b);
@@ -4610,7 +5274,7 @@ class GetTelemetryListenerStreamRequest final :
                &_GetTelemetryListenerStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    36;
 
   friend void swap(GetTelemetryListenerStreamRequest& a, GetTelemetryListenerStreamRequest& b) {
     a.Swap(&b);
@@ -4757,7 +5421,7 @@ class GetTelemetryListenerStreamResponse final :
                &_GetTelemetryListenerStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    37;
 
   friend void swap(GetTelemetryListenerStreamResponse& a, GetTelemetryListenerStreamResponse& b) {
     a.Swap(&b);
@@ -4898,7 +5562,7 @@ class PostTransformFrameResponse final :
                &_PostTransformFrameResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    38;
 
   friend void swap(PostTransformFrameResponse& a, PostTransformFrameResponse& b) {
     a.Swap(&b);
@@ -5017,7 +5681,7 @@ class SetBaseFrameIDRequest final :
                &_SetBaseFrameIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    39;
 
   friend void swap(SetBaseFrameIDRequest& a, SetBaseFrameIDRequest& b) {
     a.Swap(&b);
@@ -5154,7 +5818,7 @@ class SetBaseFrameIDResponse final :
                &_SetBaseFrameIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    40;
 
   friend void swap(SetBaseFrameIDResponse& a, SetBaseFrameIDResponse& b) {
     a.Swap(&b);
@@ -5273,7 +5937,7 @@ class ClearTransformTreeRequest final :
                &_ClearTransformTreeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    41;
 
   friend void swap(ClearTransformTreeRequest& a, ClearTransformTreeRequest& b) {
     a.Swap(&b);
@@ -5392,7 +6056,7 @@ class ClearTransformTreeResponse final :
                &_ClearTransformTreeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    42;
 
   friend void swap(ClearTransformTreeResponse& a, ClearTransformTreeResponse& b) {
     a.Swap(&b);
@@ -5511,7 +6175,7 @@ class CreateEventRequest final :
                &_CreateEventRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    43;
 
   friend void swap(CreateEventRequest& a, CreateEventRequest& b) {
     a.Swap(&b);
@@ -5652,7 +6316,7 @@ class CreateEventResponse final :
                &_CreateEventResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    44;
 
   friend void swap(CreateEventResponse& a, CreateEventResponse& b) {
     a.Swap(&b);
@@ -5771,7 +6435,7 @@ class CreateEventError final :
                &_CreateEventError_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    45;
 
   friend void swap(CreateEventError& a, CreateEventError& b) {
     a.Swap(&b);
@@ -5903,7 +6567,7 @@ class GetTeleopInfoRequest final :
                &_GetTeleopInfoRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    46;
 
   friend void swap(GetTeleopInfoRequest& a, GetTeleopInfoRequest& b) {
     a.Swap(&b);
@@ -6022,7 +6686,7 @@ class GetTeleopInfoResponse final :
                &_GetTeleopInfoResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    47;
 
   friend void swap(GetTeleopInfoResponse& a, GetTeleopInfoResponse& b) {
     a.Swap(&b);
@@ -6154,7 +6818,7 @@ class PostLanRtcOfferRequest final :
                &_PostLanRtcOfferRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    48;
 
   friend void swap(PostLanRtcOfferRequest& a, PostLanRtcOfferRequest& b) {
     a.Swap(&b);
@@ -6291,7 +6955,7 @@ class PostLanRtcOfferResponse final :
                &_PostLanRtcOfferResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    49;
 
   friend void swap(PostLanRtcOfferResponse& a, PostLanRtcOfferResponse& b) {
     a.Swap(&b);
@@ -6428,7 +7092,7 @@ class SendOnCustomDataChannelRequest final :
                &_SendOnCustomDataChannelRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    50;
 
   friend void swap(SendOnCustomDataChannelRequest& a, SendOnCustomDataChannelRequest& b) {
     a.Swap(&b);
@@ -6581,7 +7245,7 @@ class SendOnCustomDataChannelResponse final :
                &_SendOnCustomDataChannelResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    51;
 
   friend void swap(SendOnCustomDataChannelResponse& a, SendOnCustomDataChannelResponse& b) {
     a.Swap(&b);
@@ -6700,7 +7364,7 @@ class GetCustomDataChannelMessageStreamRequest final :
                &_GetCustomDataChannelMessageStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    52;
 
   friend void swap(GetCustomDataChannelMessageStreamRequest& a, GetCustomDataChannelMessageStreamRequest& b) {
     a.Swap(&b);
@@ -6847,7 +7511,7 @@ class GetCustomDataChannelMessageStreamResponse final :
                &_GetCustomDataChannelMessageStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    53;
 
   friend void swap(GetCustomDataChannelMessageStreamResponse& a, GetCustomDataChannelMessageStreamResponse& b) {
     a.Swap(&b);
@@ -7660,6 +8324,399 @@ inline void GetAgentConfigurationResponse::set_allocated_configuration(::v1::mod
 // -------------------------------------------------------------------
 
 // GetBufferMetadataRequest
+
+// -------------------------------------------------------------------
+
+// QueryDatapointsRequest
+
+// string stream_name = 1 [json_name = "streamName"];
+inline void QueryDatapointsRequest::clear_stream_name() {
+  stream_name_.ClearToEmpty();
+}
+inline const std::string& QueryDatapointsRequest::stream_name() const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryDatapointsRequest.stream_name)
+  return _internal_stream_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void QueryDatapointsRequest::set_stream_name(ArgT0&& arg0, ArgT... args) {
+ 
+ stream_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.agent.QueryDatapointsRequest.stream_name)
+}
+inline std::string* QueryDatapointsRequest::mutable_stream_name() {
+  // @@protoc_insertion_point(field_mutable:v1.agent.QueryDatapointsRequest.stream_name)
+  return _internal_mutable_stream_name();
+}
+inline const std::string& QueryDatapointsRequest::_internal_stream_name() const {
+  return stream_name_.Get();
+}
+inline void QueryDatapointsRequest::_internal_set_stream_name(const std::string& value) {
+  
+  stream_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* QueryDatapointsRequest::_internal_mutable_stream_name() {
+  
+  return stream_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* QueryDatapointsRequest::release_stream_name() {
+  // @@protoc_insertion_point(field_release:v1.agent.QueryDatapointsRequest.stream_name)
+  return stream_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void QueryDatapointsRequest::set_allocated_stream_name(std::string* stream_name) {
+  if (stream_name != nullptr) {
+    
+  } else {
+    
+  }
+  stream_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), stream_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.agent.QueryDatapointsRequest.stream_name)
+}
+
+// string start = 2 [json_name = "start"];
+inline void QueryDatapointsRequest::clear_start() {
+  start_.ClearToEmpty();
+}
+inline const std::string& QueryDatapointsRequest::start() const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryDatapointsRequest.start)
+  return _internal_start();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void QueryDatapointsRequest::set_start(ArgT0&& arg0, ArgT... args) {
+ 
+ start_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.agent.QueryDatapointsRequest.start)
+}
+inline std::string* QueryDatapointsRequest::mutable_start() {
+  // @@protoc_insertion_point(field_mutable:v1.agent.QueryDatapointsRequest.start)
+  return _internal_mutable_start();
+}
+inline const std::string& QueryDatapointsRequest::_internal_start() const {
+  return start_.Get();
+}
+inline void QueryDatapointsRequest::_internal_set_start(const std::string& value) {
+  
+  start_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* QueryDatapointsRequest::_internal_mutable_start() {
+  
+  return start_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* QueryDatapointsRequest::release_start() {
+  // @@protoc_insertion_point(field_release:v1.agent.QueryDatapointsRequest.start)
+  return start_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void QueryDatapointsRequest::set_allocated_start(std::string* start) {
+  if (start != nullptr) {
+    
+  } else {
+    
+  }
+  start_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), start,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.agent.QueryDatapointsRequest.start)
+}
+
+// string end = 3 [json_name = "end"];
+inline void QueryDatapointsRequest::clear_end() {
+  end_.ClearToEmpty();
+}
+inline const std::string& QueryDatapointsRequest::end() const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryDatapointsRequest.end)
+  return _internal_end();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void QueryDatapointsRequest::set_end(ArgT0&& arg0, ArgT... args) {
+ 
+ end_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.agent.QueryDatapointsRequest.end)
+}
+inline std::string* QueryDatapointsRequest::mutable_end() {
+  // @@protoc_insertion_point(field_mutable:v1.agent.QueryDatapointsRequest.end)
+  return _internal_mutable_end();
+}
+inline const std::string& QueryDatapointsRequest::_internal_end() const {
+  return end_.Get();
+}
+inline void QueryDatapointsRequest::_internal_set_end(const std::string& value) {
+  
+  end_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* QueryDatapointsRequest::_internal_mutable_end() {
+  
+  return end_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* QueryDatapointsRequest::release_end() {
+  // @@protoc_insertion_point(field_release:v1.agent.QueryDatapointsRequest.end)
+  return end_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void QueryDatapointsRequest::set_allocated_end(std::string* end) {
+  if (end != nullptr) {
+    
+  } else {
+    
+  }
+  end_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), end,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.agent.QueryDatapointsRequest.end)
+}
+
+// uint32 limit = 4 [json_name = "limit"];
+inline void QueryDatapointsRequest::clear_limit() {
+  limit_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 QueryDatapointsRequest::_internal_limit() const {
+  return limit_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 QueryDatapointsRequest::limit() const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryDatapointsRequest.limit)
+  return _internal_limit();
+}
+inline void QueryDatapointsRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  limit_ = value;
+}
+inline void QueryDatapointsRequest::set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_limit(value);
+  // @@protoc_insertion_point(field_set:v1.agent.QueryDatapointsRequest.limit)
+}
+
+// uint32 offset = 5 [json_name = "offset"];
+inline void QueryDatapointsRequest::clear_offset() {
+  offset_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 QueryDatapointsRequest::_internal_offset() const {
+  return offset_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 QueryDatapointsRequest::offset() const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryDatapointsRequest.offset)
+  return _internal_offset();
+}
+inline void QueryDatapointsRequest::_internal_set_offset(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  offset_ = value;
+}
+inline void QueryDatapointsRequest::set_offset(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_offset(value);
+  // @@protoc_insertion_point(field_set:v1.agent.QueryDatapointsRequest.offset)
+}
+
+// -------------------------------------------------------------------
+
+// QueryDatapointsResponse
+
+// repeated .v1.model.Datapoint results = 1 [json_name = "results"];
+inline int QueryDatapointsResponse::_internal_results_size() const {
+  return results_.size();
+}
+inline int QueryDatapointsResponse::results_size() const {
+  return _internal_results_size();
+}
+inline ::v1::model::Datapoint* QueryDatapointsResponse::mutable_results(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.agent.QueryDatapointsResponse.results)
+  return results_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Datapoint >*
+QueryDatapointsResponse::mutable_results() {
+  // @@protoc_insertion_point(field_mutable_list:v1.agent.QueryDatapointsResponse.results)
+  return &results_;
+}
+inline const ::v1::model::Datapoint& QueryDatapointsResponse::_internal_results(int index) const {
+  return results_.Get(index);
+}
+inline const ::v1::model::Datapoint& QueryDatapointsResponse::results(int index) const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryDatapointsResponse.results)
+  return _internal_results(index);
+}
+inline ::v1::model::Datapoint* QueryDatapointsResponse::_internal_add_results() {
+  return results_.Add();
+}
+inline ::v1::model::Datapoint* QueryDatapointsResponse::add_results() {
+  // @@protoc_insertion_point(field_add:v1.agent.QueryDatapointsResponse.results)
+  return _internal_add_results();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Datapoint >&
+QueryDatapointsResponse::results() const {
+  // @@protoc_insertion_point(field_list:v1.agent.QueryDatapointsResponse.results)
+  return results_;
+}
+
+// -------------------------------------------------------------------
+
+// QueryEventsRequest
+
+// string start = 1 [json_name = "start"];
+inline void QueryEventsRequest::clear_start() {
+  start_.ClearToEmpty();
+}
+inline const std::string& QueryEventsRequest::start() const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryEventsRequest.start)
+  return _internal_start();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void QueryEventsRequest::set_start(ArgT0&& arg0, ArgT... args) {
+ 
+ start_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.agent.QueryEventsRequest.start)
+}
+inline std::string* QueryEventsRequest::mutable_start() {
+  // @@protoc_insertion_point(field_mutable:v1.agent.QueryEventsRequest.start)
+  return _internal_mutable_start();
+}
+inline const std::string& QueryEventsRequest::_internal_start() const {
+  return start_.Get();
+}
+inline void QueryEventsRequest::_internal_set_start(const std::string& value) {
+  
+  start_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* QueryEventsRequest::_internal_mutable_start() {
+  
+  return start_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* QueryEventsRequest::release_start() {
+  // @@protoc_insertion_point(field_release:v1.agent.QueryEventsRequest.start)
+  return start_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void QueryEventsRequest::set_allocated_start(std::string* start) {
+  if (start != nullptr) {
+    
+  } else {
+    
+  }
+  start_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), start,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.agent.QueryEventsRequest.start)
+}
+
+// string end = 2 [json_name = "end"];
+inline void QueryEventsRequest::clear_end() {
+  end_.ClearToEmpty();
+}
+inline const std::string& QueryEventsRequest::end() const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryEventsRequest.end)
+  return _internal_end();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void QueryEventsRequest::set_end(ArgT0&& arg0, ArgT... args) {
+ 
+ end_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.agent.QueryEventsRequest.end)
+}
+inline std::string* QueryEventsRequest::mutable_end() {
+  // @@protoc_insertion_point(field_mutable:v1.agent.QueryEventsRequest.end)
+  return _internal_mutable_end();
+}
+inline const std::string& QueryEventsRequest::_internal_end() const {
+  return end_.Get();
+}
+inline void QueryEventsRequest::_internal_set_end(const std::string& value) {
+  
+  end_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* QueryEventsRequest::_internal_mutable_end() {
+  
+  return end_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* QueryEventsRequest::release_end() {
+  // @@protoc_insertion_point(field_release:v1.agent.QueryEventsRequest.end)
+  return end_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void QueryEventsRequest::set_allocated_end(std::string* end) {
+  if (end != nullptr) {
+    
+  } else {
+    
+  }
+  end_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), end,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.agent.QueryEventsRequest.end)
+}
+
+// uint32 limit = 3 [json_name = "limit"];
+inline void QueryEventsRequest::clear_limit() {
+  limit_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 QueryEventsRequest::_internal_limit() const {
+  return limit_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 QueryEventsRequest::limit() const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryEventsRequest.limit)
+  return _internal_limit();
+}
+inline void QueryEventsRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  limit_ = value;
+}
+inline void QueryEventsRequest::set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_limit(value);
+  // @@protoc_insertion_point(field_set:v1.agent.QueryEventsRequest.limit)
+}
+
+// uint32 offset = 4 [json_name = "offset"];
+inline void QueryEventsRequest::clear_offset() {
+  offset_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 QueryEventsRequest::_internal_offset() const {
+  return offset_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 QueryEventsRequest::offset() const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryEventsRequest.offset)
+  return _internal_offset();
+}
+inline void QueryEventsRequest::_internal_set_offset(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  offset_ = value;
+}
+inline void QueryEventsRequest::set_offset(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_offset(value);
+  // @@protoc_insertion_point(field_set:v1.agent.QueryEventsRequest.offset)
+}
+
+// -------------------------------------------------------------------
+
+// QueryEventsResponse
+
+// repeated .v1.model.Event results = 1 [json_name = "results"];
+inline int QueryEventsResponse::_internal_results_size() const {
+  return results_.size();
+}
+inline int QueryEventsResponse::results_size() const {
+  return _internal_results_size();
+}
+inline ::v1::model::Event* QueryEventsResponse::mutable_results(int index) {
+  // @@protoc_insertion_point(field_mutable:v1.agent.QueryEventsResponse.results)
+  return results_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Event >*
+QueryEventsResponse::mutable_results() {
+  // @@protoc_insertion_point(field_mutable_list:v1.agent.QueryEventsResponse.results)
+  return &results_;
+}
+inline const ::v1::model::Event& QueryEventsResponse::_internal_results(int index) const {
+  return results_.Get(index);
+}
+inline const ::v1::model::Event& QueryEventsResponse::results(int index) const {
+  // @@protoc_insertion_point(field_get:v1.agent.QueryEventsResponse.results)
+  return _internal_results(index);
+}
+inline ::v1::model::Event* QueryEventsResponse::_internal_add_results() {
+  return results_.Add();
+}
+inline ::v1::model::Event* QueryEventsResponse::add_results() {
+  // @@protoc_insertion_point(field_add:v1.agent.QueryEventsResponse.results)
+  return _internal_add_results();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Event >&
+QueryEventsResponse::results() const {
+  // @@protoc_insertion_point(field_list:v1.agent.QueryEventsResponse.results)
+  return results_;
+}
 
 // -------------------------------------------------------------------
 
@@ -9178,6 +10235,14 @@ inline void GetCustomDataChannelMessageStreamResponse::set_allocated_payload(std
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

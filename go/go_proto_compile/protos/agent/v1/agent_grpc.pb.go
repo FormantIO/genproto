@@ -39,6 +39,8 @@ type AgentClient interface {
 	GetConfigBlobData(ctx context.Context, in *GetConfigBlobDataRequest, opts ...grpc.CallOption) (*GetConfigBlobDataResponse, error)
 	GetAgentConfiguration(ctx context.Context, in *GetAgentConfigurationRequest, opts ...grpc.CallOption) (*GetAgentConfigurationResponse, error)
 	GetBufferMetadata(ctx context.Context, in *GetBufferMetadataRequest, opts ...grpc.CallOption) (*GetBufferMetadataResponse, error)
+	QueryDatapoints(ctx context.Context, in *QueryDatapointsRequest, opts ...grpc.CallOption) (*QueryDatapointsResponse, error)
+	QueryEvents(ctx context.Context, in *QueryEventsRequest, opts ...grpc.CallOption) (*QueryEventsResponse, error)
 	Health(ctx context.Context, in *HealthRequest, opts ...grpc.CallOption) (*HealthResponse, error)
 	GetCommandRequest(ctx context.Context, in *GetCommandRequestRequest, opts ...grpc.CallOption) (*GetCommandRequestResponse, error)
 	GetCommandRequestStream(ctx context.Context, in *GetCommandRequestStreamRequest, opts ...grpc.CallOption) (Agent_GetCommandRequestStreamClient, error)
@@ -322,6 +324,24 @@ func (c *agentClient) GetBufferMetadata(ctx context.Context, in *GetBufferMetada
 	return out, nil
 }
 
+func (c *agentClient) QueryDatapoints(ctx context.Context, in *QueryDatapointsRequest, opts ...grpc.CallOption) (*QueryDatapointsResponse, error) {
+	out := new(QueryDatapointsResponse)
+	err := c.cc.Invoke(ctx, "/v1.agent.Agent/QueryDatapoints", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *agentClient) QueryEvents(ctx context.Context, in *QueryEventsRequest, opts ...grpc.CallOption) (*QueryEventsResponse, error) {
+	out := new(QueryEventsResponse)
+	err := c.cc.Invoke(ctx, "/v1.agent.Agent/QueryEvents", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *agentClient) Health(ctx context.Context, in *HealthRequest, opts ...grpc.CallOption) (*HealthResponse, error) {
 	out := new(HealthResponse)
 	err := c.cc.Invoke(ctx, "/v1.agent.Agent/Health", in, out, opts...)
@@ -473,6 +493,8 @@ type AgentServer interface {
 	GetConfigBlobData(context.Context, *GetConfigBlobDataRequest) (*GetConfigBlobDataResponse, error)
 	GetAgentConfiguration(context.Context, *GetAgentConfigurationRequest) (*GetAgentConfigurationResponse, error)
 	GetBufferMetadata(context.Context, *GetBufferMetadataRequest) (*GetBufferMetadataResponse, error)
+	QueryDatapoints(context.Context, *QueryDatapointsRequest) (*QueryDatapointsResponse, error)
+	QueryEvents(context.Context, *QueryEventsRequest) (*QueryEventsResponse, error)
 	Health(context.Context, *HealthRequest) (*HealthResponse, error)
 	GetCommandRequest(context.Context, *GetCommandRequestRequest) (*GetCommandRequestResponse, error)
 	GetCommandRequestStream(*GetCommandRequestStreamRequest, Agent_GetCommandRequestStreamServer) error
@@ -539,6 +561,12 @@ func (UnimplementedAgentServer) GetAgentConfiguration(context.Context, *GetAgent
 }
 func (UnimplementedAgentServer) GetBufferMetadata(context.Context, *GetBufferMetadataRequest) (*GetBufferMetadataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBufferMetadata not implemented")
+}
+func (UnimplementedAgentServer) QueryDatapoints(context.Context, *QueryDatapointsRequest) (*QueryDatapointsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method QueryDatapoints not implemented")
+}
+func (UnimplementedAgentServer) QueryEvents(context.Context, *QueryEventsRequest) (*QueryEventsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method QueryEvents not implemented")
 }
 func (UnimplementedAgentServer) Health(context.Context, *HealthRequest) (*HealthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Health not implemented")
@@ -897,6 +925,42 @@ func _Agent_GetBufferMetadata_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Agent_QueryDatapoints_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryDatapointsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AgentServer).QueryDatapoints(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/v1.agent.Agent/QueryDatapoints",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AgentServer).QueryDatapoints(ctx, req.(*QueryDatapointsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Agent_QueryEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AgentServer).QueryEvents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/v1.agent.Agent/QueryEvents",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AgentServer).QueryEvents(ctx, req.(*QueryEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Agent_Health_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HealthRequest)
 	if err := dec(in); err != nil {
@@ -1166,6 +1230,14 @@ var Agent_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetBufferMetadata",
 			Handler:    _Agent_GetBufferMetadata_Handler,
+		},
+		{
+			MethodName: "QueryDatapoints",
+			Handler:    _Agent_QueryDatapoints_Handler,
+		},
+		{
+			MethodName: "QueryEvents",
+			Handler:    _Agent_QueryEvents_Handler,
 		},
 		{
 			MethodName: "Health",

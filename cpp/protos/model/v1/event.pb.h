@@ -384,6 +384,9 @@ class Event final :
     kMessageFieldNumber = 2,
     kStreamNameFieldNumber = 3,
     kStreamTypeFieldNumber = 4,
+    kIdFieldNumber = 10,
+    kTypeFieldNumber = 11,
+    kEventTriggerIdFieldNumber = 12,
     kTimestampFieldNumber = 1,
     kNotificationEnabledFieldNumber = 5,
     kSeverityFieldNumber = 9,
@@ -448,6 +451,48 @@ class Event final :
   std::string* _internal_mutable_stream_type();
   public:
 
+  // string id = 10 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string type = 11 [json_name = "type"];
+  void clear_type();
+  const std::string& type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_type();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_type();
+  void set_allocated_type(std::string* type);
+  private:
+  const std::string& _internal_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_type(const std::string& value);
+  std::string* _internal_mutable_type();
+  public:
+
+  // string event_trigger_id = 12 [json_name = "eventTriggerId"];
+  void clear_event_trigger_id();
+  const std::string& event_trigger_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_event_trigger_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_event_trigger_id();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_event_trigger_id();
+  void set_allocated_event_trigger_id(std::string* event_trigger_id);
+  private:
+  const std::string& _internal_event_trigger_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_event_trigger_id(const std::string& value);
+  std::string* _internal_mutable_event_trigger_id();
+  public:
+
   // int64 timestamp = 1 [json_name = "timestamp"];
   void clear_timestamp();
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp() const;
@@ -499,6 +544,9 @@ class Event final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stream_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stream_type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr event_trigger_id_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
   bool notification_enabled_;
   int severity_;
@@ -3259,6 +3307,141 @@ inline void Event::_internal_set_severity(::v1::model::Severity value) {
 inline void Event::set_severity(::v1::model::Severity value) {
   _internal_set_severity(value);
   // @@protoc_insertion_point(field_set:v1.model.Event.severity)
+}
+
+// string id = 10 [json_name = "id"];
+inline void Event::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& Event::id() const {
+  // @@protoc_insertion_point(field_get:v1.model.Event.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Event::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Event.id)
+}
+inline std::string* Event::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Event.id)
+  return _internal_mutable_id();
+}
+inline const std::string& Event::_internal_id() const {
+  return id_.Get();
+}
+inline void Event::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Event::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Event::release_id() {
+  // @@protoc_insertion_point(field_release:v1.model.Event.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Event::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Event.id)
+}
+
+// string type = 11 [json_name = "type"];
+inline void Event::clear_type() {
+  type_.ClearToEmpty();
+}
+inline const std::string& Event::type() const {
+  // @@protoc_insertion_point(field_get:v1.model.Event.type)
+  return _internal_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Event::set_type(ArgT0&& arg0, ArgT... args) {
+ 
+ type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Event.type)
+}
+inline std::string* Event::mutable_type() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Event.type)
+  return _internal_mutable_type();
+}
+inline const std::string& Event::_internal_type() const {
+  return type_.Get();
+}
+inline void Event::_internal_set_type(const std::string& value) {
+  
+  type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Event::_internal_mutable_type() {
+  
+  return type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Event::release_type() {
+  // @@protoc_insertion_point(field_release:v1.model.Event.type)
+  return type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Event::set_allocated_type(std::string* type) {
+  if (type != nullptr) {
+    
+  } else {
+    
+  }
+  type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), type,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Event.type)
+}
+
+// string event_trigger_id = 12 [json_name = "eventTriggerId"];
+inline void Event::clear_event_trigger_id() {
+  event_trigger_id_.ClearToEmpty();
+}
+inline const std::string& Event::event_trigger_id() const {
+  // @@protoc_insertion_point(field_get:v1.model.Event.event_trigger_id)
+  return _internal_event_trigger_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Event::set_event_trigger_id(ArgT0&& arg0, ArgT... args) {
+ 
+ event_trigger_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Event.event_trigger_id)
+}
+inline std::string* Event::mutable_event_trigger_id() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Event.event_trigger_id)
+  return _internal_mutable_event_trigger_id();
+}
+inline const std::string& Event::_internal_event_trigger_id() const {
+  return event_trigger_id_.Get();
+}
+inline void Event::_internal_set_event_trigger_id(const std::string& value) {
+  
+  event_trigger_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Event::_internal_mutable_event_trigger_id() {
+  
+  return event_trigger_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Event::release_event_trigger_id() {
+  // @@protoc_insertion_point(field_release:v1.model.Event.event_trigger_id)
+  return event_trigger_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Event::set_allocated_event_trigger_id(std::string* event_trigger_id) {
+  if (event_trigger_id != nullptr) {
+    
+  } else {
+    
+  }
+  event_trigger_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), event_trigger_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Event.event_trigger_id)
 }
 
 // map<string, string> tags = 6 [json_name = "tags"];

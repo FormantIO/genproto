@@ -35,6 +35,9 @@ constexpr Event::Event(
   , message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , stream_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , stream_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , event_trigger_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , timestamp_(int64_t{0})
   , notification_enabled_(false)
   , severity_(0)
@@ -284,6 +287,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fevent_2e
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, stream_type_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, notification_enabled_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, severity_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Event, id_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Event, type_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Event, event_trigger_id_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Event, tags_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::AgentEventConfiguration, _internal_metadata_),
@@ -408,21 +414,21 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fevent_2e
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::v1::model::Event_TagsEntry_DoNotUse)},
   { 9, -1, sizeof(::v1::model::Event)},
-  { 22, -1, sizeof(::v1::model::AgentEventConfiguration)},
-  { 30, -1, sizeof(::v1::model::AgentEventTrigger)},
-  { 46, -1, sizeof(::v1::model::Condition)},
-  { 61, -1, sizeof(::v1::model::PresenceEventTriggerCondition)},
-  { 66, -1, sizeof(::v1::model::AutoresolveEventTriggerCondition)},
-  { 71, -1, sizeof(::v1::model::ThresholdEventTriggerCondition)},
-  { 78, -1, sizeof(::v1::model::NumericCondition)},
-  { 85, -1, sizeof(::v1::model::NumericSetEventTriggerCondition)},
-  { 92, -1, sizeof(::v1::model::BatteryCondition)},
-  { 100, -1, sizeof(::v1::model::BatteryEventTriggerCondition)},
-  { 107, -1, sizeof(::v1::model::RegexEventTriggerCondition)},
-  { 113, -1, sizeof(::v1::model::BitsetEventTriggerCondition)},
-  { 120, -1, sizeof(::v1::model::BitsetCondition)},
-  { 128, -1, sizeof(::v1::model::JsonEventTriggerCondition)},
-  { 134, -1, sizeof(::v1::model::StatefulTriggerConfiguration)},
+  { 25, -1, sizeof(::v1::model::AgentEventConfiguration)},
+  { 33, -1, sizeof(::v1::model::AgentEventTrigger)},
+  { 49, -1, sizeof(::v1::model::Condition)},
+  { 64, -1, sizeof(::v1::model::PresenceEventTriggerCondition)},
+  { 69, -1, sizeof(::v1::model::AutoresolveEventTriggerCondition)},
+  { 74, -1, sizeof(::v1::model::ThresholdEventTriggerCondition)},
+  { 81, -1, sizeof(::v1::model::NumericCondition)},
+  { 88, -1, sizeof(::v1::model::NumericSetEventTriggerCondition)},
+  { 95, -1, sizeof(::v1::model::BatteryCondition)},
+  { 103, -1, sizeof(::v1::model::BatteryEventTriggerCondition)},
+  { 110, -1, sizeof(::v1::model::RegexEventTriggerCondition)},
+  { 116, -1, sizeof(::v1::model::BitsetEventTriggerCondition)},
+  { 123, -1, sizeof(::v1::model::BitsetCondition)},
+  { 131, -1, sizeof(::v1::model::JsonEventTriggerCondition)},
+  { 137, -1, sizeof(::v1::model::StatefulTriggerConfiguration)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -447,92 +453,94 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\033protos/model/v1/event.proto\022\010v1.model\""
-  "\367\002\n\005Event\022\034\n\ttimestamp\030\001 \001(\003R\ttimestamp\022"
+  "\305\003\n\005Event\022\034\n\ttimestamp\030\001 \001(\003R\ttimestamp\022"
   "#\n\rend_timestamp\030\010 \001(\003R\014endTimestamp\022\030\n\007"
   "message\030\002 \001(\tR\007message\022\037\n\013stream_name\030\003 "
   "\001(\tR\nstreamName\022\037\n\013stream_type\030\004 \001(\tR\nst"
   "reamType\0221\n\024notification_enabled\030\005 \001(\010R\023"
   "notificationEnabled\022.\n\010severity\030\t \001(\0162\022."
-  "v1.model.SeverityR\010severity\022-\n\004tags\030\006 \003("
-  "\0132\031.v1.model.Event.TagsEntryR\004tags\0327\n\tTa"
-  "gsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t"
-  "R\005value:\0028\001J\004\010\007\020\010\"\325\001\n\027AgentEventConfigur"
-  "ation\022B\n\016event_triggers\030\001 \003(\0132\033.v1.model"
-  ".AgentEventTriggerR\reventTriggers\022S\n\027sta"
-  "teful_event_triggers\030\003 \003(\0132\033.v1.model.Ag"
-  "entEventTriggerR\025statefulEventTriggers\022!"
-  "\n\014last_updated\030\002 \001(\003R\013lastUpdated\"\356\003\n\021Ag"
-  "entEventTrigger\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006strea"
-  "m\030\002 \001(\tR\006stream\022\032\n\010interval\030\003 \001(\003R\010inter"
-  "val\0221\n\tcondition\030\004 \001(\0132\023.v1.model.Condit"
-  "ionR\tcondition\0229\n\rexitCondition\030\005 \001(\0132\023."
-  "v1.model.ConditionR\rexitCondition\022,\n\021isS"
-  "tatefulTrigger\030\006 \001(\010R\021isStatefulTrigger\022"
-  "j\n\034statefulTriggerConfiguration\030\007 \001(\0132&."
-  "v1.model.StatefulTriggerConfigurationR\034s"
-  "tatefulTriggerConfiguration\022\030\n\007message\030\010"
-  " \001(\tR\007message\022$\n\rmessageFormat\030\013 \001(\tR\rme"
-  "ssageFormat\022\032\n\010severity\030\t \001(\tR\010severity\022"
-  "1\n\024notification_enabled\030\n \001(\010R\023notificat"
-  "ionEnabled\"\326\004\n\tCondition\022\026\n\006stream\030\001 \001(\t"
-  "R\006stream\022E\n\010presence\030\002 \001(\0132\'.v1.model.Pr"
-  "esenceEventTriggerConditionH\000R\010presence\022"
-  "H\n\tthreshold\030\003 \001(\0132(.v1.model.ThresholdE"
-  "ventTriggerConditionH\000R\tthreshold\022<\n\005reg"
-  "ex\030\004 \001(\0132$.v1.model.RegexEventTriggerCon"
-  "ditionH\000R\005regex\022\?\n\006bitset\030\005 \001(\0132%.v1.mod"
-  "el.BitsetEventTriggerConditionH\000R\006bitset"
-  "\022B\n\007battery\030\006 \001(\0132&.v1.model.BatteryEven"
-  "tTriggerConditionH\000R\007battery\022E\n\007numeric\030"
-  "\007 \001(\0132).v1.model.NumericSetEventTriggerC"
-  "onditionH\000R\007numeric\0229\n\004json\030\010 \001(\0132#.v1.m"
-  "odel.JsonEventTriggerConditionH\000R\004json\022N"
-  "\n\013autoresolve\030\t \001(\0132*.v1.model.Autoresol"
-  "veEventTriggerConditionH\000R\013autoresolveB\013"
-  "\n\tcondition\"\037\n\035PresenceEventTriggerCondi"
-  "tion\"\"\n AutoresolveEventTriggerCondition"
-  "\"o\n\036ThresholdEventTriggerCondition\022\024\n\005va"
-  "lue\030\001 \001(\001R\005value\0227\n\010operator\030\002 \001(\0162\033.v1."
-  "model.ThresholdOperatorR\010operator\"p\n\020Num"
-  "ericCondition\022\024\n\005label\030\001 \001(\tR\005label\022F\n\tc"
-  "ondition\030\002 \001(\0132(.v1.model.ThresholdEvent"
-  "TriggerConditionR\tcondition\"\226\001\n\037NumericS"
-  "etEventTriggerCondition\022:\n\nconditions\030\001 "
-  "\003(\0132\032.v1.model.NumericConditionR\nconditi"
-  "ons\0227\n\010operator\030\002 \001(\0162\033.v1.model.Conditi"
-  "onOperatorR\010operator\"\301\001\n\020BatteryConditio"
-  "n\022,\n\005field\030\001 \001(\0162\026.v1.model.BatteryField"
-  "R\005field\022F\n\tcondition\030\002 \001(\0132(.v1.model.Th"
-  "resholdEventTriggerConditionR\tcondition\022"
-  "7\n\010operator\030\003 \001(\0162\033.v1.model.ConditionOp"
-  "eratorR\010operator\"\223\001\n\034BatteryEventTrigger"
-  "Condition\022:\n\nconditions\030\001 \003(\0132\032.v1.model"
-  ".BatteryConditionR\nconditions\0227\n\010operato"
-  "r\030\002 \001(\0162\033.v1.model.ConditionOperatorR\010op"
-  "erator\"2\n\032RegexEventTriggerCondition\022\024\n\005"
-  "value\030\001 \001(\tR\005value\"\230\001\n\033BitsetEventTrigge"
-  "rCondition\022@\n\016bit_conditions\030\001 \003(\0132\031.v1."
-  "model.BitsetConditionR\rbitConditions\0227\n\010"
-  "operator\030\002 \001(\0162\033.v1.model.ConditionOpera"
-  "torR\010operator\"M\n\017BitsetCondition\022\020\n\003key\030"
-  "\001 \001(\tR\003key\022\022\n\004true\030\002 \001(\010R\004true\022\024\n\005false\030"
-  "\003 \001(\010R\005false\"5\n\031JsonEventTriggerConditio"
-  "n\022\030\n\007jqQuery\030\001 \001(\tR\007jqQuery\"\200\001\n\034Stateful"
-  "TriggerConfiguration\0220\n\023emitOnEnteringSt"
-  "ate\030\001 \001(\010R\023emitOnEnteringState\022.\n\022emitOn"
-  "LeavingState\030\002 \001(\010R\022emitOnLeavingState*:"
-  "\n\010Severity\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\t\n\005ERR"
-  "OR\020\002\022\014\n\010CRITICAL\020\003*D\n\014BatteryField\022\n\n\006Ch"
-  "arge\020\000\022\013\n\007Current\020\001\022\016\n\nPercentage\020\002\022\013\n\007V"
-  "oltage\020\003*F\n\021ThresholdOperator\022\006\n\002LT\020\000\022\007\n"
-  "\003LTE\020\001\022\006\n\002GT\020\002\022\007\n\003GTE\020\003\022\006\n\002EQ\020\004\022\007\n\003NEQ\020\005"
-  "*%\n\021ConditionOperator\022\007\n\003ANY\020\000\022\007\n\003ALL\020\001B"
-  "+Z)github.com/FormantIO/genproto/go/v1/m"
-  "odelb\006proto3"
+  "v1.model.SeverityR\010severity\022\016\n\002id\030\n \001(\tR"
+  "\002id\022\022\n\004type\030\013 \001(\tR\004type\022(\n\020event_trigger"
+  "_id\030\014 \001(\tR\016eventTriggerId\022-\n\004tags\030\006 \003(\0132"
+  "\031.v1.model.Event.TagsEntryR\004tags\0327\n\tTags"
+  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005"
+  "value:\0028\001J\004\010\007\020\010\"\325\001\n\027AgentEventConfigurat"
+  "ion\022B\n\016event_triggers\030\001 \003(\0132\033.v1.model.A"
+  "gentEventTriggerR\reventTriggers\022S\n\027state"
+  "ful_event_triggers\030\003 \003(\0132\033.v1.model.Agen"
+  "tEventTriggerR\025statefulEventTriggers\022!\n\014"
+  "last_updated\030\002 \001(\003R\013lastUpdated\"\356\003\n\021Agen"
+  "tEventTrigger\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006stream\030"
+  "\002 \001(\tR\006stream\022\032\n\010interval\030\003 \001(\003R\010interva"
+  "l\0221\n\tcondition\030\004 \001(\0132\023.v1.model.Conditio"
+  "nR\tcondition\0229\n\rexitCondition\030\005 \001(\0132\023.v1"
+  ".model.ConditionR\rexitCondition\022,\n\021isSta"
+  "tefulTrigger\030\006 \001(\010R\021isStatefulTrigger\022j\n"
+  "\034statefulTriggerConfiguration\030\007 \001(\0132&.v1"
+  ".model.StatefulTriggerConfigurationR\034sta"
+  "tefulTriggerConfiguration\022\030\n\007message\030\010 \001"
+  "(\tR\007message\022$\n\rmessageFormat\030\013 \001(\tR\rmess"
+  "ageFormat\022\032\n\010severity\030\t \001(\tR\010severity\0221\n"
+  "\024notification_enabled\030\n \001(\010R\023notificatio"
+  "nEnabled\"\326\004\n\tCondition\022\026\n\006stream\030\001 \001(\tR\006"
+  "stream\022E\n\010presence\030\002 \001(\0132\'.v1.model.Pres"
+  "enceEventTriggerConditionH\000R\010presence\022H\n"
+  "\tthreshold\030\003 \001(\0132(.v1.model.ThresholdEve"
+  "ntTriggerConditionH\000R\tthreshold\022<\n\005regex"
+  "\030\004 \001(\0132$.v1.model.RegexEventTriggerCondi"
+  "tionH\000R\005regex\022\?\n\006bitset\030\005 \001(\0132%.v1.model"
+  ".BitsetEventTriggerConditionH\000R\006bitset\022B"
+  "\n\007battery\030\006 \001(\0132&.v1.model.BatteryEventT"
+  "riggerConditionH\000R\007battery\022E\n\007numeric\030\007 "
+  "\001(\0132).v1.model.NumericSetEventTriggerCon"
+  "ditionH\000R\007numeric\0229\n\004json\030\010 \001(\0132#.v1.mod"
+  "el.JsonEventTriggerConditionH\000R\004json\022N\n\013"
+  "autoresolve\030\t \001(\0132*.v1.model.Autoresolve"
+  "EventTriggerConditionH\000R\013autoresolveB\013\n\t"
+  "condition\"\037\n\035PresenceEventTriggerConditi"
+  "on\"\"\n AutoresolveEventTriggerCondition\"o"
+  "\n\036ThresholdEventTriggerCondition\022\024\n\005valu"
+  "e\030\001 \001(\001R\005value\0227\n\010operator\030\002 \001(\0162\033.v1.mo"
+  "del.ThresholdOperatorR\010operator\"p\n\020Numer"
+  "icCondition\022\024\n\005label\030\001 \001(\tR\005label\022F\n\tcon"
+  "dition\030\002 \001(\0132(.v1.model.ThresholdEventTr"
+  "iggerConditionR\tcondition\"\226\001\n\037NumericSet"
+  "EventTriggerCondition\022:\n\nconditions\030\001 \003("
+  "\0132\032.v1.model.NumericConditionR\ncondition"
+  "s\0227\n\010operator\030\002 \001(\0162\033.v1.model.Condition"
+  "OperatorR\010operator\"\301\001\n\020BatteryCondition\022"
+  ",\n\005field\030\001 \001(\0162\026.v1.model.BatteryFieldR\005"
+  "field\022F\n\tcondition\030\002 \001(\0132(.v1.model.Thre"
+  "sholdEventTriggerConditionR\tcondition\0227\n"
+  "\010operator\030\003 \001(\0162\033.v1.model.ConditionOper"
+  "atorR\010operator\"\223\001\n\034BatteryEventTriggerCo"
+  "ndition\022:\n\nconditions\030\001 \003(\0132\032.v1.model.B"
+  "atteryConditionR\nconditions\0227\n\010operator\030"
+  "\002 \001(\0162\033.v1.model.ConditionOperatorR\010oper"
+  "ator\"2\n\032RegexEventTriggerCondition\022\024\n\005va"
+  "lue\030\001 \001(\tR\005value\"\230\001\n\033BitsetEventTriggerC"
+  "ondition\022@\n\016bit_conditions\030\001 \003(\0132\031.v1.mo"
+  "del.BitsetConditionR\rbitConditions\0227\n\010op"
+  "erator\030\002 \001(\0162\033.v1.model.ConditionOperato"
+  "rR\010operator\"M\n\017BitsetCondition\022\020\n\003key\030\001 "
+  "\001(\tR\003key\022\022\n\004true\030\002 \001(\010R\004true\022\024\n\005false\030\003 "
+  "\001(\010R\005false\"5\n\031JsonEventTriggerCondition\022"
+  "\030\n\007jqQuery\030\001 \001(\tR\007jqQuery\"\200\001\n\034StatefulTr"
+  "iggerConfiguration\0220\n\023emitOnEnteringStat"
+  "e\030\001 \001(\010R\023emitOnEnteringState\022.\n\022emitOnLe"
+  "avingState\030\002 \001(\010R\022emitOnLeavingState*:\n\010"
+  "Severity\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\t\n\005ERROR"
+  "\020\002\022\014\n\010CRITICAL\020\003*D\n\014BatteryField\022\n\n\006Char"
+  "ge\020\000\022\013\n\007Current\020\001\022\016\n\nPercentage\020\002\022\013\n\007Vol"
+  "tage\020\003*F\n\021ThresholdOperator\022\006\n\002LT\020\000\022\007\n\003L"
+  "TE\020\001\022\006\n\002GT\020\002\022\007\n\003GTE\020\003\022\006\n\002EQ\020\004\022\007\n\003NEQ\020\005*%"
+  "\n\021ConditionOperator\022\007\n\003ANY\020\000\022\007\n\003ALL\020\001B+Z"
+  ")github.com/FormantIO/genproto/go/v1/mod"
+  "elb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto = {
-  false, false, 3292, descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto, "protos/model/v1/event.proto", 
+  false, false, 3370, descriptor_table_protodef_protos_2fmodel_2fv1_2fevent_2eproto, "protos/model/v1/event.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fevent_2eproto_once, nullptr, 0, 17,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fevent_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fevent_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fevent_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fevent_2eproto,
@@ -661,6 +669,21 @@ Event::Event(const Event& from)
     stream_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_stream_type(), 
       GetArenaForAllocation());
   }
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArenaForAllocation());
+  }
+  type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_type().empty()) {
+    type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_type(), 
+      GetArenaForAllocation());
+  }
+  event_trigger_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_event_trigger_id().empty()) {
+    event_trigger_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_event_trigger_id(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&timestamp_, &from.timestamp_,
     static_cast<size_t>(reinterpret_cast<char*>(&end_timestamp_) -
     reinterpret_cast<char*>(&timestamp_)) + sizeof(end_timestamp_));
@@ -671,6 +694,9 @@ void Event::SharedCtor() {
 message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 stream_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 stream_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+event_trigger_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&timestamp_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&end_timestamp_) -
@@ -688,6 +714,9 @@ void Event::SharedDtor() {
   message_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   stream_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   stream_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  event_trigger_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Event::ArenaDtor(void* object) {
@@ -714,6 +743,9 @@ void Event::Clear() {
   message_.ClearToEmpty();
   stream_name_.ClearToEmpty();
   stream_type_.ClearToEmpty();
+  id_.ClearToEmpty();
+  type_.ClearToEmpty();
+  event_trigger_id_.ClearToEmpty();
   ::memset(&timestamp_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&end_timestamp_) -
       reinterpret_cast<char*>(&timestamp_)) + sizeof(end_timestamp_));
@@ -792,6 +824,33 @@ const char* Event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_severity(static_cast<::v1::model::Severity>(val));
+        } else goto handle_unusual;
+        continue;
+      // string id = 10 [json_name = "id"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Event.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string type = 11 [json_name = "type"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+          auto str = _internal_mutable_type();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Event.type"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string event_trigger_id = 12 [json_name = "eventTriggerId"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          auto str = _internal_mutable_event_trigger_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Event.event_trigger_id"));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -924,6 +983,36 @@ failure:
       9, this->_internal_severity(), target);
   }
 
+  // string id = 10 [json_name = "id"];
+  if (!this->id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.Event.id");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_id(), target);
+  }
+
+  // string type = 11 [json_name = "type"];
+  if (!this->type().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_type().data(), static_cast<int>(this->_internal_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.Event.type");
+    target = stream->WriteStringMaybeAliased(
+        11, this->_internal_type(), target);
+  }
+
+  // string event_trigger_id = 12 [json_name = "eventTriggerId"];
+  if (!this->event_trigger_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_event_trigger_id().data(), static_cast<int>(this->_internal_event_trigger_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.Event.event_trigger_id");
+    target = stream->WriteStringMaybeAliased(
+        12, this->_internal_event_trigger_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -968,6 +1057,27 @@ size_t Event::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_stream_type());
+  }
+
+  // string id = 10 [json_name = "id"];
+  if (!this->id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
+  }
+
+  // string type = 11 [json_name = "type"];
+  if (!this->type().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_type());
+  }
+
+  // string event_trigger_id = 12 [json_name = "eventTriggerId"];
+  if (!this->event_trigger_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_event_trigger_id());
   }
 
   // int64 timestamp = 1 [json_name = "timestamp"];
@@ -1036,6 +1146,15 @@ void Event::MergeFrom(const Event& from) {
   if (!from.stream_type().empty()) {
     _internal_set_stream_type(from._internal_stream_type());
   }
+  if (!from.id().empty()) {
+    _internal_set_id(from._internal_id());
+  }
+  if (!from.type().empty()) {
+    _internal_set_type(from._internal_type());
+  }
+  if (!from.event_trigger_id().empty()) {
+    _internal_set_event_trigger_id(from._internal_event_trigger_id());
+  }
   if (from.timestamp() != 0) {
     _internal_set_timestamp(from._internal_timestamp());
   }
@@ -1086,6 +1205,21 @@ void Event::InternalSwap(Event* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &stream_type_, GetArenaForAllocation(),
       &other->stream_type_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &type_, GetArenaForAllocation(),
+      &other->type_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &event_trigger_id_, GetArenaForAllocation(),
+      &other->event_trigger_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Event, end_timestamp_)

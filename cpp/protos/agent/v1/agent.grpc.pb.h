@@ -158,6 +158,20 @@ class Agent final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetBufferMetadataResponse>> PrepareAsyncGetBufferMetadata(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetBufferMetadataResponse>>(PrepareAsyncGetBufferMetadataRaw(context, request, cq));
     }
+    virtual ::grpc::Status QueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::v1::agent::QueryDatapointsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryDatapointsResponse>> AsyncQueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryDatapointsResponse>>(AsyncQueryDatapointsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryDatapointsResponse>> PrepareAsyncQueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryDatapointsResponse>>(PrepareAsyncQueryDatapointsRaw(context, request, cq));
+    }
+    virtual ::grpc::Status QueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::v1::agent::QueryEventsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryEventsResponse>> AsyncQueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryEventsResponse>>(AsyncQueryEventsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryEventsResponse>> PrepareAsyncQueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryEventsResponse>>(PrepareAsyncQueryEventsRaw(context, request, cq));
+    }
     virtual ::grpc::Status Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::v1::agent::HealthResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::HealthResponse>> AsyncHealth(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::HealthResponse>>(AsyncHealthRaw(context, request, cq));
@@ -274,6 +288,10 @@ class Agent final {
       virtual void GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetBufferMetadata(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest* request, ::v1::agent::GetBufferMetadataResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetBufferMetadata(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest* request, ::v1::agent::GetBufferMetadataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void QueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest* request, ::v1::agent::QueryDatapointsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void QueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest* request, ::v1::agent::QueryDatapointsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void QueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest* request, ::v1::agent::QueryEventsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void QueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest* request, ::v1::agent::QueryEventsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -339,6 +357,10 @@ class Agent final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetAgentConfigurationResponse>* PrepareAsyncGetAgentConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetBufferMetadataResponse>* AsyncGetBufferMetadataRaw(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetBufferMetadataResponse>* PrepareAsyncGetBufferMetadataRaw(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryDatapointsResponse>* AsyncQueryDatapointsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryDatapointsResponse>* PrepareAsyncQueryDatapointsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryEventsResponse>* AsyncQueryEventsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::QueryEventsResponse>* PrepareAsyncQueryEventsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::HealthResponse>* AsyncHealthRaw(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::HealthResponse>* PrepareAsyncHealthRaw(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::v1::agent::GetCommandRequestResponse>* AsyncGetCommandRequestRaw(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -490,6 +512,20 @@ class Agent final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::GetBufferMetadataResponse>> PrepareAsyncGetBufferMetadata(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::GetBufferMetadataResponse>>(PrepareAsyncGetBufferMetadataRaw(context, request, cq));
     }
+    ::grpc::Status QueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::v1::agent::QueryDatapointsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryDatapointsResponse>> AsyncQueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryDatapointsResponse>>(AsyncQueryDatapointsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryDatapointsResponse>> PrepareAsyncQueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryDatapointsResponse>>(PrepareAsyncQueryDatapointsRaw(context, request, cq));
+    }
+    ::grpc::Status QueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::v1::agent::QueryEventsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryEventsResponse>> AsyncQueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryEventsResponse>>(AsyncQueryEventsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryEventsResponse>> PrepareAsyncQueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryEventsResponse>>(PrepareAsyncQueryEventsRaw(context, request, cq));
+    }
     ::grpc::Status Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::v1::agent::HealthResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::HealthResponse>> AsyncHealth(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::v1::agent::HealthResponse>>(AsyncHealthRaw(context, request, cq));
@@ -606,6 +642,10 @@ class Agent final {
       void GetAgentConfiguration(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetBufferMetadata(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest* request, ::v1::agent::GetBufferMetadataResponse* response, std::function<void(::grpc::Status)>) override;
       void GetBufferMetadata(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest* request, ::v1::agent::GetBufferMetadataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void QueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest* request, ::v1::agent::QueryDatapointsResponse* response, std::function<void(::grpc::Status)>) override;
+      void QueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest* request, ::v1::agent::QueryDatapointsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void QueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest* request, ::v1::agent::QueryEventsResponse* response, std::function<void(::grpc::Status)>) override;
+      void QueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest* request, ::v1::agent::QueryEventsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, std::function<void(::grpc::Status)>) override;
       void Health(::grpc::ClientContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetCommandRequest(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response, std::function<void(::grpc::Status)>) override;
@@ -677,6 +717,10 @@ class Agent final {
     ::grpc::ClientAsyncResponseReader< ::v1::agent::GetAgentConfigurationResponse>* PrepareAsyncGetAgentConfigurationRaw(::grpc::ClientContext* context, const ::v1::agent::GetAgentConfigurationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::v1::agent::GetBufferMetadataResponse>* AsyncGetBufferMetadataRaw(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::v1::agent::GetBufferMetadataResponse>* PrepareAsyncGetBufferMetadataRaw(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryDatapointsResponse>* AsyncQueryDatapointsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryDatapointsResponse>* PrepareAsyncQueryDatapointsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryEventsResponse>* AsyncQueryEventsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::v1::agent::QueryEventsResponse>* PrepareAsyncQueryEventsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::v1::agent::HealthResponse>* AsyncHealthRaw(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::v1::agent::HealthResponse>* PrepareAsyncHealthRaw(::grpc::ClientContext* context, const ::v1::agent::HealthRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::v1::agent::GetCommandRequestResponse>* AsyncGetCommandRequestRaw(::grpc::ClientContext* context, const ::v1::agent::GetCommandRequestRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -718,6 +762,8 @@ class Agent final {
     const ::grpc::internal::RpcMethod rpcmethod_GetConfigBlobData_;
     const ::grpc::internal::RpcMethod rpcmethod_GetAgentConfiguration_;
     const ::grpc::internal::RpcMethod rpcmethod_GetBufferMetadata_;
+    const ::grpc::internal::RpcMethod rpcmethod_QueryDatapoints_;
+    const ::grpc::internal::RpcMethod rpcmethod_QueryEvents_;
     const ::grpc::internal::RpcMethod rpcmethod_Health_;
     const ::grpc::internal::RpcMethod rpcmethod_GetCommandRequest_;
     const ::grpc::internal::RpcMethod rpcmethod_GetCommandRequestStream_;
@@ -753,6 +799,8 @@ class Agent final {
     virtual ::grpc::Status GetConfigBlobData(::grpc::ServerContext* context, const ::v1::agent::GetConfigBlobDataRequest* request, ::v1::agent::GetConfigBlobDataResponse* response);
     virtual ::grpc::Status GetAgentConfiguration(::grpc::ServerContext* context, const ::v1::agent::GetAgentConfigurationRequest* request, ::v1::agent::GetAgentConfigurationResponse* response);
     virtual ::grpc::Status GetBufferMetadata(::grpc::ServerContext* context, const ::v1::agent::GetBufferMetadataRequest* request, ::v1::agent::GetBufferMetadataResponse* response);
+    virtual ::grpc::Status QueryDatapoints(::grpc::ServerContext* context, const ::v1::agent::QueryDatapointsRequest* request, ::v1::agent::QueryDatapointsResponse* response);
+    virtual ::grpc::Status QueryEvents(::grpc::ServerContext* context, const ::v1::agent::QueryEventsRequest* request, ::v1::agent::QueryEventsResponse* response);
     virtual ::grpc::Status Health(::grpc::ServerContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response);
     virtual ::grpc::Status GetCommandRequest(::grpc::ServerContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response);
     virtual ::grpc::Status GetCommandRequestStream(::grpc::ServerContext* context, const ::v1::agent::GetCommandRequestStreamRequest* request, ::grpc::ServerWriter< ::v1::agent::GetCommandRequestStreamResponse>* writer);
@@ -1087,12 +1135,52 @@ class Agent final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_QueryDatapoints : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_QueryDatapoints() {
+      ::grpc::Service::MarkMethodAsync(16);
+    }
+    ~WithAsyncMethod_QueryDatapoints() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status QueryDatapoints(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryDatapointsRequest* /*request*/, ::v1::agent::QueryDatapointsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestQueryDatapoints(::grpc::ServerContext* context, ::v1::agent::QueryDatapointsRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::QueryDatapointsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_QueryEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_QueryEvents() {
+      ::grpc::Service::MarkMethodAsync(17);
+    }
+    ~WithAsyncMethod_QueryEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status QueryEvents(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryEventsRequest* /*request*/, ::v1::agent::QueryEventsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestQueryEvents(::grpc::ServerContext* context, ::v1::agent::QueryEventsRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::QueryEventsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Health() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_Health() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1103,7 +1191,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestHealth(::grpc::ServerContext* context, ::v1::agent::HealthRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::HealthResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1112,7 +1200,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetCommandRequest() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(19);
     }
     ~WithAsyncMethod_GetCommandRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1123,7 +1211,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetCommandRequest(::grpc::ServerContext* context, ::v1::agent::GetCommandRequestRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::GetCommandRequestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1132,7 +1220,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetCommandRequestStream() {
-      ::grpc::Service::MarkMethodAsync(18);
+      ::grpc::Service::MarkMethodAsync(20);
     }
     ~WithAsyncMethod_GetCommandRequestStream() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1143,7 +1231,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetCommandRequestStream(::grpc::ServerContext* context, ::v1::agent::GetCommandRequestStreamRequest* request, ::grpc::ServerAsyncWriter< ::v1::agent::GetCommandRequestStreamResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(18, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(20, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1152,7 +1240,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SendCommandResponse() {
-      ::grpc::Service::MarkMethodAsync(19);
+      ::grpc::Service::MarkMethodAsync(21);
     }
     ~WithAsyncMethod_SendCommandResponse() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1163,7 +1251,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSendCommandResponse(::grpc::ServerContext* context, ::v1::agent::SendCommandResponseRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::SendCommandResponseResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1172,7 +1260,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PostTransformFrame() {
-      ::grpc::Service::MarkMethodAsync(20);
+      ::grpc::Service::MarkMethodAsync(22);
     }
     ~WithAsyncMethod_PostTransformFrame() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1183,7 +1271,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostTransformFrame(::grpc::ServerContext* context, ::v1::model::TransformFrame* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::PostTransformFrameResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1192,7 +1280,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetBaseFrameID() {
-      ::grpc::Service::MarkMethodAsync(21);
+      ::grpc::Service::MarkMethodAsync(23);
     }
     ~WithAsyncMethod_SetBaseFrameID() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1203,7 +1291,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetBaseFrameID(::grpc::ServerContext* context, ::v1::agent::SetBaseFrameIDRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::SetBaseFrameIDResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1212,7 +1300,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_ClearTransformTree() {
-      ::grpc::Service::MarkMethodAsync(22);
+      ::grpc::Service::MarkMethodAsync(24);
     }
     ~WithAsyncMethod_ClearTransformTree() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1223,7 +1311,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestClearTransformTree(::grpc::ServerContext* context, ::v1::agent::ClearTransformTreeRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::ClearTransformTreeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1232,7 +1320,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetTeleopInfo() {
-      ::grpc::Service::MarkMethodAsync(23);
+      ::grpc::Service::MarkMethodAsync(25);
     }
     ~WithAsyncMethod_GetTeleopInfo() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1243,7 +1331,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetTeleopInfo(::grpc::ServerContext* context, ::v1::agent::GetTeleopInfoRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::GetTeleopInfoResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1252,7 +1340,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PostLanRtcOffer() {
-      ::grpc::Service::MarkMethodAsync(24);
+      ::grpc::Service::MarkMethodAsync(26);
     }
     ~WithAsyncMethod_PostLanRtcOffer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1263,7 +1351,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostLanRtcOffer(::grpc::ServerContext* context, ::v1::agent::PostLanRtcOfferRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::PostLanRtcOfferResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1272,7 +1360,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SendOnCustomDataChannel() {
-      ::grpc::Service::MarkMethodAsync(25);
+      ::grpc::Service::MarkMethodAsync(27);
     }
     ~WithAsyncMethod_SendOnCustomDataChannel() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1283,7 +1371,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSendOnCustomDataChannel(::grpc::ServerContext* context, ::v1::agent::SendOnCustomDataChannelRequest* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::SendOnCustomDataChannelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1292,7 +1380,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PostGenericAPIRequest() {
-      ::grpc::Service::MarkMethodAsync(26);
+      ::grpc::Service::MarkMethodAsync(28);
     }
     ~WithAsyncMethod_PostGenericAPIRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1303,7 +1391,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostGenericAPIRequest(::grpc::ServerContext* context, ::v1::model::GenericAPIDatapoint* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::PostGenericAPIRequestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1312,7 +1400,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PostGenericAPIUnbufferedRequest() {
-      ::grpc::Service::MarkMethodAsync(27);
+      ::grpc::Service::MarkMethodAsync(29);
     }
     ~WithAsyncMethod_PostGenericAPIUnbufferedRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1323,10 +1411,10 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostGenericAPIUnbufferedRequest(::grpc::ServerContext* context, ::v1::model::GenericAPIDatapoint* request, ::grpc::ServerAsyncResponseWriter< ::v1::agent::PostGenericAPIUnbufferedRequestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_StreamData<WithAsyncMethod_PostData<WithAsyncMethod_PostDataMulti<WithAsyncMethod_GetTeleopControlDataStream<WithAsyncMethod_GetTeleopHeartbeatStream<WithAsyncMethod_GetTelemetryListenerStream<WithAsyncMethod_GetCustomDataChannelMessageStream<WithAsyncMethod_CreateEvent<WithAsyncMethod_CreateInterventionRequest<WithAsyncMethod_GetInterventionRequest<WithAsyncMethod_GetInterventionResponse<WithAsyncMethod_GetStreamsConfiguration<WithAsyncMethod_GetApplicationConfiguration<WithAsyncMethod_GetConfigBlobData<WithAsyncMethod_GetAgentConfiguration<WithAsyncMethod_GetBufferMetadata<WithAsyncMethod_Health<WithAsyncMethod_GetCommandRequest<WithAsyncMethod_GetCommandRequestStream<WithAsyncMethod_SendCommandResponse<WithAsyncMethod_PostTransformFrame<WithAsyncMethod_SetBaseFrameID<WithAsyncMethod_ClearTransformTree<WithAsyncMethod_GetTeleopInfo<WithAsyncMethod_PostLanRtcOffer<WithAsyncMethod_SendOnCustomDataChannel<WithAsyncMethod_PostGenericAPIRequest<WithAsyncMethod_PostGenericAPIUnbufferedRequest<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_StreamData<WithAsyncMethod_PostData<WithAsyncMethod_PostDataMulti<WithAsyncMethod_GetTeleopControlDataStream<WithAsyncMethod_GetTeleopHeartbeatStream<WithAsyncMethod_GetTelemetryListenerStream<WithAsyncMethod_GetCustomDataChannelMessageStream<WithAsyncMethod_CreateEvent<WithAsyncMethod_CreateInterventionRequest<WithAsyncMethod_GetInterventionRequest<WithAsyncMethod_GetInterventionResponse<WithAsyncMethod_GetStreamsConfiguration<WithAsyncMethod_GetApplicationConfiguration<WithAsyncMethod_GetConfigBlobData<WithAsyncMethod_GetAgentConfiguration<WithAsyncMethod_GetBufferMetadata<WithAsyncMethod_QueryDatapoints<WithAsyncMethod_QueryEvents<WithAsyncMethod_Health<WithAsyncMethod_GetCommandRequest<WithAsyncMethod_GetCommandRequestStream<WithAsyncMethod_SendCommandResponse<WithAsyncMethod_PostTransformFrame<WithAsyncMethod_SetBaseFrameID<WithAsyncMethod_ClearTransformTree<WithAsyncMethod_GetTeleopInfo<WithAsyncMethod_PostLanRtcOffer<WithAsyncMethod_SendOnCustomDataChannel<WithAsyncMethod_PostGenericAPIRequest<WithAsyncMethod_PostGenericAPIUnbufferedRequest<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_StreamData : public BaseClass {
    private:
@@ -1735,18 +1823,72 @@ class Agent final {
       ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::GetBufferMetadataRequest* /*request*/, ::v1::agent::GetBufferMetadataResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_QueryDatapoints : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_QueryDatapoints() {
+      ::grpc::Service::MarkMethodCallback(16,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::QueryDatapointsRequest, ::v1::agent::QueryDatapointsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::QueryDatapointsRequest* request, ::v1::agent::QueryDatapointsResponse* response) { return this->QueryDatapoints(context, request, response); }));}
+    void SetMessageAllocatorFor_QueryDatapoints(
+        ::grpc::MessageAllocator< ::v1::agent::QueryDatapointsRequest, ::v1::agent::QueryDatapointsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::QueryDatapointsRequest, ::v1::agent::QueryDatapointsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_QueryDatapoints() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status QueryDatapoints(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryDatapointsRequest* /*request*/, ::v1::agent::QueryDatapointsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* QueryDatapoints(
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::QueryDatapointsRequest* /*request*/, ::v1::agent::QueryDatapointsResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_QueryEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_QueryEvents() {
+      ::grpc::Service::MarkMethodCallback(17,
+          new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::QueryEventsRequest, ::v1::agent::QueryEventsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::v1::agent::QueryEventsRequest* request, ::v1::agent::QueryEventsResponse* response) { return this->QueryEvents(context, request, response); }));}
+    void SetMessageAllocatorFor_QueryEvents(
+        ::grpc::MessageAllocator< ::v1::agent::QueryEventsRequest, ::v1::agent::QueryEventsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::QueryEventsRequest, ::v1::agent::QueryEventsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_QueryEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status QueryEvents(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryEventsRequest* /*request*/, ::v1::agent::QueryEventsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* QueryEvents(
+      ::grpc::CallbackServerContext* /*context*/, const ::v1::agent::QueryEventsRequest* /*request*/, ::v1::agent::QueryEventsResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_Health() {
-      ::grpc::Service::MarkMethodCallback(16,
+      ::grpc::Service::MarkMethodCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::agent::HealthRequest* request, ::v1::agent::HealthResponse* response) { return this->Health(context, request, response); }));}
     void SetMessageAllocatorFor_Health(
         ::grpc::MessageAllocator< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1767,13 +1909,13 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetCommandRequest() {
-      ::grpc::Service::MarkMethodCallback(17,
+      ::grpc::Service::MarkMethodCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::agent::GetCommandRequestRequest* request, ::v1::agent::GetCommandRequestResponse* response) { return this->GetCommandRequest(context, request, response); }));}
     void SetMessageAllocatorFor_GetCommandRequest(
         ::grpc::MessageAllocator< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1794,7 +1936,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetCommandRequestStream() {
-      ::grpc::Service::MarkMethodCallback(18,
+      ::grpc::Service::MarkMethodCallback(20,
           new ::grpc::internal::CallbackServerStreamingHandler< ::v1::agent::GetCommandRequestStreamRequest, ::v1::agent::GetCommandRequestStreamResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::agent::GetCommandRequestStreamRequest* request) { return this->GetCommandRequestStream(context, request); }));
@@ -1816,13 +1958,13 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SendCommandResponse() {
-      ::grpc::Service::MarkMethodCallback(19,
+      ::grpc::Service::MarkMethodCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::agent::SendCommandResponseRequest* request, ::v1::agent::SendCommandResponseResponse* response) { return this->SendCommandResponse(context, request, response); }));}
     void SetMessageAllocatorFor_SendCommandResponse(
         ::grpc::MessageAllocator< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1843,13 +1985,13 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_PostTransformFrame() {
-      ::grpc::Service::MarkMethodCallback(20,
+      ::grpc::Service::MarkMethodCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::model::TransformFrame* request, ::v1::agent::PostTransformFrameResponse* response) { return this->PostTransformFrame(context, request, response); }));}
     void SetMessageAllocatorFor_PostTransformFrame(
         ::grpc::MessageAllocator< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1870,13 +2012,13 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetBaseFrameID() {
-      ::grpc::Service::MarkMethodCallback(21,
+      ::grpc::Service::MarkMethodCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::agent::SetBaseFrameIDRequest* request, ::v1::agent::SetBaseFrameIDResponse* response) { return this->SetBaseFrameID(context, request, response); }));}
     void SetMessageAllocatorFor_SetBaseFrameID(
         ::grpc::MessageAllocator< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1897,13 +2039,13 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_ClearTransformTree() {
-      ::grpc::Service::MarkMethodCallback(22,
+      ::grpc::Service::MarkMethodCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::agent::ClearTransformTreeRequest* request, ::v1::agent::ClearTransformTreeResponse* response) { return this->ClearTransformTree(context, request, response); }));}
     void SetMessageAllocatorFor_ClearTransformTree(
         ::grpc::MessageAllocator< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1924,13 +2066,13 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetTeleopInfo() {
-      ::grpc::Service::MarkMethodCallback(23,
+      ::grpc::Service::MarkMethodCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::agent::GetTeleopInfoRequest* request, ::v1::agent::GetTeleopInfoResponse* response) { return this->GetTeleopInfo(context, request, response); }));}
     void SetMessageAllocatorFor_GetTeleopInfo(
         ::grpc::MessageAllocator< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1951,13 +2093,13 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_PostLanRtcOffer() {
-      ::grpc::Service::MarkMethodCallback(24,
+      ::grpc::Service::MarkMethodCallback(26,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::agent::PostLanRtcOfferRequest* request, ::v1::agent::PostLanRtcOfferResponse* response) { return this->PostLanRtcOffer(context, request, response); }));}
     void SetMessageAllocatorFor_PostLanRtcOffer(
         ::grpc::MessageAllocator< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1978,13 +2120,13 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SendOnCustomDataChannel() {
-      ::grpc::Service::MarkMethodCallback(25,
+      ::grpc::Service::MarkMethodCallback(27,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::agent::SendOnCustomDataChannelRequest* request, ::v1::agent::SendOnCustomDataChannelResponse* response) { return this->SendOnCustomDataChannel(context, request, response); }));}
     void SetMessageAllocatorFor_SendOnCustomDataChannel(
         ::grpc::MessageAllocator< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(27);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2005,13 +2147,13 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_PostGenericAPIRequest() {
-      ::grpc::Service::MarkMethodCallback(26,
+      ::grpc::Service::MarkMethodCallback(28,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIRequestResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::model::GenericAPIDatapoint* request, ::v1::agent::PostGenericAPIRequestResponse* response) { return this->PostGenericAPIRequest(context, request, response); }));}
     void SetMessageAllocatorFor_PostGenericAPIRequest(
         ::grpc::MessageAllocator< ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIRequestResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(28);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2032,13 +2174,13 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_PostGenericAPIUnbufferedRequest() {
-      ::grpc::Service::MarkMethodCallback(27,
+      ::grpc::Service::MarkMethodCallback(29,
           new ::grpc::internal::CallbackUnaryHandler< ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIUnbufferedRequestResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::v1::model::GenericAPIDatapoint* request, ::v1::agent::PostGenericAPIUnbufferedRequestResponse* response) { return this->PostGenericAPIUnbufferedRequest(context, request, response); }));}
     void SetMessageAllocatorFor_PostGenericAPIUnbufferedRequest(
         ::grpc::MessageAllocator< ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIUnbufferedRequestResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(27);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(29);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIUnbufferedRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2053,7 +2195,7 @@ class Agent final {
     virtual ::grpc::ServerUnaryReactor* PostGenericAPIUnbufferedRequest(
       ::grpc::CallbackServerContext* /*context*/, const ::v1::model::GenericAPIDatapoint* /*request*/, ::v1::agent::PostGenericAPIUnbufferedRequestResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_StreamData<WithCallbackMethod_PostData<WithCallbackMethod_PostDataMulti<WithCallbackMethod_GetTeleopControlDataStream<WithCallbackMethod_GetTeleopHeartbeatStream<WithCallbackMethod_GetTelemetryListenerStream<WithCallbackMethod_GetCustomDataChannelMessageStream<WithCallbackMethod_CreateEvent<WithCallbackMethod_CreateInterventionRequest<WithCallbackMethod_GetInterventionRequest<WithCallbackMethod_GetInterventionResponse<WithCallbackMethod_GetStreamsConfiguration<WithCallbackMethod_GetApplicationConfiguration<WithCallbackMethod_GetConfigBlobData<WithCallbackMethod_GetAgentConfiguration<WithCallbackMethod_GetBufferMetadata<WithCallbackMethod_Health<WithCallbackMethod_GetCommandRequest<WithCallbackMethod_GetCommandRequestStream<WithCallbackMethod_SendCommandResponse<WithCallbackMethod_PostTransformFrame<WithCallbackMethod_SetBaseFrameID<WithCallbackMethod_ClearTransformTree<WithCallbackMethod_GetTeleopInfo<WithCallbackMethod_PostLanRtcOffer<WithCallbackMethod_SendOnCustomDataChannel<WithCallbackMethod_PostGenericAPIRequest<WithCallbackMethod_PostGenericAPIUnbufferedRequest<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_StreamData<WithCallbackMethod_PostData<WithCallbackMethod_PostDataMulti<WithCallbackMethod_GetTeleopControlDataStream<WithCallbackMethod_GetTeleopHeartbeatStream<WithCallbackMethod_GetTelemetryListenerStream<WithCallbackMethod_GetCustomDataChannelMessageStream<WithCallbackMethod_CreateEvent<WithCallbackMethod_CreateInterventionRequest<WithCallbackMethod_GetInterventionRequest<WithCallbackMethod_GetInterventionResponse<WithCallbackMethod_GetStreamsConfiguration<WithCallbackMethod_GetApplicationConfiguration<WithCallbackMethod_GetConfigBlobData<WithCallbackMethod_GetAgentConfiguration<WithCallbackMethod_GetBufferMetadata<WithCallbackMethod_QueryDatapoints<WithCallbackMethod_QueryEvents<WithCallbackMethod_Health<WithCallbackMethod_GetCommandRequest<WithCallbackMethod_GetCommandRequestStream<WithCallbackMethod_SendCommandResponse<WithCallbackMethod_PostTransformFrame<WithCallbackMethod_SetBaseFrameID<WithCallbackMethod_ClearTransformTree<WithCallbackMethod_GetTeleopInfo<WithCallbackMethod_PostLanRtcOffer<WithCallbackMethod_SendOnCustomDataChannel<WithCallbackMethod_PostGenericAPIRequest<WithCallbackMethod_PostGenericAPIUnbufferedRequest<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_StreamData : public BaseClass {
@@ -2328,12 +2470,46 @@ class Agent final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_QueryDatapoints : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_QueryDatapoints() {
+      ::grpc::Service::MarkMethodGeneric(16);
+    }
+    ~WithGenericMethod_QueryDatapoints() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status QueryDatapoints(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryDatapointsRequest* /*request*/, ::v1::agent::QueryDatapointsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_QueryEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_QueryEvents() {
+      ::grpc::Service::MarkMethodGeneric(17);
+    }
+    ~WithGenericMethod_QueryEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status QueryEvents(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryEventsRequest* /*request*/, ::v1::agent::QueryEventsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Health() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_Health() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2350,7 +2526,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetCommandRequest() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(19);
     }
     ~WithGenericMethod_GetCommandRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2367,7 +2543,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetCommandRequestStream() {
-      ::grpc::Service::MarkMethodGeneric(18);
+      ::grpc::Service::MarkMethodGeneric(20);
     }
     ~WithGenericMethod_GetCommandRequestStream() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2384,7 +2560,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SendCommandResponse() {
-      ::grpc::Service::MarkMethodGeneric(19);
+      ::grpc::Service::MarkMethodGeneric(21);
     }
     ~WithGenericMethod_SendCommandResponse() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2401,7 +2577,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PostTransformFrame() {
-      ::grpc::Service::MarkMethodGeneric(20);
+      ::grpc::Service::MarkMethodGeneric(22);
     }
     ~WithGenericMethod_PostTransformFrame() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2418,7 +2594,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetBaseFrameID() {
-      ::grpc::Service::MarkMethodGeneric(21);
+      ::grpc::Service::MarkMethodGeneric(23);
     }
     ~WithGenericMethod_SetBaseFrameID() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2435,7 +2611,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_ClearTransformTree() {
-      ::grpc::Service::MarkMethodGeneric(22);
+      ::grpc::Service::MarkMethodGeneric(24);
     }
     ~WithGenericMethod_ClearTransformTree() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2452,7 +2628,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetTeleopInfo() {
-      ::grpc::Service::MarkMethodGeneric(23);
+      ::grpc::Service::MarkMethodGeneric(25);
     }
     ~WithGenericMethod_GetTeleopInfo() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2469,7 +2645,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PostLanRtcOffer() {
-      ::grpc::Service::MarkMethodGeneric(24);
+      ::grpc::Service::MarkMethodGeneric(26);
     }
     ~WithGenericMethod_PostLanRtcOffer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2486,7 +2662,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SendOnCustomDataChannel() {
-      ::grpc::Service::MarkMethodGeneric(25);
+      ::grpc::Service::MarkMethodGeneric(27);
     }
     ~WithGenericMethod_SendOnCustomDataChannel() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2503,7 +2679,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PostGenericAPIRequest() {
-      ::grpc::Service::MarkMethodGeneric(26);
+      ::grpc::Service::MarkMethodGeneric(28);
     }
     ~WithGenericMethod_PostGenericAPIRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2520,7 +2696,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PostGenericAPIUnbufferedRequest() {
-      ::grpc::Service::MarkMethodGeneric(27);
+      ::grpc::Service::MarkMethodGeneric(29);
     }
     ~WithGenericMethod_PostGenericAPIUnbufferedRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2852,12 +3028,52 @@ class Agent final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_QueryDatapoints : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_QueryDatapoints() {
+      ::grpc::Service::MarkMethodRaw(16);
+    }
+    ~WithRawMethod_QueryDatapoints() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status QueryDatapoints(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryDatapointsRequest* /*request*/, ::v1::agent::QueryDatapointsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestQueryDatapoints(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_QueryEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_QueryEvents() {
+      ::grpc::Service::MarkMethodRaw(17);
+    }
+    ~WithRawMethod_QueryEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status QueryEvents(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryEventsRequest* /*request*/, ::v1::agent::QueryEventsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestQueryEvents(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_Health() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_Health() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2868,7 +3084,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestHealth(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2877,7 +3093,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetCommandRequest() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(19);
     }
     ~WithRawMethod_GetCommandRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2888,7 +3104,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetCommandRequest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2897,7 +3113,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetCommandRequestStream() {
-      ::grpc::Service::MarkMethodRaw(18);
+      ::grpc::Service::MarkMethodRaw(20);
     }
     ~WithRawMethod_GetCommandRequestStream() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2908,7 +3124,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetCommandRequestStream(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(18, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(20, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2917,7 +3133,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SendCommandResponse() {
-      ::grpc::Service::MarkMethodRaw(19);
+      ::grpc::Service::MarkMethodRaw(21);
     }
     ~WithRawMethod_SendCommandResponse() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2928,7 +3144,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSendCommandResponse(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2937,7 +3153,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PostTransformFrame() {
-      ::grpc::Service::MarkMethodRaw(20);
+      ::grpc::Service::MarkMethodRaw(22);
     }
     ~WithRawMethod_PostTransformFrame() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2948,7 +3164,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostTransformFrame(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2957,7 +3173,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetBaseFrameID() {
-      ::grpc::Service::MarkMethodRaw(21);
+      ::grpc::Service::MarkMethodRaw(23);
     }
     ~WithRawMethod_SetBaseFrameID() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2968,7 +3184,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetBaseFrameID(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2977,7 +3193,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_ClearTransformTree() {
-      ::grpc::Service::MarkMethodRaw(22);
+      ::grpc::Service::MarkMethodRaw(24);
     }
     ~WithRawMethod_ClearTransformTree() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2988,7 +3204,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestClearTransformTree(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2997,7 +3213,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetTeleopInfo() {
-      ::grpc::Service::MarkMethodRaw(23);
+      ::grpc::Service::MarkMethodRaw(25);
     }
     ~WithRawMethod_GetTeleopInfo() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3008,7 +3224,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetTeleopInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3017,7 +3233,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PostLanRtcOffer() {
-      ::grpc::Service::MarkMethodRaw(24);
+      ::grpc::Service::MarkMethodRaw(26);
     }
     ~WithRawMethod_PostLanRtcOffer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3028,7 +3244,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostLanRtcOffer(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3037,7 +3253,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SendOnCustomDataChannel() {
-      ::grpc::Service::MarkMethodRaw(25);
+      ::grpc::Service::MarkMethodRaw(27);
     }
     ~WithRawMethod_SendOnCustomDataChannel() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3048,7 +3264,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSendOnCustomDataChannel(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3057,7 +3273,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PostGenericAPIRequest() {
-      ::grpc::Service::MarkMethodRaw(26);
+      ::grpc::Service::MarkMethodRaw(28);
     }
     ~WithRawMethod_PostGenericAPIRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3068,7 +3284,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostGenericAPIRequest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3077,7 +3293,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PostGenericAPIUnbufferedRequest() {
-      ::grpc::Service::MarkMethodRaw(27);
+      ::grpc::Service::MarkMethodRaw(29);
     }
     ~WithRawMethod_PostGenericAPIUnbufferedRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3088,7 +3304,7 @@ class Agent final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostGenericAPIUnbufferedRequest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3444,12 +3660,56 @@ class Agent final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_QueryDatapoints : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_QueryDatapoints() {
+      ::grpc::Service::MarkMethodRawCallback(16,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->QueryDatapoints(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_QueryDatapoints() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status QueryDatapoints(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryDatapointsRequest* /*request*/, ::v1::agent::QueryDatapointsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* QueryDatapoints(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_QueryEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_QueryEvents() {
+      ::grpc::Service::MarkMethodRawCallback(17,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->QueryEvents(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_QueryEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status QueryEvents(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryEventsRequest* /*request*/, ::v1::agent::QueryEventsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* QueryEvents(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_Health() {
-      ::grpc::Service::MarkMethodRawCallback(16,
+      ::grpc::Service::MarkMethodRawCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Health(context, request, response); }));
@@ -3471,7 +3731,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetCommandRequest() {
-      ::grpc::Service::MarkMethodRawCallback(17,
+      ::grpc::Service::MarkMethodRawCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetCommandRequest(context, request, response); }));
@@ -3493,7 +3753,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetCommandRequestStream() {
-      ::grpc::Service::MarkMethodRawCallback(18,
+      ::grpc::Service::MarkMethodRawCallback(20,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->GetCommandRequestStream(context, request); }));
@@ -3515,7 +3775,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SendCommandResponse() {
-      ::grpc::Service::MarkMethodRawCallback(19,
+      ::grpc::Service::MarkMethodRawCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SendCommandResponse(context, request, response); }));
@@ -3537,7 +3797,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_PostTransformFrame() {
-      ::grpc::Service::MarkMethodRawCallback(20,
+      ::grpc::Service::MarkMethodRawCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostTransformFrame(context, request, response); }));
@@ -3559,7 +3819,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetBaseFrameID() {
-      ::grpc::Service::MarkMethodRawCallback(21,
+      ::grpc::Service::MarkMethodRawCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetBaseFrameID(context, request, response); }));
@@ -3581,7 +3841,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_ClearTransformTree() {
-      ::grpc::Service::MarkMethodRawCallback(22,
+      ::grpc::Service::MarkMethodRawCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ClearTransformTree(context, request, response); }));
@@ -3603,7 +3863,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetTeleopInfo() {
-      ::grpc::Service::MarkMethodRawCallback(23,
+      ::grpc::Service::MarkMethodRawCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetTeleopInfo(context, request, response); }));
@@ -3625,7 +3885,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_PostLanRtcOffer() {
-      ::grpc::Service::MarkMethodRawCallback(24,
+      ::grpc::Service::MarkMethodRawCallback(26,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostLanRtcOffer(context, request, response); }));
@@ -3647,7 +3907,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SendOnCustomDataChannel() {
-      ::grpc::Service::MarkMethodRawCallback(25,
+      ::grpc::Service::MarkMethodRawCallback(27,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SendOnCustomDataChannel(context, request, response); }));
@@ -3669,7 +3929,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_PostGenericAPIRequest() {
-      ::grpc::Service::MarkMethodRawCallback(26,
+      ::grpc::Service::MarkMethodRawCallback(28,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostGenericAPIRequest(context, request, response); }));
@@ -3691,7 +3951,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_PostGenericAPIUnbufferedRequest() {
-      ::grpc::Service::MarkMethodRawCallback(27,
+      ::grpc::Service::MarkMethodRawCallback(29,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostGenericAPIUnbufferedRequest(context, request, response); }));
@@ -4005,12 +4265,66 @@ class Agent final {
     virtual ::grpc::Status StreamedGetBufferMetadata(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::v1::agent::GetBufferMetadataRequest,::v1::agent::GetBufferMetadataResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_QueryDatapoints : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_QueryDatapoints() {
+      ::grpc::Service::MarkMethodStreamed(16,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::v1::agent::QueryDatapointsRequest, ::v1::agent::QueryDatapointsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::v1::agent::QueryDatapointsRequest, ::v1::agent::QueryDatapointsResponse>* streamer) {
+                       return this->StreamedQueryDatapoints(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_QueryDatapoints() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status QueryDatapoints(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryDatapointsRequest* /*request*/, ::v1::agent::QueryDatapointsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedQueryDatapoints(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::v1::agent::QueryDatapointsRequest,::v1::agent::QueryDatapointsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_QueryEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_QueryEvents() {
+      ::grpc::Service::MarkMethodStreamed(17,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::v1::agent::QueryEventsRequest, ::v1::agent::QueryEventsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::v1::agent::QueryEventsRequest, ::v1::agent::QueryEventsResponse>* streamer) {
+                       return this->StreamedQueryEvents(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_QueryEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status QueryEvents(::grpc::ServerContext* /*context*/, const ::v1::agent::QueryEventsRequest* /*request*/, ::v1::agent::QueryEventsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedQueryEvents(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::v1::agent::QueryEventsRequest,::v1::agent::QueryEventsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_Health() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::HealthRequest, ::v1::agent::HealthResponse>(
             [this](::grpc::ServerContext* context,
@@ -4037,7 +4351,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetCommandRequest() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(19,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse>(
             [this](::grpc::ServerContext* context,
@@ -4064,7 +4378,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SendCommandResponse() {
-      ::grpc::Service::MarkMethodStreamed(19,
+      ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse>(
             [this](::grpc::ServerContext* context,
@@ -4091,7 +4405,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_PostTransformFrame() {
-      ::grpc::Service::MarkMethodStreamed(20,
+      ::grpc::Service::MarkMethodStreamed(22,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse>(
             [this](::grpc::ServerContext* context,
@@ -4118,7 +4432,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetBaseFrameID() {
-      ::grpc::Service::MarkMethodStreamed(21,
+      ::grpc::Service::MarkMethodStreamed(23,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse>(
             [this](::grpc::ServerContext* context,
@@ -4145,7 +4459,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_ClearTransformTree() {
-      ::grpc::Service::MarkMethodStreamed(22,
+      ::grpc::Service::MarkMethodStreamed(24,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse>(
             [this](::grpc::ServerContext* context,
@@ -4172,7 +4486,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetTeleopInfo() {
-      ::grpc::Service::MarkMethodStreamed(23,
+      ::grpc::Service::MarkMethodStreamed(25,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse>(
             [this](::grpc::ServerContext* context,
@@ -4199,7 +4513,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_PostLanRtcOffer() {
-      ::grpc::Service::MarkMethodStreamed(24,
+      ::grpc::Service::MarkMethodStreamed(26,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse>(
             [this](::grpc::ServerContext* context,
@@ -4226,7 +4540,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SendOnCustomDataChannel() {
-      ::grpc::Service::MarkMethodStreamed(25,
+      ::grpc::Service::MarkMethodStreamed(27,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse>(
             [this](::grpc::ServerContext* context,
@@ -4253,7 +4567,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_PostGenericAPIRequest() {
-      ::grpc::Service::MarkMethodStreamed(26,
+      ::grpc::Service::MarkMethodStreamed(28,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIRequestResponse>(
             [this](::grpc::ServerContext* context,
@@ -4280,7 +4594,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_PostGenericAPIUnbufferedRequest() {
-      ::grpc::Service::MarkMethodStreamed(27,
+      ::grpc::Service::MarkMethodStreamed(29,
         new ::grpc::internal::StreamedUnaryHandler<
           ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIUnbufferedRequestResponse>(
             [this](::grpc::ServerContext* context,
@@ -4301,7 +4615,7 @@ class Agent final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedPostGenericAPIUnbufferedRequest(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::v1::model::GenericAPIDatapoint,::v1::agent::PostGenericAPIUnbufferedRequestResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_PostData<WithStreamedUnaryMethod_PostDataMulti<WithStreamedUnaryMethod_CreateEvent<WithStreamedUnaryMethod_CreateInterventionRequest<WithStreamedUnaryMethod_GetInterventionRequest<WithStreamedUnaryMethod_GetInterventionResponse<WithStreamedUnaryMethod_GetStreamsConfiguration<WithStreamedUnaryMethod_GetApplicationConfiguration<WithStreamedUnaryMethod_GetConfigBlobData<WithStreamedUnaryMethod_GetAgentConfiguration<WithStreamedUnaryMethod_GetBufferMetadata<WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_GetCommandRequest<WithStreamedUnaryMethod_SendCommandResponse<WithStreamedUnaryMethod_PostTransformFrame<WithStreamedUnaryMethod_SetBaseFrameID<WithStreamedUnaryMethod_ClearTransformTree<WithStreamedUnaryMethod_GetTeleopInfo<WithStreamedUnaryMethod_PostLanRtcOffer<WithStreamedUnaryMethod_SendOnCustomDataChannel<WithStreamedUnaryMethod_PostGenericAPIRequest<WithStreamedUnaryMethod_PostGenericAPIUnbufferedRequest<Service > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_PostData<WithStreamedUnaryMethod_PostDataMulti<WithStreamedUnaryMethod_CreateEvent<WithStreamedUnaryMethod_CreateInterventionRequest<WithStreamedUnaryMethod_GetInterventionRequest<WithStreamedUnaryMethod_GetInterventionResponse<WithStreamedUnaryMethod_GetStreamsConfiguration<WithStreamedUnaryMethod_GetApplicationConfiguration<WithStreamedUnaryMethod_GetConfigBlobData<WithStreamedUnaryMethod_GetAgentConfiguration<WithStreamedUnaryMethod_GetBufferMetadata<WithStreamedUnaryMethod_QueryDatapoints<WithStreamedUnaryMethod_QueryEvents<WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_GetCommandRequest<WithStreamedUnaryMethod_SendCommandResponse<WithStreamedUnaryMethod_PostTransformFrame<WithStreamedUnaryMethod_SetBaseFrameID<WithStreamedUnaryMethod_ClearTransformTree<WithStreamedUnaryMethod_GetTeleopInfo<WithStreamedUnaryMethod_PostLanRtcOffer<WithStreamedUnaryMethod_SendOnCustomDataChannel<WithStreamedUnaryMethod_PostGenericAPIRequest<WithStreamedUnaryMethod_PostGenericAPIUnbufferedRequest<Service > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_GetTeleopControlDataStream : public BaseClass {
    private:
@@ -4416,7 +4730,7 @@ class Agent final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_GetCommandRequestStream() {
-      ::grpc::Service::MarkMethodStreamed(18,
+      ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::v1::agent::GetCommandRequestStreamRequest, ::v1::agent::GetCommandRequestStreamResponse>(
             [this](::grpc::ServerContext* context,
@@ -4438,7 +4752,7 @@ class Agent final {
     virtual ::grpc::Status StreamedGetCommandRequestStream(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::v1::agent::GetCommandRequestStreamRequest,::v1::agent::GetCommandRequestStreamResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_GetTeleopControlDataStream<WithSplitStreamingMethod_GetTeleopHeartbeatStream<WithSplitStreamingMethod_GetTelemetryListenerStream<WithSplitStreamingMethod_GetCustomDataChannelMessageStream<WithSplitStreamingMethod_GetCommandRequestStream<Service > > > > > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_PostData<WithStreamedUnaryMethod_PostDataMulti<WithSplitStreamingMethod_GetTeleopControlDataStream<WithSplitStreamingMethod_GetTeleopHeartbeatStream<WithSplitStreamingMethod_GetTelemetryListenerStream<WithSplitStreamingMethod_GetCustomDataChannelMessageStream<WithStreamedUnaryMethod_CreateEvent<WithStreamedUnaryMethod_CreateInterventionRequest<WithStreamedUnaryMethod_GetInterventionRequest<WithStreamedUnaryMethod_GetInterventionResponse<WithStreamedUnaryMethod_GetStreamsConfiguration<WithStreamedUnaryMethod_GetApplicationConfiguration<WithStreamedUnaryMethod_GetConfigBlobData<WithStreamedUnaryMethod_GetAgentConfiguration<WithStreamedUnaryMethod_GetBufferMetadata<WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_GetCommandRequest<WithSplitStreamingMethod_GetCommandRequestStream<WithStreamedUnaryMethod_SendCommandResponse<WithStreamedUnaryMethod_PostTransformFrame<WithStreamedUnaryMethod_SetBaseFrameID<WithStreamedUnaryMethod_ClearTransformTree<WithStreamedUnaryMethod_GetTeleopInfo<WithStreamedUnaryMethod_PostLanRtcOffer<WithStreamedUnaryMethod_SendOnCustomDataChannel<WithStreamedUnaryMethod_PostGenericAPIRequest<WithStreamedUnaryMethod_PostGenericAPIUnbufferedRequest<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_PostData<WithStreamedUnaryMethod_PostDataMulti<WithSplitStreamingMethod_GetTeleopControlDataStream<WithSplitStreamingMethod_GetTeleopHeartbeatStream<WithSplitStreamingMethod_GetTelemetryListenerStream<WithSplitStreamingMethod_GetCustomDataChannelMessageStream<WithStreamedUnaryMethod_CreateEvent<WithStreamedUnaryMethod_CreateInterventionRequest<WithStreamedUnaryMethod_GetInterventionRequest<WithStreamedUnaryMethod_GetInterventionResponse<WithStreamedUnaryMethod_GetStreamsConfiguration<WithStreamedUnaryMethod_GetApplicationConfiguration<WithStreamedUnaryMethod_GetConfigBlobData<WithStreamedUnaryMethod_GetAgentConfiguration<WithStreamedUnaryMethod_GetBufferMetadata<WithStreamedUnaryMethod_QueryDatapoints<WithStreamedUnaryMethod_QueryEvents<WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_GetCommandRequest<WithSplitStreamingMethod_GetCommandRequestStream<WithStreamedUnaryMethod_SendCommandResponse<WithStreamedUnaryMethod_PostTransformFrame<WithStreamedUnaryMethod_SetBaseFrameID<WithStreamedUnaryMethod_ClearTransformTree<WithStreamedUnaryMethod_GetTeleopInfo<WithStreamedUnaryMethod_PostLanRtcOffer<WithStreamedUnaryMethod_SendOnCustomDataChannel<WithStreamedUnaryMethod_PostGenericAPIRequest<WithStreamedUnaryMethod_PostGenericAPIUnbufferedRequest<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace agent

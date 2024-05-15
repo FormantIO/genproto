@@ -39,6 +39,8 @@ static const char* Agent_method_names[] = {
   "/v1.agent.Agent/GetConfigBlobData",
   "/v1.agent.Agent/GetAgentConfiguration",
   "/v1.agent.Agent/GetBufferMetadata",
+  "/v1.agent.Agent/QueryDatapoints",
+  "/v1.agent.Agent/QueryEvents",
   "/v1.agent.Agent/Health",
   "/v1.agent.Agent/GetCommandRequest",
   "/v1.agent.Agent/GetCommandRequestStream",
@@ -76,18 +78,20 @@ Agent::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, con
   , rpcmethod_GetConfigBlobData_(Agent_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetAgentConfiguration_(Agent_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetBufferMetadata_(Agent_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Health_(Agent_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCommandRequest_(Agent_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCommandRequestStream_(Agent_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_SendCommandResponse_(Agent_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostTransformFrame_(Agent_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetBaseFrameID_(Agent_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ClearTransformTree_(Agent_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetTeleopInfo_(Agent_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostLanRtcOffer_(Agent_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendOnCustomDataChannel_(Agent_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostGenericAPIRequest_(Agent_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostGenericAPIUnbufferedRequest_(Agent_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_QueryDatapoints_(Agent_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_QueryEvents_(Agent_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Health_(Agent_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCommandRequest_(Agent_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCommandRequestStream_(Agent_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_SendCommandResponse_(Agent_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PostTransformFrame_(Agent_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetBaseFrameID_(Agent_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ClearTransformTree_(Agent_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTeleopInfo_(Agent_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PostLanRtcOffer_(Agent_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendOnCustomDataChannel_(Agent_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PostGenericAPIRequest_(Agent_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PostGenericAPIUnbufferedRequest_(Agent_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientWriter< ::v1::model::Datapoint>* Agent::Stub::StreamDataRaw(::grpc::ClientContext* context, ::v1::agent::StreamDataResponse* response) {
@@ -419,6 +423,52 @@ void Agent::Stub::async::GetBufferMetadata(::grpc::ClientContext* context, const
 ::grpc::ClientAsyncResponseReader< ::v1::agent::GetBufferMetadataResponse>* Agent::Stub::AsyncGetBufferMetadataRaw(::grpc::ClientContext* context, const ::v1::agent::GetBufferMetadataRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetBufferMetadataRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Agent::Stub::QueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::v1::agent::QueryDatapointsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::QueryDatapointsRequest, ::v1::agent::QueryDatapointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_QueryDatapoints_, context, request, response);
+}
+
+void Agent::Stub::async::QueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest* request, ::v1::agent::QueryDatapointsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::QueryDatapointsRequest, ::v1::agent::QueryDatapointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_QueryDatapoints_, context, request, response, std::move(f));
+}
+
+void Agent::Stub::async::QueryDatapoints(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest* request, ::v1::agent::QueryDatapointsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_QueryDatapoints_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::QueryDatapointsResponse>* Agent::Stub::PrepareAsyncQueryDatapointsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::QueryDatapointsResponse, ::v1::agent::QueryDatapointsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_QueryDatapoints_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::QueryDatapointsResponse>* Agent::Stub::AsyncQueryDatapointsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryDatapointsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncQueryDatapointsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Agent::Stub::QueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::v1::agent::QueryEventsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::v1::agent::QueryEventsRequest, ::v1::agent::QueryEventsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_QueryEvents_, context, request, response);
+}
+
+void Agent::Stub::async::QueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest* request, ::v1::agent::QueryEventsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::v1::agent::QueryEventsRequest, ::v1::agent::QueryEventsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_QueryEvents_, context, request, response, std::move(f));
+}
+
+void Agent::Stub::async::QueryEvents(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest* request, ::v1::agent::QueryEventsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_QueryEvents_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::QueryEventsResponse>* Agent::Stub::PrepareAsyncQueryEventsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::v1::agent::QueryEventsResponse, ::v1::agent::QueryEventsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_QueryEvents_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::v1::agent::QueryEventsResponse>* Agent::Stub::AsyncQueryEventsRaw(::grpc::ClientContext* context, const ::v1::agent::QueryEventsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncQueryEventsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -856,6 +906,26 @@ Agent::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Agent_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::QueryDatapointsRequest, ::v1::agent::QueryDatapointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Agent::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::v1::agent::QueryDatapointsRequest* req,
+             ::v1::agent::QueryDatapointsResponse* resp) {
+               return service->QueryDatapoints(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Agent_method_names[17],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::QueryEventsRequest, ::v1::agent::QueryEventsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Agent::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::v1::agent::QueryEventsRequest* req,
+             ::v1::agent::QueryEventsResponse* resp) {
+               return service->QueryEvents(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Agent_method_names[18],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::HealthRequest, ::v1::agent::HealthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
              ::grpc::ServerContext* ctx,
@@ -864,7 +934,7 @@ Agent::Service::Service() {
                return service->Health(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[17],
+      Agent_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetCommandRequestRequest, ::v1::agent::GetCommandRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
@@ -874,7 +944,7 @@ Agent::Service::Service() {
                return service->GetCommandRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[18],
+      Agent_method_names[20],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Agent::Service, ::v1::agent::GetCommandRequestStreamRequest, ::v1::agent::GetCommandRequestStreamResponse>(
           [](Agent::Service* service,
@@ -884,7 +954,7 @@ Agent::Service::Service() {
                return service->GetCommandRequestStream(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[19],
+      Agent_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SendCommandResponseRequest, ::v1::agent::SendCommandResponseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
@@ -894,7 +964,7 @@ Agent::Service::Service() {
                return service->SendCommandResponse(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[20],
+      Agent_method_names[22],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::TransformFrame, ::v1::agent::PostTransformFrameResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
@@ -904,7 +974,7 @@ Agent::Service::Service() {
                return service->PostTransformFrame(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[21],
+      Agent_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SetBaseFrameIDRequest, ::v1::agent::SetBaseFrameIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
@@ -914,7 +984,7 @@ Agent::Service::Service() {
                return service->SetBaseFrameID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[22],
+      Agent_method_names[24],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::ClearTransformTreeRequest, ::v1::agent::ClearTransformTreeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
@@ -924,7 +994,7 @@ Agent::Service::Service() {
                return service->ClearTransformTree(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[23],
+      Agent_method_names[25],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::GetTeleopInfoRequest, ::v1::agent::GetTeleopInfoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
@@ -934,7 +1004,7 @@ Agent::Service::Service() {
                return service->GetTeleopInfo(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[24],
+      Agent_method_names[26],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::PostLanRtcOfferRequest, ::v1::agent::PostLanRtcOfferResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
@@ -944,7 +1014,7 @@ Agent::Service::Service() {
                return service->PostLanRtcOffer(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[25],
+      Agent_method_names[27],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::agent::SendOnCustomDataChannelRequest, ::v1::agent::SendOnCustomDataChannelResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
@@ -954,7 +1024,7 @@ Agent::Service::Service() {
                return service->SendOnCustomDataChannel(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[26],
+      Agent_method_names[28],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
@@ -964,7 +1034,7 @@ Agent::Service::Service() {
                return service->PostGenericAPIRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Agent_method_names[27],
+      Agent_method_names[29],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Agent::Service, ::v1::model::GenericAPIDatapoint, ::v1::agent::PostGenericAPIUnbufferedRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Agent::Service* service,
@@ -1084,6 +1154,20 @@ Agent::Service::~Service() {
 }
 
 ::grpc::Status Agent::Service::GetBufferMetadata(::grpc::ServerContext* context, const ::v1::agent::GetBufferMetadataRequest* request, ::v1::agent::GetBufferMetadataResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Agent::Service::QueryDatapoints(::grpc::ServerContext* context, const ::v1::agent::QueryDatapointsRequest* request, ::v1::agent::QueryDatapointsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Agent::Service::QueryEvents(::grpc::ServerContext* context, const ::v1::agent::QueryEventsRequest* request, ::v1::agent::QueryEventsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
