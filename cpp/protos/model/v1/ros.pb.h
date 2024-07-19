@@ -99,12 +99,13 @@ enum ROSTopicType : int {
   GEOMETRY_MSGS_POINT = 14,
   VISUALIZATION_MSGS_MARKER_ARRAY = 15,
   NAV_MSGS_ODOMETRY = 16,
+  SENSOR_MSGS_JOY = 17,
   ROSTopicType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ROSTopicType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool ROSTopicType_IsValid(int value);
 constexpr ROSTopicType ROSTopicType_MIN = UNKNOWN;
-constexpr ROSTopicType ROSTopicType_MAX = NAV_MSGS_ODOMETRY;
+constexpr ROSTopicType ROSTopicType_MAX = SENSOR_MSGS_JOY;
 constexpr int ROSTopicType_ARRAYSIZE = ROSTopicType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ROSTopicType_descriptor();
@@ -700,6 +701,7 @@ class ROSMessageToPublish final :
     kNumeric = 10,
     kPoseWithCovariance = 11,
     kPoint = 12,
+    kJoy = 13,
     DATA_NOT_SET = 0,
   };
 
@@ -784,6 +786,7 @@ class ROSMessageToPublish final :
     kNumericFieldNumber = 10,
     kPoseWithCovarianceFieldNumber = 11,
     kPointFieldNumber = 12,
+    kJoyFieldNumber = 13,
   };
   // string stream = 1 [json_name = "stream"];
   void clear_stream();
@@ -979,6 +982,24 @@ class ROSMessageToPublish final :
       ::v1::model::Point* point);
   ::v1::model::Point* unsafe_arena_release_point();
 
+  // .v1.model.Joy joy = 13 [json_name = "joy"];
+  bool has_joy() const;
+  private:
+  bool _internal_has_joy() const;
+  public:
+  void clear_joy();
+  const ::v1::model::Joy& joy() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::Joy* release_joy();
+  ::v1::model::Joy* mutable_joy();
+  void set_allocated_joy(::v1::model::Joy* joy);
+  private:
+  const ::v1::model::Joy& _internal_joy() const;
+  ::v1::model::Joy* _internal_mutable_joy();
+  public:
+  void unsafe_arena_set_allocated_joy(
+      ::v1::model::Joy* joy);
+  ::v1::model::Joy* unsafe_arena_release_joy();
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.ROSMessageToPublish)
@@ -993,6 +1014,7 @@ class ROSMessageToPublish final :
   void set_has_numeric();
   void set_has_pose_with_covariance();
   void set_has_point();
+  void set_has_joy();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -1015,6 +1037,7 @@ class ROSMessageToPublish final :
     ::v1::model::Numeric* numeric_;
     ::v1::model::PoseWithCovariance* pose_with_covariance_;
     ::v1::model::Point* point_;
+    ::v1::model::Joy* joy_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2196,6 +2219,71 @@ inline ::v1::model::Point* ROSMessageToPublish::_internal_mutable_point() {
 inline ::v1::model::Point* ROSMessageToPublish::mutable_point() {
   // @@protoc_insertion_point(field_mutable:v1.model.ROSMessageToPublish.point)
   return _internal_mutable_point();
+}
+
+// .v1.model.Joy joy = 13 [json_name = "joy"];
+inline bool ROSMessageToPublish::_internal_has_joy() const {
+  return data_case() == kJoy;
+}
+inline bool ROSMessageToPublish::has_joy() const {
+  return _internal_has_joy();
+}
+inline void ROSMessageToPublish::set_has_joy() {
+  _oneof_case_[0] = kJoy;
+}
+inline ::v1::model::Joy* ROSMessageToPublish::release_joy() {
+  // @@protoc_insertion_point(field_release:v1.model.ROSMessageToPublish.joy)
+  if (_internal_has_joy()) {
+    clear_has_data();
+      ::v1::model::Joy* temp = data_.joy_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    data_.joy_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Joy& ROSMessageToPublish::_internal_joy() const {
+  return _internal_has_joy()
+      ? *data_.joy_
+      : reinterpret_cast< ::v1::model::Joy&>(::v1::model::_Joy_default_instance_);
+}
+inline const ::v1::model::Joy& ROSMessageToPublish::joy() const {
+  // @@protoc_insertion_point(field_get:v1.model.ROSMessageToPublish.joy)
+  return _internal_joy();
+}
+inline ::v1::model::Joy* ROSMessageToPublish::unsafe_arena_release_joy() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.ROSMessageToPublish.joy)
+  if (_internal_has_joy()) {
+    clear_has_data();
+    ::v1::model::Joy* temp = data_.joy_;
+    data_.joy_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ROSMessageToPublish::unsafe_arena_set_allocated_joy(::v1::model::Joy* joy) {
+  clear_data();
+  if (joy) {
+    set_has_joy();
+    data_.joy_ = joy;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.ROSMessageToPublish.joy)
+}
+inline ::v1::model::Joy* ROSMessageToPublish::_internal_mutable_joy() {
+  if (!_internal_has_joy()) {
+    clear_data();
+    set_has_joy();
+    data_.joy_ = CreateMaybeMessage< ::v1::model::Joy >(GetArenaForAllocation());
+  }
+  return data_.joy_;
+}
+inline ::v1::model::Joy* ROSMessageToPublish::mutable_joy() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ROSMessageToPublish.joy)
+  return _internal_mutable_joy();
 }
 
 inline bool ROSMessageToPublish::has_data() const {

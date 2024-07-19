@@ -141,6 +141,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::ControlDatapoint, data_),
   PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse, _internal_metadata_),
@@ -168,8 +169,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, 7, sizeof(::v1::model::Datapoint_TagsEntry_DoNotUse)},
   { 9, -1, sizeof(::v1::model::Datapoint)},
   { 33, -1, sizeof(::v1::model::ControlDatapoint)},
-  { 47, 54, sizeof(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse)},
-  { 56, -1, sizeof(::v1::model::GenericAPIDatapoint)},
+  { 48, 55, sizeof(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse)},
+  { 57, -1, sizeof(::v1::model::GenericAPIDatapoint)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -209,7 +210,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "sformTree\0220\n\010odometry\030\023 \001(\0132\022.v1.model.O"
   "dometryH\000R\010odometry\0327\n\tTagsEntry\022\020\n\003key\030"
   "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\006\n\004"
-  "dataJ\004\010\006\020\007\"\372\002\n\020ControlDatapoint\022\026\n\006strea"
+  "dataJ\004\010\006\020\007\"\235\003\n\020ControlDatapoint\022\026\n\006strea"
   "m\030\001 \001(\tR\006stream\022\034\n\ttimestamp\030\002 \001(\003R\ttime"
   "stamp\022*\n\006bitset\030\003 \001(\0132\020.v1.model.BitsetH"
   "\000R\006bitset\022\'\n\005twist\030\004 \001(\0132\017.v1.model.Twis"
@@ -218,18 +219,18 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "l.NumericH\000R\007numeric\022P\n\024pose_with_covari"
   "ance\030\007 \001(\0132\034.v1.model.PoseWithCovariance"
   "H\000R\022poseWithCovariance\022\'\n\005point\030\010 \001(\0132\017."
-  "v1.model.PointH\000R\005pointB\006\n\004data\"\345\002\n\023Gene"
-  "ricAPIDatapoint\022\026\n\006Method\030\001 \001(\tR\006Method\022"
-  "\032\n\010Endpoint\030\002 \001(\tR\010Endpoint\022D\n\007Headers\030\003"
-  " \003(\0132*.v1.model.GenericAPIDatapoint.Head"
-  "ersEntryR\007Headers\022\022\n\004Body\030\004 \001(\tR\004Body\022 \n"
-  "\013IsRetryable\030\005 \001(\010R\013IsRetryable\022.\n\022Requi"
-  "reFormantAuth\030\006 \001(\010R\022RequireFormantAuth\022"
-  "2\n\024RetryableStatusCodes\030\007 \003(\003R\024Retryable"
-  "StatusCodes\032:\n\014HeadersEntry\022\020\n\003key\030\001 \001(\t"
-  "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B+Z)githu"
-  "b.com/FormantIO/genproto/go/v1/modelb\006pr"
-  "oto3"
+  "v1.model.PointH\000R\005point\022!\n\003joy\030\t \001(\0132\r.v"
+  "1.model.JoyH\000R\003joyB\006\n\004data\"\345\002\n\023GenericAP"
+  "IDatapoint\022\026\n\006Method\030\001 \001(\tR\006Method\022\032\n\010En"
+  "dpoint\030\002 \001(\tR\010Endpoint\022D\n\007Headers\030\003 \003(\0132"
+  "*.v1.model.GenericAPIDatapoint.HeadersEn"
+  "tryR\007Headers\022\022\n\004Body\030\004 \001(\tR\004Body\022 \n\013IsRe"
+  "tryable\030\005 \001(\010R\013IsRetryable\022.\n\022RequireFor"
+  "mantAuth\030\006 \001(\010R\022RequireFormantAuth\0222\n\024Re"
+  "tryableStatusCodes\030\007 \003(\003R\024RetryableStatu"
+  "sCodes\032:\n\014HeadersEntry\022\020\n\003key\030\001 \001(\tR\003key"
+  "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B+Z)github.com"
+  "/FormantIO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps[6] = {
   &::descriptor_table_protos_2fmodel_2fv1_2ffile_2eproto,
@@ -241,7 +242,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto = {
-  false, false, 1924, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 
+  false, false, 1959, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps, 6, 5,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto,
@@ -1616,6 +1617,7 @@ class ControlDatapoint::_Internal {
   static const ::v1::model::Numeric& numeric(const ControlDatapoint* msg);
   static const ::v1::model::PoseWithCovariance& pose_with_covariance(const ControlDatapoint* msg);
   static const ::v1::model::Point& point(const ControlDatapoint* msg);
+  static const ::v1::model::Joy& joy(const ControlDatapoint* msg);
 };
 
 const ::v1::model::Bitset&
@@ -1641,6 +1643,10 @@ ControlDatapoint::_Internal::pose_with_covariance(const ControlDatapoint* msg) {
 const ::v1::model::Point&
 ControlDatapoint::_Internal::point(const ControlDatapoint* msg) {
   return *msg->data_.point_;
+}
+const ::v1::model::Joy&
+ControlDatapoint::_Internal::joy(const ControlDatapoint* msg) {
+  return *msg->data_.joy_;
 }
 void ControlDatapoint::set_allocated_bitset(::v1::model::Bitset* bitset) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -1792,6 +1798,31 @@ void ControlDatapoint::clear_point() {
     clear_has_data();
   }
 }
+void ControlDatapoint::set_allocated_joy(::v1::model::Joy* joy) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_data();
+  if (joy) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(joy));
+    if (message_arena != submessage_arena) {
+      joy = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, joy, submessage_arena);
+    }
+    set_has_joy();
+    data_.joy_ = joy;
+  }
+  // @@protoc_insertion_point(field_set_allocated:v1.model.ControlDatapoint.joy)
+}
+void ControlDatapoint::clear_joy() {
+  if (_internal_has_joy()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete data_.joy_;
+    }
+    clear_has_data();
+  }
+}
 ControlDatapoint::ControlDatapoint(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -1831,6 +1862,10 @@ ControlDatapoint::ControlDatapoint(const ControlDatapoint& from)
     }
     case kPoint: {
       _internal_mutable_point()->::v1::model::Point::MergeFrom(from._internal_point());
+      break;
+    }
+    case kJoy: {
+      _internal_mutable_joy()->::v1::model::Joy::MergeFrom(from._internal_joy());
       break;
     }
     case DATA_NOT_SET: {
@@ -1906,6 +1941,12 @@ void ControlDatapoint::clear_data() {
     case kPoint: {
       if (GetArenaForAllocation() == nullptr) {
         delete data_.point_;
+      }
+      break;
+    }
+    case kJoy: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete data_.joy_;
       }
       break;
     }
@@ -1990,6 +2031,13 @@ const char* ControlDatapoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           ptr = ctx->ParseMessage(_internal_mutable_point(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.Joy joy = 9 [json_name = "joy"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          ptr = ctx->ParseMessage(_internal_mutable_joy(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2086,6 +2134,14 @@ failure:
         8, _Internal::point(this), target, stream);
   }
 
+  // .v1.model.Joy joy = 9 [json_name = "joy"];
+  if (_internal_has_joy()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        9, _Internal::joy(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2159,6 +2215,13 @@ size_t ControlDatapoint::ByteSizeLong() const {
           *data_.point_);
       break;
     }
+    // .v1.model.Joy joy = 9 [json_name = "joy"];
+    case kJoy: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *data_.joy_);
+      break;
+    }
     case DATA_NOT_SET: {
       break;
     }
@@ -2223,6 +2286,10 @@ void ControlDatapoint::MergeFrom(const ControlDatapoint& from) {
     }
     case kPoint: {
       _internal_mutable_point()->::v1::model::Point::MergeFrom(from._internal_point());
+      break;
+    }
+    case kJoy: {
+      _internal_mutable_joy()->::v1::model::Joy::MergeFrom(from._internal_joy());
       break;
     }
     case DATA_NOT_SET: {

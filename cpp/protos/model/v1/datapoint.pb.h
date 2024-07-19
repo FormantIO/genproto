@@ -683,6 +683,7 @@ class ControlDatapoint final :
     kNumeric = 6,
     kPoseWithCovariance = 7,
     kPoint = 8,
+    kJoy = 9,
     DATA_NOT_SET = 0,
   };
 
@@ -763,6 +764,7 @@ class ControlDatapoint final :
     kNumericFieldNumber = 6,
     kPoseWithCovarianceFieldNumber = 7,
     kPointFieldNumber = 8,
+    kJoyFieldNumber = 9,
   };
   // string stream = 1 [json_name = "stream"];
   void clear_stream();
@@ -895,6 +897,24 @@ class ControlDatapoint final :
       ::v1::model::Point* point);
   ::v1::model::Point* unsafe_arena_release_point();
 
+  // .v1.model.Joy joy = 9 [json_name = "joy"];
+  bool has_joy() const;
+  private:
+  bool _internal_has_joy() const;
+  public:
+  void clear_joy();
+  const ::v1::model::Joy& joy() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::Joy* release_joy();
+  ::v1::model::Joy* mutable_joy();
+  void set_allocated_joy(::v1::model::Joy* joy);
+  private:
+  const ::v1::model::Joy& _internal_joy() const;
+  ::v1::model::Joy* _internal_mutable_joy();
+  public:
+  void unsafe_arena_set_allocated_joy(
+      ::v1::model::Joy* joy);
+  ::v1::model::Joy* unsafe_arena_release_joy();
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.ControlDatapoint)
@@ -906,6 +926,7 @@ class ControlDatapoint final :
   void set_has_numeric();
   void set_has_pose_with_covariance();
   void set_has_point();
+  void set_has_joy();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -924,6 +945,7 @@ class ControlDatapoint final :
     ::v1::model::Numeric* numeric_;
     ::v1::model::PoseWithCovariance* pose_with_covariance_;
     ::v1::model::Point* point_;
+    ::v1::model::Joy* joy_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2745,6 +2767,71 @@ inline ::v1::model::Point* ControlDatapoint::_internal_mutable_point() {
 inline ::v1::model::Point* ControlDatapoint::mutable_point() {
   // @@protoc_insertion_point(field_mutable:v1.model.ControlDatapoint.point)
   return _internal_mutable_point();
+}
+
+// .v1.model.Joy joy = 9 [json_name = "joy"];
+inline bool ControlDatapoint::_internal_has_joy() const {
+  return data_case() == kJoy;
+}
+inline bool ControlDatapoint::has_joy() const {
+  return _internal_has_joy();
+}
+inline void ControlDatapoint::set_has_joy() {
+  _oneof_case_[0] = kJoy;
+}
+inline ::v1::model::Joy* ControlDatapoint::release_joy() {
+  // @@protoc_insertion_point(field_release:v1.model.ControlDatapoint.joy)
+  if (_internal_has_joy()) {
+    clear_has_data();
+      ::v1::model::Joy* temp = data_.joy_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    data_.joy_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Joy& ControlDatapoint::_internal_joy() const {
+  return _internal_has_joy()
+      ? *data_.joy_
+      : reinterpret_cast< ::v1::model::Joy&>(::v1::model::_Joy_default_instance_);
+}
+inline const ::v1::model::Joy& ControlDatapoint::joy() const {
+  // @@protoc_insertion_point(field_get:v1.model.ControlDatapoint.joy)
+  return _internal_joy();
+}
+inline ::v1::model::Joy* ControlDatapoint::unsafe_arena_release_joy() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.ControlDatapoint.joy)
+  if (_internal_has_joy()) {
+    clear_has_data();
+    ::v1::model::Joy* temp = data_.joy_;
+    data_.joy_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ControlDatapoint::unsafe_arena_set_allocated_joy(::v1::model::Joy* joy) {
+  clear_data();
+  if (joy) {
+    set_has_joy();
+    data_.joy_ = joy;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.ControlDatapoint.joy)
+}
+inline ::v1::model::Joy* ControlDatapoint::_internal_mutable_joy() {
+  if (!_internal_has_joy()) {
+    clear_data();
+    set_has_joy();
+    data_.joy_ = CreateMaybeMessage< ::v1::model::Joy >(GetArenaForAllocation());
+  }
+  return data_.joy_;
+}
+inline ::v1::model::Joy* ControlDatapoint::mutable_joy() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ControlDatapoint.joy)
+  return _internal_mutable_joy();
 }
 
 inline bool ControlDatapoint::has_data() const {

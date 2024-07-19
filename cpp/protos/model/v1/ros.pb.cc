@@ -125,6 +125,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fros_2epr
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSMessageToPublish, data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -154,7 +155,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBU
   "\001(\tR\tgoalTopic\0220\n\024base_reference_frame\030\006"
   " \001(\tR\022baseReferenceFrame\"D\n\020ROSTransform"
   "Tree\0220\n\024base_reference_frame\030\001 \001(\tR\022base"
-  "ReferenceFrame\"\361\003\n\023ROSMessageToPublish\022\026"
+  "ReferenceFrame\"\224\004\n\023ROSMessageToPublish\022\026"
   "\n\006stream\030\001 \001(\tR\006stream\022\031\n\010frame_id\030\007 \001(\t"
   "R\007frameId\022\034\n\ttimestamp\030\010 \001(\004R\ttimestamp\022"
   "\'\n\005twist\030\002 \001(\0132\017.v1.model.TwistH\000R\005twist"
@@ -166,20 +167,21 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBU
   "odel.NumericH\000R\007numeric\022P\n\024pose_with_cov"
   "ariance\030\013 \001(\0132\034.v1.model.PoseWithCovaria"
   "nceH\000R\022poseWithCovariance\022\'\n\005point\030\014 \001(\013"
-  "2\017.v1.model.PointH\000R\005pointB\006\n\004data*\302\003\n\014R"
-  "OSTopicType\022\013\n\007UNKNOWN\020\000\022\021\n\rSTD_MSGS_BOO"
-  "L\020\001\022 \n\034SENSOR_MSGS_COMPRESSED_IMAGE\020\002\022\023\n"
-  "\017STD_MSGS_STRING\020\003\022\026\n\022GEOMETRY_MSGS_POSE"
-  "\020\004\022\031\n\025ACTIONLIB_MSGS_GOALID\020\005\022\027\n\023GEOMETR"
-  "Y_MSGS_TWIST\020\006\022\024\n\020H264_VIDEO_FRAME\020\007\022\017\n\013"
-  "AUDIO_CHUNK\020\010\022\024\n\020STD_MSGS_FLOAT64\020\t\022\033\n\027S"
-  "ENSOR_MSGS_JOINT_STATE\020\n\022&\n\"GEOMETRY_MSG"
-  "S_POSE_WITH_COVARIANCE\020\013\022\034\n\030SENSOR_MSGS_"
-  "POINT_CLOUD2\020\014\022\032\n\026SENSOR_MSGS_LASER_SCAN"
-  "\020\r\022\027\n\023GEOMETRY_MSGS_POINT\020\016\022#\n\037VISUALIZA"
-  "TION_MSGS_MARKER_ARRAY\020\017\022\025\n\021NAV_MSGS_ODO"
-  "METRY\020\020B+Z)github.com/FormantIO/genproto"
-  "/go/v1/modelb\006proto3"
+  "2\017.v1.model.PointH\000R\005point\022!\n\003joy\030\r \001(\0132"
+  "\r.v1.model.JoyH\000R\003joyB\006\n\004data*\327\003\n\014ROSTop"
+  "icType\022\013\n\007UNKNOWN\020\000\022\021\n\rSTD_MSGS_BOOL\020\001\022 "
+  "\n\034SENSOR_MSGS_COMPRESSED_IMAGE\020\002\022\023\n\017STD_"
+  "MSGS_STRING\020\003\022\026\n\022GEOMETRY_MSGS_POSE\020\004\022\031\n"
+  "\025ACTIONLIB_MSGS_GOALID\020\005\022\027\n\023GEOMETRY_MSG"
+  "S_TWIST\020\006\022\024\n\020H264_VIDEO_FRAME\020\007\022\017\n\013AUDIO"
+  "_CHUNK\020\010\022\024\n\020STD_MSGS_FLOAT64\020\t\022\033\n\027SENSOR"
+  "_MSGS_JOINT_STATE\020\n\022&\n\"GEOMETRY_MSGS_POS"
+  "E_WITH_COVARIANCE\020\013\022\034\n\030SENSOR_MSGS_POINT"
+  "_CLOUD2\020\014\022\032\n\026SENSOR_MSGS_LASER_SCAN\020\r\022\027\n"
+  "\023GEOMETRY_MSGS_POINT\020\016\022#\n\037VISUALIZATION_"
+  "MSGS_MARKER_ARRAY\020\017\022\025\n\021NAV_MSGS_ODOMETRY"
+  "\020\020\022\023\n\017SENSOR_MSGS_JOY\020\021B+Z)github.com/Fo"
+  "rmantIO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
@@ -187,7 +189,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fros_2eproto = {
-  false, false, 1500, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 
+  false, false, 1556, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps, 2, 4,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fros_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fros_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fros_2eproto,
@@ -223,6 +225,7 @@ bool ROSTopicType_IsValid(int value) {
     case 14:
     case 15:
     case 16:
+    case 17:
       return true;
     default:
       return false;
@@ -1127,6 +1130,7 @@ class ROSMessageToPublish::_Internal {
   static const ::v1::model::Numeric& numeric(const ROSMessageToPublish* msg);
   static const ::v1::model::PoseWithCovariance& pose_with_covariance(const ROSMessageToPublish* msg);
   static const ::v1::model::Point& point(const ROSMessageToPublish* msg);
+  static const ::v1::model::Joy& joy(const ROSMessageToPublish* msg);
 };
 
 const ::v1::model::Twist&
@@ -1152,6 +1156,10 @@ ROSMessageToPublish::_Internal::pose_with_covariance(const ROSMessageToPublish* 
 const ::v1::model::Point&
 ROSMessageToPublish::_Internal::point(const ROSMessageToPublish* msg) {
   return *msg->data_.point_;
+}
+const ::v1::model::Joy&
+ROSMessageToPublish::_Internal::joy(const ROSMessageToPublish* msg) {
+  return *msg->data_.joy_;
 }
 void ROSMessageToPublish::set_allocated_twist(::v1::model::Twist* twist) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -1303,6 +1311,31 @@ void ROSMessageToPublish::clear_point() {
     clear_has_data();
   }
 }
+void ROSMessageToPublish::set_allocated_joy(::v1::model::Joy* joy) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_data();
+  if (joy) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(joy));
+    if (message_arena != submessage_arena) {
+      joy = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, joy, submessage_arena);
+    }
+    set_has_joy();
+    data_.joy_ = joy;
+  }
+  // @@protoc_insertion_point(field_set_allocated:v1.model.ROSMessageToPublish.joy)
+}
+void ROSMessageToPublish::clear_joy() {
+  if (_internal_has_joy()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete data_.joy_;
+    }
+    clear_has_data();
+  }
+}
 ROSMessageToPublish::ROSMessageToPublish(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -1359,6 +1392,10 @@ ROSMessageToPublish::ROSMessageToPublish(const ROSMessageToPublish& from)
     }
     case kPoint: {
       _internal_mutable_point()->::v1::model::Point::MergeFrom(from._internal_point());
+      break;
+    }
+    case kJoy: {
+      _internal_mutable_joy()->::v1::model::Joy::MergeFrom(from._internal_joy());
       break;
     }
     case DATA_NOT_SET: {
@@ -1448,6 +1485,12 @@ void ROSMessageToPublish::clear_data() {
     case kPoint: {
       if (GetArenaForAllocation() == nullptr) {
         delete data_.point_;
+      }
+      break;
+    }
+    case kJoy: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete data_.joy_;
       }
       break;
     }
@@ -1566,6 +1609,13 @@ const char* ROSMessageToPublish::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
           ptr = ctx->ParseMessage(_internal_mutable_point(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.Joy joy = 13 [json_name = "joy"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          ptr = ctx->ParseMessage(_internal_mutable_joy(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1694,6 +1744,14 @@ failure:
         12, _Internal::point(this), target, stream);
   }
 
+  // .v1.model.Joy joy = 13 [json_name = "joy"];
+  if (_internal_has_joy()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        13, _Internal::joy(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1793,6 +1851,13 @@ size_t ROSMessageToPublish::ByteSizeLong() const {
           *data_.point_);
       break;
     }
+    // .v1.model.Joy joy = 13 [json_name = "joy"];
+    case kJoy: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *data_.joy_);
+      break;
+    }
     case DATA_NOT_SET: {
       break;
     }
@@ -1872,6 +1937,10 @@ void ROSMessageToPublish::MergeFrom(const ROSMessageToPublish& from) {
     }
     case kPoint: {
       _internal_mutable_point()->::v1::model::Point::MergeFrom(from._internal_point());
+      break;
+    }
+    case kJoy: {
+      _internal_mutable_joy()->::v1::model::Joy::MergeFrom(from._internal_joy());
       break;
     }
     case DATA_NOT_SET: {

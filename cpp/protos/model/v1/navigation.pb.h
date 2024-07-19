@@ -48,7 +48,7 @@ struct TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[13]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -69,6 +69,9 @@ extern GoalIDDefaultTypeInternal _GoalID_default_instance_;
 class JointState;
 struct JointStateDefaultTypeInternal;
 extern JointStateDefaultTypeInternal _JointState_default_instance_;
+class Joy;
+struct JoyDefaultTypeInternal;
+extern JoyDefaultTypeInternal _Joy_default_instance_;
 class Localization;
 struct LocalizationDefaultTypeInternal;
 extern LocalizationDefaultTypeInternal _Localization_default_instance_;
@@ -103,6 +106,7 @@ template<> ::v1::model::ColorRGBA* Arena::CreateMaybeMessage<::v1::model::ColorR
 template<> ::v1::model::Goal* Arena::CreateMaybeMessage<::v1::model::Goal>(Arena*);
 template<> ::v1::model::GoalID* Arena::CreateMaybeMessage<::v1::model::GoalID>(Arena*);
 template<> ::v1::model::JointState* Arena::CreateMaybeMessage<::v1::model::JointState>(Arena*);
+template<> ::v1::model::Joy* Arena::CreateMaybeMessage<::v1::model::Joy>(Arena*);
 template<> ::v1::model::Localization* Arena::CreateMaybeMessage<::v1::model::Localization>(Arena*);
 template<> ::v1::model::Location* Arena::CreateMaybeMessage<::v1::model::Location>(Arena*);
 template<> ::v1::model::Map* Arena::CreateMaybeMessage<::v1::model::Map>(Arena*);
@@ -2676,6 +2680,176 @@ class Marker3DArray final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Marker3D > markers_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Joy final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:v1.model.Joy) */ {
+ public:
+  inline Joy() : Joy(nullptr) {}
+  ~Joy() override;
+  explicit constexpr Joy(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Joy(const Joy& from);
+  Joy(Joy&& from) noexcept
+    : Joy() {
+    *this = ::std::move(from);
+  }
+
+  inline Joy& operator=(const Joy& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Joy& operator=(Joy&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Joy& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Joy* internal_default_instance() {
+    return reinterpret_cast<const Joy*>(
+               &_Joy_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(Joy& a, Joy& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Joy* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Joy* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Joy* New() const final {
+    return new Joy();
+  }
+
+  Joy* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Joy>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Joy& from);
+  void MergeFrom(const Joy& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Joy* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "v1.model.Joy";
+  }
+  protected:
+  explicit Joy(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAxesFieldNumber = 1,
+    kButtonsFieldNumber = 2,
+  };
+  // repeated float axes = 1 [json_name = "axes"];
+  int axes_size() const;
+  private:
+  int _internal_axes_size() const;
+  public:
+  void clear_axes();
+  private:
+  float _internal_axes(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_axes() const;
+  void _internal_add_axes(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_axes();
+  public:
+  float axes(int index) const;
+  void set_axes(int index, float value);
+  void add_axes(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      axes() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_axes();
+
+  // repeated int32 buttons = 2 [json_name = "buttons"];
+  int buttons_size() const;
+  private:
+  int _internal_buttons_size() const;
+  public:
+  void clear_buttons();
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_buttons(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      _internal_buttons() const;
+  void _internal_add_buttons(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      _internal_mutable_buttons();
+  public:
+  ::PROTOBUF_NAMESPACE_ID::int32 buttons(int index) const;
+  void set_buttons(int index, ::PROTOBUF_NAMESPACE_ID::int32 value);
+  void add_buttons(::PROTOBUF_NAMESPACE_ID::int32 value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      buttons() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      mutable_buttons();
+
+  // @@protoc_insertion_point(class_scope:v1.model.Joy)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > axes_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 > buttons_;
+  mutable std::atomic<int> _buttons_cached_byte_size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto;
 };
@@ -5595,9 +5769,109 @@ Marker3DArray::markers() const {
   return markers_;
 }
 
+// -------------------------------------------------------------------
+
+// Joy
+
+// repeated float axes = 1 [json_name = "axes"];
+inline int Joy::_internal_axes_size() const {
+  return axes_.size();
+}
+inline int Joy::axes_size() const {
+  return _internal_axes_size();
+}
+inline void Joy::clear_axes() {
+  axes_.Clear();
+}
+inline float Joy::_internal_axes(int index) const {
+  return axes_.Get(index);
+}
+inline float Joy::axes(int index) const {
+  // @@protoc_insertion_point(field_get:v1.model.Joy.axes)
+  return _internal_axes(index);
+}
+inline void Joy::set_axes(int index, float value) {
+  axes_.Set(index, value);
+  // @@protoc_insertion_point(field_set:v1.model.Joy.axes)
+}
+inline void Joy::_internal_add_axes(float value) {
+  axes_.Add(value);
+}
+inline void Joy::add_axes(float value) {
+  _internal_add_axes(value);
+  // @@protoc_insertion_point(field_add:v1.model.Joy.axes)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Joy::_internal_axes() const {
+  return axes_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Joy::axes() const {
+  // @@protoc_insertion_point(field_list:v1.model.Joy.axes)
+  return _internal_axes();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Joy::_internal_mutable_axes() {
+  return &axes_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Joy::mutable_axes() {
+  // @@protoc_insertion_point(field_mutable_list:v1.model.Joy.axes)
+  return _internal_mutable_axes();
+}
+
+// repeated int32 buttons = 2 [json_name = "buttons"];
+inline int Joy::_internal_buttons_size() const {
+  return buttons_.size();
+}
+inline int Joy::buttons_size() const {
+  return _internal_buttons_size();
+}
+inline void Joy::clear_buttons() {
+  buttons_.Clear();
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Joy::_internal_buttons(int index) const {
+  return buttons_.Get(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Joy::buttons(int index) const {
+  // @@protoc_insertion_point(field_get:v1.model.Joy.buttons)
+  return _internal_buttons(index);
+}
+inline void Joy::set_buttons(int index, ::PROTOBUF_NAMESPACE_ID::int32 value) {
+  buttons_.Set(index, value);
+  // @@protoc_insertion_point(field_set:v1.model.Joy.buttons)
+}
+inline void Joy::_internal_add_buttons(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  buttons_.Add(value);
+}
+inline void Joy::add_buttons(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_add_buttons(value);
+  // @@protoc_insertion_point(field_add:v1.model.Joy.buttons)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+Joy::_internal_buttons() const {
+  return buttons_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+Joy::buttons() const {
+  // @@protoc_insertion_point(field_list:v1.model.Joy.buttons)
+  return _internal_buttons();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+Joy::_internal_mutable_buttons() {
+  return &buttons_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+Joy::mutable_buttons() {
+  // @@protoc_insertion_point(field_mutable_list:v1.model.Joy.buttons)
+  return _internal_mutable_buttons();
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
