@@ -33,6 +33,7 @@ constexpr Datapoint::Datapoint(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : tags_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , stream_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , label_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , timestamp_(int64_t{0})
   , _oneof_case_{}{}
 struct DatapointDefaultTypeInternal {
@@ -127,6 +128,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::v1::model::Datapoint, label_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Datapoint, data_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::ControlDatapoint, _internal_metadata_),
@@ -168,9 +170,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::v1::model::Datapoint_TagsEntry_DoNotUse)},
   { 9, -1, sizeof(::v1::model::Datapoint)},
-  { 33, -1, sizeof(::v1::model::ControlDatapoint)},
-  { 48, 55, sizeof(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse)},
-  { 57, -1, sizeof(::v1::model::GenericAPIDatapoint)},
+  { 34, -1, sizeof(::v1::model::ControlDatapoint)},
+  { 49, 56, sizeof(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse)},
+  { 58, -1, sizeof(::v1::model::GenericAPIDatapoint)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -187,7 +189,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "model/v1/health.proto\032\032protos/model/v1/m"
   "ath.proto\032 protos/model/v1/navigation.pr"
   "oto\032\032protos/model/v1/text.proto\032\033protos/"
-  "model/v1/media.proto\"\213\007\n\tDatapoint\022\026\n\006st"
+  "model/v1/media.proto\"\241\007\n\tDatapoint\022\026\n\006st"
   "ream\030\001 \001(\tR\006stream\022\034\n\ttimestamp\030\002 \001(\003R\tt"
   "imestamp\0221\n\004tags\030\003 \003(\0132\035.v1.model.Datapo"
   "int.TagsEntryR\004tags\022$\n\004text\030\004 \001(\0132\016.v1.m"
@@ -208,29 +210,30 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "v1.model.VideoH\000R\005video\022@\n\016transform_tre"
   "e\030\022 \001(\0132\027.v1.model.TransformTreeH\000R\rtran"
   "sformTree\0220\n\010odometry\030\023 \001(\0132\022.v1.model.O"
-  "dometryH\000R\010odometry\0327\n\tTagsEntry\022\020\n\003key\030"
-  "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\006\n\004"
-  "dataJ\004\010\006\020\007\"\235\003\n\020ControlDatapoint\022\026\n\006strea"
-  "m\030\001 \001(\tR\006stream\022\034\n\ttimestamp\030\002 \001(\003R\ttime"
-  "stamp\022*\n\006bitset\030\003 \001(\0132\020.v1.model.BitsetH"
-  "\000R\006bitset\022\'\n\005twist\030\004 \001(\0132\017.v1.model.Twis"
-  "tH\000R\005twist\022)\n\004pose\030\005 \001(\0132\023.v1.model.Tran"
-  "sformH\000R\004pose\022-\n\007numeric\030\006 \001(\0132\021.v1.mode"
-  "l.NumericH\000R\007numeric\022P\n\024pose_with_covari"
-  "ance\030\007 \001(\0132\034.v1.model.PoseWithCovariance"
-  "H\000R\022poseWithCovariance\022\'\n\005point\030\010 \001(\0132\017."
-  "v1.model.PointH\000R\005point\022!\n\003joy\030\t \001(\0132\r.v"
-  "1.model.JoyH\000R\003joyB\006\n\004data\"\345\002\n\023GenericAP"
-  "IDatapoint\022\026\n\006Method\030\001 \001(\tR\006Method\022\032\n\010En"
-  "dpoint\030\002 \001(\tR\010Endpoint\022D\n\007Headers\030\003 \003(\0132"
-  "*.v1.model.GenericAPIDatapoint.HeadersEn"
-  "tryR\007Headers\022\022\n\004Body\030\004 \001(\tR\004Body\022 \n\013IsRe"
-  "tryable\030\005 \001(\010R\013IsRetryable\022.\n\022RequireFor"
-  "mantAuth\030\006 \001(\010R\022RequireFormantAuth\0222\n\024Re"
-  "tryableStatusCodes\030\007 \003(\003R\024RetryableStatu"
-  "sCodes\032:\n\014HeadersEntry\022\020\n\003key\030\001 \001(\tR\003key"
-  "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B+Z)github.com"
-  "/FormantIO/genproto/go/v1/modelb\006proto3"
+  "dometryH\000R\010odometry\022\024\n\005label\030\024 \001(\tR\005labe"
+  "l\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu"
+  "e\030\002 \001(\tR\005value:\0028\001B\006\n\004dataJ\004\010\006\020\007\"\235\003\n\020Con"
+  "trolDatapoint\022\026\n\006stream\030\001 \001(\tR\006stream\022\034\n"
+  "\ttimestamp\030\002 \001(\003R\ttimestamp\022*\n\006bitset\030\003 "
+  "\001(\0132\020.v1.model.BitsetH\000R\006bitset\022\'\n\005twist"
+  "\030\004 \001(\0132\017.v1.model.TwistH\000R\005twist\022)\n\004pose"
+  "\030\005 \001(\0132\023.v1.model.TransformH\000R\004pose\022-\n\007n"
+  "umeric\030\006 \001(\0132\021.v1.model.NumericH\000R\007numer"
+  "ic\022P\n\024pose_with_covariance\030\007 \001(\0132\034.v1.mo"
+  "del.PoseWithCovarianceH\000R\022poseWithCovari"
+  "ance\022\'\n\005point\030\010 \001(\0132\017.v1.model.PointH\000R\005"
+  "point\022!\n\003joy\030\t \001(\0132\r.v1.model.JoyH\000R\003joy"
+  "B\006\n\004data\"\345\002\n\023GenericAPIDatapoint\022\026\n\006Meth"
+  "od\030\001 \001(\tR\006Method\022\032\n\010Endpoint\030\002 \001(\tR\010Endp"
+  "oint\022D\n\007Headers\030\003 \003(\0132*.v1.model.Generic"
+  "APIDatapoint.HeadersEntryR\007Headers\022\022\n\004Bo"
+  "dy\030\004 \001(\tR\004Body\022 \n\013IsRetryable\030\005 \001(\010R\013IsR"
+  "etryable\022.\n\022RequireFormantAuth\030\006 \001(\010R\022Re"
+  "quireFormantAuth\0222\n\024RetryableStatusCodes"
+  "\030\007 \003(\003R\024RetryableStatusCodes\032:\n\014HeadersE"
+  "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v"
+  "alue:\0028\001B+Z)github.com/FormantIO/genprot"
+  "o/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps[6] = {
   &::descriptor_table_protos_2fmodel_2fv1_2ffile_2eproto,
@@ -242,7 +245,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto = {
-  false, false, 1959, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 
+  false, false, 1981, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps, 6, 5,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto,
@@ -747,6 +750,11 @@ Datapoint::Datapoint(const Datapoint& from)
     stream_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_stream(), 
       GetArenaForAllocation());
   }
+  label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_label().empty()) {
+    label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_label(), 
+      GetArenaForAllocation());
+  }
   timestamp_ = from.timestamp_;
   clear_has_data();
   switch (from.data_case()) {
@@ -819,6 +827,7 @@ Datapoint::Datapoint(const Datapoint& from)
 
 void Datapoint::SharedCtor() {
 stream_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 timestamp_ = int64_t{0};
 clear_has_data();
 }
@@ -832,6 +841,7 @@ Datapoint::~Datapoint() {
 void Datapoint::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   stream_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  label_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (has_data()) {
     clear_data();
   }
@@ -960,6 +970,7 @@ void Datapoint::Clear() {
 
   tags_.Clear();
   stream_.ClearToEmpty();
+  label_.ClearToEmpty();
   timestamp_ = int64_t{0};
   clear_data();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1101,6 +1112,15 @@ const char* Datapoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 19:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
           ptr = ctx->ParseMessage(_internal_mutable_odometry(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string label = 20 [json_name = "label"];
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 162)) {
+          auto str = _internal_mutable_label();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Datapoint.label"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1315,6 +1335,16 @@ failure:
         19, _Internal::odometry(this), target, stream);
   }
 
+  // string label = 20 [json_name = "label"];
+  if (!this->label().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_label().data(), static_cast<int>(this->_internal_label().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.Datapoint.label");
+    target = stream->WriteStringMaybeAliased(
+        20, this->_internal_label(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1345,6 +1375,13 @@ size_t Datapoint::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_stream());
+  }
+
+  // string label = 20 [json_name = "label"];
+  if (!this->label().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_label());
   }
 
   // int64 timestamp = 2 [json_name = "timestamp"];
@@ -1499,6 +1536,9 @@ void Datapoint::MergeFrom(const Datapoint& from) {
   if (!from.stream().empty()) {
     _internal_set_stream(from._internal_stream());
   }
+  if (!from.label().empty()) {
+    _internal_set_label(from._internal_label());
+  }
   if (from.timestamp() != 0) {
     _internal_set_timestamp(from._internal_timestamp());
   }
@@ -1595,6 +1635,11 @@ void Datapoint::InternalSwap(Datapoint* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &stream_, GetArenaForAllocation(),
       &other->stream_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &label_, GetArenaForAllocation(),
+      &other->label_, other->GetArenaForAllocation()
   );
   swap(timestamp_, other->timestamp_);
   swap(data_, other->data_);

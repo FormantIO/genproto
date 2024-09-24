@@ -250,6 +250,7 @@ class Datapoint final :
   enum : int {
     kTagsFieldNumber = 3,
     kStreamFieldNumber = 1,
+    kLabelFieldNumber = 20,
     kTimestampFieldNumber = 2,
     kTextFieldNumber = 4,
     kNumericFieldNumber = 5,
@@ -296,6 +297,20 @@ class Datapoint final :
   const std::string& _internal_stream() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_stream(const std::string& value);
   std::string* _internal_mutable_stream();
+  public:
+
+  // string label = 20 [json_name = "label"];
+  void clear_label();
+  const std::string& label() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_label(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_label();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_label();
+  void set_allocated_label(std::string* label);
+  private:
+  const std::string& _internal_label() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_label(const std::string& value);
+  std::string* _internal_mutable_label();
   public:
 
   // int64 timestamp = 2 [json_name = "timestamp"];
@@ -610,6 +625,7 @@ class Datapoint final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> tags_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stream_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr label_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
   union DataUnion {
     constexpr DataUnion() : _constinit_{} {}
@@ -2299,6 +2315,51 @@ inline ::v1::model::Odometry* Datapoint::_internal_mutable_odometry() {
 inline ::v1::model::Odometry* Datapoint::mutable_odometry() {
   // @@protoc_insertion_point(field_mutable:v1.model.Datapoint.odometry)
   return _internal_mutable_odometry();
+}
+
+// string label = 20 [json_name = "label"];
+inline void Datapoint::clear_label() {
+  label_.ClearToEmpty();
+}
+inline const std::string& Datapoint::label() const {
+  // @@protoc_insertion_point(field_get:v1.model.Datapoint.label)
+  return _internal_label();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Datapoint::set_label(ArgT0&& arg0, ArgT... args) {
+ 
+ label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Datapoint.label)
+}
+inline std::string* Datapoint::mutable_label() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Datapoint.label)
+  return _internal_mutable_label();
+}
+inline const std::string& Datapoint::_internal_label() const {
+  return label_.Get();
+}
+inline void Datapoint::_internal_set_label(const std::string& value) {
+  
+  label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Datapoint::_internal_mutable_label() {
+  
+  return label_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Datapoint::release_label() {
+  // @@protoc_insertion_point(field_release:v1.model.Datapoint.label)
+  return label_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Datapoint::set_allocated_label(std::string* label) {
+  if (label != nullptr) {
+    
+  } else {
+    
+  }
+  label_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), label,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Datapoint.label)
 }
 
 inline bool Datapoint::has_data() const {
