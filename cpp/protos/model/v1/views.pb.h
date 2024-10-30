@@ -451,12 +451,11 @@ class ViewMetadata final :
     kSmartFleetIdFieldNumber = 16,
     kFilterFieldNumber = 12,
     kLayoutFieldNumber = 13,
+    kIndexFieldNumber = 17,
     kShowOnSingleDeviceFieldNumber = 7,
     kShowOnMultiDeviceFieldNumber = 8,
     kShowOnTeleopFieldNumber = 9,
-    kShowOnAnalyticsFieldNumber = 10,
     kShowTimelineFieldNumber = 11,
-    kIndexFieldNumber = 17,
   };
   // map<string, string> tags = 2 [json_name = "tags"];
   int tags_size() const;
@@ -627,6 +626,15 @@ class ViewMetadata final :
       PROTOBUF_NAMESPACE_ID::Struct* layout);
   PROTOBUF_NAMESPACE_ID::Struct* unsafe_arena_release_layout();
 
+  // int64 index = 17 [json_name = "index"];
+  void clear_index();
+  ::PROTOBUF_NAMESPACE_ID::int64 index() const;
+  void set_index(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_index() const;
+  void _internal_set_index(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
   // bool showOnSingleDevice = 7 [json_name = "showOnSingleDevice"];
   void clear_showonsingledevice();
   bool showonsingledevice() const;
@@ -654,15 +662,6 @@ class ViewMetadata final :
   void _internal_set_showonteleop(bool value);
   public:
 
-  // bool showOnAnalytics = 10 [json_name = "showOnAnalytics"];
-  void clear_showonanalytics();
-  bool showonanalytics() const;
-  void set_showonanalytics(bool value);
-  private:
-  bool _internal_showonanalytics() const;
-  void _internal_set_showonanalytics(bool value);
-  public:
-
   // bool showTimeline = 11 [json_name = "showTimeline"];
   void clear_showtimeline();
   bool showtimeline() const;
@@ -670,15 +669,6 @@ class ViewMetadata final :
   private:
   bool _internal_showtimeline() const;
   void _internal_set_showtimeline(bool value);
-  public:
-
-  // int64 index = 17 [json_name = "index"];
-  void clear_index();
-  ::PROTOBUF_NAMESPACE_ID::int64 index() const;
-  void set_index(::PROTOBUF_NAMESPACE_ID::int64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_index() const;
-  void _internal_set_index(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:v1.model.ViewMetadata)
@@ -703,12 +693,11 @@ class ViewMetadata final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr smartfleetid_;
   ::v1::model::Filter* filter_;
   PROTOBUF_NAMESPACE_ID::Struct* layout_;
+  ::PROTOBUF_NAMESPACE_ID::int64 index_;
   bool showonsingledevice_;
   bool showonmultidevice_;
   bool showonteleop_;
-  bool showonanalytics_;
   bool showtimeline_;
-  ::PROTOBUF_NAMESPACE_ID::int64 index_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fviews_2eproto;
 };
@@ -1605,26 +1594,6 @@ inline void ViewMetadata::_internal_set_showonteleop(bool value) {
 inline void ViewMetadata::set_showonteleop(bool value) {
   _internal_set_showonteleop(value);
   // @@protoc_insertion_point(field_set:v1.model.ViewMetadata.showOnTeleop)
-}
-
-// bool showOnAnalytics = 10 [json_name = "showOnAnalytics"];
-inline void ViewMetadata::clear_showonanalytics() {
-  showonanalytics_ = false;
-}
-inline bool ViewMetadata::_internal_showonanalytics() const {
-  return showonanalytics_;
-}
-inline bool ViewMetadata::showonanalytics() const {
-  // @@protoc_insertion_point(field_get:v1.model.ViewMetadata.showOnAnalytics)
-  return _internal_showonanalytics();
-}
-inline void ViewMetadata::_internal_set_showonanalytics(bool value) {
-  
-  showonanalytics_ = value;
-}
-inline void ViewMetadata::set_showonanalytics(bool value) {
-  _internal_set_showonanalytics(value);
-  // @@protoc_insertion_point(field_set:v1.model.ViewMetadata.showOnAnalytics)
 }
 
 // bool showTimeline = 11 [json_name = "showTimeline"];

@@ -54,12 +54,11 @@ constexpr ViewMetadata::ViewMetadata(
   , smartfleetid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , filter_(nullptr)
   , layout_(nullptr)
+  , index_(int64_t{0})
   , showonsingledevice_(false)
   , showonmultidevice_(false)
   , showonteleop_(false)
-  , showonanalytics_(false)
-  , showtimeline_(false)
-  , index_(int64_t{0}){}
+  , showtimeline_(false){}
 struct ViewMetadataDefaultTypeInternal {
   constexpr ViewMetadataDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -159,7 +158,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fviews_2e
   PROTOBUF_FIELD_OFFSET(::v1::model::ViewMetadata, showonsingledevice_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ViewMetadata, showonmultidevice_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ViewMetadata, showonteleop_),
-  PROTOBUF_FIELD_OFFSET(::v1::model::ViewMetadata, showonanalytics_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ViewMetadata, showtimeline_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ViewMetadata, filter_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ViewMetadata, layout_),
@@ -210,10 +208,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::v1::model::ViewsMetadata)},
   { 6, 13, sizeof(::v1::model::ViewMetadata_TagsEntry_DoNotUse)},
   { 15, -1, sizeof(::v1::model::ViewMetadata)},
-  { 37, 44, sizeof(::v1::model::Filter_TagsEntry_DoNotUse)},
-  { 46, 53, sizeof(::v1::model::Filter_NotTagsEntry_DoNotUse)},
-  { 55, -1, sizeof(::v1::model::Filter)},
-  { 67, -1, sizeof(::v1::model::ViewConfiguration)},
+  { 36, 43, sizeof(::v1::model::Filter_TagsEntry_DoNotUse)},
+  { 45, 52, sizeof(::v1::model::Filter_NotTagsEntry_DoNotUse)},
+  { 54, -1, sizeof(::v1::model::Filter)},
+  { 66, -1, sizeof(::v1::model::ViewConfiguration)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -231,8 +229,8 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fviews_2eproto[] PROTO
   "\037google/protobuf/timestamp.proto\032\037protos"
   "/model/v1/datapoint.proto\032\034google/protob"
   "uf/struct.proto\"=\n\rViewsMetadata\022,\n\005view"
-  "s\030\001 \003(\0132\026.v1.model.ViewMetadataR\005views\"\232"
-  "\006\n\014ViewMetadata\022\016\n\002id\030\001 \001(\tR\002id\0224\n\004tags\030"
+  "s\030\001 \003(\0132\026.v1.model.ViewMetadataR\005views\"\366"
+  "\005\n\014ViewMetadata\022\016\n\002id\030\001 \001(\tR\002id\0224\n\004tags\030"
   "\002 \003(\0132 .v1.model.ViewMetadata.TagsEntryR"
   "\004tags\022&\n\016organizationId\030\003 \001(\tR\016organizat"
   "ionId\022\022\n\004name\030\004 \001(\tR\004name\022 \n\013description"
@@ -240,32 +238,31 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fviews_2eproto[] PROTO
   "\022showOnSingleDevice\030\007 \001(\010R\022showOnSingleD"
   "evice\022,\n\021showOnMultiDevice\030\010 \001(\010R\021showOn"
   "MultiDevice\022\"\n\014showOnTeleop\030\t \001(\010R\014showO"
-  "nTeleop\022(\n\017showOnAnalytics\030\n \001(\010R\017showOn"
-  "Analytics\022\"\n\014showTimeline\030\013 \001(\010R\014showTim"
-  "eline\022(\n\006filter\030\014 \001(\0132\020.v1.model.FilterR"
-  "\006filter\022/\n\006layout\030\r \001(\0132\027.google.protobu"
-  "f.StructR\006layout\022\036\n\nlayoutType\030\016 \001(\tR\nla"
-  "youtType\022A\n\rconfiguration\030\017 \003(\0132\033.v1.mod"
-  "el.ViewConfigurationR\rconfiguration\022\"\n\014s"
-  "martFleetId\030\020 \001(\tR\014smartFleetId\022\024\n\005index"
-  "\030\021 \001(\003R\005index\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR"
-  "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"S\n\nLayout"
-  "Type\022\r\n\tDASHBOARD\020\000\022\013\n\007OBSERVE\020\001\022\016\n\nFULL"
-  "SCREEN\020\002\022\r\n\tANALYTICS\020\003\022\n\n\006TELEOP\020\004\"\350\002\n\006"
-  "Filter\022.\n\004tags\030\001 \003(\0132\032.v1.model.Filter.T"
-  "agsEntryR\004tags\022\024\n\005names\030\002 \003(\tR\005names\022\024\n\005"
-  "types\030\003 \003(\tR\005types\022\034\n\tdeviceIds\030\004 \003(\tR\td"
-  "eviceIds\0227\n\007notTags\030\005 \003(\0132\035.v1.model.Fil"
-  "ter.NotTagsEntryR\007notTags\022\032\n\010notNames\030\006 "
-  "\003(\tR\010notNames\022\032\n\010agentIds\030\007 \003(\tR\010agentId"
-  "s\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu"
-  "e\030\002 \001(\tR\005value:\0028\001\032:\n\014NotTagsEntry\022\020\n\003ke"
-  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\206"
-  "\001\n\021ViewConfiguration\022\036\n\nstreamName\030\001 \001(\t"
-  "R\nstreamName\022\022\n\004type\030\002 \001(\tR\004type\022=\n\rconf"
-  "iguration\030\003 \001(\0132\027.google.protobuf.Struct"
-  "R\rconfigurationB+Z)github.com/FormantIO/"
-  "genproto/go/v1/modelb\006proto3"
+  "nTeleop\022\"\n\014showTimeline\030\013 \001(\010R\014showTimel"
+  "ine\022(\n\006filter\030\014 \001(\0132\020.v1.model.FilterR\006f"
+  "ilter\022/\n\006layout\030\r \001(\0132\027.google.protobuf."
+  "StructR\006layout\022\036\n\nlayoutType\030\016 \001(\tR\nlayo"
+  "utType\022A\n\rconfiguration\030\017 \003(\0132\033.v1.model"
+  ".ViewConfigurationR\rconfiguration\022\"\n\014sma"
+  "rtFleetId\030\020 \001(\tR\014smartFleetId\022\024\n\005index\030\021"
+  " \001(\003R\005index\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003k"
+  "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"S\n\nLayoutTy"
+  "pe\022\r\n\tDASHBOARD\020\000\022\013\n\007OBSERVE\020\001\022\016\n\nFULLSC"
+  "REEN\020\002\022\r\n\tANALYTICS\020\003\022\n\n\006TELEOP\020\004J\004\010\n\020\013\""
+  "\350\002\n\006Filter\022.\n\004tags\030\001 \003(\0132\032.v1.model.Filt"
+  "er.TagsEntryR\004tags\022\024\n\005names\030\002 \003(\tR\005names"
+  "\022\024\n\005types\030\003 \003(\tR\005types\022\034\n\tdeviceIds\030\004 \003("
+  "\tR\tdeviceIds\0227\n\007notTags\030\005 \003(\0132\035.v1.model"
+  ".Filter.NotTagsEntryR\007notTags\022\032\n\010notName"
+  "s\030\006 \003(\tR\010notNames\022\032\n\010agentIds\030\007 \003(\tR\010age"
+  "ntIds\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005"
+  "value\030\002 \001(\tR\005value:\0028\001\032:\n\014NotTagsEntry\022\020"
+  "\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\002"
+  "8\001\"\206\001\n\021ViewConfiguration\022\036\n\nstreamName\030\001"
+  " \001(\tR\nstreamName\022\022\n\004type\030\002 \001(\tR\004type\022=\n\r"
+  "configuration\030\003 \001(\0132\027.google.protobuf.St"
+  "ructR\rconfigurationB+Z)github.com/Forman"
+  "tIO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fviews_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2fstruct_2eproto,
@@ -274,7 +271,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fviews_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fviews_2eproto = {
-  false, false, 1548, descriptor_table_protodef_protos_2fmodel_2fv1_2fviews_2eproto, "protos/model/v1/views.proto", 
+  false, false, 1512, descriptor_table_protodef_protos_2fmodel_2fv1_2fviews_2eproto, "protos/model/v1/views.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fviews_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fviews_2eproto_deps, 3, 7,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fviews_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fviews_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fviews_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fviews_2eproto,
@@ -609,9 +606,9 @@ ViewMetadata::ViewMetadata(const ViewMetadata& from)
   } else {
     layout_ = nullptr;
   }
-  ::memcpy(&showonsingledevice_, &from.showonsingledevice_,
-    static_cast<size_t>(reinterpret_cast<char*>(&index_) -
-    reinterpret_cast<char*>(&showonsingledevice_)) + sizeof(index_));
+  ::memcpy(&index_, &from.index_,
+    static_cast<size_t>(reinterpret_cast<char*>(&showtimeline_) -
+    reinterpret_cast<char*>(&index_)) + sizeof(showtimeline_));
   // @@protoc_insertion_point(copy_constructor:v1.model.ViewMetadata)
 }
 
@@ -625,8 +622,8 @@ layouttype_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 smartfleetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&filter_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&index_) -
-    reinterpret_cast<char*>(&filter_)) + sizeof(index_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&showtimeline_) -
+    reinterpret_cast<char*>(&filter_)) + sizeof(showtimeline_));
 }
 
 ViewMetadata::~ViewMetadata() {
@@ -685,9 +682,9 @@ void ViewMetadata::Clear() {
     delete layout_;
   }
   layout_ = nullptr;
-  ::memset(&showonsingledevice_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&index_) -
-      reinterpret_cast<char*>(&showonsingledevice_)) + sizeof(index_));
+  ::memset(&index_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&showtimeline_) -
+      reinterpret_cast<char*>(&index_)) + sizeof(showtimeline_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -772,13 +769,6 @@ const char* ViewMetadata::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
           showonteleop_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool showOnAnalytics = 10 [json_name = "showOnAnalytics"];
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
-          showonanalytics_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -983,12 +973,6 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(9, this->_internal_showonteleop(), target);
   }
 
-  // bool showOnAnalytics = 10 [json_name = "showOnAnalytics"];
-  if (this->showonanalytics() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(10, this->_internal_showonanalytics(), target);
-  }
-
   // bool showTimeline = 11 [json_name = "showTimeline"];
   if (this->showtimeline() != 0) {
     target = stream->EnsureSpace(target);
@@ -1140,6 +1124,13 @@ size_t ViewMetadata::ByteSizeLong() const {
         *layout_);
   }
 
+  // int64 index = 17 [json_name = "index"];
+  if (this->index() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_index());
+  }
+
   // bool showOnSingleDevice = 7 [json_name = "showOnSingleDevice"];
   if (this->showonsingledevice() != 0) {
     total_size += 1 + 1;
@@ -1155,21 +1146,9 @@ size_t ViewMetadata::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  // bool showOnAnalytics = 10 [json_name = "showOnAnalytics"];
-  if (this->showonanalytics() != 0) {
-    total_size += 1 + 1;
-  }
-
   // bool showTimeline = 11 [json_name = "showTimeline"];
   if (this->showtimeline() != 0) {
     total_size += 1 + 1;
-  }
-
-  // int64 index = 17 [json_name = "index"];
-  if (this->index() != 0) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_index());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1232,6 +1211,9 @@ void ViewMetadata::MergeFrom(const ViewMetadata& from) {
   if (from.has_layout()) {
     _internal_mutable_layout()->PROTOBUF_NAMESPACE_ID::Struct::MergeFrom(from._internal_layout());
   }
+  if (from.index() != 0) {
+    _internal_set_index(from._internal_index());
+  }
   if (from.showonsingledevice() != 0) {
     _internal_set_showonsingledevice(from._internal_showonsingledevice());
   }
@@ -1241,14 +1223,8 @@ void ViewMetadata::MergeFrom(const ViewMetadata& from) {
   if (from.showonteleop() != 0) {
     _internal_set_showonteleop(from._internal_showonteleop());
   }
-  if (from.showonanalytics() != 0) {
-    _internal_set_showonanalytics(from._internal_showonanalytics());
-  }
   if (from.showtimeline() != 0) {
     _internal_set_showtimeline(from._internal_showtimeline());
-  }
-  if (from.index() != 0) {
-    _internal_set_index(from._internal_index());
   }
 }
 
@@ -1311,8 +1287,8 @@ void ViewMetadata::InternalSwap(ViewMetadata* other) {
       &other->smartfleetid_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ViewMetadata, index_)
-      + sizeof(ViewMetadata::index_)
+      PROTOBUF_FIELD_OFFSET(ViewMetadata, showtimeline_)
+      + sizeof(ViewMetadata::showtimeline_)
       - PROTOBUF_FIELD_OFFSET(ViewMetadata, filter_)>(
           reinterpret_cast<char*>(&filter_),
           reinterpret_cast<char*>(&other->filter_));
