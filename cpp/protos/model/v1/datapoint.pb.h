@@ -700,6 +700,7 @@ class ControlDatapoint final :
     kPoseWithCovariance = 7,
     kPoint = 8,
     kJoy = 9,
+    kBit = 10,
     DATA_NOT_SET = 0,
   };
 
@@ -781,6 +782,7 @@ class ControlDatapoint final :
     kPoseWithCovarianceFieldNumber = 7,
     kPointFieldNumber = 8,
     kJoyFieldNumber = 9,
+    kBitFieldNumber = 10,
   };
   // string stream = 1 [json_name = "stream"];
   void clear_stream();
@@ -931,6 +933,24 @@ class ControlDatapoint final :
       ::v1::model::Joy* joy);
   ::v1::model::Joy* unsafe_arena_release_joy();
 
+  // .v1.model.Bit bit = 10 [json_name = "bit"];
+  bool has_bit() const;
+  private:
+  bool _internal_has_bit() const;
+  public:
+  void clear_bit();
+  const ::v1::model::Bit& bit() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::Bit* release_bit();
+  ::v1::model::Bit* mutable_bit();
+  void set_allocated_bit(::v1::model::Bit* bit);
+  private:
+  const ::v1::model::Bit& _internal_bit() const;
+  ::v1::model::Bit* _internal_mutable_bit();
+  public:
+  void unsafe_arena_set_allocated_bit(
+      ::v1::model::Bit* bit);
+  ::v1::model::Bit* unsafe_arena_release_bit();
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.ControlDatapoint)
@@ -943,6 +963,7 @@ class ControlDatapoint final :
   void set_has_pose_with_covariance();
   void set_has_point();
   void set_has_joy();
+  void set_has_bit();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -962,6 +983,7 @@ class ControlDatapoint final :
     ::v1::model::PoseWithCovariance* pose_with_covariance_;
     ::v1::model::Point* point_;
     ::v1::model::Joy* joy_;
+    ::v1::model::Bit* bit_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2893,6 +2915,71 @@ inline ::v1::model::Joy* ControlDatapoint::_internal_mutable_joy() {
 inline ::v1::model::Joy* ControlDatapoint::mutable_joy() {
   // @@protoc_insertion_point(field_mutable:v1.model.ControlDatapoint.joy)
   return _internal_mutable_joy();
+}
+
+// .v1.model.Bit bit = 10 [json_name = "bit"];
+inline bool ControlDatapoint::_internal_has_bit() const {
+  return data_case() == kBit;
+}
+inline bool ControlDatapoint::has_bit() const {
+  return _internal_has_bit();
+}
+inline void ControlDatapoint::set_has_bit() {
+  _oneof_case_[0] = kBit;
+}
+inline ::v1::model::Bit* ControlDatapoint::release_bit() {
+  // @@protoc_insertion_point(field_release:v1.model.ControlDatapoint.bit)
+  if (_internal_has_bit()) {
+    clear_has_data();
+      ::v1::model::Bit* temp = data_.bit_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    data_.bit_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Bit& ControlDatapoint::_internal_bit() const {
+  return _internal_has_bit()
+      ? *data_.bit_
+      : reinterpret_cast< ::v1::model::Bit&>(::v1::model::_Bit_default_instance_);
+}
+inline const ::v1::model::Bit& ControlDatapoint::bit() const {
+  // @@protoc_insertion_point(field_get:v1.model.ControlDatapoint.bit)
+  return _internal_bit();
+}
+inline ::v1::model::Bit* ControlDatapoint::unsafe_arena_release_bit() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.ControlDatapoint.bit)
+  if (_internal_has_bit()) {
+    clear_has_data();
+    ::v1::model::Bit* temp = data_.bit_;
+    data_.bit_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ControlDatapoint::unsafe_arena_set_allocated_bit(::v1::model::Bit* bit) {
+  clear_data();
+  if (bit) {
+    set_has_bit();
+    data_.bit_ = bit;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.ControlDatapoint.bit)
+}
+inline ::v1::model::Bit* ControlDatapoint::_internal_mutable_bit() {
+  if (!_internal_has_bit()) {
+    clear_data();
+    set_has_bit();
+    data_.bit_ = CreateMaybeMessage< ::v1::model::Bit >(GetArenaForAllocation());
+  }
+  return data_.bit_;
+}
+inline ::v1::model::Bit* ControlDatapoint::mutable_bit() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ControlDatapoint.bit)
+  return _internal_mutable_bit();
 }
 
 inline bool ControlDatapoint::has_data() const {

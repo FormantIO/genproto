@@ -144,6 +144,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::ControlDatapoint, data_),
   PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse, _internal_metadata_),
@@ -171,8 +172,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, 7, sizeof(::v1::model::Datapoint_TagsEntry_DoNotUse)},
   { 9, -1, sizeof(::v1::model::Datapoint)},
   { 34, -1, sizeof(::v1::model::ControlDatapoint)},
-  { 49, 56, sizeof(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse)},
-  { 58, -1, sizeof(::v1::model::GenericAPIDatapoint)},
+  { 50, 57, sizeof(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse)},
+  { 59, -1, sizeof(::v1::model::GenericAPIDatapoint)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -212,7 +213,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "sformTree\0220\n\010odometry\030\023 \001(\0132\022.v1.model.O"
   "dometryH\000R\010odometry\022\024\n\005label\030\024 \001(\tR\005labe"
   "l\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu"
-  "e\030\002 \001(\tR\005value:\0028\001B\006\n\004dataJ\004\010\006\020\007\"\235\003\n\020Con"
+  "e\030\002 \001(\tR\005value:\0028\001B\006\n\004dataJ\004\010\006\020\007\"\300\003\n\020Con"
   "trolDatapoint\022\026\n\006stream\030\001 \001(\tR\006stream\022\034\n"
   "\ttimestamp\030\002 \001(\003R\ttimestamp\022*\n\006bitset\030\003 "
   "\001(\0132\020.v1.model.BitsetH\000R\006bitset\022\'\n\005twist"
@@ -223,17 +224,18 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "del.PoseWithCovarianceH\000R\022poseWithCovari"
   "ance\022\'\n\005point\030\010 \001(\0132\017.v1.model.PointH\000R\005"
   "point\022!\n\003joy\030\t \001(\0132\r.v1.model.JoyH\000R\003joy"
-  "B\006\n\004data\"\345\002\n\023GenericAPIDatapoint\022\026\n\006Meth"
-  "od\030\001 \001(\tR\006Method\022\032\n\010Endpoint\030\002 \001(\tR\010Endp"
-  "oint\022D\n\007Headers\030\003 \003(\0132*.v1.model.Generic"
-  "APIDatapoint.HeadersEntryR\007Headers\022\022\n\004Bo"
-  "dy\030\004 \001(\tR\004Body\022 \n\013IsRetryable\030\005 \001(\010R\013IsR"
-  "etryable\022.\n\022RequireFormantAuth\030\006 \001(\010R\022Re"
-  "quireFormantAuth\0222\n\024RetryableStatusCodes"
-  "\030\007 \003(\003R\024RetryableStatusCodes\032:\n\014HeadersE"
-  "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v"
-  "alue:\0028\001B+Z)github.com/FormantIO/genprot"
-  "o/go/v1/modelb\006proto3"
+  "\022!\n\003bit\030\n \001(\0132\r.v1.model.BitH\000R\003bitB\006\n\004d"
+  "ata\"\345\002\n\023GenericAPIDatapoint\022\026\n\006Method\030\001 "
+  "\001(\tR\006Method\022\032\n\010Endpoint\030\002 \001(\tR\010Endpoint\022"
+  "D\n\007Headers\030\003 \003(\0132*.v1.model.GenericAPIDa"
+  "tapoint.HeadersEntryR\007Headers\022\022\n\004Body\030\004 "
+  "\001(\tR\004Body\022 \n\013IsRetryable\030\005 \001(\010R\013IsRetrya"
+  "ble\022.\n\022RequireFormantAuth\030\006 \001(\010R\022Require"
+  "FormantAuth\0222\n\024RetryableStatusCodes\030\007 \003("
+  "\003R\024RetryableStatusCodes\032:\n\014HeadersEntry\022"
+  "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:"
+  "\0028\001B+Z)github.com/FormantIO/genproto/go/"
+  "v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps[6] = {
   &::descriptor_table_protos_2fmodel_2fv1_2ffile_2eproto,
@@ -245,7 +247,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto = {
-  false, false, 1981, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 
+  false, false, 2016, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps, 6, 5,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto,
@@ -1663,6 +1665,7 @@ class ControlDatapoint::_Internal {
   static const ::v1::model::PoseWithCovariance& pose_with_covariance(const ControlDatapoint* msg);
   static const ::v1::model::Point& point(const ControlDatapoint* msg);
   static const ::v1::model::Joy& joy(const ControlDatapoint* msg);
+  static const ::v1::model::Bit& bit(const ControlDatapoint* msg);
 };
 
 const ::v1::model::Bitset&
@@ -1692,6 +1695,10 @@ ControlDatapoint::_Internal::point(const ControlDatapoint* msg) {
 const ::v1::model::Joy&
 ControlDatapoint::_Internal::joy(const ControlDatapoint* msg) {
   return *msg->data_.joy_;
+}
+const ::v1::model::Bit&
+ControlDatapoint::_Internal::bit(const ControlDatapoint* msg) {
+  return *msg->data_.bit_;
 }
 void ControlDatapoint::set_allocated_bitset(::v1::model::Bitset* bitset) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -1868,6 +1875,31 @@ void ControlDatapoint::clear_joy() {
     clear_has_data();
   }
 }
+void ControlDatapoint::set_allocated_bit(::v1::model::Bit* bit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_data();
+  if (bit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(bit));
+    if (message_arena != submessage_arena) {
+      bit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, bit, submessage_arena);
+    }
+    set_has_bit();
+    data_.bit_ = bit;
+  }
+  // @@protoc_insertion_point(field_set_allocated:v1.model.ControlDatapoint.bit)
+}
+void ControlDatapoint::clear_bit() {
+  if (_internal_has_bit()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete data_.bit_;
+    }
+    clear_has_data();
+  }
+}
 ControlDatapoint::ControlDatapoint(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -1911,6 +1943,10 @@ ControlDatapoint::ControlDatapoint(const ControlDatapoint& from)
     }
     case kJoy: {
       _internal_mutable_joy()->::v1::model::Joy::MergeFrom(from._internal_joy());
+      break;
+    }
+    case kBit: {
+      _internal_mutable_bit()->::v1::model::Bit::MergeFrom(from._internal_bit());
       break;
     }
     case DATA_NOT_SET: {
@@ -1992,6 +2028,12 @@ void ControlDatapoint::clear_data() {
     case kJoy: {
       if (GetArenaForAllocation() == nullptr) {
         delete data_.joy_;
+      }
+      break;
+    }
+    case kBit: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete data_.bit_;
       }
       break;
     }
@@ -2083,6 +2125,13 @@ const char* ControlDatapoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_joy(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.Bit bit = 10 [json_name = "bit"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          ptr = ctx->ParseMessage(_internal_mutable_bit(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2187,6 +2236,14 @@ failure:
         9, _Internal::joy(this), target, stream);
   }
 
+  // .v1.model.Bit bit = 10 [json_name = "bit"];
+  if (_internal_has_bit()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        10, _Internal::bit(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2267,6 +2324,13 @@ size_t ControlDatapoint::ByteSizeLong() const {
           *data_.joy_);
       break;
     }
+    // .v1.model.Bit bit = 10 [json_name = "bit"];
+    case kBit: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *data_.bit_);
+      break;
+    }
     case DATA_NOT_SET: {
       break;
     }
@@ -2335,6 +2399,10 @@ void ControlDatapoint::MergeFrom(const ControlDatapoint& from) {
     }
     case kJoy: {
       _internal_mutable_joy()->::v1::model::Joy::MergeFrom(from._internal_joy());
+      break;
+    }
+    case kBit: {
+      _internal_mutable_bit()->::v1::model::Bit::MergeFrom(from._internal_bit());
       break;
     }
     case DATA_NOT_SET: {
