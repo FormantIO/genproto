@@ -8,7 +8,7 @@ from protos.model.v1 import datapoint_pb2 as protos_dot_model_dot_v1_dot_datapoi
 from protos.model.v1 import intervention_pb2 as protos_dot_model_dot_v1_dot_intervention__pb2
 from protos.model.v1 import math_pb2 as protos_dot_model_dot_v1_dot_math__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.69.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
