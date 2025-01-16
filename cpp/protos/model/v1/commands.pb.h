@@ -214,6 +214,7 @@ class CommandRequest final :
     kIdFieldNumber = 1,
     kCommandFieldNumber = 2,
     kScrubberTimeFieldNumber = 4,
+    kCreatedAtFieldNumber = 6,
     kTextFieldNumber = 3,
   };
   // repeated .v1.model.FileInfo files = 5 [json_name = "files"];
@@ -280,6 +281,24 @@ class CommandRequest final :
       PROTOBUF_NAMESPACE_ID::Timestamp* scrubber_time);
   PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_scrubber_time();
 
+  // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+  bool has_created_at() const;
+  private:
+  bool _internal_has_created_at() const;
+  public:
+  void clear_created_at();
+  const PROTOBUF_NAMESPACE_ID::Timestamp& created_at() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT PROTOBUF_NAMESPACE_ID::Timestamp* release_created_at();
+  PROTOBUF_NAMESPACE_ID::Timestamp* mutable_created_at();
+  void set_allocated_created_at(PROTOBUF_NAMESPACE_ID::Timestamp* created_at);
+  private:
+  const PROTOBUF_NAMESPACE_ID::Timestamp& _internal_created_at() const;
+  PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_created_at();
+  public:
+  void unsafe_arena_set_allocated_created_at(
+      PROTOBUF_NAMESPACE_ID::Timestamp* created_at);
+  PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_created_at();
+
   // string text = 3 [json_name = "text"];
   bool has_text() const;
   private:
@@ -315,6 +334,7 @@ class CommandRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr command_;
   PROTOBUF_NAMESPACE_ID::Timestamp* scrubber_time_;
+  PROTOBUF_NAMESPACE_ID::Timestamp* created_at_;
   union ParameterUnion {
     constexpr ParameterUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
@@ -1442,6 +1462,85 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::FileInfo >&
 CommandRequest::files() const {
   // @@protoc_insertion_point(field_list:v1.model.CommandRequest.files)
   return files_;
+}
+
+// .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+inline bool CommandRequest::_internal_has_created_at() const {
+  return this != internal_default_instance() && created_at_ != nullptr;
+}
+inline bool CommandRequest::has_created_at() const {
+  return _internal_has_created_at();
+}
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& CommandRequest::_internal_created_at() const {
+  const PROTOBUF_NAMESPACE_ID::Timestamp* p = created_at_;
+  return p != nullptr ? *p : reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& CommandRequest::created_at() const {
+  // @@protoc_insertion_point(field_get:v1.model.CommandRequest.created_at)
+  return _internal_created_at();
+}
+inline void CommandRequest::unsafe_arena_set_allocated_created_at(
+    PROTOBUF_NAMESPACE_ID::Timestamp* created_at) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(created_at_);
+  }
+  created_at_ = created_at;
+  if (created_at) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.CommandRequest.created_at)
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* CommandRequest::release_created_at() {
+  
+  PROTOBUF_NAMESPACE_ID::Timestamp* temp = created_at_;
+  created_at_ = nullptr;
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* CommandRequest::unsafe_arena_release_created_at() {
+  // @@protoc_insertion_point(field_release:v1.model.CommandRequest.created_at)
+  
+  PROTOBUF_NAMESPACE_ID::Timestamp* temp = created_at_;
+  created_at_ = nullptr;
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* CommandRequest::_internal_mutable_created_at() {
+  
+  if (created_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    created_at_ = p;
+  }
+  return created_at_;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* CommandRequest::mutable_created_at() {
+  // @@protoc_insertion_point(field_mutable:v1.model.CommandRequest.created_at)
+  return _internal_mutable_created_at();
+}
+inline void CommandRequest::set_allocated_created_at(PROTOBUF_NAMESPACE_ID::Timestamp* created_at) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(created_at_);
+  }
+  if (created_at) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(created_at));
+    if (message_arena != submessage_arena) {
+      created_at = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, created_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  created_at_ = created_at;
+  // @@protoc_insertion_point(field_set_allocated:v1.model.CommandRequest.created_at)
 }
 
 inline bool CommandRequest::has_parameter() const {

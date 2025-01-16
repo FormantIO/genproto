@@ -2125,6 +2125,7 @@ class TeleopRosStreamConfiguration final :
     kBaseReferenceFrameFieldNumber = 7,
     kLocalFrameFieldNumber = 8,
     kLabelFieldNumber = 12,
+    kRosVersionFieldNumber = 13,
     kTopicTypeFieldNumber = 2,
     kModeFieldNumber = 3,
     kBitrateFieldNumber = 10,
@@ -2216,6 +2217,20 @@ class TeleopRosStreamConfiguration final :
   std::string* _internal_mutable_label();
   public:
 
+  // string ros_version = 13 [json_name = "rosVersion"];
+  void clear_ros_version();
+  const std::string& ros_version() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ros_version(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ros_version();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_ros_version();
+  void set_allocated_ros_version(std::string* ros_version);
+  private:
+  const std::string& _internal_ros_version() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ros_version(const std::string& value);
+  std::string* _internal_mutable_ros_version();
+  public:
+
   // .v1.model.ROSTopicType topic_type = 2 [json_name = "topicType"];
   void clear_topic_type();
   ::v1::model::ROSTopicType topic_type() const;
@@ -2283,6 +2298,7 @@ class TeleopRosStreamConfiguration final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr base_reference_frame_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr local_frame_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr label_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ros_version_;
   int topic_type_;
   int mode_;
   ::PROTOBUF_NAMESPACE_ID::int64 bitrate_;
@@ -8155,6 +8171,51 @@ inline void TeleopRosStreamConfiguration::set_allocated_label(std::string* label
   label_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), label,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopRosStreamConfiguration.label)
+}
+
+// string ros_version = 13 [json_name = "rosVersion"];
+inline void TeleopRosStreamConfiguration::clear_ros_version() {
+  ros_version_.ClearToEmpty();
+}
+inline const std::string& TeleopRosStreamConfiguration::ros_version() const {
+  // @@protoc_insertion_point(field_get:v1.model.TeleopRosStreamConfiguration.ros_version)
+  return _internal_ros_version();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TeleopRosStreamConfiguration::set_ros_version(ArgT0&& arg0, ArgT... args) {
+ 
+ ros_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.TeleopRosStreamConfiguration.ros_version)
+}
+inline std::string* TeleopRosStreamConfiguration::mutable_ros_version() {
+  // @@protoc_insertion_point(field_mutable:v1.model.TeleopRosStreamConfiguration.ros_version)
+  return _internal_mutable_ros_version();
+}
+inline const std::string& TeleopRosStreamConfiguration::_internal_ros_version() const {
+  return ros_version_.Get();
+}
+inline void TeleopRosStreamConfiguration::_internal_set_ros_version(const std::string& value) {
+  
+  ros_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TeleopRosStreamConfiguration::_internal_mutable_ros_version() {
+  
+  return ros_version_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TeleopRosStreamConfiguration::release_ros_version() {
+  // @@protoc_insertion_point(field_release:v1.model.TeleopRosStreamConfiguration.ros_version)
+  return ros_version_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TeleopRosStreamConfiguration::set_allocated_ros_version(std::string* ros_version) {
+  if (ros_version != nullptr) {
+    
+  } else {
+    
+  }
+  ros_version_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ros_version,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.TeleopRosStreamConfiguration.ros_version)
 }
 
 // -------------------------------------------------------------------

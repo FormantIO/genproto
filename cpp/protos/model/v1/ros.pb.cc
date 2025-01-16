@@ -22,6 +22,7 @@ constexpr ROSTopic::ROSTopic(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , path_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , rosversion_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , encode_video_(false){}
 struct ROSTopicDefaultTypeInternal {
   constexpr ROSTopicDefaultTypeInternal()
@@ -39,7 +40,8 @@ constexpr ROSLocalization::ROSLocalization(
   , odom_topic_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , path_topic_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , goal_topic_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , base_reference_frame_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , base_reference_frame_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , rosversion_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct ROSLocalizationDefaultTypeInternal {
   constexpr ROSLocalizationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -91,6 +93,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fros_2epr
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, name_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, path_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, encode_video_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::ROSTopic, rosversion_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSLocalization, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -102,6 +105,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fros_2epr
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSLocalization, path_topic_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSLocalization, goal_topic_),
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSLocalization, base_reference_frame_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::ROSLocalization, rosversion_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::ROSTransformTree, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -130,9 +134,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fros_2epr
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::v1::model::ROSTopic)},
-  { 8, -1, sizeof(::v1::model::ROSLocalization)},
-  { 19, -1, sizeof(::v1::model::ROSTransformTree)},
-  { 25, -1, sizeof(::v1::model::ROSMessageToPublish)},
+  { 9, -1, sizeof(::v1::model::ROSLocalization)},
+  { 21, -1, sizeof(::v1::model::ROSTransformTree)},
+  { 27, -1, sizeof(::v1::model::ROSMessageToPublish)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -145,43 +149,45 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\031protos/model/v1/ros.proto\022\010v1.model\032\032p"
   "rotos/model/v1/math.proto\032 protos/model/"
-  "v1/navigation.proto\"U\n\010ROSTopic\022\022\n\004name\030"
+  "v1/navigation.proto\"u\n\010ROSTopic\022\022\n\004name\030"
   "\001 \001(\tR\004name\022\022\n\004path\030\002 \001(\tR\004path\022!\n\014encod"
-  "e_video\030\003 \001(\010R\013encodeVideo\"\353\001\n\017ROSLocali"
-  "zation\022\033\n\tmap_topic\030\001 \001(\tR\010mapTopic\022\035\n\no"
-  "dom_topic\030\002 \001(\tR\todomTopic\022,\n\022point_clou"
-  "d_topics\030\003 \003(\tR\020pointCloudTopics\022\035\n\npath"
-  "_topic\030\004 \001(\tR\tpathTopic\022\035\n\ngoal_topic\030\005 "
-  "\001(\tR\tgoalTopic\0220\n\024base_reference_frame\030\006"
-  " \001(\tR\022baseReferenceFrame\"D\n\020ROSTransform"
-  "Tree\0220\n\024base_reference_frame\030\001 \001(\tR\022base"
-  "ReferenceFrame\"\224\004\n\023ROSMessageToPublish\022\026"
-  "\n\006stream\030\001 \001(\tR\006stream\022\031\n\010frame_id\030\007 \001(\t"
-  "R\007frameId\022\034\n\ttimestamp\030\010 \001(\004R\ttimestamp\022"
-  "\'\n\005twist\030\002 \001(\0132\017.v1.model.TwistH\000R\005twist"
-  "\022\024\n\004bool\030\003 \001(\010H\000R\004bool\022+\n\020compressed_ima"
-  "ge\030\004 \001(\014H\000R\017compressedImage\022\024\n\004text\030\005 \001("
-  "\tH\000R\004text\022)\n\004pose\030\006 \001(\0132\023.v1.model.Trans"
-  "formH\000R\004pose\022*\n\006goalID\030\t \001(\0132\020.v1.model."
-  "GoalIDH\000R\006goalID\022-\n\007numeric\030\n \001(\0132\021.v1.m"
-  "odel.NumericH\000R\007numeric\022P\n\024pose_with_cov"
-  "ariance\030\013 \001(\0132\034.v1.model.PoseWithCovaria"
-  "nceH\000R\022poseWithCovariance\022\'\n\005point\030\014 \001(\013"
-  "2\017.v1.model.PointH\000R\005point\022!\n\003joy\030\r \001(\0132"
-  "\r.v1.model.JoyH\000R\003joyB\006\n\004data*\327\003\n\014ROSTop"
-  "icType\022\013\n\007UNKNOWN\020\000\022\021\n\rSTD_MSGS_BOOL\020\001\022 "
-  "\n\034SENSOR_MSGS_COMPRESSED_IMAGE\020\002\022\023\n\017STD_"
-  "MSGS_STRING\020\003\022\026\n\022GEOMETRY_MSGS_POSE\020\004\022\031\n"
-  "\025ACTIONLIB_MSGS_GOALID\020\005\022\027\n\023GEOMETRY_MSG"
-  "S_TWIST\020\006\022\024\n\020H264_VIDEO_FRAME\020\007\022\017\n\013AUDIO"
-  "_CHUNK\020\010\022\024\n\020STD_MSGS_FLOAT64\020\t\022\033\n\027SENSOR"
-  "_MSGS_JOINT_STATE\020\n\022&\n\"GEOMETRY_MSGS_POS"
-  "E_WITH_COVARIANCE\020\013\022\034\n\030SENSOR_MSGS_POINT"
-  "_CLOUD2\020\014\022\032\n\026SENSOR_MSGS_LASER_SCAN\020\r\022\027\n"
-  "\023GEOMETRY_MSGS_POINT\020\016\022#\n\037VISUALIZATION_"
-  "MSGS_MARKER_ARRAY\020\017\022\025\n\021NAV_MSGS_ODOMETRY"
-  "\020\020\022\023\n\017SENSOR_MSGS_JOY\020\021B+Z)github.com/Fo"
-  "rmantIO/genproto/go/v1/modelb\006proto3"
+  "e_video\030\003 \001(\010R\013encodeVideo\022\036\n\nrosVersion"
+  "\030\004 \001(\tR\nrosVersion\"\213\002\n\017ROSLocalization\022\033"
+  "\n\tmap_topic\030\001 \001(\tR\010mapTopic\022\035\n\nodom_topi"
+  "c\030\002 \001(\tR\todomTopic\022,\n\022point_cloud_topics"
+  "\030\003 \003(\tR\020pointCloudTopics\022\035\n\npath_topic\030\004"
+  " \001(\tR\tpathTopic\022\035\n\ngoal_topic\030\005 \001(\tR\tgoa"
+  "lTopic\0220\n\024base_reference_frame\030\006 \001(\tR\022ba"
+  "seReferenceFrame\022\036\n\nrosVersion\030\007 \001(\tR\nro"
+  "sVersion\"D\n\020ROSTransformTree\0220\n\024base_ref"
+  "erence_frame\030\001 \001(\tR\022baseReferenceFrame\"\224"
+  "\004\n\023ROSMessageToPublish\022\026\n\006stream\030\001 \001(\tR\006"
+  "stream\022\031\n\010frame_id\030\007 \001(\tR\007frameId\022\034\n\ttim"
+  "estamp\030\010 \001(\004R\ttimestamp\022\'\n\005twist\030\002 \001(\0132\017"
+  ".v1.model.TwistH\000R\005twist\022\024\n\004bool\030\003 \001(\010H\000"
+  "R\004bool\022+\n\020compressed_image\030\004 \001(\014H\000R\017comp"
+  "ressedImage\022\024\n\004text\030\005 \001(\tH\000R\004text\022)\n\004pos"
+  "e\030\006 \001(\0132\023.v1.model.TransformH\000R\004pose\022*\n\006"
+  "goalID\030\t \001(\0132\020.v1.model.GoalIDH\000R\006goalID"
+  "\022-\n\007numeric\030\n \001(\0132\021.v1.model.NumericH\000R\007"
+  "numeric\022P\n\024pose_with_covariance\030\013 \001(\0132\034."
+  "v1.model.PoseWithCovarianceH\000R\022poseWithC"
+  "ovariance\022\'\n\005point\030\014 \001(\0132\017.v1.model.Poin"
+  "tH\000R\005point\022!\n\003joy\030\r \001(\0132\r.v1.model.JoyH\000"
+  "R\003joyB\006\n\004data*\327\003\n\014ROSTopicType\022\013\n\007UNKNOW"
+  "N\020\000\022\021\n\rSTD_MSGS_BOOL\020\001\022 \n\034SENSOR_MSGS_CO"
+  "MPRESSED_IMAGE\020\002\022\023\n\017STD_MSGS_STRING\020\003\022\026\n"
+  "\022GEOMETRY_MSGS_POSE\020\004\022\031\n\025ACTIONLIB_MSGS_"
+  "GOALID\020\005\022\027\n\023GEOMETRY_MSGS_TWIST\020\006\022\024\n\020H26"
+  "4_VIDEO_FRAME\020\007\022\017\n\013AUDIO_CHUNK\020\010\022\024\n\020STD_"
+  "MSGS_FLOAT64\020\t\022\033\n\027SENSOR_MSGS_JOINT_STAT"
+  "E\020\n\022&\n\"GEOMETRY_MSGS_POSE_WITH_COVARIANC"
+  "E\020\013\022\034\n\030SENSOR_MSGS_POINT_CLOUD2\020\014\022\032\n\026SEN"
+  "SOR_MSGS_LASER_SCAN\020\r\022\027\n\023GEOMETRY_MSGS_P"
+  "OINT\020\016\022#\n\037VISUALIZATION_MSGS_MARKER_ARRA"
+  "Y\020\017\022\025\n\021NAV_MSGS_ODOMETRY\020\020\022\023\n\017SENSOR_MSG"
+  "S_JOY\020\021B+Z)github.com/FormantIO/genproto"
+  "/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
@@ -189,7 +195,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fros_2eproto = {
-  false, false, 1556, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 
+  false, false, 1620, descriptor_table_protodef_protos_2fmodel_2fv1_2fros_2eproto, "protos/model/v1/ros.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fros_2eproto_deps, 2, 4,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fros_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fros_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fros_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fros_2eproto,
@@ -258,6 +264,11 @@ ROSTopic::ROSTopic(const ROSTopic& from)
     path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_path(), 
       GetArenaForAllocation());
   }
+  rosversion_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_rosversion().empty()) {
+    rosversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rosversion(), 
+      GetArenaForAllocation());
+  }
   encode_video_ = from.encode_video_;
   // @@protoc_insertion_point(copy_constructor:v1.model.ROSTopic)
 }
@@ -265,6 +276,7 @@ ROSTopic::ROSTopic(const ROSTopic& from)
 void ROSTopic::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+rosversion_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 encode_video_ = false;
 }
 
@@ -278,6 +290,7 @@ void ROSTopic::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  rosversion_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ROSTopic::ArenaDtor(void* object) {
@@ -298,6 +311,7 @@ void ROSTopic::Clear() {
 
   name_.ClearToEmpty();
   path_.ClearToEmpty();
+  rosversion_.ClearToEmpty();
   encode_video_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -330,6 +344,15 @@ const char* ROSTopic::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           encode_video_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string rosVersion = 4 [json_name = "rosVersion"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_rosversion();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSTopic.rosVersion"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -388,6 +411,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_encode_video(), target);
   }
 
+  // string rosVersion = 4 [json_name = "rosVersion"];
+  if (!this->rosversion().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_rosversion().data(), static_cast<int>(this->_internal_rosversion().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.ROSTopic.rosVersion");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_rosversion(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -416,6 +449,13 @@ size_t ROSTopic::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_path());
+  }
+
+  // string rosVersion = 4 [json_name = "rosVersion"];
+  if (!this->rosversion().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_rosversion());
   }
 
   // bool encode_video = 3 [json_name = "encodeVideo"];
@@ -460,6 +500,9 @@ void ROSTopic::MergeFrom(const ROSTopic& from) {
   if (!from.path().empty()) {
     _internal_set_path(from._internal_path());
   }
+  if (!from.rosversion().empty()) {
+    _internal_set_rosversion(from._internal_rosversion());
+  }
   if (from.encode_video() != 0) {
     _internal_set_encode_video(from._internal_encode_video());
   }
@@ -495,6 +538,11 @@ void ROSTopic::InternalSwap(ROSTopic* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &path_, GetArenaForAllocation(),
       &other->path_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &rosversion_, GetArenaForAllocation(),
+      &other->rosversion_, other->GetArenaForAllocation()
   );
   swap(encode_video_, other->encode_video_);
 }
@@ -547,6 +595,11 @@ ROSLocalization::ROSLocalization(const ROSLocalization& from)
     base_reference_frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_base_reference_frame(), 
       GetArenaForAllocation());
   }
+  rosversion_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_rosversion().empty()) {
+    rosversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rosversion(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:v1.model.ROSLocalization)
 }
 
@@ -556,6 +609,7 @@ odom_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 path_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 goal_topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 base_reference_frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+rosversion_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ROSLocalization::~ROSLocalization() {
@@ -571,6 +625,7 @@ void ROSLocalization::SharedDtor() {
   path_topic_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   goal_topic_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   base_reference_frame_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  rosversion_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ROSLocalization::ArenaDtor(void* object) {
@@ -595,6 +650,7 @@ void ROSLocalization::Clear() {
   path_topic_.ClearToEmpty();
   goal_topic_.ClearToEmpty();
   base_reference_frame_.ClearToEmpty();
+  rosversion_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -660,6 +716,15 @@ const char* ROSLocalization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           auto str = _internal_mutable_base_reference_frame();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSLocalization.base_reference_frame"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string rosVersion = 7 [json_name = "rosVersion"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_rosversion();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.ROSLocalization.rosVersion"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -752,6 +817,16 @@ failure:
         6, this->_internal_base_reference_frame(), target);
   }
 
+  // string rosVersion = 7 [json_name = "rosVersion"];
+  if (!this->rosversion().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_rosversion().data(), static_cast<int>(this->_internal_rosversion().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.ROSLocalization.rosVersion");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_rosversion(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -811,6 +886,13 @@ size_t ROSLocalization::ByteSizeLong() const {
         this->_internal_base_reference_frame());
   }
 
+  // string rosVersion = 7 [json_name = "rosVersion"];
+  if (!this->rosversion().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_rosversion());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -857,6 +939,9 @@ void ROSLocalization::MergeFrom(const ROSLocalization& from) {
   }
   if (!from.base_reference_frame().empty()) {
     _internal_set_base_reference_frame(from._internal_base_reference_frame());
+  }
+  if (!from.rosversion().empty()) {
+    _internal_set_rosversion(from._internal_rosversion());
   }
 }
 
@@ -906,6 +991,11 @@ void ROSLocalization::InternalSwap(ROSLocalization* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &base_reference_frame_, GetArenaForAllocation(),
       &other->base_reference_frame_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &rosversion_, GetArenaForAllocation(),
+      &other->rosversion_, other->GetArenaForAllocation()
   );
 }
 

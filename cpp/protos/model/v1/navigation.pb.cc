@@ -36,6 +36,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LocationDefaultTypeInternal _Lo
 constexpr Localization::Localization(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : point_clouds_()
+  , rosversion_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , odometry_(nullptr)
   , map_(nullptr)
   , path_(nullptr)
@@ -259,6 +260,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fnavigati
   PROTOBUF_FIELD_OFFSET(::v1::model::Localization, point_clouds_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Localization, path_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Localization, goal_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::Localization, rosversion_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::Odometry, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -372,18 +374,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fnavigati
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 9, sizeof(::v1::model::Location)},
   { 13, -1, sizeof(::v1::model::Localization)},
-  { 23, -1, sizeof(::v1::model::Odometry)},
-  { 31, -1, sizeof(::v1::model::Map)},
-  { 46, -1, sizeof(::v1::model::OccupancyGrid)},
-  { 52, -1, sizeof(::v1::model::Path)},
-  { 59, -1, sizeof(::v1::model::JointState)},
-  { 69, -1, sizeof(::v1::model::Goal)},
-  { 76, -1, sizeof(::v1::model::GoalID)},
-  { 82, -1, sizeof(::v1::model::PoseWithCovariance)},
-  { 89, -1, sizeof(::v1::model::ColorRGBA)},
-  { 98, -1, sizeof(::v1::model::Marker3D)},
-  { 119, -1, sizeof(::v1::model::Marker3DArray)},
-  { 125, -1, sizeof(::v1::model::Joy)},
+  { 24, -1, sizeof(::v1::model::Odometry)},
+  { 32, -1, sizeof(::v1::model::Map)},
+  { 47, -1, sizeof(::v1::model::OccupancyGrid)},
+  { 53, -1, sizeof(::v1::model::Path)},
+  { 60, -1, sizeof(::v1::model::JointState)},
+  { 70, -1, sizeof(::v1::model::Goal)},
+  { 77, -1, sizeof(::v1::model::GoalID)},
+  { 83, -1, sizeof(::v1::model::PoseWithCovariance)},
+  { 90, -1, sizeof(::v1::model::ColorRGBA)},
+  { 99, -1, sizeof(::v1::model::Marker3D)},
+  { 120, -1, sizeof(::v1::model::Marker3DArray)},
+  { 126, -1, sizeof(::v1::model::Joy)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -410,59 +412,60 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto[] 
   "titude\030\001 \001(\001R\010latitude\022\034\n\tlongitude\030\002 \001("
   "\001R\tlongitude\022\037\n\010altitude\030\003 \001(\001H\000R\010altitu"
   "de\210\001\001\022%\n\013orientation\030\004 \001(\001H\001R\013orientatio"
-  "n\210\001\001B\013\n\t_altitudeB\016\n\014_orientation\"\340\001\n\014Lo"
+  "n\210\001\001B\013\n\t_altitudeB\016\n\014_orientation\"\200\002\n\014Lo"
   "calization\022.\n\010odometry\030\001 \001(\0132\022.v1.model."
   "OdometryR\010odometry\022\037\n\003map\030\002 \001(\0132\r.v1.mod"
   "el.MapR\003map\0227\n\014point_clouds\030\003 \003(\0132\024.v1.m"
   "odel.PointCloudR\013pointClouds\022\"\n\004path\030\004 \001"
   "(\0132\016.v1.model.PathR\004path\022\"\n\004goal\030\005 \001(\0132\016"
-  ".v1.model.GoalR\004goal\"\225\001\n\010Odometry\022\'\n\004pos"
-  "e\030\001 \001(\0132\023.v1.model.TransformR\004pose\022%\n\005tw"
-  "ist\030\002 \001(\0132\017.v1.model.TwistR\005twist\0229\n\016wor"
-  "ld_to_local\030\003 \001(\0132\023.v1.model.TransformR\014"
-  "worldToLocal\"\301\002\n\003Map\022\022\n\004uuid\030\t \001(\tR\004uuid"
-  "\022\036\n\nresolution\030\001 \001(\001R\nresolution\022\024\n\005widt"
-  "h\030\002 \001(\rR\005width\022\026\n\006height\030\003 \001(\rR\006height\022+"
-  "\n\006origin\030\004 \001(\0132\023.v1.model.TransformR\006ori"
-  "gin\0229\n\016world_to_local\030\005 \001(\0132\023.v1.model.T"
-  "ransformR\014worldToLocal\022@\n\016occupancy_grid"
-  "\030\006 \001(\0132\027.v1.model.OccupancyGridH\000R\roccup"
-  "ancyGrid\022\022\n\003url\030\007 \001(\tH\000R\003url\022\022\n\003raw\030\010 \001("
-  "\014H\000R\003rawB\006\n\004data\"#\n\rOccupancyGrid\022\022\n\004dat"
-  "a\030\001 \003(\005R\004data\"l\n\004Path\0229\n\016world_to_local\030"
-  "\001 \001(\0132\023.v1.model.TransformR\014worldToLocal"
-  "\022)\n\005poses\030\002 \003(\0132\023.v1.model.TransformR\005po"
-  "ses\"\253\001\n\nJointState\0229\n\016world_to_local\030\005 \001"
-  "(\0132\023.v1.model.TransformR\014worldToLocal\022\022\n"
-  "\004name\030\001 \003(\tR\004name\022\032\n\010position\030\002 \003(\001R\010pos"
-  "ition\022\032\n\010velocity\030\003 \003(\001R\010velocity\022\026\n\006eff"
-  "ort\030\004 \003(\001R\006effort\"j\n\004Goal\0229\n\016world_to_lo"
-  "cal\030\001 \001(\0132\023.v1.model.TransformR\014worldToL"
-  "ocal\022\'\n\004pose\030\002 \001(\0132\023.v1.model.TransformR"
-  "\004pose\"\030\n\006GoalID\022\016\n\002id\030\001 \001(\tR\002id\"]\n\022PoseW"
-  "ithCovariance\022\'\n\004pose\030\001 \001(\0132\023.v1.model.T"
-  "ransformR\004pose\022\036\n\ncovariance\030\002 \003(\001R\ncova"
-  "riance\"C\n\tColorRGBA\022\014\n\001r\030\001 \001(\002R\001r\022\014\n\001g\030\002"
-  " \001(\002R\001g\022\014\n\001b\030\003 \001(\002R\001b\022\014\n\001a\030\004 \001(\002R\001a\"\270\004\n\010"
-  "Marker3D\0229\n\016world_to_local\030\001 \001(\0132\023.v1.mo"
-  "del.TransformR\014worldToLocal\022\016\n\002ns\030\002 \001(\tR"
-  "\002ns\022\016\n\002id\030\003 \001(\005R\002id\022\022\n\004type\030\004 \001(\tR\004type\022"
-  "\026\n\006action\030\005 \001(\tR\006action\022\'\n\004pose\030\006 \001(\0132\023."
-  "v1.model.TransformR\004pose\022\'\n\005scale\030\007 \001(\0132"
-  "\021.v1.model.Vector3R\005scale\022)\n\005color\030\010 \001(\013"
-  "2\023.v1.model.ColorRGBAR\005color\022\032\n\010lifetime"
-  "\030\t \001(\001R\010lifetime\022!\n\014frame_locked\030\n \001(\010R\013"
-  "frameLocked\022)\n\006points\030\013 \003(\0132\021.v1.model.V"
-  "ector3R\006points\022+\n\006colors\030\014 \003(\0132\023.v1.mode"
-  "l.ColorRGBAR\006colors\022\022\n\004text\030\r \001(\tR\004text\022"
-  "#\n\rmesh_resource\030\016 \001(\tR\014meshResource\022=\n\033"
-  "mesh_use_embedded_materials\030\017 \001(\010R\030meshU"
-  "seEmbeddedMaterials\022\031\n\010frame_id\030\020 \001(\tR\007f"
-  "rameId\"=\n\rMarker3DArray\022,\n\007markers\030\001 \003(\013"
-  "2\022.v1.model.Marker3DR\007markers\"3\n\003Joy\022\022\n\004"
-  "axes\030\001 \003(\002R\004axes\022\030\n\007buttons\030\002 \003(\005R\007butto"
-  "nsB+Z)github.com/FormantIO/genproto/go/v"
-  "1/modelb\006proto3"
+  ".v1.model.GoalR\004goal\022\036\n\nrosVersion\030\006 \001(\t"
+  "R\nrosVersion\"\225\001\n\010Odometry\022\'\n\004pose\030\001 \001(\0132"
+  "\023.v1.model.TransformR\004pose\022%\n\005twist\030\002 \001("
+  "\0132\017.v1.model.TwistR\005twist\0229\n\016world_to_lo"
+  "cal\030\003 \001(\0132\023.v1.model.TransformR\014worldToL"
+  "ocal\"\301\002\n\003Map\022\022\n\004uuid\030\t \001(\tR\004uuid\022\036\n\nreso"
+  "lution\030\001 \001(\001R\nresolution\022\024\n\005width\030\002 \001(\rR"
+  "\005width\022\026\n\006height\030\003 \001(\rR\006height\022+\n\006origin"
+  "\030\004 \001(\0132\023.v1.model.TransformR\006origin\0229\n\016w"
+  "orld_to_local\030\005 \001(\0132\023.v1.model.Transform"
+  "R\014worldToLocal\022@\n\016occupancy_grid\030\006 \001(\0132\027"
+  ".v1.model.OccupancyGridH\000R\roccupancyGrid"
+  "\022\022\n\003url\030\007 \001(\tH\000R\003url\022\022\n\003raw\030\010 \001(\014H\000R\003raw"
+  "B\006\n\004data\"#\n\rOccupancyGrid\022\022\n\004data\030\001 \003(\005R"
+  "\004data\"l\n\004Path\0229\n\016world_to_local\030\001 \001(\0132\023."
+  "v1.model.TransformR\014worldToLocal\022)\n\005pose"
+  "s\030\002 \003(\0132\023.v1.model.TransformR\005poses\"\253\001\n\n"
+  "JointState\0229\n\016world_to_local\030\005 \001(\0132\023.v1."
+  "model.TransformR\014worldToLocal\022\022\n\004name\030\001 "
+  "\003(\tR\004name\022\032\n\010position\030\002 \003(\001R\010position\022\032\n"
+  "\010velocity\030\003 \003(\001R\010velocity\022\026\n\006effort\030\004 \003("
+  "\001R\006effort\"j\n\004Goal\0229\n\016world_to_local\030\001 \001("
+  "\0132\023.v1.model.TransformR\014worldToLocal\022\'\n\004"
+  "pose\030\002 \001(\0132\023.v1.model.TransformR\004pose\"\030\n"
+  "\006GoalID\022\016\n\002id\030\001 \001(\tR\002id\"]\n\022PoseWithCovar"
+  "iance\022\'\n\004pose\030\001 \001(\0132\023.v1.model.Transform"
+  "R\004pose\022\036\n\ncovariance\030\002 \003(\001R\ncovariance\"C"
+  "\n\tColorRGBA\022\014\n\001r\030\001 \001(\002R\001r\022\014\n\001g\030\002 \001(\002R\001g\022"
+  "\014\n\001b\030\003 \001(\002R\001b\022\014\n\001a\030\004 \001(\002R\001a\"\270\004\n\010Marker3D"
+  "\0229\n\016world_to_local\030\001 \001(\0132\023.v1.model.Tran"
+  "sformR\014worldToLocal\022\016\n\002ns\030\002 \001(\tR\002ns\022\016\n\002i"
+  "d\030\003 \001(\005R\002id\022\022\n\004type\030\004 \001(\tR\004type\022\026\n\006actio"
+  "n\030\005 \001(\tR\006action\022\'\n\004pose\030\006 \001(\0132\023.v1.model"
+  ".TransformR\004pose\022\'\n\005scale\030\007 \001(\0132\021.v1.mod"
+  "el.Vector3R\005scale\022)\n\005color\030\010 \001(\0132\023.v1.mo"
+  "del.ColorRGBAR\005color\022\032\n\010lifetime\030\t \001(\001R\010"
+  "lifetime\022!\n\014frame_locked\030\n \001(\010R\013frameLoc"
+  "ked\022)\n\006points\030\013 \003(\0132\021.v1.model.Vector3R\006"
+  "points\022+\n\006colors\030\014 \003(\0132\023.v1.model.ColorR"
+  "GBAR\006colors\022\022\n\004text\030\r \001(\tR\004text\022#\n\rmesh_"
+  "resource\030\016 \001(\tR\014meshResource\022=\n\033mesh_use"
+  "_embedded_materials\030\017 \001(\010R\030meshUseEmbedd"
+  "edMaterials\022\031\n\010frame_id\030\020 \001(\tR\007frameId\"="
+  "\n\rMarker3DArray\022,\n\007markers\030\001 \003(\0132\022.v1.mo"
+  "del.Marker3DR\007markers\"3\n\003Joy\022\022\n\004axes\030\001 \003"
+  "(\002R\004axes\022\030\n\007buttons\030\002 \003(\005R\007buttonsB+Z)gi"
+  "thub.com/FormantIO/genproto/go/v1/modelb"
+  "\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps[2] = {
   &::descriptor_table_protos_2fmodel_2fv1_2fmath_2eproto,
@@ -470,7 +473,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto = {
-  false, false, 2335, descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto, "protos/model/v1/navigation.proto", 
+  false, false, 2367, descriptor_table_protodef_protos_2fmodel_2fv1_2fnavigation_2eproto, "protos/model/v1/navigation.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fnavigation_2eproto_deps, 2, 14,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fnavigation_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fnavigation_2eproto,
@@ -814,6 +817,11 @@ Localization::Localization(const Localization& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       point_clouds_(from.point_clouds_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  rosversion_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_rosversion().empty()) {
+    rosversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rosversion(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_odometry()) {
     odometry_ = new ::v1::model::Odometry(*from.odometry_);
   } else {
@@ -838,6 +846,7 @@ Localization::Localization(const Localization& from)
 }
 
 void Localization::SharedCtor() {
+rosversion_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&odometry_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&goal_) -
@@ -852,6 +861,7 @@ Localization::~Localization() {
 
 void Localization::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  rosversion_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete odometry_;
   if (this != internal_default_instance()) delete map_;
   if (this != internal_default_instance()) delete path_;
@@ -875,6 +885,7 @@ void Localization::Clear() {
   (void) cached_has_bits;
 
   point_clouds_.Clear();
+  rosversion_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && odometry_ != nullptr) {
     delete odometry_;
   }
@@ -937,6 +948,15 @@ const char* Localization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_goal(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string rosVersion = 6 [json_name = "rosVersion"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_rosversion();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Localization.rosVersion"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1009,6 +1029,16 @@ failure:
         5, _Internal::goal(this), target, stream);
   }
 
+  // string rosVersion = 6 [json_name = "rosVersion"];
+  if (!this->rosversion().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_rosversion().data(), static_cast<int>(this->_internal_rosversion().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "v1.model.Localization.rosVersion");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_rosversion(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1030,6 +1060,13 @@ size_t Localization::ByteSizeLong() const {
   for (const auto& msg : this->point_clouds_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string rosVersion = 6 [json_name = "rosVersion"];
+  if (!this->rosversion().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_rosversion());
   }
 
   // .v1.model.Odometry odometry = 1 [json_name = "odometry"];
@@ -1092,6 +1129,9 @@ void Localization::MergeFrom(const Localization& from) {
   (void) cached_has_bits;
 
   point_clouds_.MergeFrom(from.point_clouds_);
+  if (!from.rosversion().empty()) {
+    _internal_set_rosversion(from._internal_rosversion());
+  }
   if (from.has_odometry()) {
     _internal_mutable_odometry()->::v1::model::Odometry::MergeFrom(from._internal_odometry());
   }
@@ -1128,6 +1168,11 @@ void Localization::InternalSwap(Localization* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   point_clouds_.InternalSwap(&other->point_clouds_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &rosversion_, GetArenaForAllocation(),
+      &other->rosversion_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Localization, goal_)
       + sizeof(Localization::goal_)

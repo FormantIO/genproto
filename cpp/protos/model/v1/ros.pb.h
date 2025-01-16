@@ -234,6 +234,7 @@ class ROSTopic final :
   enum : int {
     kNameFieldNumber = 1,
     kPathFieldNumber = 2,
+    kRosVersionFieldNumber = 4,
     kEncodeVideoFieldNumber = 3,
   };
   // string name = 1 [json_name = "name"];
@@ -264,6 +265,20 @@ class ROSTopic final :
   std::string* _internal_mutable_path();
   public:
 
+  // string rosVersion = 4 [json_name = "rosVersion"];
+  void clear_rosversion();
+  const std::string& rosversion() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rosversion(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rosversion();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_rosversion();
+  void set_allocated_rosversion(std::string* rosversion);
+  private:
+  const std::string& _internal_rosversion() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rosversion(const std::string& value);
+  std::string* _internal_mutable_rosversion();
+  public:
+
   // bool encode_video = 3 [json_name = "encodeVideo"];
   void clear_encode_video();
   bool encode_video() const;
@@ -282,6 +297,7 @@ class ROSTopic final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr path_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rosversion_;
   bool encode_video_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fros_2eproto;
@@ -402,6 +418,7 @@ class ROSLocalization final :
     kPathTopicFieldNumber = 4,
     kGoalTopicFieldNumber = 5,
     kBaseReferenceFrameFieldNumber = 6,
+    kRosVersionFieldNumber = 7,
   };
   // repeated string point_cloud_topics = 3 [json_name = "pointCloudTopics"];
   int point_cloud_topics_size() const;
@@ -497,6 +514,20 @@ class ROSLocalization final :
   std::string* _internal_mutable_base_reference_frame();
   public:
 
+  // string rosVersion = 7 [json_name = "rosVersion"];
+  void clear_rosversion();
+  const std::string& rosversion() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rosversion(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rosversion();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_rosversion();
+  void set_allocated_rosversion(std::string* rosversion);
+  private:
+  const std::string& _internal_rosversion() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rosversion(const std::string& value);
+  std::string* _internal_mutable_rosversion();
+  public:
+
   // @@protoc_insertion_point(class_scope:v1.model.ROSLocalization)
  private:
   class _Internal;
@@ -510,6 +541,7 @@ class ROSLocalization final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr path_topic_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr goal_topic_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr base_reference_frame_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rosversion_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_protos_2fmodel_2fv1_2fros_2eproto;
 };
@@ -1165,6 +1197,51 @@ inline void ROSTopic::set_encode_video(bool value) {
   // @@protoc_insertion_point(field_set:v1.model.ROSTopic.encode_video)
 }
 
+// string rosVersion = 4 [json_name = "rosVersion"];
+inline void ROSTopic::clear_rosversion() {
+  rosversion_.ClearToEmpty();
+}
+inline const std::string& ROSTopic::rosversion() const {
+  // @@protoc_insertion_point(field_get:v1.model.ROSTopic.rosVersion)
+  return _internal_rosversion();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ROSTopic::set_rosversion(ArgT0&& arg0, ArgT... args) {
+ 
+ rosversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.ROSTopic.rosVersion)
+}
+inline std::string* ROSTopic::mutable_rosversion() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ROSTopic.rosVersion)
+  return _internal_mutable_rosversion();
+}
+inline const std::string& ROSTopic::_internal_rosversion() const {
+  return rosversion_.Get();
+}
+inline void ROSTopic::_internal_set_rosversion(const std::string& value) {
+  
+  rosversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ROSTopic::_internal_mutable_rosversion() {
+  
+  return rosversion_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ROSTopic::release_rosversion() {
+  // @@protoc_insertion_point(field_release:v1.model.ROSTopic.rosVersion)
+  return rosversion_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ROSTopic::set_allocated_rosversion(std::string* rosversion) {
+  if (rosversion != nullptr) {
+    
+  } else {
+    
+  }
+  rosversion_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rosversion,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.ROSTopic.rosVersion)
+}
+
 // -------------------------------------------------------------------
 
 // ROSLocalization
@@ -1466,6 +1543,51 @@ inline void ROSLocalization::set_allocated_base_reference_frame(std::string* bas
   base_reference_frame_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), base_reference_frame,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:v1.model.ROSLocalization.base_reference_frame)
+}
+
+// string rosVersion = 7 [json_name = "rosVersion"];
+inline void ROSLocalization::clear_rosversion() {
+  rosversion_.ClearToEmpty();
+}
+inline const std::string& ROSLocalization::rosversion() const {
+  // @@protoc_insertion_point(field_get:v1.model.ROSLocalization.rosVersion)
+  return _internal_rosversion();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ROSLocalization::set_rosversion(ArgT0&& arg0, ArgT... args) {
+ 
+ rosversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.ROSLocalization.rosVersion)
+}
+inline std::string* ROSLocalization::mutable_rosversion() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ROSLocalization.rosVersion)
+  return _internal_mutable_rosversion();
+}
+inline const std::string& ROSLocalization::_internal_rosversion() const {
+  return rosversion_.Get();
+}
+inline void ROSLocalization::_internal_set_rosversion(const std::string& value) {
+  
+  rosversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ROSLocalization::_internal_mutable_rosversion() {
+  
+  return rosversion_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ROSLocalization::release_rosversion() {
+  // @@protoc_insertion_point(field_release:v1.model.ROSLocalization.rosVersion)
+  return rosversion_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ROSLocalization::set_allocated_rosversion(std::string* rosversion) {
+  if (rosversion != nullptr) {
+    
+  } else {
+    
+  }
+  rosversion_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rosversion,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.ROSLocalization.rosVersion)
 }
 
 // -------------------------------------------------------------------

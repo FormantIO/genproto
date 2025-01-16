@@ -24,6 +24,7 @@ constexpr CommandRequest::CommandRequest(
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , command_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , scrubber_time_(nullptr)
+  , created_at_(nullptr)
   , _oneof_case_{}{}
 struct CommandRequestDefaultTypeInternal {
   constexpr CommandRequestDefaultTypeInternal()
@@ -133,6 +134,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fcommands
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::CommandRequest, scrubber_time_),
   PROTOBUF_FIELD_OFFSET(::v1::model::CommandRequest, files_),
+  PROTOBUF_FIELD_OFFSET(::v1::model::CommandRequest, created_at_),
   PROTOBUF_FIELD_OFFSET(::v1::model::CommandRequest, parameter_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::v1::model::CommandResponse, _internal_metadata_),
@@ -192,12 +194,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fcommands
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::v1::model::CommandRequest)},
-  { 11, -1, sizeof(::v1::model::CommandResponse)},
-  { 20, -1, sizeof(::v1::model::FileInfo)},
-  { 28, -1, sizeof(::v1::model::CommandsMetadata)},
-  { 34, 41, sizeof(::v1::model::CommandMetadata_ParameterMetaEntry_DoNotUse)},
-  { 43, 50, sizeof(::v1::model::CommandMetadata_TagsEntry_DoNotUse)},
-  { 52, -1, sizeof(::v1::model::CommandMetadata)},
+  { 12, -1, sizeof(::v1::model::CommandResponse)},
+  { 21, -1, sizeof(::v1::model::FileInfo)},
+  { 29, -1, sizeof(::v1::model::CommandsMetadata)},
+  { 35, 42, sizeof(::v1::model::CommandMetadata_ParameterMetaEntry_DoNotUse)},
+  { 44, 51, sizeof(::v1::model::CommandMetadata_TagsEntry_DoNotUse)},
+  { 53, -1, sizeof(::v1::model::CommandMetadata)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -213,33 +215,34 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_protos_2fmodel_2fv1_2fcommands_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036protos/model/v1/commands.proto\022\010v1.mod"
   "el\032\037google/protobuf/timestamp.proto\032\037pro"
-  "tos/model/v1/datapoint.proto\"\310\001\n\016Command"
+  "tos/model/v1/datapoint.proto\"\203\002\n\016Command"
   "Request\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007command\030\002 \001(\t"
   "R\007command\022\024\n\004text\030\003 \001(\tH\000R\004text\022\?\n\rscrub"
   "ber_time\030\004 \001(\0132\032.google.protobuf.Timesta"
   "mpR\014scrubberTime\022(\n\005files\030\005 \003(\0132\022.v1.mod"
-  "el.FileInfoR\005filesB\013\n\tparameter\"\211\001\n\017Comm"
-  "andResponse\022\035\n\nrequest_id\030\001 \001(\tR\trequest"
-  "Id\022\030\n\007success\030\002 \001(\010R\007success\0223\n\tdatapoin"
-  "t\030\003 \001(\0132\023.v1.model.DatapointH\000R\tdatapoin"
-  "tB\010\n\006result\"@\n\010FileInfo\022\016\n\002id\030\001 \001(\tR\002id\022"
-  "\022\n\004name\030\002 \001(\tR\004name\022\020\n\003url\030\003 \001(\tR\003url\"I\n"
-  "\020CommandsMetadata\0225\n\010commands\030\001 \003(\0132\031.v1"
-  ".model.CommandMetadataR\010commands\"\352\003\n\017Com"
-  "mandMetadata\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007comm"
-  "and\030\002 \001(\tR\007command\022 \n\013description\030\003 \001(\tR"
-  "\013description\022+\n\021parameter_enabled\030\004 \001(\010R"
-  "\020parameterEnabled\022\'\n\017parameter_value\030\005 \001"
-  "(\tR\016parameterValue\022S\n\016parameter_meta\030\006 \003"
-  "(\0132,.v1.model.CommandMetadata.ParameterM"
-  "etaEntryR\rparameterMeta\022\030\n\007enabled\030\007 \001(\010"
-  "R\007enabled\022\016\n\002id\030\010 \001(\tR\002id\0227\n\004tags\030\t \003(\0132"
-  "#.v1.model.CommandMetadata.TagsEntryR\004ta"
-  "gs\032@\n\022ParameterMetaEntry\022\020\n\003key\030\001 \001(\tR\003k"
-  "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\0327\n\tTagsEntr"
-  "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu"
-  "e:\0028\001B+Z)github.com/FormantIO/genproto/g"
-  "o/v1/modelb\006proto3"
+  "el.FileInfoR\005files\0229\n\ncreated_at\030\006 \001(\0132\032"
+  ".google.protobuf.TimestampR\tcreatedAtB\013\n"
+  "\tparameter\"\211\001\n\017CommandResponse\022\035\n\nreques"
+  "t_id\030\001 \001(\tR\trequestId\022\030\n\007success\030\002 \001(\010R\007"
+  "success\0223\n\tdatapoint\030\003 \001(\0132\023.v1.model.Da"
+  "tapointH\000R\tdatapointB\010\n\006result\"@\n\010FileIn"
+  "fo\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\020"
+  "\n\003url\030\003 \001(\tR\003url\"I\n\020CommandsMetadata\0225\n\010"
+  "commands\030\001 \003(\0132\031.v1.model.CommandMetadat"
+  "aR\010commands\"\352\003\n\017CommandMetadata\022\022\n\004name\030"
+  "\001 \001(\tR\004name\022\030\n\007command\030\002 \001(\tR\007command\022 \n"
+  "\013description\030\003 \001(\tR\013description\022+\n\021param"
+  "eter_enabled\030\004 \001(\010R\020parameterEnabled\022\'\n\017"
+  "parameter_value\030\005 \001(\tR\016parameterValue\022S\n"
+  "\016parameter_meta\030\006 \003(\0132,.v1.model.Command"
+  "Metadata.ParameterMetaEntryR\rparameterMe"
+  "ta\022\030\n\007enabled\030\007 \001(\010R\007enabled\022\016\n\002id\030\010 \001(\t"
+  "R\002id\0227\n\004tags\030\t \003(\0132#.v1.model.CommandMet"
+  "adata.TagsEntryR\004tags\032@\n\022ParameterMetaEn"
+  "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va"
+  "lue:\0028\001\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
+  "\n\005value\030\002 \001(\tR\005value:\0028\001B+Z)github.com/F"
+  "ormantIO/genproto/go/v1/modelb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fcommands_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -247,7 +250,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fcommands_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fcommands_2eproto = {
-  false, false, 1138, descriptor_table_protodef_protos_2fmodel_2fv1_2fcommands_2eproto, "protos/model/v1/commands.proto", 
+  false, false, 1197, descriptor_table_protodef_protos_2fmodel_2fv1_2fcommands_2eproto, "protos/model/v1/commands.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fcommands_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fcommands_2eproto_deps, 2, 7,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fcommands_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fcommands_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fcommands_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fcommands_2eproto,
@@ -266,17 +269,28 @@ namespace model {
 class CommandRequest::_Internal {
  public:
   static const PROTOBUF_NAMESPACE_ID::Timestamp& scrubber_time(const CommandRequest* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& created_at(const CommandRequest* msg);
 };
 
 const PROTOBUF_NAMESPACE_ID::Timestamp&
 CommandRequest::_Internal::scrubber_time(const CommandRequest* msg) {
   return *msg->scrubber_time_;
 }
+const PROTOBUF_NAMESPACE_ID::Timestamp&
+CommandRequest::_Internal::created_at(const CommandRequest* msg) {
+  return *msg->created_at_;
+}
 void CommandRequest::clear_scrubber_time() {
   if (GetArenaForAllocation() == nullptr && scrubber_time_ != nullptr) {
     delete scrubber_time_;
   }
   scrubber_time_ = nullptr;
+}
+void CommandRequest::clear_created_at() {
+  if (GetArenaForAllocation() == nullptr && created_at_ != nullptr) {
+    delete created_at_;
+  }
+  created_at_ = nullptr;
 }
 CommandRequest::CommandRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
@@ -304,6 +318,11 @@ CommandRequest::CommandRequest(const CommandRequest& from)
   } else {
     scrubber_time_ = nullptr;
   }
+  if (from._internal_has_created_at()) {
+    created_at_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.created_at_);
+  } else {
+    created_at_ = nullptr;
+  }
   clear_has_parameter();
   switch (from.parameter_case()) {
     case kText: {
@@ -320,7 +339,10 @@ CommandRequest::CommandRequest(const CommandRequest& from)
 void CommandRequest::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 command_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-scrubber_time_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&scrubber_time_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&created_at_) -
+    reinterpret_cast<char*>(&scrubber_time_)) + sizeof(created_at_));
 clear_has_parameter();
 }
 
@@ -335,6 +357,7 @@ void CommandRequest::SharedDtor() {
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   command_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete scrubber_time_;
+  if (this != internal_default_instance()) delete created_at_;
   if (has_parameter()) {
     clear_parameter();
   }
@@ -378,6 +401,10 @@ void CommandRequest::Clear() {
     delete scrubber_time_;
   }
   scrubber_time_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && created_at_ != nullptr) {
+    delete created_at_;
+  }
+  created_at_ = nullptr;
   clear_parameter();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -432,6 +459,13 @@ const char* CommandRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_created_at(), ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -509,6 +543,14 @@ failure:
       InternalWriteMessage(5, this->_internal_files(i), target, stream);
   }
 
+  // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+  if (this->has_created_at()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        6, _Internal::created_at(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -551,6 +593,13 @@ size_t CommandRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *scrubber_time_);
+  }
+
+  // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+  if (this->has_created_at()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *created_at_);
   }
 
   switch (parameter_case()) {
@@ -606,6 +655,9 @@ void CommandRequest::MergeFrom(const CommandRequest& from) {
   if (from.has_scrubber_time()) {
     _internal_mutable_scrubber_time()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_scrubber_time());
   }
+  if (from.has_created_at()) {
+    _internal_mutable_created_at()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_created_at());
+  }
   switch (from.parameter_case()) {
     case kText: {
       _internal_set_text(from._internal_text());
@@ -649,7 +701,12 @@ void CommandRequest::InternalSwap(CommandRequest* other) {
       &command_, GetArenaForAllocation(),
       &other->command_, other->GetArenaForAllocation()
   );
-  swap(scrubber_time_, other->scrubber_time_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CommandRequest, created_at_)
+      + sizeof(CommandRequest::created_at_)
+      - PROTOBUF_FIELD_OFFSET(CommandRequest, scrubber_time_)>(
+          reinterpret_cast<char*>(&scrubber_time_),
+          reinterpret_cast<char*>(&other->scrubber_time_));
   swap(parameter_, other->parameter_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }

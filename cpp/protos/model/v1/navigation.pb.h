@@ -405,6 +405,7 @@ class Localization final :
 
   enum : int {
     kPointCloudsFieldNumber = 3,
+    kRosVersionFieldNumber = 6,
     kOdometryFieldNumber = 1,
     kMapFieldNumber = 2,
     kPathFieldNumber = 4,
@@ -427,6 +428,20 @@ class Localization final :
   ::v1::model::PointCloud* add_point_clouds();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::PointCloud >&
       point_clouds() const;
+
+  // string rosVersion = 6 [json_name = "rosVersion"];
+  void clear_rosversion();
+  const std::string& rosversion() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rosversion(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rosversion();
+  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_rosversion();
+  void set_allocated_rosversion(std::string* rosversion);
+  private:
+  const std::string& _internal_rosversion() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rosversion(const std::string& value);
+  std::string* _internal_mutable_rosversion();
+  public:
 
   // .v1.model.Odometry odometry = 1 [json_name = "odometry"];
   bool has_odometry() const;
@@ -508,6 +523,7 @@ class Localization final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::PointCloud > point_clouds_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rosversion_;
   ::v1::model::Odometry* odometry_;
   ::v1::model::Map* map_;
   ::v1::model::Path* path_;
@@ -3330,6 +3346,51 @@ inline void Localization::set_allocated_goal(::v1::model::Goal* goal) {
   }
   goal_ = goal;
   // @@protoc_insertion_point(field_set_allocated:v1.model.Localization.goal)
+}
+
+// string rosVersion = 6 [json_name = "rosVersion"];
+inline void Localization::clear_rosversion() {
+  rosversion_.ClearToEmpty();
+}
+inline const std::string& Localization::rosversion() const {
+  // @@protoc_insertion_point(field_get:v1.model.Localization.rosVersion)
+  return _internal_rosversion();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Localization::set_rosversion(ArgT0&& arg0, ArgT... args) {
+ 
+ rosversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:v1.model.Localization.rosVersion)
+}
+inline std::string* Localization::mutable_rosversion() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Localization.rosVersion)
+  return _internal_mutable_rosversion();
+}
+inline const std::string& Localization::_internal_rosversion() const {
+  return rosversion_.Get();
+}
+inline void Localization::_internal_set_rosversion(const std::string& value) {
+  
+  rosversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Localization::_internal_mutable_rosversion() {
+  
+  return rosversion_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Localization::release_rosversion() {
+  // @@protoc_insertion_point(field_release:v1.model.Localization.rosVersion)
+  return rosversion_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Localization::set_allocated_rosversion(std::string* rosversion) {
+  if (rosversion != nullptr) {
+    
+  } else {
+    
+  }
+  rosversion_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rosversion,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Localization.rosVersion)
 }
 
 // -------------------------------------------------------------------
