@@ -96,8 +96,8 @@ message Marker3D {
     Transform world_to_local = 1;
     string ns = 2;
     int32 id = 3;
-    string type = 4;
-    string action = 5;
+    int32 type = 4;
+    int32 action = 5;
     Transform pose = 6;
     Vector3 scale = 7;
     ColorRGBA color = 8;

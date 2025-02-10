@@ -2290,8 +2290,6 @@ class Marker3D final :
     kPointsFieldNumber = 11,
     kColorsFieldNumber = 12,
     kNsFieldNumber = 2,
-    kTypeFieldNumber = 4,
-    kActionFieldNumber = 5,
     kTextFieldNumber = 13,
     kMeshResourceFieldNumber = 14,
     kFrameIdFieldNumber = 16,
@@ -2299,8 +2297,10 @@ class Marker3D final :
     kPoseFieldNumber = 6,
     kScaleFieldNumber = 7,
     kColorFieldNumber = 8,
-    kLifetimeFieldNumber = 9,
     kIdFieldNumber = 3,
+    kTypeFieldNumber = 4,
+    kLifetimeFieldNumber = 9,
+    kActionFieldNumber = 5,
     kFrameLockedFieldNumber = 10,
     kMeshUseEmbeddedMaterialsFieldNumber = 15,
   };
@@ -2352,34 +2352,6 @@ class Marker3D final :
   const std::string& _internal_ns() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_ns(const std::string& value);
   std::string* _internal_mutable_ns();
-  public:
-
-  // string type = 4 [json_name = "type"];
-  void clear_type();
-  const std::string& type() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_type(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_type();
-  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_type();
-  void set_allocated_type(std::string* type);
-  private:
-  const std::string& _internal_type() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_type(const std::string& value);
-  std::string* _internal_mutable_type();
-  public:
-
-  // string action = 5 [json_name = "action"];
-  void clear_action();
-  const std::string& action() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_action(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_action();
-  PROTOBUF_FUTURE_MUST_USE_RESULT std::string* release_action();
-  void set_allocated_action(std::string* action);
-  private:
-  const std::string& _internal_action() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_action(const std::string& value);
-  std::string* _internal_mutable_action();
   public:
 
   // string text = 13 [json_name = "text"];
@@ -2496,6 +2468,24 @@ class Marker3D final :
       ::v1::model::ColorRGBA* color);
   ::v1::model::ColorRGBA* unsafe_arena_release_color();
 
+  // int32 id = 3 [json_name = "id"];
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 type = 4 [json_name = "type"];
+  void clear_type();
+  ::PROTOBUF_NAMESPACE_ID::int32 type() const;
+  void set_type(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_type() const;
+  void _internal_set_type(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // double lifetime = 9 [json_name = "lifetime"];
   void clear_lifetime();
   double lifetime() const;
@@ -2505,13 +2495,13 @@ class Marker3D final :
   void _internal_set_lifetime(double value);
   public:
 
-  // int32 id = 3 [json_name = "id"];
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::int32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  // int32 action = 5 [json_name = "action"];
+  void clear_action();
+  ::PROTOBUF_NAMESPACE_ID::int32 action() const;
+  void set_action(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_action() const;
+  void _internal_set_action(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // bool frame_locked = 10 [json_name = "frameLocked"];
@@ -2542,8 +2532,6 @@ class Marker3D final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::Vector3 > points_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::v1::model::ColorRGBA > colors_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ns_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr action_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr text_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mesh_resource_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame_id_;
@@ -2551,8 +2539,10 @@ class Marker3D final :
   ::v1::model::Transform* pose_;
   ::v1::model::Vector3* scale_;
   ::v1::model::ColorRGBA* color_;
-  double lifetime_;
   ::PROTOBUF_NAMESPACE_ID::int32 id_;
+  ::PROTOBUF_NAMESPACE_ID::int32 type_;
+  double lifetime_;
+  ::PROTOBUF_NAMESPACE_ID::int32 action_;
   bool frame_locked_;
   bool mesh_use_embedded_materials_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -5186,94 +5176,44 @@ inline void Marker3D::set_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:v1.model.Marker3D.id)
 }
 
-// string type = 4 [json_name = "type"];
+// int32 type = 4 [json_name = "type"];
 inline void Marker3D::clear_type() {
-  type_.ClearToEmpty();
+  type_ = 0;
 }
-inline const std::string& Marker3D::type() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 Marker3D::_internal_type() const {
+  return type_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Marker3D::type() const {
   // @@protoc_insertion_point(field_get:v1.model.Marker3D.type)
   return _internal_type();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Marker3D::set_type(ArgT0&& arg0, ArgT... args) {
- 
- type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void Marker3D::_internal_set_type(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  type_ = value;
+}
+inline void Marker3D::set_type(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_type(value);
   // @@protoc_insertion_point(field_set:v1.model.Marker3D.type)
 }
-inline std::string* Marker3D::mutable_type() {
-  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.type)
-  return _internal_mutable_type();
-}
-inline const std::string& Marker3D::_internal_type() const {
-  return type_.Get();
-}
-inline void Marker3D::_internal_set_type(const std::string& value) {
-  
-  type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Marker3D::_internal_mutable_type() {
-  
-  return type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Marker3D::release_type() {
-  // @@protoc_insertion_point(field_release:v1.model.Marker3D.type)
-  return type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Marker3D::set_allocated_type(std::string* type) {
-  if (type != nullptr) {
-    
-  } else {
-    
-  }
-  type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), type,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.type)
-}
 
-// string action = 5 [json_name = "action"];
+// int32 action = 5 [json_name = "action"];
 inline void Marker3D::clear_action() {
-  action_.ClearToEmpty();
+  action_ = 0;
 }
-inline const std::string& Marker3D::action() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 Marker3D::_internal_action() const {
+  return action_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Marker3D::action() const {
   // @@protoc_insertion_point(field_get:v1.model.Marker3D.action)
   return _internal_action();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Marker3D::set_action(ArgT0&& arg0, ArgT... args) {
- 
- action_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void Marker3D::_internal_set_action(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  action_ = value;
+}
+inline void Marker3D::set_action(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_action(value);
   // @@protoc_insertion_point(field_set:v1.model.Marker3D.action)
-}
-inline std::string* Marker3D::mutable_action() {
-  // @@protoc_insertion_point(field_mutable:v1.model.Marker3D.action)
-  return _internal_mutable_action();
-}
-inline const std::string& Marker3D::_internal_action() const {
-  return action_.Get();
-}
-inline void Marker3D::_internal_set_action(const std::string& value) {
-  
-  action_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Marker3D::_internal_mutable_action() {
-  
-  return action_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Marker3D::release_action() {
-  // @@protoc_insertion_point(field_release:v1.model.Marker3D.action)
-  return action_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Marker3D::set_allocated_action(std::string* action) {
-  if (action != nullptr) {
-    
-  } else {
-    
-  }
-  action_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), action,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:v1.model.Marker3D.action)
 }
 
 // .v1.model.Transform pose = 6 [json_name = "pose"];
