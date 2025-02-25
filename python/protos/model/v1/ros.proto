@@ -43,6 +43,8 @@ message ROSMessageToPublish {
     model.PoseWithCovariance pose_with_covariance = 11;
     model.Point point = 12;
     model.Joy joy = 13;
+    model.Map map = 14;
+    model.Location location = 15;
   }
 }
 
@@ -61,8 +63,10 @@ enum ROSTopicType {
   GEOMETRY_MSGS_POSE_WITH_COVARIANCE = 11;
   SENSOR_MSGS_POINT_CLOUD2 = 12;
   SENSOR_MSGS_LASER_SCAN = 13;
-  GEOMETRY_MSGS_POINT=14;
+  GEOMETRY_MSGS_POINT = 14;
   VISUALIZATION_MSGS_MARKER_ARRAY = 15;
   NAV_MSGS_ODOMETRY = 16;
   SENSOR_MSGS_JOY = 17;
+  NAV_MSGS_OCCUPANCY_GRID = 18;
+  SENSOR_MSGS_NAV_SAT_FIX = 19;
 }

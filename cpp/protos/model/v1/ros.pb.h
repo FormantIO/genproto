@@ -100,12 +100,14 @@ enum ROSTopicType : int {
   VISUALIZATION_MSGS_MARKER_ARRAY = 15,
   NAV_MSGS_ODOMETRY = 16,
   SENSOR_MSGS_JOY = 17,
+  NAV_MSGS_OCCUPANCY_GRID = 18,
+  SENSOR_MSGS_NAV_SAT_FIX = 19,
   ROSTopicType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ROSTopicType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool ROSTopicType_IsValid(int value);
 constexpr ROSTopicType ROSTopicType_MIN = UNKNOWN;
-constexpr ROSTopicType ROSTopicType_MAX = SENSOR_MSGS_JOY;
+constexpr ROSTopicType ROSTopicType_MAX = SENSOR_MSGS_NAV_SAT_FIX;
 constexpr int ROSTopicType_ARRAYSIZE = ROSTopicType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ROSTopicType_descriptor();
@@ -734,6 +736,8 @@ class ROSMessageToPublish final :
     kPoseWithCovariance = 11,
     kPoint = 12,
     kJoy = 13,
+    kMap = 14,
+    kLocation = 15,
     DATA_NOT_SET = 0,
   };
 
@@ -819,6 +823,8 @@ class ROSMessageToPublish final :
     kPoseWithCovarianceFieldNumber = 11,
     kPointFieldNumber = 12,
     kJoyFieldNumber = 13,
+    kMapFieldNumber = 14,
+    kLocationFieldNumber = 15,
   };
   // string stream = 1 [json_name = "stream"];
   void clear_stream();
@@ -1032,6 +1038,42 @@ class ROSMessageToPublish final :
       ::v1::model::Joy* joy);
   ::v1::model::Joy* unsafe_arena_release_joy();
 
+  // .v1.model.Map map = 14 [json_name = "map"];
+  bool has_map() const;
+  private:
+  bool _internal_has_map() const;
+  public:
+  void clear_map();
+  const ::v1::model::Map& map() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::Map* release_map();
+  ::v1::model::Map* mutable_map();
+  void set_allocated_map(::v1::model::Map* map);
+  private:
+  const ::v1::model::Map& _internal_map() const;
+  ::v1::model::Map* _internal_mutable_map();
+  public:
+  void unsafe_arena_set_allocated_map(
+      ::v1::model::Map* map);
+  ::v1::model::Map* unsafe_arena_release_map();
+
+  // .v1.model.Location location = 15 [json_name = "location"];
+  bool has_location() const;
+  private:
+  bool _internal_has_location() const;
+  public:
+  void clear_location();
+  const ::v1::model::Location& location() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::Location* release_location();
+  ::v1::model::Location* mutable_location();
+  void set_allocated_location(::v1::model::Location* location);
+  private:
+  const ::v1::model::Location& _internal_location() const;
+  ::v1::model::Location* _internal_mutable_location();
+  public:
+  void unsafe_arena_set_allocated_location(
+      ::v1::model::Location* location);
+  ::v1::model::Location* unsafe_arena_release_location();
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.ROSMessageToPublish)
@@ -1047,6 +1089,8 @@ class ROSMessageToPublish final :
   void set_has_pose_with_covariance();
   void set_has_point();
   void set_has_joy();
+  void set_has_map();
+  void set_has_location();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -1070,6 +1114,8 @@ class ROSMessageToPublish final :
     ::v1::model::PoseWithCovariance* pose_with_covariance_;
     ::v1::model::Point* point_;
     ::v1::model::Joy* joy_;
+    ::v1::model::Map* map_;
+    ::v1::model::Location* location_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2406,6 +2452,136 @@ inline ::v1::model::Joy* ROSMessageToPublish::_internal_mutable_joy() {
 inline ::v1::model::Joy* ROSMessageToPublish::mutable_joy() {
   // @@protoc_insertion_point(field_mutable:v1.model.ROSMessageToPublish.joy)
   return _internal_mutable_joy();
+}
+
+// .v1.model.Map map = 14 [json_name = "map"];
+inline bool ROSMessageToPublish::_internal_has_map() const {
+  return data_case() == kMap;
+}
+inline bool ROSMessageToPublish::has_map() const {
+  return _internal_has_map();
+}
+inline void ROSMessageToPublish::set_has_map() {
+  _oneof_case_[0] = kMap;
+}
+inline ::v1::model::Map* ROSMessageToPublish::release_map() {
+  // @@protoc_insertion_point(field_release:v1.model.ROSMessageToPublish.map)
+  if (_internal_has_map()) {
+    clear_has_data();
+      ::v1::model::Map* temp = data_.map_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    data_.map_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Map& ROSMessageToPublish::_internal_map() const {
+  return _internal_has_map()
+      ? *data_.map_
+      : reinterpret_cast< ::v1::model::Map&>(::v1::model::_Map_default_instance_);
+}
+inline const ::v1::model::Map& ROSMessageToPublish::map() const {
+  // @@protoc_insertion_point(field_get:v1.model.ROSMessageToPublish.map)
+  return _internal_map();
+}
+inline ::v1::model::Map* ROSMessageToPublish::unsafe_arena_release_map() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.ROSMessageToPublish.map)
+  if (_internal_has_map()) {
+    clear_has_data();
+    ::v1::model::Map* temp = data_.map_;
+    data_.map_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ROSMessageToPublish::unsafe_arena_set_allocated_map(::v1::model::Map* map) {
+  clear_data();
+  if (map) {
+    set_has_map();
+    data_.map_ = map;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.ROSMessageToPublish.map)
+}
+inline ::v1::model::Map* ROSMessageToPublish::_internal_mutable_map() {
+  if (!_internal_has_map()) {
+    clear_data();
+    set_has_map();
+    data_.map_ = CreateMaybeMessage< ::v1::model::Map >(GetArenaForAllocation());
+  }
+  return data_.map_;
+}
+inline ::v1::model::Map* ROSMessageToPublish::mutable_map() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ROSMessageToPublish.map)
+  return _internal_mutable_map();
+}
+
+// .v1.model.Location location = 15 [json_name = "location"];
+inline bool ROSMessageToPublish::_internal_has_location() const {
+  return data_case() == kLocation;
+}
+inline bool ROSMessageToPublish::has_location() const {
+  return _internal_has_location();
+}
+inline void ROSMessageToPublish::set_has_location() {
+  _oneof_case_[0] = kLocation;
+}
+inline ::v1::model::Location* ROSMessageToPublish::release_location() {
+  // @@protoc_insertion_point(field_release:v1.model.ROSMessageToPublish.location)
+  if (_internal_has_location()) {
+    clear_has_data();
+      ::v1::model::Location* temp = data_.location_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    data_.location_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Location& ROSMessageToPublish::_internal_location() const {
+  return _internal_has_location()
+      ? *data_.location_
+      : reinterpret_cast< ::v1::model::Location&>(::v1::model::_Location_default_instance_);
+}
+inline const ::v1::model::Location& ROSMessageToPublish::location() const {
+  // @@protoc_insertion_point(field_get:v1.model.ROSMessageToPublish.location)
+  return _internal_location();
+}
+inline ::v1::model::Location* ROSMessageToPublish::unsafe_arena_release_location() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.ROSMessageToPublish.location)
+  if (_internal_has_location()) {
+    clear_has_data();
+    ::v1::model::Location* temp = data_.location_;
+    data_.location_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ROSMessageToPublish::unsafe_arena_set_allocated_location(::v1::model::Location* location) {
+  clear_data();
+  if (location) {
+    set_has_location();
+    data_.location_ = location;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.ROSMessageToPublish.location)
+}
+inline ::v1::model::Location* ROSMessageToPublish::_internal_mutable_location() {
+  if (!_internal_has_location()) {
+    clear_data();
+    set_has_location();
+    data_.location_ = CreateMaybeMessage< ::v1::model::Location >(GetArenaForAllocation());
+  }
+  return data_.location_;
+}
+inline ::v1::model::Location* ROSMessageToPublish::mutable_location() {
+  // @@protoc_insertion_point(field_mutable:v1.model.ROSMessageToPublish.location)
+  return _internal_mutable_location();
 }
 
 inline bool ROSMessageToPublish::has_data() const {

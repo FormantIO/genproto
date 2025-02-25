@@ -175,6 +175,7 @@ class Datapoint final :
     kVideo = 16,
     kTransformTree = 18,
     kOdometry = 19,
+    kMap = 21,
     DATA_NOT_SET = 0,
   };
 
@@ -267,6 +268,7 @@ class Datapoint final :
     kVideoFieldNumber = 16,
     kTransformTreeFieldNumber = 18,
     kOdometryFieldNumber = 19,
+    kMapFieldNumber = 21,
   };
   // map<string, string> tags = 3 [json_name = "tags"];
   int tags_size() const;
@@ -592,6 +594,24 @@ class Datapoint final :
       ::v1::model::Odometry* odometry);
   ::v1::model::Odometry* unsafe_arena_release_odometry();
 
+  // .v1.model.Map map = 21 [json_name = "map"];
+  bool has_map() const;
+  private:
+  bool _internal_has_map() const;
+  public:
+  void clear_map();
+  const ::v1::model::Map& map() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::v1::model::Map* release_map();
+  ::v1::model::Map* mutable_map();
+  void set_allocated_map(::v1::model::Map* map);
+  private:
+  const ::v1::model::Map& _internal_map() const;
+  ::v1::model::Map* _internal_mutable_map();
+  public:
+  void unsafe_arena_set_allocated_map(
+      ::v1::model::Map* map);
+  ::v1::model::Map* unsafe_arena_release_map();
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:v1.model.Datapoint)
@@ -612,6 +632,7 @@ class Datapoint final :
   void set_has_video();
   void set_has_transform_tree();
   void set_has_odometry();
+  void set_has_map();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -645,6 +666,7 @@ class Datapoint final :
     ::v1::model::Video* video_;
     ::v1::model::TransformTree* transform_tree_;
     ::v1::model::Odometry* odometry_;
+    ::v1::model::Map* map_;
   } data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2337,6 +2359,71 @@ inline ::v1::model::Odometry* Datapoint::_internal_mutable_odometry() {
 inline ::v1::model::Odometry* Datapoint::mutable_odometry() {
   // @@protoc_insertion_point(field_mutable:v1.model.Datapoint.odometry)
   return _internal_mutable_odometry();
+}
+
+// .v1.model.Map map = 21 [json_name = "map"];
+inline bool Datapoint::_internal_has_map() const {
+  return data_case() == kMap;
+}
+inline bool Datapoint::has_map() const {
+  return _internal_has_map();
+}
+inline void Datapoint::set_has_map() {
+  _oneof_case_[0] = kMap;
+}
+inline ::v1::model::Map* Datapoint::release_map() {
+  // @@protoc_insertion_point(field_release:v1.model.Datapoint.map)
+  if (_internal_has_map()) {
+    clear_has_data();
+      ::v1::model::Map* temp = data_.map_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    data_.map_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::v1::model::Map& Datapoint::_internal_map() const {
+  return _internal_has_map()
+      ? *data_.map_
+      : reinterpret_cast< ::v1::model::Map&>(::v1::model::_Map_default_instance_);
+}
+inline const ::v1::model::Map& Datapoint::map() const {
+  // @@protoc_insertion_point(field_get:v1.model.Datapoint.map)
+  return _internal_map();
+}
+inline ::v1::model::Map* Datapoint::unsafe_arena_release_map() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:v1.model.Datapoint.map)
+  if (_internal_has_map()) {
+    clear_has_data();
+    ::v1::model::Map* temp = data_.map_;
+    data_.map_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Datapoint::unsafe_arena_set_allocated_map(::v1::model::Map* map) {
+  clear_data();
+  if (map) {
+    set_has_map();
+    data_.map_ = map;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:v1.model.Datapoint.map)
+}
+inline ::v1::model::Map* Datapoint::_internal_mutable_map() {
+  if (!_internal_has_map()) {
+    clear_data();
+    set_has_map();
+    data_.map_ = CreateMaybeMessage< ::v1::model::Map >(GetArenaForAllocation());
+  }
+  return data_.map_;
+}
+inline ::v1::model::Map* Datapoint::mutable_map() {
+  // @@protoc_insertion_point(field_mutable:v1.model.Datapoint.map)
+  return _internal_mutable_map();
 }
 
 // string label = 20 [json_name = "label"];

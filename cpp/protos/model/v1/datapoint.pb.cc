@@ -128,6 +128,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::v1::model::Datapoint, label_),
   PROTOBUF_FIELD_OFFSET(::v1::model::Datapoint, data_),
   ~0u,  // no _has_bits_
@@ -171,9 +172,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_protos_2fmodel_2fv1_2fdatapoin
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::v1::model::Datapoint_TagsEntry_DoNotUse)},
   { 9, -1, sizeof(::v1::model::Datapoint)},
-  { 34, -1, sizeof(::v1::model::ControlDatapoint)},
-  { 50, 57, sizeof(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse)},
-  { 59, -1, sizeof(::v1::model::GenericAPIDatapoint)},
+  { 35, -1, sizeof(::v1::model::ControlDatapoint)},
+  { 51, 58, sizeof(::v1::model::GenericAPIDatapoint_HeadersEntry_DoNotUse)},
+  { 60, -1, sizeof(::v1::model::GenericAPIDatapoint)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -190,7 +191,7 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "model/v1/health.proto\032\032protos/model/v1/m"
   "ath.proto\032 protos/model/v1/navigation.pr"
   "oto\032\032protos/model/v1/text.proto\032\033protos/"
-  "model/v1/media.proto\"\241\007\n\tDatapoint\022\026\n\006st"
+  "model/v1/media.proto\"\304\007\n\tDatapoint\022\026\n\006st"
   "ream\030\001 \001(\tR\006stream\022\034\n\ttimestamp\030\002 \001(\003R\tt"
   "imestamp\0221\n\004tags\030\003 \003(\0132\035.v1.model.Datapo"
   "int.TagsEntryR\004tags\022$\n\004text\030\004 \001(\0132\016.v1.m"
@@ -211,31 +212,32 @@ const char descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto[] P
   "v1.model.VideoH\000R\005video\022@\n\016transform_tre"
   "e\030\022 \001(\0132\027.v1.model.TransformTreeH\000R\rtran"
   "sformTree\0220\n\010odometry\030\023 \001(\0132\022.v1.model.O"
-  "dometryH\000R\010odometry\022\024\n\005label\030\024 \001(\tR\005labe"
-  "l\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu"
-  "e\030\002 \001(\tR\005value:\0028\001B\006\n\004dataJ\004\010\006\020\007\"\300\003\n\020Con"
-  "trolDatapoint\022\026\n\006stream\030\001 \001(\tR\006stream\022\034\n"
-  "\ttimestamp\030\002 \001(\003R\ttimestamp\022*\n\006bitset\030\003 "
-  "\001(\0132\020.v1.model.BitsetH\000R\006bitset\022\'\n\005twist"
-  "\030\004 \001(\0132\017.v1.model.TwistH\000R\005twist\022)\n\004pose"
-  "\030\005 \001(\0132\023.v1.model.TransformH\000R\004pose\022-\n\007n"
-  "umeric\030\006 \001(\0132\021.v1.model.NumericH\000R\007numer"
-  "ic\022P\n\024pose_with_covariance\030\007 \001(\0132\034.v1.mo"
-  "del.PoseWithCovarianceH\000R\022poseWithCovari"
-  "ance\022\'\n\005point\030\010 \001(\0132\017.v1.model.PointH\000R\005"
-  "point\022!\n\003joy\030\t \001(\0132\r.v1.model.JoyH\000R\003joy"
-  "\022!\n\003bit\030\n \001(\0132\r.v1.model.BitH\000R\003bitB\006\n\004d"
-  "ata\"\345\002\n\023GenericAPIDatapoint\022\026\n\006Method\030\001 "
-  "\001(\tR\006Method\022\032\n\010Endpoint\030\002 \001(\tR\010Endpoint\022"
-  "D\n\007Headers\030\003 \003(\0132*.v1.model.GenericAPIDa"
-  "tapoint.HeadersEntryR\007Headers\022\022\n\004Body\030\004 "
-  "\001(\tR\004Body\022 \n\013IsRetryable\030\005 \001(\010R\013IsRetrya"
-  "ble\022.\n\022RequireFormantAuth\030\006 \001(\010R\022Require"
-  "FormantAuth\0222\n\024RetryableStatusCodes\030\007 \003("
-  "\003R\024RetryableStatusCodes\032:\n\014HeadersEntry\022"
-  "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:"
-  "\0028\001B+Z)github.com/FormantIO/genproto/go/"
-  "v1/modelb\006proto3"
+  "dometryH\000R\010odometry\022!\n\003map\030\025 \001(\0132\r.v1.mo"
+  "del.MapH\000R\003map\022\024\n\005label\030\024 \001(\tR\005label\0327\n\t"
+  "TagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001"
+  "(\tR\005value:\0028\001B\006\n\004dataJ\004\010\006\020\007\"\300\003\n\020ControlD"
+  "atapoint\022\026\n\006stream\030\001 \001(\tR\006stream\022\034\n\ttime"
+  "stamp\030\002 \001(\003R\ttimestamp\022*\n\006bitset\030\003 \001(\0132\020"
+  ".v1.model.BitsetH\000R\006bitset\022\'\n\005twist\030\004 \001("
+  "\0132\017.v1.model.TwistH\000R\005twist\022)\n\004pose\030\005 \001("
+  "\0132\023.v1.model.TransformH\000R\004pose\022-\n\007numeri"
+  "c\030\006 \001(\0132\021.v1.model.NumericH\000R\007numeric\022P\n"
+  "\024pose_with_covariance\030\007 \001(\0132\034.v1.model.P"
+  "oseWithCovarianceH\000R\022poseWithCovariance\022"
+  "\'\n\005point\030\010 \001(\0132\017.v1.model.PointH\000R\005point"
+  "\022!\n\003joy\030\t \001(\0132\r.v1.model.JoyH\000R\003joy\022!\n\003b"
+  "it\030\n \001(\0132\r.v1.model.BitH\000R\003bitB\006\n\004data\"\345"
+  "\002\n\023GenericAPIDatapoint\022\026\n\006Method\030\001 \001(\tR\006"
+  "Method\022\032\n\010Endpoint\030\002 \001(\tR\010Endpoint\022D\n\007He"
+  "aders\030\003 \003(\0132*.v1.model.GenericAPIDatapoi"
+  "nt.HeadersEntryR\007Headers\022\022\n\004Body\030\004 \001(\tR\004"
+  "Body\022 \n\013IsRetryable\030\005 \001(\010R\013IsRetryable\022."
+  "\n\022RequireFormantAuth\030\006 \001(\010R\022RequireForma"
+  "ntAuth\0222\n\024RetryableStatusCodes\030\007 \003(\003R\024Re"
+  "tryableStatusCodes\032:\n\014HeadersEntry\022\020\n\003ke"
+  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B+"
+  "Z)github.com/FormantIO/genproto/go/v1/mo"
+  "delb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps[6] = {
   &::descriptor_table_protos_2fmodel_2fv1_2ffile_2eproto,
@@ -247,7 +249,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto = {
-  false, false, 2016, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 
+  false, false, 2051, descriptor_table_protodef_protos_2fmodel_2fv1_2fdatapoint_2eproto, "protos/model/v1/datapoint.proto", 
   &descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_once, descriptor_table_protos_2fmodel_2fv1_2fdatapoint_2eproto_deps, 6, 5,
   schemas, file_default_instances, TableStruct_protos_2fmodel_2fv1_2fdatapoint_2eproto::offsets,
   file_level_metadata_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_enum_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto, file_level_service_descriptors_protos_2fmodel_2fv1_2fdatapoint_2eproto,
@@ -299,6 +301,7 @@ class Datapoint::_Internal {
   static const ::v1::model::Video& video(const Datapoint* msg);
   static const ::v1::model::TransformTree& transform_tree(const Datapoint* msg);
   static const ::v1::model::Odometry& odometry(const Datapoint* msg);
+  static const ::v1::model::Map& map(const Datapoint* msg);
 };
 
 const ::v1::model::Text&
@@ -360,6 +363,10 @@ Datapoint::_Internal::transform_tree(const Datapoint* msg) {
 const ::v1::model::Odometry&
 Datapoint::_Internal::odometry(const Datapoint* msg) {
   return *msg->data_.odometry_;
+}
+const ::v1::model::Map&
+Datapoint::_Internal::map(const Datapoint* msg) {
+  return *msg->data_.map_;
 }
 void Datapoint::set_allocated_text(::v1::model::Text* text) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -736,6 +743,31 @@ void Datapoint::clear_odometry() {
     clear_has_data();
   }
 }
+void Datapoint::set_allocated_map(::v1::model::Map* map) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_data();
+  if (map) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(map));
+    if (message_arena != submessage_arena) {
+      map = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, map, submessage_arena);
+    }
+    set_has_map();
+    data_.map_ = map;
+  }
+  // @@protoc_insertion_point(field_set_allocated:v1.model.Datapoint.map)
+}
+void Datapoint::clear_map() {
+  if (_internal_has_map()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete data_.map_;
+    }
+    clear_has_data();
+  }
+}
 Datapoint::Datapoint(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   tags_(arena) {
@@ -818,6 +850,10 @@ Datapoint::Datapoint(const Datapoint& from)
     }
     case kOdometry: {
       _internal_mutable_odometry()->::v1::model::Odometry::MergeFrom(from._internal_odometry());
+      break;
+    }
+    case kMap: {
+      _internal_mutable_map()->::v1::model::Map::MergeFrom(from._internal_map());
       break;
     }
     case DATA_NOT_SET: {
@@ -953,6 +989,12 @@ void Datapoint::clear_data() {
     case kOdometry: {
       if (GetArenaForAllocation() == nullptr) {
         delete data_.odometry_;
+      }
+      break;
+    }
+    case kMap: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete data_.map_;
       }
       break;
     }
@@ -1123,6 +1165,13 @@ const char* Datapoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           auto str = _internal_mutable_label();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "v1.model.Datapoint.label"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .v1.model.Map map = 21 [json_name = "map"];
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 170)) {
+          ptr = ctx->ParseMessage(_internal_mutable_map(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1347,6 +1396,14 @@ failure:
         20, this->_internal_label(), target);
   }
 
+  // .v1.model.Map map = 21 [json_name = "map"];
+  if (_internal_has_map()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        21, _Internal::map(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1499,6 +1556,13 @@ size_t Datapoint::ByteSizeLong() const {
           *data_.odometry_);
       break;
     }
+    // .v1.model.Map map = 21 [json_name = "map"];
+    case kMap: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *data_.map_);
+      break;
+    }
     case DATA_NOT_SET: {
       break;
     }
@@ -1603,6 +1667,10 @@ void Datapoint::MergeFrom(const Datapoint& from) {
     }
     case kOdometry: {
       _internal_mutable_odometry()->::v1::model::Odometry::MergeFrom(from._internal_odometry());
+      break;
+    }
+    case kMap: {
+      _internal_mutable_map()->::v1::model::Map::MergeFrom(from._internal_map());
       break;
     }
     case DATA_NOT_SET: {

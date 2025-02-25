@@ -33,6 +33,7 @@ message Datapoint {
     Video video = 16;
     TransformTree transform_tree = 18;
     Odometry odometry = 19;
+    Map map = 21;
   }
   reserved 6;
   string label = 20;
